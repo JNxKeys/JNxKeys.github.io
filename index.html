@@ -3,21 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JNxKeys - Licencias Originales</title>
+    <title>JNxKeys — Licencias Digitales</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; background-color: #f4f4f4; padding: 50px; }
-        .container { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); display: inline-block; }
-        .btn { display: block; width: 200px; padding: 15px; margin: 10px auto; text-decoration: none; color: white; border-radius: 5px; font-weight: bold; }
-        .eset { background-color: #009688; }
-        .office { background-color: #d83b01; }
+        :root {
+            --primary: #0067b8; /* El azul de tu diseño */
+            --dark: #0a0e1a;
+            --bg: #f0f4fa;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg);
+            color: var(--dark);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            max-width: 400px;
+            width: 90%;
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 10px;
+            display: block;
+            text-decoration: none;
+        }
+
+        h1 { font-size: 24px; margin-bottom: 20px; }
+        p { color: #6b7a99; margin-bottom: 30px; }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            margin-bottom: 12px;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            transition: transform 0.2s;
+            color: white;
+        }
+
+        .btn:hover { transform: translateY(-2px); }
+
+        .eset { background-color: #009688; } /* Color ESET */
+        .office { background-color: #d83b01; } /* Color Office */
+
+        .btn img { margin-right: 10px; width: 24px; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Bienvenidos a JNxKeys</h1>
-        <p>Selecciona el producto que buscas:</p>
-        <a href="/eset/" class="btn eset">Ver ESET Antivirus</a>
-        <a href="/office/" class="btn office">Ver Microsoft Office</a>
+
+<div class="container">
+    <a href="/" class="logo">JNxKeys</a>
+    
+    <h1>¿Qué producto necesitas activar hoy?</h1>
+    <p>Selecciona una categoría para ver precios y métodos de pago.</p>
+
+    <a href="/eset/" class="btn eset">
+        🛡️ Antivirus ESET
+    </a>
+
+    <a href="/office/" class="btn office">
+        📊 Microsoft Office
+    </a>
+
+    <div style="margin-top: 20px; font-size: 14px; color: #999;">
+        Perú • Entrega Inmediata
     </div>
+</div>
+
 </body>
 </html>
