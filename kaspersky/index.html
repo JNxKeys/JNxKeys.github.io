@@ -54,6 +54,24 @@ body::before{
 .d.on{background:var(--k-green);width:22px;border-radius:3px;}
 
 /* S1 */
+  .kaspersky-alert {
+    background-color: #fdeaea; /* Fondo amarillo muy claro */
+    border: 1px solid #eb5757; /* Borde naranja/ámbar */
+    color: #b02a2a; /* Texto café oscuro para legibilidad */
+    padding: 12px 15px;
+    border-radius: 12px;
+    margin: 15px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 14px;
+    line-height: 1.4;
+    text-align: left;
+}
+
+.kaspersky-alert span {
+    font-size: 18px;
+}
 .k-brand{display:flex;align-items:center;gap:8px;margin-bottom:20px;}
 .k-shield{width:32px;height:32px;background:var(--k-green);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;}
 .k-label{font-size:12px;font-weight:700;color:var(--muted);letter-spacing:.07em;text-transform:uppercase;}
@@ -234,13 +252,19 @@ h1.hero em{font-style:italic;color:var(--k-green);}
     <span>🔧</span>
     <span><strong>Instalación remota incluida.</strong> Si necesitas ayuda para instalar y activar el antivirus, te asisto por WhatsApp sin costo adicional.</span>
   </div>
-
+<div class="kaspersky-alert">⚠️</span>
+    <div>
+        <strong>Importante:</strong> La activación solo es válida en <strong>Perú</strong>.
+    </div>
+</div>
 </div>
 <div class="bnav"><div class="bnav-inner">
   <button class="nbtn p" onclick="goScreen('s2')">¿Es seguro comprar? →</button>
   <button class="nbtn s" onclick="goScreen('s3')">Cómo pagar</button>
 </div></div>
 </div>
+
+  
 
 <!-- ══════════ S2 — CONFIANZA ══════════ -->
 <div id="s2" class="screen">
@@ -319,7 +343,7 @@ h1.hero em{font-style:italic;color:var(--k-green);}
         <div class="data-box">
           <div class="dr"><span class="dl">Número Yape</span><span class="dv">925 244 643</span></div>
           <hr class="dd">
-          <div class="dr"><span class="dl">Nombre</span><span class="dv">Cesar Fernandez H.</span></div>
+          <div class="dr"><span class="dl">Nombre</span><span class="dv">Cesar Fer*</span></div>
           <hr class="dd">
           <div class="dr"><span class="dl">Kaspersky Standard</span><span class="dv">S/ 60</span></div>
           <hr class="dd">
