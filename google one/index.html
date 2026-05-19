@@ -113,7 +113,7 @@ h1.hero em{font-style:italic;color:var(--g-blue);}
 
 .pc-bonus{background:var(--g-light);border:1px solid var(--g-mid);border-radius:8px;padding:8px 12px;margin:0 18px 14px;font-size:12px;color:var(--g-blue);font-weight:600;display:flex;align-items:center;gap:6px;}
 
-.pc-note{padding:12px 18px;background:var(--bg);border-top:1px solid var(--border);font-size:11.5px;color:var(--muted);line-height:1.5;}
+.pc-note{padding:12px 18px;background:var(--bg);border-top:1px solid var(--border);font-size:14px;color:var(--muted);line-height:1.5;}
 .price-card.top .pc-note{background:var(--g-light);border-top-color:var(--g-mid);}
 
 /* FEATURES */
@@ -188,6 +188,32 @@ h1.hero em{font-style:italic;color:var(--g-blue);}
   .price-grid{grid-template-columns:1fr;}
   .trust-grid{grid-template-columns:1fr;}
 }
+.price-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 8px 0 2px 0; /* Controla la separación con el bloque superior */
+}
+
+/* El precio tachado (Descuento) */
+.plan-old-price {
+    font-size: 20px;            /* Tamaño discreto */
+    color: #98a2b3;             /* Gris neutro para indicar precio antiguo */
+    font-weight: 500;
+    text-decoration: line-through; /* Línea de tachado */
+    margin-bottom: -6px;        /* Acerca el descuento al precio principal */
+    opacity: 0.8;
+}
+
+/* Tu precio actual (mantiene la clase que ya usas) */
+.plan-price {
+    font-size: 54px;            /* Tu tamaño actual o el que prefieras */
+    font-weight: 700;
+    color: #1a2340;
+    margin: 0;
+    line-height: 1.1;
+}
 </style>
 </head>
 <body>
@@ -224,15 +250,21 @@ h1.hero em{font-style:italic;color:var(--g-blue);}
     <div class="price-card">
       <div class="pc-head">
         <div class="pc-type">📅 Mensual</div>
-        <div class="pc-price"><sup>S/</sup>15</div>
+ <div class="price-container">
+    <del class="plan-old-price">S/ 25</del>
+    <div class="plan-price">S/ 15</div>
+</div>
         <div class="pc-period">por mes · renovable</div>
       </div>
-      <div class="pc-note">Ideal para uso temporal. Sin compromiso de largo plazo.</div>
+      <div class="pc-note">La flexibilidad que buscas al mejor precio. ¡Empieza hoy mismo! ⚡</div>
     </div>
     <div class="price-card top">
       <div class="pc-head">
         <div class="pc-type">⭐ Anual</div>
-        <div class="pc-price"><sup>S/</sup>125</div>
+<div class="price-container">
+    <del class="plan-old-price">S/ 180</del>
+    <div class="plan-price">S/ 125</div>
+</div>
         <div class="pc-period">pago único anual</div>
       </div>
       <div class="pc-bonus">🎁 +1 mes extra gratis</div>
