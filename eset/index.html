@@ -45,6 +45,22 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
 .d{width:6px;height:6px;border-radius:50%;background:var(--border);transition:all .25s;}
 .d.on{background:var(--eset);width:22px;border-radius:3px;}
 
+/* MOBILE SECURITY */
+.prod-card.mobile{border-color:#e05c00;margin-bottom: 12px !important;}
+.prod-card.mobile:hover{box-shadow:0 8px 24px rgba(224,92,0,.12);}
+.discount-badge{font-size:10px;font-weight:800;background:#0094a1;color:white;border-radius:6px;padding:3px 10px;text-transform:uppercase;letter-spacing:.05em;white-space:nowrap;flex-shrink:0;}
+.price-original-mobile{font-size:13px;color:var(--muted);text-decoration:line-through;margin-bottom:1px;}
+.price-big.mobile-green{color:dark;}
+.mobile-price-row{background:#fff5f0;border-top-color:rgba(224,92,0,.2);}
+.price-period.mobile-period{background:#0094a1;color:white;border-color:#0094a1;}
+.price-old{font-size:12px;color:var(--muted);text-decoration:line-through;margin-bottom:1px;}
+.price-big{font-family:'Fraunces',serif;font-size:30px;font-weight:900;color:var(--dark);line-height:1;}
+.price-big sup{font-size:14px;}
+.price-ref{font-size:11.5px;color:var(--muted);margin-top:3px;}
+.price-period{font-size:12px;font-weight:600;color:var(--muted);background:var(--white);border:1px solid var(--border);border-radius:8px;padding:5px 12px;align-self:flex-end;}
+.prod-card.top .price-period{background:var(--eset);color:white;border-color:var(--eset);}
+.prod-card.mobile { border-color: #0094a1; }
+
 /* SCREEN 1 */
 h1.hero{font-family:'Fraunces',serif;font-size:clamp(28px,7vw,46px);font-weight:900;line-height:1.05;letter-spacing:-.025em;margin-bottom:12px;}
 h1.hero em{font-style:italic;color:var(--eset);}
@@ -53,23 +69,23 @@ h1.hero em{font-style:italic;color:var(--eset);}
 .prod-cards{display:grid;gap:14px;margin-bottom:28px;}
 .prod-card{background:var(--white);border:2px solid var(--border);border-radius:20px;overflow:hidden;transition:all .2s;}
 .prod-card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(26,108,212,.1);}
-.prod-card.top{border-color:var(--eset);}
+.prod-card.top{border-color:#0094a1;}
 .card-top{padding:20px 22px 0;}
 .card-head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:8px;}
 .card-name{font-size:17px;font-weight:800;color:var(--dark);}
-.best-tag{font-size:10px;font-weight:800;background:var(--eset);color:white;border-radius:6px;padding:3px 10px;text-transform:uppercase;letter-spacing:.05em;white-space:nowrap;flex-shrink:0;}
+.best-tag{font-size:10px;font-weight:800;background:#0094a1;color:white;border-radius:6px;padding:3px 10px;text-transform:uppercase;letter-spacing:.05em;white-space:nowrap;flex-shrink:0;}
 .card-desc{font-size:13px;color:var(--muted);line-height:1.55;margin-bottom:14px;}
 .feat-wrap{display:flex;flex-wrap:wrap;gap:5px;padding-bottom:16px;}
 .feat{font-size:11px;color:var(--muted);background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:3px 9px;}
 .feat.hi{color:var(--eset);background:var(--eset-light);border-color:#c0d9f8;font-weight:600;}
 .price-row{display:flex;align-items:flex-end;justify-content:space-between;padding:14px 22px;background:var(--bg);border-top:1px solid var(--border);flex-wrap:wrap;gap:8px;}
-.prod-card.top .price-row{background:var(--eset-light);border-top-color:rgba(26,108,212,.2);}
+.prod-card.top .price-row{border-top-color:rgba(26,108,212,.2);}
 .price-old{font-size:12px;color:var(--muted);text-decoration:line-through;margin-bottom:1px;}
 .price-big{font-family:'Fraunces',serif;font-size:30px;font-weight:900;color:var(--dark);line-height:1;}
 .price-big sup{font-size:14px;}
 .price-ref{font-size:11.5px;color:var(--muted);margin-top:3px;}
 .price-period{font-size:12px;font-weight:600;color:var(--muted);background:var(--white);border:1px solid var(--border);border-radius:8px;padding:5px 12px;align-self:flex-end;}
-.prod-card.top .price-period{background:var(--eset);color:white;border-color:var(--eset);}
+.prod-card.top .price-period{background:#0094a1;color:white;border-color:#0094a1;}
 
 /* SCREEN 2 */
 .trust-hero{background:linear-gradient(135deg,#0f3460,var(--eset));border-radius:20px;padding:26px 22px;margin-bottom:26px;position:relative;overflow:hidden;}
@@ -166,7 +182,31 @@ h1.hero em{font-style:italic;color:var(--eset);}
   <h1 class="hero">Protege tu equipo<br>con <em>ESET original.</em></h1>
   <p class="hero-sub">Licencias JNxKeys · Antivirus ESET · NOD32</p>
 
-
+<div class="prod-card mobile">
+      <div class="card-top">
+        <div class="card-head">
+          <div class="card-name">ESET Mobile Security</div>
+          <div class="discount-badge">🔥 50% dscto</div>
+        </div>
+        <p class="card-desc">Protección integral para tu smartphone o tablet Android. Antivirus, rastreo ante pérdida/robo, protección de pagos y acceso al portal oficial ESET HOME.</p>
+        <div class="feat-wrap">
+          <span class="feat">📱 Android · Smartphones &amp; Tablets</span>
+          <span class="feat">🦠 Antivirus integral</span>
+          <span class="feat">📍 Rastreo ante pérdida/robo</span>
+          <span class="feat">💳 Protección de pagos</span>
+          <span class="feat hi">🌐 Portal oficial ESET HOME</span>
+          <span class="feat">1️⃣ 1 dispositivo · 1 año</span>
+        </div>
+      </div>
+      <div class="price-row mobile-price-row">
+        <div>
+          <div class="price-original-mobile">S/ 70</div>
+          <div class="price-big mobile-green"><sup>S/</sup>35</div>
+          <div class="price-ref">Precio incluye IGV · Formato descargable</div>
+        </div>
+        <div class="price-period mobile-period">📅 1 año</div>
+      </div>
+    </div>
 
   <div class="prod-cards">
     <div class="prod-card">
@@ -362,3 +402,4 @@ function goScreen(id){
 
 
 </body></html>
+
