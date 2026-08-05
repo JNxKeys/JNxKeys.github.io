@@ -369,12 +369,12 @@ h1.hero em{font-style:italic;color:var(--k-green);}
   <div class="contact">
     <h3>¿Listo para proteger tu equipo?</h3>
     <p>Escríbeme por WhatsApp y en minutos tienes tu Kaspersky activo y funcionando.</p>
-    <button class="wa-btn" onclick="window.open(&#39;https://wa.me/51925244643?text=Deseo%20información%20de%20Kaspersky&#39;,&#39;_blank&#39;)">💬 Escribir por WhatsApp</button>
+    <button class="wa-btn" onclick="gtag('event','whatsapp_click',{product:'Kaspersky',location:'contact'});window.open(&#39;https://wa.me/51925244643?text=Deseo%20información%20de%20Kaspersky&#39;,&#39;_blank&#39;)">💬 Escribir por WhatsApp</button>
   </div>
 </div>
 <div class="bnav"><div class="bnav-inner">
   <button class="nbtn s" onclick="goScreen('s2')">← Confianza</button>
-  <button class="nbtn p" onclick="window.open(&#39;https://wa.me/51925244643?text=Deseo%20información%20de%20Kaspersky&#39;,&#39;_blank&#39;)">💬 WhatsApp</button>
+  <button class="nbtn p" onclick="gtag('event','whatsapp_click',{product:'Kaspersky',location:'bottom_nav'});window.open(&#39;https://wa.me/51925244643?text=Deseo%20información%20de%20Kaspersky&#39;,&#39;_blank&#39;)">💬 WhatsApp</button>
 </div></div>
 </div>
 
@@ -383,6 +383,7 @@ function goScreen(id){
   document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
   document.getElementById(id).classList.add('active');
   window.scrollTo(0,0);
+  gtag('event', 'screen_view_product', { product: 'Kaspersky', screen: id });
 }
 </script>
 </body>

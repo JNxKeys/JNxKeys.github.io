@@ -513,7 +513,7 @@ h1.hero em { font-style: italic; color: var(--icloud); }
   <div class="contact">
     <h3>¿Listo para suscribirte?</h3>
     <p>Escríbeme por WhatsApp y en minutos tienes Apple One activo con iCloud, TV, Music y Arcade.</p>
-    <button class="wa-btn" onclick="window.open('https://wa.me/51925244643?text=Deseo%20información%20de%20Apple%20One','_blank')">
+    <button class="wa-btn" onclick="gtag('event','whatsapp_click',{product:'Apple One',location:'contact'});window.open('https://wa.me/51925244643?text=Deseo%20información%20de%20Apple%20One','_blank')">
       💬 Escribir por WhatsApp
     </button>
   </div>
@@ -521,7 +521,7 @@ h1.hero em { font-style: italic; color: var(--icloud); }
 </div>
 <div class="bnav"><div class="bnav-inner">
   <button class="nbtn s" onclick="goScreen('s2')">← Confianza</button>
-  <button class="nbtn p" onclick="window.open('https://wa.me/51925244643?text=Deseo%20información%20de%20Apple%20One','_blank')">💬 WhatsApp</button>
+  <button class="nbtn p" onclick="gtag('event','whatsapp_click',{product:'Apple One',location:'bottom_nav'});window.open('https://wa.me/51925244643?text=Deseo%20información%20de%20Apple%20One','_blank')">💬 WhatsApp</button>
 </div></div>
 </div>
 
@@ -530,6 +530,7 @@ function goScreen(id) {
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
   document.getElementById(id).classList.add('active');
   window.scrollTo(0, 0);
+  gtag('event', 'screen_view_product', { product: 'Apple One', screen: id });
 }
 </script>
 
