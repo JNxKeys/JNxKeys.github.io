@@ -82,6 +82,17 @@
     .wa-mini{ display:inline-flex; align-items:center; gap:6px; background:var(--accent); color:#fff; font-weight:700; font-size:12.5px; border-radius:10px; padding:9px 14px; text-decoration:none; border:none; cursor:pointer; transition:transform .16s ease; }
     .wa-mini:hover{ transform:scale(1.03); }
 
+    .extra-combos{ display:none; }
+    .extra-combos.open{ display:grid; gap:12px; margin-top:12px; }
+    .more-btn{
+        display:flex; align-items:center; justify-content:center; gap:6px; width:100%;
+        margin-top:12px; padding:11px; background:none; border:1.5px dashed var(--line); border-radius:14px;
+        font-family:inherit; font-size:12.5px; font-weight:700; color:var(--muted); cursor:pointer;
+    }
+    .more-btn:hover{ border-color:var(--accent); color:var(--accent); }
+    .more-btn svg{ width:14px; height:14px; transition:transform .18s ease; }
+    .more-btn.open svg{ transform:rotate(180deg); }
+
     .trust{ display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin:28px 0 8px; }
     .trust-item{ display:flex; flex-direction:column; align-items:center; gap:6px; text-align:center; padding:10px 4px; border:1px solid var(--line); border-radius:14px; background:var(--bg-card); }
     .trust-item svg{ width:17px; height:17px; color:var(--accent); }
@@ -118,6 +129,8 @@
       </div>
     </div>
 
+  </div>
+  <div class="extra-combos" id="extra-sistema">
     <div class="combo sistema">
       <div class="combo-top">
         <span class="combo-tag">Equipos nuevos</span>
@@ -132,6 +145,10 @@
       </div>
     </div>
   </div>
+  <button class="more-btn" data-target="extra-sistema" data-count="1">
+    <span class="more-label">Ver 1 combo más</span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+  </button>
 
   <p class="cat-title">Oficina Segura (Office/Microsoft 365 + Antivirus)</p>
   <div class="combos">
@@ -149,6 +166,8 @@
       </div>
     </div>
 
+  </div>
+  <div class="extra-combos" id="extra-oficina">
     <div class="combo oficina">
       <div class="combo-top">
         <span class="combo-tag">Profesionales</span>
@@ -177,6 +196,10 @@
       </div>
     </div>
   </div>
+  <button class="more-btn" data-target="extra-oficina" data-count="2">
+    <span class="more-label">Ver 2 combos más</span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+  </button>
 
   <p class="cat-title">Oficina Inteligente (Office/365 + Google One)</p>
   <div class="combos">
@@ -194,6 +217,8 @@
       </div>
     </div>
 
+  </div>
+  <div class="extra-combos" id="extra-inteligente">
     <div class="combo inteligente">
       <div class="combo-top">
         <span class="combo-tag">Universitarios</span>
@@ -236,6 +261,10 @@
       </div>
     </div>
   </div>
+  <button class="more-btn" data-target="extra-inteligente" data-count="3">
+    <span class="more-label">Ver 3 combos más</span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+  </button>
 
   <p class="cat-title">Pack Creadores (IA + Nube)</p>
   <div class="combos">
@@ -273,5 +302,17 @@
     <p>💬 <strong>¿Dudas sobre qué combo elegir?</strong> Escríbenos por WhatsApp y te ayudamos a decidir.</p>
   </footer>
 </div>
+
+<script>
+  document.querySelectorAll('.more-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = document.getElementById(btn.dataset.target);
+      const open = target.classList.toggle('open');
+      btn.classList.toggle('open', open);
+      btn.querySelector('.more-label').textContent = open ? 'Ver menos' : `Ver ${btn.dataset.count} combo${btn.dataset.count > 1 ? 's' : ''} más`;
+      gtag('event', 'combos_expand', { category: btn.dataset.target, state: open ? 'open' : 'closed' });
+    });
+  });
+</script>
 
 </body></html>
