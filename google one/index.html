@@ -124,7 +124,7 @@ h1.hero em{font-style:italic;color:var(--g-blue);}
 
 /* PLAN CAROUSEL */
 .plan-eyebrow{font-size:10.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;}
-.plan-carousel{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -18px 10px;padding:0 18px 4px;scrollbar-width:none;}
+.plan-carousel{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x proximity;margin:0 -18px 10px;padding:0 18px 4px;scrollbar-width:none;}
 .plan-carousel::-webkit-scrollbar{display:none;}
 .plan-slide{scroll-snap-align:start;flex:0 0 82%;background:var(--white);border:2px solid var(--border);border-radius:18px;padding:20px;}
 .plan-icon{font-size:26px;margin-bottom:8px;}
@@ -139,11 +139,13 @@ h1.hero em{font-style:italic;color:var(--g-blue);}
 .plan-opt-tag{font-size:9.5px;color:var(--g-blue);font-weight:700;margin-top:2px;}
 
 .plan-dots{display:flex;justify-content:center;gap:5px;}
-.plan-nav-row{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:24px;}
-.plan-nav-btn{width:26px;height:26px;border-radius:50%;border:1px solid var(--border);background:var(--white);color:var(--dark);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:15px;line-height:1;flex-shrink:0;padding:0;}
-.plan-nav-btn:hover{background:var(--g-blue);color:#fff;border-color:var(--g-blue);}
-.plan-nav-btn:disabled{opacity:.3;cursor:default;}
-.plan-nav-btn:disabled:hover{background:var(--white);color:var(--dark);border-color:var(--border);}
+.plan-nav-row{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:24px;}
+.plan-nav-btn{width:38px;height:38px;border-radius:50%;border:none;background:var(--white);color:var(--g-blue);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:19px;line-height:1;flex-shrink:0;padding:0;box-shadow:0 3px 10px rgba(13,15,26,.15);transition:transform .15s ease, background .15s ease, color .15s ease;}
+.plan-nav-btn:active{transform:scale(.92);}
+.plan-nav-btn:hover{background:var(--g-blue);color:#fff;}
+.plan-nav-btn:disabled{opacity:.3;cursor:default;box-shadow:none;}
+.plan-nav-btn:disabled:hover{background:var(--white);color:var(--g-blue);}
+.plan-nav-btn:disabled:active{transform:none;}
 .plan-dots span{width:6px;height:6px;border-radius:50%;background:var(--border);}
 .plan-dots span.on{background:var(--g-blue);width:18px;border-radius:3px;}
 
@@ -489,6 +491,18 @@ const planSlides = Array.from(planCarousel.children);
 const planPrev = document.getElementById('planPrev');
 const planNext = document.getElementById('planNext');
 
+function smoothScrollTo(el, target, duration){
+  const start = el.scrollLeft;
+  const change = target - start;
+  const startTime = performance.now();
+  function ease(t){ return t < 0.5 ? 4*t*t*t : 1 - Math.pow(-2*t+2, 3)/2; }
+  function step(now){
+    const p = Math.min((now - startTime) / duration, 1);
+    el.scrollLeft = start + change * ease(p);
+    if (p < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
 function currentPlanIndex(){
   let idx = 0, best = Infinity;
   planSlides.forEach((s,i)=>{
@@ -506,11 +520,11 @@ function updatePlanNav(){
 planCarousel.addEventListener('scroll', updatePlanNav);
 planPrev.addEventListener('click', ()=>{
   const idx = Math.max(0, currentPlanIndex() - 1);
-  planCarousel.scrollTo({ left: planSlides[idx].offsetLeft, behavior: 'smooth' });
+  smoothScrollTo(planCarousel, planSlides[idx].offsetLeft, 550);
 });
 planNext.addEventListener('click', ()=>{
   const idx = Math.min(planSlides.length - 1, currentPlanIndex() + 1);
-  planCarousel.scrollTo({ left: planSlides[idx].offsetLeft, behavior: 'smooth' });
+  smoothScrollTo(planCarousel, planSlides[idx].offsetLeft, 550);
 });
 planCarousel.addEventListener('wheel', (e)=>{
   if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
@@ -518,6 +532,7 @@ planCarousel.addEventListener('wheel', (e)=>{
     planCarousel.scrollLeft += e.deltaY;
   }
 }, { passive: false });
+planCarousel.scrollLeft = 0;
 updatePlanNav();
 </script>
 </body>
