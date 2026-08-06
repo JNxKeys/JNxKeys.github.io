@@ -124,6 +124,7 @@ h1.hero em{font-style:italic;color:var(--g-blue);}
 
 /* PRICE CARDS */
 .price-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px;}
+.price-card.wide{grid-column:1 / -1;}
 
 .price-card{background:var(--white);border:2px solid var(--border);border-radius:18px;overflow:hidden;transition:all .2s;}
 .price-card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(66,133,244,.1);}
@@ -277,6 +278,16 @@ h1.hero em{font-style:italic;color:var(--g-blue);}
       <div class="pc-bonus">🎁 +1 mes extra gratis</div>
       <div class="pc-note">El mejor valor. Ahorras S/. 55.</div>
     </div>
+    <div class="price-card wide">
+      <div class="pc-head">
+        <div class="pc-type">👨‍👩‍👧‍👦 Familiar · 200GB (5 cupos)</div>
+        <div class="price-container">
+          <div class="plan-price">S/ 10</div>
+        </div>
+        <div class="pc-period">por cupo / mes · también semestral S/ 50 por cupo</div>
+      </div>
+      <div class="pc-note">Ideal para estudiantes. Compartes 200GB entre 5 cuentas, cada una con su propio cupo.</div>
+    </div>
   </div>
 
   <div class="google-note">
@@ -418,6 +429,8 @@ h1.hero em{font-style:italic;color:var(--g-blue);}
           <div class="dr"><span class="dl">Monto mensual</span><span class="dv">S/ 15</span></div>
           <hr class="dd">
           <div class="dr"><span class="dl">Monto anual</span><span class="dv">S/ 125</span></div>
+          <hr class="dd">
+          <div class="dr"><span class="dl">Plan familiar (cupo)</span><span class="dv">S/ 10</span></div>
         </div>
       </div>
     </div>
