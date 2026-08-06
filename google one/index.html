@@ -122,24 +122,25 @@ h1.hero{font-family:'DM Serif Display',serif;font-size:clamp(28px,7vw,46px);font
 h1.hero em{font-style:italic;color:var(--g-blue);}
 .hero-sub{font-size:15px;color:var(--muted);line-height:1.65;max-width:420px;margin-bottom:28px;}
 
-/* PRICE CARDS */
-.price-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px;}
-.price-card.wide{grid-column:1 / -1;}
+/* PLAN CAROUSEL */
+.plan-eyebrow{font-size:10.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;}
+.plan-carousel{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -18px 10px;padding:0 18px 4px;scrollbar-width:none;}
+.plan-carousel::-webkit-scrollbar{display:none;}
+.plan-slide{scroll-snap-align:start;flex:0 0 82%;background:var(--white);border:2px solid var(--border);border-radius:18px;padding:20px;}
+.plan-icon{font-size:26px;margin-bottom:8px;}
+.plan-name{font-family:'DM Serif Display',serif;font-size:22px;color:var(--dark);margin-bottom:6px;}
+.plan-desc{font-size:12.5px;color:var(--muted);line-height:1.5;margin-bottom:16px;min-height:52px;}
+.plan-options{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.plan-opt{border:1px solid var(--border);border-radius:12px;padding:10px 12px;text-align:center;}
+.plan-opt.featured{border-color:var(--g-blue);background:var(--g-light);}
+.plan-opt-label{font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px;}
+.plan-opt-old{font-size:11px;color:#98a2b3;text-decoration:line-through;}
+.plan-opt-price{font-family:'DM Serif Display',serif;font-size:22px;color:var(--dark);line-height:1.1;}
+.plan-opt-tag{font-size:9.5px;color:var(--g-blue);font-weight:700;margin-top:2px;}
 
-.price-card{background:var(--white);border:2px solid var(--border);border-radius:18px;overflow:hidden;transition:all .2s;}
-.price-card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(66,133,244,.1);}
-.price-card.top{border-color:var(--g-blue);}
-
-.pc-head{padding:18px 18px 0;}
-.pc-type{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:8px;}
-.pc-price{font-family:'DM Serif Display',serif;font-size:36px;color:var(--dark);line-height:1;}
-.pc-price sup{font-size:16px;}
-.pc-period{font-size:12px;color:var(--muted);font-weight:500;margin-top:3px;margin-bottom:14px;}
-
-.pc-bonus{background:var(--g-light);border:1px solid var(--g-mid);border-radius:8px;padding:8px 12px;margin:0 18px 14px;font-size:12px;color:var(--g-blue);font-weight:600;display:flex;align-items:center;gap:6px;}
-
-.pc-note{padding:12px 18px;background:var(--bg);border-top:1px solid var(--border);font-size:14px;color:var(--muted);line-height:1.5;}
-.price-card.top .pc-note{background:var(--g-light);border-top-color:var(--g-mid);}
+.plan-dots{display:flex;justify-content:center;gap:5px;margin-bottom:24px;}
+.plan-dots span{width:6px;height:6px;border-radius:50%;background:var(--border);}
+.plan-dots span.on{background:var(--g-blue);width:18px;border-radius:3px;}
 
 /* FEATURES */
 .feat-section{background:var(--white);border:1px solid var(--border);border-radius:18px;padding:20px 22px;margin-bottom:20px;}
@@ -193,34 +194,7 @@ h1.hero em{font-style:italic;color:var(--g-blue);}
 
 @media(max-width:480px){
   h1.hero{font-size:28px;}
-  .price-grid{grid-template-columns:1fr;}
   .trust-grid{grid-template-columns:1fr;}
-}
-.price-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 8px 0 2px 0; /* Controla la separación con el bloque superior */
-}
-
-/* El precio tachado (Descuento) */
-.plan-old-price {
-    font-size: 20px;            /* Tamaño discreto */
-    color: #98a2b3;             /* Gris neutro para indicar precio antiguo */
-    font-weight: 500;
-    text-decoration: line-through; /* Línea de tachado */
-    margin-bottom: -6px;        /* Acerca el descuento al precio principal */
-    opacity: 0.8;
-}
-
-/* Tu precio actual (mantiene la clase que ya usas) */
-.plan-price {
-    font-size: 54px;            /* Tu tamaño actual o el que prefieras */
-    font-weight: 700;
-    color: #1a2340;
-    margin: 0;
-    line-height: 1.1;
 }
 </style>
 </head>
@@ -254,51 +228,64 @@ h1.hero em{font-style:italic;color:var(--g-blue);}
   <h1 class="hero">La IA de Google,<br><em>sin límites.</em></h1>
   <p class="hero-sub">Accede a Gemini Advanced, 2TB de almacenamiento, Meet Premium y las herramientas de IA más potentes de Google. Todo en tu propia cuenta.</p>
 
-  <div class="price-grid">
-    <div class="price-card">
-      <div class="pc-head">
-        <div class="pc-type">📅 Mensual</div>
- <div class="price-container">
-    <del class="plan-old-price">S/ 25</del>
-    <div class="plan-price">S/ 15</div>
-</div>
-        <div class="pc-period">por mes · renovable</div>
-      </div>
-      <div class="pc-note">La flexibilidad que buscas al mejor precio. ¡Empieza hoy mismo! ⚡</div>
-    </div>
-    <div class="price-card top">
-      <div class="pc-head">
-        <div class="pc-type">⭐ Anual</div>
-<div class="price-container">
-    <del class="plan-old-price">S/ 180</del>
-    <div class="plan-price">S/ 125</div>
-</div>
-        <div class="pc-period">pago único anual</div>
-      </div>
-      <div class="pc-bonus">🎁 +1 mes extra gratis</div>
-      <div class="pc-note">El mejor valor. Ahorras S/. 55.</div>
-    </div>
-    <div class="price-card wide">
-      <div class="pc-head">
-        <div class="pc-type">👨‍👩‍👧‍👦 AI Plus 200GB</div>
-        <div class="price-container">
-          <div class="plan-price">S/ 10</div>
+  <p class="plan-eyebrow">Elige tu plan</p>
+  <div class="plan-carousel" id="planCarousel">
+    <div class="plan-slide">
+      <div class="plan-icon">☁️</div>
+      <div class="plan-name">AI Plus 2TB</div>
+      <div class="plan-desc">2TB solo para ti. Ideal para uso individual.</div>
+      <div class="plan-options">
+        <div class="plan-opt">
+          <div class="plan-opt-label">Mensual</div>
+          <div class="plan-opt-old">S/25</div>
+          <div class="plan-opt-price">S/15</div>
         </div>
-        <div class="pc-period">por cupo / mes · también semestral S/ 50 por cupo</div>
-      </div>
-      <div class="pc-note">Ideal para estudiantes. Compartes 200GB entre 5 cuentas, cada una con su propio cupo.</div>
-    </div>
-    <div class="price-card wide">
-      <div class="pc-head">
-        <div class="pc-type">🚀 AI Pro 5TB</div>
-        <div class="price-container">
-          <div class="plan-price">S/ 20</div>
+        <div class="plan-opt featured">
+          <div class="plan-opt-label">Anual</div>
+          <div class="plan-opt-old">S/180</div>
+          <div class="plan-opt-price">S/125</div>
+          <div class="plan-opt-tag">+1 mes gratis</div>
         </div>
-        <div class="pc-period">por cupo / mes · también trimestral S/ 50 por cupo</div>
       </div>
-      <div class="pc-note">5TB de almacenamiento por cupo, para quien necesita más espacio. Disponible solo mensual o trimestral.</div>
+    </div>
+
+    <div class="plan-slide">
+      <div class="plan-icon">👨‍👩‍👧‍👦</div>
+      <div class="plan-name">AI Plus 200GB</div>
+      <div class="plan-desc">Compartes 200GB entre 5 cuentas, cada una con su propio cupo. Ideal para estudiantes.</div>
+      <div class="plan-options">
+        <div class="plan-opt featured">
+          <div class="plan-opt-label">Mensual</div>
+          <div class="plan-opt-price">S/10</div>
+          <div class="plan-opt-tag">por cupo</div>
+        </div>
+        <div class="plan-opt">
+          <div class="plan-opt-label">Semestral</div>
+          <div class="plan-opt-price">S/50</div>
+          <div class="plan-opt-tag">por cupo</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="plan-slide">
+      <div class="plan-icon">🚀</div>
+      <div class="plan-name">AI Pro 5TB</div>
+      <div class="plan-desc">5TB de almacenamiento por cupo, para quien necesita más espacio.</div>
+      <div class="plan-options">
+        <div class="plan-opt featured">
+          <div class="plan-opt-label">Mensual</div>
+          <div class="plan-opt-price">S/20</div>
+          <div class="plan-opt-tag">por cupo</div>
+        </div>
+        <div class="plan-opt">
+          <div class="plan-opt-label">Trimestral</div>
+          <div class="plan-opt-price">S/50</div>
+          <div class="plan-opt-tag">por cupo</div>
+        </div>
+      </div>
     </div>
   </div>
+  <div class="plan-dots" id="planDots"><span class="on"></span><span></span><span></span></div>
 
   <div class="google-note">
     <span>📧</span>
@@ -475,6 +462,18 @@ function goScreen(id){
   window.scrollTo(0,0);
   gtag('event', 'screen_view_product', { product: 'Google One', screen: id });
 }
+
+const planCarousel = document.getElementById('planCarousel');
+const planDots = document.querySelectorAll('#planDots span');
+const planSlides = Array.from(planCarousel.children);
+planCarousel.addEventListener('scroll', ()=>{
+  let idx = 0, best = Infinity;
+  planSlides.forEach((s,i)=>{
+    const d = Math.abs(s.offsetLeft - planCarousel.scrollLeft);
+    if(d < best){ best = d; idx = i; }
+  });
+  planDots.forEach((d,i)=>d.classList.toggle('on', i===idx));
+});
 </script>
 </body>
 </html>
