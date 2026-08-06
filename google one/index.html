@@ -491,6 +491,9 @@ const planSlides = Array.from(planCarousel.children);
 const planPrev = document.getElementById('planPrev');
 const planNext = document.getElementById('planNext');
 
+function planSlideOffset(slide){
+  return slide.getBoundingClientRect().left - planCarousel.getBoundingClientRect().left + planCarousel.scrollLeft;
+}
 function smoothScrollTo(el, target, duration){
   const start = el.scrollLeft;
   const change = target - start;
@@ -504,9 +507,12 @@ function smoothScrollTo(el, target, duration){
   requestAnimationFrame(step);
 }
 function currentPlanIndex(){
+  const maxScroll = planCarousel.scrollWidth - planCarousel.clientWidth;
+  if (planCarousel.scrollLeft >= maxScroll - 2) return planSlides.length - 1;
+  if (planCarousel.scrollLeft <= 2) return 0;
   let idx = 0, best = Infinity;
   planSlides.forEach((s,i)=>{
-    const d = Math.abs(s.offsetLeft - planCarousel.scrollLeft);
+    const d = Math.abs(planSlideOffset(s) - planCarousel.scrollLeft);
     if(d < best){ best = d; idx = i; }
   });
   return idx;
@@ -520,11 +526,11 @@ function updatePlanNav(){
 planCarousel.addEventListener('scroll', updatePlanNav);
 planPrev.addEventListener('click', ()=>{
   const idx = Math.max(0, currentPlanIndex() - 1);
-  smoothScrollTo(planCarousel, planSlides[idx].offsetLeft, 550);
+  smoothScrollTo(planCarousel, planSlideOffset(planSlides[idx]), 550);
 });
 planNext.addEventListener('click', ()=>{
   const idx = Math.min(planSlides.length - 1, currentPlanIndex() + 1);
-  smoothScrollTo(planCarousel, planSlides[idx].offsetLeft, 550);
+  smoothScrollTo(planCarousel, planSlideOffset(planSlides[idx]), 550);
 });
 planCarousel.addEventListener('wheel', (e)=>{
   if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {

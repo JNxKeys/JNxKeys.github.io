@@ -331,6 +331,9 @@
   const carPrev = document.getElementById('carPrev');
   const carNext = document.getElementById('carNext');
 
+  function cardOffset(card){
+    return card.getBoundingClientRect().left - carousel.getBoundingClientRect().left + carousel.scrollLeft;
+  }
   function smoothScrollTo(el, target, duration){
     const start = el.scrollLeft;
     const change = target - start;
@@ -344,9 +347,12 @@
     requestAnimationFrame(step);
   }
   function currentCarIndex(){
+    const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+    if (carousel.scrollLeft >= maxScroll - 2) return cards.length - 1;
+    if (carousel.scrollLeft <= 2) return 0;
     let idx = 0, best = Infinity;
     cards.forEach((c,i)=>{
-      const d = Math.abs(c.offsetLeft - carousel.scrollLeft);
+      const d = Math.abs(cardOffset(c) - carousel.scrollLeft);
       if(d < best){ best = d; idx = i; }
     });
     return idx;
@@ -360,11 +366,11 @@
   carousel.addEventListener('scroll', updateCarNav);
   carPrev.addEventListener('click', ()=>{
     const idx = Math.max(0, currentCarIndex() - 1);
-    smoothScrollTo(carousel, cards[idx].offsetLeft, 550);
+    smoothScrollTo(carousel, cardOffset(cards[idx]), 550);
   });
   carNext.addEventListener('click', ()=>{
     const idx = Math.min(cards.length - 1, currentCarIndex() + 1);
-    smoothScrollTo(carousel, cards[idx].offsetLeft, 550);
+    smoothScrollTo(carousel, cardOffset(cards[idx]), 550);
   });
   carousel.addEventListener('wheel', (e)=>{
     if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
