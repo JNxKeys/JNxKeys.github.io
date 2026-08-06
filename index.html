@@ -111,7 +111,12 @@
         .pmore .promo-title{ font-size:13px; }
         .pmore .promo-includes{ color:var(--muted); opacity:1; }
 
-        .dots{ display:flex; justify-content:center; gap:5px; margin-bottom:22px; }
+        .dots{ display:flex; justify-content:center; gap:5px; }
+        .car-nav-row{ display:flex; align-items:center; justify-content:center; gap:12px; margin-bottom:22px; }
+        .car-btn{ width:26px; height:26px; border-radius:50%; border:1px solid var(--line); background:#fff; color:var(--ink); display:flex; align-items:center; justify-content:center; cursor:pointer; font-size:15px; line-height:1; flex-shrink:0; padding:0; }
+        .car-btn:hover{ background:var(--accent); color:#fff; border-color:var(--accent); }
+        .car-btn:disabled{ opacity:.3; cursor:default; }
+        .car-btn:disabled:hover{ background:#fff; color:var(--ink); border-color:var(--line); }
         .dots span{ width:6px; height:6px; border-radius:50%; background:var(--line); }
         .dots span.on{ background:var(--accent); width:16px; border-radius:3px; }
 
@@ -202,7 +207,11 @@
         <span class="promo-includes">7 combinaciones más</span>
       </a>
     </div>
-    <div class="dots" id="dots"><span class="on"></span><span></span><span></span><span></span></div>
+    <div class="car-nav-row">
+      <button class="car-btn" id="carPrev" aria-label="Anterior">‹</button>
+      <div class="dots" id="dots"><span class="on"></span><span></span><span></span><span></span></div>
+      <button class="car-btn" id="carNext" aria-label="Siguiente">›</button>
+    </div>
 
     <div class="trust">
       <div class="trust-item">
@@ -317,14 +326,39 @@
   const carousel = document.getElementById('carousel');
   const dots = document.querySelectorAll('#dots span');
   const cards = Array.from(carousel.children);
-  carousel.addEventListener('scroll', ()=>{
+  const carPrev = document.getElementById('carPrev');
+  const carNext = document.getElementById('carNext');
+
+  function currentCarIndex(){
     let idx = 0, best = Infinity;
     cards.forEach((c,i)=>{
       const d = Math.abs(c.offsetLeft - carousel.scrollLeft);
       if(d < best){ best = d; idx = i; }
     });
+    return idx;
+  }
+  function updateCarNav(){
+    const idx = currentCarIndex();
     dots.forEach((d,i)=>d.classList.toggle('on', i===idx));
+    carPrev.disabled = idx === 0;
+    carNext.disabled = idx === cards.length - 1;
+  }
+  carousel.addEventListener('scroll', updateCarNav);
+  carPrev.addEventListener('click', ()=>{
+    const idx = Math.max(0, currentCarIndex() - 1);
+    carousel.scrollTo({ left: cards[idx].offsetLeft, behavior: 'smooth' });
   });
+  carNext.addEventListener('click', ()=>{
+    const idx = Math.min(cards.length - 1, currentCarIndex() + 1);
+    carousel.scrollTo({ left: cards[idx].offsetLeft, behavior: 'smooth' });
+  });
+  carousel.addEventListener('wheel', (e)=>{
+    if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+      e.preventDefault();
+      carousel.scrollLeft += e.deltaY;
+    }
+  }, { passive: false });
+  updateCarNav();
 </script>
 
 </body></html>

@@ -138,7 +138,12 @@ h1.hero em{font-style:italic;color:var(--g-blue);}
 .plan-opt-price{font-family:'DM Serif Display',serif;font-size:22px;color:var(--dark);line-height:1.1;}
 .plan-opt-tag{font-size:9.5px;color:var(--g-blue);font-weight:700;margin-top:2px;}
 
-.plan-dots{display:flex;justify-content:center;gap:5px;margin-bottom:24px;}
+.plan-dots{display:flex;justify-content:center;gap:5px;}
+.plan-nav-row{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:24px;}
+.plan-nav-btn{width:26px;height:26px;border-radius:50%;border:1px solid var(--border);background:var(--white);color:var(--dark);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:15px;line-height:1;flex-shrink:0;padding:0;}
+.plan-nav-btn:hover{background:var(--g-blue);color:#fff;border-color:var(--g-blue);}
+.plan-nav-btn:disabled{opacity:.3;cursor:default;}
+.plan-nav-btn:disabled:hover{background:var(--white);color:var(--dark);border-color:var(--border);}
 .plan-dots span{width:6px;height:6px;border-radius:50%;background:var(--border);}
 .plan-dots span.on{background:var(--g-blue);width:18px;border-radius:3px;}
 
@@ -291,7 +296,11 @@ h1.hero em{font-style:italic;color:var(--g-blue);}
       </div>
     </div>
   </div>
-  <div class="plan-dots" id="planDots"><span class="on"></span><span></span><span></span></div>
+  <div class="plan-nav-row">
+    <button class="plan-nav-btn" id="planPrev" aria-label="Anterior">‹</button>
+    <div class="plan-dots" id="planDots"><span class="on"></span><span></span><span></span></div>
+    <button class="plan-nav-btn" id="planNext" aria-label="Siguiente">›</button>
+  </div>
 
   <div class="google-note">
     <span>📧</span>
@@ -477,14 +486,39 @@ function goScreen(id){
 const planCarousel = document.getElementById('planCarousel');
 const planDots = document.querySelectorAll('#planDots span');
 const planSlides = Array.from(planCarousel.children);
-planCarousel.addEventListener('scroll', ()=>{
+const planPrev = document.getElementById('planPrev');
+const planNext = document.getElementById('planNext');
+
+function currentPlanIndex(){
   let idx = 0, best = Infinity;
   planSlides.forEach((s,i)=>{
     const d = Math.abs(s.offsetLeft - planCarousel.scrollLeft);
     if(d < best){ best = d; idx = i; }
   });
+  return idx;
+}
+function updatePlanNav(){
+  const idx = currentPlanIndex();
   planDots.forEach((d,i)=>d.classList.toggle('on', i===idx));
+  planPrev.disabled = idx === 0;
+  planNext.disabled = idx === planSlides.length - 1;
+}
+planCarousel.addEventListener('scroll', updatePlanNav);
+planPrev.addEventListener('click', ()=>{
+  const idx = Math.max(0, currentPlanIndex() - 1);
+  planCarousel.scrollTo({ left: planSlides[idx].offsetLeft, behavior: 'smooth' });
 });
+planNext.addEventListener('click', ()=>{
+  const idx = Math.min(planSlides.length - 1, currentPlanIndex() + 1);
+  planCarousel.scrollTo({ left: planSlides[idx].offsetLeft, behavior: 'smooth' });
+});
+planCarousel.addEventListener('wheel', (e)=>{
+  if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+    e.preventDefault();
+    planCarousel.scrollLeft += e.deltaY;
+  }
+}, { passive: false });
+updatePlanNav();
 </script>
 </body>
 </html>
