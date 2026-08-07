@@ -5,17 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Apple One — JNxKeys</title>
 <link rel="icon" type="image/png" href="/assets/img/favicon.png">
-<meta name="description" content="Apple One a un solo precio: iCloud+, Apple TV+, Apple Music y Apple Arcade. Licencia 100% original, pago por Yape, activación por WhatsApp.">
+<meta name="description" content="Apple One a un solo precio: iCloud+, Apple TV+, Apple Music y Apple Arcade. Licencia 100% original, pago por Yape o Western Union, activación por WhatsApp.">
 <meta property="og:type" content="product">
 <meta property="og:site_name" content="JNxKeys">
 <meta property="og:locale" content="es_PE">
 <meta property="og:title" content="Apple One — Todo Apple, un solo precio | JNxKeys">
-<meta property="og:description" content="Apple One a un solo precio: iCloud+, Apple TV+, Apple Music y Apple Arcade. Licencia 100% original, pago por Yape, activación por WhatsApp.">
+<meta property="og:description" content="Apple One a un solo precio: iCloud+, Apple TV+, Apple Music y Apple Arcade. Licencia 100% original, pago por Yape o Western Union, activación por WhatsApp.">
 <meta property="og:image" content="https://jnxkeys.github.io/assets/img/jnxkeys-logo.png">
 <meta property="og:url" content="https://jnxkeys.github.io/apple%20one/">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Apple One — Todo Apple, un solo precio | JNxKeys">
-<meta name="twitter:description" content="Apple One a un solo precio: iCloud+, Apple TV+, Apple Music y Apple Arcade. Licencia 100% original, pago por Yape, activación por WhatsApp.">
+<meta name="twitter:description" content="Apple One a un solo precio: iCloud+, Apple TV+, Apple Music y Apple Arcade. Licencia 100% original, pago por Yape o Western Union, activación por WhatsApp.">
 <meta name="twitter:image" content="https://jnxkeys.github.io/assets/img/jnxkeys-logo.png">
 <script type="application/ld+json">
 {
@@ -23,7 +23,7 @@
   "@type": "Product",
   "name": "Apple One",
   "brand": { "@type": "Brand", "name": "Apple" },
-  "description": "Apple One a un solo precio: iCloud+, Apple TV+, Apple Music y Apple Arcade. Licencia 100% original, pago por Yape, activación por WhatsApp.",
+  "description": "Apple One a un solo precio: iCloud+, Apple TV+, Apple Music y Apple Arcade. Licencia 100% original, pago por Yape o Western Union, activación por WhatsApp.",
   "image": "https://jnxkeys.github.io/assets/img/jnxkeys-logo.png",
   "offers": {
     "@type": "Offer",
@@ -77,6 +77,8 @@
   --plan-year: #1d1d1f;
   --yape: #7b2d8b;
   --yape-light: #f5eaf8;
+  --wu: #ffcc00;
+  --wu-dark: #1a1a1a;
 }
 
 body {
@@ -261,6 +263,32 @@ h1.hero em { font-style: italic; color: var(--icloud); }
 .yape-hero p { font-size: 13.5px; color: rgba(255,255,255,.65); line-height: 1.55; margin-bottom: 14px; }
 .yape-pills { display: flex; flex-wrap: wrap; gap: 6px; }
 .yape-pill { background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.18); border-radius: 100px; padding: 5px 12px; font-size: 12px; color: white; font-weight: 500; }
+
+/* WESTERN UNION */
+.wu-hero { background: var(--wu-dark); border-radius: 20px; padding: 24px 22px; margin-bottom: 28px; position: relative; overflow: hidden; }
+.wu-hero::after { content: 'WU'; position: absolute; right: -8px; bottom: -22px; font-family: 'DM Serif Display', serif; font-size: 100px; color: rgba(255,204,0,.06); pointer-events: none; }
+.wu-badge { display: inline-flex; align-items: center; justify-content: center; background: var(--wu); border-radius: 12px; width: 50px; height: 50px; font-size: 13px; font-weight: 900; color: var(--wu-dark); margin-bottom: 14px; letter-spacing: -.02em; }
+.wu-hero h2 { font-family: 'DM Serif Display', serif; font-size: 23px; color: white; margin-bottom: 6px; }
+.wu-hero p { font-size: 13.5px; color: rgba(255,255,255,.6); line-height: 1.55; margin-bottom: 14px; }
+.wu-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+.wu-pill { background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.14); border-radius: 100px; padding: 5px 12px; font-size: 12px; color: white; font-weight: 500; }
+.yape-badge { background: linear-gradient(135deg,#5b2d8e,#7c3fbf); border-radius: 14px; padding: 16px 20px; display: flex; gap: 12px; align-items: center; margin-bottom: 24px; color: white; }
+.yape-badge .icon { font-size: 26px; flex-shrink: 0; }
+.yape-badge p { font-size: 13px; line-height: 1.6; }
+.yape-badge strong { font-weight: 700; }
+.fee-box { background: var(--white); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; margin-bottom: 24px; }
+.fee-head { background: var(--dark); padding: 11px 18px; font-size: 10.5px; font-weight: 800; color: rgba(255,255,255,.45); text-transform: uppercase; letter-spacing: .1em; }
+.fee-row { display: flex; justify-content: space-between; align-items: center; padding: 13px 18px; border-bottom: 1px solid var(--border); gap: 10px; }
+.fee-row:last-child { border-bottom: none; }
+.fee-label { font-size: 13.5px; color: var(--muted); font-weight: 500; }
+.fee-val { font-size: 14px; font-weight: 800; text-align: right; }
+.fee-val.g { color: var(--green); }
+.fee-val.gold { color: var(--gold); }
+.fee-val.n { color: var(--dark); }
+.pay-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(128px, 1fr)); gap: 7px; margin-top: 10px; }
+.pay-opt { background: var(--bg); border: 1px solid var(--border); border-radius: 9px; padding: 11px 12px; font-size: 12.5px; line-height: 1.4; }
+.pay-opt strong { display: block; font-size: 10.5px; font-weight: 800; text-transform: uppercase; letter-spacing: .05em; color: var(--gold); margin-bottom: 3px; }
+.pay-opt span { color: var(--muted); }
 
 .steps { display: grid; gap: 12px; margin-bottom: 24px; }
 .step { background: var(--white); border: 1px solid var(--border); border-radius: 15px; padding: 17px 19px; display: grid; grid-template-columns: 38px 1fr; gap: 15px; transition: box-shadow .18s; }
@@ -494,9 +522,9 @@ h1.hero em { font-style: italic; color: var(--icloud); }
   <div class="yape-hero">
     <div class="yape-badge-img">💜</div>
     <h2>Paga con Yape</h2>
-    <p>Pago directo, sin comisiones, solo para clientes en Perú. En minutos tienes tu suscripción Apple One activa.</p>
+    <p>Pago directo, sin comisiones, para clientes en Perú. En minutos tienes tu suscripción Apple One activa.</p>
     <div class="yape-pills">
-      <span class="yape-pill">🇵🇪 Solo Perú</span>
+      <span class="yape-pill">🇵🇪 Perú</span>
       <span class="yape-pill">💜 Sin comisión</span>
       <span class="yape-pill">⚡ Instantáneo</span>
       <span class="yape-pill">🔒 100% seguro</span>
@@ -546,6 +574,59 @@ h1.hero em { font-style: italic; color: var(--icloud); }
     </div>
 
   </div>
+
+  <div class="how-title">¿No tienes Yape ni estás en Perú?</div>
+
+  <div class="wu-hero">
+    <div class="wu-badge">WU</div>
+    <h2>Paga con Western Union</h2>
+    <p>No necesitas tener Yape ni ser de Perú. Envía el pago desde tu país en minutos, de forma 100% legal y segura.</p>
+    <div class="wu-pills">
+      <span class="wu-pill">🌍 +200 países</span>
+      <span class="wu-pill">💳 Tarjeta, banco o efectivo</span>
+      <span class="wu-pill">⚡ Llega en minutos</span>
+      <span class="wu-pill">🔒 100% seguro</span>
+    </div>
+  </div>
+
+  <div class="yape-badge">
+    <span class="icon">💜</span>
+    <p><strong>Western Union es aliada oficial de Yape Perú.</strong> Tu dinero llega directo a mi billetera, sin intermediarios ni demoras.</p>
+  </div>
+
+  <div class="fee-box">
+    <div class="fee-head">Comisiones Western Union a Perú</div>
+    <div class="fee-row"><span class="fee-label">🎉 Tu primer envío</span><span class="fee-val g">GRATIS — $0</span></div>
+    <div class="fee-row"><span class="fee-label">💳 Pago con tarjeta (siguientes)</span><span class="fee-val gold">~$4–5 USD aprox.</span></div>
+    <div class="fee-row"><span class="fee-label">🏦 Transferencia bancaria (siguientes)</span><span class="fee-val gold">~$2–3 USD aprox.</span></div>
+    <div class="fee-row"><span class="fee-label">⏱️ Tiempo de llegada</span><span class="fee-val n">Minutos</span></div>
+  </div>
+
+  <div class="steps">
+    <div class="step"><div class="snum">1</div><div><div class="stitle">Descarga la app o entra a westernunion.com</div><div class="sdesc">Busca <strong>"Western Union"</strong> en App Store o Google Play. Registro gratis en 5 minutos. También puedes ir a una sucursal física y pagar en efectivo.</div></div></div>
+    <div class="step"><div class="snum">2</div><div><div class="stitle">Usa el simulador primero</div><div class="sdesc">En <strong>"El destinatario recibe"</strong> escribe <strong>S/20</strong> (Soles), el precio de la suscripción mensual de Apple One.</div><div class="s-hl">💡 Ves el costo total en tu moneda antes de confirmar. Sin sorpresas.</div></div></div>
+    <div class="step"><div class="snum">3</div><div><div class="stitle">Selecciona Perú → Billetera Móvil → Yape</div><div class="sdesc">En método de entrega elige <strong>"Billetera Móvil"</strong> o <strong>"Mobile Wallet"</strong> y selecciona <strong>YAPE</strong> como operador.</div></div></div>
+    <div class="step"><div class="snum">4</div><div><div class="stitle">Ingresa los datos exactamente así</div>
+      <div class="data-box">
+        <div class="dr"><span class="dl">Nombre completo</span><span class="dv">Cesar Fernandez</span></div>
+        <hr class="dd">
+        <div class="dr"><span class="dl">Número celular</span><span class="dv">+51 925 244 643</span></div>
+        <hr class="dd">
+        <div class="dr"><span class="dl">País</span><span class="dv">Perú (+51)</span></div>
+      </div>
+    </div></div>
+    <div class="step"><div class="snum">5</div><div><div class="stitle">Elige cómo pagar</div>
+      <div class="pay-grid">
+        <div class="pay-opt"><strong>💳 Tarjeta</strong><span>Débito o crédito. Lo más rápido.</span></div>
+        <div class="pay-opt"><strong>🏦 Transferencia</strong><span>Banco / SPEI / PSE según tu país.</span></div>
+        <div class="pay-opt"><strong>🏪 Efectivo</strong><span>En agencia WU o tienda aliada.</span></div>
+      </div>
+    </div></div>
+    <div class="step"><div class="snum">6</div><div><div class="stitle">Indica cómo quieres activarlo</div><div class="sdesc">En el mensaje del comprobante indica si deseas activarlo en tu propia cuenta Apple o prefieres una cuenta nueva.</div><div class="s-hl">💡 Si quieres activarlo en tu propia cuenta Apple, recuerda que no debes pertenecer a un grupo familiar y debes cambiar la región de tu cuenta a India.</div></div></div>
+    <div class="step"><div class="snum">7</div><div><div class="stitle">Envíame el comprobante</div><div class="sdesc">WU te da un <strong>número MTCN</strong> al finalizar. Mándame la captura por WhatsApp y te envío los datos de acceso o la invitación al grupo Apple.</div><div class="s-hl">✅ Entrega inmediata por WhatsApp o correo electrónico.</div></div></div>
+  </div>
+
+  <div class="tip"><span class="tip-i">🎁</span><p><strong>¿Primera vez usando Western Union?</strong> Tu primer envío tiene <strong>comisión $0</strong>. Solo pagas el precio de la suscripción.</p></div>
 
     <div class="tip">
     <span class="tip-i">🍎</span>
