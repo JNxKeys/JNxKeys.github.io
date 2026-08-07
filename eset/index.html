@@ -67,6 +67,19 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
 .back-btn:hover{color:var(--eset);}
 .step-pill{font-size:11px;font-weight:700;color:var(--muted);background:var(--white);border:1px solid var(--border);border-radius:100px;padding:5px 14px;letter-spacing:.04em;white-space:nowrap;}
 
+.top-ribbon{display:flex;align-items:center;gap:12px;margin:-24px -18px 20px;padding:16px 18px 14px;border-radius:0 0 22px 22px;background:linear-gradient(120deg,var(--dark) 0%,var(--eset) 100%);}
+.top-ribbon img{width:40px;height:40px;border-radius:10px;flex-shrink:0;}
+.ribbon-word{font-size:17px;font-weight:800;letter-spacing:-.01em;line-height:1.1;color:#fff;}
+.ribbon-tag{font-size:11px;color:rgba(255,255,255,.72);font-weight:500;margin-top:2px;}
+
+.card-actions{display:flex;align-items:center;gap:8px;padding:0 22px 18px;background:var(--bg);}
+.card-share-btn{display:inline-flex;align-items:center;justify-content:center;width:39px;height:39px;flex-shrink:0;border-radius:10px;border:1.5px solid var(--border);background:var(--white);color:var(--muted);cursor:pointer;transition:border-color .15s ease, color .15s ease, transform .15s ease;}
+.card-share-btn:hover{border-color:var(--eset);color:var(--eset);}
+.card-share-btn:active{transform:scale(.92);}
+.card-share-btn svg{width:16px;height:16px;}
+.card-wa-btn{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:7px;background:var(--eset);color:#fff;font-weight:700;font-size:12.5px;border-radius:10px;padding:10px 14px;text-decoration:none;transition:transform .16s ease;}
+.card-wa-btn:hover{transform:scale(1.02);}
+
 /* DOTS */
 .dot-nav{display:flex;justify-content:center;gap:6px;margin-bottom:26px;}
 .d.on{background:var(--eset);width:22px;border-radius:3px;}
@@ -184,21 +197,23 @@ h1.hero em{font-style:italic;color:var(--eset);}
 <!-- ══════════ S1 — PRODUCTOS ══════════ -->
 <div id="s1" class="screen active">
 <div class="page">
+<header class="top-ribbon">
+  <img src="/assets/img/favicon.png" alt="Logo JNxKeys">
+  <div>
+    <div class="ribbon-word">JNxKeys</div>
+    <div class="ribbon-tag">Licencias digitales originales</div>
+  </div>
+</header>
 <div class="topnav">
     <button class="back-btn" onclick="window.location.href='/index.html'">← Inicio </button>
     <div class="step-pill">1 de 3</div>
   </div>
-  <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; text-align: center;">
-      <img src="/assets/img/jnxkeys-logo.png" alt="Logo ESET Antivirus" style="width: 80%; max-width: 380px; height: auto">
-      
-      
-    </div>
   <div class="dot-nav"><div class="d on"></div><div class="d"></div><div class="d"></div></div>
 
   <h1 class="hero">Protege tu equipo<br>con <em>ESET original.</em></h1>
   <p class="hero-sub">Licencias JNxKeys · Antivirus ESET · NOD32</p>
 
-<div class="prod-card mobile">
+<div class="prod-card mobile" id="eset-mobile">
       <div class="card-top">
         <div class="card-head">
           <div class="card-name">ESET Mobile Security</div>
@@ -222,10 +237,11 @@ h1.hero em{font-style:italic;color:var(--eset);}
         </div>
         <div class="price-period mobile-period">📅 1 año</div>
       </div>
+      <div class="card-actions"><button class="card-share-btn" type="button" aria-label="Compartir producto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M8 7l4-4 4 4"/><path d="M4 13v6a2 2 0 002 2h12a2 2 0 002-2v-6"/></svg></button><a class="card-wa-btn" href="https://wa.me/51925244643?text=Deseo%20información%20de%20ESET%20Mobile%20Security" target="_blank" onclick="gtag('event','whatsapp_click',{product:'ESET',item:'ESET Mobile Security',location:'product_card'})"><svg width="14" height="14" viewBox="0 0 32 32"><circle cx="16" cy="16" r="16" fill="#25D366"/><path fill="#fff" d="M23.47 8.52A10.9 10.9 0 0 0 16.02 5c-6.01 0-10.9 4.89-10.9 10.9 0 1.92.5 3.8 1.46 5.46L5 27l5.8-1.52a10.9 10.9 0 0 0 5.22 1.33h.005c6.01 0 10.9-4.89 10.9-10.9a10.84 10.84 0 0 0-3.45-7.79zm-7.45 16.77h-.004a9.06 9.06 0 0 1-4.61-1.26l-.33-.196-3.44.9.92-3.35-.215-.345a9.05 9.05 0 0 1-1.39-4.83c0-5.01 4.08-9.09 9.1-9.09a9.04 9.04 0 0 1 6.43 2.67 9.03 9.03 0 0 1 2.66 6.43c0 5.01-4.08 9.09-9.1 9.09zm4.99-6.81c-.27-.14-1.61-.79-1.86-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.16-1.34-.8-.71-1.34-1.6-1.5-1.87-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.48-.84-2.02-.22-.53-.44-.46-.61-.47l-.52-.01c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.29 0 1.35.98 2.66 1.12 2.84.14.18 1.93 2.95 4.68 4.14.65.28 1.16.45 1.56.58.66.21 1.25.18 1.72.11.53-.08 1.61-.66 1.83-1.29.23-.63.23-1.17.16-1.29-.07-.11-.25-.18-.52-.32z"/></svg> Pedir por WhatsApp</a></div>
     </div>
 
   <div class="prod-cards">
-    <div class="prod-card">
+    <div class="prod-card" id="eset-nod32">
       <div class="card-top">
         <div class="card-head"><div class="card-name">ESET NOD32 Antivirus</div></div>
         <p class="card-desc">Protección esencial contra virus y malware. Ideal para quien quiere seguridad sin complicaciones y sin que el equipo se ponga lento.</p>
@@ -240,9 +256,10 @@ h1.hero em{font-style:italic;color:var(--eset);}
         <div><div class="price-big"><sup>S/</sup>50</div><div class="price-ref">≈ $252 MXN · $15 USD · €13</div></div>
         <div class="price-period">📅 1 año</div>
       </div>
+      <div class="card-actions"><button class="card-share-btn" type="button" aria-label="Compartir producto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M8 7l4-4 4 4"/><path d="M4 13v6a2 2 0 002 2h12a2 2 0 002-2v-6"/></svg></button><a class="card-wa-btn" href="https://wa.me/51925244643?text=Deseo%20información%20de%20ESET%20NOD32%20Antivirus" target="_blank" onclick="gtag('event','whatsapp_click',{product:'ESET',item:'ESET NOD32 Antivirus',location:'product_card'})"><svg width="14" height="14" viewBox="0 0 32 32"><circle cx="16" cy="16" r="16" fill="#25D366"/><path fill="#fff" d="M23.47 8.52A10.9 10.9 0 0 0 16.02 5c-6.01 0-10.9 4.89-10.9 10.9 0 1.92.5 3.8 1.46 5.46L5 27l5.8-1.52a10.9 10.9 0 0 0 5.22 1.33h.005c6.01 0 10.9-4.89 10.9-10.9a10.84 10.84 0 0 0-3.45-7.79zm-7.45 16.77h-.004a9.06 9.06 0 0 1-4.61-1.26l-.33-.196-3.44.9.92-3.35-.215-.345a9.05 9.05 0 0 1-1.39-4.83c0-5.01 4.08-9.09 9.1-9.09a9.04 9.04 0 0 1 6.43 2.67 9.03 9.03 0 0 1 2.66 6.43c0 5.01-4.08 9.09-9.1 9.09zm4.99-6.81c-.27-.14-1.61-.79-1.86-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.16-1.34-.8-.71-1.34-1.6-1.5-1.87-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.48-.84-2.02-.22-.53-.44-.46-.61-.47l-.52-.01c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.29 0 1.35.98 2.66 1.12 2.84.14.18 1.93 2.95 4.68 4.14.65.28 1.16.45 1.56.58.66.21 1.25.18 1.72.11.53-.08 1.61-.66 1.83-1.29.23-.63.23-1.17.16-1.29-.07-.11-.25-.18-.52-.32z"/></svg> Pedir por WhatsApp</a></div>
     </div>
 
-    <div class="prod-card">
+    <div class="prod-card" id="eset-essential">
       <div class="card-top">
         <div class="card-head"><div class="card-name">ESET Home Security Essential</div></div>
         <p class="card-desc">Todo lo del NOD32, más protección en WiFi públicos, pagos en línea seguros y rastreo de tu equipo si lo pierdes.</p>
@@ -259,9 +276,10 @@ h1.hero em{font-style:italic;color:var(--eset);}
         <div><div class="price-big"><sup>S/</sup>60</div><div class="price-ref">≈ $302 MXN · $18 USD · €15</div></div>
         <div class="price-period">📅 1 año</div>
       </div>
+      <div class="card-actions"><button class="card-share-btn" type="button" aria-label="Compartir producto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M8 7l4-4 4 4"/><path d="M4 13v6a2 2 0 002 2h12a2 2 0 002-2v-6"/></svg></button><a class="card-wa-btn" href="https://wa.me/51925244643?text=Deseo%20información%20de%20ESET%20Home%20Security%20Essential" target="_blank" onclick="gtag('event','whatsapp_click',{product:'ESET',item:'ESET Home Security Essential',location:'product_card'})"><svg width="14" height="14" viewBox="0 0 32 32"><circle cx="16" cy="16" r="16" fill="#25D366"/><path fill="#fff" d="M23.47 8.52A10.9 10.9 0 0 0 16.02 5c-6.01 0-10.9 4.89-10.9 10.9 0 1.92.5 3.8 1.46 5.46L5 27l5.8-1.52a10.9 10.9 0 0 0 5.22 1.33h.005c6.01 0 10.9-4.89 10.9-10.9a10.84 10.84 0 0 0-3.45-7.79zm-7.45 16.77h-.004a9.06 9.06 0 0 1-4.61-1.26l-.33-.196-3.44.9.92-3.35-.215-.345a9.05 9.05 0 0 1-1.39-4.83c0-5.01 4.08-9.09 9.1-9.09a9.04 9.04 0 0 1 6.43 2.67 9.03 9.03 0 0 1 2.66 6.43c0 5.01-4.08 9.09-9.1 9.09zm4.99-6.81c-.27-.14-1.61-.79-1.86-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.16-1.34-.8-.71-1.34-1.6-1.5-1.87-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.48-.84-2.02-.22-.53-.44-.46-.61-.47l-.52-.01c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.29 0 1.35.98 2.66 1.12 2.84.14.18 1.93 2.95 4.68 4.14.65.28 1.16.45 1.56.58.66.21 1.25.18 1.72.11.53-.08 1.61-.66 1.83-1.29.23-.63.23-1.17.16-1.29-.07-.11-.25-.18-.52-.32z"/></svg> Pedir por WhatsApp</a></div>
     </div>
 
-    <div class="prod-card top">
+    <div class="prod-card top" id="eset-premium">
       <div class="card-top">
         <div class="card-head">
           <div class="card-name">ESET Home Security Premium</div>
@@ -283,6 +301,7 @@ h1.hero em{font-style:italic;color:var(--eset);}
         <div><div class="price-big"><sup>S/</sup>80</div><div class="price-ref">≈ $403 MXN · $24 USD · €19</div></div>
         <div class="price-period">📅 1 año</div>
       </div>
+      <div class="card-actions"><button class="card-share-btn" type="button" aria-label="Compartir producto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M8 7l4-4 4 4"/><path d="M4 13v6a2 2 0 002 2h12a2 2 0 002-2v-6"/></svg></button><a class="card-wa-btn" href="https://wa.me/51925244643?text=Deseo%20información%20de%20ESET%20Home%20Security%20Premium" target="_blank" onclick="gtag('event','whatsapp_click',{product:'ESET',item:'ESET Home Security Premium',location:'product_card'})"><svg width="14" height="14" viewBox="0 0 32 32"><circle cx="16" cy="16" r="16" fill="#25D366"/><path fill="#fff" d="M23.47 8.52A10.9 10.9 0 0 0 16.02 5c-6.01 0-10.9 4.89-10.9 10.9 0 1.92.5 3.8 1.46 5.46L5 27l5.8-1.52a10.9 10.9 0 0 0 5.22 1.33h.005c6.01 0 10.9-4.89 10.9-10.9a10.84 10.84 0 0 0-3.45-7.79zm-7.45 16.77h-.004a9.06 9.06 0 0 1-4.61-1.26l-.33-.196-3.44.9.92-3.35-.215-.345a9.05 9.05 0 0 1-1.39-4.83c0-5.01 4.08-9.09 9.1-9.09a9.04 9.04 0 0 1 6.43 2.67 9.03 9.03 0 0 1 2.66 6.43c0 5.01-4.08 9.09-9.1 9.09zm4.99-6.81c-.27-.14-1.61-.79-1.86-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.16-1.34-.8-.71-1.34-1.6-1.5-1.87-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.48-.84-2.02-.22-.53-.44-.46-.61-.47l-.52-.01c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.29 0 1.35.98 2.66 1.12 2.84.14.18 1.93 2.95 4.68 4.14.65.28 1.16.45 1.56.58.66.21 1.25.18 1.72.11.53-.08 1.61-.66 1.83-1.29.23-.63.23-1.17.16-1.29-.07-.11-.25-.18-.52-.32z"/></svg> Pedir por WhatsApp</a></div>
     </div>
   </div>
 </div>
@@ -419,6 +438,23 @@ function goScreen(id){
   document.getElementById(id).classList.add('active');
   window.scrollTo(0,0);
   gtag('event', 'screen_view_product', { product: 'ESET', screen: id });
+}
+
+document.querySelectorAll('.card-share-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const card = btn.closest('.prod-card');
+    const name = card.querySelector('.card-name').textContent.trim();
+    const price = card.querySelector('.price-big').textContent.trim();
+    const url = card.id ? `${location.origin}/eset/#${card.id}` : `${location.origin}/eset/`;
+    const text = `${name} a ${price} en JNxKeys.\nLicencias originales con garantía.\n${url}\nhttps://www.facebook.com/JNxKeys/`;
+    gtag('event', 'product_share', { product: 'ESET', item: name });
+    window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`, '_blank');
+  });
+});
+
+if (location.hash) {
+  const target = document.getElementById(location.hash.slice(1));
+  if (target) target.scrollIntoView();
 }
 </script>
 
