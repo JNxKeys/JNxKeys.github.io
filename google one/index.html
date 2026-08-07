@@ -145,7 +145,13 @@ h1.hero em{font-style:italic;color:var(--g-blue);}
 .plan-badge.tier-popular{background:var(--g-green);}
 .plan-badge.tier-pro{background:var(--g-orange);}
 .plan-icon{font-size:26px;margin-bottom:8px;}
-.plan-name{font-family:'DM Serif Display',serif;font-size:22px;color:var(--dark);margin-bottom:6px;}
+.plan-name{font-family:'Outfit',sans-serif;font-weight:800;font-size:21px;letter-spacing:-.01em;color:var(--dark);margin-bottom:10px;}
+.plan-icons{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:14px;}
+.plan-icons .p-ic{width:28px;height:28px;border-radius:8px;background:var(--bg);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;}
+.tier-basic .plan-icons .p-ic{background:var(--g-light);border-color:#c0d9f8;}
+.tier-popular .plan-icons .p-ic{background:#e8f5ea;border-color:#b8e0c2;}
+.tier-pro .plan-icons .p-ic{background:#fdece0;border-color:#f5c9a3;}
+.plan-divider{height:1px;background:var(--border);margin-bottom:14px;}
 .plan-desc{font-size:12.5px;color:var(--muted);line-height:1.5;margin-bottom:16px;min-height:52px;}
 .plan-options{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
 .plan-opt{border:1.5px solid var(--border);border-radius:12px;padding:10px 12px;text-align:center;background:none;font-family:inherit;cursor:pointer;transition:border-color .15s ease, background .15s ease, transform .1s ease;width:100%;}
@@ -295,6 +301,14 @@ h1.hero em{font-style:italic;color:var(--g-blue);}
       <div class="plan-badge tier-basic">Más pedido</div>
       <div class="plan-icon">☁️</div>
       <div class="plan-name">AI Plus 200GB</div>
+      <div class="plan-icons">
+        <span class="p-ic" title="Gemini">✨</span>
+        <span class="p-ic" title="Drive">☁️</span>
+        <span class="p-ic" title="Gmail">✉️</span>
+        <span class="p-ic" title="Imágenes">🖼️</span>
+        <span class="p-ic" title="Docs">📄</span>
+      </div>
+      <div class="plan-divider"></div>
       <div class="plan-desc">Ideal para ofimática básica, estudiantes y uso diario de IA.</div>
       <div class="plan-options">
         <button type="button" class="plan-opt featured">
@@ -318,6 +332,16 @@ h1.hero em{font-style:italic;color:var(--g-blue);}
       <div class="plan-badge tier-popular">Recomendado ⭐</div>
       <div class="plan-icon">👤</div>
       <div class="plan-name">AI Plus 2TB</div>
+      <div class="plan-icons">
+        <span class="p-ic" title="Gemini">✨</span>
+        <span class="p-ic" title="Drive">☁️</span>
+        <span class="p-ic" title="Meet">🎥</span>
+        <span class="p-ic" title="NotebookLM">📖</span>
+        <span class="p-ic" title="Gmail">✉️</span>
+        <span class="p-ic" title="Imágenes">🖼️</span>
+        <span class="p-ic" title="Docs">📄</span>
+      </div>
+      <div class="plan-divider"></div>
       <div class="plan-desc">Almacenamiento masivo y reuniones premium sin interrupciones.</div>
       <div class="plan-options">
         <button type="button" class="plan-opt">
@@ -342,6 +366,18 @@ h1.hero em{font-style:italic;color:var(--g-blue);}
       <div class="plan-badge tier-pro">Pro 🔥</div>
       <div class="plan-icon">🚀</div>
       <div class="plan-name">AI Pro 5TB</div>
+      <div class="plan-icons">
+        <span class="p-ic" title="Gemini">✨</span>
+        <span class="p-ic" title="Herramientas de desarrollo">💻</span>
+        <span class="p-ic" title="Código">⌨️</span>
+        <span class="p-ic" title="Meet">🎥</span>
+        <span class="p-ic" title="NotebookLM">📖</span>
+        <span class="p-ic" title="Drive">☁️</span>
+        <span class="p-ic" title="Gmail">✉️</span>
+        <span class="p-ic" title="Docs">📄</span>
+        <span class="p-ic" title="Avanzado">⚙️</span>
+      </div>
+      <div class="plan-divider"></div>
       <div class="plan-desc">Máximo poder IA para creadores, profesionales y programación.</div>
       <div class="plan-options">
         <button type="button" class="plan-opt featured">
