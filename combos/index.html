@@ -82,6 +82,12 @@
     .wa-mini{ display:inline-flex; align-items:center; gap:6px; background:var(--accent); color:#fff; font-weight:700; font-size:12.5px; border-radius:10px; padding:9px 14px; text-decoration:none; border:none; cursor:pointer; transition:transform .16s ease; }
     .wa-mini:hover{ transform:scale(1.03); }
 
+    .combo-actions{ display:flex; align-items:center; gap:8px; }
+    .share-btn{ display:inline-flex; align-items:center; justify-content:center; width:38px; height:38px; flex-shrink:0; border-radius:10px; border:1.5px solid var(--line); background:#fff; color:var(--muted); cursor:pointer; transition:border-color .15s ease, color .15s ease, transform .15s ease; }
+    .share-btn:hover{ border-color:var(--accent); color:var(--accent); }
+    .share-btn:active{ transform:scale(.92); }
+    .share-btn svg{ width:16px; height:16px; }
+
     .extra-combos{ display:none; }
     .extra-combos.open{ display:grid; gap:12px; margin-top:12px; }
     .more-btn{
@@ -131,7 +137,10 @@
       <p class="combo-pitch">Protección invisible: dale a tu equipo el software original que necesita sin consumir recursos.</p>
       <div class="combo-bottom">
         <span class="combo-price-row"><span class="combo-old">S/150</span><span class="combo-new">S/135</span></span>
-        <a class="wa-mini" href="https://wa.me/51925244643?text=Deseo%20información%20del%20Combo%20Sistema%20Total%20Estándar" onclick="gtag('event','whatsapp_click',{product:'Combo Sistema Total Estandar',location:'combos_page'})" target="_blank"><svg width="14" height="14" viewBox="0 0 32 32"><circle cx="16" cy="16" r="16" fill="#25D366"/><path fill="#fff" d="M23.47 8.52A10.9 10.9 0 0 0 16.02 5c-6.01 0-10.9 4.89-10.9 10.9 0 1.92.5 3.8 1.46 5.46L5 27l5.8-1.52a10.9 10.9 0 0 0 5.22 1.33h.005c6.01 0 10.9-4.89 10.9-10.9a10.84 10.84 0 0 0-3.45-7.79zm-7.45 16.77h-.004a9.06 9.06 0 0 1-4.61-1.26l-.33-.196-3.44.9.92-3.35-.215-.345a9.05 9.05 0 0 1-1.39-4.83c0-5.01 4.08-9.09 9.1-9.09a9.04 9.04 0 0 1 6.43 2.67 9.03 9.03 0 0 1 2.66 6.43c0 5.01-4.08 9.09-9.1 9.09zm4.99-6.81c-.27-.14-1.61-.79-1.86-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.16-1.34-.8-.71-1.34-1.6-1.5-1.87-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.48-.84-2.02-.22-.53-.44-.46-.61-.47l-.52-.01c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.29 0 1.35.98 2.66 1.12 2.84.14.18 1.93 2.95 4.68 4.14.65.28 1.16.45 1.56.58.66.21 1.25.18 1.72.11.53-.08 1.61-.66 1.83-1.29.23-.63.23-1.17.16-1.29-.07-.11-.25-.18-.52-.32z"/></svg> WhatsApp</a>
+        <div class="combo-actions">
+          <button class="share-btn" type="button" aria-label="Compartir combo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M8 7l4-4 4 4"/><path d="M4 13v6a2 2 0 002 2h12a2 2 0 002-2v-6"/></svg></button>
+          <a class="wa-mini" href="https://wa.me/51925244643?text=Deseo%20información%20del%20Combo%20Sistema%20Total%20Estándar" onclick="gtag('event','whatsapp_click',{product:'Combo Sistema Total Estandar',location:'combos_page'})" target="_blank"><svg width="14" height="14" viewBox="0 0 32 32"><circle cx="16" cy="16" r="16" fill="#25D366"/><path fill="#fff" d="M23.47 8.52A10.9 10.9 0 0 0 16.02 5c-6.01 0-10.9 4.89-10.9 10.9 0 1.92.5 3.8 1.46 5.46L5 27l5.8-1.52a10.9 10.9 0 0 0 5.22 1.33h.005c6.01 0 10.9-4.89 10.9-10.9a10.84 10.84 0 0 0-3.45-7.79zm-7.45 16.77h-.004a9.06 9.06 0 0 1-4.61-1.26l-.33-.196-3.44.9.92-3.35-.215-.345a9.05 9.05 0 0 1-1.39-4.83c0-5.01 4.08-9.09 9.1-9.09a9.04 9.04 0 0 1 6.43 2.67 9.03 9.03 0 0 1 2.66 6.43c0 5.01-4.08 9.09-9.1 9.09zm4.99-6.81c-.27-.14-1.61-.79-1.86-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.16-1.34-.8-.71-1.34-1.6-1.5-1.87-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.48-.84-2.02-.22-.53-.44-.46-.61-.47l-.52-.01c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.29 0 1.35.98 2.66 1.12 2.84.14.18 1.93 2.95 4.68 4.14.65.28 1.16.45 1.56.58.66.21 1.25.18 1.72.11.53-.08 1.61-.66 1.83-1.29.23-.63.23-1.17.16-1.29-.07-.11-.25-.18-.52-.32z"/></svg> WhatsApp</a>
+        </div>
       </div>
     </div>
 
@@ -142,12 +151,15 @@
         <span class="combo-tag">Equipos nuevos</span>
         <span class="combo-save">Ahorra S/20</span>
       </div>
-      <div class="combo-title">Sistema Total · Plus</div>
+      <div class="combo-title" id="sistema-total-plus">Sistema Total · Plus</div>
       <div class="combo-includes">Windows 11 Pro + Office 2021 Pro Plus + Kaspersky Plus</div>
       <p class="combo-pitch">Tu inversión merece el mejor motor: rinde al 100% en multitarea blindando tu identidad.</p>
       <div class="combo-bottom">
         <span class="combo-price-row"><span class="combo-old">S/185</span><span class="combo-new">S/165</span></span>
-        <a class="wa-mini" href="https://wa.me/51925244643?text=Deseo%20información%20del%20Combo%20Sistema%20Total%20Plus" onclick="gtag('event','whatsapp_click',{product:'Combo Sistema Total Plus',location:'combos_page'})" target="_blank"><svg width="14" height="14" viewBox="0 0 32 32"><circle cx="16" cy="16" r="16" fill="#25D366"/><path fill="#fff" d="M23.47 8.52A10.9 10.9 0 0 0 16.02 5c-6.01 0-10.9 4.89-10.9 10.9 0 1.92.5 3.8 1.46 5.46L5 27l5.8-1.52a10.9 10.9 0 0 0 5.22 1.33h.005c6.01 0 10.9-4.89 10.9-10.9a10.84 10.84 0 0 0-3.45-7.79zm-7.45 16.77h-.004a9.06 9.06 0 0 1-4.61-1.26l-.33-.196-3.44.9.92-3.35-.215-.345a9.05 9.05 0 0 1-1.39-4.83c0-5.01 4.08-9.09 9.1-9.09a9.04 9.04 0 0 1 6.43 2.67 9.03 9.03 0 0 1 2.66 6.43c0 5.01-4.08 9.09-9.1 9.09zm4.99-6.81c-.27-.14-1.61-.79-1.86-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.16-1.34-.8-.71-1.34-1.6-1.5-1.87-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.48-.84-2.02-.22-.53-.44-.46-.61-.47l-.52-.01c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.29 0 1.35.98 2.66 1.12 2.84.14.18 1.93 2.95 4.68 4.14.65.28 1.16.45 1.56.58.66.21 1.25.18 1.72.11.53-.08 1.61-.66 1.83-1.29.23-.63.23-1.17.16-1.29-.07-.11-.25-.18-.52-.32z"/></svg> WhatsApp</a>
+        <div class="combo-actions">
+          <button class="share-btn" type="button" aria-label="Compartir combo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M8 7l4-4 4 4"/><path d="M4 13v6a2 2 0 002 2h12a2 2 0 002-2v-6"/></svg></button>
+          <a class="wa-mini" href="https://wa.me/51925244643?text=Deseo%20información%20del%20Combo%20Sistema%20Total%20Plus" onclick="gtag('event','whatsapp_click',{product:'Combo Sistema Total Plus',location:'combos_page'})" target="_blank"><svg width="14" height="14" viewBox="0 0 32 32"><circle cx="16" cy="16" r="16" fill="#25D366"/><path fill="#fff" d="M23.47 8.52A10.9 10.9 0 0 0 16.02 5c-6.01 0-10.9 4.89-10.9 10.9 0 1.92.5 3.8 1.46 5.46L5 27l5.8-1.52a10.9 10.9 0 0 0 5.22 1.33h.005c6.01 0 10.9-4.89 10.9-10.9a10.84 10.84 0 0 0-3.45-7.79zm-7.45 16.77h-.004a9.06 9.06 0 0 1-4.61-1.26l-.33-.196-3.44.9.92-3.35-.215-.345a9.05 9.05 0 0 1-1.39-4.83c0-5.01 4.08-9.09 9.1-9.09a9.04 9.04 0 0 1 6.43 2.67 9.03 9.03 0 0 1 2.66 6.43c0 5.01-4.08 9.09-9.1 9.09zm4.99-6.81c-.27-.14-1.61-.79-1.86-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.16-1.34-.8-.71-1.34-1.6-1.5-1.87-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.48-.84-2.02-.22-.53-.44-.46-.61-.47l-.52-.01c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.29 0 1.35.98 2.66 1.12 2.84.14.18 1.93 2.95 4.68 4.14.65.28 1.16.45 1.56.58.66.21 1.25.18 1.72.11.53-.08 1.61-.66 1.83-1.29.23-.63.23-1.17.16-1.29-.07-.11-.25-.18-.52-.32z"/></svg> WhatsApp</a>
+        </div>
       </div>
     </div>
   </div>
@@ -168,7 +180,10 @@
       <p class="combo-pitch">Lo esencial hecho a la perfección: herramientas clásicas seguras contra USBs infectados.</p>
       <div class="combo-bottom">
         <span class="combo-price-row"><span class="combo-old">S/110</span><span class="combo-new">S/99</span></span>
-        <a class="wa-mini" href="https://wa.me/51925244643?text=Deseo%20información%20del%20Combo%20Oficina%20Segura%20Estándar" onclick="gtag('event','whatsapp_click',{product:'Combo Oficina Segura Estandar',location:'combos_page'})" target="_blank"><svg width="14" height="14" viewBox="0 0 32 32"><circle cx="16" cy="16" r="16" fill="#25D366"/><path fill="#fff" d="M23.47 8.52A10.9 10.9 0 0 0 16.02 5c-6.01 0-10.9 4.89-10.9 10.9 0 1.92.5 3.8 1.46 5.46L5 27l5.8-1.52a10.9 10.9 0 0 0 5.22 1.33h.005c6.01 0 10.9-4.89 10.9-10.9a10.84 10.84 0 0 0-3.45-7.79zm-7.45 16.77h-.004a9.06 9.06 0 0 1-4.61-1.26l-.33-.196-3.44.9.92-3.35-.215-.345a9.05 9.05 0 0 1-1.39-4.83c0-5.01 4.08-9.09 9.1-9.09a9.04 9.04 0 0 1 6.43 2.67 9.03 9.03 0 0 1 2.66 6.43c0 5.01-4.08 9.09-9.1 9.09zm4.99-6.81c-.27-.14-1.61-.79-1.86-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.16-1.34-.8-.71-1.34-1.6-1.5-1.87-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.48-.84-2.02-.22-.53-.44-.46-.61-.47l-.52-.01c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.29 0 1.35.98 2.66 1.12 2.84.14.18 1.93 2.95 4.68 4.14.65.28 1.16.45 1.56.58.66.21 1.25.18 1.72.11.53-.08 1.61-.66 1.83-1.29.23-.63.23-1.17.16-1.29-.07-.11-.25-.18-.52-.32z"/></svg> WhatsApp</a>
+        <div class="combo-actions">
+          <button class="share-btn" type="button" aria-label="Compartir combo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M8 7l4-4 4 4"/><path d="M4 13v6a2 2 0 002 2h12a2 2 0 002-2v-6"/></svg></button>
+          <a class="wa-mini" href="https://wa.me/51925244643?text=Deseo%20información%20del%20Combo%20Oficina%20Segura%20Estándar" onclick="gtag('event','whatsapp_click',{product:'Combo Oficina Segura Estandar',location:'combos_page'})" target="_blank"><svg width="14" height="14" viewBox="0 0 32 32"><circle cx="16" cy="16" r="16" fill="#25D366"/><path fill="#fff" d="M23.47 8.52A10.9 10.9 0 0 0 16.02 5c-6.01 0-10.9 4.89-10.9 10.9 0 1.92.5 3.8 1.46 5.46L5 27l5.8-1.52a10.9 10.9 0 0 0 5.22 1.33h.005c6.01 0 10.9-4.89 10.9-10.9a10.84 10.84 0 0 0-3.45-7.79zm-7.45 16.77h-.004a9.06 9.06 0 0 1-4.61-1.26l-.33-.196-3.44.9.92-3.35-.215-.345a9.05 9.05 0 0 1-1.39-4.83c0-5.01 4.08-9.09 9.1-9.09a9.04 9.04 0 0 1 6.43 2.67 9.03 9.03 0 0 1 2.66 6.43c0 5.01-4.08 9.09-9.1 9.09zm4.99-6.81c-.27-.14-1.61-.79-1.86-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.16-1.34-.8-.71-1.34-1.6-1.5-1.87-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.48-.84-2.02-.22-.53-.44-.46-.61-.47l-.52-.01c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.29 0 1.35.98 2.66 1.12 2.84.14.18 1.93 2.95 4.68 4.14.65.28 1.16.45 1.56.58.66.21 1.25.18 1.72.11.53-.08 1.61-.66 1.83-1.29.23-.63.23-1.17.16-1.29-.07-.11-.25-.18-.52-.32z"/></svg> WhatsApp</a>
+        </div>
       </div>
     </div>
 
@@ -179,12 +194,15 @@
         <span class="combo-tag">Profesionales</span>
         <span class="combo-save">Ahorra S/14.50</span>
       </div>
-      <div class="combo-title">Oficina Segura · Plus</div>
+      <div class="combo-title" id="oficina-segura-plus">Oficina Segura · Plus</div>
       <div class="combo-includes">Office 2021 Pro Plus + Kaspersky Plus</div>
       <p class="combo-pitch">El balance perfecto: ofimática permanente y un antivirus que blinda tus transacciones y tu WiFi.</p>
       <div class="combo-bottom">
         <span class="combo-price-row"><span class="combo-old">S/145</span><span class="combo-new">S/130.50</span></span>
-        <a class="wa-mini" href="https://wa.me/51925244643?text=Deseo%20información%20del%20Combo%20Oficina%20Segura%20Plus" onclick="gtag('event','whatsapp_click',{product:'Combo Oficina Segura Plus',location:'combos_page'})" target="_blank"><svg width="14" height="14" viewBox="0 0 32 32"><circle cx="16" cy="16" r="16" fill="#25D366"/><path fill="#fff" d="M23.47 8.52A10.9 10.9 0 0 0 16.02 5c-6.01 0-10.9 4.89-10.9 10.9 0 1.92.5 3.8 1.46 5.46L5 27l5.8-1.52a10.9 10.9 0 0 0 5.22 1.33h.005c6.01 0 10.9-4.89 10.9-10.9a10.84 10.84 0 0 0-3.45-7.79zm-7.45 16.77h-.004a9.06 9.06 0 0 1-4.61-1.26l-.33-.196-3.44.9.92-3.35-.215-.345a9.05 9.05 0 0 1-1.39-4.83c0-5.01 4.08-9.09 9.1-9.09a9.04 9.04 0 0 1 6.43 2.67 9.03 9.03 0 0 1 2.66 6.43c0 5.01-4.08 9.09-9.1 9.09zm4.99-6.81c-.27-.14-1.61-.79-1.86-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.16-1.34-.8-.71-1.34-1.6-1.5-1.87-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.48-.84-2.02-.22-.53-.44-.46-.61-.47l-.52-.01c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.29 0 1.35.98 2.66 1.12 2.84.14.18 1.93 2.95 4.68 4.14.65.28 1.16.45 1.56.58.66.21 1.25.18 1.72.11.53-.08 1.61-.66 1.83-1.29.23-.63.23-1.17.16-1.29-.07-.11-.25-.18-.52-.32z"/></svg> WhatsApp</a>
+        <div class="combo-actions">
+          <button class="share-btn" type="button" aria-label="Compartir combo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M8 7l4-4 4 4"/><path d="M4 13v6a2 2 0 002 2h12a2 2 0 002-2v-6"/></svg></button>
+          <a class="wa-mini" href="https://wa.me/51925244643?text=Deseo%20información%20del%20Combo%20Oficina%20Segura%20Plus" onclick="gtag('event','whatsapp_click',{product:'Combo Oficina Segura Plus',location:'combos_page'})" target="_blank"><svg width="14" height="14" viewBox="0 0 32 32"><circle cx="16" cy="16" r="16" fill="#25D366"/><path fill="#fff" d="M23.47 8.52A10.9 10.9 0 0 0 16.02 5c-6.01 0-10.9 4.89-10.9 10.9 0 1.92.5 3.8 1.46 5.46L5 27l5.8-1.52a10.9 10.9 0 0 0 5.22 1.33h.005c6.01 0 10.9-4.89 10.9-10.9a10.84 10.84 0 0 0-3.45-7.79zm-7.45 16.77h-.004a9.06 9.06 0 0 1-4.61-1.26l-.33-.196-3.44.9.92-3.35-.215-.345a9.05 9.05 0 0 1-1.39-4.83c0-5.01 4.08-9.09 9.1-9.09a9.04 9.04 0 0 1 6.43 2.67 9.03 9.03 0 0 1 2.66 6.43c0 5.01-4.08 9.09-9.1 9.09zm4.99-6.81c-.27-.14-1.61-.79-1.86-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.16-1.34-.8-.71-1.34-1.6-1.5-1.87-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.48-.84-2.02-.22-.53-.44-.46-.61-.47l-.52-.01c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.29 0 1.35.98 2.66 1.12 2.84.14.18 1.93 2.95 4.68 4.14.65.28 1.16.45 1.56.58.66.21 1.25.18 1.72.11.53-.08 1.61-.66 1.83-1.29.23-.63.23-1.17.16-1.29-.07-.11-.25-.18-.52-.32z"/></svg> WhatsApp</a>
+        </div>
       </div>
     </div>
 
@@ -193,12 +211,15 @@
         <span class="combo-tag">Directores</span>
         <span class="combo-save">Ahorra S/19</span>
       </div>
-      <div class="combo-title">Oficina Segura · Pro</div>
+      <div class="combo-title" id="oficina-segura-pro">Oficina Segura · Pro</div>
       <div class="combo-includes">Microsoft 365 Anual + Kaspersky Premium</div>
       <p class="combo-pitch">Para líderes: seguridad con motores IA y oficina sincronizada para proteger tu patrimonio digital.</p>
       <div class="combo-bottom">
         <span class="combo-price-row"><span class="combo-old">S/190</span><span class="combo-new">S/171</span></span>
-        <a class="wa-mini" href="https://wa.me/51925244643?text=Deseo%20información%20del%20Combo%20Oficina%20Segura%20Pro" onclick="gtag('event','whatsapp_click',{product:'Combo Oficina Segura Pro',location:'combos_page'})" target="_blank"><svg width="14" height="14" viewBox="0 0 32 32"><circle cx="16" cy="16" r="16" fill="#25D366"/><path fill="#fff" d="M23.47 8.52A10.9 10.9 0 0 0 16.02 5c-6.01 0-10.9 4.89-10.9 10.9 0 1.92.5 3.8 1.46 5.46L5 27l5.8-1.52a10.9 10.9 0 0 0 5.22 1.33h.005c6.01 0 10.9-4.89 10.9-10.9a10.84 10.84 0 0 0-3.45-7.79zm-7.45 16.77h-.004a9.06 9.06 0 0 1-4.61-1.26l-.33-.196-3.44.9.92-3.35-.215-.345a9.05 9.05 0 0 1-1.39-4.83c0-5.01 4.08-9.09 9.1-9.09a9.04 9.04 0 0 1 6.43 2.67 9.03 9.03 0 0 1 2.66 6.43c0 5.01-4.08 9.09-9.1 9.09zm4.99-6.81c-.27-.14-1.61-.79-1.86-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.16-1.34-.8-.71-1.34-1.6-1.5-1.87-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.48-.84-2.02-.22-.53-.44-.46-.61-.47l-.52-.01c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.29 0 1.35.98 2.66 1.12 2.84.14.18 1.93 2.95 4.68 4.14.65.28 1.16.45 1.56.58.66.21 1.25.18 1.72.11.53-.08 1.61-.66 1.83-1.29.23-.63.23-1.17.16-1.29-.07-.11-.25-.18-.52-.32z"/></svg> WhatsApp</a>
+        <div class="combo-actions">
+          <button class="share-btn" type="button" aria-label="Compartir combo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M8 7l4-4 4 4"/><path d="M4 13v6a2 2 0 002 2h12a2 2 0 002-2v-6"/></svg></button>
+          <a class="wa-mini" href="https://wa.me/51925244643?text=Deseo%20información%20del%20Combo%20Oficina%20Segura%20Pro" onclick="gtag('event','whatsapp_click',{product:'Combo Oficina Segura Pro',location:'combos_page'})" target="_blank"><svg width="14" height="14" viewBox="0 0 32 32"><circle cx="16" cy="16" r="16" fill="#25D366"/><path fill="#fff" d="M23.47 8.52A10.9 10.9 0 0 0 16.02 5c-6.01 0-10.9 4.89-10.9 10.9 0 1.92.5 3.8 1.46 5.46L5 27l5.8-1.52a10.9 10.9 0 0 0 5.22 1.33h.005c6.01 0 10.9-4.89 10.9-10.9a10.84 10.84 0 0 0-3.45-7.79zm-7.45 16.77h-.004a9.06 9.06 0 0 1-4.61-1.26l-.33-.196-3.44.9.92-3.35-.215-.345a9.05 9.05 0 0 1-1.39-4.83c0-5.01 4.08-9.09 9.1-9.09a9.04 9.04 0 0 1 6.43 2.67 9.03 9.03 0 0 1 2.66 6.43c0 5.01-4.08 9.09-9.1 9.09zm4.99-6.81c-.27-.14-1.61-.79-1.86-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.16-1.34-.8-.71-1.34-1.6-1.5-1.87-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.48-.84-2.02-.22-.53-.44-.46-.61-.47l-.52-.01c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.29 0 1.35.98 2.66 1.12 2.84.14.18 1.93 2.95 4.68 4.14.65.28 1.16.45 1.56.58.66.21 1.25.18 1.72.11.53-.08 1.61-.66 1.83-1.29.23-.63.23-1.17.16-1.29-.07-.11-.25-.18-.52-.32z"/></svg> WhatsApp</a>
+        </div>
       </div>
     </div>
   </div>
@@ -219,7 +240,10 @@
       <p class="combo-pitch">El espacio de trabajo definitivo: terabytes de espacio, ofimática premium y protección total por un año.</p>
       <div class="combo-bottom">
         <span class="combo-price-row"><span class="combo-old">S/300</span><span class="combo-new">S/270</span></span>
-        <a class="wa-mini" href="https://wa.me/51925244643?text=Deseo%20información%20del%20Combo%20Oficina%20Inteligente%20Pro" onclick="gtag('event','whatsapp_click',{product:'Combo Oficina Inteligente Pro',location:'combos_page'})" target="_blank"><svg width="14" height="14" viewBox="0 0 32 32"><circle cx="16" cy="16" r="16" fill="#25D366"/><path fill="#fff" d="M23.47 8.52A10.9 10.9 0 0 0 16.02 5c-6.01 0-10.9 4.89-10.9 10.9 0 1.92.5 3.8 1.46 5.46L5 27l5.8-1.52a10.9 10.9 0 0 0 5.22 1.33h.005c6.01 0 10.9-4.89 10.9-10.9a10.84 10.84 0 0 0-3.45-7.79zm-7.45 16.77h-.004a9.06 9.06 0 0 1-4.61-1.26l-.33-.196-3.44.9.92-3.35-.215-.345a9.05 9.05 0 0 1-1.39-4.83c0-5.01 4.08-9.09 9.1-9.09a9.04 9.04 0 0 1 6.43 2.67 9.03 9.03 0 0 1 2.66 6.43c0 5.01-4.08 9.09-9.1 9.09zm4.99-6.81c-.27-.14-1.61-.79-1.86-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.16-1.34-.8-.71-1.34-1.6-1.5-1.87-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.48-.84-2.02-.22-.53-.44-.46-.61-.47l-.52-.01c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.29 0 1.35.98 2.66 1.12 2.84.14.18 1.93 2.95 4.68 4.14.65.28 1.16.45 1.56.58.66.21 1.25.18 1.72.11.53-.08 1.61-.66 1.83-1.29.23-.63.23-1.17.16-1.29-.07-.11-.25-.18-.52-.32z"/></svg> WhatsApp</a>
+        <div class="combo-actions">
+          <button class="share-btn" type="button" aria-label="Compartir combo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M8 7l4-4 4 4"/><path d="M4 13v6a2 2 0 002 2h12a2 2 0 002-2v-6"/></svg></button>
+          <a class="wa-mini" href="https://wa.me/51925244643?text=Deseo%20información%20del%20Combo%20Oficina%20Inteligente%20Pro" onclick="gtag('event','whatsapp_click',{product:'Combo Oficina Inteligente Pro',location:'combos_page'})" target="_blank"><svg width="14" height="14" viewBox="0 0 32 32"><circle cx="16" cy="16" r="16" fill="#25D366"/><path fill="#fff" d="M23.47 8.52A10.9 10.9 0 0 0 16.02 5c-6.01 0-10.9 4.89-10.9 10.9 0 1.92.5 3.8 1.46 5.46L5 27l5.8-1.52a10.9 10.9 0 0 0 5.22 1.33h.005c6.01 0 10.9-4.89 10.9-10.9a10.84 10.84 0 0 0-3.45-7.79zm-7.45 16.77h-.004a9.06 9.06 0 0 1-4.61-1.26l-.33-.196-3.44.9.92-3.35-.215-.345a9.05 9.05 0 0 1-1.39-4.83c0-5.01 4.08-9.09 9.1-9.09a9.04 9.04 0 0 1 6.43 2.67 9.03 9.03 0 0 1 2.66 6.43c0 5.01-4.08 9.09-9.1 9.09zm4.99-6.81c-.27-.14-1.61-.79-1.86-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.16-1.34-.8-.71-1.34-1.6-1.5-1.87-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.48-.84-2.02-.22-.53-.44-.46-.61-.47l-.52-.01c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.29 0 1.35.98 2.66 1.12 2.84.14.18 1.93 2.95 4.68 4.14.65.28 1.16.45 1.56.58.66.21 1.25.18 1.72.11.53-.08 1.61-.66 1.83-1.29.23-.63.23-1.17.16-1.29-.07-.11-.25-.18-.52-.32z"/></svg> WhatsApp</a>
+        </div>
       </div>
     </div>
 
@@ -230,12 +254,15 @@
         <span class="combo-tag">Universitarios</span>
         <span class="combo-save">Ahorra S/20</span>
       </div>
-      <div class="combo-title">Oficina Inteligente y Segura · Estándar</div>
+      <div class="combo-title" id="oficina-inteligente-estandar">Oficina Inteligente y Segura · Estándar</div>
       <div class="combo-includes">Microsoft 365 Anual + Google One 200GB (6 meses) + Kaspersky Standard</div>
       <p class="combo-pitch">Entorno completo y accesible: ofimática anual, seguridad y nube semestral para no perder tesis o proyectos.</p>
       <div class="combo-bottom">
         <span class="combo-price-row"><span class="combo-old">S/210</span><span class="combo-new">S/190</span></span>
-        <a class="wa-mini" href="https://wa.me/51925244643?text=Deseo%20información%20del%20Combo%20Oficina%20Inteligente%20Estándar" onclick="gtag('event','whatsapp_click',{product:'Combo Oficina Inteligente Estandar',location:'combos_page'})" target="_blank"><svg width="14" height="14" viewBox="0 0 32 32"><circle cx="16" cy="16" r="16" fill="#25D366"/><path fill="#fff" d="M23.47 8.52A10.9 10.9 0 0 0 16.02 5c-6.01 0-10.9 4.89-10.9 10.9 0 1.92.5 3.8 1.46 5.46L5 27l5.8-1.52a10.9 10.9 0 0 0 5.22 1.33h.005c6.01 0 10.9-4.89 10.9-10.9a10.84 10.84 0 0 0-3.45-7.79zm-7.45 16.77h-.004a9.06 9.06 0 0 1-4.61-1.26l-.33-.196-3.44.9.92-3.35-.215-.345a9.05 9.05 0 0 1-1.39-4.83c0-5.01 4.08-9.09 9.1-9.09a9.04 9.04 0 0 1 6.43 2.67 9.03 9.03 0 0 1 2.66 6.43c0 5.01-4.08 9.09-9.1 9.09zm4.99-6.81c-.27-.14-1.61-.79-1.86-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.16-1.34-.8-.71-1.34-1.6-1.5-1.87-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.48-.84-2.02-.22-.53-.44-.46-.61-.47l-.52-.01c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.29 0 1.35.98 2.66 1.12 2.84.14.18 1.93 2.95 4.68 4.14.65.28 1.16.45 1.56.58.66.21 1.25.18 1.72.11.53-.08 1.61-.66 1.83-1.29.23-.63.23-1.17.16-1.29-.07-.11-.25-.18-.52-.32z"/></svg> WhatsApp</a>
+        <div class="combo-actions">
+          <button class="share-btn" type="button" aria-label="Compartir combo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M8 7l4-4 4 4"/><path d="M4 13v6a2 2 0 002 2h12a2 2 0 002-2v-6"/></svg></button>
+          <a class="wa-mini" href="https://wa.me/51925244643?text=Deseo%20información%20del%20Combo%20Oficina%20Inteligente%20Estándar" onclick="gtag('event','whatsapp_click',{product:'Combo Oficina Inteligente Estandar',location:'combos_page'})" target="_blank"><svg width="14" height="14" viewBox="0 0 32 32"><circle cx="16" cy="16" r="16" fill="#25D366"/><path fill="#fff" d="M23.47 8.52A10.9 10.9 0 0 0 16.02 5c-6.01 0-10.9 4.89-10.9 10.9 0 1.92.5 3.8 1.46 5.46L5 27l5.8-1.52a10.9 10.9 0 0 0 5.22 1.33h.005c6.01 0 10.9-4.89 10.9-10.9a10.84 10.84 0 0 0-3.45-7.79zm-7.45 16.77h-.004a9.06 9.06 0 0 1-4.61-1.26l-.33-.196-3.44.9.92-3.35-.215-.345a9.05 9.05 0 0 1-1.39-4.83c0-5.01 4.08-9.09 9.1-9.09a9.04 9.04 0 0 1 6.43 2.67 9.03 9.03 0 0 1 2.66 6.43c0 5.01-4.08 9.09-9.1 9.09zm4.99-6.81c-.27-.14-1.61-.79-1.86-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.16-1.34-.8-.71-1.34-1.6-1.5-1.87-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.48-.84-2.02-.22-.53-.44-.46-.61-.47l-.52-.01c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.29 0 1.35.98 2.66 1.12 2.84.14.18 1.93 2.95 4.68 4.14.65.28 1.16.45 1.56.58.66.21 1.25.18 1.72.11.53-.08 1.61-.66 1.83-1.29.23-.63.23-1.17.16-1.29-.07-.11-.25-.18-.52-.32z"/></svg> WhatsApp</a>
+        </div>
       </div>
     </div>
 
@@ -244,12 +271,15 @@
         <span class="combo-tag">Editores / arquitectos</span>
         <span class="combo-save">Ahorra S/15</span>
       </div>
-      <div class="combo-title">Oficina Inteligente · Trimestral</div>
+      <div class="combo-title" id="oficina-inteligente-trimestral">Oficina Inteligente · Trimestral</div>
       <div class="combo-includes">Microsoft 365 Anual + Google One 5TB Trimestral</div>
       <p class="combo-pitch">Capacidad masiva para mentes creativas: si tus proyectos pesan gigabytes, este es tu ecosistema.</p>
       <div class="combo-bottom">
         <span class="combo-price-row"><span class="combo-old">S/150</span><span class="combo-new">S/135</span></span>
-        <a class="wa-mini" href="https://wa.me/51925244643?text=Deseo%20información%20del%20Combo%20Oficina%20Inteligente%20Trimestral" onclick="gtag('event','whatsapp_click',{product:'Combo Oficina Inteligente Trimestral',location:'combos_page'})" target="_blank"><svg width="14" height="14" viewBox="0 0 32 32"><circle cx="16" cy="16" r="16" fill="#25D366"/><path fill="#fff" d="M23.47 8.52A10.9 10.9 0 0 0 16.02 5c-6.01 0-10.9 4.89-10.9 10.9 0 1.92.5 3.8 1.46 5.46L5 27l5.8-1.52a10.9 10.9 0 0 0 5.22 1.33h.005c6.01 0 10.9-4.89 10.9-10.9a10.84 10.84 0 0 0-3.45-7.79zm-7.45 16.77h-.004a9.06 9.06 0 0 1-4.61-1.26l-.33-.196-3.44.9.92-3.35-.215-.345a9.05 9.05 0 0 1-1.39-4.83c0-5.01 4.08-9.09 9.1-9.09a9.04 9.04 0 0 1 6.43 2.67 9.03 9.03 0 0 1 2.66 6.43c0 5.01-4.08 9.09-9.1 9.09zm4.99-6.81c-.27-.14-1.61-.79-1.86-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.16-1.34-.8-.71-1.34-1.6-1.5-1.87-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.48-.84-2.02-.22-.53-.44-.46-.61-.47l-.52-.01c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.29 0 1.35.98 2.66 1.12 2.84.14.18 1.93 2.95 4.68 4.14.65.28 1.16.45 1.56.58.66.21 1.25.18 1.72.11.53-.08 1.61-.66 1.83-1.29.23-.63.23-1.17.16-1.29-.07-.11-.25-.18-.52-.32z"/></svg> WhatsApp</a>
+        <div class="combo-actions">
+          <button class="share-btn" type="button" aria-label="Compartir combo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M8 7l4-4 4 4"/><path d="M4 13v6a2 2 0 002 2h12a2 2 0 002-2v-6"/></svg></button>
+          <a class="wa-mini" href="https://wa.me/51925244643?text=Deseo%20información%20del%20Combo%20Oficina%20Inteligente%20Trimestral" onclick="gtag('event','whatsapp_click',{product:'Combo Oficina Inteligente Trimestral',location:'combos_page'})" target="_blank"><svg width="14" height="14" viewBox="0 0 32 32"><circle cx="16" cy="16" r="16" fill="#25D366"/><path fill="#fff" d="M23.47 8.52A10.9 10.9 0 0 0 16.02 5c-6.01 0-10.9 4.89-10.9 10.9 0 1.92.5 3.8 1.46 5.46L5 27l5.8-1.52a10.9 10.9 0 0 0 5.22 1.33h.005c6.01 0 10.9-4.89 10.9-10.9a10.84 10.84 0 0 0-3.45-7.79zm-7.45 16.77h-.004a9.06 9.06 0 0 1-4.61-1.26l-.33-.196-3.44.9.92-3.35-.215-.345a9.05 9.05 0 0 1-1.39-4.83c0-5.01 4.08-9.09 9.1-9.09a9.04 9.04 0 0 1 6.43 2.67 9.03 9.03 0 0 1 2.66 6.43c0 5.01-4.08 9.09-9.1 9.09zm4.99-6.81c-.27-.14-1.61-.79-1.86-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.16-1.34-.8-.71-1.34-1.6-1.5-1.87-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.48-.84-2.02-.22-.53-.44-.46-.61-.47l-.52-.01c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.29 0 1.35.98 2.66 1.12 2.84.14.18 1.93 2.95 4.68 4.14.65.28 1.16.45 1.56.58.66.21 1.25.18 1.72.11.53-.08 1.61-.66 1.83-1.29.23-.63.23-1.17.16-1.29-.07-.11-.25-.18-.52-.32z"/></svg> WhatsApp</a>
+        </div>
       </div>
     </div>
 
@@ -258,12 +288,15 @@
         <span class="combo-tag">Archivos pesados</span>
         <span class="combo-save">Ahorra S/19.50</span>
       </div>
-      <div class="combo-title">Oficina Inteligente · Plus</div>
+      <div class="combo-title" id="oficina-inteligente-plus">Oficina Inteligente · Plus</div>
       <div class="combo-includes">Office 2021 Pro Plus + Google One 2TB Anual</div>
       <p class="combo-pitch">Ofimática de pago único y almacenamiento corporativo de 2TB asegurado por todo el año.</p>
       <div class="combo-bottom">
         <span class="combo-price-row"><span class="combo-old">S/195</span><span class="combo-new">S/175.50</span></span>
-        <a class="wa-mini" href="https://wa.me/51925244643?text=Deseo%20información%20del%20Combo%20Oficina%20Inteligente%20Plus" onclick="gtag('event','whatsapp_click',{product:'Combo Oficina Inteligente Plus',location:'combos_page'})" target="_blank"><svg width="14" height="14" viewBox="0 0 32 32"><circle cx="16" cy="16" r="16" fill="#25D366"/><path fill="#fff" d="M23.47 8.52A10.9 10.9 0 0 0 16.02 5c-6.01 0-10.9 4.89-10.9 10.9 0 1.92.5 3.8 1.46 5.46L5 27l5.8-1.52a10.9 10.9 0 0 0 5.22 1.33h.005c6.01 0 10.9-4.89 10.9-10.9a10.84 10.84 0 0 0-3.45-7.79zm-7.45 16.77h-.004a9.06 9.06 0 0 1-4.61-1.26l-.33-.196-3.44.9.92-3.35-.215-.345a9.05 9.05 0 0 1-1.39-4.83c0-5.01 4.08-9.09 9.1-9.09a9.04 9.04 0 0 1 6.43 2.67 9.03 9.03 0 0 1 2.66 6.43c0 5.01-4.08 9.09-9.1 9.09zm4.99-6.81c-.27-.14-1.61-.79-1.86-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.16-1.34-.8-.71-1.34-1.6-1.5-1.87-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.48-.84-2.02-.22-.53-.44-.46-.61-.47l-.52-.01c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.29 0 1.35.98 2.66 1.12 2.84.14.18 1.93 2.95 4.68 4.14.65.28 1.16.45 1.56.58.66.21 1.25.18 1.72.11.53-.08 1.61-.66 1.83-1.29.23-.63.23-1.17.16-1.29-.07-.11-.25-.18-.52-.32z"/></svg> WhatsApp</a>
+        <div class="combo-actions">
+          <button class="share-btn" type="button" aria-label="Compartir combo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M8 7l4-4 4 4"/><path d="M4 13v6a2 2 0 002 2h12a2 2 0 002-2v-6"/></svg></button>
+          <a class="wa-mini" href="https://wa.me/51925244643?text=Deseo%20información%20del%20Combo%20Oficina%20Inteligente%20Plus" onclick="gtag('event','whatsapp_click',{product:'Combo Oficina Inteligente Plus',location:'combos_page'})" target="_blank"><svg width="14" height="14" viewBox="0 0 32 32"><circle cx="16" cy="16" r="16" fill="#25D366"/><path fill="#fff" d="M23.47 8.52A10.9 10.9 0 0 0 16.02 5c-6.01 0-10.9 4.89-10.9 10.9 0 1.92.5 3.8 1.46 5.46L5 27l5.8-1.52a10.9 10.9 0 0 0 5.22 1.33h.005c6.01 0 10.9-4.89 10.9-10.9a10.84 10.84 0 0 0-3.45-7.79zm-7.45 16.77h-.004a9.06 9.06 0 0 1-4.61-1.26l-.33-.196-3.44.9.92-3.35-.215-.345a9.05 9.05 0 0 1-1.39-4.83c0-5.01 4.08-9.09 9.1-9.09a9.04 9.04 0 0 1 6.43 2.67 9.03 9.03 0 0 1 2.66 6.43c0 5.01-4.08 9.09-9.1 9.09zm4.99-6.81c-.27-.14-1.61-.79-1.86-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.16-1.34-.8-.71-1.34-1.6-1.5-1.87-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.48-.84-2.02-.22-.53-.44-.46-.61-.47l-.52-.01c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.29 0 1.35.98 2.66 1.12 2.84.14.18 1.93 2.95 4.68 4.14.65.28 1.16.45 1.56.58.66.21 1.25.18 1.72.11.53-.08 1.61-.66 1.83-1.29.23-.63.23-1.17.16-1.29-.07-.11-.25-.18-.52-.32z"/></svg> WhatsApp</a>
+        </div>
       </div>
     </div>
   </div>
@@ -279,12 +312,15 @@
         <span class="combo-tag">Agencias / devs</span>
         <span class="combo-save">Ahorra S/7</span>
       </div>
-      <div class="combo-title">Pack Creadores · Pro</div>
+      <div class="combo-title" id="pack-creadores-pro">Pack Creadores · Pro</div>
       <div class="combo-includes">ChatGPT Plus Mensual + Google One 5TB Mensual</div>
       <p class="combo-pitch">Tu agencia personal impulsada por IA. Acelera entregas y guarda infinitas versiones en la nube.</p>
       <div class="combo-bottom">
         <span class="combo-price-row"><span class="combo-old">S/70</span><span class="combo-new">S/63</span></span>
-        <a class="wa-mini" href="https://wa.me/51925244643?text=Deseo%20información%20del%20Pack%20Creadores%20Pro" onclick="gtag('event','whatsapp_click',{product:'Pack Creadores Pro',location:'combos_page'})" target="_blank"><svg width="14" height="14" viewBox="0 0 32 32"><circle cx="16" cy="16" r="16" fill="#25D366"/><path fill="#fff" d="M23.47 8.52A10.9 10.9 0 0 0 16.02 5c-6.01 0-10.9 4.89-10.9 10.9 0 1.92.5 3.8 1.46 5.46L5 27l5.8-1.52a10.9 10.9 0 0 0 5.22 1.33h.005c6.01 0 10.9-4.89 10.9-10.9a10.84 10.84 0 0 0-3.45-7.79zm-7.45 16.77h-.004a9.06 9.06 0 0 1-4.61-1.26l-.33-.196-3.44.9.92-3.35-.215-.345a9.05 9.05 0 0 1-1.39-4.83c0-5.01 4.08-9.09 9.1-9.09a9.04 9.04 0 0 1 6.43 2.67 9.03 9.03 0 0 1 2.66 6.43c0 5.01-4.08 9.09-9.1 9.09zm4.99-6.81c-.27-.14-1.61-.79-1.86-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.16-1.34-.8-.71-1.34-1.6-1.5-1.87-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.48-.84-2.02-.22-.53-.44-.46-.61-.47l-.52-.01c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.29 0 1.35.98 2.66 1.12 2.84.14.18 1.93 2.95 4.68 4.14.65.28 1.16.45 1.56.58.66.21 1.25.18 1.72.11.53-.08 1.61-.66 1.83-1.29.23-.63.23-1.17.16-1.29-.07-.11-.25-.18-.52-.32z"/></svg> WhatsApp</a>
+        <div class="combo-actions">
+          <button class="share-btn" type="button" aria-label="Compartir combo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M8 7l4-4 4 4"/><path d="M4 13v6a2 2 0 002 2h12a2 2 0 002-2v-6"/></svg></button>
+          <a class="wa-mini" href="https://wa.me/51925244643?text=Deseo%20información%20del%20Pack%20Creadores%20Pro" onclick="gtag('event','whatsapp_click',{product:'Pack Creadores Pro',location:'combos_page'})" target="_blank"><svg width="14" height="14" viewBox="0 0 32 32"><circle cx="16" cy="16" r="16" fill="#25D366"/><path fill="#fff" d="M23.47 8.52A10.9 10.9 0 0 0 16.02 5c-6.01 0-10.9 4.89-10.9 10.9 0 1.92.5 3.8 1.46 5.46L5 27l5.8-1.52a10.9 10.9 0 0 0 5.22 1.33h.005c6.01 0 10.9-4.89 10.9-10.9a10.84 10.84 0 0 0-3.45-7.79zm-7.45 16.77h-.004a9.06 9.06 0 0 1-4.61-1.26l-.33-.196-3.44.9.92-3.35-.215-.345a9.05 9.05 0 0 1-1.39-4.83c0-5.01 4.08-9.09 9.1-9.09a9.04 9.04 0 0 1 6.43 2.67 9.03 9.03 0 0 1 2.66 6.43c0 5.01-4.08 9.09-9.1 9.09zm4.99-6.81c-.27-.14-1.61-.79-1.86-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.16-1.34-.8-.71-1.34-1.6-1.5-1.87-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.48-.84-2.02-.22-.53-.44-.46-.61-.47l-.52-.01c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.29 0 1.35.98 2.66 1.12 2.84.14.18 1.93 2.95 4.68 4.14.65.28 1.16.45 1.56.58.66.21 1.25.18 1.72.11.53-.08 1.61-.66 1.83-1.29.23-.63.23-1.17.16-1.29-.07-.11-.25-.18-.52-.32z"/></svg> WhatsApp</a>
+        </div>
       </div>
     </div>
   </div>
@@ -315,6 +351,18 @@
 </a>
 
 <script>
+  document.querySelectorAll('.share-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const combo = btn.closest('.combo');
+      const titleEl = combo.querySelector('.combo-title');
+      const price = combo.querySelector('.combo-new').textContent;
+      const url = titleEl.id ? `${location.origin}/combos/#${titleEl.id}` : `${location.origin}/combos/`;
+      const text = `${titleEl.textContent} a ${price} en JNxKeys. Licencias originales, pago por Yape.\n${url}`;
+      gtag('event', 'combo_share', { combo: titleEl.textContent });
+      window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`, '_blank');
+    });
+  });
+
   document.querySelectorAll('.more-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       const target = document.getElementById(btn.dataset.target);
