@@ -141,7 +141,9 @@ h1.hero em{font-style:italic;color:var(--g-blue);}
 .plan-name{font-family:'DM Serif Display',serif;font-size:22px;color:var(--dark);margin-bottom:6px;}
 .plan-desc{font-size:12.5px;color:var(--muted);line-height:1.5;margin-bottom:16px;min-height:52px;}
 .plan-options{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
-.plan-opt{border:1px solid var(--border);border-radius:12px;padding:10px 12px;text-align:center;}
+.plan-opt{border:1.5px solid var(--border);border-radius:12px;padding:10px 12px;text-align:center;background:none;font-family:inherit;cursor:pointer;transition:border-color .15s ease, background .15s ease, transform .1s ease;width:100%;}
+.plan-opt:hover{border-color:var(--g-blue);}
+.plan-opt:active{transform:scale(.97);}
 .plan-opt.featured{border-color:var(--g-blue);background:var(--g-light);}
 .plan-opt-label{font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px;}
 .plan-opt-old{font-size:11px;color:#98a2b3;text-decoration:line-through;}
@@ -187,14 +189,6 @@ h1.hero em{font-style:italic;color:var(--g-blue);}
 .compare-yes{color:var(--g-green);font-weight:800;}
 .compare-no{color:var(--g-red);font-weight:800;}
 
-/* FEATURES */
-.feat-section{background:var(--white);border:1px solid var(--border);border-radius:18px;padding:20px 22px;margin-bottom:20px;}
-.feat-title{font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:16px;}
-.feat-list{display:grid;gap:12px;}
-.feat-item{display:flex;gap:12px;align-items:flex-start;}
-.feat-icon{font-size:20px;flex-shrink:0;margin-top:1px;}
-.feat-name{font-size:14px;font-weight:700;color:var(--dark);margin-bottom:2px;}
-.feat-desc{font-size:12.5px;color:var(--muted);line-height:1.5;}
 
 .google-note{background:var(--gold-light);border:1px solid #f5d99a;border-radius:12px;padding:13px 17px;font-size:13px;color:var(--gold);display:flex;gap:9px;align-items:flex-start;margin-bottom:20px;}
 
@@ -287,17 +281,17 @@ h1.hero em{font-style:italic;color:var(--g-blue);}
       <div class="plan-name">AI Plus 2TB</div>
       <div class="plan-desc">2TB solo para ti. Ideal para uso individual.</div>
       <div class="plan-options">
-        <div class="plan-opt">
+        <button type="button" class="plan-opt">
           <div class="plan-opt-label">Mensual</div>
           <div class="plan-opt-old">S/25</div>
           <div class="plan-opt-price">S/15</div>
-        </div>
-        <div class="plan-opt featured">
+        </button>
+        <button type="button" class="plan-opt featured">
           <div class="plan-opt-label">Anual</div>
           <div class="plan-opt-old">S/180</div>
           <div class="plan-opt-price">S/125</div>
           <div class="plan-opt-tag">+1 mes gratis</div>
-        </div>
+        </button>
       </div>
       <div class="plan-actions">
         <button class="plan-share-btn" type="button" aria-label="Compartir plan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M8 7l4-4 4 4"/><path d="M4 13v6a2 2 0 002 2h12a2 2 0 002-2v-6"/></svg></button>
@@ -310,16 +304,16 @@ h1.hero em{font-style:italic;color:var(--g-blue);}
       <div class="plan-name">AI Plus 200GB</div>
       <div class="plan-desc">Compartes 200GB entre 5 cuentas, cada una con su propio cupo. Ideal para estudiantes.</div>
       <div class="plan-options">
-        <div class="plan-opt featured">
+        <button type="button" class="plan-opt featured">
           <div class="plan-opt-label">Mensual</div>
           <div class="plan-opt-price">S/10</div>
           <div class="plan-opt-tag">por cupo</div>
-        </div>
-        <div class="plan-opt">
+        </button>
+        <button type="button" class="plan-opt">
           <div class="plan-opt-label">Semestral</div>
           <div class="plan-opt-price">S/50</div>
           <div class="plan-opt-tag">por cupo</div>
-        </div>
+        </button>
       </div>
       <div class="plan-actions">
         <button class="plan-share-btn" type="button" aria-label="Compartir plan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M8 7l4-4 4 4"/><path d="M4 13v6a2 2 0 002 2h12a2 2 0 002-2v-6"/></svg></button>
@@ -332,16 +326,16 @@ h1.hero em{font-style:italic;color:var(--g-blue);}
       <div class="plan-name">AI Pro 5TB</div>
       <div class="plan-desc">5TB de almacenamiento por cupo, para quien necesita más espacio.</div>
       <div class="plan-options">
-        <div class="plan-opt featured">
+        <button type="button" class="plan-opt featured">
           <div class="plan-opt-label">Mensual</div>
           <div class="plan-opt-price">S/20</div>
           <div class="plan-opt-tag">por cupo</div>
-        </div>
-        <div class="plan-opt">
+        </button>
+        <button type="button" class="plan-opt">
           <div class="plan-opt-label">Trimestral</div>
           <div class="plan-opt-price">S/50</div>
           <div class="plan-opt-tag">por cupo</div>
-        </div>
+        </button>
       </div>
       <div class="plan-actions">
         <button class="plan-share-btn" type="button" aria-label="Compartir plan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M8 7l4-4 4 4"/><path d="M4 13v6a2 2 0 002 2h12a2 2 0 002-2v-6"/></svg></button>
@@ -409,39 +403,6 @@ h1.hero em{font-style:italic;color:var(--g-blue);}
     </div>
 </div>
 
-  <div class="feat-section">
-    <div class="feat-title">¿Qué incluye?</div>
-    <div class="feat-list">
-      <div class="feat-item">
-        <span class="feat-icon">🤖</span>
-        <div><div class="feat-name">Gemini Advanced</div><div class="feat-desc">La IA más potente de Google para razonar, programar y redactar.</div></div>
-      </div>
-      <div class="feat-item">
-        <span class="feat-icon">🎨</span>
-        <div><div class="feat-name">Nano Banana Pro</div><div class="feat-desc">Crea hasta 1,000 imágenes de alta calidad al día solo describiéndolas.</div></div>
-      </div>
-      <div class="feat-item">
-        <span class="feat-icon">🎬</span>
-        <div><div class="feat-name">Veo 3.1</div><div class="feat-desc">Genera videos cinematográficos de alta fidelidad con inteligencia artificial.</div></div>
-      </div>
-      <div class="feat-item">
-        <span class="feat-icon">✨</span>
-        <div><div class="feat-name">Flow</div><div class="feat-desc">Diseña videos dinámicos y profesionales partiendo de tus fotos o imágenes. Obten hasta 200 creditos mensuales.</div></div>
-      </div>
-      <div class="feat-item">
-        <span class="feat-icon">📚</span>
-        <div><div class="feat-name">NotebookLM</div><div class="feat-desc">Analiza archivos PDF y documentos largos en segundos. Tu asistente de investigación personal.</div></div>
-      </div>
-      <div class="feat-item">
-        <span class="feat-icon">☁️</span>
-        <div><div class="feat-name">2TB de almacenamiento</div><div class="feat-desc">Para tus Fotos, Drive y Gmail. Olvídate del aviso "almacenamiento lleno"</div></div>
-      </div>
-      <div class="feat-item">
-        <span class="feat-icon">📹</span>
-        <div><div class="feat-name">Meet Premium</div><div class="feat-desc">Reuniones con grabación incluida y funciones avanzadas de Workspace.</div></div>
-      </div>
-    </div>
-  </div>
 </div>
 <div class="bnav"><div class="bnav-inner">
   <button class="nbtn p" onclick="goScreen('s2')">¿Es seguro comprar? →</button>
@@ -626,13 +587,39 @@ planNext.addEventListener('click', ()=>{
   const idx = Math.min(planSlides.length - 1, currentPlanIndex() + 1);
   smoothScrollTo(planCarousel, planSlideOffset(planSlides[idx]), 550);
 });
+function selectedPlanOpt(slide){
+  return slide.querySelector('.plan-opt.featured') || slide.querySelector('.plan-opt');
+}
+function updatePlanWaBtn(slide){
+  const selected = selectedPlanOpt(slide);
+  const planName = slide.querySelector('.plan-name').textContent.trim();
+  const duration = selected.querySelector('.plan-opt-label').textContent.trim();
+  const price = selected.querySelector('.plan-opt-price').textContent.trim();
+  const waBtn = slide.querySelector('.plan-wa-btn');
+  const text = `Deseo información del plan ${planName} ${duration} (${price}) de Google One`;
+  waBtn.href = `https://wa.me/51925244643?text=${encodeURIComponent(text)}`;
+}
+document.querySelectorAll('.plan-slide').forEach(slide => {
+  const opts = slide.querySelectorAll('.plan-opt');
+  opts.forEach(opt => {
+    opt.addEventListener('click', () => {
+      opts.forEach(o => o.classList.remove('featured'));
+      opt.classList.add('featured');
+      updatePlanWaBtn(slide);
+    });
+  });
+  updatePlanWaBtn(slide);
+});
+
 document.querySelectorAll('.plan-share-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     const slide = btn.closest('.plan-slide');
     const name = slide.querySelector('.plan-name').textContent;
-    const price = slide.querySelector('.plan-opt-price').textContent;
+    const selected = selectedPlanOpt(slide);
+    const duration = selected.querySelector('.plan-opt-label').textContent.trim();
+    const price = selected.querySelector('.plan-opt-price').textContent.trim();
     const url = `${location.origin}/google%20one/#${slide.id}`;
-    const text = `Plan ${name} desde ${price} en JNxKeys.\nLicencias originales con garantía.\n${url}\nhttps://www.facebook.com/JNxKeys/`;
+    const text = `Plan ${name} ${duration} a ${price} en JNxKeys.\nLicencias originales con garantía.\n${url}\nhttps://www.facebook.com/JNxKeys/`;
     gtag('event', 'plan_share', { product: 'Google One', plan: name });
     window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`, '_blank');
   });
