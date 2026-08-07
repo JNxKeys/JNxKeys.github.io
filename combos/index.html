@@ -355,9 +355,11 @@
     btn.addEventListener('click', () => {
       const combo = btn.closest('.combo');
       const titleEl = combo.querySelector('.combo-title');
-      const price = combo.querySelector('.combo-new').textContent;
+      const oldPrice = combo.querySelector('.combo-old').textContent;
+      const newPrice = combo.querySelector('.combo-new').textContent;
+      const title = titleEl.textContent.startsWith('Pack') ? titleEl.textContent : `Pack ${titleEl.textContent}`;
       const url = titleEl.id ? `${location.origin}/combos/#${titleEl.id}` : `${location.origin}/combos/`;
-      const text = `${titleEl.textContent} a ${price} en JNxKeys. Licencias originales, pago por Yape.\n${url}`;
+      const text = `${title}: antes ${oldPrice}, ahora ${newPrice} en JNxKeys.\nLicencias originales con garantía.\n${url}\nhttps://www.facebook.com/JNxKeys/`;
       gtag('event', 'combo_share', { combo: titleEl.textContent });
       window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`, '_blank');
     });
