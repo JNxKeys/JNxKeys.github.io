@@ -121,6 +121,16 @@ h1.hero em{font-style:italic;color:var(--win);}
 .trust-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:24px;}
 .trust-card{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:18px;transition:box-shadow .18s;}
 .trust-card:hover{box-shadow:0 4px 16px rgba(0,120,212,.08);}
+
+.evidence-label{font-size:10.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;}
+.evidence-scroll{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px;margin-bottom:24px;-webkit-overflow-scrolling:touch;}
+.evidence-scroll::-webkit-scrollbar{height:5px;}
+.evidence-scroll::-webkit-scrollbar-thumb{background:var(--border);border-radius:10px;}
+.evidence-card{scroll-snap-align:start;flex:0 0 150px;aspect-ratio:4/5;border-radius:16px;overflow:hidden;position:relative;}
+.evidence-card img{width:100%;height:100%;object-fit:cover;display:block;}
+.evidence-placeholder{flex:0 0 150px;aspect-ratio:4/5;border-radius:16px;border:1.5px dashed var(--border);background:var(--accent-light);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;padding:12px;scroll-snap-align:start;}
+.evidence-placeholder .e-icon{font-size:26px;opacity:.5;}
+.evidence-placeholder .e-text{font-size:11px;color:var(--muted);font-weight:600;line-height:1.4;}
 .guarantee{background:var(--green-light);border:1px solid #a8e0cc;border-radius:14px;padding:18px 20px;display:flex;gap:14px;align-items:flex-start;margin-bottom:24px;}
 .g-desc{font-size:13px;color:#1a5940;line-height:1.6;}
 .how-label{font-size:10.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;}
@@ -330,6 +340,15 @@ h1.hero em{font-style:italic;color:var(--win);}
     <div class="trust-card"><div class="t-icon">⚡</div><div class="t-title">Entrega inmediata</div><div class="t-desc">Confirmo tu pago y te envío la clave de activación por WhatsApp o correo al instante.</div></div>
     <div class="trust-card"><div class="t-icon">📲</div><div class="t-title">Soporte directo</div><div class="t-desc">Si tienes algún problema activando, te ayudo por WhatsApp paso a paso hasta que funcione.</div></div>
     <div class="trust-card"><div class="t-icon">🌍</div><div class="t-title">Clientes en varios países</div><div class="t-desc">Clientes activos en Perú, México y Latinoamérica usando sus licencias sin problemas.</div></div>
+  </div>
+
+  <div class="evidence-label">Evidencia real de compras</div>
+  <div class="evidence-scroll">
+    <div class="evidence-placeholder"><div class="e-icon">📸</div><div class="e-text">Evidencia próximamente</div></div>
+    <div class="evidence-placeholder"><div class="e-icon">📸</div><div class="e-text">Evidencia próximamente</div></div>
+    <div class="evidence-placeholder"><div class="e-icon">📸</div><div class="e-text">Evidencia próximamente</div></div>
+    <div class="evidence-placeholder"><div class="e-icon">📸</div><div class="e-text">Evidencia próximamente</div></div>
+    <div class="evidence-placeholder"><div class="e-icon">📸</div><div class="e-text">Evidencia próximamente</div></div>
   </div>
 
   <div class="guarantee">
