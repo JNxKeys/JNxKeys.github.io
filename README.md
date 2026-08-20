@@ -8,13 +8,13 @@ Sitio estático de JNxKeys: venta de licencias digitales originales (Windows, ES
 index.html       # Hub/landing con enlaces a cada producto
 windows/         # Página de producto Windows 10 Pro / 11 Pro
 eset/            # Página de producto ESET Antivirus
-google one/      # Página de producto Google One AI Plus
+google-one/      # Página de producto Google One AI Plus
 kaspersky/       # Página de producto Kaspersky Antivirus
 office/          # Página de producto Microsoft Office
 chatgpt/         # Página de producto ChatGPT Plus
 canva/           # Página de producto Canva Pro
 capcut/          # Página de producto CapCut Pro
-apple one/       # Página de producto Apple One (INACTIVA temporalmente, ver Notas)
+apple-one/       # Página de producto Apple One (INACTIVA temporalmente, ver Notas)
 combos/          # Página con los 10 combos (paquetes de varios productos)
 assets/img/      # Logos e imágenes compartidas
 assets/css/      # CSS compartido entre las páginas de producto
@@ -27,7 +27,7 @@ Cada página de producto es un mini-SPA de 3 pantallas (producto → confianza �
 
 ## Patrones comunes entre páginas de producto
 
-Las páginas de producto activas (`windows/`, `eset/`, `google one/`, `kaspersky/`, `office/`, `chatgpt/`, `canva/`, `capcut/`) siguen la misma estructura, replicada manualmente en cada archivo (no hay componentes compartidos):
+Las páginas de producto activas (`windows/`, `eset/`, `google-one/`, `kaspersky/`, `office/`, `chatgpt/`, `canva/`, `capcut/`) siguen la misma estructura, replicada manualmente en cada archivo (no hay componentes compartidos):
 
 - **Cinta de marca** (`.top-ribbon`) al inicio de la pantalla 1: logo chico + "JNxKeys · Licencias digitales originales" sobre un degradado con los colores de esa página. Reemplaza el logo grande que existía antes.
 - **Botón "Pedir por WhatsApp" por tarjeta de producto/plan** (`.card-wa-btn` / `.plan-wa-btn`): cada tarjeta arma su propio mensaje de WhatsApp con el nombre del producto/plan específico (no un mensaje genérico). En Google One, además, el precio Mensual/Anual (u otra duración) es seleccionable — el botón toma el texto y precio de la opción marcada.
@@ -53,7 +53,7 @@ Todas las páginas cargan el mismo tag (`G-XTFDKH1ESP`). Eventos personalizados 
 
 ## Notas
 
-- Las carpetas `apple one/` y `google one/` llevan un espacio en el nombre intencionalmente — no renombrar, ya que rompería enlaces existentes compartidos con clientes.
+- Las carpetas `apple-one/` y `google-one/` llevan un espacio en el nombre intencionalmente — no renombrar, ya que rompería enlaces existentes compartidos con clientes.
 - El número de WhatsApp/Yape (`925 244 643`) está escrito directamente en el HTML de cada página (varias veces por página: botones por tarjeta, botón de contacto, nav inferior, botón flotante, datos de pago). Si cambia, hay que actualizarlo manualmente en cada archivo — no hay una constante centralizada.
 - `assets/css/common.css` contiene únicamente reglas verificadas como idénticas entre las páginas de producto; cada página conserva su propia paleta de colores (`:root`) y estilos específicos en su propio `<style>`.
 - Métodos de pago por página: Windows, ESET, Office, ChatGPT Plus, Canva Pro y CapCut Pro aceptan Yape (Perú) y Western Union (internacional, enruta a la misma cuenta Yape). Google One y Kaspersky solo aceptan Yape — la activación/suscripción de esos dos está atada técnicamente a cuentas de Perú, así que no tiene sentido ofrecer pago internacional ahí.
