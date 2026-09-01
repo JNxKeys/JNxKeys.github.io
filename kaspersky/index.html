@@ -87,22 +87,50 @@ body::before{
 .back-btn:hover{color:var(--k-green);}
 .step-pill{font-size:11px;font-weight:700;color:var(--muted);background:var(--white);border:1px solid var(--border);border-radius:100px;padding:5px 14px;letter-spacing:.04em;white-space:nowrap;}
 
-.top-ribbon{display:flex;align-items:center;gap:12px;margin:-24px -18px 20px;padding:16px 18px 14px;border-radius:0 0 22px 22px;background:linear-gradient(120deg,var(--dark) 0%,var(--k-green) 100%);}
-.top-ribbon img{width:40px;height:40px;border-radius:10px;flex-shrink:0;}
-.ribbon-word{font-size:17px;font-weight:800;letter-spacing:-.01em;line-height:1.1;color:#fff;}
-.ribbon-tag{font-size:11px;color:rgba(255,255,255,.72);font-weight:500;margin-top:2px;}
+.top-ribbon {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: -24px -18px 20px;
+  padding: 14px 20px;
+  border-radius: 0 0 24px 24px;
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.92) 0%, rgba(30, 41, 59, 0.88) 100%), url('/assets/img/hero_tech_bg.jpg') center/cover no-repeat;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.35);
+  position: relative;
+  overflow: hidden;
+}
+.top-ribbon a { display: flex; align-items: center; gap: 12px; text-decoration: none; color: #FFFFFF; }
+.top-ribbon img { width: 38px; height: 38px; border-radius: 10px; border: 1.5px solid rgba(255, 255, 255, 0.2); background: rgba(255, 255, 255, 0.1); flex-shrink: 0; }
+.ribbon-word { font-size: 18px; font-weight: 800; color: #FFFFFF; display: flex; align-items: center; gap: 8px; }
+.ribbon-badge { font-size: 10px; font-weight: 700; background: linear-gradient(135deg, #2563EB, #0284C7); color: #FFF; padding: 2px 8px; border-radius: 100px; text-transform: uppercase; letter-spacing: 0.05em; }
+.ribbon-tag { font-size: 11px; color: #94A3B8; font-weight: 500; margin-top: 1px; }
 
+/* DESKTOP ADAPTATIVE LAYOUT (1240px ANCHO IGUAL A LA PRINCIPAL) */
+@media (min-width: 1024px) {
+  .page { max-width: 1240px; padding: 32px 32px 100px; }
+  .top-ribbon { margin: -32px -32px 28px; padding: 18px 32px; border-radius: 0 0 28px 28px; }
+  .desktop-layout { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 36px; align-items: start; }
+  .desktop-sidebar { position: sticky; top: 24px; }
+  .trust-grid { grid-template-columns: repeat(4, 1fr) !important; }
+}
+
+.grid-click-hint{display:flex;align-items:center;gap:8px;background:rgba(0,166,81,.08);border:1px solid rgba(0,166,81,.2);color:#008A43;font-size:13px;font-weight:700;padding:10px 18px;border-radius:12px;margin-bottom:20px;}
 .card-actions{display:flex;align-items:center;gap:8px;padding:0 22px 18px;background:var(--bg);}
-.prod-card.plus .card-actions{background:var(--k-plus-light);}
-.prod-card.premium .card-actions{background:var(--gold-light);}
-.card-share-btn{display:inline-flex;align-items:center;justify-content:center;width:39px;height:39px;flex-shrink:0;border-radius:10px;border:1.5px solid var(--border);background:var(--white);color:var(--muted);cursor:pointer;transition:border-color .15s ease, color .15s ease, transform .15s ease;}
-.card-share-btn:hover{border-color:var(--k-green);color:var(--k-green);}
+.card-share-btn{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;flex-shrink:0;border-radius:8px;border:1px solid var(--border);background:var(--white);color:var(--muted);cursor:pointer;transition:all .15s ease;}
+.card-share-btn:hover{border-color:var(--k-green);color:var(--k-green);background:rgba(0,166,81,.08);}
 .card-share-btn:active{transform:scale(.92);}
-.card-share-btn svg{width:16px;height:16px;}
-.card-wa-btn{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:7px;background:var(--k-green);color:#fff;font-weight:700;font-size:12.5px;border-radius:10px;padding:10px 14px;text-decoration:none;transition:transform .16s ease;}
-.card-wa-btn:hover{transform:scale(1.02);}
-.prod-card.plus .card-wa-btn{background:var(--k-plus);}
-.prod-card.premium .card-wa-btn{background:var(--gold);}
+.card-share-btn svg{width:15px;height:15px;}
+.card-select-pill{display:inline-flex;align-items:center;gap:6px;background:var(--bg);color:var(--dark);font-weight:800;font-size:12.5px;padding:7px 14px;border-radius:100px;border:1px solid var(--border);transition:all .2s ease;}
+.prod-card:hover .card-select-pill{background:var(--k-green);color:#FFFFFF;border-color:var(--k-green);transform:scale(1.04);}
+.prod-card.plus:hover .card-select-pill{background:var(--k-plus);border-color:var(--k-plus);}
+.prod-card.premium:hover .card-select-pill{background:var(--gold);border-color:var(--gold);}
+.prod-card{cursor:pointer;background:var(--white);border:2px solid var(--border);border-radius:20px;overflow:hidden;transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease;display:flex;flex-direction:column;justify-content:space-between;height:100%;}
+.prod-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,166,81,.18);border-color:var(--k-green);}
+.prod-card.plus:hover{box-shadow:0 12px 30px rgba(37,99,235,.18);border-color:var(--k-plus);}
+.prod-card.premium:hover{box-shadow:0 12px 30px rgba(217,119,6,.18);border-color:var(--gold);}
 
 .dot-nav{display:flex;justify-content:center;gap:6px;margin-bottom:26px;}
 .d.on{background:var(--k-green);width:22px;border-radius:3px;}
@@ -136,19 +164,19 @@ h1.hero em{font-style:italic;color:var(--k-green);}
 
 /* PRODUCT CARDS */
 .prod-cards{display:grid;gap:14px;margin-bottom:24px;}
-.prod-card{background:var(--white);border:2px solid var(--border);border-radius:20px;overflow:hidden;transition:all .2s;}
+.prod-card{background:var(--white);border:2px solid var(--border);border-radius:20px;overflow:hidden;transition:all .2s;display:flex;flex-direction:column;justify-content:space-between;height:100%;}
 .prod-card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,166,81,.1);}
 .prod-card.plus{border-color:var(--k-plus);}
 .prod-card.premium{border-color:var(--gold);}
 
-.card-top{padding:20px 22px 0;}
+.card-top{padding:20px 22px 18px;display:flex;flex-direction:column;flex-grow:1;}
 .card-head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:10px;}
 .card-name{font-size:17px;font-weight:800;color:var(--dark);}
 .std-tag{font-size:10px;font-weight:800;background:var(--k-green);color:white;border-radius:6px;padding:3px 10px;text-transform:uppercase;letter-spacing:.05em;white-space:nowrap;}
 .plus-tag{font-size:10px;font-weight:800;background:var(--k-plus);color:white;border-radius:6px;padding:3px 10px;text-transform:uppercase;letter-spacing:.05em;white-space:nowrap;}
 .premium-tag{font-size:10px;font-weight:800;background:var(--gold);color:white;border-radius:6px;padding:3px 10px;text-transform:uppercase;letter-spacing:.05em;white-space:nowrap;}
 .card-desc{font-size:13px;color:var(--muted);line-height:1.55;margin-bottom:14px;}
-.feat-wrap{display:flex;flex-wrap:wrap;gap:5px;padding-bottom:16px;}
+.feat-wrap{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-bottom:0;}
 .feat{font-size:11px;color:var(--muted);background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:3px 9px;}
 .feat.hi-g{color:var(--k-dark);background:var(--k-light);border-color:var(--k-mid);font-weight:600;}
 .feat.hi-b{color:var(--k-plus);background:var(--k-plus-light);border-color:#b3ccff;font-weight:600;}
@@ -209,8 +237,88 @@ h1.hero em{font-style:italic;color:var(--k-green);}
 .wa-fab{ position:fixed; right:18px; bottom:84px; z-index:200; width:56px; height:56px; border-radius:50%; background:#25D366; display:flex; align-items:center; justify-content:center; box-shadow:0 6px 18px rgba(0,0,0,.25); text-decoration:none; }
 .wa-fab svg{ width:30px; height:30px; transition:transform .22s ease; }
 .wa-fab:hover svg{ transform:scale(1.18); }
-.wa-fab-tooltip{ position:absolute; right:64px; top:50%; transform:translateY(-50%) translateX(6px); background:#fff; color:#16213e; font-size:12.5px; font-weight:700; padding:8px 14px; border-radius:100px; white-space:nowrap; box-shadow:0 4px 14px rgba(0,0,0,.15); opacity:0; visibility:hidden; pointer-events:none; transition:opacity .2s ease, transform .2s ease; }
 .wa-fab:hover .wa-fab-tooltip{ opacity:1; visibility:visible; transform:translateY(-50%) translateX(0); }
+
+/* HERO GRID EN 2 COLUMNAS CON WIDGET DE TIKTOK A LA DERECHA */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 44px;
+  align-items: center;
+  margin-bottom: 36px;
+}
+@media (max-width: 900px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 24px; margin-bottom: 28px; }
+}
+
+.tiktok-card-widget {
+  background: linear-gradient(145deg, #0F172A 0%, #1E293B 100%);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 24px;
+  padding: 22px;
+  box-shadow: 0 15px 35px -10px rgba(15, 23, 42, 0.3);
+  color: #FFFFFF;
+  position: relative;
+  overflow: hidden;
+}
+.tiktok-card-widget::before {
+  content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, #FE2C55, #25F4EE);
+}
+.tiktok-card-head {
+  display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px;
+}
+.tiktok-user-info {
+  display: flex; align-items: center; gap: 8px; font-family: 'Outfit', sans-serif; font-size: 15px; font-weight: 800; color: #FFFFFF;
+}
+.tiktok-user-info svg { fill: #FE2C55; }
+.tiktok-badge-pill {
+  font-size: 11px; font-weight: 800; background: linear-gradient(135deg, #FE2C55, #E11D48); color: #FFF; padding: 4px 12px; border-radius: 100px; text-transform: uppercase; letter-spacing: 0.04em;
+}
+.tiktok-player-box {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  padding: 28px 20px;
+  text-align: center;
+  margin-bottom: 16px;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.tiktok-play-icon {
+  width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, #FE2C55, #25F4EE); display: flex; align-items: center; justify-content: center; color: #FFF; margin-bottom: 14px; box-shadow: 0 8px 24px rgba(254, 44, 85, 0.4); transition: transform 0.2s ease;
+}
+.tiktok-player-box:hover .tiktok-play-icon { transform: scale(1.1); }
+.tiktok-video-title {
+  font-family: 'Outfit', sans-serif; font-size: 15px; font-weight: 700; color: #FFFFFF; margin-bottom: 4px; line-height: 1.35;
+}
+.tiktok-video-sub {
+  font-family: 'Inter', sans-serif; font-size: 13px; color: #94A3B8; margin-bottom: 16px;
+}
+.tiktok-main-play-btn {
+  display: inline-flex; align-items: center; gap: 8px; background: #FE2C55; color: #FFFFFF; font-family: 'Outfit', sans-serif; font-size: 14px; font-weight: 800; padding: 11px 24px; border-radius: 100px; text-decoration: none; box-shadow: 0 4px 16px rgba(254, 44, 85, 0.35); transition: transform 0.18s ease;
+}
+.tiktok-main-play-btn:hover { transform: translateY(-2px); }
+
+.tiktok-channel-link {
+  display: flex; align-items: center; justify-content: center; width: 100%; padding: 11px; font-family: 'Outfit', sans-serif; font-size: 13px; font-weight: 700; color: #38BDF8; background: rgba(56, 189, 248, 0.1); border-radius: 12px; text-decoration: none; border: 1px solid rgba(56, 189, 248, 0.2); transition: background 0.18s;
+}
+.tiktok-channel-link:hover { background: rgba(56, 189, 248, 0.2); }
+
+.page { max-width: 1240px; margin: 0 auto; padding: 28px 24px 90px; }
+h1.hero { font-family: 'DM Serif Display', serif; font-size: clamp(34px, 4vw, 54px); font-weight: 400; line-height: 1.08; letter-spacing: -.02em; margin-bottom: 16px; }
+h1.hero em { font-style: italic; color: var(--k-green); }
+.hero-sub { font-size: 16.5px; color: var(--muted); line-height: 1.65; margin-bottom: 0; }
+
+@media (min-width: 900px) {
+  .page { padding: 36px 40px 110px; }
+  .top-ribbon { margin: -36px -40px 32px; padding: 20px 40px; border-radius: 0 0 28px 28px; }
+  .trust-grid { grid-template-columns: repeat(4, 1fr) !important; }
+  .prod-cards { display: grid !important; grid-template-columns: repeat(3, 1fr) !important; gap: 20px !important; margin-bottom: 32px !important; }
+}
 </style>
 </head>
 <body>
@@ -219,11 +327,13 @@ h1.hero em{font-style:italic;color:var(--k-green);}
 <div id="s1" class="screen active">
 <div class="page">
 <header class="top-ribbon">
-  <img src="/assets/img/favicon.png" alt="Logo JNxKeys">
-  <div>
-    <div class="ribbon-word">JNxKeys</div>
-    <div class="ribbon-tag">Licencias digitales originales</div>
-  </div>
+  <a href="/">
+    <img src="/assets/img/favicon.png" alt="Logo JNxKeys">
+    <div>
+      <div class="ribbon-word">JNxKeys <span class="ribbon-badge">Original</span></div>
+      <div class="ribbon-tag">Licencias digitales originales</div>
+    </div>
+  </a>
 </header>
 <div class="topnav">
     <button class="back-btn" onclick="window.location.href='/index.html'">← Inicio </button>
@@ -233,24 +343,61 @@ h1.hero em{font-style:italic;color:var(--k-green);}
     <div class="d on"></div><div class="d"></div><div class="d"></div>
   </div>
 
-  <h1 class="hero">Protección total<br>con <em>Kaspersky.</em></h1>
-  <p class="hero-sub">Licencias 100% originales de Kaspersky. Elige el plan que mejor proteja tu equipo.</p>
+  <!-- HERO GRID CON REPRODUCTOR DE TIKTOK KASPERSKY -->
+  <div class="hero-grid">
+    <div class="hero-text-col">
+      <h1 class="hero">Protección total<br>con <em>Kaspersky.</em></h1>
+      <p class="hero-sub">🛡️ <strong>Protección intocable contra virus, ransomware y ciberamenazas</strong>. Navega con VPN ilimitada, protección bancaria y optimización de sistema en tiempo real con licencias 100% genuinas JNxKeys.</p>
+    </div>
+
+    <div class="hero-tiktok-col">
+      <div class="tiktok-card-widget">
+        <div class="tiktok-card-head">
+          <div class="tiktok-user-info">
+            <svg width="18" height="18" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 11-2.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 105.55 6.29V9a8.16 8.16 0 005.15 1.83V7.37a4.85 4.85 0 01-1.38-.68z"/></svg>
+            @jnxkeys
+          </div>
+          <span class="tiktok-badge-pill">TikTok Demo</span>
+        </div>
+
+        <div class="tiktok-player-box">
+          <div class="tiktok-play-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <div class="tiktok-video-title">Kaspersky Antivirus en TikTok</div>
+          <div class="tiktok-video-sub">Video oficial @jnxkeys · Ver tutorial</div>
+          <a class="tiktok-main-play-btn" href="https://www.tiktok.com/@jnxkeys" target="_blank">
+            ▶ Ver Canal en TikTok
+          </a>
+        </div>
+
+        <a class="tiktok-channel-link" href="https://www.tiktok.com/@jnxkeys" target="_blank">
+          Ver canal @jnxkeys en TikTok ↗
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-click-hint">💬 <span>Haz clic en cualquier plan para solicitar tu licencia al instante por WhatsApp</span></div>
 
   <div class="prod-cards">
 
-    <div class="prod-card" id="kaspersky-standard">
+    <div class="prod-card" id="kaspersky-standard" onclick="window.open('https://wa.me/51925244643?text=Deseo%20información%20de%20Kaspersky%20Standard', '_blank'); gtag('event','whatsapp_click',{product:'Kaspersky',item:'Kaspersky Standard',location:'product_card'})">
       <div class="card-top">
         <div class="card-head">
-          <div class="card-name">Kaspersky Standard</div>
-          <span class="std-tag">⚡ Esencial</span>
+          <div style="display:flex; align-items:center; gap:8px;">
+            <div class="card-name">Kaspersky Standard</div>
+            <span class="std-tag">⚡ Esencial</span>
+          </div>
+          <button class="card-share-btn" type="button" aria-label="Compartir producto" onclick="event.stopPropagation(); shareProduct('Kaspersky Standard', 'S/60', 'kaspersky-standard')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M8 7l4-4 4 4"/><path d="M4 13v6a2 2 0 002 2h12a2 2 0 002-2v-6"/></svg></button>
         </div>
         <p class="card-desc">Protección esencial contra virus, malware y amenazas en línea. Seguridad y rendimiento en un solo paquete.</p>
         <div class="feat-wrap">
           <span class="feat hi-g">🛡️ Seguridad</span>
           <span class="feat hi-g">⚡ Rendimiento</span>
-          <span class="feat">🦠 Antivirus & Antimalware</span>
+          <span class="feat">🦠 Antivirus &amp; Antimalware</span>
           <span class="feat">🌐 Protección web</span>
-          <span class="feat">💻 Windows & macOS</span>
+          <span class="feat">💻 Windows &amp; macOS</span>
           <span class="feat">🔄 Suscripción 1 año</span>
           <span class="feat">🔧 Instalación remota incluida</span>
           <span class="feat">♾️ Reutilizable en el mismo equipo</span>
@@ -262,27 +409,31 @@ h1.hero em{font-style:italic;color:var(--k-green);}
           <div class="price-big"><sup>S/</sup>60</div>
           <div class="price-ref">1 equipo · 1 año</div>
         </div>
-        <div class="price-period">📅 1 año</div>
+        <div class="card-select-pill">
+          📅 1 año · Elegir plan ↗
+        </div>
       </div>
-      <div class="card-actions"><button class="card-share-btn" type="button" aria-label="Compartir producto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M8 7l4-4 4 4"/><path d="M4 13v6a2 2 0 002 2h12a2 2 0 002-2v-6"/></svg></button><a class="card-wa-btn" href="https://wa.me/51925244643?text=Deseo%20información%20de%20Kaspersky%20Standard" target="_blank" onclick="gtag('event','whatsapp_click',{product:'Kaspersky',item:'Kaspersky Standard',location:'product_card'})"><svg width="14" height="14" viewBox="0 0 32 32"><circle cx="16" cy="16" r="16" fill="#25D366"/><path fill="#fff" d="M23.47 8.52A10.9 10.9 0 0 0 16.02 5c-6.01 0-10.9 4.89-10.9 10.9 0 1.92.5 3.8 1.46 5.46L5 27l5.8-1.52a10.9 10.9 0 0 0 5.22 1.33h.005c6.01 0 10.9-4.89 10.9-10.9a10.84 10.84 0 0 0-3.45-7.79zm-7.45 16.77h-.004a9.06 9.06 0 0 1-4.61-1.26l-.33-.196-3.44.9.92-3.35-.215-.345a9.05 9.05 0 0 1-1.39-4.83c0-5.01 4.08-9.09 9.1-9.09a9.04 9.04 0 0 1 6.43 2.67 9.03 9.03 0 0 1 2.66 6.43c0 5.01-4.08 9.09-9.1 9.09zm4.99-6.81c-.27-.14-1.61-.79-1.86-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.16-1.34-.8-.71-1.34-1.6-1.5-1.87-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.48-.84-2.02-.22-.53-.44-.46-.61-.47l-.52-.01c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.29 0 1.35.98 2.66 1.12 2.84.14.18 1.93 2.95 4.68 4.14.65.28 1.16.45 1.56.58.66.21 1.25.18 1.72.11.53-.08 1.61-.66 1.83-1.29.23-.63.23-1.17.16-1.29-.07-.11-.25-.18-.52-.32z"/></svg> Pedir por WhatsApp</a></div>
     </div>
 
-    <div class="prod-card plus" id="kaspersky-plus">
+    <div class="prod-card plus" id="kaspersky-plus" onclick="window.open('https://wa.me/51925244643?text=Deseo%20información%20de%20Kaspersky%20Plus', '_blank'); gtag('event','whatsapp_click',{product:'Kaspersky',item:'Kaspersky Plus',location:'product_card'})">
       <div class="card-top">
         <div class="card-head">
-          <div class="card-name">Kaspersky Plus</div>
-          <span class="plus-tag">⭐ Mejor opción</span>
+          <div style="display:flex; align-items:center; gap:8px;">
+            <div class="card-name">Kaspersky Plus</div>
+            <span class="plus-tag">⭐ Mejor opción</span>
+          </div>
+          <button class="card-share-btn" type="button" aria-label="Compartir producto" onclick="event.stopPropagation(); shareProduct('Kaspersky Plus', 'S/75', 'kaspersky-plus')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M8 7l4-4 4 4"/><path d="M4 13v6a2 2 0 002 2h12a2 2 0 002-2v-6"/></svg></button>
         </div>
         <p class="card-desc">Todo lo del Standard más privacidad avanzada. Ideal para quienes hacen pagos en línea, trabajan remotamente o manejan datos sensibles.</p>
         <div class="feat-wrap">
           <span class="feat hi-b">🛡️ Seguridad</span>
           <span class="feat hi-b">⚡ Rendimiento</span>
           <span class="feat hi-b">🔒 Privacidad</span>
-          <span class="feat">🦠 Antivirus & Antimalware</span>
+          <span class="feat">🦠 Antivirus &amp; Antimalware</span>
           <span class="feat">🌐 Protección web avanzada</span>
           <span class="feat">💳 Protege pagos en línea</span>
-          <span class="feat">🕵️ Anti-rastreo & VPN básico</span>
-          <span class="feat">💻 Windows & macOS</span>
+          <span class="feat">🕵️ Anti-rastreo &amp; VPN básico</span>
+          <span class="feat">💻 Windows &amp; macOS</span>
           <span class="feat">🔄 Suscripción 1 año</span>
           <span class="feat">🔧 Instalación remota incluida</span>
           <span class="feat">♾️ Reutilizable en el mismo equipo</span>
@@ -294,28 +445,32 @@ h1.hero em{font-style:italic;color:var(--k-green);}
           <div class="price-big"><sup>S/</sup>75</div>
           <div class="price-ref">1 equipo · 1 año</div>
         </div>
-        <div class="price-period">📅 1 año</div>
+        <div class="card-select-pill">
+          📅 1 año · Elegir plan ↗
+        </div>
       </div>
-      <div class="card-actions"><button class="card-share-btn" type="button" aria-label="Compartir producto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M8 7l4-4 4 4"/><path d="M4 13v6a2 2 0 002 2h12a2 2 0 002-2v-6"/></svg></button><a class="card-wa-btn" href="https://wa.me/51925244643?text=Deseo%20información%20de%20Kaspersky%20Plus" target="_blank" onclick="gtag('event','whatsapp_click',{product:'Kaspersky',item:'Kaspersky Plus',location:'product_card'})"><svg width="14" height="14" viewBox="0 0 32 32"><circle cx="16" cy="16" r="16" fill="#25D366"/><path fill="#fff" d="M23.47 8.52A10.9 10.9 0 0 0 16.02 5c-6.01 0-10.9 4.89-10.9 10.9 0 1.92.5 3.8 1.46 5.46L5 27l5.8-1.52a10.9 10.9 0 0 0 5.22 1.33h.005c6.01 0 10.9-4.89 10.9-10.9a10.84 10.84 0 0 0-3.45-7.79zm-7.45 16.77h-.004a9.06 9.06 0 0 1-4.61-1.26l-.33-.196-3.44.9.92-3.35-.215-.345a9.05 9.05 0 0 1-1.39-4.83c0-5.01 4.08-9.09 9.1-9.09a9.04 9.04 0 0 1 6.43 2.67 9.03 9.03 0 0 1 2.66 6.43c0 5.01-4.08 9.09-9.1 9.09zm4.99-6.81c-.27-.14-1.61-.79-1.86-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.16-1.34-.8-.71-1.34-1.6-1.5-1.87-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.48-.84-2.02-.22-.53-.44-.46-.61-.47l-.52-.01c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.29 0 1.35.98 2.66 1.12 2.84.14.18 1.93 2.95 4.68 4.14.65.28 1.16.45 1.56.58.66.21 1.25.18 1.72.11.53-.08 1.61-.66 1.83-1.29.23-.63.23-1.17.16-1.29-.07-.11-.25-.18-.52-.32z"/></svg> Pedir por WhatsApp</a></div>
     </div>
 
-    <div class="prod-card premium" id="kaspersky-premium">
+    <div class="prod-card premium" id="kaspersky-premium" onclick="window.open('https://wa.me/51925244643?text=Deseo%20información%20de%20Kaspersky%20Premium', '_blank'); gtag('event','whatsapp_click',{product:'Kaspersky',item:'Kaspersky Premium',location:'product_card'})">
       <div class="card-top">
         <div class="card-head">
-          <div class="card-name">Kaspersky Premium</div>
-          <span class="premium-tag">👑 Máxima protección</span>
+          <div style="display:flex; align-items:center; gap:8px;">
+            <div class="card-name">Kaspersky Premium</div>
+            <span class="premium-tag">👑 Máxima protección</span>
+          </div>
+          <button class="card-share-btn" type="button" aria-label="Compartir producto" onclick="event.stopPropagation(); shareProduct('Kaspersky Premium', 'S/90', 'kaspersky-premium')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M8 7l4-4 4 4"/><path d="M4 13v6a2 2 0 002 2h12a2 2 0 002-2v-6"/></svg></button>
         </div>
         <p class="card-desc">Todo lo del Plus más soporte prioritario y herramientas de identidad digital. Para quien no quiere dejar nada al azar.</p>
         <div class="feat-wrap">
           <span class="feat hi-gold">🛡️ Seguridad</span>
           <span class="feat hi-gold">⚡ Rendimiento</span>
           <span class="feat hi-gold">🔒 Privacidad</span>
-          <span class="feat">🦠 Antivirus & Antimalware</span>
+          <span class="feat">🦠 Antivirus &amp; Antimalware</span>
           <span class="feat">🌐 Protección web avanzada</span>
           <span class="feat">💳 Protege pagos en línea</span>
-          <span class="feat">🕵️ Anti-rastreo & VPN ilimitado</span>
+          <span class="feat">🕵️ Anti-rastreo &amp; VPN ilimitado</span>
           <span class="feat">🆔 Protección de identidad</span>
-          <span class="feat">💻 Windows & macOS</span>
+          <span class="feat">💻 Windows &amp; macOS</span>
           <span class="feat">🔄 Suscripción 1 año</span>
           <span class="feat">🔧 Instalación remota incluida</span>
         </div>
@@ -326,9 +481,10 @@ h1.hero em{font-style:italic;color:var(--k-green);}
           <div class="price-big"><sup>S/</sup>90</div>
           <div class="price-ref">1 equipo · 1 año</div>
         </div>
-        <div class="price-period">📅 1 año</div>
+        <div class="card-select-pill">
+          📅 1 año · Elegir plan ↗
+        </div>
       </div>
-      <div class="card-actions"><button class="card-share-btn" type="button" aria-label="Compartir producto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M8 7l4-4 4 4"/><path d="M4 13v6a2 2 0 002 2h12a2 2 0 002-2v-6"/></svg></button><a class="card-wa-btn" href="https://wa.me/51925244643?text=Deseo%20información%20de%20Kaspersky%20Premium" target="_blank" onclick="gtag('event','whatsapp_click',{product:'Kaspersky',item:'Kaspersky Premium',location:'product_card'})"><svg width="14" height="14" viewBox="0 0 32 32"><circle cx="16" cy="16" r="16" fill="#25D366"/><path fill="#fff" d="M23.47 8.52A10.9 10.9 0 0 0 16.02 5c-6.01 0-10.9 4.89-10.9 10.9 0 1.92.5 3.8 1.46 5.46L5 27l5.8-1.52a10.9 10.9 0 0 0 5.22 1.33h.005c6.01 0 10.9-4.89 10.9-10.9a10.84 10.84 0 0 0-3.45-7.79zm-7.45 16.77h-.004a9.06 9.06 0 0 1-4.61-1.26l-.33-.196-3.44.9.92-3.35-.215-.345a9.05 9.05 0 0 1-1.39-4.83c0-5.01 4.08-9.09 9.1-9.09a9.04 9.04 0 0 1 6.43 2.67 9.03 9.03 0 0 1 2.66 6.43c0 5.01-4.08 9.09-9.1 9.09zm4.99-6.81c-.27-.14-1.61-.79-1.86-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.16-1.34-.8-.71-1.34-1.6-1.5-1.87-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.48-.84-2.02-.22-.53-.44-.46-.61-.47l-.52-.01c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.29 0 1.35.98 2.66 1.12 2.84.14.18 1.93 2.95 4.68 4.14.65.28 1.16.45 1.56.58.66.21 1.25.18 1.72.11.53-.08 1.61-.66 1.83-1.29.23-.63.23-1.17.16-1.29-.07-.11-.25-.18-.52-.32z"/></svg> Pedir por WhatsApp</a></div>
     </div>
 
   </div>

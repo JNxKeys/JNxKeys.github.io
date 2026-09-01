@@ -3,3 +3,5 @@ Thumbs.db
 *.swp
 .vscode/
 .idea/
+*.zip
+backup_subpages/
