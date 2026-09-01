@@ -119,7 +119,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background: linear-gradient(135deg, rgba(15, 23, 42, 0.92) 0%, rgba(30, 41, 59, 0.88) 100%), url('/assets/img/hero_tech_bg.jpg') center/cover no-repeat;
+            background: linear-gradient(145deg, #0F172A 0%, #1E293B 100%);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.2);
@@ -197,21 +197,13 @@
         /* HERO SECTION CON FOTO/TEXTURA TECNOLÓGICA CON MOVIMIENTO DINÁMICO */
         .hero-wrapper {
             position: relative;
-            background: linear-gradient(135deg, rgba(15, 23, 42, 0.88) 0%, rgba(30, 41, 59, 0.82) 100%), url('/assets/img/hero_tech_bg.jpg') center/cover no-repeat;
-            background-size: 108% auto;
+            background: linear-gradient(145deg, #0F172A 0%, #1E293B 100%);
             border-radius: 32px;
             padding: 56px 40px;
             margin-bottom: 40px;
             box-shadow: 0 25px 60px -15px rgba(15, 23, 42, 0.35);
             border: 1px solid rgba(255, 255, 255, 0.15);
             overflow: hidden;
-            animation: heroBgPan 20s ease-in-out infinite alternate;
-        }
-
-        @keyframes heroBgPan {
-            0% { background-position: 0% 0%; background-size: 105% auto; }
-            50% { background-position: 50% 100%; background-size: 115% auto; }
-            100% { background-position: 100% 50%; background-size: 105% auto; }
         }
 
         .hero-scanner {
