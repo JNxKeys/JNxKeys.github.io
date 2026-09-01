@@ -372,10 +372,10 @@ h1.hero em{font-style:italic;color:var(--g-blue);}
 }
 .tiktok-channel-link:hover { background: rgba(56, 189, 248, 0.2); }
 
-/* CONTENEDOR OPTIMIZADO A 1240px (LLENA LA PANTALLA SIN DEJAR VACÍOS) */
-.page { max-width: 1240px; margin: 0 auto; padding: 28px 24px 90px; }
+html, body { overflow-x: hidden; width: 100%; margin: 0; padding: 0; }
+.page { max-width: 680px; margin: 0 auto; padding: 24px 18px 90px; width: 100%; box-sizing: border-box; }
 @media (min-width: 900px) {
-  .page { padding: 36px 40px 110px; }
+  .page { max-width: 1240px; padding: 36px 40px 110px; }
   .top-ribbon { margin: -36px -40px 32px; padding: 20px 40px; border-radius: 0 0 28px 28px; }
   .trust-grid { grid-template-columns: repeat(4, 1fr) !important; }
   .hero-grid { grid-template-columns: 1.15fr 0.85fr !important; gap: 44px !important; margin-bottom: 40px !important; }
