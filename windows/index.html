@@ -491,51 +491,84 @@ h1.hero em { font-style: italic; color: var(--win); }
 <!-- ══════════ S2 — CONFIANZA ══════════ -->
 <div id="s2" class="screen">
 <div class="page">
+
   <div class="topnav">
-    <button class="back-btn" onclick="goScreen('s1')">← Volver</button>
-    <div class="step-pill">2 de 3</div>
+    
+    <button class="back-btn" onclick="goScreen(&#39;s1&#39;)">← Volver</button>
+  <div class="step-pill">2 de 3</div></div>
+
+  <div class="dot-nav">
+    <div class="d"></div><div class="d on"></div><div class="d"></div>
   </div>
-  <div class="dot-nav"><div class="d"></div><div class="d on"></div><div class="d"></div></div>
 
   <div class="trust-hero">
     <h2>¿Por qué confiar en JNxKeys?</h2>
-    <p>Es normal tener dudas al comprar software por internet. Aquí te explicamos por qué es seguro y qué pasa si algo sale mal.</p>
+    <p>Es normal tener dudas al comprar software por internet. Aquí te explico por qué es seguro y qué pasa si algo sale mal.</p>
   </div>
 
   <div class="trust-grid">
-    <div class="trust-card"><div class="t-icon">🔑</div><div class="t-title">Licencias originales</div><div class="t-desc">100% originales de Microsoft. Se activan directamente en los servidores oficiales de Windows.</div></div>
-    <div class="trust-card"><div class="t-icon">⚡</div><div class="t-title">Entrega inmediata</div><div class="t-desc">Confirmo tu pago y te envío la clave de activación por WhatsApp o correo al instante.</div></div>
-    <div class="trust-card"><div class="t-icon">📲</div><div class="t-title">Soporte directo</div><div class="t-desc">Si tienes algún problema activando, te ayudo por WhatsApp paso a paso hasta que funcione.</div></div>
-    <div class="trust-card"><div class="t-icon">🌍</div><div class="t-title">Clientes en varios países</div><div class="t-desc">Clientes activos en Perú, México y Latinoamérica usando sus licencias sin problemas.</div></div>
+    <div class="trust-card">
+      <div class="t-icon">🔑</div>
+      <div class="t-title">Licencias originales</div>
+      <div class="t-desc">Todas las licencias son 100% originales de Microsoft. Se activan directamente en los servidores de Microsoft.</div>
+    </div>
+    <div class="trust-card">
+      <div class="t-icon">⚡</div>
+      <div class="t-title">Entrega inmediata</div>
+      <div class="t-desc">En cuanto confirmo tu pago, te envío la licencia por WhatsApp o correo. Sin esperas de días.</div>
+    </div>
+    <div class="trust-card">
+      <div class="t-icon">📲</div>
+      <div class="t-title">Soporte directo</div>
+      <div class="t-desc">Si tienes algún problema para activar, te ayudo por WhatsApp paso a paso hasta que funcione.</div>
+    </div>
+    <div class="trust-card">
+      <div class="t-icon">🌍</div>
+      <div class="t-title">Clientes en varios países</div>
+      <div class="t-desc">Tengo clientes en Perú, México y otros países latinoamericanos que ya usan sus licencias sin problemas.</div>
+    </div>
   </div>
 
   <div class="guarantee">
     <div class="g-icon">🛡️</div>
     <div>
       <div class="g-title">Garantía de activación</div>
-      <div class="g-desc">Si la licencia no activa correctamente en tu equipo, la reemplazamos sin costo adicional. Tu compra está protegida.</div>
+      <div class="g-desc">Si la licencia no activa correctamente en tu equipo, te la reemplazo sin costo adicional. Tu compra está protegida.</div>
     </div>
   </div>
 
-  <div class="how-label">¿Cómo funciona el proceso?</div>
+  <div class="how-title">¿Cómo funciona el proceso?</div>
   <div class="content-with-ad-grid">
     <div class="how-steps">
-      <div class="how-step"><div class="how-num">1</div><div class="how-text"><strong>Acuerdas el producto</strong> que quieres por WhatsApp y te confirmo precio y disponibilidad.</div></div>
-      <div class="how-step"><div class="how-num">2</div><div class="how-text"><strong>Realizas el pago</strong> desde tu país usando Western Union a mi Yape en Perú.</div></div>
-      <div class="how-step"><div class="how-num">3</div><div class="how-text"><strong>Me envías el comprobante</strong> de la transferencia por WhatsApp.</div></div>
-      <div class="how-step"><div class="how-num">4</div><div class="how-text"><strong>Confirmo el pago</strong> y te envío la clave de Windows al instante. ¡Listo para activar!</div></div>
+    <div class="how-step">
+      <div class="how-num">1</div>
+      <div class="how-text"><strong>Acuerdas el producto</strong> que quieres por WhatsApp y yo te confirmo disponibilidad y precio.</div>
     </div>
-    <div class="ad-slot" data-ad-id="windows_ad"></div>
+    <div class="how-step">
+      <div class="how-num">2</div>
+      <div class="how-text"><strong>Realizas el pago</strong> desde tu país usando Western Union a mi Yape en Perú.</div>
+    </div>
+    <div class="how-step">
+      <div class="how-num">3</div>
+      <div class="how-text"><strong>Me envías el comprobante</strong> de la transferencia por WhatsApp.</div>
+    </div>
+    <div class="how-step">
+      <div class="how-num">4</div>
+      <div class="how-text"><strong>Confirmo el pago</strong> y te envío la licencia al instante. ¡Listo para activar!</div>
+    </div>
   </div>
+    <div class="ad-slot" data-ad-id="windows_confianza_ad"></div>
+  </div>
+
 </div>
 <div class="bnav"><div class="bnav-inner">
-  <button class="nbtn s" onclick="goScreen('s1')">← Productos</button>
-  <button class="nbtn p" onclick="goScreen('s3')">Cómo pagar →</button>
+  <button class="nbtn s" onclick="goScreen(&#39;s1&#39;)">← Productos</button>
+  <button class="nbtn p" onclick="goScreen(&#39;s3&#39;)">Cómo pagar →</button>
 </div></div>
 </div>
 
 
-<!-- ══════════ S3 — PAGO WU ══════════ -->
+<!-- ═══════════════════ SCREEN 3 — PAGO WU ═══════════════════ -->
 <div id="s3" class="screen">
 <div class="page">
   <div class="topnav">
