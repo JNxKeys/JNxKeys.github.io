@@ -92,10 +92,23 @@ body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--dark);min-
 .card-share-btn:hover{border-color:var(--win);color:var(--win);background:rgba(0,120,212,.08);}
 .card-share-btn:active{transform:scale(.92);}
 .card-share-btn svg{width:15px;height:15px;}
-.card-select-pill{display:inline-flex;align-items:center;gap:6px;background:var(--bg);color:var(--dark);font-weight:800;font-size:12.5px;padding:7px 14px;border-radius:100px;border:1px solid var(--border);transition:all .2s ease;}
+.card-select-pill{display:inline-flex;align-items:center;gap:6px;background:var(--bg);color:var(--dark);font-weight:800;font-size:12.5px;padding:8px 16px;border-radius:100px;border:1px solid var(--border);transition:all .2s ease;}
 .prod-card:hover .card-select-pill{background:var(--win);color:#FFFFFF;border-color:var(--win);transform:scale(1.04);}
 .prod-card{cursor:pointer;background:var(--white);border:2px solid var(--border);border-radius:20px;overflow:hidden;transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease;display:flex;flex-direction:column;justify-content:space-between;height:100%;}
-.prod-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,120,212,.18);border-color:var(--win);}
+.prod-card.top{border-color:var(--win);border-width:2px;box-shadow:0 8px 25px rgba(0,120,212,0.12);position:relative;}
+.prod-card.top::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg, #0078D4, #0284C7);}
+.prod-card:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(0,120,212,.2);border-color:var(--win);}
+
+.card-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
+.card-name{font-size:20px;font-weight:800;color:var(--dark);display:flex;align-items:center;gap:8px;}
+.card-desc{font-size:13.5px;color:var(--muted);line-height:1.55;margin-bottom:16px;}
+.feat-wrap{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;}
+.feat{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:var(--dark);background:var(--bg);border:1px solid var(--border);padding:6px 12px;border-radius:8px;line-height:1.35;}
+.feat.hi{background:rgba(0,120,212,0.08);color:#0078D4;border-color:rgba(0,120,212,0.25);font-weight:700;}
+.feat.warn{background:rgba(217,119,6,0.08);color:#D97706;border-color:rgba(217,119,6,0.25);font-weight:600;}
+.price-row{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;background:var(--bg);border-top:1px solid var(--border);}
+.price-big{font-family:'Outfit',sans-serif;font-size:28px;font-weight:900;color:var(--dark);}
+.price-big sup{font-size:16px;font-weight:700;}
 
 /* DOTS */
 .dot-nav{display:flex;justify-content:center;gap:6px;margin-bottom:26px;}
@@ -198,10 +211,58 @@ h1.hero em{font-style:normal;background:linear-gradient(135deg,#0078D4,#0284C7);
 .tiktok-channel-link {
   display: flex; align-items: center; justify-content: center; width: 100%; padding: 11px; font-family: 'Outfit', sans-serif; font-size: 13px; font-weight: 700; color: #38BDF8; background: rgba(56, 189, 248, 0.1); border-radius: 12px; text-decoration: none; border: 1px solid rgba(56, 189, 248, 0.2); transition: background 0.18s;
 }
-.tiktok-channel-link:hover { background: rgba(56, 189, 248, 0.2); }
+.feat-section {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 20px 22px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03);
+}
+.feat-title {
+  font-size: 10.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+.feat-list {
+  display: grid;
+  gap: 14px;
+}
+.feat-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+.feat-icon {
+  font-size: 20px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.feat-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 2px;
+}
+.feat-desc {
+  font-size: 12.5px;
+  color: var(--muted);
+  line-height: 1.5;
+}
 
-/* CONTENEDOR OPTIMIZADO A 1240px (SIN ESPACIOS VACÍOS) */
-.page { max-width: 1240px; margin: 0 auto; padding: 28px 24px 90px; }
+/* BOTTOM NAV */
+.bnav { position: fixed; bottom: 0; left: 0; right: 0; background: rgba(244,244,245,0.95); backdrop-filter: blur(12px); border-top: 1px solid var(--border); padding: 10px 16px 18px; z-index: 100; }
+.nbtn { flex: 1; padding: 12px 16px; border-radius: 12px; font-size: 13.5px; font-weight: 700; cursor: pointer; border: none; transition: all 0.18s; }
+.nbtn.p { background: var(--win); color: white; }
+.nbtn.p:hover { background: #0060A8; }
+.nbtn.s { background: var(--white); border: 1px solid var(--border); color: var(--dark); }
+.nbtn.s:hover { border-color: var(--win); color: var(--win); }
+
+/* CONTENEDOR EQUILIBRADO A 1040px PARA MANTENER HERO GRID Y DUAL CARDS EN ESCRITORIO */
+.page { max-width: 1040px; margin: 0 auto; padding: 28px 24px 90px; }
 h1.hero { font-family: 'DM Serif Display', serif; font-size: clamp(34px, 4vw, 54px); font-weight: 400; line-height: 1.08; letter-spacing: -.02em; margin-bottom: 16px; }
 h1.hero em { font-style: italic; color: var(--win); }
 .hero-sub { font-size: 16.5px; color: var(--muted); line-height: 1.65; margin-bottom: 0; }
@@ -232,10 +293,10 @@ h1.hero em { font-style: italic; color: var(--win); }
     margin-top: auto !important;
     padding-bottom: 0 !important;
   }
-  .feat-list {
+  .feat-section.grid-2col .feat-list {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
-    gap: 20px !important;
+    gap: 16px !important;
   }
 }
 </style>
@@ -297,25 +358,31 @@ h1.hero em { font-style: italic; color: var(--win); }
 
   <div class="grid-click-hint">💬 <span>Haz clic en cualquier plan para solicitar tu licencia al instante por WhatsApp</span></div>
 
-  <div class="prod-cards" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:16px; margin-bottom:28px;">
+  <div class="prod-cards" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:20px; margin-bottom:32px;">
     <div class="prod-card" id="windows-10" onclick="window.open('https://wa.me/51925244643?text=Deseo%20información%20de%20Windows%2010%20Pro', '_blank'); gtag('event','whatsapp_click',{product:'Windows',item:'Windows 10 Pro',location:'product_card'})">
       <div class="card-top">
         <div class="card-head">
-          <div class="card-name">Windows 10 Pro</div>
+          <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+            <div class="card-name">🪟 Windows 10 Pro</div>
+            <span style="font-size:10px; font-weight:800; background:#E2E8F0; color:#475569; padding:3px 8px; border-radius:6px; text-transform:uppercase;">Edición Pro</span>
+          </div>
           <button class="card-share-btn" type="button" aria-label="Compartir producto" onclick="event.stopPropagation(); shareProduct('Windows 10 Pro', 'S/35', 'windows-10')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M8 7l4-4 4 4"/><path d="M4 13v6a2 2 0 002 2h12a2 2 0 002-2v-6"/></svg></button>
         </div>
         <p class="card-desc">Sistema operativo estable y compatible con la mayoría de equipos, incluso los más antiguos. Ideal si tu PC no cumple los requisitos de Windows 11.</p>
         <div class="feat-wrap">
-          <span class="feat">🖥️ Compatible con equipos antiguos</span>
+          <span class="feat">🖥️ Compatible con PCs antiguas</span>
           <span class="feat">🔑 Licencia permanente</span>
           <span class="feat">⚡ Entrega inmediata</span>
           <span class="feat warn">⚠️ Sin soporte de Microsoft (desde oct. 2025)</span>
         </div>
       </div>
       <div class="price-row">
-        <div><div class="price-big"><sup>S/</sup>35</div></div>
+        <div>
+          <div class="price-big"><sup>S/</sup>35</div>
+          <div style="font-size:11px; color:var(--muted); font-weight:600;">Pago único permanente</div>
+        </div>
         <div class="card-select-pill">
-          ♾️ Pago único · Elegir ↗
+          Pedir por WhatsApp ↗
         </div>
       </div>
     </div>
@@ -323,31 +390,34 @@ h1.hero em { font-style: italic; color: var(--win); }
     <div class="prod-card top" id="windows-11-pro" onclick="window.open('https://wa.me/51925244643?text=Deseo%20información%20de%20Windows%2011%20Pro', '_blank'); gtag('event','whatsapp_click',{product:'Windows',item:'Windows 11 Pro',location:'product_card'})">
       <div class="card-top">
         <div class="card-head">
-          <div style="display:flex; align-items:center; gap:8px;">
-            <div class="card-name">Windows 11 Pro</div>
-            <div class="best-tag">⭐ Más reciente</div>
+          <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+            <div class="card-name">🪟 Windows 11 Pro</div>
+            <div class="best-tag">⭐ Recomendado</div>
           </div>
           <button class="card-share-btn" type="button" aria-label="Compartir producto" onclick="event.stopPropagation(); shareProduct('Windows 11 Pro', 'S/40', 'windows-11-pro')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M8 7l4-4 4 4"/><path d="M4 13v6a2 2 0 002 2h12a2 2 0 002-2v-6"/></svg></button>
         </div>
-        <p class="card-desc">La versión más nueva de Windows, con más seguridad y funciones. Confirma que tu equipo sea compatible antes de comprar.</p>
+        <p class="card-desc">La versión más nueva de Windows, con más seguridad y funciones avanzadas de IA (Copilot). Confirma compatibilidad antes de comprar.</p>
         <div class="feat-wrap">
-          <span class="feat hi">🆕 Última versión</span>
-          <span class="feat hi">🔐 Mayor seguridad</span>
+          <span class="feat hi">🆕 Última versión oficial</span>
+          <span class="feat hi">🔐 Mayor seguridad & Copilot</span>
           <span class="feat">🔑 Licencia permanente</span>
           <span class="feat">⚡ Entrega inmediata</span>
           <span class="feat warn">⚠️ Requiere TPM 2.0</span>
         </div>
       </div>
-      <div class="price-row">
-        <div><div class="price-big"><sup>S/</sup>40</div></div>
-        <div class="card-select-pill">
-          ♾️ Pago único · Elegir ↗
+      <div class="price-row" style="background:var(--win-light); border-top-color:rgba(0,120,212,0.2);">
+        <div>
+          <div class="price-big" style="color:var(--win);"><sup>S/</sup>40</div>
+          <div style="font-size:11px; color:var(--win); font-weight:700;">Pago único permanente</div>
+        </div>
+        <div class="card-select-pill" style="background:var(--win); color:#FFF; border-color:var(--win);">
+          Pedir por WhatsApp ↗
         </div>
       </div>
     </div>
   </div>
 
-  <div class="feat-section">
+  <div class="feat-section grid-2col">
     <div class="feat-title">¿Qué incluye?</div>
     <div class="feat-list">
       <div class="feat-item">
@@ -377,30 +447,33 @@ h1.hero em { font-style: italic; color: var(--win); }
     </div>
   </div>
 
-  <div class="feat-section">
-    <div class="feat-title">Beneficios generales</div>
-    <div class="feat-list">
-      <div class="feat-item">
-        <span class="feat-icon">🔄</span>
-        <div><div class="feat-name">Windows 11 Pro: actualizaciones activas</div><div class="feat-desc">Sigue recibiendo actualizaciones de seguridad y funciones nuevas de Microsoft de forma continua.</div></div>
-      </div>
-      <div class="feat-item">
-        <span class="feat-icon">⚠️</span>
-        <div><div class="feat-name">Windows 10: ya sin soporte de Microsoft</div><div class="feat-desc">Microsoft dejó de dar soporte oficial y actualizaciones de seguridad gratuitas a Windows 10 en octubre de 2025. Sigue funcionando normal, pero no recibe parches nuevos.</div></div>
-      </div>
-      <div class="feat-item">
-        <span class="feat-icon">🔐</span>
-        <div><div class="feat-name">Mayor seguridad en Windows 11</div><div class="feat-desc">Incluye TPM 2.0, Secure Boot y protección contra amenazas más moderna de fábrica.</div></div>
-      </div>
-      <div class="feat-item">
-        <span class="feat-icon">🖥️</span>
-        <div><div class="feat-name">Windows 10: ideal para equipos antiguos</div><div class="feat-desc">Funciona en hardware que no cumple los requisitos de Windows 11 (sin TPM 2.0).</div></div>
-      </div>
-      <div class="feat-item">
-        <span class="feat-icon">🔑</span>
-        <div><div class="feat-name">Licencia permanente en ambos</div><div class="feat-desc">Pago único, sin mensualidades. Queda activada en tu equipo hasta que lo formatees.</div></div>
+  <div class="content-with-ad-grid">
+    <div class="feat-section">
+      <div class="feat-title">Beneficios generales</div>
+      <div class="feat-list">
+        <div class="feat-item">
+          <span class="feat-icon">🔄</span>
+          <div><div class="feat-name">Windows 11 Pro: actualizaciones activas</div><div class="feat-desc">Sigue recibiendo actualizaciones de seguridad y funciones nuevas de Microsoft de forma continua.</div></div>
+        </div>
+        <div class="feat-item">
+          <span class="feat-icon">⚠️</span>
+          <div><div class="feat-name">Windows 10: ya sin soporte de Microsoft</div><div class="feat-desc">Microsoft dejó de dar soporte oficial y actualizaciones de seguridad gratuitas a Windows 10 en octubre de 2025. Sigue funcionando normal, pero no recibe parches nuevos.</div></div>
+        </div>
+        <div class="feat-item">
+          <span class="feat-icon">🔐</span>
+          <div><div class="feat-name">Mayor seguridad en Windows 11</div><div class="feat-desc">Incluye TPM 2.0, Secure Boot y protección contra amenazas más moderna de fábrica.</div></div>
+        </div>
+        <div class="feat-item">
+          <span class="feat-icon">🖥️</span>
+          <div><div class="feat-name">Windows 10: ideal para equipos antiguos</div><div class="feat-desc">Funciona en hardware que no cumple los requisitos de Windows 11 (sin TPM 2.0).</div></div>
+        </div>
+        <div class="feat-item">
+          <span class="feat-icon">🔑</span>
+          <div><div class="feat-name">Licencia permanente en ambos</div><div class="feat-desc">Pago único, sin mensualidades. Queda activada en tu equipo hasta que lo formatees.</div></div>
+        </div>
       </div>
     </div>
+    <div class="ad-slot" data-ad-id="windows_ad"></div>
   </div>
 
   <div class="combo-note">
@@ -445,11 +518,14 @@ h1.hero em { font-style: italic; color: var(--win); }
   </div>
 
   <div class="how-label">¿Cómo funciona el proceso?</div>
-  <div class="how-steps">
-    <div class="how-step"><div class="how-num">1</div><div class="how-text"><strong>Acuerdas el producto</strong> que quieres por WhatsApp y te confirmo precio y disponibilidad.</div></div>
-    <div class="how-step"><div class="how-num">2</div><div class="how-text"><strong>Realizas el pago</strong> desde tu país usando Western Union a mi Yape en Perú.</div></div>
-    <div class="how-step"><div class="how-num">3</div><div class="how-text"><strong>Me envías el comprobante</strong> de la transferencia por WhatsApp.</div></div>
-    <div class="how-step"><div class="how-num">4</div><div class="how-text"><strong>Confirmo el pago</strong> y te envío la clave de Windows al instante. ¡Listo para activar!</div></div>
+  <div class="content-with-ad-grid">
+    <div class="how-steps">
+      <div class="how-step"><div class="how-num">1</div><div class="how-text"><strong>Acuerdas el producto</strong> que quieres por WhatsApp y te confirmo precio y disponibilidad.</div></div>
+      <div class="how-step"><div class="how-num">2</div><div class="how-text"><strong>Realizas el pago</strong> desde tu país usando Western Union a mi Yape en Perú.</div></div>
+      <div class="how-step"><div class="how-num">3</div><div class="how-text"><strong>Me envías el comprobante</strong> de la transferencia por WhatsApp.</div></div>
+      <div class="how-step"><div class="how-num">4</div><div class="how-text"><strong>Confirmo el pago</strong> y te envío la clave de Windows al instante. ¡Listo para activar!</div></div>
+    </div>
+    <div class="ad-slot" data-ad-id="windows_ad"></div>
   </div>
 </div>
 <div class="bnav"><div class="bnav-inner">
@@ -468,52 +544,107 @@ h1.hero em { font-style: italic; color: var(--win); }
   </div>
   <div class="dot-nav"><div class="d"></div><div class="d"></div><div class="d on"></div></div>
 
-  <div class="wu-hero">
-    <div class="wu-badge">WU</div>
-    <h2>Paga con Western Union</h2>
-    <p>No necesitas tener Yape ni ser de Perú. Envía el pago desde tu país en minutos, de forma 100% legal y segura.</p>
-    <div class="wu-pills">
-      <span class="wu-pill">🌍 +200 países</span>
-      <span class="wu-pill">💳 Tarjeta, banco o efectivo</span>
-      <span class="wu-pill">⚡ Llega en minutos</span>
-      <span class="wu-pill">🔒 100% seguro</span>
+  <!-- PESTAÑAS DE MÉTODOS DE PAGO (HOMOLOGADO YAPE + WESTERN UNION) -->
+  <div class="payment-tabs-bar">
+    <button class="pay-tab-btn active" id="tabYapeBtn" onclick="switchPaymentTab('yape')">
+      <span>💜 Yape (Perú)</span>
+    </button>
+    <button class="pay-tab-btn" id="tabWuBtn" onclick="switchPaymentTab('wu')">
+      <span>🌍 Western Union (Internacional)</span>
+    </button>
+  </div>
+
+  <!-- CONTENIDO 1: YAPE (DEFAULT) -->
+  <div id="payContentYape">
+    <div class="wu-hero" style="background: linear-gradient(135deg, #7b2d8b 0%, #5b1a6b 100%);">
+      <div class="wu-badge" style="background: #fff; color: #7b2d8b;">💜</div>
+      <h2>Paga con Yape</h2>
+      <p>Pago directo, sin comisiones, solo para clientes en Perú. En minutos tienes tu clave de activación.</p>
+      <div class="wu-pills">
+        <span class="wu-pill">🇵🇪 Solo Perú</span>
+        <span class="wu-pill">💜 Sin comisión</span>
+        <span class="wu-pill">⚡ Instantáneo</span>
+        <span class="wu-pill">🔒 100% seguro</span>
+      </div>
+    </div>
+
+    <div class="content-with-ad-grid">
+      <div class="steps">
+        <div class="step">
+          <div class="snum">1</div>
+          <div><div class="stitle">Abre Yape en tu celular</div><div class="sdesc">Toca en <strong>"Yapear"</strong> e ingresa el número de celular.</div></div>
+        </div>
+        <div class="step">
+          <div class="snum">2</div>
+          <div><div class="stitle">Ingresa los datos de pago</div>
+            <div class="data-box">
+              <div class="dr"><span class="dl">Número Yape</span><span class="dv">925 244 643</span></div>
+              <hr class="dd">
+              <div class="dr"><span class="dl">Titular</span><span class="dv">Cesar Fer*</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="snum">3</div>
+          <div><div class="stitle">Envíame el comprobante</div><div class="sdesc">Manda una captura del Yape confirmado por WhatsApp al 925 244 643.</div><div class="s-hl">✅ En minutos te enviamos tu clave de Windows. ¡Listo!</div></div>
+        </div>
+      </div>
+      <div class="ad-slot" data-ad-id="windows_yape_ad"></div>
     </div>
   </div>
 
-  <div class="yape-badge">
-    <span class="icon">💜</span>
-    <p><strong>Western Union es aliada oficial de Yape Perú.</strong> Tu dinero llega directo a mi billetera, sin intermediarios ni demoras.</p>
-  </div>
-
-  <div class="fee-box">
-    <div class="fee-head">Comisiones Western Union a Perú</div>
-    <div class="fee-row"><span class="fee-label">🎉 Tu primer envío</span><span class="fee-val g">GRATIS — $0</span></div>
-    <div class="fee-row"><span class="fee-label">💳 Pago con tarjeta (siguientes)</span><span class="fee-val gold">~$4–5 USD aprox.</span></div>
-    <div class="fee-row"><span class="fee-label">🏦 Transferencia bancaria (siguientes)</span><span class="fee-val gold">~$2–3 USD aprox.</span></div>
-    <div class="fee-row"><span class="fee-label">⏱️ Tiempo de llegada</span><span class="fee-val n">Minutos</span></div>
-  </div>
-
-  <div class="steps">
-    <div class="step"><div class="snum">1</div><div><div class="stitle">Descarga la app o entra a westernunion.com</div><div class="sdesc">Busca <strong>"Western Union"</strong> en App Store o Google Play. Registro gratis en 5 minutos. También puedes ir a una sucursal física y pagar en efectivo.</div></div></div>
-    <div class="step"><div class="snum">2</div><div><div class="stitle">Usa el simulador primero</div><div class="sdesc">En <strong>"El destinatario recibe"</strong> escribe el monto en <strong>Soles (PEN)</strong> del producto que acordamos.</div><div class="s-hl">💡 Ves el costo total en tu moneda antes de confirmar. Sin sorpresas.</div></div></div>
-    <div class="step"><div class="snum">3</div><div><div class="stitle">Selecciona Perú → Billetera Móvil → Yape</div><div class="sdesc">En método de entrega elige <strong>"Billetera Móvil"</strong> o <strong>"Mobile Wallet"</strong> y selecciona <strong>YAPE</strong> como operador.</div></div></div>
-    <div class="step"><div class="snum">4</div><div><div class="stitle">Ingresa los datos exactamente así</div>
-      <div class="data-box">
-        <div class="dr"><span class="dl">Nombre completo</span><span class="dv">Cesar Fer*</span></div>
-        <hr class="dd">
-        <div class="dr"><span class="dl">Número celular</span><span class="dv">+51 925 244 643</span></div>
-        <hr class="dd">
-        <div class="dr"><span class="dl">País</span><span class="dv">Perú (+51)</span></div>
+  <!-- CONTENIDO 2: WESTERN UNION (INTERNACIONAL) -->
+  <div id="payContentWu" style="display: none;">
+    <div class="wu-hero">
+      <div class="wu-badge">WU</div>
+      <h2>Paga con Western Union</h2>
+      <p>No necesitas tener Yape ni ser de Perú. Envía el pago desde tu país en minutos, de forma 100% legal y segura.</p>
+      <div class="wu-pills">
+        <span class="wu-pill">🌍 +200 países</span>
+        <span class="wu-pill">💳 Tarjeta, banco o efectivo</span>
+        <span class="wu-pill">⚡ Llega en minutos</span>
+        <span class="wu-pill">🔒 100% seguro</span>
       </div>
-    </div></div>
-    <div class="step"><div class="snum">5</div><div><div class="stitle">Elige cómo pagar</div>
-      <div class="pay-grid">
-        <div class="pay-opt"><strong>💳 Tarjeta</strong><span>Débito o crédito. Lo más rápido.</span></div>
-        <div class="pay-opt"><strong>🏦 Transferencia</strong><span>Banco / SPEI / PSE según tu país.</span></div>
-        <div class="pay-opt"><strong>🏪 Efectivo</strong><span>En agencia WU o tienda aliada.</span></div>
+    </div>
+
+    <div class="yape-badge">
+      <span class="icon">💜</span>
+      <p><strong>Western Union es aliada oficial de Yape Perú.</strong> Tu dinero llega directo a mi billetera, sin intermediarios ni demoras.</p>
+    </div>
+
+    <div class="fee-box">
+      <div class="fee-head">Comisiones Western Union a Perú</div>
+      <div class="fee-row"><span class="fee-label">🎉 Tu primer envío</span><span class="fee-val g">GRATIS — $0</span></div>
+      <div class="fee-row"><span class="fee-label">💳 Pago con tarjeta (siguientes)</span><span class="fee-val gold">~$4–5 USD aprox.</span></div>
+      <div class="fee-row"><span class="fee-label">🏦 Transferencia bancaria (siguientes)</span><span class="fee-val gold">~$2–3 USD aprox.</span></div>
+      <div class="fee-row"><span class="fee-label">⏱️ Tiempo de llegada</span><span class="fee-val n">Minutos</span></div>
+    </div>
+
+    <div class="content-with-ad-grid">
+      <div class="steps">
+        <div class="step"><div class="snum">1</div><div><div class="stitle">Descarga la app o entra a westernunion.com</div><div class="sdesc">Busca <strong>"Western Union"</strong> en App Store o Google Play. Registro gratis en 5 minutos. También puedes ir a una sucursal física y pagar en efectivo.</div></div></div>
+        <div class="step"><div class="snum">2</div><div><div class="stitle">Usa el simulador primero</div><div class="sdesc">En <strong>"El destinatario recibe"</strong> escribe el monto en <strong>Soles (PEN)</strong> del producto que acordamos.</div><div class="s-hl">💡 Ves el costo total en tu moneda antes de confirmar. Sin sorpresas.</div></div></div>
+        <div class="step"><div class="snum">3</div><div><div class="stitle">Selecciona Perú → Billetera Móvil → Yape</div><div class="sdesc">En método de entrega elige <strong>"Billetera Móvil"</strong> o <strong>"Mobile Wallet"</strong> y selecciona <strong>YAPE</strong> como operador.</div></div></div>
+        <div class="step"><div class="snum">4</div><div><div class="stitle">Ingresa los datos exactamente así</div>
+          <div class="data-box">
+            <div class="dr"><span class="dl">Nombre completo</span><span class="dv">Cesar Fer*</span></div>
+            <hr class="dd">
+            <div class="dr"><span class="dl">Número celular</span><span class="dv">+51 925 244 643</span></div>
+            <hr class="dd">
+            <div class="dr"><span class="dl">País</span><span class="dv">Perú (+51)</span></div>
+          </div>
+        </div></div>
+        <div class="step"><div class="snum">5</div><div><div class="stitle">Elige cómo pagar</div>
+          <div class="pay-grid">
+            <div class="pay-opt"><strong>💳 Tarjeta</strong><span>Débito o crédito. Lo más rápido.</span></div>
+            <div class="pay-opt"><strong>🏦 Transferencia</strong><span>Banco / SPEI / PSE según tu país.</span></div>
+            <div class="pay-opt"><strong>🏪 Efectivo</strong><span>En agencia WU o tienda aliada.</span></div>
+          </div>
+        </div></div>
+        <div class="step"><div class="snum">6</div><div><div class="stitle">Envíame el comprobante</div><div class="sdesc">WU te da un <strong>número MTCN</strong> al finalizar. Mándame la captura por WhatsApp y te envío tu clave de Windows al instante.</div><div class="s-hl">✅ Entrega inmediata por WhatsApp o correo electrónico.</div></div></div>
       </div>
-    </div></div>
-    <div class="step"><div class="snum">6</div><div><div class="stitle">Envíame el comprobante</div><div class="sdesc">WU te da un <strong>número MTCN</strong> al finalizar. Mándame la captura por WhatsApp y te envío tu clave de Windows al instante.</div><div class="s-hl">✅ Entrega inmediata por WhatsApp o correo electrónico.</div></div></div>
+      <div class="ad-slot" data-ad-id="windows_wu_ad"></div>
+    </div>
   </div>
 
   <div class="tip"><span class="tip-i">🎁</span><p><strong>¿Primera vez usando Western Union?</strong> Tu primer envío tiene <strong>comisión $0</strong>. Solo pagas el precio del producto.</p></div>
@@ -555,11 +686,25 @@ document.querySelectorAll('.card-share-btn').forEach(btn => {
   });
 });
 
-if (location.hash) {
-  const target = document.getElementById(location.hash.slice(1));
-  if (target) target.scrollIntoView();
+function switchPaymentTab(type) {
+  var yapeBox = document.getElementById('payContentYape');
+  var wuBox = document.getElementById('payContentWu');
+  var yapeBtn = document.getElementById('tabYapeBtn');
+  var wuBtn = document.getElementById('tabWuBtn');
+  if (!yapeBox || !wuBox) return;
+
+  if (type === 'yape') {
+    yapeBox.style.display = 'block';
+    wuBox.style.display = 'none';
+    if (yapeBtn) yapeBtn.classList.add('active');
+    if (wuBtn) wuBtn.classList.remove('active');
+  } else {
+    yapeBox.style.display = 'none';
+    wuBox.style.display = 'block';
+    if (wuBtn) wuBtn.classList.add('active');
+    if (yapeBtn) yapeBtn.classList.remove('active');
+  }
 }
 </script>
-
-
+<script src="/assets/js/ad-loader.js"></script>
 </body></html>

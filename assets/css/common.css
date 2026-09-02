@@ -71,3 +71,125 @@
   visibility: visible;
   transform: translateY(-50%) translateX(0);
 }
+/* PESTAÑAS MÉTODOS DE PAGO (YAPE + WESTERN UNION) */
+.payment-tabs-bar {
+  display: flex;
+  gap: 6px;
+  background: #E2E8F0;
+  padding: 4px;
+  border-radius: 100px;
+  margin-bottom: 20px;
+}
+.pay-tab-btn {
+  flex: 1;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 100px;
+  background: transparent;
+  color: #64748B;
+  font-family: 'Outfit', sans-serif;
+  font-size: 12.5px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+.pay-tab-btn.active {
+  background: #FFFFFF;
+  color: #0F172A;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.12);
+}
+
+/* SISTEMA DE PUBLICIDAD Y GRILLA DINÁMICA DE ESPACIOS */
+.content-with-ad-grid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 22px;
+  align-items: start;
+}
+
+.ad-slot-card {
+  background: linear-gradient(145deg, #1E293B 0%, #0F172A 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 18px;
+  color: #FFFFFF;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+.ad-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #F59E0B, #D97706);
+  color: #FFFFFF;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 3px 10px;
+  border-radius: 100px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.ad-media-wrap {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 12px;
+  background: rgba(0, 0, 0, 0.2);
+  aspect-ratio: 16 / 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ad-media-wrap img,
+.ad-media-wrap video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.ad-title {
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.35;
+  color: #F8FAFC;
+  margin-bottom: 6px;
+}
+
+.ad-desc {
+  font-size: 12px;
+  color: #94A3B8;
+  line-height: 1.5;
+  margin-bottom: 14px;
+}
+
+.ad-cta-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #25D366;
+  color: #FFFFFF;
+  font-size: 13px;
+  font-weight: 800;
+  padding: 11px 16px;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: transform 0.18s ease, background 0.18s ease;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
+}
+
+.ad-cta-btn:hover {
+  transform: translateY(-2px);
+  background: #20ba5a;
+}
+
+@media (max-width: 900px) {
+  .content-with-ad-grid {
+    grid-template-columns: 1fr;
+  }
+}
