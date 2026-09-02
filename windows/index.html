@@ -121,28 +121,327 @@ h1.hero em{font-style:normal;background:linear-gradient(135deg,#0078D4,#0284C7);
 
 /* TRUST HERO & CARDS (PLOMO OSCURO METÁLICO) */
 .trust-hero {
-  background: linear-gradient(145deg, #1E293B 0%, #334155 100%);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 24px;
-  padding: 28px 24px;
-  margin-bottom: 26px;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 15px 35px -10px rgba(15, 23, 42, 0.3);
+  background: linear-gradient(135deg, var(--ms-blue-dark), var(--ms-blue));
+  border-radius: 20px; padding: 26px 22px;
+  margin-bottom: 28px; position: relative; overflow: hidden;
 }
-.trust-hero h2 { font-family: 'Outfit', sans-serif; font-size: 26px; font-weight: 900; color: #FFFFFF; margin-bottom: 8px; }
-.trust-hero p { font-family: 'Inter', sans-serif; font-size: 14px; color: #E2E8F0; line-height: 1.6; }
+
+.trust-hero::after {
+  content: '';
+  position: absolute; right: -20px; top: -20px;
+  width: 140px; height: 140px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,.08);
+}
+
+.trust-hero::before {
+  content: '';
+  position: absolute; right: 20px; bottom: -30px;
+  width: 100px; height: 100px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,.05);
+}
+
+.trust-hero h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 26px; color: white; margin-bottom: 8px;
+}
+
+.trust-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 10px; margin-bottom: 28px;
+}
 
 .trust-card {
-  background: linear-gradient(145deg, #1E293B 0%, #334155 100%);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 20px;
-  padding: 20px;
-  transition: transform .2s ease, border-color .2s ease;
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 14px; padding: 18px;
+  transition: box-shadow .18s;
 }
-.trust-card:hover { transform: translateY(-3px); border-color: #38BDF8; }
-.t-title { font-size: 14px; font-weight: 800; color: #FFFFFF; margin-bottom: 5px; }
-.t-desc { font-family: 'Inter', sans-serif; font-size: 12.5px; color: #E2E8F0; line-height: 1.5; }
+.trust-card:hover { box-shadow: 0 4px 16px rgba(0,103,184,.08); }
+
+/* GUARANTEE */
+.guarantee {
+  background: var(--green-light);
+  border: 1px solid #a8dca8; border-radius: 14px;
+  padding: 18px 20px; display: flex; gap: 14px;
+  align-items: flex-start; margin-bottom: 28px;
+}
+.g-desc { font-size: 13px; color: #1a4f1a; line-height: 1.6; }
+
+/* HOW IT WORKS */
+.how-title {
+  font-size: 10.5px; font-weight: 800; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--muted); margin-bottom: 14px;
+}
+
+.how-num {
+  width: 36px; height: 36px; flex-shrink: 0;
+  border-radius: 10px; background: var(--ms-blue);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'DM Serif Display', serif;
+  font-size: 17px; color: white;
+}
+
+.how-text { font-size: 13.5px; font-weight: 500; color: var(--text); line-height: 1.5; }
+.how-text strong { font-weight: 700; color: var(--dark); }
+
+/* ══════════════════════════════
+   SCREEN 3 — PAGO WU
+══════════════════════════════ */
+
+.wu-hero {
+  background: var(--wu-dark); border-radius: 20px;
+  padding: 24px 22px; margin-bottom: 28px;
+  position: relative; overflow: hidden;
+}
+.wu-hero::after {
+  content: 'WU';
+  position: absolute; right: -8px; bottom: -22px;
+  font-family: 'DM Serif Display', serif;
+  font-size: 100px; color: rgba(255,204,0,.06);
+  pointer-events: none;
+}
+.wu-badge {
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--wu); border-radius: 12px;
+  width: 50px; height: 50px;
+  font-size: 13px; font-weight: 900; color: var(--wu-dark);
+  margin-bottom: 14px; letter-spacing: -.02em;
+}
+.wu-hero h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 23px; color: white; margin-bottom: 6px;
+}
+.wu-hero p { font-size: 13.5px; color: rgba(255,255,255,.6); line-height: 1.55; margin-bottom: 14px; }
+.wu-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+.wu-pill {
+  background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.14);
+  border-radius: 100px; padding: 5px 12px;
+  font-size: 12px; color: white; font-weight: 500;
+}
+
+.yape-badge{background:linear-gradient(135deg,#5b2d8e,#7c3fbf);border-radius:14px;padding:16px 20px;display:flex;gap:12px;align-items:center;margin-bottom:24px;color:white;}
+.yape-badge .icon{font-size:26px;flex-shrink:0;}
+.yape-badge p{font-size:13px;line-height:1.6;}
+.yape-badge strong{font-weight:700;
+}
+
+  
+/* FEE TABLE */
+.fee-box {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 14px; overflow: hidden; margin-bottom: 24px;
+}
+.fee-head {
+  background: var(--dark); padding: 11px 18px;
+  font-size: 10.5px; font-weight: 800;
+  color: rgba(255,255,255,.45); text-transform: uppercase; letter-spacing: .1em;
+}
+.fee-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 13px 18px; border-bottom: 1px solid var(--border); gap: 10px;
+}
+.fee-row:last-child { border-bottom: none; }
+.fee-label { font-size: 13.5px; color: var(--muted); font-weight: 500; }
+.fee-val { font-size: 14px; font-weight: 800; text-align: right; }
+.fee-val.g { color: var(--green); }
+.fee-val.gold { color: var(--gold); }
+.fee-val.n { color: var(--dark); }
+
+/* STEPS */
+.steps { display: grid; gap: 12px; margin-bottom: 24px; }
+
+.step {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 15px; padding: 17px 19px;
+  display: grid; grid-template-columns: 38px 1fr; gap: 15px;
+  transition: box-shadow .18s;
+}
+.step:hover { box-shadow: 0 4px 16px rgba(0,103,184,.07); }
+
+.snum {
+  width: 38px; height: 38px; flex-shrink: 0;
+  border-radius: 10px; background: var(--wu-dark);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'DM Serif Display', serif;
+  font-size: 18px; color: var(--wu);
+}
+
+.stitle { font-size: 14px; font-weight: 800; color: var(--dark); margin-bottom: 5px; }
+.sdesc { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+.s-hl {
+  background: var(--ms-blue-light); border: 1px solid var(--ms-blue-mid);
+  border-radius: 9px; padding: 10px 13px; margin-top: 9px;
+  font-size: 12.5px; color: var(--ms-blue-dark); font-weight: 500; line-height: 1.5;
+}
+
+.pay-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(128px, 1fr));
+  gap: 7px; margin-top: 10px;
+}
+.pay-opt {
+  background: var(--bg); border: 1px solid var(--border);
+  border-radius: 9px; padding: 11px 12px; font-size: 12.5px; line-height: 1.4;
+}
+.pay-opt strong {
+  display: block; font-size: 10.5px; font-weight: 800;
+  text-transform: uppercase; letter-spacing: .05em;
+  color: var(--gold); margin-bottom: 3px;
+}
+.pay-opt span { color: var(--muted); }
+
+.tip {
+  background: var(--green-light); border: 1px solid #a8dca8;
+  border-radius: 13px; padding: 15px 18px;
+  display: flex; gap: 11px; align-items: flex-start; margin-bottom: 24px;
+}
+.tip-i { font-size: 19px; flex-shrink: 0; margin-top: 1px; }
+.tip p { font-size: 13px; color: #1a4f1a; line-height: 1.6; }
+.tip strong { color: var(--green); font-weight: 700; }
+
+/* CONTACT */
+.contact {
+  background: linear-gradient(135deg, var(--ms-blue-dark), var(--ms-blue));
+  border-radius: 18px; padding: 24px; text-align: center; color: white;
+}
+.contact h3 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 23px; margin-bottom: 8px;
+}
+.wa-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: white; color: var(--ms-blue-dark);
+  font-weight: 800; font-size: 14px;
+  border-radius: 12px; padding: 13px 26px;
+  cursor: pointer; border: none; transition: transform .18s;
+}
+
+/* BOTTOM NAV */
+.bnav {
+  position: fixed; bottom: 0; left: 0; right: 0;
+  background: rgba(240,244,250,.95);
+  backdrop-filter: blur(14px);
+  border-top: 1px solid var(--border);
+  padding: 10px 16px 18px; z-index: 100;
+}
+.nbtn {
+  flex: 1; padding: 12px 16px; border-radius: 12px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 13.5px; font-weight: 700;
+  cursor: pointer; border: none; transition: all .18s;
+}
+.nbtn.p { background: var(--ms-blue); color: white; }
+.nbtn.p:hover { background: var(--ms-blue-dark); }
+.nbtn.s:hover { border-color: var(--ms-blue); color: var(--ms-blue); }
+
+@media(max-width:480px){
+  h1.hero { font-size: 28px; }
+  .feat-grid { grid-template-columns: 1fr; }
+  .trust-grid { grid-template-columns: 1fr; }
+  .cn-row { grid-template-columns: 1fr; }
+}
+
+
+/* HERO GRID EN 2 COLUMNAS (TÍTULO A LA IZQUIERDA Y WIDGET DE TIKTOK A LA DERECHA) */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 44px;
+  align-items: center;
+  margin-bottom: 40px;
+}
+@media (max-width: 900px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 24px; margin-bottom: 28px; }
+}
+
+.tiktok-card-widget {
+  background: linear-gradient(145deg, #0F172A 0%, #1E293B 100%);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 24px;
+  padding: 22px;
+  box-shadow: 0 15px 35px -10px rgba(15, 23, 42, 0.3);
+  color: #FFFFFF;
+  position: relative;
+  overflow: hidden;
+}
+.tiktok-card-widget::before {
+  content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, #FE2C55, #25F4EE);
+}
+.tiktok-card-head {
+  display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px;
+}
+.tiktok-user-info {
+  display: flex; align-items: center; gap: 8px; font-family: 'Outfit', sans-serif; font-size: 15px; font-weight: 800; color: #FFFFFF;
+}
+.tiktok-user-info svg { fill: #FE2C55; }
+.tiktok-badge-pill {
+  font-size: 11px; font-weight: 800; background: linear-gradient(135deg, #FE2C55, #E11D48); color: #FFF; padding: 4px 12px; border-radius: 100px; text-transform: uppercase; letter-spacing: 0.04em;
+}
+.tiktok-player-box {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  padding: 28px 20px;
+  text-align: center;
+  margin-bottom: 16px;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.tiktok-play-icon {
+  width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, #FE2C55, #25F4EE); display: flex; align-items: center; justify-content: center; color: #FFF; margin-bottom: 14px; box-shadow: 0 8px 24px rgba(254, 44, 85, 0.4); transition: transform 0.2s ease;
+}
+.tiktok-player-box:hover .tiktok-play-icon { transform: scale(1.1); }
+.tiktok-video-title {
+  font-family: 'Outfit', sans-serif; font-size: 15px; font-weight: 700; color: #FFFFFF; margin-bottom: 4px; line-height: 1.35;
+}
+.tiktok-video-sub {
+  font-family: 'Inter', sans-serif; font-size: 13px; color: #94A3B8; margin-bottom: 16px;
+}
+.tiktok-main-play-btn {
+  display: inline-flex; align-items: center; gap: 8px; background: #FE2C55; color: #FFFFFF; font-family: 'Outfit', sans-serif; font-size: 14px; font-weight: 800; padding: 11px 24px; border-radius: 100px; text-decoration: none; box-shadow: 0 4px 16px rgba(254, 44, 85, 0.35); transition: transform 0.18s ease;
+}
+.tiktok-main-play-btn:hover { transform: translateY(-2px); }
+
+.tiktok-tabs-row {
+  display: flex; gap: 8px; margin-bottom: 14px;
+}
+.tiktok-tab-btn {
+  flex: 1; padding: 9px 8px; font-family: 'Outfit', sans-serif; font-size: 12px; font-weight: 800; border-radius: 10px; border: 1px solid rgba(255, 255, 255, 0.15); background: rgba(255, 255, 255, 0.06); color: #CBD5E1; cursor: pointer; transition: all 0.18s ease; text-align: center;
+}
+.tiktok-tab-btn.active, .tiktok-tab-btn:hover {
+  background: #FE2C55; color: #FFFFFF; border-color: #FE2C55; box-shadow: 0 4px 12px rgba(254, 44, 85, 0.3);
+}
+
+.grid-click-hint{display:flex;align-items:center;gap:8px;background:rgba(0,120,212,.08);border:1px solid rgba(0,120,212,.2);color:#0078D4;font-size:13px;font-weight:700;padding:10px 18px;border-radius:12px;margin-bottom:20px;}
+.card-actions{display:flex;align-items:center;gap:8px;padding:0 22px 18px;background:var(--bg);}
+.card-share-btn{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;flex-shrink:0;border-radius:8px;border:1px solid var(--border);background:var(--white);color:var(--muted);cursor:pointer;transition:all .15s ease;}
+.card-share-btn:hover{border-color:var(--ms-blue);color:var(--ms-blue);background:rgba(0,120,212,.08);}
+.card-share-btn:active{transform:scale(.92);}
+.card-share-btn svg{width:15px;height:15px;}
+.card-select-pill{display:inline-flex;align-items:center;gap:6px;background:var(--bg);color:var(--dark);font-weight:800;font-size:12.5px;padding:7px 14px;border-radius:100px;border:1px solid var(--border);transition:all .2s ease;}
+.prod-card:hover .card-select-pill{background:var(--ms-blue);color:#FFFFFF;border-color:var(--ms-blue);transform:scale(1.04);}
+.prod-card{cursor:pointer;background:var(--white);border:2px solid var(--border);border-radius:20px;overflow:hidden;transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease;display:flex;flex-direction:column;justify-content:space-between;height:100%;}
+.prod-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,120,212,.18);border-color:var(--ms-blue);}
+
+.page { max-width: 1240px; margin: 0 auto; padding: 28px 24px 90px; }
+h1.hero { font-family: 'DM Serif Display', serif; font-size: clamp(34px, 4vw, 54px); font-weight: 400; line-height: 1.08; letter-spacing: -.02em; margin-bottom: 16px; }
+h1.hero em { font-style: italic; color: var(--ms-blue); }
+.hero-sub { font-size: 16.5px; color: var(--muted); line-height: 1.65; margin-bottom: 0; }
+
+@media (min-width: 900px) {
+  .page { padding: 36px 40px 110px; }
+  .top-ribbon { margin: -36px -40px 32px; padding: 20px 40px; border-radius: 0 0 28px 28px; }
+  .trust-grid { grid-template-columns: repeat(4, 1fr) !important; }
+  .prod-cards { display: grid !important; grid-template-columns: repeat(3, 1fr) !important; gap: 24px !important; margin-bottom: 36px !important; }
+  .prod-card { display: flex !important; flex-direction: column !important; justify-content: space-between !important; height: 100% !important; }
+  .card-top { display: flex !important; flex-direction: column !important; flex-grow: 1 !important; padding: 20px 22px 18px !important; }
+  .feat-wrap { margin-top: auto !important; padding-bottom: 0 !important; }
+}
 
 /* HERO GRID EN 2 COLUMNAS CON WIDGET DE TIKTOK A LA DERECHA */
 .hero-grid {

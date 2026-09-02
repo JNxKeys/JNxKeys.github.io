@@ -1,0 +1,68 @@
+.trust-hero {
+  background: linear-gradient(135deg, var(--ms-blue-dark), var(--ms-blue));
+  border-radius: 20px; padding: 26px 22px;
+  margin-bottom: 28px; position: relative; overflow: hidden;
+}
+
+.trust-hero::after {
+  content: '';
+  position: absolute; right: -20px; top: -20px;
+  width: 140px; height: 140px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,.08);
+}
+
+.trust-hero::before {
+  content: '';
+  position: absolute; right: 20px; bottom: -30px;
+  width: 100px; height: 100px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,.05);
+}
+
+.trust-hero h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 26px; color: white; margin-bottom: 8px;
+}
+
+.trust-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 10px; margin-bottom: 28px;
+}
+
+.trust-card {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 14px; padding: 18px;
+  transition: box-shadow .18s;
+}
+.trust-card:hover { box-shadow: 0 4px 16px rgba(0,103,184,.08); }
+
+/* GUARANTEE */
+.guarantee {
+  background: var(--green-light);
+  border: 1px solid #a8dca8; border-radius: 14px;
+  padding: 18px 20px; display: flex; gap: 14px;
+  align-items: flex-start; margin-bottom: 28px;
+}
+.g-desc { font-size: 13px; color: #1a4f1a; line-height: 1.6; }
+
+/* HOW IT WORKS */
+.how-title {
+  font-size: 10.5px; font-weight: 800; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--muted); margin-bottom: 14px;
+}
+
+.how-num {
+  width: 36px; height: 36px; flex-shrink: 0;
+  border-radius: 10px; background: var(--ms-blue);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'DM Serif Display', serif;
+  font-size: 17px; color: white;
+}
+
+.how-text { font-size: 13.5px; font-weight: 500; color: var(--text); line-height: 1.5; }
+.how-text strong { font-weight: 700; color: var(--dark); }
+
+/* ══════════════════════════════
+   SCREEN 3 — PAGO WU
+══════════════════════════════ */
