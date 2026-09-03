@@ -119,7 +119,9 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background: linear-gradient(145deg, #0F172A 0%, #1E293B 100%);
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.90) 0%, rgba(30, 41, 59, 0.85) 100%), url('/assets/img/hero_tech_bg.jpg') center/cover no-repeat;
+            background-size: 110% auto;
+            animation: heroBgPan 25s ease-in-out infinite alternate;
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.2);
@@ -179,38 +181,83 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: var(--gradient-primary);
-            color: #fff;
-            font-size: 14px;
+            background: rgba(37, 211, 102, 0.14);
+            border: 1.5px solid #25D366;
+            color: #FFFFFF;
+            font-size: 13.5px;
             font-weight: 700;
-            padding: 10px 20px;
+            padding: 8px 18px;
             border-radius: 100px;
             text-decoration: none;
-            box-shadow: 0 4px 16px rgba(37, 99, 235, 0.4);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.25);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
         }
         .btn-wa-header:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(2, 132, 199, 0.5);
+            background: rgba(37, 211, 102, 0.25);
+            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45);
         }
 
         /* HERO SECTION CON FOTO/TEXTURA TECNOLÓGICA CON MOVIMIENTO DINÁMICO */
         .hero-wrapper {
             position: relative;
-            background: linear-gradient(145deg, #0F172A 0%, #1E293B 100%);
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.86) 0%, rgba(30, 41, 59, 0.80) 100%), url('/assets/img/hero_tech_bg.jpg') center/cover no-repeat;
+            background-size: 112% auto;
             border-radius: 32px;
             padding: 56px 40px;
             margin-bottom: 40px;
-            box-shadow: 0 25px 60px -15px rgba(15, 23, 42, 0.35);
-            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 25px 60px -15px rgba(15, 23, 42, 0.45);
+            border: 1px solid rgba(255, 255, 255, 0.18);
             overflow: hidden;
+            animation: heroBgPan 22s ease-in-out infinite alternate;
+        }
+
+        @keyframes heroBgPan {
+            0% { background-position: 0% 0%; background-size: 106% auto; }
+            50% { background-position: 50% 100%; background-size: 115% auto; }
+            100% { background-position: 100% 50%; background-size: 106% auto; }
+        }
+
+        .hero-glow-orb-1 {
+            position: absolute;
+            width: 380px;
+            height: 380px;
+            top: -80px;
+            right: -60px;
+            background: radial-gradient(circle, rgba(56, 189, 248, 0.28) 0%, rgba(37, 99, 235, 0.15) 50%, transparent 75%);
+            filter: blur(60px);
+            pointer-events: none;
+            z-index: 1;
+            animation: orbFloat1 14s ease-in-out infinite alternate;
+        }
+        .hero-glow-orb-2 {
+            position: absolute;
+            width: 340px;
+            height: 340px;
+            bottom: -60px;
+            left: 15%;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.26) 0%, rgba(168, 85, 247, 0.12) 50%, transparent 75%);
+            filter: blur(65px);
+            pointer-events: none;
+            z-index: 1;
+            animation: orbFloat2 16s ease-in-out infinite alternate-reverse;
+        }
+        @keyframes orbFloat1 {
+            0% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(35px, 25px) scale(1.12); }
+            100% { transform: translate(-25px, -15px) scale(0.92); }
+        }
+        @keyframes orbFloat2 {
+            0% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(-30px, -20px) scale(1.15); }
+            100% { transform: translate(25px, 20px) scale(0.95); }
         }
 
         .hero-scanner {
             position: absolute;
             top: 0; left: -100%;
             width: 50%; height: 100%;
-            background: linear-gradient(90deg, transparent 0%, rgba(56, 189, 248, 0.15) 50%, transparent 100%);
+            background: linear-gradient(90deg, transparent 0%, rgba(56, 189, 248, 0.18) 50%, transparent 100%);
             transform: skewX(-25deg);
             animation: scannerSweep 7s ease-in-out infinite;
             pointer-events: none;
@@ -383,6 +430,11 @@
             width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
             background: rgba(255, 255, 255, 0.1);
             border: 1px solid rgba(255, 255, 255, 0.15);
+            gap: 3px;
+        }
+        .cyber-icon-official.dual svg {
+            width: 18px;
+            height: 18px;
         }
         .cyber-info-title { font-size: 14px; font-weight: 800; color: #FFFFFF; }
         .cyber-info-sub { font-size: 11px; color: #94A3B8; }
@@ -458,40 +510,40 @@
             gap: 20px;
         }
         .trust-card-cyber {
-            background: linear-gradient(145deg, #FFFFFF 0%, #F8FAFC 100%);
-            border: 1px solid rgba(226, 232, 240, 0.9);
+            background: linear-gradient(160deg, #FFFFFF 50%, #F0F7FF 100%);
+            border: 1px solid rgba(203, 213, 225, 0.75);
             border-radius: 24px;
             padding: 28px 24px;
-            box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.05);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04), 0 12px 28px -4px rgba(15, 23, 42, 0.08);
             position: relative;
             overflow: hidden;
-            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
         }
         .trust-card-cyber::before {
             content: '';
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 3px;
-            background: var(--gradient-primary);
-            opacity: 0.85;
+            top: 0; left: 0; width: 100%; height: 3.5px;
+            background: linear-gradient(90deg, #2563EB 0%, #38BDF8 100%);
+            opacity: 1;
         }
         .trust-card-cyber:hover {
             transform: translateY(-6px);
             border-color: #2563EB;
-            box-shadow: 0 18px 40px -8px rgba(37, 99, 235, 0.18);
+            box-shadow: 0 18px 40px -8px rgba(37, 99, 235, 0.16);
         }
         .trust-icon-box-cyber {
             width: 52px; height: 52px;
             border-radius: 16px;
             background: rgba(37, 99, 235, 0.08);
-            border: 1px solid rgba(37, 99, 235, 0.25);
-            color: var(--accent-blue);
+            border: 1px solid rgba(37, 99, 235, 0.22);
+            color: #2563EB;
             display: flex; align-items: center; justify-content: center;
             margin-bottom: 20px;
-            box-shadow: 0 6px 16px rgba(37, 99, 235, 0.1);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.08);
         }
         .trust-icon-box-cyber svg { width: 26px; height: 26px; }
-        .trust-card-cyber h3 { font-size: 18px; font-weight: 800; margin-bottom: 8px; color: var(--text-primary); }
-        .trust-card-cyber p { font-family: 'Inter', sans-serif; font-size: 13.5px; color: var(--text-secondary); line-height: 1.55; }
+        .trust-card-cyber h3 { font-size: 18px; font-weight: 800; margin-bottom: 8px; color: #0F172A; }
+        .trust-card-cyber p { font-family: 'Inter', sans-serif; font-size: 13.5px; color: #475569; line-height: 1.55; }
 
         /* Section Headings */
         .section-header {
@@ -530,38 +582,64 @@
             flex-wrap: wrap;
         }
         .tab-btn {
-            background: #FFFFFF;
-            border: 1px solid var(--border-glass);
-            color: var(--text-secondary);
+            background: linear-gradient(160deg, #FFFFFF 50%, #F0F7FF 100%);
+            border: 1px solid rgba(203, 213, 225, 0.8);
+            color: #475569;
             font-family: 'Outfit', sans-serif;
             font-size: 14px;
             font-weight: 600;
-            padding: 10px 20px;
+            padding: 10px 22px;
             border-radius: 100px;
             cursor: pointer;
-            box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
+            box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
             transition: all 0.2s ease;
         }
         .tab-btn:hover {
-            color: var(--accent-blue);
-            border-color: var(--accent-blue);
+            color: #2563EB;
+            border-color: #2563EB;
+            transform: translateY(-1px);
         }
         .tab-btn.active {
             background: var(--gradient-primary);
             color: #fff;
             border-color: transparent;
-            box-shadow: 0 4px 16px rgba(37, 99, 235, 0.35);
+            box-shadow: 0 6px 18px rgba(37, 99, 235, 0.35);
+        }
+
+        .catalog-header-wrap {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            margin: 60px 0 28px;
+            gap: 20px;
+        }
+        .catalog-header-wrap .section-header {
+            margin: 0;
+            text-align: left;
+            max-width: 620px;
         }
 
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            grid-auto-flow: column;
+            grid-auto-columns: calc((100% - 48px) / 3);
             gap: 24px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            padding: 8px 4px 20px;
             margin-bottom: 60px;
         }
+        .products-grid::-webkit-scrollbar {
+            display: none;
+        }
         .product-card {
-            background: var(--gradient-tech-card);
-            border: 1px solid var(--border-glass);
+            scroll-snap-align: start;
+            min-height: 250px;
+            background: linear-gradient(160deg, #FFFFFF 50%, #F0F7FF 100%);
+            border: 1px solid rgba(203, 213, 225, 0.75);
             border-radius: 24px;
             padding: 28px;
             display: flex;
@@ -569,25 +647,43 @@
             justify-content: space-between;
             text-decoration: none;
             color: inherit;
-            box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.06);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04), 0 12px 28px -4px rgba(15, 23, 42, 0.08);
             position: relative;
             overflow: hidden;
-            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+            transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease, box-shadow 0.28s ease;
         }
         .product-card::before {
             content: '';
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 3px;
-            background: var(--gradient-primary);
-            opacity: 0;
-            transition: opacity 0.25s ease;
+            top: 0; left: 0; width: 100%; height: 3.5px;
+            background: linear-gradient(90deg, #2563EB 0%, #38BDF8 100%);
+            opacity: 0.85;
+            transition: opacity 0.25s ease, height 0.25s ease;
+        }
+        .product-card::after {
+            content: '';
+            position: absolute;
+            top: -50px; right: -50px;
+            width: 140px; height: 140px;
+            background: radial-gradient(circle, rgba(56, 189, 248, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            transition: transform 0.4s ease, opacity 0.4s ease;
+            opacity: 0.5;
         }
         .product-card:hover {
             transform: translateY(-6px);
-            border-color: var(--border-glass-glow);
-            box-shadow: 0 20px 45px -10px rgba(37, 99, 235, 0.2);
+            border-color: #2563EB;
+            box-shadow: 0 20px 45px -10px rgba(37, 99, 235, 0.22);
         }
-        .product-card:hover::before { opacity: 1; }
+        .product-card:hover::before {
+            opacity: 1;
+            height: 4.5px;
+        }
+        .product-card:hover::after {
+            transform: scale(1.4);
+            opacity: 1;
+        }
 
         .product-card-top {
             display: flex;
@@ -599,66 +695,83 @@
             width: 58px; height: 58px;
             border-radius: 18px;
             display: flex; align-items: center; justify-content: center;
-            background: #FFFFFF;
-            border: 1.5px solid rgba(226, 232, 240, 0.9);
+            background: linear-gradient(135deg, #FFFFFF 0%, #F8FAFC 100%);
+            border: 1.5px solid rgba(203, 213, 225, 0.85);
             box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
             flex-shrink: 0;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+        .product-card:hover .product-chip-real {
+            transform: scale(1.08) rotate(-2deg);
+            box-shadow: 0 12px 25px rgba(37, 99, 235, 0.2);
         }
 
         .product-badge-instant {
             font-size: 11px;
             font-weight: 700;
             background: rgba(16, 185, 129, 0.1);
-            border: 1px solid rgba(16, 185, 129, 0.25);
+            border: 1px solid rgba(16, 185, 129, 0.3);
             color: #059669;
-            padding: 4px 10px;
+            padding: 4px 12px;
             border-radius: 100px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .product-badge-instant::before {
+            content: '';
+            width: 6px; height: 6px;
+            border-radius: 50%;
+            background: #10B981;
+            box-shadow: 0 0 6px #10B981;
         }
 
         .product-title {
             font-size: 22px;
             font-weight: 800;
             margin-bottom: 6px;
-            color: var(--text-primary);
+            color: #0F172A;
+            letter-spacing: -0.01em;
         }
         .product-desc {
             font-family: 'Inter', sans-serif;
             font-size: 13.5px;
-            color: var(--text-secondary);
+            color: #475569;
             margin-bottom: 24px;
-            line-height: 1.5;
+            line-height: 1.55;
         }
         .product-card-bottom {
             display: flex;
             align-items: center;
             justify-content: space-between;
             padding-top: 16px;
-            border-top: 1px solid var(--border-glass);
+            border-top: 1px solid rgba(226, 232, 240, 0.9);
         }
-        .product-price-label { font-size: 10px; text-transform: uppercase; color: var(--text-muted); font-weight: 700; letter-spacing: 0.05em; }
-        .product-price-value { font-size: 22px; font-weight: 900; color: var(--accent-gold); }
+        .product-price-label { font-size: 10.5px; text-transform: uppercase; color: #64748B; font-weight: 700; letter-spacing: 0.06em; }
+        .product-price-value { font-size: 24px; font-weight: 900; color: #D97706; letter-spacing: -0.02em; }
         
         .product-btn-icon {
-            width: 38px; height: 38px;
+            width: 40px; height: 40px;
             border-radius: 50%;
-            background: #FFFFFF;
-            border: 1px solid var(--border-glass);
-            color: var(--text-primary);
+            background: rgba(37, 99, 235, 0.08);
+            border: 1px solid rgba(37, 99, 235, 0.25);
+            color: #2563EB;
             display: flex; align-items: center; justify-content: center;
-            transition: background 0.2s ease, transform 0.2s ease, color 0.2s ease;
+            transition: all 0.25s ease;
             box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
         }
         .product-card:hover .product-btn-icon {
-            background: var(--accent-blue);
+            background: var(--gradient-primary);
             color: #fff;
-            border-color: var(--accent-blue);
-            transform: translateX(3px);
+            border-color: transparent;
+            transform: translateX(4px) scale(1.05);
+            box-shadow: 0 6px 18px rgba(37, 99, 235, 0.35);
         }
 
         /* Combos Section & Carousel */
         .combos-section {
-            background: #FFFFFF;
-            border: 1px solid var(--border-glass);
+            background: linear-gradient(160deg, #FFFFFF 60%, #F0F7FF 100%);
+            border: 1px solid rgba(203, 213, 225, 0.75);
             border-radius: 32px;
             padding: 40px 32px;
             margin-bottom: 80px;
@@ -709,8 +822,8 @@
         .combo-card {
             flex: 0 0 calc(33.333% - 14px);
             scroll-snap-align: start;
-            background: #F8FAFC;
-            border: 1px solid var(--border-glass);
+            background: linear-gradient(160deg, #FFFFFF 50%, #F0F7FF 100%);
+            border: 1px solid rgba(203, 213, 225, 0.75);
             border-radius: 20px;
             padding: 24px;
             text-decoration: none;
@@ -718,26 +831,28 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            transition: transform 0.2s ease, border-color 0.2s ease;
+            transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04), 0 10px 25px -4px rgba(15, 23, 42, 0.07);
         }
         .combo-card:hover {
             transform: translateY(-4px);
-            border-color: var(--accent-blue);
+            border-color: #2563EB;
+            box-shadow: 0 16px 35px -8px rgba(37, 99, 235, 0.16);
         }
         .combo-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
-        .combo-tag { font-size: 11px; font-weight: 800; background: rgba(37, 99, 235, 0.1); color: var(--accent-blue); padding: 4px 10px; border-radius: 100px; text-transform: uppercase; }
+        .combo-tag { font-size: 11px; font-weight: 800; background: rgba(37, 99, 235, 0.1); color: #2563EB; padding: 4px 10px; border-radius: 100px; text-transform: uppercase; border: 1px solid rgba(37, 99, 235, 0.2); }
         .combo-save { font-size: 11px; font-weight: 800; background: #EF4444; color: #fff; padding: 4px 10px; border-radius: 100px; }
-        .combo-title { font-size: 18px; font-weight: 800; margin-bottom: 8px; color: var(--text-primary); }
-        .combo-includes { font-size: 12.5px; color: var(--text-secondary); margin-bottom: 20px; line-height: 1.4; }
+        .combo-title { font-size: 18px; font-weight: 800; margin-bottom: 8px; color: #0F172A; }
+        .combo-includes { font-size: 12.5px; color: #475569; margin-bottom: 20px; line-height: 1.4; }
         .combo-price-row { display: flex; align-items: baseline; gap: 10px; }
-        .combo-old-price { font-size: 14px; color: var(--text-muted); text-decoration: line-through; }
-        .combo-new-price { font-size: 24px; font-weight: 900; color: var(--accent-gold); }
+        .combo-old-price { font-size: 14px; color: #94A3B8; text-decoration: line-through; }
+        .combo-new-price { font-size: 24px; font-weight: 900; color: #D97706; }
 
         .combo-card-more {
             flex: 0 0 220px;
             scroll-snap-align: start;
-            background: #F8FAFC;
-            border: 2px dashed var(--border-glass);
+            background: linear-gradient(160deg, #FFFFFF 50%, #F8FAFC 100%);
+            border: 2px dashed rgba(203, 213, 225, 0.85);
             border-radius: 20px;
             padding: 24px;
             text-decoration: none;
@@ -748,33 +863,86 @@
             justify-content: center;
             text-align: center;
             gap: 12px;
-            transition: border-color 0.2s ease, background 0.2s ease;
+            transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 4px 10px -2px rgba(15, 23, 42, 0.04);
         }
         .combo-card-more:hover {
-            border-color: var(--accent-blue);
-            background: #F1F5F9;
+            border-color: #2563EB;
+            background: #F0F7FF;
+            box-shadow: 0 10px 25px -4px rgba(37, 99, 235, 0.12);
         }
 
-        /* Testimonials Section */
-        .reviews-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
+        /* Testimonials Section Carousel */
+        .reviews-header-wrap {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            margin-bottom: 28px;
+            gap: 20px;
+        }
+        .reviews-header-wrap .section-header {
+            margin: 0;
+            text-align: left;
+            max-width: 620px;
+        }
+        .reviews-carousel {
+            display: flex;
             gap: 24px;
-            margin-bottom: 80px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            padding: 8px 4px 20px;
+            margin-bottom: 20px;
+        }
+        .reviews-carousel::-webkit-scrollbar {
+            display: none;
         }
         .review-card {
-            background: var(--bg-surface);
-            border: 1px solid var(--border-glass);
+            flex: 0 0 calc((100% - 48px) / 3);
+            background: linear-gradient(160deg, #FFFFFF 50%, #F0F7FF 100%);
+            border: 1px solid rgba(203, 213, 225, 0.75);
             border-radius: 20px;
-            padding: 24px;
-            box-shadow: 0 8px 20px rgba(15, 23, 42, 0.04);
+            padding: 26px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04), 0 10px 24px -4px rgba(15, 23, 42, 0.06);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            scroll-snap-align: start;
+            scroll-snap-stop: always;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
         }
-        .stars { color: var(--accent-gold); font-size: 14px; margin-bottom: 12px; }
-        .review-text { font-family: 'Inter', sans-serif; font-size: 14px; color: var(--text-secondary); margin-bottom: 16px; line-height: 1.6; }
+        .review-card:hover {
+            transform: translateY(-3px);
+            border-color: #93C5FD;
+            box-shadow: 0 14px 30px -4px rgba(37, 99, 235, 0.12);
+        }
+        .stars { color: #F59E0B; font-size: 15px; margin-bottom: 12px; letter-spacing: 2px; }
+        .review-text { font-family: 'Inter', sans-serif; font-size: 14.5px; color: #334155; margin-bottom: 20px; line-height: 1.6; font-style: italic; }
         .review-author { display: flex; align-items: center; gap: 12px; }
-        .author-avatar { width: 38px; height: 38px; border-radius: 50%; background: var(--gradient-primary); display: flex; align-items: center; justify-content: center; font-weight: 800; color: #fff; font-size: 14px; }
-        .author-info h4 { font-size: 14px; font-weight: 700; color: var(--text-primary); }
-        .author-info p { font-size: 11px; color: var(--text-muted); }
+        .author-avatar { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%); display: flex; align-items: center; justify-content: center; font-weight: 800; color: #fff; font-size: 15px; box-shadow: 0 4px 10px rgba(37, 99, 235, 0.25); }
+        .author-info h4 { font-size: 14.5px; font-weight: 700; color: #0F172A; }
+        .author-info p { font-size: 12px; color: #64748B; margin-top: 1px; }
+
+        .reviews-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 60px;
+        }
+        .reviews-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 4px;
+            background: #CBD5E1;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .reviews-dot.active {
+            width: 24px;
+            background: #2563EB;
+        }
 
         /* Metrics Bar */
         .metrics-bar {
@@ -800,8 +968,8 @@
         }
         .footer-grid {
             display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 48px;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 36px;
             margin-bottom: 40px;
         }
         .footer-brand h3 { font-size: 22px; font-weight: 900; margin-bottom: 12px; color: #fff; }
@@ -864,10 +1032,10 @@
             .hero-subtitle { margin-left: auto; margin-right: auto; }
             .hero-ctas { justify-content: center; }
             .trust-grid { grid-template-columns: repeat(2, 1fr); }
-            .products-grid { grid-template-columns: repeat(2, 1fr); }
+            .products-grid { grid-auto-columns: calc((100% - 20px) / 2); gap: 20px; }
             .combo-card { flex: 0 0 calc(50% - 10px); }
-            .reviews-grid { grid-template-columns: 1fr; }
-            .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+            .review-card { flex: 0 0 calc((100% - 20px) / 2); }
+            .footer-grid { grid-template-columns: repeat(2, 1fr); gap: 32px; }
         }
 
         @media (max-width: 640px) {
@@ -884,9 +1052,13 @@
             .hero-ctas { flex-direction: column; width: 100%; gap: 10px; }
             .btn-primary, .btn-secondary { width: 100%; justify-content: center; padding: 12px 20px; font-size: 14px; text-align: center; }
             .trust-grid { grid-template-columns: 1fr; }
-            .products-grid { grid-template-columns: 1fr; }
+            .catalog-header-wrap { flex-direction: column; align-items: flex-start; }
+            .products-grid { grid-auto-columns: 88%; gap: 16px; }
             .combo-card { flex: 0 0 85%; }
+            .reviews-header-wrap { flex-direction: column; align-items: flex-start; }
+            .review-card { flex: 0 0 88%; scroll-snap-align: center; scroll-snap-stop: always; padding: 22px 20px; }
             .metrics-bar { grid-template-columns: 1fr; gap: 20px; padding: 20px; }
+            .footer-grid { grid-template-columns: 1fr; gap: 28px; }
         }
     </style>
 </head>
@@ -902,15 +1074,19 @@
                     <span class="brand-badge">Original</span>
                 </a>
                 <ul class="nav-menu">
-                    <li><a href="#marcas">Marcas Mundiales</a></li>
-                    <li><a href="#catalogo">Catálogo</a></li>
-                    <li><a href="#combos">Packs & Combos</a></li>
-                    <li><a href="#garantia">Garantía</a></li>
-                    <li><a href="#testimonios">Opiniones</a></li>
+                    <li><a href="/#marcas">Marcas</a></li>
+                    <li><a href="/#combos">Packs & Combos</a></li>
+                    <li><a href="/#catalogo">Catálogo</a></li>
+                    <li><a href="/nosotros/">Nosotros</a></li>
+                    <li><a href="/contacto/">Contacto</a></li>
+                    <li><a href="/#testimonios">Opiniones</a></li>
                 </ul>
                 <a href="https://wa.me/51925244643?text=Hola%20JNxKeys,%20quisiera%20información%20de%20sus%20licencias%20digitales" target="_blank" onclick="gtag('event','whatsapp_click',{product:'general',location:'header'})" class="btn-wa-header">
-                    <svg width="18" height="18" viewBox="0 0 32 32" fill="currentColor"><path d="M23.47 8.52A10.9 10.9 0 0 0 16.02 5c-6.01 0-10.9 4.89-10.9 10.9 0 1.92.5 3.8 1.46 5.46L5 27l5.8-1.52a10.9 10.9 0 0 0 5.22 1.33h.005c6.01 0 10.9-4.89 10.9-10.9a10.84 10.84 0 0 0-3.45-7.79zm-7.45 16.77h-.004a9.06 9.06 0 0 1-4.61-1.26l-.33-.196-3.44.9.92-3.35-.215-.345a9.05 9.05 0 0 1-1.39-4.83c0-5.01 4.08-9.09 9.1-9.09a9.04 9.04 0 0 1 6.43 2.67 9.03 9.03 0 0 1 2.66 6.43c0 5.01-4.08 9.09-9.1 9.09zm4.99-6.81c-.27-.14-1.61-.79-1.86-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.16-1.34-.8-.71-1.34-1.6-1.5-1.87-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.48-.84-2.02-.22-.53-.44-.46-.61-.47l-.52-.01c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.29 0 1.35.98 2.66 1.12 2.84.14.18 1.93 2.95 4.68 4.14.65.28 1.16.45 1.56.58.66.21 1.25.18 1.72.11.53-.08 1.61-.66 1.83-1.29.23-.63.23-1.17.16-1.29-.07-.11-.25-.18-.52-.32z"/></svg>
-                    Pedir por WhatsApp
+                    <svg width="20" height="20" viewBox="0 0 32 32">
+                        <circle cx="16" cy="16" r="16" fill="#25D366"/>
+                        <path fill="#fff" d="M23.47 8.52A10.9 10.9 0 0 0 16.02 5c-6.01 0-10.9 4.89-10.9 10.9 0 1.92.5 3.8 1.46 5.46L5 27l5.8-1.52a10.9 10.9 0 0 0 5.22 1.33h.005c6.01 0 10.9-4.89 10.9-10.9a10.84 10.84 0 0 0-3.45-7.79zm-7.45 16.77h-.004a9.06 9.06 0 0 1-4.61-1.26l-.33-.196-3.44.9.92-3.35-.215-.345a9.05 9.05 0 0 1-1.39-4.83c0-5.01 4.08-9.09 9.1-9.09a9.04 9.04 0 0 1 6.43 2.67 9.03 9.03 0 0 1 2.66 6.43c0 5.01-4.08 9.09-9.1 9.09zm4.99-6.81c-.27-.14-1.61-.79-1.86-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.16-1.34-.8-.71-1.34-1.6-1.5-1.87-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.48-.84-2.02-.22-.53-.44-.46-.61-.47l-.52-.01c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.29 0 1.35.98 2.66 1.12 2.84.14.18 1.93 2.95 4.68 4.14.65.28 1.16.45 1.56.58.66.21 1.25.18 1.72.11.53-.08 1.61-.66 1.83-1.29.23-.63.23-1.17.16-1.29-.07-.11-.25-.18-.52-.32z"/>
+                    </svg>
+                    <span>Pedir por WhatsApp</span>
                 </a>
             </div>
         </div>
@@ -921,6 +1097,8 @@
         
         <!-- HERO SECTION CON FOTO TECNOLÓGICA Y CYBER CARD CON ACCESOS DIRECTOS -->
         <div class="hero-wrapper">
+            <div class="hero-glow-orb-1"></div>
+            <div class="hero-glow-orb-2"></div>
             <div class="hero-scanner"></div>
             <section class="hero">
                 <div class="hero-content">
@@ -957,18 +1135,7 @@
                         </div>
 
                         <div class="cyber-grid">
-                            <!-- Windows Link -->
-                            <a class="cyber-item-link" href="/windows/" onclick="gtag('event','product_click',{product:'Windows_Hero'})">
-                                <div class="cyber-icon-official">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="#0078D4"><path d="M0 3.449L9.75 2.1v9.451H0m10.95-9.601L24 0v11.4H10.95M0 12.6h9.75v9.451L0 20.699M10.95 12.6H24V24l-13.05-1.801"/></svg>
-                                </div>
-                                <div>
-                                    <div class="cyber-info-title">Windows 11 Pro</div>
-                                    <div class="cyber-info-sub">Licencia Permanente</div>
-                                </div>
-                            </a>
-
-                            <!-- Office Link -->
+                            <!-- 1. Office Link -->
                             <a class="cyber-item-link" href="/office/" onclick="gtag('event','product_click',{product:'Office_Hero'})">
                                 <div class="cyber-icon-official">
                                     <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M14.5 2L3 6.25V17.75L14.5 22L21 19.5V4.5L14.5 2Z" fill="#EA3E23"/><path fill-rule="evenodd" clip-rule="evenodd" d="M14.5 2V22L21 19.5V4.5L14.5 2Z" fill="#F1511B"/><path fill-rule="evenodd" clip-rule="evenodd" d="M3 6.25L14.5 2V22L3 17.75V6.25Z" fill="#D83B01"/><circle cx="11" cy="12" r="3" stroke="white" stroke-width="1.8"/></svg>
@@ -979,25 +1146,36 @@
                                 </div>
                             </a>
 
-                            <!-- Google One Link -->
+                            <!-- 2. Google One Link -->
                             <a class="cyber-item-link" href="/google-one/" onclick="gtag('event','product_click',{product:'GoogleOne_Hero'})">
                                 <div class="cyber-icon-official">
                                     <svg width="24" height="24" viewBox="0 0 24 24"><path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3h3.88c2.27-2.09 3.665-5.17 3.665-9.12z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.11-6.72-4.96H1.26v3.09C3.24 21.3 7.31 24 12 24z"/><path fill="#FBBC05" d="M5.28 14.29c-.25-.72-.38-1.49-.38-2.29s.13-1.57.38-2.29V6.62H1.26C.46 8.23 0 10.06 0 12s.46 3.77 1.26 5.38l4.02-3.09z"/><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.31 0 3.24 2.7 1.26 6.62l4.02 3.09c.95-2.85 3.6-4.96 6.72-4.96z"/></svg>
                                 </div>
                                 <div>
-                                    <div class="cyber-info-title">Google One AI</div>
+                                    <div class="cyber-info-title">Google One</div>
                                     <div class="cyber-info-sub">Gemini Advanced + 2TB</div>
                                 </div>
                             </a>
 
-                            <!-- Kaspersky / ESET Link -->
-                            <a class="cyber-item-link" href="/kaspersky/" onclick="gtag('event','product_click',{product:'Kaspersky_Hero'})">
+                            <!-- 3. ESET Link -->
+                            <a class="cyber-item-link" href="/eset/" onclick="gtag('event','product_click',{product:'ESET_Hero'})">
                                 <div class="cyber-icon-official">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="#006D55"><path d="M12 2L2 7v10l10 5 10-5V7L12 2zm0 3.2L18.5 8.5 12 11.8 5.5 8.5 12 5.2zM4 9.8l7 3.6v6.9l-7-3.5V9.8zm16 7l-7 3.5v-6.9l7-3.6v7z"/></svg>
+                                    <svg width="28" height="14" viewBox="0 0 182 71.9"><path fill="#0094A1" d="M25.1 3.7c-9 0-16.7 4.7-20.8 11.3C0.8 21.2 0 31.2 0 37.8c0 6.6 0.8 16.7 4.3 22.8 4 6.6 11.7 11.3 20.8 11.3h131.8c9 0 16.7-4.7 20.8-11.3 3.5-6.1 4.3-16.2 4.3-22.8 0-6.6-0.8-16.7-4.3-22.8-4-6.6-11.7-11.3-20.8-11.3H25.1z"/><path fill="#FFFFFF" d="M112.8 34.1h11.1v-0.3c0-5.1-2-5.4-5.7-5.4-3.5 0-4.3 1.4-4.4 5.7M34.9 28.6c3.6 0 5.6 0.4 5.6 5.3v0.2H29.6c0.1-4.2 1.7-5.5 5.3-5.5M46 38.6c-0.1 8.9-5.1 11.8-11.3 11.8-7.3 0-11.1-4.2-11.1-12.7 0-7.7 3.5-13.6 11.4-13.6 7.7 0 11.2 5.5 11 14.5zm19.3-5.1c0-3.3-2.1-4.5-5.9-4.5-3.3 0-5.3 1.1-5.3 3.7 0 5.5 13.9 3.1 13.9 11.6 0 4.1-3.6 6.1-8.5 6.1-5.8 0-8.9-2.5-8.9-7.2h5.5c0 3.3 2.1 4.3 5.3 4.3 3 0 4.8-1.2 4.8-3.4 0-5.6-13.9-3.2-13.9-11.8 0-4 3.7-5.9 8.6-5.9 5.5 0 8.4 2.5 8.4 7.1h-4zm58.6 5.1c-0.1 8.9-5.1 11.8-11.3 11.8-7.3 0-11.1-4.2-11.1-12.7 0-7.7 3.5-13.6 11.4-13.6 7.7 0 11.2 5.5 11 14.5zm33.4 6c-2.3 0.8-4.8 1.1-7.2 1.1-5.9 0-7.6-2.5-7.6-8.7V29h-4.3v-4.4h4.3v-6.9h5.5v6.9h8.2V29h-8.2v12.7c0 3.3 0.6 4.3 3.5 4.3 1.8 0 3.8-0.5 5.8-1.4v5.0z"/></svg>
                                 </div>
                                 <div>
-                                    <div class="cyber-info-title">Kaspersky / ESET</div>
-                                    <div class="cyber-info-sub">Protección Antivirus</div>
+                                    <div class="cyber-info-title">ESET Antivirus</div>
+                                    <div class="cyber-info-sub">NOD32 & Internet Security</div>
+                                </div>
+                            </a>
+
+                            <!-- 4. Kaspersky Link -->
+                            <a class="cyber-item-link" href="/kaspersky/" onclick="gtag('event','product_click',{product:'Kaspersky_Hero'})">
+                                <div class="cyber-icon-official">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="5" fill="#006D55"/><path d="M6 5.5h3.2v5.6L14.8 5.5h3.8L12.5 12l6.4 6.5h-3.9L9.2 12.8v5.7H6V5.5z" fill="#FFFFFF"/></svg>
+                                </div>
+                                <div>
+                                    <div class="cyber-info-title">Kaspersky</div>
+                                    <div class="cyber-info-sub">Protección Antivirus & VPN</div>
                                 </div>
                             </a>
                         </div>
@@ -1033,25 +1211,25 @@
                     </div>
                     <div class="brand-badge-item">
                         <div class="brand-svg-box">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="#00A3A6"><path d="M12 2L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-3zm0 4.1c2.1 0 3.8 1.7 3.8 3.8s-1.7 3.8-3.8 3.8-3.8-1.7-3.8-3.8 1.7-3.8 3.8-3.8z"/></svg>
+                            <svg width="24" height="12" viewBox="0 0 182 71.9"><path fill="#0094A1" d="M25.1 3.7c-9 0-16.7 4.7-20.8 11.3C0.8 21.2 0 31.2 0 37.8c0 6.6 0.8 16.7 4.3 22.8 4 6.6 11.7 11.3 20.8 11.3h131.8c9 0 16.7-4.7 20.8-11.3 3.5-6.1 4.3-16.2 4.3-22.8 0-6.6-0.8-16.7-4.3-22.8-4-6.6-11.7-11.3-20.8-11.3H25.1z"/><path fill="#FFFFFF" d="M112.8 34.1h11.1v-0.3c0-5.1-2-5.4-5.7-5.4-3.5 0-4.3 1.4-4.4 5.7M34.9 28.6c3.6 0 5.6 0.4 5.6 5.3v0.2H29.6c0.1-4.2 1.7-5.5 5.3-5.5M46 38.6c-0.1 8.9-5.1 11.8-11.3 11.8-7.3 0-11.1-4.2-11.1-12.7 0-7.7 3.5-13.6 11.4-13.6 7.7 0 11.2 5.5 11 14.5zm19.3-5.1c0-3.3-2.1-4.5-5.9-4.5-3.3 0-5.3 1.1-5.3 3.7 0 5.5 13.9 3.1 13.9 11.6 0 4.1-3.6 6.1-8.5 6.1-5.8 0-8.9-2.5-8.9-7.2h5.5c0 3.3 2.1 4.3 5.3 4.3 3 0 4.8-1.2 4.8-3.4 0-5.6-13.9-3.2-13.9-11.8 0-4 3.7-5.9 8.6-5.9 5.5 0 8.4 2.5 8.4 7.1h-4zm58.6 5.1c-0.1 8.9-5.1 11.8-11.3 11.8-7.3 0-11.1-4.2-11.1-12.7 0-7.7 3.5-13.6 11.4-13.6 7.7 0 11.2 5.5 11 14.5zm33.4 6c-2.3 0.8-4.8 1.1-7.2 1.1-5.9 0-7.6-2.5-7.6-8.7V29h-4.3v-4.4h4.3v-6.9h5.5v6.9h8.2V29h-8.2v12.7c0 3.3 0.6 4.3 3.5 4.3 1.8 0 3.8-0.5 5.8-1.4v5.0z"/></svg>
                         </div>
                         ESET
                     </div>
                     <div class="brand-badge-item">
                         <div class="brand-svg-box">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="#006D55"><path d="M12 2L2 7v10l10 5 10-5V7L12 2zm0 3.2L18.5 8.5 12 11.8 5.5 8.5 12 5.2zM4 9.8l7 3.6v6.9l-7-3.5V9.8zm16 7l-7 3.5v-6.9l7-3.6v7z"/></svg>
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="5" fill="#006D55"/><path d="M6 5.5h3.2v5.6L14.8 5.5h3.8L12.5 12l6.4 6.5h-3.9L9.2 12.8v5.7H6V5.5z" fill="#FFFFFF"/></svg>
                         </div>
                         Kaspersky
                     </div>
                     <div class="brand-badge-item">
                         <div class="brand-svg-box">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="#00C4CC"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5c-2.49 0-4.5-2.01-4.5-4.5S8.51 7.5 11 7.5s4.5 2.01 4.5 4.5-2.01 4.5-4.5 4.5z"/></svg>
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="12" fill="#00C4CC"/><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm-5.038 5.68c.754 0 1.337.549 1.405 1.2.069.583-.171 1.097-.822 1.406-.343.171-.48.172-.549.069-.034-.069 0-.137.069-.206.617-.514.617-.926.548-1.508-.034-.378-.308-.618-.583-.618-1.2 0-2.914 2.674-2.674 4.629.103.754.549 1.646 1.509 1.646.308 0 .65-.103.96-.24.5-.264.799-.47 1.097-.8-.073-.885.704-2.046 1.851-2.046.515 0 .926.205.96.583.068.514-.377.582-.514.582s-.378-.034-.378-.17c-.034-.138.309-.07.275-.378-.035-.206-.24-.274-.446-.274-.72 0-1.131.994-1.029 1.611.035.275.172.549.447.549.205 0 .514-.31.617-.755.068-.308.343-.514.583-.514.102 0 .17.034.205.171v.138c-.034.137-.137.548-.102.651 0 .069.034.171.17.171.092 0 .436-.18.777-.459.117-.59.253-1.298.253-1.357.034-.24.137-.48.617-.48.103 0 .171.034.205.171v.138l-.136.617c.445-.583 1.097-.994 1.508-.994.172 0 .309.102.309.274 0 .103 0 .274-.069.446-.137.377-.309.96-.412 1.474 0 .137.035.274.207.274.171 0 .685-.206 1.096-.754l.007-.004c-.002-.068-.007-.134-.007-.202 0-.411.035-.754.104-.994.068-.274.411-.514.617-.514.103 0 .205.069.205.171 0 .035 0 .103-.034.137-.137.446-.24.857-.24 1.269 0 .24.034.582.102.788 0 .034.035.069.07.069.068 0 .548-.445.89-1.028-.308-.206-.48-.549-.48-.96 0-.72.446-1.097.858-1.097.343 0 .617.24.617.72 0 .308-.103.65-.274.96h.102a.77.77 0 0 0 .584-.24.293.293 0 0 1 .134-.117c.335-.425.83-.74 1.41-.74.48 0 .924.205.959.582.068.515-.378.618-.515.618l-.002-.002c-.138 0-.377-.035-.377-.172 0-.137.309-.068.274-.376-.034-.206-.24-.275-.446-.275-.686 0-1.13.891-1.028 1.611.034.275.171.583.445.583.206 0 .515-.308.652-.754.068-.274.343-.514.583-.514.103 0 .17.034.205.171 0 .069 0 .206-.137.652-.17.308-.171.48-.137.617.034.274.171.48.309.583.034.034.068.102.068.102 0 .069-.034.138-.137.138-.034 0-.068 0-.103-.035-.514-.205-.72-.548-.789-.891-.205.24-.445.377-.72.377-.445 0-.89-.411-.96-.926a1.609 1.609 0 0 1 .075-.649c-.203.13-.422.203-.623.203h-.17c-.447.652-.927 1.098-1.27 1.303a.896.896 0 0 1-.377.104c-.068 0-.171-.035-.205-.104-.095-.152-.156-.392-.193-.667-.481.527-1.145.805-1.453.805-.343 0-.548-.206-.582-.55v-.376c.102-.754.377-1.2.377-1.337a.074.074 0 0 0-.069-.07c-.24 0-1.028.824-1.166 1.373l-.103.445c-.068.309-.377.515-.582.515-.103 0-.172-.035-.206-.172v-.137l.046-.233c-.435.31-.87.508-1.075.508-.308 0-.48-.172-.514-.412-.206.274-.445.412-.754.412-.352 0-.696-.24-.862-.593-.244.275-.523.553-.852.764-.48.309-1.028.549-1.68.549-.582 0-1.097-.309-1.371-.583-.412-.377-.651-.96-.686-1.509-.205-1.68.823-3.84 2.4-4.8.378-.205.755-.343 1.132-.343zm9.77 3.291c-.104 0-.172.172-.172.343 0 .274.137.583.309.755a1.74 1.74 0 0 0 .102-.583c0-.343-.137-.515-.24-.515z" fill="#FFFFFF"/></svg>
                         </div>
                         Canva
                     </div>
                     <div class="brand-badge-item">
                         <div class="brand-svg-box">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="#000000"><path d="M20 4L8.5 15.5M9.5 9.5L20 20"/><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/></svg>
+                            <svg width="22" height="17" viewBox="0 0 32 24" fill="#000000"><path d="M31.056 4.979V0.215l-5.73 3.008v-.178C25.326 1.146 23.965 0 21.994 0H3.831C1.755 0 0.5 1.146 0.5 3.045v4.8L8.523 12 0.5 16.191v4.8C0.5 22.854 1.755 24 3.831 24h18.162c1.97 0 3.33-1.146 3.33-3.009v-.25l5.731 3.044V18.95L17.73 12l13.327-7.021zM13.11 14.363l9.852 5.16H3.22l9.888-5.16zm9.78-9.885L13.109 9.6 3.222 4.478h19.666z"/></svg>
                         </div>
                         CapCut
                     </div>
@@ -1083,25 +1261,25 @@
                     </div>
                     <div class="brand-badge-item">
                         <div class="brand-svg-box">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="#00A3A6"><path d="M12 2L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-3zm0 4.1c2.1 0 3.8 1.7 3.8 3.8s-1.7 3.8-3.8 3.8-3.8-1.7-3.8-3.8 1.7-3.8 3.8-3.8z"/></svg>
+                            <svg width="24" height="12" viewBox="0 0 182 71.9"><path fill="#0094A1" d="M25.1 3.7c-9 0-16.7 4.7-20.8 11.3C0.8 21.2 0 31.2 0 37.8c0 6.6 0.8 16.7 4.3 22.8 4 6.6 11.7 11.3 20.8 11.3h131.8c9 0 16.7-4.7 20.8-11.3 3.5-6.1 4.3-16.2 4.3-22.8 0-6.6-0.8-16.7-4.3-22.8-4-6.6-11.7-11.3-20.8-11.3H25.1z"/><path fill="#FFFFFF" d="M112.8 34.1h11.1v-0.3c0-5.1-2-5.4-5.7-5.4-3.5 0-4.3 1.4-4.4 5.7M34.9 28.6c3.6 0 5.6 0.4 5.6 5.3v0.2H29.6c0.1-4.2 1.7-5.5 5.3-5.5M46 38.6c-0.1 8.9-5.1 11.8-11.3 11.8-7.3 0-11.1-4.2-11.1-12.7 0-7.7 3.5-13.6 11.4-13.6 7.7 0 11.2 5.5 11 14.5zm19.3-5.1c0-3.3-2.1-4.5-5.9-4.5-3.3 0-5.3 1.1-5.3 3.7 0 5.5 13.9 3.1 13.9 11.6 0 4.1-3.6 6.1-8.5 6.1-5.8 0-8.9-2.5-8.9-7.2h5.5c0 3.3 2.1 4.3 5.3 4.3 3 0 4.8-1.2 4.8-3.4 0-5.6-13.9-3.2-13.9-11.8 0-4 3.7-5.9 8.6-5.9 5.5 0 8.4 2.5 8.4 7.1h-4zm58.6 5.1c-0.1 8.9-5.1 11.8-11.3 11.8-7.3 0-11.1-4.2-11.1-12.7 0-7.7 3.5-13.6 11.4-13.6 7.7 0 11.2 5.5 11 14.5zm33.4 6c-2.3 0.8-4.8 1.1-7.2 1.1-5.9 0-7.6-2.5-7.6-8.7V29h-4.3v-4.4h4.3v-6.9h5.5v6.9h8.2V29h-8.2v12.7c0 3.3 0.6 4.3 3.5 4.3 1.8 0 3.8-0.5 5.8-1.4v5.0z"/></svg>
                         </div>
                         ESET
                     </div>
                     <div class="brand-badge-item">
                         <div class="brand-svg-box">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="#006D55"><path d="M12 2L2 7v10l10 5 10-5V7L12 2zm0 3.2L18.5 8.5 12 11.8 5.5 8.5 12 5.2zM4 9.8l7 3.6v6.9l-7-3.5V9.8zm16 7l-7 3.5v-6.9l7-3.6v7z"/></svg>
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="5" fill="#006D55"/><path d="M6 5.5h3.2v5.6L14.8 5.5h3.8L12.5 12l6.4 6.5h-3.9L9.2 12.8v5.7H6V5.5z" fill="#FFFFFF"/></svg>
                         </div>
                         Kaspersky
                     </div>
                     <div class="brand-badge-item">
                         <div class="brand-svg-box">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="#00C4CC"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5c-2.49 0-4.5-2.01-4.5-4.5S8.51 7.5 11 7.5s4.5 2.01 4.5 4.5-2.01 4.5-4.5 4.5z"/></svg>
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="12" fill="#00C4CC"/><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm-5.038 5.68c.754 0 1.337.549 1.405 1.2.069.583-.171 1.097-.822 1.406-.343.171-.48.172-.549.069-.034-.069 0-.137.069-.206.617-.514.617-.926.548-1.508-.034-.378-.308-.618-.583-.618-1.2 0-2.914 2.674-2.674 4.629.103.754.549 1.646 1.509 1.646.308 0 .65-.103.96-.24.5-.264.799-.47 1.097-.8-.073-.885.704-2.046 1.851-2.046.515 0 .926.205.96.583.068.514-.377.582-.514.582s-.378-.034-.378-.17c-.034-.138.309-.07.275-.378-.035-.206-.24-.274-.446-.274-.72 0-1.131.994-1.029 1.611.035.275.172.549.447.549.205 0 .514-.31.617-.755.068-.308.343-.514.583-.514.102 0 .17.034.205.171v.138c-.034.137-.137.548-.102.651 0 .069.034.171.17.171.092 0 .436-.18.777-.459.117-.59.253-1.298.253-1.357.034-.24.137-.48.617-.48.103 0 .171.034.205.171v.138l-.136.617c.445-.583 1.097-.994 1.508-.994.172 0 .309.102.309.274 0 .103 0 .274-.069.446-.137.377-.309.96-.412 1.474 0 .137.035.274.207.274.171 0 .685-.206 1.096-.754l.007-.004c-.002-.068-.007-.134-.007-.202 0-.411.035-.754.104-.994.068-.274.411-.514.617-.514.103 0 .205.069.205.171 0 .035 0 .103-.034.137-.137.446-.24.857-.24 1.269 0 .24.034.582.102.788 0 .034.035.069.07.069.068 0 .548-.445.89-1.028-.308-.206-.48-.549-.48-.96 0-.72.446-1.097.858-1.097.343 0 .617.24.617.72 0 .308-.103.65-.274.96h.102a.77.77 0 0 0 .584-.24.293.293 0 0 1 .134-.117c.335-.425.83-.74 1.41-.74.48 0 .924.205.959.582.068.515-.378.618-.515.618l-.002-.002c-.138 0-.377-.035-.377-.172 0-.137.309-.068.274-.376-.034-.206-.24-.275-.446-.275-.686 0-1.13.891-1.028 1.611.034.275.171.583.445.583.206 0 .515-.308.652-.754.068-.274.343-.514.583-.514.103 0 .17.034.205.171v.138c-.034.137-.137.548-.102.651 0 .069.034.171.17.171.092 0 .436-.18.777-.459.117-.59.253-1.298.253-1.357.034-.24.137-.48.617-.48.103 0 .171.034.205.171v.138l-.136.617c.445-.583 1.097-.994 1.508-.994.172 0 .309.102.309.274 0 .103 0 .274-.069.446-.137.377-.309.96-.412 1.474 0 .137.035.274.207.274.171 0 .685-.206 1.096-.754l.007-.004c-.002-.068-.007-.134-.007-.202 0-.411.035-.754.104-.994.068-.274.411-.514.617-.514.103 0 .205.069.205.171 0 .035 0 .103-.034.137-.137.446-.24.857-.24 1.269 0 .24.034.582.102.788 0 .034.035.069.07.069.068 0 .548-.445.89-1.028-.308-.206-.48-.549-.48-.96 0-.72.446-1.097.858-1.097.343 0 .617.24.617.72 0 .308-.103.65-.274.96h.102a.77.77 0 0 0 .584-.24.293.293 0 0 1 .134-.117c.335-.425.83-.74 1.41-.74.48 0 .924.205.959.582.068.515-.378.618-.515.618l-.002-.002c-.138 0-.377-.035-.377-.172 0-.137.309-.068.274-.376-.034-.206-.24-.275-.446-.275-.686 0-1.13.891-1.028 1.611.034.275.171.583.445.583.206 0 .515-.308.652-.754.068-.274.343-.514.583-.514.103 0 .17.034.205.171 0 .069 0 .206-.137.652-.17.308-.171.48-.137.617.034.274.171.48.309.583.034.034.068.102.068.102 0 .069-.034.138-.137.138-.034 0-.068 0-.103-.035-.514-.205-.72-.548-.789-.891-.205.24-.445.377-.72.377-.445 0-.89-.411-.96-.926a1.609 1.609 0 0 1 .075-.649c-.203.13-.422.203-.623.203h-.17c-.447.652-.927 1.098-1.27 1.303a.896.896 0 0 1-.377.104c-.068 0-.171-.035-.205-.104-.095-.152-.156-.392-.193-.667-.481.527-1.145.805-1.453.805-.343 0-.548-.206-.582-.55v-.376c.102-.754.377-1.2.377-1.337a.074.074 0 0 0-.069-.07c-.24 0-1.028.824-1.166 1.373l-.103.445c-.068.309-.377.515-.582.515-.103 0-.172-.035-.206-.172v-.137l.046-.233c-.435.31-.87.508-1.075.508-.308 0-.48-.172-.514-.412-.206.274-.445.412-.754.412-.352 0-.696-.24-.862-.593-.244.275-.523.553-.852.764-.48.309-1.028.549-1.68.549-.582 0-1.097-.309-1.371-.583-.412-.377-.651-.96-.686-1.509-.205-1.68.823-3.84 2.4-4.8.378-.205.755-.343 1.132-.343zm9.77 3.291c-.104 0-.172.172-.172.343 0 .274.137.583.309.755a1.74 1.74 0 0 0 .102-.583c0-.343-.137-.515-.24-.515z" fill="#FFFFFF"/></svg>
                         </div>
                         Canva
                     </div>
                     <div class="brand-badge-item">
                         <div class="brand-svg-box">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="#000000"><path d="M20 4L8.5 15.5M9.5 9.5L20 20"/><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/></svg>
+                            <svg width="22" height="17" viewBox="0 0 32 24" fill="#000000"><path d="M31.056 4.979V0.215l-5.73 3.008v-.178C25.326 1.146 23.965 0 21.994 0H3.831C1.755 0 0.5 1.146 0.5 3.045v4.8L8.523 12 0.5 16.191v4.8C0.5 22.854 1.755 24 3.831 24h18.162c1.97 0 3.33-1.146 3.33-3.009v-.25l5.731 3.044V18.95L17.73 12l13.327-7.021zM13.11 14.363l9.852 5.16H3.22l9.888-5.16zm9.78-9.885L13.109 9.6 3.222 4.478h19.666z"/></svg>
                         </div>
                         CapCut
                     </div>
@@ -1159,237 +1337,7 @@
             </div>
         </section>
 
-        <!-- TARJETAS DE CATÁLOGO INNOVADORAS Y TECNOLÓGICAS CON LOGOS OFICIALES REALES -->
-        <section id="catalogo">
-            <div class="section-header">
-                <span class="section-tag">Catálogo Completo</span>
-                <h2 class="section-title">Encuentra la Licencia que Necesitas</h2>
-                <p class="section-desc">Selecciona la categoría o explora nuestros productos más populares.</p>
-            </div>
-
-            <!-- Tabbed Filter -->
-            <div class="product-tabs">
-                <button class="tab-btn active" onclick="filterCategory('all', this)">Todos</button>
-                <button class="tab-btn" onclick="filterCategory('sistema', this)">Sistemas & Oficina</button>
-                <button class="tab-btn" onclick="filterCategory('ia', this)">Inteligencia Artificial</button>
-                <button class="tab-btn" onclick="filterCategory('seguridad', this)">Seguridad</button>
-                <button class="tab-btn" onclick="filterCategory('diseno', this)">Diseño & Video</button>
-            </div>
-
-            <!-- Products Grid -->
-            <div class="products-grid">
-                
-                <!-- Windows -->
-                <a class="product-card" data-category="sistema" data-product="windows" href="/windows/" onclick="gtag('event','product_click',{product:'Windows'})">
-                    <div>
-                        <div class="product-card-top">
-                            <div class="product-chip-real">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="#0078D4"><path d="M0 3.449L9.75 2.1v9.451H0m10.95-9.601L24 0v11.4H10.95M0 12.6h9.75v9.451L0 20.699M10.95 12.6H24V24l-13.05-1.801"/></svg>
-                            </div>
-                            <span class="product-badge-instant">Inmediato</span>
-                        </div>
-                        <h3 class="product-title">Windows 10 / 11 Pro</h3>
-                        <p class="product-desc">Licencia permanente de por vida, incluye actualizaciones oficiales y soporte.</p>
-                    </div>
-                    <div class="product-card-bottom">
-                        <div>
-                            <div class="product-price-label">Desde</div>
-                            <div class="product-price-value">S/ 35</div>
-                        </div>
-                        <div class="product-btn-icon">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 6l6 6-6 6"/></svg>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Office -->
-                <a class="product-card" data-category="sistema" data-product="office" href="/office/" onclick="gtag('event','product_click',{product:'Office'})">
-                    <div>
-                        <div class="product-card-top">
-                            <div class="product-chip-real">
-                                <svg width="34" height="34" viewBox="0 0 24 24" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M14.5 2L3 6.25V17.75L14.5 22L21 19.5V4.5L14.5 2Z" fill="#EA3E23"/><path fill-rule="evenodd" clip-rule="evenodd" d="M14.5 2V22L21 19.5V4.5L14.5 2Z" fill="#F1511B"/><path fill-rule="evenodd" clip-rule="evenodd" d="M3 6.25L14.5 2V22L3 17.75V6.25Z" fill="#D83B01"/><circle cx="11" cy="12" r="3" stroke="white" stroke-width="1.8"/></svg>
-                            </div>
-                            <span class="product-badge-instant">Inmediato</span>
-                        </div>
-                        <h3 class="product-title">Microsoft Office</h3>
-                        <p class="product-desc">Office 2019, 2021 Pro Plus y Microsoft 365 con Word, Excel y PowerPoint.</p>
-                    </div>
-                    <div class="product-card-bottom">
-                        <div>
-                            <div class="product-price-label">Desde</div>
-                            <div class="product-price-value">S/ 50</div>
-                        </div>
-                        <div class="product-btn-icon">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 6l6 6-6 6"/></svg>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Google One AI -->
-                <a class="product-card" data-category="ia" data-product="google-one" href="/google-one/" onclick="gtag('event','product_click',{product:'Google One'})">
-                    <div>
-                        <div class="product-card-top">
-                            <div class="product-chip-real">
-                                <svg width="32" height="32" viewBox="0 0 24 24"><path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3h3.88c2.27-2.09 3.665-5.17 3.665-9.12z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.11-6.72-4.96H1.26v3.09C3.24 21.3 7.31 24 12 24z"/><path fill="#FBBC05" d="M5.28 14.29c-.25-.72-.38-1.49-.38-2.29s.13-1.57.38-2.29V6.62H1.26C.46 8.23 0 10.06 0 12s.46 3.77 1.26 5.38l4.02-3.09z"/><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.31 0 3.24 2.7 1.26 6.62l4.02 3.09c.95-2.85 3.6-4.96 6.72-4.96z"/></svg>
-                            </div>
-                            <span class="product-badge-instant">Inmediato</span>
-                        </div>
-                        <h3 class="product-title">Google One AI Plus</h3>
-                        <p class="product-desc">Gemini Advanced, 2TB de almacenamiento en la nube y planes grupales.</p>
-                    </div>
-                    <div class="product-card-bottom">
-                        <div>
-                            <div class="product-price-label">Desde</div>
-                            <div class="product-price-value">S/ 10</div>
-                        </div>
-                        <div class="product-btn-icon">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 6l6 6-6 6"/></svg>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- ChatGPT Plus -->
-                <a class="product-card" data-category="ia" data-product="chatgpt" href="/chatgpt/" onclick="gtag('event','product_click',{product:'ChatGPT Plus'})">
-                    <div>
-                        <div class="product-card-top">
-                            <div class="product-chip-real">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="#10A37F"><path d="M22.28 9.8a6.04 6.04 0 0 0-.52-4.92 6.09 6.09 0 0 0-6.4-2.8 6.09 6.09 0 0 0-4.73-2.18A6.06 6.06 0 0 0 4.6 2.83a6.05 6.05 0 0 0-4.08 4.7 6.03 6.03 0 0 0 .52 4.93A6.06 6.06 0 0 0 2.2 17.5a6.05 6.05 0 0 0 4.73 2.18 6.06 6.06 0 0 0 6.03 2.92 6.05 6.05 0 0 0 4.09-4.7 6.06 6.06 0 0 0 5.23-8.1zm-8.66 12.43a4.57 4.57 0 0 1-2.65-.84l.13-.08 4.38-2.53a.76.76 0 0 0 .38-.66v-6.17l1.85 1.07v5.62a4.55 4.55 0 0 1-4.09 3.59zM3.48 18.06a4.54 4.54 0 0 1-.58-2.73l.13.08 4.38 2.53a.76.76 0 0 0 .76 0l5.34-3.08v2.14l-4.87 2.81a4.55 4.55 0 0 1-5.16-1.75zm-1.4-8.8a4.56 4.56 0 0 1 2.06-1.9l.01.15v5.06a.76.76 0 0 0 .38.66l5.34 3.08-1.85 1.07-4.87-2.81a4.55 4.55 0 0 1-1.07-5.31zm16.54 2.87l-5.34-3.08 1.85-1.07 4.87 2.81a4.55 4.55 0 0 1-1.38 7.24l-.13-.08-4.38-2.53a.76.76 0 0 0-.38-.66v-2.68zm2.4-3.74l-.13-.08-4.38-2.53a.76.76 0 0 0-.76 0l-5.34 3.08V6.68l4.87-2.81a4.55 4.55 0 0 1 5.74 4.48zm-11.4-6.3a4.56 4.56 0 0 1 3.23.99l-.13.08-4.38 2.53a.76.76 0 0 0-.38.66v6.17l-1.85-1.07V7.81a4.55 4.55 0 0 1 3.51-4.72z"/></svg>
-                            </div>
-                            <span class="product-badge-instant">Inmediato</span>
-                        </div>
-                        <h3 class="product-title">ChatGPT Plus</h3>
-                        <p class="product-desc">Acceso a GPT-4, generación de imágenes DALL-E y análisis de documentos.</p>
-                    </div>
-                    <div class="product-card-bottom">
-                        <div>
-                            <div class="product-price-label">Mensual</div>
-                            <div class="product-price-value">S/ 50</div>
-                        </div>
-                        <div class="product-btn-icon">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 6l6 6-6 6"/></svg>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- ESET -->
-                <a class="product-card" data-category="seguridad" data-product="eset" href="/eset/" onclick="gtag('event','product_click',{product:'ESET'})">
-                    <div>
-                        <div class="product-card-top">
-                            <div class="product-chip-real">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="#00A3A6"><path d="M12 2L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-3zm0 4.1c2.1 0 3.8 1.7 3.8 3.8s-1.7 3.8-3.8 3.8-3.8-1.7-3.8-3.8 1.7-3.8 3.8-3.8z"/></svg>
-                            </div>
-                            <span class="product-badge-instant">Inmediato</span>
-                        </div>
-                        <h3 class="product-title">Antivirus ESET Nod32</h3>
-                        <p class="product-desc">Protección ligera y efectiva en tiempo real sin alentar tu equipo.</p>
-                    </div>
-                    <div class="product-card-bottom">
-                        <div>
-                            <div class="product-price-label">Desde</div>
-                            <div class="product-price-value">S/ 35</div>
-                        </div>
-                        <div class="product-btn-icon">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 6l6 6-6 6"/></svg>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Kaspersky -->
-                <a class="product-card" data-category="seguridad" data-product="kaspersky" href="/kaspersky/" onclick="gtag('event','product_click',{product:'Kaspersky'})">
-                    <div>
-                        <div class="product-card-top">
-                            <div class="product-chip-real">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="#006D55"><path d="M12 2L2 7v10l10 5 10-5V7L12 2zm0 3.2L18.5 8.5 12 11.8 5.5 8.5 12 5.2zM4 9.8l7 3.6v6.9l-7-3.5V9.8zm16 7l-7 3.5v-6.9l7-3.6v7z"/></svg>
-                            </div>
-                            <span class="product-badge-instant">Inmediato</span>
-                        </div>
-                        <h3 class="product-title">Kaspersky Antivirus</h3>
-                        <p class="product-desc">Seguridad avanzada Standard, Plus y Premium con VPN y protección bancaria.</p>
-                    </div>
-                    <div class="product-card-bottom">
-                        <div>
-                            <div class="product-price-label">Desde</div>
-                            <div class="product-price-value">S/ 60</div>
-                        </div>
-                        <div class="product-btn-icon">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 6l6 6-6 6"/></svg>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Canva Pro -->
-                <a class="product-card" data-category="diseno" data-product="canva" href="/canva/" onclick="gtag('event','product_click',{product:'Canva Pro'})">
-                    <div>
-                        <div class="product-card-top">
-                            <div class="product-chip-real">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="#00C4CC"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5c-2.49 0-4.5-2.01-4.5-4.5S8.51 7.5 11 7.5s4.5 2.01 4.5 4.5-2.01 4.5-4.5 4.5z"/></svg>
-                            </div>
-                            <span class="product-badge-instant">Inmediato</span>
-                        </div>
-                        <h3 class="product-title">Canva Pro</h3>
-                        <p class="product-desc">Acceso total a plantillas premium, quitar fondos y herramientas de IA.</p>
-                    </div>
-                    <div class="product-card-bottom">
-                        <div>
-                            <div class="product-price-label">Anual</div>
-                            <div class="product-price-value">S/ 15</div>
-                        </div>
-                        <div class="product-btn-icon">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 6l6 6-6 6"/></svg>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- CapCut Pro -->
-                <a class="product-card" data-category="diseno" data-product="capcut" href="/capcut/" onclick="gtag('event','product_click',{product:'CapCut Pro'})">
-                    <div>
-                        <div class="product-card-top">
-                            <div class="product-chip-real">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="#000000"><path d="M20 4L8.5 15.5M9.5 9.5L20 20"/><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/></svg>
-                            </div>
-                            <span class="product-badge-instant">Inmediato</span>
-                        </div>
-                        <h3 class="product-title">CapCut Pro</h3>
-                        <p class="product-desc">Edición de video profesional con efectos, voz a texto y filtros pro.</p>
-                    </div>
-                    <div class="product-card-bottom">
-                        <div>
-                            <div class="product-price-label">Mensual</div>
-                            <div class="product-price-value">S/ 25</div>
-                        </div>
-                        <div class="product-btn-icon">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 6l6 6-6 6"/></svg>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Apple One (Managed via products.js) -->
-                <a class="product-card" data-category="diseno" data-product="apple-one" href="/apple-one/" onclick="gtag('event','product_click',{product:'Apple One'})">
-                    <div>
-                        <div class="product-card-top">
-                            <div class="product-chip-real">
-                                <svg width="30" height="30" viewBox="0 0 24 24" fill="#000000"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.35c.67-.81 1.13-1.94 1-3.07-.97.04-2.16.65-2.85 1.46-.62.72-1.16 1.88-1.01 3 1.08.08 2.2-.58 2.86-1.39z"/></svg>
-                            </div>
-                            <span class="product-badge-instant">Inmediato</span>
-                        </div>
-                        <h3 class="product-title">Apple One</h3>
-                        <p class="product-desc">iCloud+, TV+, Music y Arcade agrupados en una sola suscripción.</p>
-                    </div>
-                    <div class="product-card-bottom">
-                        <div>
-                            <div class="product-price-label">Mensual</div>
-                            <div class="product-price-value">S/ 20</div>
-                        </div>
-                        <div class="product-btn-icon">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 6l6 6-6 6"/></svg>
-                        </div>
-                    </div>
-                </a>
-
-            </div>
-        </section>
-
-        <!-- Combos Section & Carousel -->
+        <!-- Combos Section & Carousel (Ahorro Asegurado) -->
         <section class="combos-section" id="combos">
             <div class="combos-header">
                 <div class="combos-title-wrap">
@@ -1454,25 +1402,330 @@
                         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 6l6 6-6 6"/></svg>
                     </div>
                     <div>
-                        <h4 style="font-size: 16px; font-weight: 800; color: var(--text-primary);">Ver Más Combos</h4>
-                        <p style="font-size: 12px; color: var(--text-secondary); margin-top: 2px;">7 combinaciones más</p>
+                        <h4 style="font-size: 16px; font-weight: 800; color: #FFFFFF;">Ver Más Combos</h4>
+                        <p style="font-size: 12px; color: #94A3B8; margin-top: 2px;">7 combinaciones más</p>
                     </div>
                 </a>
             </div>
         </section>
 
-        <!-- Social Proof Testimonials -->
-        <section id="testimonios">
-            <div class="section-header">
-                <span class="section-tag">Clientes Satisfechos</span>
-                <h2 class="section-title">Lo que Dicen Nuestros Usuarios</h2>
-                <p class="section-desc">Garantía, rapidez y confianza comprobada por profesionales y empresas en Perú.</p>
+        <!-- TARJETAS DE CATÁLOGO INNOVADORAS Y TECNOLÓGICAS CON LOGOS OFICIALES REALES -->
+        <section id="catalogo">
+            <div class="catalog-header-wrap">
+                <div class="section-header">
+                    <span class="section-tag">Catálogo Completo</span>
+                    <h2 class="section-title">Encuentra la Licencia que Necesitas</h2>
+                    <p class="section-desc">Selecciona la categoría o navega por nuestras licencias oficiales.</p>
+                </div>
+                <div class="carousel-controls">
+                    <button class="car-btn-nav" id="catPrev" aria-label="Anterior">‹</button>
+                    <button class="car-btn-nav" id="catNext" aria-label="Siguiente">›</button>
+                </div>
             </div>
 
-            <div class="reviews-grid">
+            <!-- Tabbed Filter -->
+            <div class="product-tabs">
+                <button class="tab-btn active" onclick="filterCategory('all', this)">Todos</button>
+                <button class="tab-btn" onclick="filterCategory('sistema', this)">Sistemas & Oficina</button>
+                <button class="tab-btn" onclick="filterCategory('ia', this)">Inteligencia Artificial</button>
+                <button class="tab-btn" onclick="filterCategory('seguridad', this)">Seguridad</button>
+                <button class="tab-btn" onclick="filterCategory('diseno', this)">Diseño & Video</button>
+            </div>
+
+            <!-- Products Grid Carousel (2 filas x 3 cols = 6 tarjetas visibles en pantalla) -->
+            <div class="products-grid" id="catalogCarousel">
+                
+                <!-- 1. Office (Col 1, Fila 1) -->
+                <a class="product-card" data-category="sistema" data-product="office" href="/office/" onclick="gtag('event','product_click',{product:'Office'})">
+                    <div>
+                        <div class="product-card-top">
+                            <div class="product-chip-real">
+                                <svg width="34" height="34" viewBox="0 0 24 24" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M14.5 2L3 6.25V17.75L14.5 22L21 19.5V4.5L14.5 2Z" fill="#EA3E23"/><path fill-rule="evenodd" clip-rule="evenodd" d="M14.5 2V22L21 19.5V4.5L14.5 2Z" fill="#F1511B"/><path fill-rule="evenodd" clip-rule="evenodd" d="M3 6.25L14.5 2V22L3 17.75V6.25Z" fill="#D83B01"/><circle cx="11" cy="12" r="3" stroke="white" stroke-width="1.8"/></svg>
+                            </div>
+                            <span class="product-badge-instant">Inmediato</span>
+                        </div>
+                        <h3 class="product-title">Microsoft Office</h3>
+                        <p class="product-desc">Office 2019, 2021 Pro Plus y Microsoft 365 con Word, Excel y PowerPoint.</p>
+                    </div>
+                    <div class="product-card-bottom">
+                        <div>
+                            <div class="product-price-label">Desde</div>
+                            <div class="product-price-value">S/ 50</div>
+                        </div>
+                        <div class="product-btn-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 6l6 6-6 6"/></svg>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- 4. Kaspersky (Col 1, Fila 2) -->
+                <a class="product-card" data-category="seguridad" data-product="kaspersky" href="/kaspersky/" onclick="gtag('event','product_click',{product:'Kaspersky'})">
+                    <div>
+                        <div class="product-card-top">
+                            <div class="product-chip-real">
+                                <svg width="34" height="34" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="6" fill="#006D55"/><path d="M6 5.5h3.2v5.6L14.8 5.5h3.8L12.5 12l6.4 6.5h-3.9L9.2 12.8v5.7H6V5.5z" fill="#FFFFFF"/></svg>
+                            </div>
+                            <span class="product-badge-instant">Inmediato</span>
+                        </div>
+                        <h3 class="product-title">Kaspersky Antivirus</h3>
+                        <p class="product-desc">Seguridad avanzada Standard, Plus y Premium con VPN y protección bancaria.</p>
+                    </div>
+                    <div class="product-card-bottom">
+                        <div>
+                            <div class="product-price-label">Desde</div>
+                            <div class="product-price-value">S/ 60</div>
+                        </div>
+                        <div class="product-btn-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 6l6 6-6 6"/></svg>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- 2. Google One AI (Col 2, Fila 1) -->
+                <a class="product-card" data-category="ia" data-product="google-one" href="/google-one/" onclick="gtag('event','product_click',{product:'Google One'})">
+                    <div>
+                        <div class="product-card-top">
+                            <div class="product-chip-real">
+                                <svg width="22" height="36" viewBox="0 0 87.39 176.01" fill="none"><g transform="translate(-42.14 -7)"><path d="m129.53 144.99v18.46c0 10.8-8.73 19.56-19.5 19.56s-19.5-8.75-19.5-19.56v-48.33z" fill="#34a853"/><path d="m129.53 26.56v118.43l-39-29.87v-47.1l31.91-26.38c4.68-3.86 7.09-9.45 7.09-15.08z" fill="#4285F4"/><path d="m129.52 25.88c.01.22.01.44.01.67 0 5.63-2.41 11.22-7.09 15.08l-31.91 26.38v-41.45c0-6.4 3.07-12.1 7.84-15.67.34-.26.68-.5 1.05-.73.17-.11.33-.22.5-.32.31-.2.64-.38.94-.54l.86-.43.72-.3c.47-.18.96-.32 1.46-.42.27-.05.53-.1.81-.13.48-.06.97-.09 1.47-.09 5.3 0 10.27 2.15 13.9 5.63l.36.35 1.09 1.13c4.76 5.25 7.69 12.18 7.9 19.82z" fill="#ea4335"/><path d="m129.52 25.88c-.21-7.64-3.14-14.57-7.9-19.82l-1.09-1.13-.36-.35c-3.63-3.48-8.6-5.63-13.9-5.63-.5 0-.99.03-1.47.09-.28.03-.54.08-.81.13-.5.1-1 .24-1.46.42l-.72.3-.86.43c-.3.16-.63.34-.94.54-.17.1-.33.21-.5.32-.37.23-.71.47-1.05.73-4.77 3.57-7.84 9.27-7.84 15.67v1.89h.01v39.56l39-32.08c4.68-3.86 7.09-9.45 7.09-15.08 0-.23 0-.45-.01-.67z" fill="#fbbc05"/></g></svg>
+                            </div>
+                            <span class="product-badge-instant">Inmediato</span>
+                        </div>
+                        <h3 class="product-title">Google One AI Plus</h3>
+                        <p class="product-desc">Gemini Advanced, 2TB de almacenamiento en la nube y planes grupales.</p>
+                    </div>
+                    <div class="product-card-bottom">
+                        <div>
+                            <div class="product-price-label">Desde</div>
+                            <div class="product-price-value">S/ 10</div>
+                        </div>
+                        <div class="product-btn-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 6l6 6-6 6"/></svg>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- 5. Windows 10 / 11 Pro (Col 2, Fila 2) -->
+                <a class="product-card" data-category="sistema" data-product="windows" href="/windows/" onclick="gtag('event','product_click',{product:'Windows'})">
+                    <div>
+                        <div class="product-card-top">
+                            <div class="product-chip-real">
+                                <svg width="34" height="34" viewBox="0 0 24 24" fill="none"><path d="M0 0H11.377V11.372H0V0ZM12.623 0H24V11.372H12.623V0ZM0 12.623H11.377V24H0V12.623ZM12.623 12.623H24V24H12.623V12.623Z" fill="#0078D4"/></svg>
+                            </div>
+                            <span class="product-badge-instant">Inmediato</span>
+                        </div>
+                        <h3 class="product-title">Windows 10 / 11 Pro</h3>
+                        <p class="product-desc">Licencia permanente de por vida, incluye actualizaciones oficiales y soporte.</p>
+                    </div>
+                    <div class="product-card-bottom">
+                        <div>
+                            <div class="product-price-label">Desde</div>
+                            <div class="product-price-value">S/ 35</div>
+                        </div>
+                        <div class="product-btn-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 6l6 6-6 6"/></svg>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- 3. ESET Antivirus (Col 3, Fila 1) -->
+                <a class="product-card" data-category="seguridad" data-product="eset" href="/eset/" onclick="gtag('event','product_click',{product:'ESET'})">
+                    <div>
+                        <div class="product-card-top">
+                            <div class="product-chip-real">
+                                <svg width="42" height="20" viewBox="0 0 182 71.9"><path fill="#0094A1" d="M25.1 3.7c-9 0-16.7 4.7-20.8 11.3C0.8 21.2 0 31.2 0 37.8c0 6.6 0.8 16.7 4.3 22.8 4 6.6 11.7 11.3 20.8 11.3h131.8c9 0 16.7-4.7 20.8-11.3 3.5-6.1 4.3-16.2 4.3-22.8 0-6.6-0.8-16.7-4.3-22.8-4-6.6-11.7-11.3-20.8-11.3H25.1z"/><path fill="#FFFFFF" d="M112.8 34.1h11.1v-0.3c0-5.1-2-5.4-5.7-5.4-3.5 0-4.3 1.4-4.4 5.7M34.9 28.6c3.6 0 5.6 0.4 5.6 5.3v0.2H29.6c0.1-4.2 1.7-5.5 5.3-5.5M46 38.6c-0.1 8.9-5.1 11.8-11.3 11.8-7.3 0-11.1-4.2-11.1-12.7 0-7.7 3.5-13.6 11.4-13.6 7.7 0 11.2 5.5 11 14.5zm19.3-5.1c0-3.3-2.1-4.5-5.9-4.5-3.3 0-5.3 1.1-5.3 3.7 0 5.5 13.9 3.1 13.9 11.6 0 4.1-3.6 6.1-8.5 6.1-5.8 0-8.9-2.5-8.9-7.2h5.5c0 3.3 2.1 4.3 5.3 4.3 3 0 4.8-1.2 4.8-3.4 0-5.6-13.9-3.2-13.9-11.8 0-4 3.7-5.9 8.6-5.9 5.5 0 8.4 2.5 8.4 7.1h-4zm58.6 5.1c-0.1 8.9-5.1 11.8-11.3 11.8-7.3 0-11.1-4.2-11.1-12.7 0-7.7 3.5-13.6 11.4-13.6 7.7 0 11.2 5.5 11 14.5zm33.4 6c-2.3 0.8-4.8 1.1-7.2 1.1-5.9 0-7.6-2.5-7.6-8.7V29h-4.3v-4.4h4.3v-6.9h5.5v6.9h8.2V29h-8.2v12.7c0 3.3 0.6 4.3 3.5 4.3 1.8 0 3.8-0.5 5.8-1.4v5.0z"/></svg>
+                            </div>
+                            <span class="product-badge-instant">Inmediato</span>
+                        </div>
+                        <h3 class="product-title">Antivirus ESET Nod32</h3>
+                        <p class="product-desc">Protección ligera y efectiva en tiempo real sin alentar tu equipo.</p>
+                    </div>
+                    <div class="product-card-bottom">
+                        <div>
+                            <div class="product-price-label">Desde</div>
+                            <div class="product-price-value">S/ 35</div>
+                        </div>
+                        <div class="product-btn-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 6l6 6-6 6"/></svg>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- 6. ChatGPT Plus (Col 3, Fila 2) -->
+                <a class="product-card" data-category="ia" data-product="chatgpt" href="/chatgpt/" onclick="gtag('event','product_click',{product:'ChatGPT Plus'})">
+                    <div>
+                        <div class="product-card-top">
+                            <div class="product-chip-real">
+                                <svg width="34" height="34" viewBox="0 0 24 24" fill="#10A37F"><path d="M22.28 9.8a6.04 6.04 0 0 0-.52-4.92 6.09 6.09 0 0 0-6.4-2.8 6.09 6.09 0 0 0-4.73-2.18A6.06 6.06 0 0 0 4.6 2.83a6.05 6.05 0 0 0-4.08 4.7 6.03 6.03 0 0 0 .52 4.93A6.06 6.06 0 0 0 2.2 17.5a6.05 6.05 0 0 0 4.73 2.18 6.06 6.06 0 0 0 6.03 2.92 6.05 6.05 0 0 0 4.09-4.7 6.06 6.06 0 0 0 5.23-8.1zm-8.66 12.43a4.57 4.57 0 0 1-2.65-.84l.13-.08 4.38-2.53a.76.76 0 0 0 .38-.66v-6.17l1.85 1.07v5.62a4.55 4.55 0 0 1-4.09 3.59zM3.48 18.06a4.54 4.54 0 0 1-.58-2.73l.13.08 4.38 2.53a.76.76 0 0 0 .76 0l5.34-3.08v2.14l-4.87 2.81a4.55 4.55 0 0 1-5.16-1.75zm-1.4-8.8a4.56 4.56 0 0 1 2.06-1.9l.01.15v5.06a.76.76 0 0 0 .38.66l5.34 3.08-1.85 1.07-4.87-2.81a4.55 4.55 0 0 1-1.07-5.31zm16.54 2.87l-5.34-3.08 1.85-1.07 4.87 2.81a4.55 4.55 0 0 1-1.38 7.24l-.13-.08-4.38-2.53a.76.76 0 0 0-.38-.66v-2.68zm2.4-3.74l-.13-.08-4.38-2.53a.76.76 0 0 0-.76 0l-5.34 3.08V6.68l4.87-2.81a4.55 4.55 0 0 1 5.74 4.48zm-11.4-6.3a4.56 4.56 0 0 1 3.23.99l-.13.08-4.38 2.53a.76.76 0 0 0-.38.66v6.17l-1.85-1.07V7.81a4.55 4.55 0 0 1 3.51-4.72z"/></svg>
+                            </div>
+                            <span class="product-badge-instant">Inmediato</span>
+                        </div>
+                        <h3 class="product-title">ChatGPT Plus</h3>
+                        <p class="product-desc">Acceso a GPT-4, generación de imágenes DALL-E y análisis de documentos.</p>
+                    </div>
+                    <div class="product-card-bottom">
+                        <div>
+                            <div class="product-price-label">Mensual</div>
+                            <div class="product-price-value">S/ 50</div>
+                        </div>
+                        <div class="product-btn-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 6l6 6-6 6"/></svg>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- 7. Canva Pro (Col 4, Fila 1) -->
+                <a class="product-card" data-category="diseno" data-product="canva" href="/canva/" onclick="gtag('event','product_click',{product:'Canva Pro'})">
+                    <div>
+                        <div class="product-card-top">
+                            <div class="product-chip-real">
+                                <svg width="34" height="34" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="12" fill="#00C4CC"/><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm-5.038 5.68c.754 0 1.337.549 1.405 1.2.069.583-.171 1.097-.822 1.406-.343.171-.48.172-.549.069-.034-.069 0-.137.069-.206.617-.514.617-.926.548-1.508-.034-.378-.308-.618-.583-.618-1.2 0-2.914 2.674-2.674 4.629.103.754.549 1.646 1.509 1.646.308 0 .65-.103.96-.24.5-.264.799-.47 1.097-.8-.073-.885.704-2.046 1.851-2.046.515 0 .926.205.96.583.068.514-.377.582-.514.582s-.378-.034-.378-.17c-.034-.138.309-.07.275-.378-.035-.206-.24-.274-.446-.274-.72 0-1.131.994-1.029 1.611.035.275.172.549.447.549.205 0 .514-.31.617-.755.068-.308.343-.514.583-.514.102 0 .17.034.205.171v.138c-.034.137-.137.548-.102.651 0 .069.034.171.17.171.092 0 .436-.18.777-.459.117-.59.253-1.298.253-1.357.034-.24.137-.48.617-.48.103 0 .171.034.205.171v.138l-.136.617c.445-.583 1.097-.994 1.508-.994.172 0 .309.102.309.274 0 .103 0 .274-.069.446-.137.377-.309.96-.412 1.474 0 .137.035.274.207.274.171 0 .685-.206 1.096-.754l.007-.004c-.002-.068-.007-.134-.007-.202 0-.411.035-.754.104-.994.068-.274.411-.514.617-.514.103 0 .205.069.205.171 0 .035 0 .103-.034.137-.137.446-.24.857-.24 1.269 0 .24.034.582.102.788 0 .034.035.069.07.069.068 0 .548-.445.89-1.028-.308-.206-.48-.549-.48-.96 0-.72.446-1.097.858-1.097.343 0 .617.24.617.72 0 .308-.103.65-.274.96h.102a.77.77 0 0 0 .584-.24.293.293 0 0 1 .134-.117c.335-.425.83-.74 1.41-.74.48 0 .924.205.959.582.068.515-.378.618-.515.618l-.002-.002c-.138 0-.377-.035-.377-.172 0-.137.309-.068.274-.376-.034-.206-.24-.275-.446-.275-.686 0-1.13.891-1.028 1.611.034.275.171.583.445.583.206 0 .515-.308.652-.754.068-.274.343-.514.583-.514.103 0 .17.034.205.171v.138c-.034.137-.137.548-.102.651 0 .069.034.171.17.171.092 0 .436-.18.777-.459.117-.59.253-1.298.253-1.357.034-.24.137-.48.617-.48.103 0 .171.034.205.171v.138l-.136.617c.445-.583 1.097-.994 1.508-.994.172 0 .309.102.309.274 0 .103 0 .274-.069.446-.137.377-.309.96-.412 1.474 0 .137.035.274.207.274.171 0 .685-.206 1.096-.754l.007-.004c-.002-.068-.007-.134-.007-.202 0-.411.035-.754.104-.994.068-.274.411-.514.617-.514.103 0 .205.069.205.171 0 .035 0 .103-.034.137-.137.446-.24.857-.24 1.269 0 .24.034.582.102.788 0 .034.035.069.07.069.068 0 .548-.445.89-1.028-.308-.206-.48-.549-.48-.96 0-.72.446-1.097.858-1.097.343 0 .617.24.617.72 0 .308-.103.65-.274.96h.102a.77.77 0 0 0 .584-.24.293.293 0 0 1 .134-.117c.335-.425.83-.74 1.41-.74.48 0 .924.205.959.582.068.515-.378.618-.515.618l-.002-.002c-.138 0-.377-.035-.377-.172 0-.137.309-.068.274-.376-.034-.206-.24-.275-.446-.275-.686 0-1.13.891-1.028 1.611.034.275.171.583.445.583.206 0 .515-.308.652-.754.068-.274.343-.514.583-.514.103 0 .17.034.205.171 0 .069 0 .206-.137.652-.17.308-.171.48-.137.617.034.274.171.48.309.583.034.034.068.102.068.102 0 .069-.034.138-.137.138-.034 0-.068 0-.103-.035-.514-.205-.72-.548-.789-.891-.205.24-.445.377-.72.377-.445 0-.89-.411-.96-.926a1.609 1.609 0 0 1 .075-.649c-.203.13-.422.203-.623.203h-.17c-.447.652-.927 1.098-1.27 1.303a.896.896 0 0 1-.377.104c-.068 0-.171-.035-.205-.104-.095-.152-.156-.392-.193-.667-.481.527-1.145.805-1.453.805-.343 0-.548-.206-.582-.55v-.376c.102-.754.377-1.2.377-1.337a.074.074 0 0 0-.069-.07c-.24 0-1.028.824-1.166 1.373l-.103.445c-.068.309-.377.515-.582.515-.103 0-.172-.035-.206-.172v-.137l.046-.233c-.435.31-.87.508-1.075.508-.308 0-.48-.172-.514-.412-.206.274-.445.412-.754.412-.352 0-.696-.24-.862-.593-.244.275-.523.553-.852.764-.48.309-1.028.549-1.68.549-.582 0-1.097-.309-1.371-.583-.412-.377-.651-.96-.686-1.509-.205-1.68.823-3.84 2.4-4.8.378-.205.755-.343 1.132-.343zm9.77 3.291c-.104 0-.172.172-.172.343 0 .274.137.583.309.755a1.74 1.74 0 0 0 .102-.583c0-.343-.137-.515-.24-.515z" fill="#FFFFFF"/></svg>
+                            </div>
+                            <span class="product-badge-instant">Inmediato</span>
+                        </div>
+                        <h3 class="product-title">Canva Pro</h3>
+                        <p class="product-desc">Acceso total a plantillas premium, quitar fondos y herramientas de IA.</p>
+                    </div>
+                    <div class="product-card-bottom">
+                        <div>
+                            <div class="product-price-label">Anual</div>
+                            <div class="product-price-value">S/ 15</div>
+                        </div>
+                        <div class="product-btn-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 6l6 6-6 6"/></svg>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- 8. CapCut Pro (Col 4, Fila 2) -->
+                <a class="product-card" data-category="diseno" data-product="capcut" href="/capcut/" onclick="gtag('event','product_click',{product:'CapCut Pro'})">
+                    <div>
+                        <div class="product-card-top">
+                            <div class="product-chip-real">
+                                <svg width="34" height="26" viewBox="0 0 32 24" fill="#000000"><path d="M31.056 4.979V0.215l-5.73 3.008v-.178C25.326 1.146 23.965 0 21.994 0H3.831C1.755 0 0.5 1.146 0.5 3.045v4.8L8.523 12 0.5 16.191v4.8C0.5 22.854 1.755 24 3.831 24h18.162c1.97 0 3.33-1.146 3.33-3.009v-.25l5.731 3.044V18.95L17.73 12l13.327-7.021zM13.11 14.363l9.852 5.16H3.22l9.888-5.16zm9.78-9.885L13.109 9.6 3.222 4.478h19.666z"/></svg>
+                            </div>
+                            <span class="product-badge-instant">Inmediato</span>
+                        </div>
+                        <h3 class="product-title">CapCut Pro</h3>
+                        <p class="product-desc">Edición de video profesional con efectos, voz a texto y filtros pro.</p>
+                    </div>
+                    <div class="product-card-bottom">
+                        <div>
+                            <div class="product-price-label">Mensual</div>
+                            <div class="product-price-value">S/ 25</div>
+                        </div>
+                        <div class="product-btn-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 6l6 6-6 6"/></svg>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- 9. Apple One (Col 5, Fila 1) -->
+                <a class="product-card" data-category="diseno" data-product="apple-one" href="/apple-one/" onclick="gtag('event','product_click',{product:'Apple One'})">
+                    <div>
+                        <div class="product-card-top">
+                            <div class="product-chip-real">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="#000000"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.35c.67-.81 1.13-1.94 1-3.07-.97.04-2.16.65-2.85 1.46-.62.72-1.16 1.88-1.01 3 1.08.08 2.2-.58 2.86-1.39z"/></svg>
+                            </div>
+                            <span class="product-badge-instant">Inmediato</span>
+                        </div>
+                        <h3 class="product-title">Apple One</h3>
+                        <p class="product-desc">iCloud+, TV+, Music y Arcade agrupados en una sola suscripción.</p>
+                    </div>
+                    <div class="product-card-bottom">
+                        <div>
+                            <div class="product-price-label">Mensual</div>
+                            <div class="product-price-value">S/ 20</div>
+                        </div>
+                        <div class="product-btn-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 6l6 6-6 6"/></svg>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+
+        <!-- Social Proof Testimonials Carousel -->
+        <section id="testimonios">
+            <div class="reviews-header-wrap">
+                <div class="section-header">
+                    <span class="section-tag">Clientes Satisfechos</span>
+                    <h2 class="section-title">Lo que Dicen Nuestros Usuarios</h2>
+                    <p class="section-desc">Experiencias reales de profesionales y empresas que confían en JNxKeys en todo el Perú.</p>
+                </div>
+                <div class="carousel-controls">
+                    <button class="car-btn-nav" id="revPrev" aria-label="Anterior">‹</button>
+                    <button class="car-btn-nav" id="revNext" aria-label="Siguiente">›</button>
+                </div>
+            </div>
+
+            <div class="reviews-carousel" id="reviewsCarousel">
+                <!-- 1. Jose Altamirano -->
                 <div class="review-card">
-                    <div class="stars">★★★★★</div>
-                    <p class="review-text">"Compré la licencia de Windows 11 Pro y Office 2021. Me enviaron la clave por WhatsApp en menos de 5 minutos y me guiaron en la activación. Excelente servicio."</p>
+                    <div>
+                        <div class="stars">★★★★★</div>
+                        <p class="review-text">"Es mi 2da renovación de antivirus y no he tenido ningún inconveniente. Me brinda todo el soporte ante consultas."</p>
+                    </div>
+                    <div class="review-author">
+                        <div class="author-avatar">J</div>
+                        <div class="author-info">
+                            <h4>Jose Altamirano</h4>
+                            <p>Lima, Perú</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Pamela Lopez -->
+                <div class="review-card">
+                    <div>
+                        <div class="stars">★★★★★</div>
+                        <p class="review-text">"Ya vamos 3 años de renovación y he tenido una atención A1."</p>
+                    </div>
+                    <div class="review-author">
+                        <div class="author-avatar">P</div>
+                        <div class="author-info">
+                            <h4>Pamela Lopez</h4>
+                            <p>Cusco, Perú</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Alberto Chi -->
+                <div class="review-card">
+                    <div>
+                        <div class="stars">★★★★★</div>
+                        <p class="review-text">"Buen soporte, atiende todas mis dudas y ayuda a implementar soluciones aquí en mi empresa."</p>
+                    </div>
+                    <div class="review-author">
+                        <div class="author-avatar">A</div>
+                        <div class="author-info">
+                            <h4>Alberto Chi</h4>
+                            <p>Lima, Perú</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Adriana Perlata -->
+                <div class="review-card">
+                    <div>
+                        <div class="stars">★★★★★</div>
+                        <p class="review-text">"Súper recomendado, soporte A1."</p>
+                    </div>
+                    <div class="review-author">
+                        <div class="author-avatar">A</div>
+                        <div class="author-info">
+                            <h4>Adriana Perlata</h4>
+                            <p>Trujillo, Perú</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Carlos Mendoza -->
+                <div class="review-card">
+                    <div>
+                        <div class="stars">★★★★★</div>
+                        <p class="review-text">"Excelente servicio y muy atentos por WhatsApp. Me guiaron paso a paso con la activación y quedó todo operativo al toque. Muy confiables."</p>
+                    </div>
                     <div class="review-author">
                         <div class="author-avatar">C</div>
                         <div class="author-info">
@@ -1482,9 +1735,12 @@
                     </div>
                 </div>
 
+                <!-- 6. Mariana Ríos -->
                 <div class="review-card">
-                    <div class="stars">★★★★★</div>
-                    <p class="review-text">"Suscripción de Google One AI Plus activa y funcionando perfecto. Pagué por Yape de manera súper rápida y segura. Totalmente recomendado."</p>
+                    <div>
+                        <div class="stars">★★★★★</div>
+                        <p class="review-text">"Tenía dudas antes de comprar pero la atención fue inmediata. Pagué por Yape y me enviaron todo súper rápido. Da gusto encontrar gente seria."</p>
+                    </div>
                     <div class="review-author">
                         <div class="author-avatar">M</div>
                         <div class="author-info">
@@ -1494,9 +1750,12 @@
                     </div>
                 </div>
 
+                <!-- 7. Renzo Flores -->
                 <div class="review-card">
-                    <div class="stars">★★★★★</div>
-                    <p class="review-text">"Adquirimos el pack de Oficina Segura para nuestras computadoras. La activación de Kaspersky y Office fue 100% legítima. Volveremos a comprar."</p>
+                    <div>
+                        <div class="stars">★★★★★</div>
+                        <p class="review-text">"Adquirimos varias licencias para los equipos de la oficina y todo impecable. Muy buena disposición para responder consultas y precios justos."</p>
+                    </div>
                     <div class="review-author">
                         <div class="author-avatar">R</div>
                         <div class="author-info">
@@ -1506,12 +1765,15 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Carousel Dots -->
+            <div class="reviews-dots" id="reviewsDots"></div>
         </section>
 
         <!-- Trust Metrics Bar -->
         <section class="metrics-bar">
             <div class="metric-item">
-                <h3>+1,500</h3>
+                <h3>+570</h3>
                 <p>Licencias Entregadas</p>
             </div>
             <div class="metric-item">
@@ -1532,25 +1794,33 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <h3>JNxKeys</h3>
-                    <p>Venta de licencias digitales 100% originales en Perú. Activación garantizada de Windows, Office, ESET, Kaspersky, Google One y ChatGPT Plus con entrega inmediata vía WhatsApp.</p>
+                    <p>Venta de licencias digitales 100% originales en Perú. Activación garantizada de Windows, Office, ESET, Kaspersky, Google One y ChatGPT Plus con entrega inmediata vía WhatsApp/Correo.</p>
                 </div>
                 <div class="footer-col">
                     <h4>Catálogo</h4>
                     <ul>
-                        <li><a href="/windows/">Windows 10/11 Pro</a></li>
                         <li><a href="/office/">Microsoft Office</a></li>
                         <li><a href="/google-one/">Google One AI Plus</a></li>
-                        <li><a href="/chatgpt/">ChatGPT Plus</a></li>
                         <li><a href="/eset/">Antivirus ESET</a></li>
+                        <li><a href="/kaspersky/">Kaspersky Antivirus</a></li>
+                        <li><a href="/windows/">Windows 10/11 Pro</a></li>
+                        <li><a href="/chatgpt/">ChatGPT Plus</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Empresa</h4>
+                    <ul>
+                        <li><a href="/nosotros/">Nosotros</a></li>
+                        <li><a href="/contacto/">Contáctanos</a></li>
+                        <li><a href="/combos/">Packs Especiales</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4>Métodos de Pago</h4>
                     <ul>
-                        <li><a href="#">Yape (Perú)</a></li>
-                        <li><a href="#">Plin / Transferencia</a></li>
-                        <li><a href="#">Western Union</a></li>
-                        <li><a href="/combos/">Packs Especiales</a></li>
+                        <li><a href="https://www.yape.com.pe/" target="_blank" rel="noopener">Yape / Plin (Perú)</a></li>
+                        <li><a href="https://www.westernunion.com/pe/es/home.html" target="_blank" rel="noopener">Western Union</a></li>
+                        <li><a href="https://wa.me/51925244643?text=Hola%20JNxKeys,%20quisiera%20consultar%20por%20transferencia%20bancaria" target="_blank" rel="noopener">Transferencia Bancaria</a></li>
                     </ul>
                 </div>
             </div>
@@ -1580,6 +1850,26 @@
             });
         })();
 
+        // Catálogo Carousel logic
+        const catCarousel = document.getElementById('catalogCarousel');
+        const catPrev = document.getElementById('catPrev');
+        const catNext = document.getElementById('catNext');
+
+        function getCatStep() {
+            if (!catCarousel) return 340;
+            const firstCard = catCarousel.querySelector('.product-card:not([style*="display: none"])');
+            return firstCard ? firstCard.offsetWidth + 24 : 340;
+        }
+
+        if (catCarousel && catPrev && catNext) {
+            catPrev.addEventListener('click', () => {
+                catCarousel.scrollBy({ left: -getCatStep(), behavior: 'smooth' });
+            });
+            catNext.addEventListener('click', () => {
+                catCarousel.scrollBy({ left: getCatStep(), behavior: 'smooth' });
+            });
+        }
+
         // Categorías Tabs Handler
         function filterCategory(cat, btnEl) {
             document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
@@ -1603,6 +1893,10 @@
                     card.style.display = 'none';
                 }
             });
+
+            if (catCarousel) {
+                catCarousel.scrollLeft = 0;
+            }
         }
 
         // Combos Carousel logic
@@ -1618,6 +1912,97 @@
                 carousel.scrollBy({ left: 320, behavior: 'smooth' });
             });
         }
+
+        // Testimonios Carousel logic (Paso por tarjeta + autoplay lento pausado)
+        (function(){
+            const revCarousel = document.getElementById('reviewsCarousel');
+            const revPrev = document.getElementById('revPrev');
+            const revNext = document.getElementById('revNext');
+            const revDots = document.getElementById('reviewsDots');
+            if (!revCarousel) return;
+
+            const cards = revCarousel.querySelectorAll('.review-card');
+            const totalCards = cards.length;
+
+            // Generar dots
+            if (revDots && totalCards > 0) {
+                revDots.innerHTML = '';
+                cards.forEach((_, i) => {
+                    const dot = document.createElement('div');
+                    dot.className = 'reviews-dot' + (i === 0 ? ' active' : '');
+                    dot.setAttribute('aria-label', 'Ir a testimonio ' + (i + 1));
+                    dot.addEventListener('click', () => {
+                        const card = cards[i];
+                        if (card) {
+                            revCarousel.scrollTo({ left: card.offsetLeft - revCarousel.offsetLeft, behavior: 'smooth' });
+                        }
+                    });
+                    revDots.appendChild(dot);
+                });
+            }
+
+            function getRevStep() {
+                const first = revCarousel.querySelector('.review-card');
+                return first ? first.offsetWidth + 24 : 340;
+            }
+
+            function updateDots() {
+                if (!revDots) return;
+                const dots = revDots.querySelectorAll('.reviews-dot');
+                const scrollLeft = revCarousel.scrollLeft;
+                const step = getRevStep();
+                const activeIndex = Math.round(scrollLeft / step);
+                dots.forEach((d, idx) => {
+                    d.classList.toggle('active', idx === Math.min(activeIndex, totalCards - 1));
+                });
+            }
+
+            revCarousel.addEventListener('scroll', updateDots, { passive: true });
+
+            if (revPrev && revNext) {
+                revPrev.addEventListener('click', () => {
+                    revCarousel.scrollBy({ left: -getRevStep(), behavior: 'smooth' });
+                });
+                revNext.addEventListener('click', () => {
+                    const step = getRevStep();
+                    if (revCarousel.scrollLeft + revCarousel.clientWidth >= revCarousel.scrollWidth - 15) {
+                        revCarousel.scrollTo({ left: 0, behavior: 'smooth' });
+                    } else {
+                        revCarousel.scrollBy({ left: step, behavior: 'smooth' });
+                    }
+                });
+            }
+
+            // Carrusel móvil lento por tarjeta (Autoplay pausado cada 4.5s)
+            let autoPlayTimer = null;
+            function startAutoPlay() {
+                stopAutoPlay();
+                autoPlayTimer = setInterval(() => {
+                    const step = getRevStep();
+                    if (revCarousel.scrollLeft + revCarousel.clientWidth >= revCarousel.scrollWidth - 15) {
+                        revCarousel.scrollTo({ left: 0, behavior: 'smooth' });
+                    } else {
+                        revCarousel.scrollBy({ left: step, behavior: 'smooth' });
+                    }
+                }, 4500); // 4.5 segundos: ritmo pausado y legible
+            }
+
+            function stopAutoPlay() {
+                if (autoPlayTimer) {
+                    clearInterval(autoPlayTimer);
+                    autoPlayTimer = null;
+                }
+            }
+
+            // Iniciar auto-play y pausar al tocar o hacer hover
+            startAutoPlay();
+            revCarousel.addEventListener('mouseenter', stopAutoPlay);
+            revCarousel.addEventListener('mouseleave', startAutoPlay);
+            revCarousel.addEventListener('touchstart', stopAutoPlay, { passive: true });
+            revCarousel.addEventListener('touchend', () => {
+                setTimeout(startAutoPlay, 2500);
+            }, { passive: true });
+        })();
     </script>
 </body>
 </html>
