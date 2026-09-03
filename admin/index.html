@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JNxKeys — Panel Administrador de Publicidad</title>
+  <link rel="icon" type="image/png" href="/assets/img/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/common.css">
+  <style>
+    :root {
+      --admin-bg: #0B0F19;
+      --admin-card: #151D2E;
+      --admin-border: rgba(255, 255, 255, 0.1);
+      --admin-accent: #2563EB;
+      --admin-green: #10B981;
+      --admin-text: #F8FAFC;
+      --admin-muted: #94A3B8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--admin-bg);
+      color: var(--admin-text);
+      min-height: 100vh;
+      padding: 30px 20px 60px;
+    }
+    .admin-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .admin-header {
+      margin-bottom: 28px;
+      border-bottom: 1px solid var(--admin-border);
+      padding-bottom: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+    .admin-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .admin-title-wrap img {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    .admin-header h1 {
+      font-size: 22px;
+      font-weight: 800;
+      color: #FFFFFF;
+    }
+    .admin-header p {
+      color: var(--admin-muted);
+      font-size: 13px;
+      margin-top: 2px;
+    }
+    .admin-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .btn-action {
+      background: var(--admin-green);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 100px;
+      font-weight: 800;
+      font-size: 13px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: transform 0.2s, background 0.2s;
+    }
+    .btn-action:hover {
+      transform: translateY(-2px);
+      background: #059669;
+    }
+    .btn-secondary {
+      background: rgba(255,255,255,0.08);
+      color: var(--admin-text);
+      border: 1px solid var(--admin-border);
+    }
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.15);
+      border-color: rgba(255,255,255,0.25);
+    }
+    .search-filter-bar {
+      margin-bottom: 24px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .search-filter-bar input {
+      flex: 1;
+      min-width: 260px;
+      background: var(--admin-card);
+      border: 1px solid var(--admin-border);
+      padding: 11px 16px;
+      border-radius: 12px;
+      color: white;
+      font-size: 14px;
+      outline: none;
+    }
+    .search-filter-bar input:focus {
+      border-color: var(--admin-accent);
+    }
+    .ad-editor-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(520px, 1fr));
+      gap: 24px;
+    }
+    @media (max-width: 600px) {
+      .ad-editor-grid { grid-template-columns: 1fr; }
+    }
+    .ad-card-editor {
+      background: var(--admin-card);
+      border: 1px solid var(--admin-border);
+      border-radius: 18px;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      position: relative;
+    }
+    .ad-card-editor-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding-bottom: 12px;
+    }
+    .ad-card-editor h3 {
+      font-size: 15px;
+      font-weight: 800;
+      color: #F59E0B;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .ad-editor-content {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 18px;
+    }
+    @media (max-width: 900px) {
+      .ad-editor-content { grid-template-columns: 1fr; }
+    }
+    .form-group {
+      margin-bottom: 12px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--admin-muted);
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .form-group input, .form-group textarea {
+      width: 100%;
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid var(--admin-border);
+      border-radius: 10px;
+      padding: 9px 12px;
+      color: white;
+      font-size: 13px;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    .form-group input:focus, .form-group textarea:focus {
+      border-color: var(--admin-accent);
+    }
+    .form-group textarea {
+      resize: vertical;
+      height: 54px;
+    }
+    .preview-box-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .preview-box-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--admin-muted);
+      text-transform: uppercase;
+    }
+    .status-msg {
+      padding: 12px 18px;
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid #10B981;
+      border-radius: 12px;
+      color: #34D399;
+      margin-bottom: 24px;
+      display: none;
+      font-weight: 600;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="admin-container">
+  <div class="admin-header">
+    <div class="admin-title-wrap">
+      <img src="/assets/img/favicon.png" alt="JNxKeys">
+      <div>
+        <h1>📢 Panel de Publicidad Dinámica — JNxKeys</h1>
+        <p>Configura ofertas, banners y campañas en tiempo real para todas las páginas de la tienda.</p>
+      </div>
+    </div>
+    <div class="admin-actions">
+      <button class="btn-action btn-secondary" onclick="resetDefaults()">🔄 Restaurar Default</button>
+      <button class="btn-action btn-secondary" onclick="exportJson()">📥 Descargar ads.json</button>
+      <button class="btn-action" onclick="saveAds()">💾 Guardar en Navegador</button>
+    </div>
+  </div>
+
+  <div id="statusBox" class="status-msg">✅ Cambios guardados correctamente en el navegador.</div>
+
+  <div class="search-filter-bar">
+    <input type="text" id="adFilterInput" placeholder="🔍 Filtrar anuncios por nombre (ej. windows, office, canva, yape)..." oninput="filterAds()">
+  </div>
+
+  <div id="adsFormContainer" class="ad-editor-grid">
+    <!-- Formularios generados dinámicamente -->
+  </div>
+</div>
+
+<script>
+var currentAds = {};
+
+function initAdmin() {
+  var stored = localStorage.getItem('jnxkeys_custom_ads');
+  if (stored) {
+    try {
+      currentAds = JSON.parse(stored);
+      renderForms();
+      return;
+    } catch(e){}
+  }
+  fetch('/assets/data/ads.json')
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      currentAds = data;
+      renderForms();
+    })
+    .catch(function(err) {
+      console.error('Error cargando ads.json:', err);
+    });
+}
+
+function renderForms(filterText) {
+  var container = document.getElementById('adsFormContainer');
+  container.innerHTML = '';
+
+  var keys = Object.keys(currentAds);
+  if (filterText) {
+    keys = keys.filter(function(k) {
+      return k.toLowerCase().indexOf(filterText.toLowerCase()) !== -1;
+    });
+  }
+
+  if (!keys.length) {
+    container.innerHTML = '<p style="color:var(--admin-muted);grid-column:1/-1;text-align:center;padding:40px;">No se encontraron anuncios con ese criterio.</p>';
+    return;
+  }
+
+  keys.forEach(function(key) {
+    var ad = currentAds[key];
+    var isVideo = ad.media_type === 'video' || (ad.media_url && ad.media_url.match(/\.(mp4|webm)$/i));
+    var mediaHtml = isVideo
+      ? '<video src="' + (ad.media_url || '') + '" autoplay loop muted playsinline></video>'
+      : '<img src="' + (ad.media_url || '/assets/img/combo_365_google_canva.jpg') + '" alt="Preview">';
+
+    var html = 
+      '<div class="ad-card-editor" id="card_' + key + '">' +
+        '<div class="ad-card-editor-head">' +
+          '<h3>📌 Slot: ' + key + '</h3>' +
+        '</div>' +
+        '<div class="ad-editor-content">' +
+          '<div class="form-fields">' +
+            '<div class="form-group">' +
+              '<label>Badge / Etiqueta</label>' +
+              '<input type="text" id="' + key + '_badge" value="' + (ad.badge || '') + '" oninput="updatePreview(\'' + key + '\')">' +
+            '</div>' +
+            '<div class="form-group">' +
+              '<label>Título de la oferta</label>' +
+              '<input type="text" id="' + key + '_title" value="' + (ad.title || '') + '" oninput="updatePreview(\'' + key + '\')">' +
+            '</div>' +
+            '<div class="form-group">' +
+              '<label>Descripción corta</label>' +
+              '<textarea id="' + key + '_desc" oninput="updatePreview(\'' + key + '\')">' + (ad.desc || '') + '</textarea>' +
+            '</div>' +
+            '<div class="form-group">' +
+              '<label>URL de Imagen / GIF / Mini-video (.mp4)</label>' +
+              '<input type="text" id="' + key + '_media_url" value="' + (ad.media_url || '') + '" oninput="updatePreview(\'' + key + '\')">' +
+            '</div>' +
+            '<div class="form-group">' +
+              '<label>Texto del Botón CTA</label>' +
+              '<input type="text" id="' + key + '_cta_text" value="' + (ad.cta_text || '') + '" oninput="updatePreview(\'' + key + '\')">' +
+            '</div>' +
+            '<div class="form-group">' +
+              '<label>Enlace de Destino / WhatsApp</label>' +
+              '<input type="text" id="' + key + '_link_url" value="' + (ad.link_url || '') + '">' +
+            '</div>' +
+          '</div>' +
+          '<div class="preview-box-wrap">' +
+            '<div class="preview-box-label">Vista Previa en Vivo:</div>' +
+            '<div class="ad-slot-card" id="prev_' + key + '">' +
+              '<span class="ad-badge" id="prev_badge_' + key + '">' + (ad.badge || 'OFERTA') + '</span>' +
+              '<div class="ad-media-wrap" id="prev_media_' + key + '">' + mediaHtml + '</div>' +
+              '<h4 class="ad-title" id="prev_title_' + key + '">' + (ad.title || 'Título del anuncio') + '</h4>' +
+              '<p class="ad-desc" id="prev_desc_' + key + '">' + (ad.desc || 'Descripción de la oferta especial') + '</p>' +
+              '<a class="ad-cta-btn" id="prev_cta_' + key + '" href="#">' + (ad.cta_text || 'Consultar') + '</a>' +
+            '</div>' +
+          '</div>' +
+        '</div>' +
+      '</div>';
+    container.innerHTML += html;
+  });
+}
+
+function updatePreview(key) {
+  var badge = document.getElementById(key + '_badge').value;
+  var title = document.getElementById(key + '_title').value;
+  var desc = document.getElementById(key + '_desc').value;
+  var mediaUrl = document.getElementById(key + '_media_url').value;
+  var cta = document.getElementById(key + '_cta_text').value;
+
+  var pBadge = document.getElementById('prev_badge_' + key);
+  var pTitle = document.getElementById('prev_title_' + key);
+  var pDesc = document.getElementById('prev_desc_' + key);
+  var pMedia = document.getElementById('prev_media_' + key);
+  var pCta = document.getElementById('prev_cta_' + key);
+
+  if (pBadge) pBadge.textContent = badge;
+  if (pTitle) pTitle.textContent = title;
+  if (pDesc) pDesc.textContent = desc;
+  if (pCta) pCta.textContent = cta;
+
+  if (pMedia && mediaUrl) {
+    var isVideo = mediaUrl.match(/\.(mp4|webm)$/i);
+    pMedia.innerHTML = isVideo
+      ? '<video src="' + mediaUrl + '" autoplay loop muted playsinline></video>'
+      : '<img src="' + mediaUrl + '" alt="Preview" onerror="this.onerror=null;this.src=\'/assets/img/combo_365_google_canva.jpg\';">';
+  }
+}
+
+function filterAds() {
+  var text = document.getElementById('adFilterInput').value;
+  renderForms(text);
+}
+
+function saveAds() {
+  Object.keys(currentAds).forEach(function(key) {
+    var b = document.getElementById(key + '_badge');
+    var t = document.getElementById(key + '_title');
+    var d = document.getElementById(key + '_desc');
+    var m = document.getElementById(key + '_media_url');
+    var c = document.getElementById(key + '_cta_text');
+    var l = document.getElementById(key + '_link_url');
+
+    if (b) currentAds[key].badge = b.value;
+    if (t) currentAds[key].title = t.value;
+    if (d) currentAds[key].desc = d.value;
+    if (m) currentAds[key].media_url = m.value;
+    if (c) currentAds[key].cta_text = c.value;
+    if (l) currentAds[key].link_url = l.value;
+  });
+
+  localStorage.setItem('jnxkeys_custom_ads', JSON.stringify(currentAds));
+  var msg = document.getElementById('statusBox');
+  msg.style.display = 'block';
+  setTimeout(function() { msg.style.display = 'none'; }, 3500);
+}
+
+function resetDefaults() {
+  if (!confirm('¿Restaurar todos los anuncios a los valores predeterminados del servidor?')) return;
+  localStorage.removeItem('jnxkeys_custom_ads');
+  fetch('/assets/data/ads.json')
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      currentAds = data;
+      renderForms();
+      var msg = document.getElementById('statusBox');
+      msg.textContent = '🔄 Anuncios restaurados a sus valores originales.';
+      msg.style.display = 'block';
+      setTimeout(function() { msg.style.display = 'none'; }, 3500);
+    });
+}
+
+function exportJson() {
+  saveAds();
+  var jsonStr = JSON.stringify(currentAds, null, 2);
+  var blob = new Blob([jsonStr], { type: 'application/json' });
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement('a');
+  a.href = url;
+  a.download = 'ads.json';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+document.addEventListener('DOMContentLoaded', initAdmin);
+</script>
+
+</body>
+</html>

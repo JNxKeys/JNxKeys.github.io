@@ -65,6 +65,8 @@
   --gold-light: #fef6e4;
   --green: #1a7340;
   --green-light: #e6f4ed;
+  --wu: #FFCC00;
+  --wu-dark: #1E293B;
 }
 body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;}
 
@@ -223,6 +225,109 @@ h1.hero em{font-style:italic;color:var(--k-green);}
 .ystitle{font-size:14px;font-weight:700;color:var(--dark);margin-bottom:4px;}
 .ysdesc{font-size:13px;color:var(--muted);line-height:1.6;}
 .yape-hl{background:var(--yape-light);border:1px solid #d9b3e8;border-radius:9px;padding:10px 13px;margin-top:9px;font-size:12.5px;color:var(--yape);font-weight:500;line-height:1.5;}
+
+/* SCREEN 3 — WESTERN UNION */
+.wu-hero {
+  background: var(--wu-dark); border-radius: 20px;
+  padding: 24px 22px; margin-bottom: 28px;
+  position: relative; overflow: hidden;
+}
+.wu-hero::after {
+  content: 'WU';
+  position: absolute; right: -8px; bottom: -22px;
+  font-family: 'DM Serif Display', serif;
+  font-size: 100px; color: rgba(255,204,0,.06);
+  pointer-events: none;
+}
+.wu-badge {
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--wu); border-radius: 12px;
+  width: 50px; height: 50px;
+  font-size: 13px; font-weight: 900; color: var(--wu-dark);
+  margin-bottom: 14px; letter-spacing: -.02em;
+}
+.wu-hero h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 23px; color: white; margin-bottom: 6px;
+}
+.wu-hero p { font-size: 13.5px; color: rgba(255,255,255,.6); line-height: 1.55; margin-bottom: 14px; }
+.wu-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+.wu-pill {
+  background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.14);
+  border-radius: 100px; padding: 5px 12px;
+  font-size: 12px; color: white; font-weight: 500;
+}
+
+.yape-badge { background: linear-gradient(135deg,#5b2d8e,#7c3fbf); border-radius: 14px; padding: 16px 20px; display: flex; gap: 12px; align-items: center; margin-bottom: 24px; color: white; }
+.yape-badge .icon { font-size: 26px; flex-shrink: 0; }
+.yape-badge p { font-size: 13px; line-height: 1.6; }
+.yape-badge strong { font-weight: 700; }
+
+.fee-box {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 14px; overflow: hidden; margin-bottom: 24px;
+}
+.fee-head {
+  background: var(--dark); padding: 11px 18px;
+  font-size: 10.5px; font-weight: 800;
+  color: rgba(255,255,255,.45); text-transform: uppercase; letter-spacing: .1em;
+}
+.fee-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 13px 18px; border-bottom: 1px solid var(--border); gap: 10px;
+}
+.fee-row:last-child { border-bottom: none; }
+.fee-label { font-size: 13.5px; color: var(--muted); font-weight: 500; }
+.fee-val { font-size: 14px; font-weight: 800; text-align: right; }
+.fee-val.g { color: var(--green); }
+.fee-val.gold { color: var(--gold); }
+.fee-val.n { color: var(--dark); }
+
+.steps { display: grid; gap: 12px; margin-bottom: 24px; }
+.step {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 15px; padding: 17px 19px;
+  display: grid; grid-template-columns: 38px 1fr; gap: 15px;
+  transition: box-shadow .18s;
+}
+.step:hover { box-shadow: 0 4px 16px rgba(0,166,81,.07); }
+.snum {
+  width: 38px; height: 38px; flex-shrink: 0;
+  border-radius: 10px; background: var(--wu-dark);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'DM Serif Display', serif;
+  font-size: 18px; color: var(--wu);
+}
+.stitle { font-size: 14px; font-weight: 800; color: var(--dark); margin-bottom: 5px; }
+.sdesc { font-size: 13px; color: var(--muted); line-height: 1.6; }
+.s-hl {
+  background: var(--k-light); border: 1px solid var(--k-mid);
+  border-radius: 9px; padding: 10px 13px; margin-top: 9px;
+  font-size: 12.5px; color: var(--k-dark); font-weight: 500; line-height: 1.5;
+}
+.pay-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(128px, 1fr));
+  gap: 7px; margin-top: 10px;
+}
+.pay-opt {
+  background: var(--bg); border: 1px solid var(--border);
+  border-radius: 9px; padding: 11px 12px; font-size: 12.5px; line-height: 1.4;
+}
+.pay-opt strong {
+  display: block; font-size: 10.5px; font-weight: 800;
+  text-transform: uppercase; letter-spacing: .05em;
+  color: var(--gold); margin-bottom: 3px;
+}
+.pay-opt span { color: var(--muted); }
+
+.tip {
+  background: var(--green-light); border: 1px solid #a8dca8;
+  border-radius: 13px; padding: 15px 18px;
+  display: flex; gap: 11px; align-items: flex-start; margin-bottom: 24px;
+}
+.tip-i { font-size: 19px; flex-shrink: 0; margin-top: 1px; }
+.tip p { font-size: 13px; color: #1a4f1a; line-height: 1.6; }
+.tip strong { color: var(--green); font-weight: 700; }
 .contact{background:linear-gradient(135deg,#5b1a6b,var(--yape));border-radius:18px;padding:24px;text-align:center;color:white;margin-bottom:24px;}
 .contact h3{font-family:'DM Serif Display',serif;font-size:23px;margin-bottom:8px;}
 .wa-btn{display:inline-flex;align-items:center;gap:8px;background:white;color:var(--yape);font-weight:800;font-size:14px;border-radius:12px;padding:13px 26px;cursor:pointer;border:none;transition:transform .18s;}
@@ -507,7 +612,7 @@ h1.hero em { font-style: italic; color: var(--k-green); }
 <div id="s2" class="screen">
 <div class="page">
   <div class="topnav">
-    <button class="back-btn" onclick="goScreen(&#39;s1&#39;)">← Volver</button>
+    <button class="back-btn" onclick="goScreen('s1')">← Volver</button>
     <div class="step-pill">2 de 3</div>
   </div>  
   <div class="dot-nav"><div class="d"></div><div class="d on"></div><div class="d"></div></div>
@@ -533,11 +638,14 @@ h1.hero em { font-style: italic; color: var(--k-green); }
   </div>
 
   <div class="how-label">¿Cómo funciona el proceso?</div>
-  <div class="how-steps">
-    <div class="how-step"><div class="how-num">1</div><div class="how-text"><strong>Escríbeme</strong> por WhatsApp indicando qué versión quieres: Standard, Plus o Premium.</div></div>
-    <div class="how-step"><div class="how-num">2</div><div class="how-text"><strong>Realizas el pago</strong> por Yape al número 925 244 643.</div></div>
-    <div class="how-step"><div class="how-num">3</div><div class="how-text"><strong>Me envías el comprobante</strong> del pago por WhatsApp.</div></div>
-    <div class="how-step"><div class="how-num">4</div><div class="how-text"><strong>Recibo el código</strong> de activación Kaspersky y lo activas en tu equipo. ¡Listo!</div></div>
+  <div class="content-with-ad-grid">
+    <div class="how-steps">
+      <div class="how-step"><div class="how-num">1</div><div class="how-text"><strong>Escríbeme</strong> por WhatsApp indicando qué versión quieres: Standard, Plus o Premium.</div></div>
+      <div class="how-step"><div class="how-num">2</div><div class="how-text"><strong>Realizas el pago</strong> usando Yape si estás en Perú o Western Union si estás en el extranjero.</div></div>
+      <div class="how-step"><div class="how-num">3</div><div class="how-text"><strong>Me envías el comprobante</strong> del pago por WhatsApp.</div></div>
+      <div class="how-step"><div class="how-num">4</div><div class="how-text"><strong>Recibes el código</strong> de activación Kaspersky y lo activas en tu equipo. ¡Listo!</div></div>
+    </div>
+    <div class="ad-slot" data-ad-id="kaspersky_confianza_ad"></div>
   </div>
 </div>
 <div class="bnav"><div class="bnav-inner">
@@ -546,69 +654,148 @@ h1.hero em { font-style: italic; color: var(--k-green); }
 </div></div>
 </div>
 
-<!-- ══════════ S3 — YAPE ══════════ -->
+<!-- ══════════ S3 — PAGO ══════════ -->
 <div id="s3" class="screen">
 <div class="page">
 
   <div class="topnav">
-    
-    <button class="back-btn" onclick="goScreen(&#39;s2&#39;)">← Volver</button>
-  <div class="step-pill">3 de 3</div></div>
+    <button class="back-btn" onclick="goScreen('s2')">← Volver</button>
+    <div class="step-pill">3 de 3</div>
+  </div>
 
   <div class="dot-nav"><div class="d"></div><div class="d"></div><div class="d on"></div></div>
 
-  <div class="yape-hero">
-    <div class="yape-badge-img">💜</div>
-    <h2>Paga con Yape</h2>
-    <p>Pago directo, sin comisiones, solo para clientes en Perú. En minutos tienes tu antivirus activo.</p>
-    <div class="yape-pills">
-      <span class="yape-pill">🇵🇪 Solo Perú</span>
-      <span class="yape-pill">💜 Sin comisión</span>
-      <span class="yape-pill">⚡ Instantáneo</span>
-      <span class="yape-pill">🔒 100% seguro</span>
+  <!-- PESTAÑAS DE MÉTODOS DE PAGO (HOMOLOGADO YAPE + WESTERN UNION) -->
+  <div class="payment-tabs-bar">
+    <button class="pay-tab-btn active" id="tabYapeBtn" onclick="switchPaymentTab('yape')">
+      <span>💜 Yape (Perú)</span>
+    </button>
+    <button class="pay-tab-btn" id="tabWuBtn" onclick="switchPaymentTab('wu')">
+      <span>🌍 Western Union (Internacional)</span>
+    </button>
+  </div>
+
+  <!-- CONTENIDO 1: YAPE (DEFAULT) -->
+  <div id="payContentYape">
+    <div class="yape-hero">
+      <div class="yape-badge-img">💜</div>
+      <h2>Paga con Yape</h2>
+      <p>Pago directo, sin comisiones, solo para clientes en Perú. En minutos tienes tu antivirus activo.</p>
+      <div class="yape-pills">
+        <span class="yape-pill">🇵🇪 Solo Perú</span>
+        <span class="yape-pill">💜 Sin comisión</span>
+        <span class="yape-pill">⚡ Instantáneo</span>
+        <span class="yape-pill">🔒 100% seguro</span>
+      </div>
+    </div>
+
+    <div class="content-with-ad-grid">
+      <div class="yape-how">
+        <div class="yape-step">
+          <div class="ynum">1</div>
+          <div><div class="ystitle">Abre Yape en tu celular</div><div class="ysdesc">Toca en <strong>"Yapear"</strong> e ingresa el número de celular.</div></div>
+        </div>
+        <div class="yape-step">
+          <div class="ynum">2</div>
+          <div><div class="ystitle">Ingresa los datos de pago</div>
+            <div class="data-box">
+              <div class="dr"><span class="dl">Número Yape</span><span class="dv">925 244 643</span></div>
+              <hr class="dd">
+              <div class="dr"><span class="dl">Titular</span><span class="dv">Cesar Fer*</span></div>
+              <hr class="dd">
+              <div class="dr"><span class="dl">Kaspersky Standard</span><span class="dv">S/ 60</span></div>
+              <hr class="dd">
+              <div class="dr"><span class="dl">Kaspersky Plus</span><span class="dv">S/ 75</span></div>
+              <hr class="dd">
+              <div class="dr"><span class="dl">Kaspersky Premium</span><span class="dv">S/ 90</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="yape-step">
+          <div class="ynum">3</div>
+          <div><div class="ystitle">En el mensaje indica qué versión quieres</div><div class="ysdesc">Escribe "Standard", "Plus" o "Premium" en el mensaje del Yape para que sepa qué licencia enviarte.</div></div>
+        </div>
+        <div class="yape-step">
+          <div class="ynum">4</div>
+          <div><div class="ystitle">Envíame el comprobante</div><div class="ysdesc">Manda una captura del Yape confirmado por WhatsApp al 925 244 643.</div><div class="yape-hl">✅ En cuanto confirme el pago te envío el código de activación Kaspersky. ¡Actívalo en minutos!</div></div>
+        </div>
+      </div>
+      <div class="ad-slot" data-ad-id="kaspersky_yape_ad"></div>
     </div>
   </div>
 
-  <div class="yape-how">
-    <div class="yape-step">
-      <div class="ynum">1</div>
-      <div><div class="ystitle">Abre Yape en tu celular</div><div class="ysdesc">Toca en <strong>"Yapear"</strong> e ingresa el número de celular.</div></div>
-    </div>
-    <div class="yape-step">
-      <div class="ynum">2</div>
-      <div><div class="ystitle">Ingresa los datos de pago</div>
-        <div class="data-box">
-          <div class="dr"><span class="dl">Número Yape</span><span class="dv">925 244 643</span></div>
-          <hr class="dd">
-          <div class="dr"><span class="dl">Nombre</span><span class="dv">Cesar Fer*</span></div>
-          <hr class="dd">
-          <div class="dr"><span class="dl">Kaspersky Standard</span><span class="dv">S/ 60</span></div>
-          <hr class="dd">
-          <div class="dr"><span class="dl">Kaspersky Plus</span><span class="dv">S/ 75</span></div>
-          <hr class="dd">
-          <div class="dr"><span class="dl">Kaspersky Premium</span><span class="dv">S/ 90</span></div>
-        </div>
+  <!-- CONTENIDO 2: WESTERN UNION (INTERNACIONAL) -->
+  <div id="payContentWu" style="display: none;">
+    <div class="wu-hero">
+      <div class="wu-badge">WU</div>
+      <h2>Paga con Western Union</h2>
+      <p>No necesitas tener Yape ni ser de Perú. Con Western Union envías el pago desde tu país en minutos.</p>
+      <div class="wu-pills">
+        <span class="wu-pill">🌍 +200 países</span>
+        <span class="wu-pill">💳 Tarjeta, banco o efectivo</span>
+        <span class="wu-pill">⚡ Llega en minutos</span>
+        <span class="wu-pill">🔒 100% seguro</span>
       </div>
     </div>
-    <div class="yape-step">
-      <div class="ynum">3</div>
-      <div><div class="ystitle">En el mensaje indica qué versión quieres</div><div class="ysdesc">Escribe "Standard", "Plus" o "Premium" en el mensaje del Yape para que sepa qué licencia enviarte.</div></div>
+
+    <div class="yape-badge">
+      <span class="icon">💜</span>
+      <p><strong>Western Union es aliada oficial de Yape Perú.</strong> Tu dinero llega directo a mi billetera, sin intermediarios ni demoras.</p>
     </div>
-    <div class="yape-step">
-      <div class="ynum">4</div>
-      <div><div class="ystitle">Envíame el comprobante</div><div class="ysdesc">Manda una captura del Yape confirmado por WhatsApp al 925 244 643.</div><div class="yape-hl">✅ En cuanto confirme el pago te envío el código de activación Kaspersky. ¡Actívalo en minutos!</div></div>
+
+    <div class="fee-box">
+      <div class="fee-head">Comisiones Western Union a Perú</div>
+      <div class="fee-row"><span class="fee-label">🎉 Tu primer envío</span><span class="fee-val g">GRATIS — $0</span></div>
+      <div class="fee-row"><span class="fee-label">💳 Pago con tarjeta (siguientes)</span><span class="fee-val gold">~$4–5 USD aprox.</span></div>
+      <div class="fee-row"><span class="fee-label">🏦 Transferencia bancaria (siguientes)</span><span class="fee-val gold">~$2–3 USD aprox.</span></div>
+      <div class="fee-row"><span class="fee-label">⏱️ Tiempo de llegada</span><span class="fee-val n">Minutos</span></div>
     </div>
+
+    <div class="content-with-ad-grid">
+      <div class="steps">
+        <div class="step"><div class="snum">1</div><div><div class="stitle">Descarga la app o entra a westernunion.com</div><div class="sdesc">Busca <strong>"Western Union"</strong> en App Store o Google Play. Registro gratis en 5 minutos. También puedes ir a una sucursal física y pagar en efectivo.</div></div></div>
+        <div class="step"><div class="snum">2</div><div><div class="stitle">Usa el simulador primero</div><div class="sdesc">En <strong>"El destinatario recibe"</strong> escribe el monto en <strong>Soles (PEN)</strong> del plan acordado. Verás exactamente cuánto pagarás en tu moneda.</div><div class="s-hl">💡 Sin sorpresas — ves el costo total antes de confirmar.</div></div></div>
+        <div class="step"><div class="snum">3</div><div><div class="stitle">Selecciona Perú → Billetera Móvil → Yape</div><div class="sdesc">En método de entrega elige <strong>"Billetera Móvil"</strong> o <strong>"Mobile Wallet"</strong> y luego selecciona <strong>YAPE</strong> como operador.</div></div></div>
+        <div class="step"><div class="snum">4</div><div><div class="stitle">Ingresa mis datos exactamente así</div>
+          <div class="data-box">
+            <div class="dr"><span class="dl">Nombre completo</span><span class="dv">Cesar Fer*</span></div>
+            <hr class="dd">
+            <div class="dr"><span class="dl">Número celular</span><span class="dv">+51 925 244 643</span></div>
+            <hr class="dd">
+            <div class="dr"><span class="dl">País</span><span class="dv">Perú (+51)</span></div>
+          </div>
+        </div></div>
+        <div class="step"><div class="snum">5</div><div><div class="stitle">Elige cómo pagar</div>
+          <div class="pay-grid">
+            <div class="pay-opt"><strong>💳 Tarjeta</strong><span>Débito o crédito. Lo más rápido.</span></div>
+            <div class="pay-opt"><strong>🏦 Transferencia</strong><span>Banco / SPEI / PSE según tu país.</span></div>
+            <div class="pay-opt"><strong>🏪 Efectivo</strong><span>En agencia WU o tienda aliada.</span></div>
+          </div>
+        </div></div>
+        <div class="step"><div class="snum">6</div><div><div class="stitle">Envíame el comprobante</div><div class="sdesc">WU te da un <strong>número MTCN</strong> al finalizar. Mándame la captura por WhatsApp indicando tu versión y te enviamos tu código de activación Kaspersky al instante.</div><div class="s-hl">✅ Entrega inmediata por WhatsApp.</div></div></div>
+      </div>
+      <div class="ad-slot" data-ad-id="kaspersky_wu_ad"></div>
+    </div>
+  </div>
+
+  <div class="tip">
+    <span class="tip-i">🎁</span>
+    <p><strong>¿Primera vez usando Western Union?</strong> Tu primer envío tiene <strong>comisión $0</strong>. Solo pagas el precio del producto.</p>
   </div>
 
   <div class="contact">
     <h3>¿Listo para proteger tu equipo?</h3>
     <p>Escríbeme por WhatsApp y en minutos tienes tu Kaspersky activo y funcionando.</p>
-    <button class="wa-btn" onclick="gtag('event','whatsapp_click',{product:'Kaspersky',location:'contact'});window.open(&#39;https://wa.me/51925244643?text=Deseo%20información%20de%20Kaspersky&#39;,&#39;_blank&#39;)"><svg width="16" height="16" viewBox="0 0 32 32"><circle cx="16" cy="16" r="16" fill="#25D366"/><path fill="#fff" d="M23.47 8.52A10.9 10.9 0 0 0 16.02 5c-6.01 0-10.9 4.89-10.9 10.9 0 1.92.5 3.8 1.46 5.46L5 27l5.8-1.52a10.9 10.9 0 0 0 5.22 1.33h.005c6.01 0 10.9-4.89 10.9-10.9a10.84 10.84 0 0 0-3.45-7.79zm-7.45 16.77h-.004a9.06 9.06 0 0 1-4.61-1.26l-.33-.196-3.44.9.92-3.35-.215-.345a9.05 9.05 0 0 1-1.39-4.83c0-5.01 4.08-9.09 9.1-9.09a9.04 9.04 0 0 1 6.43 2.67 9.03 9.03 0 0 1 2.66 6.43c0 5.01-4.08 9.09-9.1 9.09zm4.99-6.81c-.27-.14-1.61-.79-1.86-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.16-1.34-.8-.71-1.34-1.6-1.5-1.87-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.48-.84-2.02-.22-.53-.44-.46-.61-.47l-.52-.01c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.29 0 1.35.98 2.66 1.12 2.84.14.18 1.93 2.95 4.68 4.14.65.28 1.16.45 1.56.58.66.21 1.25.18 1.72.11.53-.08 1.61-.66 1.83-1.29.23-.63.23-1.17.16-1.29-.07-.11-.25-.18-.52-.32z"/></svg> Escribir por WhatsApp</button>
+    <button class="wa-btn" onclick="gtag('event','whatsapp_click',{product:'Kaspersky',location:'contact'});window.open('https://wa.me/51925244643?text=Deseo%20información%20de%20Kaspersky','_blank')">
+      <svg width="16" height="16" viewBox="0 0 32 32"><circle cx="16" cy="16" r="16" fill="#25D366"/><path fill="#fff" d="M23.47 8.52A10.9 10.9 0 0 0 16.02 5c-6.01 0-10.9 4.89-10.9 10.9 0 1.92.5 3.8 1.46 5.46L5 27l5.8-1.52a10.9 10.9 0 0 0 5.22 1.33h.005c6.01 0 10.9-4.89 10.9-10.9a10.84 10.84 0 0 0-3.45-7.79zm-7.45 16.77h-.004a9.06 9.06 0 0 1-4.61-1.26l-.33-.196-3.44.9.92-3.35-.215-.345a9.05 9.05 0 0 1-1.39-4.83c0-5.01 4.08-9.09 9.1-9.09a9.04 9.04 0 0 1 6.43 2.67 9.03 9.03 0 0 1 2.66 6.43c0 5.01-4.08 9.09-9.1 9.09zm4.99-6.81c-.27-.14-1.61-.79-1.86-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.16-1.34-.8-.71-1.34-1.6-1.5-1.87-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.48-.84-2.02-.22-.53-.44-.46-.61-.47l-.52-.01c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.29 0 1.35.98 2.66 1.12 2.84.14.18 1.93 2.95 4.68 4.14.65.28 1.16.45 1.56.58.66.21 1.25.18 1.72.11.53-.08 1.61-.66 1.83-1.29.23-.63.23-1.17.16-1.29-.07-.11-.25-.18-.52-.32z"/></svg>
+      Escribir por WhatsApp
+    </button>
   </div>
+
 </div>
 <div class="bnav"><div class="bnav-inner">
   <button class="nbtn s" onclick="goScreen('s2')">← Confianza</button>
-  <button class="nbtn p" onclick="gtag('event','whatsapp_click',{product:'Kaspersky',location:'bottom_nav'});window.open(&#39;https://wa.me/51925244643?text=Deseo%20información%20de%20Kaspersky&#39;,&#39;_blank&#39;)"><svg width="15" height="15" viewBox="0 0 32 32"><circle cx="16" cy="16" r="16" fill="#25D366"/><path fill="#fff" d="M23.47 8.52A10.9 10.9 0 0 0 16.02 5c-6.01 0-10.9 4.89-10.9 10.9 0 1.92.5 3.8 1.46 5.46L5 27l5.8-1.52a10.9 10.9 0 0 0 5.22 1.33h.005c6.01 0 10.9-4.89 10.9-10.9a10.84 10.84 0 0 0-3.45-7.79zm-7.45 16.77h-.004a9.06 9.06 0 0 1-4.61-1.26l-.33-.196-3.44.9.92-3.35-.215-.345a9.05 9.05 0 0 1-1.39-4.83c0-5.01 4.08-9.09 9.1-9.09a9.04 9.04 0 0 1 6.43 2.67 9.03 9.03 0 0 1 2.66 6.43c0 5.01-4.08 9.09-9.1 9.09zm4.99-6.81c-.27-.14-1.61-.79-1.86-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.16-1.34-.8-.71-1.34-1.6-1.5-1.87-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.48-.84-2.02-.22-.53-.44-.46-.61-.47l-.52-.01c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.29 0 1.35.98 2.66 1.12 2.84.14.18 1.93 2.95 4.68 4.14.65.28 1.16.45 1.56.58.66.21 1.25.18 1.72.11.53-.08 1.61-.66 1.83-1.29.23-.63.23-1.17.16-1.29-.07-.11-.25-.18-.52-.32z"/></svg> WhatsApp</button>
+  <button class="nbtn p" onclick="gtag('event','whatsapp_click',{product:'Kaspersky',location:'bottom_nav'});window.open('https://wa.me/51925244643?text=Deseo%20información%20de%20Kaspersky','_blank')"><svg width="15" height="15" viewBox="0 0 32 32"><circle cx="16" cy="16" r="16" fill="#25D366"/><path fill="#fff" d="M23.47 8.52A10.9 10.9 0 0 0 16.02 5c-6.01 0-10.9 4.89-10.9 10.9 0 1.92.5 3.8 1.46 5.46L5 27l5.8-1.52a10.9 10.9 0 0 0 5.22 1.33h.005c6.01 0 10.9-4.89 10.9-10.9a10.84 10.84 0 0 0-3.45-7.79zm-7.45 16.77h-.004a9.06 9.06 0 0 1-4.61-1.26l-.33-.196-3.44.9.92-3.35-.215-.345a9.05 9.05 0 0 1-1.39-4.83c0-5.01 4.08-9.09 9.1-9.09a9.04 9.04 0 0 1 6.43 2.67 9.03 9.03 0 0 1 2.66 6.43c0 5.01-4.08 9.09-9.1 9.09zm4.99-6.81c-.27-.14-1.61-.79-1.86-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.16-1.34-.8-.71-1.34-1.6-1.5-1.87-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.48-.84-2.02-.22-.53-.44-.46-.61-.47l-.52-.01c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.29 0 1.35.98 2.66 1.12 2.84.14.18 1.93 2.95 4.68 4.14.65.28 1.16.45 1.56.58.66.21 1.25.18 1.72.11.53-.08 1.61-.66 1.83-1.29.23-.63.23-1.17.16-1.29-.07-.11-.25-.18-.52-.32z"/></svg> WhatsApp</button>
 </div></div>
 </div>
 
@@ -623,6 +810,26 @@ function goScreen(id){
   document.getElementById(id).classList.add('active');
   window.scrollTo(0,0);
   gtag('event', 'screen_view_product', { product: 'Kaspersky', screen: id });
+}
+
+function switchPaymentTab(type) {
+  var yapeBox = document.getElementById('payContentYape');
+  var wuBox = document.getElementById('payContentWu');
+  var yapeBtn = document.getElementById('tabYapeBtn');
+  var wuBtn = document.getElementById('tabWuBtn');
+  if (!yapeBox || !wuBox) return;
+
+  if (type === 'yape') {
+    yapeBox.style.display = 'block';
+    wuBox.style.display = 'none';
+    if (yapeBtn) yapeBtn.classList.add('active');
+    if (wuBtn) wuBtn.classList.remove('active');
+  } else {
+    yapeBox.style.display = 'none';
+    wuBox.style.display = 'block';
+    if (wuBtn) wuBtn.classList.add('active');
+    if (yapeBtn) yapeBtn.classList.remove('active');
+  }
 }
 
 document.querySelectorAll('.card-share-btn').forEach(btn => {
@@ -642,5 +849,6 @@ if (location.hash) {
   if (target) target.scrollIntoView();
 }
 </script>
+<script src="/assets/js/ad-loader.js"></script>
 </body>
 </html>

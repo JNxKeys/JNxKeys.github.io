@@ -1,0 +1,281 @@
+{
+  "global_confianza_ad": {
+    "badge": "🛡️ GARANTÍA JNXKEYS",
+    "title": "Licencias 100% Originales",
+    "desc": "Activación directa en servidores oficiales sin cracks ni riesgos. Soporte personalizado post-venta.",
+    "media_type": "image",
+    "media_url": "/assets/img/jnxkeys_brand_trust.jpg",
+    "cta_text": "Hablar con soporte WhatsApp →",
+    "link_url": "https://wa.me/51925244643?text=Hola,%20tengo%20una%20consulta%20sobre%20la%20garantía%20JNxKeys"
+  },
+  "global_yape_ad": {
+    "badge": "🔥 PACK RECOMENDADO",
+    "title": "Mega Combo Productividad & IA",
+    "desc": "Llévate Office 365 + Canva Pro + Google One en un solo pack con súper descuento.",
+    "media_type": "image",
+    "media_url": "/assets/img/combo_365_google_canva.jpg",
+    "cta_text": "Pedir Mega Combo por WhatsApp →",
+    "link_url": "https://wa.me/51925244643?text=Quiero%20información%20del%20Mega%20Combo%20Productividad"
+  },
+  "global_wu_ad": {
+    "badge": "🌍 ENVÍO INTERNACIONAL",
+    "title": "Tu primer envío con $0 Comisión",
+    "desc": "Western Union es aliada de Yape Perú. Envía seguro desde cualquier país sin pagar comisiones en tu 1er giro.",
+    "media_type": "image",
+    "media_url": "/assets/img/jnxkeys_brand_trust.jpg",
+    "cta_text": "Consultar pago internacional →",
+    "link_url": "https://wa.me/51925244643?text=Hola,%20quiero%20pagar%20por%20Western%20Union"
+  },
+  "combos_footer_ad": {
+    "badge": "💼 COMBOS A MEDIDA",
+    "title": "¿Necesitas un pack para tu negocio o familia?",
+    "desc": "Armamos el combo de licencias que necesitas con descuento adicional por cantidad.",
+    "media_type": "image",
+    "media_url": "/assets/img/combo_365_google_canva.jpg",
+    "cta_text": "Cotizar pack personalizado →",
+    "link_url": "https://wa.me/51925244643?text=Deseo%20cotizar%20un%20pack%20personalizado"
+  },
+  "windows_confianza_ad": {
+    "badge": "🔒 LICENCIA DE POR VIDA",
+    "title": "Windows 10 / 11 Pro Genuino",
+    "desc": "Clave alfanumérica original vinculable a tu cuenta Microsoft. Formatea cuando quieras sin perderla.",
+    "media_type": "image",
+    "media_url": "/assets/img/jnxkeys_brand_trust.jpg",
+    "cta_text": "Consultar activación Windows →",
+    "link_url": "https://wa.me/51925244643?text=Deseo%20activar%20Windows%20Pro"
+  },
+  "windows_yape_ad": {
+    "badge": "🔥 PACK SISTEMA TOTAL",
+    "title": "Windows 11 Pro + Office 2024",
+    "desc": "Equipa tu PC completa con licencias originales permanentes sin pagos mensuales.",
+    "media_type": "image",
+    "media_url": "/assets/img/combo_365_google_canva.jpg",
+    "cta_text": "Ver Combo Windows + Office →",
+    "link_url": "https://wa.me/51925244643?text=Quiero%20información%20del%20Combo%20Windows%20%2B%20Office"
+  },
+  "windows_wu_ad": {
+    "badge": "🌍 COMPRA INTERNACIONAL",
+    "title": "Windows Pro disponible para todo el mundo",
+    "desc": "Clave global multilingüe para activar desde cualquier país vía Western Union.",
+    "media_type": "image",
+    "media_url": "/assets/img/jnxkeys_brand_trust.jpg",
+    "cta_text": "Comprar Windows por Western Union →",
+    "link_url": "https://wa.me/51925244643?text=Deseo%20comprar%20Windows%20por%20Western%20Union"
+  },
+  "office_confianza_ad": {
+    "badge": "🛡️ OFIMÁTICA 100% LEGAL",
+    "title": "Microsoft 365 & Office Pro",
+    "desc": "Descarga directa desde setup.office.com con soporte técnico incluido para tu instalación.",
+    "media_type": "image",
+    "media_url": "/assets/img/jnxkeys_brand_trust.jpg",
+    "cta_text": "Consultar Office por WhatsApp →",
+    "link_url": "https://wa.me/51925244643?text=Deseo%20información%20de%20Office"
+  },
+  "office_yape_ad": {
+    "badge": "🔥 PACK OFICINA SEGURA",
+    "title": "Office + Antivirus Kaspersky",
+    "desc": "Protege tus documentos, hojas de cálculo y presentaciones contra ransomware y virus.",
+    "media_type": "image",
+    "media_url": "/assets/img/combo_365_google_canva.jpg",
+    "cta_text": "Ver Combo Office + Antivirus →",
+    "link_url": "https://wa.me/51925244643?text=Quiero%20el%20Combo%20Office%20%2B%20Antivirus"
+  },
+  "office_wu_ad": {
+    "badge": "🌍 ENVÍO INMEDIATO",
+    "title": "Office para cualquier país",
+    "desc": "Paga en tu moneda local con Western Union y recibe tu cuenta o clave en minutos.",
+    "media_type": "image",
+    "media_url": "/assets/img/jnxkeys_brand_trust.jpg",
+    "cta_text": "Pedir Office internacional →",
+    "link_url": "https://wa.me/51925244643?text=Deseo%20comprar%20Office%20por%20Western%20Union"
+  },
+  "google_one_confianza_ad": {
+    "badge": "☁️ ALMACENAMIENTO OFICIAL",
+    "title": "Tus fotos y archivos seguros en Google",
+    "desc": "Almacenamiento oficial vinculado a tu cuenta @gmail.com sin perder tus datos.",
+    "media_type": "image",
+    "media_url": "/assets/img/jnxkeys_brand_trust.jpg",
+    "cta_text": "Consultar Google One →",
+    "link_url": "https://wa.me/51925244643?text=Deseo%20información%20de%20Google%20One"
+  },
+  "google_one_yape_ad": {
+    "badge": "🚀 PACK CREADORES",
+    "title": "Google One 2TB/5TB + ChatGPT Plus",
+    "desc": "La combinación ideal para creadores de contenido, fotógrafos y desarrolladores.",
+    "media_type": "image",
+    "media_url": "/assets/img/combo_365_google_canva.jpg",
+    "cta_text": "Ver Pack Creadores →",
+    "link_url": "https://wa.me/51925244643?text=Quiero%20el%20Pack%20Creadores"
+  },
+  "google_one_wu_ad": {
+    "badge": "🌍 ENVÍA DESDE CUALQUIER PAÍS",
+    "title": "Paga Google One por Western Union",
+    "desc": "Sin tarjeta de crédito extranjera, fácil y seguro directo a Yape Perú.",
+    "media_type": "image",
+    "media_url": "/assets/img/jnxkeys_brand_trust.jpg",
+    "cta_text": "Pedir Google One por WU →",
+    "link_url": "https://wa.me/51925244643?text=Deseo%20comprar%20Google%20One%20por%20Western%20Union"
+  },
+  "eset_confianza_ad": {
+    "badge": "🛡️ PROTECCIÓN LIGERA",
+    "title": "ESET NOD32 Original",
+    "desc": "Protección líder que no ralentiza tus juegos ni tu trabajo diario. Licencia verificable en my.eset.com.",
+    "media_type": "image",
+    "media_url": "/assets/img/jnxkeys_brand_trust.jpg",
+    "cta_text": "Consultar ESET por WhatsApp →",
+    "link_url": "https://wa.me/51925244643?text=Deseo%20información%20de%20ESET"
+  },
+  "eset_yape_ad": {
+    "badge": "🔥 PACK GAMER TOTAL",
+    "title": "ESET Antivirus + Windows 11 Pro",
+    "desc": "Máxima tasa de FPS y blindaje contra troyanos, keyloggers y descargas dudosas.",
+    "media_type": "image",
+    "media_url": "/assets/img/combo_365_google_canva.jpg",
+    "cta_text": "Ver Pack Gamer →",
+    "link_url": "https://wa.me/51925244643?text=Deseo%20el%20Pack%20Gamer%20ESET%20%2B%20Windows"
+  },
+  "eset_wu_ad": {
+    "badge": "🌍 COBERTURA GLOBAL",
+    "title": "Activa ESET en cualquier país",
+    "desc": "Claves multirregión con soporte oficial del fabricante. Entrega inmediata.",
+    "media_type": "image",
+    "media_url": "/assets/img/jnxkeys_brand_trust.jpg",
+    "cta_text": "Comprar ESET por Western Union →",
+    "link_url": "https://wa.me/51925244643?text=Deseo%20comprar%20ESET%20por%20Western%20Union"
+  },
+  "kaspersky_confianza_ad": {
+    "badge": "🔒 CIBERSEGURIDAD TOP",
+    "title": "Kaspersky con VPN Ilimitada",
+    "desc": "Protege tu banca por internet, contraseñas y privacidad con la solución más premiada del mundo.",
+    "media_type": "image",
+    "media_url": "/assets/img/jnxkeys_brand_trust.jpg",
+    "cta_text": "Consultar Kaspersky →",
+    "link_url": "https://wa.me/51925244643?text=Deseo%20información%20de%20Kaspersky"
+  },
+  "kaspersky_yape_ad": {
+    "badge": "🔥 PACK SISTEMA TOTAL",
+    "title": "Kaspersky + Windows + Office",
+    "desc": "El combo definitivo para blindar y renovar tu computadora en un solo pago con descuento.",
+    "media_type": "image",
+    "media_url": "/assets/img/combo_365_google_canva.jpg",
+    "cta_text": "Pedir Sistema Total →",
+    "link_url": "https://wa.me/51925244643?text=Deseo%20el%20Pack%20Sistema%20Total"
+  },
+  "kaspersky_wu_ad": {
+    "badge": "🌍 WESTERN UNION",
+    "title": "Compra Kaspersky desde tu país",
+    "desc": "Gira directo a Yape Perú y recibe tu clave oficial de Kaspersky al instante.",
+    "media_type": "image",
+    "media_url": "/assets/img/jnxkeys_brand_trust.jpg",
+    "cta_text": "Comprar Kaspersky por WU →",
+    "link_url": "https://wa.me/51925244643?text=Deseo%20comprar%20Kaspersky%20por%20Western%20Union"
+  },
+  "canva_confianza_ad": {
+    "badge": "🎨 DISEÑO SIN LÍMITES",
+    "title": "Canva Pro en tu Cuenta",
+    "desc": "Accede a millones de fotos premium, plantillas exclusivas y herramientas de IA como borrador mágico.",
+    "media_type": "image",
+    "media_url": "/assets/img/jnxkeys_brand_trust.jpg",
+    "cta_text": "Consultar Canva Pro →",
+    "link_url": "https://wa.me/51925244643?text=Deseo%20información%20de%20Canva%20Pro"
+  },
+  "canva_yape_ad": {
+    "badge": "🔥 PACK CREATIVO",
+    "title": "Canva Pro + CapCut Pro",
+    "desc": "Diseña piezas gráficas impresionantes y edita videos virales con IA en tu celular y PC.",
+    "media_type": "image",
+    "media_url": "/assets/img/combo_365_google_canva.jpg",
+    "cta_text": "Pedir Pack Creativo →",
+    "link_url": "https://wa.me/51925244643?text=Quiero%20el%20Pack%20Canva%20%2B%20CapCut"
+  },
+  "canva_wu_ad": {
+    "badge": "🌍 PAGA CON WU",
+    "title": "Canva Pro para diseñadores en todo el mundo",
+    "desc": "Activa tu suscripción anual pagando de forma segura con Western Union a Yape Perú.",
+    "media_type": "image",
+    "media_url": "/assets/img/jnxkeys_brand_trust.jpg",
+    "cta_text": "Comprar Canva por WU →",
+    "link_url": "https://wa.me/51925244643?text=Deseo%20comprar%20Canva%20Pro%20por%20Western%20Union"
+  },
+  "capcut_confianza_ad": {
+    "badge": "🎬 EDICIÓN PRO",
+    "title": "Exporta en 4K sin marca de agua",
+    "desc": "Subtítulos automáticos, efectos de voz premium y transiciones de cine en tu propia cuenta de CapCut.",
+    "media_type": "image",
+    "media_url": "/assets/img/jnxkeys_brand_trust.jpg",
+    "cta_text": "Consultar CapCut Pro →",
+    "link_url": "https://wa.me/51925244643?text=Deseo%20información%20de%20CapCut%20Pro"
+  },
+  "capcut_yape_ad": {
+    "badge": "🚀 PACK VIDEO VIRAL",
+    "title": "CapCut Pro + ChatGPT Plus",
+    "desc": "Genera guiones de impacto con ChatGPT y edítalos profesionalmente con CapCut Pro.",
+    "media_type": "image",
+    "media_url": "/assets/img/combo_365_google_canva.jpg",
+    "cta_text": "Ver Pack Video Viral →",
+    "link_url": "https://wa.me/51925244643?text=Quiero%20el%20Pack%20CapCut%20%2B%20ChatGPT"
+  },
+  "capcut_wu_ad": {
+    "badge": "🌍 EDITA DESDE CUALQUIER LUGAR",
+    "title": "CapCut Pro sin fronteras",
+    "desc": "Envía tu pago vía Western Union y activa tu cuenta de CapCut en minutos.",
+    "media_type": "image",
+    "media_url": "/assets/img/jnxkeys_brand_trust.jpg",
+    "cta_text": "Comprar CapCut por WU →",
+    "link_url": "https://wa.me/51925244643?text=Deseo%20comprar%20CapCut%20Pro%20por%20Western%20Union"
+  },
+  "chatgpt_confianza_ad": {
+    "badge": "🧠 IA DE ÚLTIMA GENERACIÓN",
+    "title": "ChatGPT Plus Oficial",
+    "desc": "Acceso ilimitado a GPT-4o, análisis avanzado de datos, generación de imágenes y GPTs personalizados.",
+    "media_type": "image",
+    "media_url": "/assets/img/jnxkeys_brand_trust.jpg",
+    "cta_text": "Consultar ChatGPT Plus →",
+    "link_url": "https://wa.me/51925244643?text=Deseo%20información%20de%20ChatGPT%20Plus"
+  },
+  "chatgpt_yape_ad": {
+    "badge": "🔥 PACK CREADORES PRO",
+    "title": "ChatGPT Plus + Google One 5TB",
+    "desc": "Potencia tu flujo de trabajo creativo con la mejor IA y 5 terabytes de almacenamiento en la nube.",
+    "media_type": "image",
+    "media_url": "/assets/img/combo_365_google_canva.jpg",
+    "cta_text": "Ver Pack Creadores Pro →",
+    "link_url": "https://wa.me/51925244643?text=Deseo%20el%20Pack%20Creadores%20Pro"
+  },
+  "chatgpt_wu_ad": {
+    "badge": "🌍 SIN TARJETA EN DÓLARES",
+    "title": "Paga ChatGPT Plus en moneda local",
+    "desc": "Usa Western Union para pagar sin comisiones bancarias ni restricciones de tarjeta de crédito.",
+    "media_type": "image",
+    "media_url": "/assets/img/jnxkeys_brand_trust.jpg",
+    "cta_text": "Pagar ChatGPT por WU →",
+    "link_url": "https://wa.me/51925244643?text=Deseo%20comprar%20ChatGPT%20Plus%20por%20Western%20Union"
+  },
+  "apple_one_confianza_ad": {
+    "badge": "🍎 TODO EL ECOSISTEMA APPLE",
+    "title": "iCloud+, Apple TV+, Music y Arcade",
+    "desc": "Privacidad garantizada en tu cuenta. Disfruta de películas, millones de canciones y juegos sin anuncios.",
+    "media_type": "image",
+    "media_url": "/assets/img/jnxkeys_brand_trust.jpg",
+    "cta_text": "Consultar Apple One →",
+    "link_url": "https://wa.me/51925244643?text=Deseo%20información%20de%20Apple%20One"
+  },
+  "apple_one_yape_ad": {
+    "badge": "🔥 PLAN FAMILIAR O INDIVIDUAL",
+    "title": "Apple One Mensual a S/ 20",
+    "desc": "El mejor precio para disfrutar de todos los servicios premium de Apple en tu iPhone, iPad y Mac.",
+    "media_type": "image",
+    "media_url": "/assets/img/combo_365_google_canva.jpg",
+    "cta_text": "Pedir Apple One por Yape →",
+    "link_url": "https://wa.me/51925244643?text=Deseo%20pagar%20Apple%20One%20por%20Yape"
+  },
+  "apple_one_wu_ad": {
+    "badge": "🌍 APPLE ONE INTERNACIONAL",
+    "title": "Paga Apple One desde el extranjero",
+    "desc": "Envía tu pago por Western Union a Yape Perú y recibe tu invitación o credenciales en minutos.",
+    "media_type": "image",
+    "media_url": "/assets/img/jnxkeys_brand_trust.jpg",
+    "cta_text": "Comprar Apple One por WU →",
+    "link_url": "https://wa.me/51925244643?text=Deseo%20comprar%20Apple%20One%20por%20Western%20Union"
+  }
+}

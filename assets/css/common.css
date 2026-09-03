@@ -107,6 +107,12 @@
   gap: 22px;
   align-items: start;
 }
+.content-with-ad-grid:not(:has(.ad-slot > *)) {
+  grid-template-columns: 1fr;
+}
+.ad-slot:empty {
+  display: none;
+}
 
 .ad-slot-card {
   background: linear-gradient(145deg, #1E293B 0%, #0F172A 100%);

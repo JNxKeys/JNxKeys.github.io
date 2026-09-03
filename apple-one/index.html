@@ -477,23 +477,26 @@ h1.hero em { font-style: italic; color: var(--icloud); }
   </div>
 
   <div class="how-title">¿Cómo funciona el proceso?</div>
-  <div class="how-steps">
-    <div class="how-step">
-      <div class="how-num">1</div>
-      <div class="how-text"><strong>Escríbeme</strong> por WhatsApp confirmando la suscripción y si prefieres activarla en tu propia cuenta Apple o en una cuenta nueva.</div>
+  <div class="content-with-ad-grid">
+    <div class="how-steps">
+      <div class="how-step">
+        <div class="how-num">1</div>
+        <div class="how-text"><strong>Escríbeme</strong> por WhatsApp confirmando la suscripción y si prefieres activarla en tu propia cuenta Apple o en una cuenta nueva.</div>
+      </div>
+      <div class="how-step">
+        <div class="how-num">2</div>
+        <div class="how-text"><strong>Realizas el pago</strong> usando Yape si estás en Perú o Western Union si estás en el extranjero.</div>
+      </div>
+      <div class="how-step">
+        <div class="how-num">3</div>
+        <div class="how-text"><strong>Me envías el comprobante</strong> del pago por WhatsApp.</div>
+      </div>
+      <div class="how-step">
+        <div class="how-num">4</div>
+        <div class="how-text"><strong>Confirmo el pago</strong> y te envío los datos de acceso o la invitación al grupo. ¡Listo para disfrutar!</div>
+      </div>
     </div>
-    <div class="how-step">
-      <div class="how-num">2</div>
-      <div class="how-text"><strong>Realizas el pago</strong> por Yape al número 925 244 643.</div>
-    </div>
-    <div class="how-step">
-      <div class="how-num">3</div>
-      <div class="how-text"><strong>Me envías el comprobante</strong> del pago por WhatsApp.</div>
-    </div>
-    <div class="how-step">
-      <div class="how-num">4</div>
-      <div class="how-text"><strong>Confirmo el pago</strong> y te envío los datos de acceso o la invitación al grupo. ¡Listo para disfrutar!</div>
-    </div>
+    <div class="ad-slot" data-ad-id="apple_one_confianza_ad"></div>
   </div>
 
 </div>
@@ -503,129 +506,146 @@ h1.hero em { font-style: italic; color: var(--icloud); }
 </div></div>
 </div>
 
-<!-- ═══════════════════ SCREEN 3 — PAGO YAPE ═══════════════════ -->
+<!-- ═══════════════════ SCREEN 3 — PAGO ═══════════════════ -->
 <div id="s3" class="screen">
 <div class="page">
-<div class="topnav">
+  <div class="topnav">
     <button class="back-btn" onclick="goScreen('s2')">← Volver</button>
     <div class="step-pill">3 de 3</div>
   </div>
- 
 
   <div class="dot-nav">
     <div class="d"></div><div class="d"></div><div class="d on"></div>
   </div>
 
-  <div class="yape-hero">
-    <div class="yape-badge-img">💜</div>
-    <h2>Paga con Yape</h2>
-    <p>Pago directo, sin comisiones, para clientes en Perú. En minutos tienes tu suscripción Apple One activa.</p>
-    <div class="yape-pills">
-      <span class="yape-pill">🇵🇪 Perú</span>
-      <span class="yape-pill">💜 Sin comisión</span>
-      <span class="yape-pill">⚡ Instantáneo</span>
-      <span class="yape-pill">🔒 100% seguro</span>
-    </div>
+  <!-- PESTAÑAS DE MÉTODOS DE PAGO (HOMOLOGADO YAPE + WESTERN UNION) -->
+  <div class="payment-tabs-bar">
+    <button class="pay-tab-btn active" id="tabYapeBtn" onclick="switchPaymentTab('yape')">
+      <span>💜 Yape (Perú)</span>
+    </button>
+    <button class="pay-tab-btn" id="tabWuBtn" onclick="switchPaymentTab('wu')">
+      <span>🌍 Western Union (Internacional)</span>
+    </button>
   </div>
 
-  <div class="steps">
-
-    <div class="step">
-      <div class="snum">1</div>
-      <div>
-        <div class="stitle">Abre Yape en tu celular</div>
-        <div class="sdesc">Toca en <strong>"Yapear"</strong> e ingresa el número de celular para buscarme.</div>
+  <!-- CONTENIDO 1: YAPE (DEFAULT) -->
+  <div id="payContentYape">
+    <div class="yape-hero">
+      <div class="yape-badge-img">💜</div>
+      <h2>Paga con Yape</h2>
+      <p>Pago directo, sin comisiones, para clientes en Perú. En minutos tienes tu suscripción Apple One activa.</p>
+      <div class="yape-pills">
+        <span class="yape-pill">🇵🇪 Perú</span>
+        <span class="yape-pill">💜 Sin comisión</span>
+        <span class="yape-pill">⚡ Instantáneo</span>
+        <span class="yape-pill">🔒 100% seguro</span>
       </div>
     </div>
 
-    <div class="step">
-      <div class="snum">2</div>
-      <div>
-        <div class="stitle">Ingresa los datos de pago</div>
-        <div class="data-box">
-          <div class="dr"><span class="dl">Número Yape</span><span class="dv">925 244 643</span></div>
-          <hr class="dd">
-          <div class="dr"><span class="dl">Nombre</span><span class="dv">Cesar Fer*.</span></div>
-          <hr class="dd">
-          <div class="dr"><span class="dl">Suscripción mensual</span><span class="dv">S/ 20</span></div>
+    <div class="content-with-ad-grid">
+      <div class="steps">
+        <div class="step">
+          <div class="snum">1</div>
+          <div>
+            <div class="stitle">Abre Yape en tu celular</div>
+            <div class="sdesc">Toca en <strong>"Yapear"</strong> e ingresa el número de celular para buscarme.</div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="snum">2</div>
+          <div>
+            <div class="stitle">Ingresa los datos de pago</div>
+            <div class="data-box">
+              <div class="dr"><span class="dl">Número Yape</span><span class="dv">925 244 643</span></div>
+              <hr class="dd">
+              <div class="dr"><span class="dl">Nombre</span><span class="dv">Cesar Fer*</span></div>
+              <hr class="dd">
+              <div class="dr"><span class="dl">Apple One Mensual</span><span class="dv">S/ 20</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="snum">3</div>
+          <div>
+            <div class="stitle">Indica en el mensaje cómo la quieres activar</div>
+            <div class="sdesc">En el mensaje del Yape indica si deseas activarlo en tu propia cuenta Apple o prefieres una cuenta nueva.</div>
+            <div class="s-hl">💡 Si quieres activarlo en tu propia cuenta Apple, recuerda que no debes pertenecer a un grupo familiar y debes cambiar la región de tu cuenta a India.</div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="snum">4</div>
+          <div>
+            <div class="stitle">Envíame el comprobante</div>
+            <div class="sdesc">Manda una captura del Yape confirmado por WhatsApp al 925 244 643.</div>
+            <div class="s-hl">✅ En cuanto confirme el pago te envío los datos de acceso o la invitación al grupo Apple. ¡Disfruta Apple One!</div>
+          </div>
         </div>
       </div>
-    </div>
-
-    <div class="step">
-      <div class="snum">3</div>
-      <div>
-        <div class="stitle">Indica en el mensaje cómo la quieres activar</div>
-        <div class="sdesc">En el mensaje del Yape indica si deseas activarlo en tu propia cuenta Apple o prefieres una cuenta nueva.</div>
-        <div class="s-hl">💡 Si quieres activarlo en tu propia cuenta Apple, recuerda que no debes pertenecer a un grupo familiar y debes cambiar la región de tu cuenta a India.</div>
-      </div>
-    </div>
-
-    <div class="step">
-      <div class="snum">4</div>
-      <div>
-        <div class="stitle">Envíame el comprobante</div>
-        <div class="sdesc">Manda una captura del Yape confirmado por WhatsApp al 925 244 643.</div>
-        <div class="s-hl">✅ En cuanto confirme el pago te envío los datos de acceso o la invitación al grupo Apple. ¡Disfruta Apple One!</div>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="how-title">¿No tienes Yape ni estás en Perú?</div>
-
-  <div class="wu-hero">
-    <div class="wu-badge">WU</div>
-    <h2>Paga con Western Union</h2>
-    <p>No necesitas tener Yape ni ser de Perú. Envía el pago desde tu país en minutos, de forma 100% legal y segura.</p>
-    <div class="wu-pills">
-      <span class="wu-pill">🌍 +200 países</span>
-      <span class="wu-pill">💳 Tarjeta, banco o efectivo</span>
-      <span class="wu-pill">⚡ Llega en minutos</span>
-      <span class="wu-pill">🔒 100% seguro</span>
+      <div class="ad-slot" data-ad-id="apple_one_yape_ad"></div>
     </div>
   </div>
 
-  <div class="yape-badge">
-    <span class="icon">💜</span>
-    <p><strong>Western Union es aliada oficial de Yape Perú.</strong> Tu dinero llega directo a mi billetera, sin intermediarios ni demoras.</p>
-  </div>
-
-  <div class="fee-box">
-    <div class="fee-head">Comisiones Western Union a Perú</div>
-    <div class="fee-row"><span class="fee-label">🎉 Tu primer envío</span><span class="fee-val g">GRATIS — $0</span></div>
-    <div class="fee-row"><span class="fee-label">💳 Pago con tarjeta (siguientes)</span><span class="fee-val gold">~$4–5 USD aprox.</span></div>
-    <div class="fee-row"><span class="fee-label">🏦 Transferencia bancaria (siguientes)</span><span class="fee-val gold">~$2–3 USD aprox.</span></div>
-    <div class="fee-row"><span class="fee-label">⏱️ Tiempo de llegada</span><span class="fee-val n">Minutos</span></div>
-  </div>
-
-  <div class="steps">
-    <div class="step"><div class="snum">1</div><div><div class="stitle">Descarga la app o entra a westernunion.com</div><div class="sdesc">Busca <strong>"Western Union"</strong> en App Store o Google Play. Registro gratis en 5 minutos. También puedes ir a una sucursal física y pagar en efectivo.</div></div></div>
-    <div class="step"><div class="snum">2</div><div><div class="stitle">Usa el simulador primero</div><div class="sdesc">En <strong>"El destinatario recibe"</strong> escribe <strong>S/20</strong> (Soles), el precio de la suscripción mensual de Apple One.</div><div class="s-hl">💡 Ves el costo total en tu moneda antes de confirmar. Sin sorpresas.</div></div></div>
-    <div class="step"><div class="snum">3</div><div><div class="stitle">Selecciona Perú → Billetera Móvil → Yape</div><div class="sdesc">En método de entrega elige <strong>"Billetera Móvil"</strong> o <strong>"Mobile Wallet"</strong> y selecciona <strong>YAPE</strong> como operador.</div></div></div>
-    <div class="step"><div class="snum">4</div><div><div class="stitle">Ingresa los datos exactamente así</div>
-      <div class="data-box">
-        <div class="dr"><span class="dl">Nombre completo</span><span class="dv">Cesar Fer*</span></div>
-        <hr class="dd">
-        <div class="dr"><span class="dl">Número celular</span><span class="dv">+51 925 244 643</span></div>
-        <hr class="dd">
-        <div class="dr"><span class="dl">País</span><span class="dv">Perú (+51)</span></div>
+  <!-- CONTENIDO 2: WESTERN UNION (INTERNACIONAL) -->
+  <div id="payContentWu" style="display: none;">
+    <div class="wu-hero">
+      <div class="wu-badge">WU</div>
+      <h2>Paga con Western Union</h2>
+      <p>No necesitas tener Yape ni ser de Perú. Envía el pago desde tu país en minutos, de forma 100% legal y segura.</p>
+      <div class="wu-pills">
+        <span class="wu-pill">🌍 +200 países</span>
+        <span class="wu-pill">💳 Tarjeta, banco o efectivo</span>
+        <span class="wu-pill">⚡ Llega en minutos</span>
+        <span class="wu-pill">🔒 100% seguro</span>
       </div>
-    </div></div>
-    <div class="step"><div class="snum">5</div><div><div class="stitle">Elige cómo pagar</div>
-      <div class="pay-grid">
-        <div class="pay-opt"><strong>💳 Tarjeta</strong><span>Débito o crédito. Lo más rápido.</span></div>
-        <div class="pay-opt"><strong>🏦 Transferencia</strong><span>Banco / SPEI / PSE según tu país.</span></div>
-        <div class="pay-opt"><strong>🏪 Efectivo</strong><span>En agencia WU o tienda aliada.</span></div>
+    </div>
+
+    <div class="yape-badge">
+      <span class="icon">💜</span>
+      <p><strong>Western Union es aliada oficial de Yape Perú.</strong> Tu dinero llega directo a mi billetera, sin intermediarios ni demoras.</p>
+    </div>
+
+    <div class="fee-box">
+      <div class="fee-head">Comisiones Western Union a Perú</div>
+      <div class="fee-row"><span class="fee-label">🎉 Tu primer envío</span><span class="fee-val g">GRATIS — $0</span></div>
+      <div class="fee-row"><span class="fee-label">💳 Pago con tarjeta (siguientes)</span><span class="fee-val gold">~$4–5 USD aprox.</span></div>
+      <div class="fee-row"><span class="fee-label">🏦 Transferencia bancaria (siguientes)</span><span class="fee-val gold">~$2–3 USD aprox.</span></div>
+      <div class="fee-row"><span class="fee-label">⏱️ Tiempo de llegada</span><span class="fee-val n">Minutos</span></div>
+    </div>
+
+    <div class="content-with-ad-grid">
+      <div class="steps">
+        <div class="step"><div class="snum" style="background:var(--wu-dark);color:var(--wu);">1</div><div><div class="stitle">Descarga la app o entra a westernunion.com</div><div class="sdesc">Busca <strong>"Western Union"</strong> en App Store o Google Play. Registro gratis en 5 minutos. También puedes ir a una sucursal física y pagar en efectivo.</div></div></div>
+        <div class="step"><div class="snum" style="background:var(--wu-dark);color:var(--wu);">2</div><div><div class="stitle">Usa el simulador primero</div><div class="sdesc">En <strong>"El destinatario recibe"</strong> escribe <strong>S/20</strong> (Soles), el precio de la suscripción mensual de Apple One.</div><div class="s-hl">💡 Ves el costo total en tu moneda antes de confirmar. Sin sorpresas.</div></div></div>
+        <div class="step"><div class="snum" style="background:var(--wu-dark);color:var(--wu);">3</div><div><div class="stitle">Selecciona Perú → Billetera Móvil → Yape</div><div class="sdesc">En método de entrega elige <strong>"Billetera Móvil"</strong> o <strong>"Mobile Wallet"</strong> y selecciona <strong>YAPE</strong> como operador.</div></div></div>
+        <div class="step"><div class="snum" style="background:var(--wu-dark);color:var(--wu);">4</div><div><div class="stitle">Ingresa los datos exactamente así</div>
+          <div class="data-box">
+            <div class="dr"><span class="dl">Nombre completo</span><span class="dv">Cesar Fer*</span></div>
+            <hr class="dd">
+            <div class="dr"><span class="dl">Número celular</span><span class="dv">+51 925 244 643</span></div>
+            <hr class="dd">
+            <div class="dr"><span class="dl">País</span><span class="dv">Perú (+51)</span></div>
+          </div>
+        </div></div>
+        <div class="step"><div class="snum" style="background:var(--wu-dark);color:var(--wu);">5</div><div><div class="stitle">Elige cómo pagar</div>
+          <div class="pay-grid">
+            <div class="pay-opt"><strong>💳 Tarjeta</strong><span>Débito o crédito. Lo más rápido.</span></div>
+            <div class="pay-opt"><strong>🏦 Transferencia</strong><span>Banco / SPEI / PSE según tu país.</span></div>
+            <div class="pay-opt"><strong>🏪 Efectivo</strong><span>En agencia WU o tienda aliada.</span></div>
+          </div>
+        </div></div>
+        <div class="step"><div class="snum" style="background:var(--wu-dark);color:var(--wu);">6</div><div><div class="stitle">Indica cómo quieres activarlo</div><div class="sdesc">En el mensaje del comprobante indica si deseas activarlo en tu propia cuenta Apple o prefieres una cuenta nueva.</div><div class="s-hl">💡 Si quieres activarlo en tu propia cuenta Apple, recuerda que no debes pertenecer a un grupo familiar y debes cambiar la región de tu cuenta a India.</div></div></div>
+        <div class="step"><div class="snum" style="background:var(--wu-dark);color:var(--wu);">7</div><div><div class="stitle">Envíame el comprobante</div><div class="sdesc">WU te da un <strong>número MTCN</strong> al finalizar. Mándame la captura por WhatsApp y te envío los datos de acceso o la invitación al grupo Apple.</div><div class="s-hl">✅ Entrega inmediata por WhatsApp o correo electrónico.</div></div></div>
       </div>
-    </div></div>
-    <div class="step"><div class="snum">6</div><div><div class="stitle">Indica cómo quieres activarlo</div><div class="sdesc">En el mensaje del comprobante indica si deseas activarlo en tu propia cuenta Apple o prefieres una cuenta nueva.</div><div class="s-hl">💡 Si quieres activarlo en tu propia cuenta Apple, recuerda que no debes pertenecer a un grupo familiar y debes cambiar la región de tu cuenta a India.</div></div></div>
-    <div class="step"><div class="snum">7</div><div><div class="stitle">Envíame el comprobante</div><div class="sdesc">WU te da un <strong>número MTCN</strong> al finalizar. Mándame la captura por WhatsApp y te envío los datos de acceso o la invitación al grupo Apple.</div><div class="s-hl">✅ Entrega inmediata por WhatsApp o correo electrónico.</div></div></div>
+      <div class="ad-slot" data-ad-id="apple_one_wu_ad"></div>
+    </div>
   </div>
 
   <div class="tip"><span class="tip-i">🎁</span><p><strong>¿Primera vez usando Western Union?</strong> Tu primer envío tiene <strong>comisión $0</strong>. Solo pagas el precio de la suscripción.</p></div>
 
-    <div class="tip">
+  <div class="tip">
     <span class="tip-i">🍎</span>
     <p><strong>¿Tienes alguna duda?</strong> Consúltame por WhatsApp antes de pagar para coordinar disponibilidad.</p>
   </div>
@@ -659,6 +679,26 @@ function goScreen(id) {
   gtag('event', 'screen_view_product', { product: 'Apple One', screen: id });
 }
 
+function switchPaymentTab(type) {
+  var yapeBox = document.getElementById('payContentYape');
+  var wuBox = document.getElementById('payContentWu');
+  var yapeBtn = document.getElementById('tabYapeBtn');
+  var wuBtn = document.getElementById('tabWuBtn');
+  if (!yapeBox || !wuBox) return;
+
+  if (type === 'yape') {
+    yapeBox.style.display = 'block';
+    wuBox.style.display = 'none';
+    if (yapeBtn) yapeBtn.classList.add('active');
+    if (wuBtn) wuBtn.classList.remove('active');
+  } else {
+    yapeBox.style.display = 'none';
+    wuBox.style.display = 'block';
+    if (wuBtn) wuBtn.classList.add('active');
+    if (yapeBtn) yapeBtn.classList.remove('active');
+  }
+}
+
 document.querySelectorAll('.card-share-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     const card = btn.closest('.plan-card');
@@ -676,5 +716,6 @@ if (location.hash) {
 }
 </script>
 
+<script src="/assets/js/ad-loader.js"></script>
 </body>
 </html>

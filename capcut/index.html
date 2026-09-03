@@ -421,11 +421,14 @@ h1.hero em { font-style: italic; color: var(--capcut); }
   </div>
 
   <div class="how-label">¿Cómo funciona el proceso?</div>
-  <div class="how-steps">
-    <div class="how-step"><div class="how-num">1</div><div class="how-text"><strong>Escríbeme</strong> por WhatsApp confirmando que quieres CapCut Pro.</div></div>
-    <div class="how-step"><div class="how-num">2</div><div class="how-text"><strong>Realizas el pago</strong> desde tu país usando Western Union a mi Yape en Perú.</div></div>
-    <div class="how-step"><div class="how-num">3</div><div class="how-text"><strong>Me envías el comprobante</strong> de la transferencia por WhatsApp.</div></div>
-    <div class="how-step"><div class="how-num">4</div><div class="how-text"><strong>Confirmo el pago</strong> y activo CapCut Pro en tu cuenta. ¡Listo para usar!</div></div>
+  <div class="content-with-ad-grid">
+    <div class="how-steps">
+      <div class="how-step"><div class="how-num">1</div><div class="how-text"><strong>Escríbeme</strong> por WhatsApp confirmando que quieres CapCut Pro.</div></div>
+      <div class="how-step"><div class="how-num">2</div><div class="how-text"><strong>Realizas el pago</strong> usando Yape si estás en Perú o Western Union si estás en el extranjero.</div></div>
+      <div class="how-step"><div class="how-num">3</div><div class="how-text"><strong>Me envías el comprobante</strong> de la transferencia por WhatsApp.</div></div>
+      <div class="how-step"><div class="how-num">4</div><div class="how-text"><strong>Confirmo el pago</strong> y activo CapCut Pro en tu cuenta. ¡Listo para usar!</div></div>
+    </div>
+    <div class="ad-slot" data-ad-id="capcut_confianza_ad"></div>
   </div>
 </div>
 <div class="bnav"><div class="bnav-inner">
@@ -435,7 +438,7 @@ h1.hero em { font-style: italic; color: var(--capcut); }
 </div>
 
 
-<!-- ══════════ S3 — PAGO WU ══════════ -->
+<!-- ══════════ S3 — PAGO ══════════ -->
 <div id="s3" class="screen">
 <div class="page">
   <div class="topnav">
@@ -444,52 +447,136 @@ h1.hero em { font-style: italic; color: var(--capcut); }
   </div>
   <div class="dot-nav"><div class="d"></div><div class="d"></div><div class="d on"></div></div>
 
-  <div class="wu-hero">
-    <div class="wu-badge">WU</div>
-    <h2>Paga con Western Union</h2>
-    <p>No necesitas tener Yape ni ser de Perú. Envía el pago desde tu país en minutos, de forma 100% legal y segura.</p>
-    <div class="wu-pills">
-      <span class="wu-pill">🌍 +200 países</span>
-      <span class="wu-pill">💳 Tarjeta, banco o efectivo</span>
-      <span class="wu-pill">⚡ Llega en minutos</span>
-      <span class="wu-pill">🔒 100% seguro</span>
+  <!-- PESTAÑAS DE MÉTODOS DE PAGO (HOMOLOGADO YAPE + WESTERN UNION) -->
+  <div class="payment-tabs-bar">
+    <button class="pay-tab-btn active" id="tabYapeBtn" onclick="switchPaymentTab('yape')">
+      <span>💜 Yape (Perú)</span>
+    </button>
+    <button class="pay-tab-btn" id="tabWuBtn" onclick="switchPaymentTab('wu')">
+      <span>🌍 Western Union (Internacional)</span>
+    </button>
+  </div>
+
+  <!-- CONTENIDO 1: YAPE (DEFAULT) -->
+  <div id="payContentYape">
+    <div class="wu-hero" style="background: linear-gradient(135deg, #7b2d8b 0%, #5b1a6b 100%);">
+      <div class="wu-badge" style="background: #fff; color: #7b2d8b;">💜</div>
+      <h2>Paga con Yape</h2>
+      <p>Pago directo, sin comisiones, solo para clientes en Perú. En minutos tienes CapCut Pro activo en tu cuenta.</p>
+      <div class="wu-pills">
+        <span class="wu-pill">🇵🇪 Solo Perú</span>
+        <span class="wu-pill">💜 Sin comisión</span>
+        <span class="wu-pill">⚡ Instantáneo</span>
+        <span class="wu-pill">🔒 100% seguro</span>
+      </div>
+    </div>
+
+    <div class="content-with-ad-grid">
+      <div class="steps">
+        <div class="step">
+          <div class="snum" style="background: #7b2d8b; color: #fff;">1</div>
+          <div>
+            <div class="stitle">Abre Yape en tu celular</div>
+            <div class="sdesc">Toca en <strong>"Yapear"</strong> e ingresa el número de celular.</div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="snum" style="background: #7b2d8b; color: #fff;">2</div>
+          <div>
+            <div class="stitle">Ingresa los datos de pago</div>
+            <div class="data-box">
+              <div class="dr">
+                <span class="dl">Número Yape</span>
+                <span class="dv">925 244 643</span>
+              </div>
+              <hr class="dd">
+              <div class="dr">
+                <span class="dl">Titular</span>
+                <span class="dv">Cesar Fer*</span>
+              </div>
+              <hr class="dd">
+              <div class="dr">
+                <span class="dl">CapCut Pro Mensual</span>
+                <span class="dv">S/ 25</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="snum" style="background: #7b2d8b; color: #fff;">3</div>
+          <div>
+            <div class="stitle">En el mensaje escribe tu correo de CapCut</div>
+            <div class="sdesc">Es el correo de la cuenta donde activaremos tu suscripción Pro.</div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="snum" style="background: #7b2d8b; color: #fff;">4</div>
+          <div>
+            <div class="stitle">Envíame el comprobante</div>
+            <div class="sdesc">Manda una captura del Yape confirmado por WhatsApp al 925 244 643.</div>
+            <div class="s-hl">✅ En minutos te activamos CapCut Pro en tu propia cuenta. ¡Listo para editar!</div>
+          </div>
+        </div>
+      </div>
+      <div class="ad-slot" data-ad-id="capcut_yape_ad"></div>
     </div>
   </div>
 
-  <div class="yape-badge">
-    <span class="icon">💜</span>
-    <p><strong>Western Union es aliada oficial de Yape Perú.</strong> Tu dinero llega directo a mi billetera, sin intermediarios ni demoras.</p>
-  </div>
-
-  <div class="fee-box">
-    <div class="fee-head">Comisiones Western Union a Perú</div>
-    <div class="fee-row"><span class="fee-label">🎉 Tu primer envío</span><span class="fee-val g">GRATIS — $0</span></div>
-    <div class="fee-row"><span class="fee-label">💳 Pago con tarjeta (siguientes)</span><span class="fee-val gold">~$4–5 USD aprox.</span></div>
-    <div class="fee-row"><span class="fee-label">🏦 Transferencia bancaria (siguientes)</span><span class="fee-val gold">~$2–3 USD aprox.</span></div>
-    <div class="fee-row"><span class="fee-label">⏱️ Tiempo de llegada</span><span class="fee-val n">Minutos</span></div>
-  </div>
-
-  <div class="steps">
-    <div class="step"><div class="snum">1</div><div><div class="stitle">Descarga la app o entra a westernunion.com</div><div class="sdesc">Busca <strong>"Western Union"</strong> en App Store o Google Play. Registro gratis en 5 minutos. También puedes ir a una sucursal física y pagar en efectivo.</div></div></div>
-    <div class="step"><div class="snum">2</div><div><div class="stitle">Usa el simulador primero</div><div class="sdesc">En <strong>"El destinatario recibe"</strong> escribe <strong>S/25</strong> (Soles), el precio de la suscripción mensual.</div><div class="s-hl">💡 Ves el costo total en tu moneda antes de confirmar. Sin sorpresas.</div></div></div>
-    <div class="step"><div class="snum">3</div><div><div class="stitle">Selecciona Perú → Billetera Móvil → Yape</div><div class="sdesc">En método de entrega elige <strong>"Billetera Móvil"</strong> o <strong>"Mobile Wallet"</strong> y selecciona <strong>YAPE</strong> como operador.</div></div></div>
-    <div class="step"><div class="snum">4</div><div><div class="stitle">Ingresa los datos exactamente así</div>
-      <div class="data-box">
-        <div class="dr"><span class="dl">Nombre completo</span><span class="dv">Cesar Fer*</span></div>
-        <hr class="dd">
-        <div class="dr"><span class="dl">Número celular</span><span class="dv">+51 925 244 643</span></div>
-        <hr class="dd">
-        <div class="dr"><span class="dl">País</span><span class="dv">Perú (+51)</span></div>
+  <!-- CONTENIDO 2: WESTERN UNION (INTERNACIONAL) -->
+  <div id="payContentWu" style="display: none;">
+    <div class="wu-hero">
+      <div class="wu-badge">WU</div>
+      <h2>Paga con Western Union</h2>
+      <p>No necesitas tener Yape ni ser de Perú. Envía el pago desde tu país en minutos, de forma 100% legal y segura.</p>
+      <div class="wu-pills">
+        <span class="wu-pill">🌍 +200 países</span>
+        <span class="wu-pill">💳 Tarjeta, banco o efectivo</span>
+        <span class="wu-pill">⚡ Llega en minutos</span>
+        <span class="wu-pill">🔒 100% seguro</span>
       </div>
-    </div></div>
-    <div class="step"><div class="snum">5</div><div><div class="stitle">Elige cómo pagar</div>
-      <div class="pay-grid">
-        <div class="pay-opt"><strong>💳 Tarjeta</strong><span>Débito o crédito. Lo más rápido.</span></div>
-        <div class="pay-opt"><strong>🏦 Transferencia</strong><span>Banco / SPEI / PSE según tu país.</span></div>
-        <div class="pay-opt"><strong>🏪 Efectivo</strong><span>En agencia WU o tienda aliada.</span></div>
+    </div>
+
+    <div class="yape-badge">
+      <span class="icon">💜</span>
+      <p><strong>Western Union es aliada oficial de Yape Perú.</strong> Tu dinero llega directo a mi billetera, sin intermediarios ni demoras.</p>
+    </div>
+
+    <div class="fee-box">
+      <div class="fee-head">Comisiones Western Union a Perú</div>
+      <div class="fee-row"><span class="fee-label">🎉 Tu primer envío</span><span class="fee-val g">GRATIS — $0</span></div>
+      <div class="fee-row"><span class="fee-label">💳 Pago con tarjeta (siguientes)</span><span class="fee-val gold">~$4–5 USD aprox.</span></div>
+      <div class="fee-row"><span class="fee-label">🏦 Transferencia bancaria (siguientes)</span><span class="fee-val gold">~$2–3 USD aprox.</span></div>
+      <div class="fee-row"><span class="fee-label">⏱️ Tiempo de llegada</span><span class="fee-val n">Minutos</span></div>
+    </div>
+
+    <div class="content-with-ad-grid">
+      <div class="steps">
+        <div class="step"><div class="snum">1</div><div><div class="stitle">Descarga la app o entra a westernunion.com</div><div class="sdesc">Busca <strong>"Western Union"</strong> en App Store o Google Play. Registro gratis en 5 minutos. También puedes ir a una sucursal física y pagar en efectivo.</div></div></div>
+        <div class="step"><div class="snum">2</div><div><div class="stitle">Usa el simulador primero</div><div class="sdesc">En <strong>"El destinatario recibe"</strong> escribe <strong>S/25</strong> (Soles), el precio de la suscripción mensual.</div><div class="s-hl">💡 Ves el costo total en tu moneda antes de confirmar. Sin sorpresas.</div></div></div>
+        <div class="step"><div class="snum">3</div><div><div class="stitle">Selecciona Perú → Billetera Móvil → Yape</div><div class="sdesc">En método de entrega elige <strong>"Billetera Móvil"</strong> o <strong>"Mobile Wallet"</strong> y selecciona <strong>YAPE</strong> como operador.</div></div></div>
+        <div class="step"><div class="snum">4</div><div><div class="stitle">Ingresa los datos exactamente así</div>
+          <div class="data-box">
+            <div class="dr"><span class="dl">Nombre completo</span><span class="dv">Cesar Fer*</span></div>
+            <hr class="dd">
+            <div class="dr"><span class="dl">Número celular</span><span class="dv">+51 925 244 643</span></div>
+            <hr class="dd">
+            <div class="dr"><span class="dl">País</span><span class="dv">Perú (+51)</span></div>
+          </div>
+        </div></div>
+        <div class="step"><div class="snum">5</div><div><div class="stitle">Elige cómo pagar</div>
+          <div class="pay-grid">
+            <div class="pay-opt"><strong>💳 Tarjeta</strong><span>Débito o crédito. Lo más rápido.</span></div>
+            <div class="pay-opt"><strong>🏦 Transferencia</strong><span>Banco / SPEI / PSE según tu país.</span></div>
+            <div class="pay-opt"><strong>🏪 Efectivo</strong><span>En agencia WU o tienda aliada.</span></div>
+          </div>
+        </div></div>
+        <div class="step"><div class="snum">6</div><div><div class="stitle">Envíame el comprobante</div><div class="sdesc">WU te da un <strong>número MTCN</strong> al finalizar. Mándame la captura por WhatsApp y activo CapCut Pro en tu cuenta al instante.</div><div class="s-hl">✅ Entrega inmediata por WhatsApp o correo electrónico.</div></div></div>
       </div>
-    </div></div>
-    <div class="step"><div class="snum">6</div><div><div class="stitle">Envíame el comprobante</div><div class="sdesc">WU te da un <strong>número MTCN</strong> al finalizar. Mándame la captura por WhatsApp y activo CapCut Pro en tu cuenta al instante.</div><div class="s-hl">✅ Entrega inmediata por WhatsApp o correo electrónico.</div></div></div>
+      <div class="ad-slot" data-ad-id="capcut_wu_ad"></div>
+    </div>
   </div>
 
   <div class="tip"><span class="tip-i">🎁</span><p><strong>¿Primera vez usando Western Union?</strong> Tu primer envío tiene <strong>comisión $0</strong>. Solo pagas el precio de la suscripción.</p></div>
@@ -519,6 +606,26 @@ function goScreen(id){
   gtag('event', 'screen_view_product', { product: 'CapCut Pro', screen: id });
 }
 
+function switchPaymentTab(type) {
+  var yapeBox = document.getElementById('payContentYape');
+  var wuBox = document.getElementById('payContentWu');
+  var yapeBtn = document.getElementById('tabYapeBtn');
+  var wuBtn = document.getElementById('tabWuBtn');
+  if (!yapeBox || !wuBox) return;
+
+  if (type === 'yape') {
+    yapeBox.style.display = 'block';
+    wuBox.style.display = 'none';
+    if (yapeBtn) yapeBtn.classList.add('active');
+    if (wuBtn) wuBtn.classList.remove('active');
+  } else {
+    yapeBox.style.display = 'none';
+    wuBox.style.display = 'block';
+    if (wuBtn) wuBtn.classList.add('active');
+    if (yapeBtn) yapeBtn.classList.remove('active');
+  }
+}
+
 document.querySelectorAll('.card-share-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     const card = btn.closest('.prod-card');
@@ -537,5 +644,5 @@ if (location.hash) {
 }
 </script>
 
-
+<script src="/assets/js/ad-loader.js"></script>
 </body></html>
