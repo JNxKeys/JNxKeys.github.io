@@ -108,11 +108,11 @@
             padding: 0 24px;
         }
 
-        /* BARRA NAVEGACIÓN EN TONO SLATE TECNOLÓGICO */
+        /* BARRA NAVEGACIÓN EN TONO SLATE TECNOLÓGICO - Fija en la parte superior sin flotar */
         header.nav-bar {
-            position: sticky;
-            top: 16px;
-            z-index: 100;
+            position: relative;
+            padding-top: 16px;
+            z-index: 50;
             margin-bottom: 32px;
         }
         .nav-wrap {
@@ -1088,7 +1088,7 @@
 
         @media (max-width: 640px) {
             .container { padding: 0 12px; }
-            header.nav-bar { top: 8px; margin-bottom: 16px; }
+            header.nav-bar { padding-top: 8px; margin-bottom: 16px; }
             .nav-wrap { padding: 8px 14px; border-radius: 18px; }
             .brand-name { font-size: 16px; }
             .brand-badge { display: none; }
