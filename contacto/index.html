@@ -71,9 +71,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background: linear-gradient(135deg, rgba(15, 23, 42, 0.90) 0%, rgba(30, 41, 59, 0.85) 100%), url('/assets/img/hero_tech_bg.jpg') center/cover no-repeat;
-            background-size: 110% auto;
-            animation: heroBgPan 25s ease-in-out infinite alternate;
+            background-color: #0F172A;
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.2);
@@ -83,10 +81,27 @@
             position: relative;
             overflow: hidden;
         }
-        @keyframes heroBgPan {
-            0% { background-position: 0% 0%; background-size: 106% auto; }
-            50% { background-position: 50% 100%; background-size: 115% auto; }
-            100% { background-position: 100% 50%; background-size: 106% auto; }
+        .nav-wrap::before {
+            content: '';
+            position: absolute;
+            top: -10%;
+            left: -10%;
+            width: 120%;
+            height: 120%;
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.90) 0%, rgba(30, 41, 59, 0.85) 100%), url('/assets/img/hero_tech_bg.jpg') center/cover no-repeat;
+            pointer-events: none;
+            z-index: 0;
+            animation: heroCoverPan 25s ease-in-out infinite alternate;
+            will-change: transform;
+        }
+        .nav-wrap > * {
+            position: relative;
+            z-index: 1;
+        }
+        @keyframes heroCoverPan {
+            0% { transform: scale(1) translate(0, 0); }
+            50% { transform: scale(1.05) translate(-1.5%, -1%); }
+            100% { transform: scale(1.02) translate(1.5%, 1%); }
         }
         .brand-logo {
             display: flex;
@@ -155,16 +170,37 @@
             box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45);
         }
 
-        /* Hero Contacto */
+        /* Hero Contacto CON COBERTURA 100% Y MOVIMIENTO DINÁMICO */
         .page-hero {
             position: relative;
-            background: linear-gradient(135deg, rgba(15, 23, 42, 0.92) 0%, rgba(30, 41, 59, 0.88) 100%), url('/assets/img/hero_tech_bg.jpg') center/cover no-repeat;
+            background-color: #0B1120;
             border-radius: 32px;
             padding: 56px 48px;
             color: #fff;
             margin-bottom: 48px;
             border: 1px solid rgba(255, 255, 255, 0.15);
             box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.35);
+            overflow: hidden;
+        }
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: -6%;
+            left: -6%;
+            width: 112%;
+            height: 112%;
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.92) 0%, rgba(30, 41, 59, 0.88) 100%), url('/assets/img/hero_tech_bg.jpg') center/cover no-repeat;
+            pointer-events: none;
+            z-index: 0;
+            animation: heroCoverPan 22s ease-in-out infinite alternate;
+            will-change: transform;
+        }
+        .page-hero > * {
+            position: relative;
+            z-index: 1;
+        }
+        .wa-text-short {
+            display: none;
         }
         .page-tag {
             display: inline-flex;
@@ -460,24 +496,37 @@
         .wa-fab svg { width: 32px; height: 32px; fill: #fff; }
 
         @media (max-width: 1024px) {
+            .nav-wrap { padding: 10px 18px; }
+            .brand-badge { display: none; }
+            .nav-menu { gap: 14px; }
+            .nav-menu a { font-size: 13px; }
+            .btn-wa-header { padding: 8px 14px; font-size: 13px; flex-shrink: 0; }
+            .page-hero { padding: 44px 32px; }
             .contact-layout { grid-template-columns: 1fr; }
             .footer-grid { grid-template-columns: repeat(2, 1fr); gap: 32px; }
         }
-        @keyframes heroBgPanMobile {
-            0% { background-position: center 0%; background-size: auto 120%; }
-            50% { background-position: center 60%; background-size: auto 132%; }
-            100% { background-position: center 100%; background-size: auto 120%; }
+
+        @media (max-width: 860px) {
+            .nav-menu { gap: 10px; }
+            .nav-menu a { font-size: 12.5px; }
+            .wa-text-full { display: none; }
+            .wa-text-short { display: inline; }
+            .btn-wa-header { padding: 7px 12px; font-size: 12.5px; }
         }
 
         @media (max-width: 640px) {
             .container { padding: 0 16px; }
+            header.nav-bar { padding-top: 8px; margin-bottom: 16px; }
+            .nav-wrap { padding: 8px 14px; border-radius: 18px; }
+            .brand-name { font-size: 16px; }
+            .brand-badge { display: none; }
+            .btn-wa-header { padding: 8px 14px; font-size: 12px; }
             .nav-menu { display: none; }
+            .wa-text-full { display: none; }
+            .wa-text-short { display: inline; }
             .page-hero {
                 padding: 32px 20px;
                 border-radius: 24px;
-                background-size: auto 125%;
-                background-position: center top;
-                animation: heroBgPanMobile 18s ease-in-out infinite alternate;
             }
             .page-title { font-size: 26px; }
             .form-card { padding: 28px 20px; border-radius: 20px; }
@@ -509,7 +558,8 @@
                         <circle cx="16" cy="16" r="16" fill="#25D366"/>
                         <path fill="#fff" d="M23.47 8.52A10.9 10.9 0 0 0 16.02 5c-6.01 0-10.9 4.89-10.9 10.9 0 1.92.5 3.8 1.46 5.46L5 27l5.8-1.52a10.9 10.9 0 0 0 5.22 1.33h.005c6.01 0 10.9-4.89 10.9-10.9a10.84 10.84 0 0 0-3.45-7.79zm-7.45 16.77h-.004a9.06 9.06 0 0 1-4.61-1.26l-.33-.196-3.44.9.92-3.35-.215-.345a9.05 9.05 0 0 1-1.39-4.83c0-5.01 4.08-9.09 9.1-9.09a9.04 9.04 0 0 1 6.43 2.67 9.03 9.03 0 0 1 2.66 6.43c0 5.01-4.08 9.09-9.1 9.09zm4.99-6.81c-.27-.14-1.61-.79-1.86-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.16-1.34-.8-.71-1.34-1.6-1.5-1.87-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.48-.84-2.02-.22-.53-.44-.46-.61-.47l-.52-.01c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.29 0 1.35.98 2.66 1.12 2.84.14.18 1.93 2.95 4.68 4.14.65.28 1.16.45 1.56.58.66.21 1.25.18 1.72.11.53-.08 1.61-.66 1.83-1.29.23-.63.23-1.17.16-1.29-.07-.11-.25-.18-.52-.32z"/>
                     </svg>
-                    <span>Pedir por WhatsApp</span>
+                    <span class="wa-text-full">Pedir por WhatsApp</span>
+                    <span class="wa-text-short">WhatsApp</span>
                 </a>
             </div>
         </div>
