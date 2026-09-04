@@ -442,10 +442,22 @@
             .pillars-grid { grid-template-columns: repeat(2, 1fr); }
             .footer-grid { grid-template-columns: repeat(2, 1fr); gap: 32px; }
         }
+        @keyframes heroBgPanMobile {
+            0% { background-position: center 0%; background-size: auto 120%; }
+            50% { background-position: center 60%; background-size: auto 132%; }
+            100% { background-position: center 100%; background-size: auto 120%; }
+        }
+
         @media (max-width: 640px) {
             .container { padding: 0 16px; }
             .nav-menu { display: none; }
-            .page-hero { padding: 36px 20px; border-radius: 24px; }
+            .page-hero {
+                padding: 36px 20px;
+                border-radius: 24px;
+                background-size: auto 125%;
+                background-position: center top;
+                animation: heroBgPanMobile 18s ease-in-out infinite alternate;
+            }
             .page-title { font-size: 28px; }
             .page-desc { font-size: 14.5px; }
             .pillars-grid { grid-template-columns: 1fr; }

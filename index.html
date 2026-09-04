@@ -218,6 +218,12 @@
             100% { background-position: 100% 50%; background-size: 106% auto; }
         }
 
+        @keyframes heroBgPanMobile {
+            0% { background-position: center 0%; background-size: auto 120%; }
+            50% { background-position: center 60%; background-size: auto 132%; }
+            100% { background-position: center 100%; background-size: auto 120%; }
+        }
+
         .hero-glow-orb-1 {
             position: absolute;
             width: 380px;
@@ -1094,7 +1100,14 @@
             .brand-badge { display: none; }
             .btn-wa-header { padding: 8px 14px; font-size: 12px; }
             .nav-menu { display: none; }
-            .hero-wrapper { padding: 26px 16px; border-radius: 20px; margin-bottom: 24px; }
+            .hero-wrapper {
+                padding: 26px 16px;
+                border-radius: 20px;
+                margin-bottom: 24px;
+                background-size: auto 125%;
+                background-position: center top;
+                animation: heroBgPanMobile 18s ease-in-out infinite alternate;
+            }
             .hero-title { font-size: 26px; line-height: 1.18; }
             .hero-subtitle { font-size: 13.5px; line-height: 1.5; margin-bottom: 20px; }
             .hero-ctas { flex-direction: column; width: 100%; gap: 10px; }
