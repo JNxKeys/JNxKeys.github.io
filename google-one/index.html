@@ -384,9 +384,27 @@ h1.hero em{font-style:italic;color:var(--g-blue);}
 .nbtn.p{background:var(--g-blue);color:white;} .nbtn.p:hover{background:#1a56db;}
 .nbtn.s:hover{border-color:var(--g-blue);color:var(--g-blue);}
 
-@media(max-width:480px){
-  h1.hero{font-size:28px;}
-  .trust-grid{grid-template-columns:1fr;}
+@media (max-width: 480px) {
+  .page { padding: 16px 12px 80px !important; }
+  .top-ribbon { margin: -16px -12px 18px !important; padding: 12px 14px !important; border-radius: 0 0 20px 20px !important; }
+  .ribbon-word { font-size: 18px !important; }
+  h1.hero, h1 { font-size: clamp(22px, 5.5vw, 25px) !important; line-height: 1.22 !important; }
+  .hero-sub, .sub { font-size: 13.5px !important; line-height: 1.5 !important; }
+  .card-top, .card-header { padding: 16px 14px 14px !important; }
+  .card-actions { padding: 0 14px 14px !important; gap: 6px !important; }
+  .card-wa-btn { font-size: 12px !important; padding: 9px 12px !important; }
+  .card-select-pill { font-size: 11px !important; padding: 6px 11px !important; gap: 4px !important; }
+  .card-share-btn { width: 34px !important; height: 34px !important; }
+  .card-share-btn svg { width: 14px !important; height: 14px !important; }
+  .prod-card { border-radius: 18px !important; }
+  .plan-carousel { margin: 0 -12px 10px !important; padding: 0 12px 4px !important; }
+  .plan-slide { flex: 0 0 86% !important; padding: 18px 14px !important; border-radius: 18px !important; }
+  .tiktok-card-widget { padding: 16px 14px !important; border-radius: 18px !important; }
+  .trust-grid { grid-template-columns: 1fr !important; gap: 8px !important; }
+  .feat-grid { grid-template-columns: 1fr !important; }
+  .cn-row { grid-template-columns: 1fr !important; }
+  .wa-fab { width: 50px !important; height: 50px !important; right: 14px !important; bottom: 16px !important; }
+  .wa-fab svg { width: 28px !important; height: 28px !important; }
 }
 
 
