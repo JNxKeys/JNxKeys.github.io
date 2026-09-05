@@ -23,6 +23,13 @@
 
     // Formato especial: Tarjeta integrada en el carrusel de Packs y Combos
     if (container.classList.contains('ad-slot-combo')) {
+      var badgeContent = '';
+      if (mediaUrl) {
+        badgeContent = isVideo
+          ? '<video src="' + mediaUrl + '" autoplay loop muted playsinline style="width:100%;height:100%;object-fit:cover;border-radius:16px;"></video>'
+          : '<img src="' + mediaUrl + '" alt="' + cleanTitle + '" style="width:100%;height:100%;object-fit:cover;border-radius:16px;" onerror="this.onerror=null;this.src=\'/assets/img/combo_365_google_canva.jpg\';">';
+      }
+
       container.innerHTML = 
         '<a class="combo-card combo-card-featured" href="' + adLink + '" onclick="if(window.gtag){gtag(\'event\',\'combo_click\',{combo:\'' + cleanTitle + '\'});}">' +
           '<div>' +
@@ -30,8 +37,15 @@
               '<span class="combo-tag" style="background: rgba(37,99,235,0.12); color: #1D4ED8; border: 1px solid rgba(37,99,235,0.25);">' + adBadge + '</span>' +
               '<span class="combo-save" style="background: linear-gradient(135deg, #F59E0B, #D97706); color: #fff;">DESTACADO</span>' +
             '</div>' +
-            '<h3 class="combo-title">' + adTitle + '</h3>' +
-            '<p class="combo-includes">' + adDesc + '</p>' +
+            '<div class="combo-middle">' +
+              '<div class="combo-middle-info">' +
+                '<h3 class="combo-title">' + adTitle + '</h3>' +
+                '<p class="combo-includes">' + adDesc + '</p>' +
+              '</div>' +
+              '<div class="combo-visual-badge" title="' + cleanTitle + '">' +
+                badgeContent +
+              '</div>' +
+            '</div>' +
           '</div>' +
           '<div class="combo-price-row" style="justify-content: space-between; align-items: center; width: 100%; border-top: 1px dashed rgba(37,99,235,0.25); padding-top: 12px; margin-top: 14px;">' +
             '<span class="combo-new-price" style="font-size: 15px; font-weight: 800; color: #2563EB; display: flex; align-items: center; gap: 4px;">' +

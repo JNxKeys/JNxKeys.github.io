@@ -879,8 +879,89 @@
         .combo-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
         .combo-tag { font-size: 11px; font-weight: 800; background: rgba(37, 99, 235, 0.1); color: #2563EB; padding: 4px 10px; border-radius: 100px; text-transform: uppercase; border: 1px solid rgba(37, 99, 235, 0.2); }
         .combo-save { font-size: 11px; font-weight: 800; background: #EF4444; color: #fff; padding: 4px 10px; border-radius: 100px; }
-        .combo-title { font-size: 18px; font-weight: 800; margin-bottom: 8px; color: #0F172A; }
-        .combo-includes { font-size: 12.5px; color: #475569; margin-bottom: 20px; line-height: 1.4; }
+        .combo-middle {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+        .combo-middle-info {
+            flex: 1;
+            min-width: 0;
+        }
+        .combo-visual-badge {
+            width: 76px;
+            height: 76px;
+            flex-shrink: 0;
+            border-radius: 18px;
+            background: linear-gradient(145deg, #FFFFFF 0%, #F1F5F9 100%);
+            border: 1.5px solid rgba(203, 213, 225, 0.85);
+            box-shadow: 0 8px 18px -4px rgba(15, 23, 42, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        }
+        .combo-card:hover .combo-visual-badge {
+            transform: scale(1.05);
+            border-color: #93C5FD;
+            box-shadow: 0 10px 24px -4px rgba(37, 99, 235, 0.16);
+        }
+        .combo-trio-icons, .combo-duo-icons {
+            position: relative;
+            width: 66px;
+            height: 66px;
+        }
+        .combo-micro-icon {
+            position: absolute;
+            border-radius: 8px;
+            background: #FFFFFF;
+            border: 1px solid rgba(226, 232, 240, 0.9);
+            box-shadow: 0 3px 8px rgba(15, 23, 42, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .micro-top-left {
+            top: 2px;
+            left: 2px;
+            width: 32px;
+            height: 32px;
+            z-index: 1;
+        }
+        .micro-top-right {
+            top: 2px;
+            right: 2px;
+            width: 32px;
+            height: 32px;
+            z-index: 2;
+        }
+        .micro-bottom {
+            bottom: 2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 32px;
+            height: 32px;
+            z-index: 3;
+        }
+        .micro-duo-1 {
+            top: 6px;
+            left: 6px;
+            width: 35px;
+            height: 35px;
+            z-index: 1;
+        }
+        .micro-duo-2 {
+            bottom: 6px;
+            right: 6px;
+            width: 35px;
+            height: 35px;
+            z-index: 2;
+        }
+
         .combo-price-row { display: flex; align-items: baseline; gap: 10px; }
         .combo-old-price { font-size: 14px; color: #94A3B8; text-decoration: line-through; }
         .combo-new-price { font-size: 24px; font-weight: 900; color: #D97706; }
@@ -1576,8 +1657,25 @@
                             <span class="combo-tag">Estudiantes</span>
                             <span class="combo-save">Ahorra S/15</span>
                         </div>
-                        <h3 class="combo-title">Pack Sistema Total</h3>
-                        <p class="combo-includes">Windows 11 Pro + Office 2019 + Kaspersky</p>
+                        <div class="combo-middle">
+                            <div class="combo-middle-info">
+                                <h3 class="combo-title">Pack Sistema Total</h3>
+                                <p class="combo-includes">Windows 11 Pro + Office 2019 + Kaspersky</p>
+                            </div>
+                            <div class="combo-visual-badge" title="Windows 11 + Office + Kaspersky">
+                                <div class="combo-trio-icons">
+                                    <div class="combo-micro-icon micro-top-left" title="Windows 11 Pro">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M0 0H11.377V11.372H0V0ZM12.623 0H24V11.372H12.623V0ZM0 12.623H11.377V24H0V12.623ZM12.623 12.623H24V24H12.623V12.623Z" fill="#0078D4"/></svg>
+                                    </div>
+                                    <div class="combo-micro-icon micro-top-right" title="Microsoft Office">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M14.5 2L3 6.25V17.75L14.5 22L21 19.5V4.5L14.5 2Z" fill="#EA3E23"/><path fill-rule="evenodd" clip-rule="evenodd" d="M14.5 2V22L21 19.5V4.5L14.5 2Z" fill="#F1511B"/><path fill-rule="evenodd" clip-rule="evenodd" d="M3 6.25L14.5 2V22L3 17.75V6.25Z" fill="#D83B01"/><circle cx="11" cy="12" r="3" stroke="white" stroke-width="1.8"/></svg>
+                                    </div>
+                                    <div class="combo-micro-icon micro-bottom" title="Kaspersky">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="6" fill="#006D55"/><path d="M6 5.5h3.2v5.6L14.8 5.5h3.8L12.5 12l6.4 6.5h-3.9L9.2 12.8v5.7H6V5.5z" fill="#FFFFFF"/></svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="combo-price-row">
                         <span class="combo-old-price">S/150</span>
@@ -1591,8 +1689,22 @@
                             <span class="combo-tag">Negocios Locales</span>
                             <span class="combo-save">Ahorra S/11</span>
                         </div>
-                        <h3 class="combo-title">Pack Oficina Segura</h3>
-                        <p class="combo-includes">Office 2019 Pro Plus + Kaspersky Standard</p>
+                        <div class="combo-middle">
+                            <div class="combo-middle-info">
+                                <h3 class="combo-title">Pack Oficina Segura</h3>
+                                <p class="combo-includes">Office 2019 Pro Plus + Kaspersky Standard</p>
+                            </div>
+                            <div class="combo-visual-badge" title="Office + Kaspersky">
+                                <div class="combo-duo-icons">
+                                    <div class="combo-micro-icon micro-duo-1" title="Microsoft Office">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M14.5 2L3 6.25V17.75L14.5 22L21 19.5V4.5L14.5 2Z" fill="#EA3E23"/><path fill-rule="evenodd" clip-rule="evenodd" d="M14.5 2V22L21 19.5V4.5L14.5 2Z" fill="#F1511B"/><path fill-rule="evenodd" clip-rule="evenodd" d="M3 6.25L14.5 2V22L3 17.75V6.25Z" fill="#D83B01"/><circle cx="11" cy="12" r="3" stroke="white" stroke-width="1.8"/></svg>
+                                    </div>
+                                    <div class="combo-micro-icon micro-duo-2" title="Kaspersky">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="6" fill="#006D55"/><path d="M6 5.5h3.2v5.6L14.8 5.5h3.8L12.5 12l6.4 6.5h-3.9L9.2 12.8v5.7H6V5.5z" fill="#FFFFFF"/></svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="combo-price-row">
                         <span class="combo-old-price">S/110</span>
@@ -1606,8 +1718,25 @@
                             <span class="combo-tag">Consultores</span>
                             <span class="combo-save">Ahorra S/30</span>
                         </div>
-                        <h3 class="combo-title">Pack Oficina Inteligente Pro</h3>
-                        <p class="combo-includes">Microsoft 365 + Google One 2TB + Kaspersky Plus</p>
+                        <div class="combo-middle">
+                            <div class="combo-middle-info">
+                                <h3 class="combo-title">Pack Oficina Inteligente Pro</h3>
+                                <p class="combo-includes">Microsoft 365 + Google One 2TB + Kaspersky Plus</p>
+                            </div>
+                            <div class="combo-visual-badge" title="Microsoft 365 + Google One + Kaspersky">
+                                <div class="combo-trio-icons">
+                                    <div class="combo-micro-icon micro-top-left" title="Microsoft 365">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M14.5 2L3 6.25V17.75L14.5 22L21 19.5V4.5L14.5 2Z" fill="#EA3E23"/><path fill-rule="evenodd" clip-rule="evenodd" d="M14.5 2V22L21 19.5V4.5L14.5 2Z" fill="#F1511B"/><path fill-rule="evenodd" clip-rule="evenodd" d="M3 6.25L14.5 2V22L3 17.75V6.25Z" fill="#D83B01"/><circle cx="11" cy="12" r="3" stroke="white" stroke-width="1.8"/></svg>
+                                    </div>
+                                    <div class="combo-micro-icon micro-top-right" title="Google One AI">
+                                        <svg width="12" height="20" viewBox="0 0 87.39 176.01" fill="none"><g transform="translate(-42.14 -7)"><path d="m129.53 144.99v18.46c0 10.8-8.73 19.56-19.5 19.56s-19.5-8.75-19.5-19.56v-48.33z" fill="#34a853"/><path d="m129.53 26.56v118.43l-39-29.87v-47.1l31.91-26.38c4.68-3.86 7.09-9.45 7.09-15.08z" fill="#4285F4"/><path d="m129.52 25.88c.01.22.01.44.01.67 0 5.63-2.41 11.22-7.09 15.08l-31.91 26.38v-41.45c0-6.4 3.07-12.1 7.84-15.67.34-.26.68-.5 1.05-.73.17-.11.33-.22.5-.32.31-.2.64-.38.94-.54l.86-.43.72-.3c.47-.18.96-.32 1.46-.42.27-.05.53-.1.81-.13.48-.06.97-.09 1.47-.09 5.3 0 10.27 2.15 13.9 5.63l.36.35 1.09 1.13c4.76 5.25 7.69 12.18 7.9 19.82z" fill="#ea4335"/><path d="m129.52 25.88c-.21-7.64-3.14-14.57-7.9-19.82l-1.09-1.13-.36-.35c-3.63-3.48-8.6-5.63-13.9-5.63-.5 0-.99.03-1.47.09-.28.03-.54.08-.81.13-.5.1-1 .24-1.46.42l-.72.3-.86.43c-.3.16-.63.34-.94.54-.17.1-.33.21-.5.32-.37.23-.71.47-1.05.73-4.77 3.57-7.84 9.27-7.84 15.67v1.89h.01v39.56l39-32.08c4.68-3.86 7.09-9.45 7.09-15.08 0-.23 0-.45-.01-.67z" fill="#fbbc05"/></g></svg>
+                                    </div>
+                                    <div class="combo-micro-icon micro-bottom" title="Kaspersky">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="6" fill="#006D55"/><path d="M6 5.5h3.2v5.6L14.8 5.5h3.8L12.5 12l6.4 6.5h-3.9L9.2 12.8v5.7H6V5.5z" fill="#FFFFFF"/></svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="combo-price-row">
                         <span class="combo-old-price">S/300</span>
