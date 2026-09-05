@@ -46,6 +46,7 @@
         color: var(--dark);
         min-height:100vh;
         background: var(--bg);
+        overflow-x: hidden;
     }
     .page{ max-width:680px; margin:0 auto; padding: 24px 18px 90px; }
 
@@ -53,164 +54,321 @@
       .combos, .extra-combos.open {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 16px;
+        gap: 20px;
       }
     }
 
     @media (min-width: 1024px) {
-      .page { max-width: 1040px; padding: 32px 32px 100px; }
+      .page { max-width: 1240px !important; margin: 0 auto !important; padding: 32px 32px 100px; }
       .top-ribbon { margin: -32px -32px 28px; padding: 18px 32px; border-radius: 0 0 28px 28px; }
     }
 
     .top-ribbon {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      gap: 16px;
       margin: -24px -18px 20px;
       padding: 14px 20px;
       border-radius: 0 0 24px 24px;
-      background: linear-gradient(135deg, rgba(15, 23, 42, 0.92) 0%, rgba(30, 41, 59, 0.88) 100%), url('/assets/img/hero_tech_bg.jpg') center/cover no-repeat;
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.90) 0%, rgba(30, 41, 59, 0.85) 100%), url('/assets/img/hero_tech_bg.jpg') center/cover no-repeat !important;
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
       box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.35);
       position: relative;
       overflow: hidden;
     }
-    .top-ribbon a { display: flex; align-items: center; gap: 12px; text-decoration: none; color: #FFFFFF; }
+    .top-ribbon a.brand-logo-link { display: flex; align-items: center; gap: 12px; text-decoration: none; color: #FFFFFF; }
     .top-ribbon img { width: 38px; height: 38px; border-radius: 10px; border: 1.5px solid rgba(255, 255, 255, 0.2); background: rgba(255, 255, 255, 0.1); flex-shrink: 0; }
-    .ribbon-word { font-size: 18px; font-weight: 800; color: #FFFFFF; display: flex; align-items: center; gap: 8px; }
+    .ribbon-word { font-size: 20px; font-weight: 800; color: #FFFFFF; display: flex; align-items: center; gap: 8px; }
     .ribbon-badge { font-size: 10px; font-weight: 700; background: linear-gradient(135deg, #2563EB, #0284C7); color: #FFF; padding: 2px 8px; border-radius: 100px; text-transform: uppercase; letter-spacing: 0.05em; }
     .ribbon-tag { font-size: 11px; color: #94A3B8; font-weight: 500; margin-top: 1px; }
 
-.topnav{ display:flex; align-items:center; justify-content:space-between; margin-bottom:18px; }
-    .back-btn{ display:inline-flex; align-items:center; gap:6px; font-family:'Outfit',sans-serif; font-size:13px; font-weight:700; color:var(--muted); background:#fff; border:1px solid var(--line); padding:6px 14px; border-radius:100px; cursor:pointer; text-decoration:none; transition:all 0.18s; }
+    .btn-wa-header {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(37, 211, 102, 0.14);
+      border: 1.5px solid #25D366;
+      color: #FFFFFF;
+      font-size: 13.5px;
+      font-weight: 700;
+      padding: 8px 18px;
+      border-radius: 100px;
+      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.25);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      flex-shrink: 0;
+    }
+    .btn-wa-header:hover {
+      transform: translateY(-2px);
+      background: rgba(37, 211, 102, 0.25);
+      box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45);
+    }
+    @media (max-width: 540px) {
+      .btn-wa-header span { display: none; }
+      .btn-wa-header { padding: 8px 12px; }
+      .ribbon-tag { display: none; }
+    }
+    @media (max-width: 480px) {
+      .page { padding: 16px 12px 80px; }
+      .top-ribbon { margin: -16px -12px 18px; padding: 12px 14px; border-radius: 0 0 20px 20px; }
+      .ribbon-word { font-size: 18px; }
+      h1 { font-size: 23px; }
+      .grid-click-hint { font-size: 12px; padding: 8px 12px; margin-bottom: 18px; }
+      .combo { padding: 18px 14px; border-radius: 18px; }
+      .combo-tag { font-size: 10px; padding: 3px 8px; }
+      .combo-save { font-size: 10px; padding: 3px 8px; }
+      .combo-middle { gap: 10px; }
+      .combo-title { font-size: 16px; margin-bottom: 4px; }
+      .combo-includes { font-size: 12px; margin-bottom: 5px; }
+      .combo-pitch { font-size: 11px; margin-bottom: 10px; }
+      .combo-visual-badge { width: 66px; height: 66px; border-radius: 16px; }
+      .combo-trio-icons, .combo-duo-icons { width: 58px; height: 58px; }
+      .micro-top-left, .micro-top-right, .micro-bottom { width: 27px; height: 27px; }
+      .micro-duo-1, .micro-duo-2 { width: 31px; height: 31px; }
+      .combo-bottom { padding-top: 12px; gap: 8px; }
+      .combo-new { font-size: 20px; }
+      .combo-old { font-size: 12px; }
+      .card-select-pill { font-size: 11px; padding: 6px 11px; gap: 4px; }
+      .share-btn { width: 32px; height: 32px; }
+      .share-btn svg { width: 14px; height: 14px; }
+      .trust { gap: 8px; margin: 28px 0 12px; }
+      .trust-item { padding: 10px 4px; border-radius: 14px; }
+      .trust-item svg { width: 18px; height: 18px; }
+      .trust-item span { font-size: 10.5px; }
+      .wa-fab { width: 50px; height: 50px; right: 14px; bottom: 16px; }
+      .wa-fab svg { width: 28px; height: 28px; }
+    }
+
+    .topnav{ display:flex; align-items:center; justify-content:space-between; margin-bottom:18px; }
+    .back-btn{ display:inline-flex; align-items:center; gap:6px; font-family:'Outfit',sans-serif; font-size:13px; font-weight:700; color:var(--muted); background:#fff; border:1px solid var(--border); padding:6px 14px; border-radius:100px; cursor:pointer; text-decoration:none; transition:all 0.18s; }
     .back-btn:hover{ color:var(--accent); border-color:var(--accent); }
 
-    h1{ font-size:24px; font-weight:800; letter-spacing:-.01em; margin-bottom:4px; text-wrap:balance; }
-    .sub{ font-size:14px; color:var(--muted); margin-bottom:22px; line-height:1.5; }
+    h1{ font-size:26px; font-weight:800; letter-spacing:-.01em; margin-bottom:6px; color:#0F172A; text-wrap:balance; }
+    .sub{ font-size:14.5px; color:var(--muted); margin-bottom:22px; line-height:1.55; }
 
-    .cat-title{ font-size:11px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); margin:26px 0 10px 2px; }
+    .grid-click-hint{display:flex;align-items:center;gap:8px;background:rgba(37,99,235,.08);border:1px solid rgba(37,99,235,.2);color:#2563EB;font-size:13px;font-weight:700;padding:10px 18px;border-radius:12px;margin-bottom:24px;}
+
+    .cat-title{ font-size:12px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color:#64748B; margin:32px 0 14px 2px; }
     .cat-title:first-of-type{ margin-top:0; }
 
+    /* COMBOS GRID */
     .combos{ display:grid; gap:16px; }
+
     .combo{
-      background:var(--white);
-      border:2px solid var(--border);
-      border-radius:20px;
-      padding:20px;
-      position:relative;
-      scroll-margin-top:24px;
-      cursor:pointer;
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
-      height:100%;
-      transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+      background: linear-gradient(160deg, #FFFFFF 50%, #F0F7FF 100%);
+      border: 1px solid rgba(203, 213, 225, 0.75);
+      border-radius: 20px;
+      padding: 22px 24px;
+      position: relative;
+      scroll-margin-top: 24px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04), 0 10px 25px -4px rgba(15, 23, 42, 0.07);
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
     }
     .combo:hover{
-      transform:translateY(-4px);
-      box-shadow:0 12px 30px rgba(37,99,235,.18);
-      border-color:var(--accent);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 35px -8px rgba(37, 99, 235, 0.16);
+      border-color: #2563EB;
     }
-    .combo-top{ display:flex; align-items:flex-start; justify-content:space-between; gap:10px; margin-bottom:6px; }
-    .combo-tag{ font-size:10px; font-weight:800; letter-spacing:.05em; text-transform:uppercase; padding:4px 9px; border-radius:100px; color:#fff; white-space:nowrap; }
-    .combo.sistema .combo-tag{ background:var(--cat-sistema); }
-    .combo.oficina .combo-tag{ background:var(--cat-oficina); }
-    .combo.inteligente .combo-tag{ background:var(--cat-inteligente); }
-    .combo.creadores .combo-tag{ background:var(--cat-creadores); }
-    .combo-save{ font-size:11px; font-weight:800; color:var(--gold); white-space:nowrap; }
 
-    .combo-title{ font-size:16px; font-weight:800; margin-bottom:4px; }
-    .combo-includes{ font-size:12.5px; color:var(--muted); line-height:1.5; margin-bottom:4px; }
-    .incl-link{ color:var(--accent); font-weight:600; text-decoration:underline; text-underline-offset:2px; }
-    .incl-link:hover{ color:var(--dark); }
-    .combo-pitch{ font-size:12px; color:var(--muted); font-style:italic; line-height:1.5; margin-bottom:12px; }
+    .combo-top{ display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:12px; }
+    .combo-tag{ font-size:11px; font-weight:800; letter-spacing:.05em; text-transform:uppercase; padding:4px 10px; border-radius:100px; white-space:nowrap; }
+    .combo.sistema .combo-tag{ background:rgba(11, 87, 208, 0.1); color:#0B57D0; border:1px solid rgba(11, 87, 208, 0.25); }
+    .combo.oficina .combo-tag{ background:rgba(11, 167, 82, 0.1); color:#0BA752; border:1px solid rgba(11, 167, 82, 0.25); }
+    .combo.inteligente .combo-tag{ background:rgba(91, 45, 142, 0.1); color:#5B2D8E; border:1px solid rgba(91, 45, 142, 0.25); }
+    .combo.creadores .combo-tag{ background:rgba(216, 59, 1, 0.1); color:#D83B01; border:1px solid rgba(216, 59, 1, 0.25); }
+    .combo-save{ font-size:11px; font-weight:800; background:#EF4444; color:#FFFFFF; padding:4px 10px; border-radius:100px; white-space:nowrap; box-shadow:0 2px 6px rgba(239, 68, 68, 0.25); }
 
-    .combo-bottom{ display:flex; align-items:center; justify-content:space-between; gap:10px; padding-top:12px; border-top:1px solid var(--border); }
+    .combo-middle{
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+    .combo-middle-info{
+      flex: 1;
+      min-width: 0;
+    }
+
+    .combo-title{ font-size:17.5px; font-weight:800; margin-bottom:5px; color:#0F172A; line-height:1.25; }
+    .combo-includes{ font-size:12.5px; color:#475569; line-height:1.45; margin-bottom:6px; }
+    .incl-link{ color:var(--accent); font-weight:600; text-decoration:underline; text-underline-offset:2px; transition:color 0.15s; }
+    .incl-link:hover{ color:#0F172A; }
+    .combo-pitch{ font-size:12px; color:var(--muted); font-style:italic; line-height:1.45; margin-bottom:12px; }
+
+    /* VISUAL BADGES WITH OFFICIAL ICONS */
+    .combo-visual-badge {
+      width: 72px;
+      height: 72px;
+      flex-shrink: 0;
+      border-radius: 18px;
+      background: linear-gradient(145deg, #FFFFFF 0%, #F1F5F9 100%);
+      border: 1.5px solid rgba(203, 213, 225, 0.85);
+      box-shadow: 0 8px 18px -4px rgba(15, 23, 42, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+    .combo:hover .combo-visual-badge {
+      transform: scale(1.05);
+      border-color: #93C5FD;
+      box-shadow: 0 10px 24px -4px rgba(37, 99, 235, 0.16);
+    }
+    .combo-trio-icons, .combo-duo-icons {
+      position: relative;
+      width: 64px;
+      height: 64px;
+    }
+    .combo-micro-icon {
+      position: absolute;
+      border-radius: 8px;
+      background: #FFFFFF;
+      border: 1px solid rgba(226, 232, 240, 0.9);
+      box-shadow: 0 3px 8px rgba(15, 23, 42, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .micro-top-left {
+      top: 2px;
+      left: 2px;
+      width: 30px;
+      height: 30px;
+      z-index: 1;
+    }
+    .micro-top-right {
+      top: 2px;
+      right: 2px;
+      width: 30px;
+      height: 30px;
+      z-index: 2;
+    }
+    .micro-bottom {
+      bottom: 2px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 30px;
+      height: 30px;
+      z-index: 3;
+    }
+    .micro-duo-1 {
+      top: 5px;
+      left: 5px;
+      width: 34px;
+      height: 34px;
+      z-index: 1;
+    }
+    .micro-duo-2 {
+      bottom: 5px;
+      right: 5px;
+      width: 34px;
+      height: 34px;
+      z-index: 2;
+    }
+
+    .combo-bottom{ display:flex; align-items:center; justify-content:space-between; gap:10px; margin-top:auto; padding-top:14px; border-top:1px dashed rgba(203, 213, 225, 0.75); }
     .combo-price-row{ display:flex; align-items:baseline; gap:8px; }
-    .combo-old{ font-size:12px; color:var(--muted); text-decoration:line-through; }
-    .combo-new{ font-size:19px; font-weight:800; color:var(--dark); }
-    .grid-click-hint{display:flex;align-items:center;gap:8px;background:rgba(37,99,235,.08);border:1px solid rgba(37,99,235,.2);color:#2563EB;font-size:13px;font-weight:700;padding:10px 18px;border-radius:12px;margin-bottom:20px;}
-    .card-select-pill{display:inline-flex;align-items:center;gap:6px;background:var(--bg);color:var(--dark);font-weight:800;font-size:12.5px;padding:7px 14px;border-radius:100px;border:1px solid var(--border);transition:all .2s ease;}
-    .combo:hover .card-select-pill{background:var(--accent);color:#FFFFFF;border-color:var(--accent);transform:scale(1.04);}
+    .combo-old{ font-size:13px; color:#94A3B8; text-decoration:line-through; font-weight:600; }
+    .combo-new{ font-size:22px; font-weight:900; color:#D97706; }
+    
+    .card-select-pill{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      background:#0F172A;
+      color:#FFFFFF;
+      font-weight:700;
+      font-size:12px;
+      padding:7px 15px;
+      border-radius:100px;
+      border:1px solid #0F172A;
+      transition:all .2s ease;
+    }
+    .combo:hover .card-select-pill{
+      background:#2563EB;
+      border-color:#2563EB;
+      color:#FFFFFF;
+      transform:scale(1.03);
+      box-shadow:0 4px 12px rgba(37, 99, 235, 0.35);
+    }
 
     .combo-actions{ display:flex; align-items:center; gap:8px; }
-    .share-btn{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;flex-shrink:0;border-radius:8px;border:1px solid var(--border);background:#fff;color:var(--muted);cursor:pointer;transition:all .15s ease;}
+    .share-btn{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;flex-shrink:0;border-radius:10px;border:1px solid rgba(203, 213, 225, 0.8);background:#fff;color:var(--muted);cursor:pointer;transition:all .15s ease;}
     .share-btn:hover{border-color:var(--accent);color:var(--accent);background:rgba(37,99,235,.08);}
     .share-btn:active{transform:scale(.92);}
     .share-btn svg{width:15px;height:15px;}
 
+    /* SINGLE COMBO BANNER LAYOUT (FOR CREATORES & SINGLE EXTRA) */
+    .combo.single-combo {
+      grid-column: 1 / -1;
+    }
+    @media (min-width: 768px) {
+      .combo.single-combo {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 28px;
+        padding: 24px 30px;
+      }
+      .combo.single-combo .combo-info-group {
+        flex: 1;
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+      .combo.single-combo .combo-middle {
+        margin-bottom: 0;
+      }
+      .combo.single-combo .combo-pitch {
+        margin-bottom: 0;
+      }
+      .combo.single-combo .combo-bottom {
+        border-top: none;
+        border-left: 1px dashed rgba(203, 213, 225, 0.75);
+        padding-left: 28px;
+        padding-top: 0;
+        margin-top: 0;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: center;
+        gap: 12px;
+        flex-shrink: 0;
+      }
+    }
+
     .extra-combos{ display:none; }
-    .extra-combos.open{ display:grid; gap:12px; margin-top:12px; }
+    .extra-combos.open{ display:grid; gap:16px; margin-top:16px; }
     .more-btn{
         display:flex; align-items:center; justify-content:center; gap:6px; width:100%;
-        margin-top:12px; padding:11px; background:none; border:1.5px dashed var(--line); border-radius:14px;
-        font-family:inherit; font-size:12.5px; font-weight:700; color:var(--muted); cursor:pointer;
+        margin-top:14px; padding:12px; background:rgba(255, 255, 255, 0.6); border:1.5px dashed rgba(203, 213, 225, 0.9); border-radius:14px;
+        font-family:inherit; font-size:13px; font-weight:700; color:var(--muted); cursor:pointer;
+        transition: all 0.2s ease;
     }
-    .more-btn:hover{ border-color:var(--accent); color:var(--accent); }
-    .more-btn svg{ width:14px; height:14px; transition:transform .18s ease; }
+    .more-btn:hover{ border-color:var(--accent); color:var(--accent); background:#fff; }
+    .more-btn svg{ width:15px; height:15px; transition:transform .18s ease; }
     .more-btn.open svg{ transform:rotate(180deg); }
 
-    .trust{ display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin:28px 0 8px; }
-    .trust-item{ display:flex; flex-direction:column; align-items:center; gap:6px; text-align:center; padding:10px 4px; border:1px solid var(--line); border-radius:14px; background:var(--bg-card); }
-    .trust-item svg{ width:17px; height:17px; color:var(--accent); }
-    .trust-item span{ font-size:10px; font-weight:700; color:var(--ink); line-height:1.25; }
+    .trust{ display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin:36px 0 12px; }
+    .trust-item{ display:flex; flex-direction:column; align-items:center; gap:6px; text-align:center; padding:12px 8px; border:1px solid rgba(226, 232, 240, 0.85); border-radius:16px; background:#FFFFFF; box-shadow:0 2px 8px rgba(15, 23, 42, 0.03); }
+    .trust-item svg{ width:20px; height:20px; color:var(--accent); }
+    .trust-item span{ font-size:11px; font-weight:700; color:#1E293B; line-height:1.25; }
 
-    footer.foot{ text-align:center; padding-top:8px; }
-    footer.foot p{ font-size:12.5px; color:var(--muted); margin:0; }
-    footer.foot strong{ color:var(--ink); }
-
-
-
-/* HOMOLOGACIÓN BARRA SUPERIOR Y BOTON WHATSAPP */
-.top-ribbon {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-  gap: 16px;
-  background: linear-gradient(135deg, rgba(15, 23, 42, 0.90) 0%, rgba(30, 41, 59, 0.85) 100%), url('/assets/img/hero_tech_bg.jpg') center/cover no-repeat !important;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
-  box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.35);
-}
-.top-ribbon a.brand-logo-link {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  text-decoration: none;
-  color: #FFFFFF;
-}
-.btn-wa-header {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(37, 211, 102, 0.14);
-  border: 1.5px solid #25D366;
-  color: #FFFFFF;
-  font-size: 13.5px;
-  font-weight: 700;
-  padding: 8px 18px;
-  border-radius: 100px;
-  text-decoration: none;
-  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.25);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-  flex-shrink: 0;
-}
-.btn-wa-header:hover {
-  transform: translateY(-2px);
-  background: rgba(37, 211, 102, 0.25);
-  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45);
-}
-@media (max-width: 540px) {
-  .btn-wa-header span { display: none; }
-  .btn-wa-header { padding: 8px 12px; }
-  .ribbon-tag { display: none; }
-}
-@media (min-width: 1024px) {
-  .page { max-width: 1240px !important; margin: 0 auto !important; }
-}
+    footer.foot{ text-align:center; padding-top:12px; }
+    footer.foot p{ font-size:13px; color:var(--muted); margin:0; }
+    footer.foot strong{ color:#0F172A; }
 
 </style>
 </head>
@@ -249,45 +407,69 @@
         <span class="combo-tag">Estudiantes</span>
         <span class="combo-save">Ahorra S/15</span>
       </div>
-      <div class="combo-title">Sistema Total · Estándar</div>
-      <div class="combo-includes" onclick="event.stopPropagation();"><a class="incl-link" href="/windows/" onclick="gtag('event','product_click',{product:'Windows',location:'combos_page'})">Windows 11 Pro</a> + <a class="incl-link" href="/office/" onclick="gtag('event','product_click',{product:'Office',location:'combos_page'})">Office 2019 Pro Plus</a> + <a class="incl-link" href="/kaspersky/" onclick="gtag('event','product_click',{product:'Kaspersky',location:'combos_page'})">Kaspersky Standard</a></div>
+      <div class="combo-middle">
+        <div class="combo-middle-info">
+          <div class="combo-title">Sistema Total · Estándar</div>
+          <div class="combo-includes" onclick="event.stopPropagation();"><a class="incl-link" href="/windows/" onclick="gtag('event','product_click',{product:'Windows',location:'combos_page'})">Windows 11 Pro</a> + <a class="incl-link" href="/office/" onclick="gtag('event','product_click',{product:'Office',location:'combos_page'})">Office 2019 Pro Plus</a> + <a class="incl-link" href="/kaspersky/" onclick="gtag('event','product_click',{product:'Kaspersky',location:'combos_page'})">Kaspersky Standard</a></div>
+        </div>
+        <div class="combo-visual-badge" title="Windows 11 + Office + Kaspersky">
+          <div class="combo-trio-icons">
+            <div class="combo-micro-icon micro-top-left" title="Windows 11 Pro">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M0 0H11.377V11.372H0V0ZM12.623 0H24V11.372H12.623V0ZM0 12.623H11.377V24H0V12.623ZM12.623 12.623H24V24H12.623V12.623Z" fill="#0078D4"/></svg>
+            </div>
+            <div class="combo-micro-icon micro-top-right" title="Microsoft Office">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M14.5 2L3 6.25V17.75L14.5 22L21 19.5V4.5L14.5 2Z" fill="#EA3E23"/><path fill-rule="evenodd" clip-rule="evenodd" d="M14.5 2V22L21 19.5V4.5L14.5 2Z" fill="#F1511B"/><path fill-rule="evenodd" clip-rule="evenodd" d="M3 6.25L14.5 2V22L3 17.75V6.25Z" fill="#D83B01"/><circle cx="11" cy="12" r="3" stroke="white" stroke-width="1.8"/></svg>
+            </div>
+            <div class="combo-micro-icon micro-bottom" title="Kaspersky">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="6" fill="#006D55"/><path d="M6 5.5h3.2v5.6L14.8 5.5h3.8L12.5 12l6.4 6.5h-3.9L9.2 12.8v5.7H6V5.5z" fill="#FFFFFF"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
       <p class="combo-pitch">Protección invisible: dale a tu equipo el software original que necesita sin consumir recursos.</p>
       <div class="combo-bottom">
         <span class="combo-price-row"><span class="combo-old">S/150</span><span class="combo-new">S/135</span></span>
         <div class="combo-actions">
           <button class="share-btn" type="button" aria-label="Compartir pack" onclick="event.stopPropagation();"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M8 7l4-4 4 4"/><path d="M4 13v6a2 2 0 002 2h12a2 2 0 002-2v-6"/></svg></button>
-          <div class="card-select-pill">
-            Elegir pack ↗
-          </div>
+          <div class="card-select-pill">Elegir pack ↗</div>
         </div>
       </div>
     </div>
 
-  </div>
-  <div class="extra-combos" id="extra-sistema">
     <div class="combo sistema" id="sistema-total-plus" onclick="window.open('https://wa.me/51925244643?text=Deseo%20información%20del%20Pack%20Sistema%20Total%20Plus', '_blank'); gtag('event','whatsapp_click',{product:'Pack Sistema Total Plus',location:'combos_page'})">
       <div class="combo-top">
         <span class="combo-tag">Equipos nuevos</span>
         <span class="combo-save">Ahorra S/20</span>
       </div>
-      <div class="combo-title">Sistema Total · Plus</div>
-      <div class="combo-includes" onclick="event.stopPropagation();"><a class="incl-link" href="/windows/" onclick="gtag('event','product_click',{product:'Windows',location:'combos_page'})">Windows 11 Pro</a> + <a class="incl-link" href="/office/" onclick="gtag('event','product_click',{product:'Office',location:'combos_page'})">Office 2021 Pro Plus</a> + <a class="incl-link" href="/kaspersky/" onclick="gtag('event','product_click',{product:'Kaspersky',location:'combos_page'})">Kaspersky Plus</a></div>
+      <div class="combo-middle">
+        <div class="combo-middle-info">
+          <div class="combo-title">Sistema Total · Plus</div>
+          <div class="combo-includes" onclick="event.stopPropagation();"><a class="incl-link" href="/windows/" onclick="gtag('event','product_click',{product:'Windows',location:'combos_page'})">Windows 11 Pro</a> + <a class="incl-link" href="/office/" onclick="gtag('event','product_click',{product:'Office',location:'combos_page'})">Office 2021 Pro Plus</a> + <a class="incl-link" href="/kaspersky/" onclick="gtag('event','product_click',{product:'Kaspersky',location:'combos_page'})">Kaspersky Plus</a></div>
+        </div>
+        <div class="combo-visual-badge" title="Windows 11 + Office + Kaspersky">
+          <div class="combo-trio-icons">
+            <div class="combo-micro-icon micro-top-left" title="Windows 11 Pro">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M0 0H11.377V11.372H0V0ZM12.623 0H24V11.372H12.623V0ZM0 12.623H11.377V24H0V12.623ZM12.623 12.623H24V24H12.623V12.623Z" fill="#0078D4"/></svg>
+            </div>
+            <div class="combo-micro-icon micro-top-right" title="Microsoft Office">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M14.5 2L3 6.25V17.75L14.5 22L21 19.5V4.5L14.5 2Z" fill="#EA3E23"/><path fill-rule="evenodd" clip-rule="evenodd" d="M14.5 2V22L21 19.5V4.5L14.5 2Z" fill="#F1511B"/><path fill-rule="evenodd" clip-rule="evenodd" d="M3 6.25L14.5 2V22L3 17.75V6.25Z" fill="#D83B01"/><circle cx="11" cy="12" r="3" stroke="white" stroke-width="1.8"/></svg>
+            </div>
+            <div class="combo-micro-icon micro-bottom" title="Kaspersky">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="6" fill="#006D55"/><path d="M6 5.5h3.2v5.6L14.8 5.5h3.8L12.5 12l6.4 6.5h-3.9L9.2 12.8v5.7H6V5.5z" fill="#FFFFFF"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
       <p class="combo-pitch">Tu inversión merece el mejor motor: rinde al 100% en multitarea blindando tu identidad.</p>
       <div class="combo-bottom">
         <span class="combo-price-row"><span class="combo-old">S/185</span><span class="combo-new">S/165</span></span>
         <div class="combo-actions">
           <button class="share-btn" type="button" aria-label="Compartir pack" onclick="event.stopPropagation();"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M8 7l4-4 4 4"/><path d="M4 13v6a2 2 0 002 2h12a2 2 0 002-2v-6"/></svg></button>
-          <div class="card-select-pill">
-            Elegir pack ↗
-          </div>
+          <div class="card-select-pill">Elegir pack ↗</div>
         </div>
       </div>
     </div>
   </div>
-  <button class="more-btn" data-target="extra-sistema" data-count="1">
-    <span class="more-label">Ver 1 pack más</span>
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
-  </button>
 
   <p class="cat-title">Oficina Segura (Office/Microsoft 365 + Antivirus)</p>
   <div class="combos">
@@ -296,62 +478,100 @@
         <span class="combo-tag">Negocios locales</span>
         <span class="combo-save">Ahorra S/11</span>
       </div>
-      <div class="combo-title">Oficina Segura · Estándar</div>
-      <div class="combo-includes" onclick="event.stopPropagation();"><a class="incl-link" href="/office/" onclick="gtag('event','product_click',{product:'Office',location:'combos_page'})">Office 2019 Pro Plus</a> + <a class="incl-link" href="/kaspersky/" onclick="gtag('event','product_click',{product:'Kaspersky',location:'combos_page'})">Kaspersky Standard</a></div>
+      <div class="combo-middle">
+        <div class="combo-middle-info">
+          <div class="combo-title">Oficina Segura · Estándar</div>
+          <div class="combo-includes" onclick="event.stopPropagation();"><a class="incl-link" href="/office/" onclick="gtag('event','product_click',{product:'Office',location:'combos_page'})">Office 2019 Pro Plus</a> + <a class="incl-link" href="/kaspersky/" onclick="gtag('event','product_click',{product:'Kaspersky',location:'combos_page'})">Kaspersky Standard</a></div>
+        </div>
+        <div class="combo-visual-badge" title="Office + Kaspersky">
+          <div class="combo-duo-icons">
+            <div class="combo-micro-icon micro-duo-1" title="Microsoft Office">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M14.5 2L3 6.25V17.75L14.5 22L21 19.5V4.5L14.5 2Z" fill="#EA3E23"/><path fill-rule="evenodd" clip-rule="evenodd" d="M14.5 2V22L21 19.5V4.5L14.5 2Z" fill="#F1511B"/><path fill-rule="evenodd" clip-rule="evenodd" d="M3 6.25L14.5 2V22L3 17.75V6.25Z" fill="#D83B01"/><circle cx="11" cy="12" r="3" stroke="white" stroke-width="1.8"/></svg>
+            </div>
+            <div class="combo-micro-icon micro-duo-2" title="Kaspersky">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="6" fill="#006D55"/><path d="M6 5.5h3.2v5.6L14.8 5.5h3.8L12.5 12l6.4 6.5h-3.9L9.2 12.8v5.7H6V5.5z" fill="#FFFFFF"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
       <p class="combo-pitch">Lo esencial hecho a la perfección: herramientas clásicas seguras contra USBs infectados.</p>
       <div class="combo-bottom">
         <span class="combo-price-row"><span class="combo-old">S/110</span><span class="combo-new">S/99</span></span>
         <div class="combo-actions">
           <button class="share-btn" type="button" aria-label="Compartir pack" onclick="event.stopPropagation();"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M8 7l4-4 4 4"/><path d="M4 13v6a2 2 0 002 2h12a2 2 0 002-2v-6"/></svg></button>
-          <div class="card-select-pill">
-            Elegir pack ↗
-          </div>
+          <div class="card-select-pill">Elegir pack ↗</div>
         </div>
       </div>
     </div>
 
-  </div>
-  <div class="extra-combos" id="extra-oficina">
     <div class="combo oficina" id="oficina-segura-plus" onclick="window.open('https://wa.me/51925244643?text=Deseo%20información%20del%20Pack%20Oficina%20Segura%20Plus', '_blank'); gtag('event','whatsapp_click',{product:'Pack Oficina Segura Plus',location:'combos_page'})">
       <div class="combo-top">
         <span class="combo-tag">Profesionales</span>
         <span class="combo-save">Ahorra S/14.50</span>
       </div>
-      <div class="combo-title">Oficina Segura · Plus</div>
-      <div class="combo-includes" onclick="event.stopPropagation();"><a class="incl-link" href="/office/" onclick="gtag('event','product_click',{product:'Office',location:'combos_page'})">Office 2021 Pro Plus</a> + <a class="incl-link" href="/kaspersky/" onclick="gtag('event','product_click',{product:'Kaspersky',location:'combos_page'})">Kaspersky Plus</a></div>
+      <div class="combo-middle">
+        <div class="combo-middle-info">
+          <div class="combo-title">Oficina Segura · Plus</div>
+          <div class="combo-includes" onclick="event.stopPropagation();"><a class="incl-link" href="/office/" onclick="gtag('event','product_click',{product:'Office',location:'combos_page'})">Office 2021 Pro Plus</a> + <a class="incl-link" href="/kaspersky/" onclick="gtag('event','product_click',{product:'Kaspersky',location:'combos_page'})">Kaspersky Plus</a></div>
+        </div>
+        <div class="combo-visual-badge" title="Office + Kaspersky">
+          <div class="combo-duo-icons">
+            <div class="combo-micro-icon micro-duo-1" title="Microsoft Office">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M14.5 2L3 6.25V17.75L14.5 22L21 19.5V4.5L14.5 2Z" fill="#EA3E23"/><path fill-rule="evenodd" clip-rule="evenodd" d="M14.5 2V22L21 19.5V4.5L14.5 2Z" fill="#F1511B"/><path fill-rule="evenodd" clip-rule="evenodd" d="M3 6.25L14.5 2V22L3 17.75V6.25Z" fill="#D83B01"/><circle cx="11" cy="12" r="3" stroke="white" stroke-width="1.8"/></svg>
+            </div>
+            <div class="combo-micro-icon micro-duo-2" title="Kaspersky">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="6" fill="#006D55"/><path d="M6 5.5h3.2v5.6L14.8 5.5h3.8L12.5 12l6.4 6.5h-3.9L9.2 12.8v5.7H6V5.5z" fill="#FFFFFF"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
       <p class="combo-pitch">El balance perfecto: ofimática permanente y un antivirus que blinda tus transacciones y tu WiFi.</p>
       <div class="combo-bottom">
         <span class="combo-price-row"><span class="combo-old">S/145</span><span class="combo-new">S/130.50</span></span>
         <div class="combo-actions">
           <button class="share-btn" type="button" aria-label="Compartir pack" onclick="event.stopPropagation();"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M8 7l4-4 4 4"/><path d="M4 13v6a2 2 0 002 2h12a2 2 0 002-2v-6"/></svg></button>
-          <div class="card-select-pill">
-            Elegir pack ↗
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="combo oficina" id="oficina-segura-pro" onclick="window.open('https://wa.me/51925244643?text=Deseo%20información%20del%20Pack%20Oficina%20Segura%20Pro', '_blank'); gtag('event','whatsapp_click',{product:'Pack Oficina Segura Pro',location:'combos_page'})">
-      <div class="combo-top">
-        <span class="combo-tag">Directores</span>
-        <span class="combo-save">Ahorra S/19</span>
-      </div>
-      <div class="combo-title">Oficina Segura · Pro</div>
-      <div class="combo-includes" onclick="event.stopPropagation();"><a class="incl-link" href="/office/" onclick="gtag('event','product_click',{product:'Office',location:'combos_page'})">Microsoft 365 Anual</a> + <a class="incl-link" href="/kaspersky/" onclick="gtag('event','product_click',{product:'Kaspersky',location:'combos_page'})">Kaspersky Premium</a></div>
-      <p class="combo-pitch">Para líderes: seguridad con motores IA y oficina sincronizada para proteger tu patrimonio digital.</p>
-      <div class="combo-bottom">
-        <span class="combo-price-row"><span class="combo-old">S/190</span><span class="combo-new">S/171</span></span>
-        <div class="combo-actions">
-          <button class="share-btn" type="button" aria-label="Compartir pack" onclick="event.stopPropagation();"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M8 7l4-4 4 4"/><path d="M4 13v6a2 2 0 002 2h12a2 2 0 002-2v-6"/></svg></button>
-          <div class="card-select-pill">
-            Elegir pack ↗
-          </div>
+          <div class="card-select-pill">Elegir pack ↗</div>
         </div>
       </div>
     </div>
   </div>
-  <button class="more-btn" data-target="extra-oficina" data-count="2">
-    <span class="more-label">Ver 2 packs más</span>
+
+  <div class="extra-combos" id="extra-oficina">
+    <div class="combo oficina single-combo" id="oficina-segura-pro" onclick="window.open('https://wa.me/51925244643?text=Deseo%20información%20del%20Pack%20Oficina%20Segura%20Pro', '_blank'); gtag('event','whatsapp_click',{product:'Pack Oficina Segura Pro',location:'combos_page'})">
+      <div class="combo-info-group">
+        <div class="combo-top">
+          <span class="combo-tag">Directores</span>
+          <span class="combo-save">Ahorra S/19</span>
+        </div>
+        <div class="combo-middle">
+          <div class="combo-middle-info">
+            <div class="combo-title">Oficina Segura · Pro</div>
+            <div class="combo-includes" onclick="event.stopPropagation();"><a class="incl-link" href="/office/" onclick="gtag('event','product_click',{product:'Office',location:'combos_page'})">Microsoft 365 Anual</a> + <a class="incl-link" href="/kaspersky/" onclick="gtag('event','product_click',{product:'Kaspersky',location:'combos_page'})">Kaspersky Premium</a></div>
+          </div>
+          <div class="combo-visual-badge" title="Microsoft 365 + Kaspersky">
+            <div class="combo-duo-icons">
+              <div class="combo-micro-icon micro-duo-1" title="Microsoft 365">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M14.5 2L3 6.25V17.75L14.5 22L21 19.5V4.5L14.5 2Z" fill="#EA3E23"/><path fill-rule="evenodd" clip-rule="evenodd" d="M14.5 2V22L21 19.5V4.5L14.5 2Z" fill="#F1511B"/><path fill-rule="evenodd" clip-rule="evenodd" d="M3 6.25L14.5 2V22L3 17.75V6.25Z" fill="#D83B01"/><circle cx="11" cy="12" r="3" stroke="white" stroke-width="1.8"/></svg>
+              </div>
+              <div class="combo-micro-icon micro-duo-2" title="Kaspersky">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="6" fill="#006D55"/><path d="M6 5.5h3.2v5.6L14.8 5.5h3.8L12.5 12l6.4 6.5h-3.9L9.2 12.8v5.7H6V5.5z" fill="#FFFFFF"/></svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="combo-pitch">Para líderes: seguridad con motores IA y oficina sincronizada para proteger tu patrimonio digital.</p>
+      </div>
+      <div class="combo-bottom">
+        <span class="combo-price-row"><span class="combo-old">S/190</span><span class="combo-new">S/171</span></span>
+        <div class="combo-actions">
+          <button class="share-btn" type="button" aria-label="Compartir pack" onclick="event.stopPropagation();"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M8 7l4-4 4 4"/><path d="M4 13v6a2 2 0 002 2h12a2 2 0 002-2v-6"/></svg></button>
+          <div class="card-select-pill">Elegir pack ↗</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="more-btn" data-target="extra-oficina" data-count="1">
+    <span class="more-label">Ver 1 pack más</span>
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
   </button>
 
@@ -362,56 +582,98 @@
         <span class="combo-tag">Consultores</span>
         <span class="combo-save">Ahorra S/30</span>
       </div>
-      <div class="combo-title">Oficina Inteligente y Segura · Anual</div>
-      <div class="combo-includes" onclick="event.stopPropagation();"><a class="incl-link" href="/office/" onclick="gtag('event','product_click',{product:'Office',location:'combos_page'})">Microsoft 365 Anual</a> + <a class="incl-link" href="/google-one/" onclick="gtag('event','product_click',{product:'Google One',location:'combos_page'})">Google One 2TB Anual</a> + <a class="incl-link" href="/kaspersky/" onclick="gtag('event','product_click',{product:'Kaspersky',location:'combos_page'})">Kaspersky Plus</a></div>
+      <div class="combo-middle">
+        <div class="combo-middle-info">
+          <div class="combo-title">Oficina Inteligente y Segura · Anual</div>
+          <div class="combo-includes" onclick="event.stopPropagation();"><a class="incl-link" href="/office/" onclick="gtag('event','product_click',{product:'Office',location:'combos_page'})">Microsoft 365 Anual</a> + <a class="incl-link" href="/google-one/" onclick="gtag('event','product_click',{product:'Google One',location:'combos_page'})">Google One 2TB Anual</a> + <a class="incl-link" href="/kaspersky/" onclick="gtag('event','product_click',{product:'Kaspersky',location:'combos_page'})">Kaspersky Plus</a></div>
+        </div>
+        <div class="combo-visual-badge" title="Microsoft 365 + Google One + Kaspersky">
+          <div class="combo-trio-icons">
+            <div class="combo-micro-icon micro-top-left" title="Microsoft 365">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M14.5 2L3 6.25V17.75L14.5 22L21 19.5V4.5L14.5 2Z" fill="#EA3E23"/><path fill-rule="evenodd" clip-rule="evenodd" d="M14.5 2V22L21 19.5V4.5L14.5 2Z" fill="#F1511B"/><path fill-rule="evenodd" clip-rule="evenodd" d="M3 6.25L14.5 2V22L3 17.75V6.25Z" fill="#D83B01"/><circle cx="11" cy="12" r="3" stroke="white" stroke-width="1.8"/></svg>
+            </div>
+            <div class="combo-micro-icon micro-top-right" title="Google One AI">
+              <svg width="12" height="20" viewBox="0 0 87.39 176.01" fill="none"><g transform="translate(-42.14 -7)"><path d="m129.53 144.99v18.46c0 10.8-8.73 19.56-19.5 19.56s-19.5-8.75-19.5-19.56v-48.33z" fill="#34a853"/><path d="m129.53 26.56v118.43l-39-29.87v-47.1l31.91-26.38c4.68-3.86 7.09-9.45 7.09-15.08z" fill="#4285F4"/><path d="m129.52 25.88c.01.22.01.44.01.67 0 5.63-2.41 11.22-7.09 15.08l-31.91 26.38v-41.45c0-6.4 3.07-12.1 7.84-15.67.34-.26.68-.5 1.05-.73.17-.11.33-.22.5-.32.31-.2.64-.38.94-.54l.86-.43.72-.3c.47-.18.96-.32 1.46-.42.27-.05.53-.1.81-.13.48-.06.97-.09 1.47-.09 5.3 0 10.27 2.15 13.9 5.63l.36.35 1.09 1.13c4.76 5.25 7.69 12.18 7.9 19.82z" fill="#ea4335"/><path d="m129.52 25.88c-.21-7.64-3.14-14.57-7.9-19.82l-1.09-1.13-.36-.35c-3.63-3.48-8.6-5.63-13.9-5.63-.5 0-.99.03-1.47.09-.28.03-.54.08-.81.13-.5.1-1 .24-1.46.42l-.72.3-.86.43c-.3.16-.63.34-.94.54-.17.1-.33.21-.5.32-.37.23-.71.47-1.05.73-4.77 3.57-7.84 9.27-7.84 15.67v1.89h.01v39.56l39-32.08c4.68-3.86 7.09-9.45 7.09-15.08 0-.23 0-.45-.01-.67z" fill="#fbbc05"/></g></svg>
+            </div>
+            <div class="combo-micro-icon micro-bottom" title="Kaspersky">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="6" fill="#006D55"/><path d="M6 5.5h3.2v5.6L14.8 5.5h3.8L12.5 12l6.4 6.5h-3.9L9.2 12.8v5.7H6V5.5z" fill="#FFFFFF"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
       <p class="combo-pitch">El espacio de trabajo definitivo: terabytes de espacio, ofimática premium y protección total por un año.</p>
       <div class="combo-bottom">
         <span class="combo-price-row"><span class="combo-old">S/300</span><span class="combo-new">S/270</span></span>
         <div class="combo-actions">
           <button class="share-btn" type="button" aria-label="Compartir pack" onclick="event.stopPropagation();"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M8 7l4-4 4 4"/><path d="M4 13v6a2 2 0 002 2h12a2 2 0 002-2v-6"/></svg></button>
-          <div class="card-select-pill">
-            Elegir pack ↗
-          </div>
+          <div class="card-select-pill">Elegir pack ↗</div>
         </div>
       </div>
     </div>
 
-  </div>
-  <div class="extra-combos" id="extra-inteligente">
     <div class="combo inteligente" id="oficina-inteligente-estandar" onclick="window.open('https://wa.me/51925244643?text=Deseo%20información%20del%20Pack%20Oficina%20Inteligente%20Estándar', '_blank'); gtag('event','whatsapp_click',{product:'Pack Oficina Inteligente Estandar',location:'combos_page'})">
       <div class="combo-top">
         <span class="combo-tag">Universitarios</span>
         <span class="combo-save">Ahorra S/20</span>
       </div>
-      <div class="combo-title">Oficina Inteligente y Segura · Estándar</div>
-      <div class="combo-includes" onclick="event.stopPropagation();"><a class="incl-link" href="/office/" onclick="gtag('event','product_click',{product:'Office',location:'combos_page'})">Microsoft 365 Anual</a> + <a class="incl-link" href="/google-one/" onclick="gtag('event','product_click',{product:'Google One',location:'combos_page'})">Google One 200GB (6 meses)</a> + <a class="incl-link" href="/kaspersky/" onclick="gtag('event','product_click',{product:'Kaspersky',location:'combos_page'})">Kaspersky Standard</a></div>
+      <div class="combo-middle">
+        <div class="combo-middle-info">
+          <div class="combo-title">Oficina Inteligente y Segura · Estándar</div>
+          <div class="combo-includes" onclick="event.stopPropagation();"><a class="incl-link" href="/office/" onclick="gtag('event','product_click',{product:'Office',location:'combos_page'})">Microsoft 365 Anual</a> + <a class="incl-link" href="/google-one/" onclick="gtag('event','product_click',{product:'Google One',location:'combos_page'})">Google One 200GB (6 meses)</a> + <a class="incl-link" href="/kaspersky/" onclick="gtag('event','product_click',{product:'Kaspersky',location:'combos_page'})">Kaspersky Standard</a></div>
+        </div>
+        <div class="combo-visual-badge" title="Microsoft 365 + Google One + Kaspersky">
+          <div class="combo-trio-icons">
+            <div class="combo-micro-icon micro-top-left" title="Microsoft 365">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M14.5 2L3 6.25V17.75L14.5 22L21 19.5V4.5L14.5 2Z" fill="#EA3E23"/><path fill-rule="evenodd" clip-rule="evenodd" d="M14.5 2V22L21 19.5V4.5L14.5 2Z" fill="#F1511B"/><path fill-rule="evenodd" clip-rule="evenodd" d="M3 6.25L14.5 2V22L3 17.75V6.25Z" fill="#D83B01"/><circle cx="11" cy="12" r="3" stroke="white" stroke-width="1.8"/></svg>
+            </div>
+            <div class="combo-micro-icon micro-top-right" title="Google One AI">
+              <svg width="12" height="20" viewBox="0 0 87.39 176.01" fill="none"><g transform="translate(-42.14 -7)"><path d="m129.53 144.99v18.46c0 10.8-8.73 19.56-19.5 19.56s-19.5-8.75-19.5-19.56v-48.33z" fill="#34a853"/><path d="m129.53 26.56v118.43l-39-29.87v-47.1l31.91-26.38c4.68-3.86 7.09-9.45 7.09-15.08z" fill="#4285F4"/><path d="m129.52 25.88c.01.22.01.44.01.67 0 5.63-2.41 11.22-7.09 15.08l-31.91 26.38v-41.45c0-6.4 3.07-12.1 7.84-15.67.34-.26.68-.5 1.05-.73.17-.11.33-.22.5-.32.31-.2.64-.38.94-.54l.86-.43.72-.3c.47-.18.96-.32 1.46-.42.27-.05.53-.1.81-.13.48-.06.97-.09 1.47-.09 5.3 0 10.27 2.15 13.9 5.63l.36.35 1.09 1.13c4.76 5.25 7.69 12.18 7.9 19.82z" fill="#ea4335"/><path d="m129.52 25.88c-.21-7.64-3.14-14.57-7.9-19.82l-1.09-1.13-.36-.35c-3.63-3.48-8.6-5.63-13.9-5.63-.5 0-.99.03-1.47.09-.28.03-.54.08-.81.13-.5.1-1 .24-1.46.42l-.72.3-.86.43c-.3.16-.63.34-.94.54-.17.1-.33.21-.5.32-.37.23-.71.47-1.05.73-4.77 3.57-7.84 9.27-7.84 15.67v1.89h.01v39.56l39-32.08c4.68-3.86 7.09-9.45 7.09-15.08 0-.23 0-.45-.01-.67z" fill="#fbbc05"/></g></svg>
+            </div>
+            <div class="combo-micro-icon micro-bottom" title="Kaspersky">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="6" fill="#006D55"/><path d="M6 5.5h3.2v5.6L14.8 5.5h3.8L12.5 12l6.4 6.5h-3.9L9.2 12.8v5.7H6V5.5z" fill="#FFFFFF"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
       <p class="combo-pitch">Entorno completo y accesible: ofimática anual, seguridad y nube semestral para no perder tesis o proyectos.</p>
       <div class="combo-bottom">
         <span class="combo-price-row"><span class="combo-old">S/210</span><span class="combo-new">S/190</span></span>
         <div class="combo-actions">
           <button class="share-btn" type="button" aria-label="Compartir pack" onclick="event.stopPropagation();"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M8 7l4-4 4 4"/><path d="M4 13v6a2 2 0 002 2h12a2 2 0 002-2v-6"/></svg></button>
-          <div class="card-select-pill">
-            Elegir pack ↗
-          </div>
+          <div class="card-select-pill">Elegir pack ↗</div>
         </div>
       </div>
     </div>
+  </div>
 
+  <div class="extra-combos" id="extra-inteligente">
     <div class="combo inteligente" id="oficina-inteligente-trimestral" onclick="window.open('https://wa.me/51925244643?text=Deseo%20información%20del%20Pack%20Oficina%20Inteligente%20Trimestral', '_blank'); gtag('event','whatsapp_click',{product:'Pack Oficina Inteligente Trimestral',location:'combos_page'})">
       <div class="combo-top">
         <span class="combo-tag">Editores / arquitectos</span>
         <span class="combo-save">Ahorra S/15</span>
       </div>
-      <div class="combo-title">Oficina Inteligente · Trimestral</div>
-      <div class="combo-includes" onclick="event.stopPropagation();"><a class="incl-link" href="/office/" onclick="gtag('event','product_click',{product:'Office',location:'combos_page'})">Microsoft 365 Anual</a> + <a class="incl-link" href="/google-one/" onclick="gtag('event','product_click',{product:'Google One',location:'combos_page'})">Google One 5TB Trimestral</a></div>
+      <div class="combo-middle">
+        <div class="combo-middle-info">
+          <div class="combo-title">Oficina Inteligente · Trimestral</div>
+          <div class="combo-includes" onclick="event.stopPropagation();"><a class="incl-link" href="/office/" onclick="gtag('event','product_click',{product:'Office',location:'combos_page'})">Microsoft 365 Anual</a> + <a class="incl-link" href="/google-one/" onclick="gtag('event','product_click',{product:'Google One',location:'combos_page'})">Google One 5TB Trimestral</a></div>
+        </div>
+        <div class="combo-visual-badge" title="Microsoft 365 + Google One">
+          <div class="combo-duo-icons">
+            <div class="combo-micro-icon micro-duo-1" title="Microsoft 365">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M14.5 2L3 6.25V17.75L14.5 22L21 19.5V4.5L14.5 2Z" fill="#EA3E23"/><path fill-rule="evenodd" clip-rule="evenodd" d="M14.5 2V22L21 19.5V4.5L14.5 2Z" fill="#F1511B"/><path fill-rule="evenodd" clip-rule="evenodd" d="M3 6.25L14.5 2V22L3 17.75V6.25Z" fill="#D83B01"/><circle cx="11" cy="12" r="3" stroke="white" stroke-width="1.8"/></svg>
+            </div>
+            <div class="combo-micro-icon micro-duo-2" title="Google One AI">
+              <svg width="12" height="20" viewBox="0 0 87.39 176.01" fill="none"><g transform="translate(-42.14 -7)"><path d="m129.53 144.99v18.46c0 10.8-8.73 19.56-19.5 19.56s-19.5-8.75-19.5-19.56v-48.33z" fill="#34a853"/><path d="m129.53 26.56v118.43l-39-29.87v-47.1l31.91-26.38c4.68-3.86 7.09-9.45 7.09-15.08z" fill="#4285F4"/><path d="m129.52 25.88c.01.22.01.44.01.67 0 5.63-2.41 11.22-7.09 15.08l-31.91 26.38v-41.45c0-6.4 3.07-12.1 7.84-15.67.34-.26.68-.5 1.05-.73.17-.11.33-.22.5-.32.31-.2.64-.38.94-.54l.86-.43.72-.3c.47-.18.96-.32 1.46-.42.27-.05.53-.1.81-.13.48-.06.97-.09 1.47-.09 5.3 0 10.27 2.15 13.9 5.63l.36.35 1.09 1.13c4.76 5.25 7.69 12.18 7.9 19.82z" fill="#ea4335"/><path d="m129.52 25.88c-.21-7.64-3.14-14.57-7.9-19.82l-1.09-1.13-.36-.35c-3.63-3.48-8.6-5.63-13.9-5.63-.5 0-.99.03-1.47.09-.28.03-.54.08-.81.13-.5.1-1 .24-1.46.42l-.72.3-.86.43c-.3.16-.63.34-.94.54-.17.1-.33.21-.5.32-.37.23-.71.47-1.05.73-4.77 3.57-7.84 9.27-7.84 15.67v1.89h.01v39.56l39-32.08c4.68-3.86 7.09-9.45 7.09-15.08 0-.23 0-.45-.01-.67z" fill="#fbbc05"/></g></svg>
+            </div>
+          </div>
+        </div>
+      </div>
       <p class="combo-pitch">Capacidad masiva para mentes creativas: si tus proyectos pesan gigabytes, este es tu ecosistema.</p>
       <div class="combo-bottom">
         <span class="combo-price-row"><span class="combo-old">S/150</span><span class="combo-new">S/135</span></span>
         <div class="combo-actions">
           <button class="share-btn" type="button" aria-label="Compartir pack" onclick="event.stopPropagation();"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M8 7l4-4 4 4"/><path d="M4 13v6a2 2 0 002 2h12a2 2 0 002-2v-6"/></svg></button>
-          <div class="card-select-pill">
-            Elegir pack ↗
-          </div>
+          <div class="card-select-pill">Elegir pack ↗</div>
         </div>
       </div>
     </div>
@@ -421,42 +683,68 @@
         <span class="combo-tag">Archivos pesados</span>
         <span class="combo-save">Ahorra S/19.50</span>
       </div>
-      <div class="combo-title">Oficina Inteligente · Plus</div>
-      <div class="combo-includes" onclick="event.stopPropagation();"><a class="incl-link" href="/office/" onclick="gtag('event','product_click',{product:'Office',location:'combos_page'})">Office 2021 Pro Plus</a> + <a class="incl-link" href="/google-one/" onclick="gtag('event','product_click',{product:'Google One',location:'combos_page'})">Google One 2TB Anual</a></div>
+      <div class="combo-middle">
+        <div class="combo-middle-info">
+          <div class="combo-title">Oficina Inteligente · Plus</div>
+          <div class="combo-includes" onclick="event.stopPropagation();"><a class="incl-link" href="/office/" onclick="gtag('event','product_click',{product:'Office',location:'combos_page'})">Office 2021 Pro Plus</a> + <a class="incl-link" href="/google-one/" onclick="gtag('event','product_click',{product:'Google One',location:'combos_page'})">Google One 2TB Anual</a></div>
+        </div>
+        <div class="combo-visual-badge" title="Office + Google One">
+          <div class="combo-duo-icons">
+            <div class="combo-micro-icon micro-duo-1" title="Microsoft Office">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M14.5 2L3 6.25V17.75L14.5 22L21 19.5V4.5L14.5 2Z" fill="#EA3E23"/><path fill-rule="evenodd" clip-rule="evenodd" d="M14.5 2V22L21 19.5V4.5L14.5 2Z" fill="#F1511B"/><path fill-rule="evenodd" clip-rule="evenodd" d="M3 6.25L14.5 2V22L3 17.75V6.25Z" fill="#D83B01"/><circle cx="11" cy="12" r="3" stroke="white" stroke-width="1.8"/></svg>
+            </div>
+            <div class="combo-micro-icon micro-duo-2" title="Google One AI">
+              <svg width="12" height="20" viewBox="0 0 87.39 176.01" fill="none"><g transform="translate(-42.14 -7)"><path d="m129.53 144.99v18.46c0 10.8-8.73 19.56-19.5 19.56s-19.5-8.75-19.5-19.56v-48.33z" fill="#34a853"/><path d="m129.53 26.56v118.43l-39-29.87v-47.1l31.91-26.38c4.68-3.86 7.09-9.45 7.09-15.08z" fill="#4285F4"/><path d="m129.52 25.88c.01.22.01.44.01.67 0 5.63-2.41 11.22-7.09 15.08l-31.91 26.38v-41.45c0-6.4 3.07-12.1 7.84-15.67.34-.26.68-.5 1.05-.73.17-.11.33-.22.5-.32.31-.2.64-.38.94-.54l.86-.43.72-.3c.47-.18.96-.32 1.46-.42.27-.05.53-.1.81-.13.48-.06.97-.09 1.47-.09 5.3 0 10.27 2.15 13.9 5.63l.36.35 1.09 1.13c4.76 5.25 7.69 12.18 7.9 19.82z" fill="#ea4335"/><path d="m129.52 25.88c-.21-7.64-3.14-14.57-7.9-19.82l-1.09-1.13-.36-.35c-3.63-3.48-8.6-5.63-13.9-5.63-.5 0-.99.03-1.47.09-.28.03-.54.08-.81.13-.5.1-1 .24-1.46.42l-.72.3-.86.43c-.3.16-.63.34-.94.54-.17.1-.33.21-.5.32-.37.23-.71.47-1.05.73-4.77 3.57-7.84 9.27-7.84 15.67v1.89h.01v39.56l39-32.08c4.68-3.86 7.09-9.45 7.09-15.08 0-.23 0-.45-.01-.67z" fill="#fbbc05"/></g></svg>
+            </div>
+          </div>
+        </div>
+      </div>
       <p class="combo-pitch">Ofimática de pago único y almacenamiento corporativo de 2TB asegurado por todo el año.</p>
       <div class="combo-bottom">
         <span class="combo-price-row"><span class="combo-old">S/195</span><span class="combo-new">S/175.50</span></span>
         <div class="combo-actions">
           <button class="share-btn" type="button" aria-label="Compartir pack" onclick="event.stopPropagation();"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M8 7l4-4 4 4"/><path d="M4 13v6a2 2 0 002 2h12a2 2 0 002-2v-6"/></svg></button>
-          <div class="card-select-pill">
-            Elegir pack ↗
-          </div>
+          <div class="card-select-pill">Elegir pack ↗</div>
         </div>
       </div>
     </div>
   </div>
-  <button class="more-btn" data-target="extra-inteligente" data-count="3">
-    <span class="more-label">Ver 3 packs más</span>
+  <button class="more-btn" data-target="extra-inteligente" data-count="2">
+    <span class="more-label">Ver 2 packs más</span>
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
   </button>
 
   <p class="cat-title">Pack Creadores (IA + Nube)</p>
   <div class="combos">
-    <div class="combo creadores" id="pack-creadores-pro" onclick="window.open('https://wa.me/51925244643?text=Deseo%20información%20del%20Pack%20Creadores%20Pro', '_blank'); gtag('event','whatsapp_click',{product:'Pack Creadores Pro',location:'combos_page'})">
-      <div class="combo-top">
-        <span class="combo-tag">Agencias / devs</span>
-        <span class="combo-save">Ahorra S/7</span>
+    <div class="combo creadores single-combo" id="pack-creadores-pro" onclick="window.open('https://wa.me/51925244643?text=Deseo%20información%20del%20Pack%20Creadores%20Pro', '_blank'); gtag('event','whatsapp_click',{product:'Pack Creadores Pro',location:'combos_page'})">
+      <div class="combo-info-group">
+        <div class="combo-top">
+          <span class="combo-tag">Agencias / devs</span>
+          <span class="combo-save">Ahorra S/7</span>
+        </div>
+        <div class="combo-middle">
+          <div class="combo-middle-info">
+            <div class="combo-title">Pack Creadores · Pro</div>
+            <div class="combo-includes" onclick="event.stopPropagation();"><a class="incl-link" href="/chatgpt/" onclick="gtag('event','product_click',{product:'ChatGPT Plus',location:'combos_page'})">ChatGPT Plus Mensual</a> + <a class="incl-link" href="/google-one/" onclick="gtag('event','product_click',{product:'Google One',location:'combos_page'})">Google One 5TB Mensual</a></div>
+          </div>
+          <div class="combo-visual-badge" title="ChatGPT Plus + Google One">
+            <div class="combo-duo-icons">
+              <div class="combo-micro-icon micro-duo-1" title="ChatGPT Plus">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#10A37F"><path d="M22.28 9.8a6.04 6.04 0 0 0-.52-4.92 6.09 6.09 0 0 0-6.4-2.8 6.09 6.09 0 0 0-4.73-2.18A6.06 6.06 0 0 0 4.6 2.83a6.05 6.05 0 0 0-4.08 4.7 6.03 6.03 0 0 0 .52 4.93A6.06 6.06 0 0 0 2.2 17.5a6.05 6.05 0 0 0 4.73 2.18 6.06 6.06 0 0 0 6.03 2.92 6.05 6.05 0 0 0 4.09-4.7 6.06 6.06 0 0 0 5.23-8.1zm-8.66 12.43a4.57 4.57 0 0 1-2.65-.84l.13-.08 4.38-2.53a.76.76 0 0 0 .38-.66v-6.17l1.85 1.07v5.62a4.55 4.55 0 0 1-4.09 3.59zM3.48 18.06a4.54 4.54 0 0 1-.58-2.73l.13.08 4.38 2.53a.76.76 0 0 0 .76 0l5.34-3.08v2.14l-4.87 2.81a4.55 4.55 0 0 1-5.16-1.75zm-1.4-8.8a4.56 4.56 0 0 1 2.06-1.9l.01.15v5.06a.76.76 0 0 0 .38.66l5.34 3.08-1.85 1.07-4.87-2.81a4.55 4.55 0 0 1-1.07-5.31zm16.54 2.87l-5.34-3.08 1.85-1.07 4.87 2.81a4.55 4.55 0 0 1-1.38 7.24l-.13-.08-4.38-2.53a.76.76 0 0 0-.38-.66v-2.68zm2.4-3.74l-.13-.08-4.38-2.53a.76.76 0 0 0-.76 0l-5.34 3.08V6.68l4.87-2.81a4.55 4.55 0 0 1 5.74 4.48zm-11.4-6.3a4.56 4.56 0 0 1 3.23.99l-.13.08-4.38 2.53a.76.76 0 0 0-.38.66v6.17l-1.85-1.07V7.81a4.55 4.55 0 0 1 3.51-4.72z"/></svg>
+              </div>
+              <div class="combo-micro-icon micro-duo-2" title="Google One AI">
+                <svg width="12" height="20" viewBox="0 0 87.39 176.01" fill="none"><g transform="translate(-42.14 -7)"><path d="m129.53 144.99v18.46c0 10.8-8.73 19.56-19.5 19.56s-19.5-8.75-19.5-19.56v-48.33z" fill="#34a853"/><path d="m129.53 26.56v118.43l-39-29.87v-47.1l31.91-26.38c4.68-3.86 7.09-9.45 7.09-15.08z" fill="#4285F4"/><path d="m129.52 25.88c.01.22.01.44.01.67 0 5.63-2.41 11.22-7.09 15.08l-31.91 26.38v-41.45c0-6.4 3.07-12.1 7.84-15.67.34-.26.68-.5 1.05-.73.17-.11.33-.22.5-.32.31-.2.64-.38.94-.54l.86-.43.72-.3c.47-.18.96-.32 1.46-.42.27-.05.53-.1.81-.13.48-.06.97-.09 1.47-.09 5.3 0 10.27 2.15 13.9 5.63l.36.35 1.09 1.13c4.76 5.25 7.69 12.18 7.9 19.82z" fill="#ea4335"/><path d="m129.52 25.88c-.21-7.64-3.14-14.57-7.9-19.82l-1.09-1.13-.36-.35c-3.63-3.48-8.6-5.63-13.9-5.63-.5 0-.99.03-1.47.09-.28.03-.54.08-.81.13-.5.1-1 .24-1.46.42l-.72.3-.86.43c-.3.16-.63.34-.94.54-.17.1-.33.21-.5.32-.37.23-.71.47-1.05.73-4.77 3.57-7.84 9.27-7.84 15.67v1.89h.01v39.56l39-32.08c4.68-3.86 7.09-9.45 7.09-15.08 0-.23 0-.45-.01-.67z" fill="#fbbc05"/></g></svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="combo-pitch">Tu agencia personal impulsada por IA. Acelera entregas y guarda infinitas versiones en la nube.</p>
       </div>
-      <div class="combo-title">Pack Creadores · Pro</div>
-      <div class="combo-includes" onclick="event.stopPropagation();"><a class="incl-link" href="/chatgpt/" onclick="gtag('event','product_click',{product:'ChatGPT Plus',location:'combos_page'})">ChatGPT Plus Mensual</a> + <a class="incl-link" href="/google-one/" onclick="gtag('event','product_click',{product:'Google One',location:'combos_page'})">Google One 5TB Mensual</a></div>
-      <p class="combo-pitch">Tu agencia personal impulsada por IA. Acelera entregas y guarda infinitas versiones en la nube.</p>
       <div class="combo-bottom">
         <span class="combo-price-row"><span class="combo-old">S/70</span><span class="combo-new">S/63</span></span>
         <div class="combo-actions">
           <button class="share-btn" type="button" aria-label="Compartir pack" onclick="event.stopPropagation();"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M8 7l4-4 4 4"/><path d="M4 13v6a2 2 0 002 2h12a2 2 0 002-2v-6"/></svg></button>
-          <div class="card-select-pill">
-            Elegir pack ↗
-          </div>
+          <div class="card-select-pill">Elegir pack ↗</div>
         </div>
       </div>
     </div>
@@ -497,7 +785,7 @@
       const oldPrice = combo.querySelector('.combo-old').textContent;
       const newPrice = combo.querySelector('.combo-new').textContent;
       const title = titleEl.textContent.startsWith('Pack') ? titleEl.textContent : `Pack ${titleEl.textContent}`;
-      const url = titleEl.id ? `${location.origin}/combos/#${titleEl.id}` : `${location.origin}/combos/`;
+      const url = combo.id ? `${location.origin}/combos/#${combo.id}` : `${location.origin}/combos/`;
       const text = `${title}: antes ${oldPrice}, ahora ${newPrice} en JNxKeys.\nLicencias originales con garantía.\n${url}\nhttps://www.facebook.com/JNxKeys/`;
       gtag('event', 'combo_share', { combo: titleEl.textContent });
       window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`, '_blank');
