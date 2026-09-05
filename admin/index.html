@@ -435,11 +435,11 @@
   <div class="location-nav-wrap">
     <div class="location-nav-label">
       <span>Filtrar por Ubicación en la Tienda:</span>
-      <span id="showingCountText" style="font-weight:600;color:#94A3B8;">Mostrando 34 ubicaciones</span>
+      <span id="showingCountText" style="font-weight:600;color:#94A3B8;">Mostrando 33 ubicaciones</span>
     </div>
     <div class="location-tabs" id="locationTabs">
-      <button class="loc-tab-btn active" onclick="selectTab('all', this)">🌐 Todas <span class="tab-count" id="count_all">34</span></button>
-      <button class="loc-tab-btn" onclick="selectTab('home', this)">🏠 Portada Web <span class="tab-count" id="count_home">2</span></button>
+      <button class="loc-tab-btn active" onclick="selectTab('all', this)">🌐 Todas <span class="tab-count" id="count_all">33</span></button>
+      <button class="loc-tab-btn" onclick="selectTab('home', this)">🏠 Portada Web <span class="tab-count" id="count_home">1</span></button>
       <button class="loc-tab-btn" onclick="selectTab('windows', this)">🪟 Windows <span class="tab-count" id="count_windows">4</span></button>
       <button class="loc-tab-btn" onclick="selectTab('office', this)">📄 Office <span class="tab-count" id="count_office">3</span></button>
       <button class="loc-tab-btn" onclick="selectTab('google-one', this)">☁️ Google One & IA <span class="tab-count" id="count_google-one">3</span></button>
@@ -453,7 +453,7 @@
 
   <!-- SEARCH BAR -->
   <div class="search-filter-bar">
-    <input type="text" id="adFilterInput" placeholder="🔍 Buscar por título, ubicación o palabra clave (ej. portada, catalogo, yape, combos, windows, garantía)..." oninput="filterAds()">
+    <input type="text" id="adFilterInput" placeholder="🔍 Buscar por título, ubicación o palabra clave (ej. portada, combos, yape, windows, garantía)..." oninput="filterAds()">
   </div>
 
   <!-- ADS CARDS GRID -->
@@ -466,16 +466,10 @@
 // METADATOS DE UBICACIÓN PARA CADA ESPACIO PUBLICITARIO
 var SLOT_METADATA = {
   // 🏠 Portada
-  "home_catalogo_ad": {
-    category: "home",
-    name: "Banner Catálogo Principal",
-    location: "🏠 Portada Web — Debajo de la Cuadrícula del Catálogo",
-    url: "/#catalogo"
-  },
   "home_combos_ad": {
     category: "home",
-    name: "Banner Packs y Combos",
-    location: "🏠 Portada Web — Debajo del Carrusel de Combos",
+    name: "Tarjeta Destacada en Carrusel de Packs",
+    location: "🏠 Portada Web — Tarjeta en Carrusel de Packs y Combos (Mismo tamaño que tarjeta)",
     url: "/#combos"
   },
 

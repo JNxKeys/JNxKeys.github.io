@@ -278,23 +278,14 @@
     "cta_text": "Comprar Apple One por WU →",
     "link_url": "https://wa.me/51925244643?text=Deseo%20comprar%20Apple%20One%20por%20Western%20Union"
   },
-  "home_catalogo_ad": {
-    "badge": "🔥 OFERTA EXCLUSIVA CATÁLOGO",
-    "title": "Equipa tu PC Completa con Descuento Especial",
-    "desc": "Combina tu sistema operativo con suites de oficina y antivirus original con entrega inmediata en 5 minutos.",
-    "media_type": "image",
-    "media_url": "/assets/img/combo_365_google_canva.jpg",
-    "cta_text": "Consultar Oferta Especial por WhatsApp →",
-    "link_url": "https://wa.me/51925244643?text=Hola,%20vi%20la%20oferta%20del%20catálogo%20y%20deseo%20más%20información"
-  },
   "home_combos_ad": {
-    "badge": "💼 PACKS EMPRESARIALES & FAMILIARES",
-    "title": "¿Necesitas múltiples licencias para tu negocio?",
-    "desc": "Armamos cotizaciones a tu medida para 2, 5 o más equipos con descuentos por volumen y factura.",
+    "badge": "🔥 PACK DESTACADO",
+    "title": "Pack Creadores Pro",
+    "desc": "Canva Pro + CapCut Pro + ChatGPT Plus en un solo pack con ahorro exclusivo y activación oficial.",
     "media_type": "image",
     "media_url": "/assets/img/combo_365_google_canva.jpg",
-    "cta_text": "Pedir Cotización de Packs por WhatsApp →",
-    "link_url": "https://wa.me/51925244643?text=Hola,%20deseo%20cotizar%20un%20pack%20personalizado%20para%20varios%20equipos"
+    "cta_text": "Ver Combo en Catálogo",
+    "link_url": "/combos/#pack-creadores-pro"
   },
   "windows_ad": {
     "badge": "⚡ RECOMENDADO",

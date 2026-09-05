@@ -885,6 +885,31 @@
         .combo-old-price { font-size: 14px; color: #94A3B8; text-decoration: line-through; }
         .combo-new-price { font-size: 24px; font-weight: 900; color: #D97706; }
 
+        .ad-slot-combo {
+            flex: 0 0 calc(33.333% - 14px);
+            scroll-snap-align: start;
+            display: flex;
+        }
+        .ad-slot-combo:empty {
+            display: none !important;
+        }
+        .ad-slot-combo .combo-card {
+            flex: 1 1 100%;
+            width: 100%;
+            height: 100%;
+            min-height: 100%;
+        }
+        .combo-card-featured {
+            border: 1.5px solid #3B82F6 !important;
+            background: linear-gradient(160deg, #FFFFFF 40%, #EFF6FF 100%) !important;
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.12) !important;
+        }
+        .combo-card-featured:hover {
+            border-color: #1D4ED8 !important;
+            transform: translateY(-4px);
+            box-shadow: 0 16px 35px -8px rgba(37, 99, 235, 0.22) !important;
+        }
+
         .combo-card-more {
             flex: 0 0 220px;
             scroll-snap-align: start;
@@ -1124,7 +1149,7 @@
             .hero-ctas { justify-content: center; }
             .trust-grid { grid-template-columns: repeat(2, 1fr); }
             .products-grid { grid-auto-columns: calc((100% - 20px) / 2); gap: 20px; }
-            .combo-card { flex: 0 0 calc(50% - 10px); }
+            .combo-card, .ad-slot-combo { flex: 0 0 calc(50% - 10px); }
             .review-card { flex: 0 0 calc((100% - 20px) / 2); }
             .footer-grid { grid-template-columns: repeat(2, 1fr); gap: 32px; }
         }
@@ -1236,7 +1261,7 @@
             .trust-grid { grid-template-columns: 1fr; }
             .catalog-header-wrap { flex-direction: column; align-items: flex-start; }
             .products-grid { grid-auto-columns: 88%; gap: 16px; }
-            .combo-card { flex: 0 0 85%; }
+            .combo-card, .ad-slot-combo { flex: 0 0 85%; }
             .reviews-header-wrap { flex-direction: column; align-items: flex-start; }
             .review-card { flex: 0 0 88%; scroll-snap-align: center; scroll-snap-stop: always; padding: 22px 20px; }
             .metrics-bar { grid-template-columns: 1fr; gap: 20px; padding: 20px; }
@@ -1590,6 +1615,9 @@
                     </div>
                 </a>
 
+                <!-- Tarjeta Dinámica de Combo / Oferta -->
+                <div class="ad-slot ad-slot-combo" data-ad-id="home_combos_ad"></div>
+
                 <a class="combo-card-more" href="/combos/" onclick="gtag('event','more_combos_click')">
                     <div style="width: 44px; height: 44px; border-radius: 50%; background: var(--gradient-primary); display: flex; align-items: center; justify-content: center; color: #fff;">
                         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 6l6 6-6 6"/></svg>
@@ -1600,9 +1628,6 @@
                     </div>
                 </a>
             </div>
-
-            <!-- Espacio Publicitario Dinámico - Combos -->
-            <div class="ad-slot" data-ad-id="home_combos_ad" style="margin: 28px auto 0; max-width: 860px; width: 100%;"></div>
         </section>
 
         <!-- TARJETAS DE CATÁLOGO INNOVADORAS Y TECNOLÓGICAS CON LOGOS OFICIALES REALES -->
@@ -1839,9 +1864,6 @@
                 </a>
 
             </div>
-
-            <!-- Espacio Publicitario Dinámico - Catálogo -->
-            <div class="ad-slot" data-ad-id="home_catalogo_ad" style="margin: 36px auto 0; max-width: 860px; width: 100%;"></div>
         </section>
 
         <!-- Social Proof Testimonials Carousel -->

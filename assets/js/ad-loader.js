@@ -17,10 +17,35 @@
     var adBadge = adData.badge || 'OFERTA DESTACADA';
     var adTitle = adData.title || '';
     var adDesc = adData.desc || '';
-    var adCta = adData.cta_text || 'Consultar por WhatsApp →';
-    var adLink = adData.link_url || '#';
+    var adCta = adData.cta_text || 'Ver Combo';
+    var adLink = adData.link_url || '/combos/';
     var cleanTitle = adTitle.replace(/'/g, '');
 
+    // Formato especial: Tarjeta integrada en el carrusel de Packs y Combos
+    if (container.classList.contains('ad-slot-combo')) {
+      container.innerHTML = 
+        '<a class="combo-card combo-card-featured" href="' + adLink + '" onclick="if(window.gtag){gtag(\'event\',\'combo_click\',{combo:\'' + cleanTitle + '\'});}">' +
+          '<div>' +
+            '<div class="combo-top">' +
+              '<span class="combo-tag" style="background: rgba(37,99,235,0.12); color: #1D4ED8; border: 1px solid rgba(37,99,235,0.25);">' + adBadge + '</span>' +
+              '<span class="combo-save" style="background: linear-gradient(135deg, #F59E0B, #D97706); color: #fff;">DESTACADO</span>' +
+            '</div>' +
+            '<h3 class="combo-title">' + adTitle + '</h3>' +
+            '<p class="combo-includes">' + adDesc + '</p>' +
+          '</div>' +
+          '<div class="combo-price-row" style="justify-content: space-between; align-items: center; width: 100%; border-top: 1px dashed rgba(37,99,235,0.25); padding-top: 12px; margin-top: 14px;">' +
+            '<span class="combo-new-price" style="font-size: 15px; font-weight: 800; color: #2563EB; display: flex; align-items: center; gap: 4px;">' +
+              adCta + ' →' +
+            '</span>' +
+            '<div style="width: 32px; height: 32px; border-radius: 50%; background: #EFF6FF; border: 1px solid rgba(37,99,235,0.25); display: flex; align-items: center; justify-content: center; color: #2563EB;">' +
+              '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 6l6 6-6 6"/></svg>' +
+            '</div>' +
+          '</div>' +
+        '</a>';
+      return;
+    }
+
+    // Formato estándar para otras páginas y pasarelas
     container.innerHTML = 
       '<div class="ad-slot-card">' +
         '<span class="ad-badge">' + adBadge + '</span>' +
