@@ -54,6 +54,17 @@
     var slots = document.querySelectorAll('.ad-slot');
     if (!slots.length) return;
 
+    function applyAds(data) {
+      slots.forEach(function(slot) {
+        var adId = slot.getAttribute('data-ad-id');
+        if (adId) {
+          var ad = resolveAd(adId, data);
+          if (ad) renderAd(slot, ad);
+        }
+      });
+    }
+
+    // 1. Instant render from localStorage if present
     var customAds = null;
     try {
       var stored = localStorage.getItem('jnxkeys_custom_ads');
@@ -61,32 +72,23 @@
     } catch(e) {}
 
     if (customAds) {
-      slots.forEach(function(slot) {
-        var adId = slot.getAttribute('data-ad-id');
-        if (adId) {
-          var ad = resolveAd(adId, customAds);
-          if (ad) renderAd(slot, ad);
+      applyAds(customAds);
+    }
+
+    // 2. Fetch fresh ads.json with cache buster to synchronize with disk/server updates
+    fetch('/assets/data/ads.json?t=' + Date.now())
+      .then(function(res) {
+        if (!res.ok) throw new Error('Network error');
+        return res.json();
+      })
+      .then(function(adsData) {
+        applyAds(adsData);
+      })
+      .catch(function(err) {
+        if (!customAds) {
+          console.warn('JNxKeys ad-loader fallback:', err.message);
         }
       });
-    } else {
-      fetch('/assets/data/ads.json')
-        .then(function(res) {
-          if (!res.ok) throw new Error('Network error');
-          return res.json();
-        })
-        .then(function(adsData) {
-          slots.forEach(function(slot) {
-            var adId = slot.getAttribute('data-ad-id');
-            if (adId) {
-              var ad = resolveAd(adId, adsData);
-              if (ad) renderAd(slot, ad);
-            }
-          });
-        })
-        .catch(function(err) {
-          console.warn('JNxKeys ad-loader:', err.message);
-        });
-    }
   }
 
   if (document.readyState === 'loading') {

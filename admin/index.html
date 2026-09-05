@@ -3,17 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JNxKeys — Panel Administrador de Publicidad</title>
+  <title>JNxKeys — Panel de Administración de Publicaciones y Ubicaciones</title>
   <link rel="icon" type="image/png" href="/assets/img/favicon.png">
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/common.css">
   <style>
     :root {
       --admin-bg: #0B0F19;
+      --admin-surface: #111827;
       --admin-card: #151D2E;
       --admin-border: rgba(255, 255, 255, 0.1);
+      --admin-border-hover: rgba(255, 255, 255, 0.22);
       --admin-accent: #2563EB;
       --admin-green: #10B981;
+      --admin-amber: #F59E0B;
       --admin-text: #F8FAFC;
       --admin-muted: #94A3B8;
     }
@@ -23,136 +26,311 @@
       background: var(--admin-bg);
       color: var(--admin-text);
       min-height: 100vh;
-      padding: 30px 20px 60px;
+      padding: 24px 16px 80px;
     }
     .admin-container {
-      max-width: 1200px;
+      max-width: 1280px;
       margin: 0 auto;
     }
+    
+    /* HEADER */
     .admin-header {
-      margin-bottom: 28px;
-      border-bottom: 1px solid var(--admin-border);
-      padding-bottom: 20px;
+      background: var(--admin-surface);
+      border: 1px solid var(--admin-border);
+      border-radius: 20px;
+      padding: 24px 28px;
+      margin-bottom: 24px;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
-      gap: 16px;
+      gap: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
     }
     .admin-title-wrap {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 16px;
     }
     .admin-title-wrap img {
-      width: 44px;
-      height: 44px;
-      border-radius: 12px;
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
       border: 1px solid rgba(255,255,255,0.2);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
     }
     .admin-header h1 {
       font-size: 22px;
       font-weight: 800;
       color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
     }
     .admin-header p {
       color: var(--admin-muted);
-      font-size: 13px;
-      margin-top: 2px;
+      font-size: 13.5px;
+      margin-top: 4px;
+    }
+    .status-pill {
+      font-size: 11px;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 100px;
+      letter-spacing: 0.04em;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .status-pill.online {
+      background: rgba(16, 185, 129, 0.15);
+      color: #34D399;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+    .status-pill.local {
+      background: rgba(245, 158, 11, 0.15);
+      color: #FBBF24;
+      border: 1px solid rgba(245, 158, 11, 0.3);
     }
     .admin-actions {
       display: flex;
       flex-wrap: wrap;
+      align-items: center;
       gap: 10px;
     }
     .btn-action {
       background: var(--admin-green);
       color: white;
       border: none;
-      padding: 10px 20px;
+      padding: 11px 22px;
       border-radius: 100px;
       font-weight: 800;
-      font-size: 13px;
+      font-size: 13.5px;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      transition: transform 0.2s, background 0.2s;
+      text-decoration: none;
+      transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3);
     }
     .btn-action:hover {
       transform: translateY(-2px);
       background: #059669;
     }
+    .btn-action:active {
+      transform: translateY(0);
+    }
     .btn-secondary {
-      background: rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.07);
       color: var(--admin-text);
       border: 1px solid var(--admin-border);
+      box-shadow: none;
     }
     .btn-secondary:hover {
-      background: rgba(255,255,255,0.15);
-      border-color: rgba(255,255,255,0.25);
+      background: rgba(255,255,255,0.14);
+      border-color: var(--admin-border-hover);
     }
+    .btn-web {
+      background: rgba(37, 99, 235, 0.2);
+      color: #60A5FA;
+      border: 1px solid rgba(37, 99, 235, 0.4);
+      box-shadow: none;
+    }
+    .btn-web:hover {
+      background: rgba(37, 99, 235, 0.35);
+      color: #93C5FD;
+    }
+
+    /* STATUS BANNER */
+    .status-msg {
+      padding: 14px 20px;
+      background: rgba(16, 185, 129, 0.18);
+      border: 1px solid #10B981;
+      border-radius: 14px;
+      color: #34D399;
+      margin-bottom: 24px;
+      display: none;
+      font-weight: 700;
+      font-size: 14px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      animation: fadeIn 0.3s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* LOCATION TABS & NAVIGATION */
+    .location-nav-wrap {
+      background: var(--admin-surface);
+      border: 1px solid var(--admin-border);
+      border-radius: 16px;
+      padding: 16px 20px;
+      margin-bottom: 24px;
+    }
+    .location-nav-label {
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--admin-muted);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .location-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .loc-tab-btn {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--admin-border);
+      color: var(--admin-muted);
+      padding: 8px 14px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.18s ease;
+    }
+    .loc-tab-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: #FFFFFF;
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+    .loc-tab-btn.active {
+      background: var(--admin-accent);
+      color: #FFFFFF;
+      border-color: #3B82F6;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+    }
+    .loc-tab-btn .tab-count {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 2px 7px;
+      border-radius: 100px;
+      font-size: 11px;
+    }
+
+    /* SEARCH FILTER */
     .search-filter-bar {
       margin-bottom: 24px;
       display: flex;
       gap: 12px;
-      flex-wrap: wrap;
     }
     .search-filter-bar input {
       flex: 1;
-      min-width: 260px;
       background: var(--admin-card);
       border: 1px solid var(--admin-border);
-      padding: 11px 16px;
-      border-radius: 12px;
+      padding: 13px 18px;
+      border-radius: 14px;
       color: white;
-      font-size: 14px;
+      font-size: 14.5px;
       outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
     }
     .search-filter-bar input:focus {
       border-color: var(--admin-accent);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
     }
+
+    /* ADS GRID */
     .ad-editor-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(520px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(560px, 1fr));
       gap: 24px;
     }
-    @media (max-width: 600px) {
+    @media (max-width: 640px) {
       .ad-editor-grid { grid-template-columns: 1fr; }
     }
+
+    /* AD CARD */
     .ad-card-editor {
       background: var(--admin-card);
       border: 1px solid var(--admin-border);
-      border-radius: 18px;
+      border-radius: 20px;
       padding: 22px;
       display: flex;
       flex-direction: column;
       gap: 16px;
-      position: relative;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .ad-card-editor:hover {
+      border-color: var(--admin-border-hover);
     }
     .ad-card-editor-head {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       justify-content: space-between;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      padding-bottom: 14px;
+      gap: 12px;
+      flex-wrap: wrap;
     }
-    .ad-card-editor h3 {
-      font-size: 15px;
-      font-weight: 800;
-      color: #F59E0B;
+    .ad-loc-info {
       display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .ad-loc-badge {
+      display: inline-flex;
       align-items: center;
       gap: 6px;
+      font-size: 14.5px;
+      font-weight: 800;
+      color: #FBBF24;
     }
+    .ad-loc-sub {
+      font-size: 12px;
+      color: var(--admin-muted);
+    }
+    .slot-key-code {
+      font-family: monospace;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 3px 8px;
+      border-radius: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 11.5px;
+      color: #93C5FD;
+    }
+    .btn-view-web {
+      background: rgba(37, 99, 235, 0.15);
+      color: #60A5FA;
+      border: 1px solid rgba(37, 99, 235, 0.35);
+      border-radius: 8px;
+      padding: 6px 12px;
+      font-size: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: all 0.18s ease;
+    }
+    .btn-view-web:hover {
+      background: #2563EB;
+      color: #FFFFFF;
+      transform: translateY(-1px);
+    }
+
+    /* CARD CONTENT */
     .ad-editor-content {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 18px;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 20px;
     }
-    @media (max-width: 900px) {
+    @media (max-width: 960px) {
       .ad-editor-content { grid-template-columns: 1fr; }
     }
+
     .form-group {
       margin-bottom: 12px;
     }
@@ -161,102 +339,442 @@
       font-size: 11px;
       font-weight: 700;
       color: var(--admin-muted);
-      margin-bottom: 4px;
+      margin-bottom: 5px;
       text-transform: uppercase;
       letter-spacing: 0.04em;
     }
     .form-group input, .form-group textarea {
       width: 100%;
-      background: rgba(0, 0, 0, 0.3);
+      background: rgba(0, 0, 0, 0.35);
       border: 1px solid var(--admin-border);
       border-radius: 10px;
       padding: 9px 12px;
       color: white;
       font-size: 13px;
+      font-family: inherit;
       outline: none;
-      transition: border-color 0.15s;
+      transition: border-color 0.15s, box-shadow 0.15s;
     }
     .form-group input:focus, .form-group textarea:focus {
       border-color: var(--admin-accent);
+      box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
     }
     .form-group textarea {
       resize: vertical;
-      height: 54px;
+      height: 58px;
     }
+    .quick-images {
+      display: flex;
+      gap: 6px;
+      margin-top: 5px;
+      flex-wrap: wrap;
+    }
+    .btn-quick-img {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: var(--admin-muted);
+      font-size: 10.5px;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .btn-quick-img:hover {
+      background: rgba(255,255,255,0.15);
+      color: #FFFFFF;
+    }
+
     .preview-box-wrap {
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 8px;
     }
     .preview-box-label {
       font-size: 11px;
       font-weight: 700;
       color: var(--admin-muted);
       text-transform: uppercase;
-    }
-    .status-msg {
-      padding: 12px 18px;
-      background: rgba(16, 185, 129, 0.15);
-      border: 1px solid #10B981;
-      border-radius: 12px;
-      color: #34D399;
-      margin-bottom: 24px;
-      display: none;
-      font-weight: 600;
-      font-size: 14px;
+      letter-spacing: 0.04em;
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
   </style>
 </head>
 <body>
 
 <div class="admin-container">
+  <!-- HEADER -->
   <div class="admin-header">
     <div class="admin-title-wrap">
       <img src="/assets/img/favicon.png" alt="JNxKeys">
       <div>
-        <h1>📢 Panel de Publicidad Dinámica — JNxKeys</h1>
-        <p>Configura ofertas, banners y campañas en tiempo real para todas las páginas de la tienda.</p>
+        <h1>
+          📢 Administrador de Publicaciones y Ubicaciones
+          <span id="serverStatusBadge" class="status-pill local">Comprobando conexión...</span>
+        </h1>
+        <p>Administra y visualiza en tiempo real las ofertas, banners y mensajes para cada ubicación de la web.</p>
       </div>
     </div>
     <div class="admin-actions">
-      <button class="btn-action btn-secondary" onclick="resetDefaults()">🔄 Restaurar Default</button>
-      <button class="btn-action btn-secondary" onclick="exportJson()">📥 Descargar ads.json</button>
-      <button class="btn-action" onclick="saveAds()">💾 Guardar en Navegador</button>
+      <a href="/" target="_blank" class="btn-action btn-web" title="Ver la tienda web en vivo">🏪 Ir a la Tienda Web</a>
+      <button class="btn-action btn-secondary" onclick="resetDefaults()" title="Restaurar valores originales">🔄 Restaurar Default</button>
+      <button class="btn-action btn-secondary" onclick="exportJson()" title="Descargar archivo ads.json">📥 Descargar ads.json</button>
+      <button class="btn-action" onclick="saveAds()" id="btnSaveMain">💾 Guardar Publicaciones</button>
     </div>
   </div>
 
-  <div id="statusBox" class="status-msg">✅ Cambios guardados correctamente en el navegador.</div>
-
-  <div class="search-filter-bar">
-    <input type="text" id="adFilterInput" placeholder="🔍 Filtrar anuncios por nombre (ej. windows, office, canva, yape)..." oninput="filterAds()">
+  <!-- STATUS BANNER -->
+  <div id="statusBox" class="status-msg">
+    <span id="statusText">✅ Cambios guardados con éxito en ads.json y aplicados a la tienda web.</span>
+    <button onclick="document.getElementById('statusBox').style.display='none'" style="background:none;border:none;color:inherit;cursor:pointer;font-weight:800;">✕</button>
   </div>
 
+  <!-- LOCATION TABS FILTER -->
+  <div class="location-nav-wrap">
+    <div class="location-nav-label">
+      <span>Filtrar por Ubicación en la Tienda:</span>
+      <span id="showingCountText" style="font-weight:600;color:#94A3B8;">Mostrando 34 ubicaciones</span>
+    </div>
+    <div class="location-tabs" id="locationTabs">
+      <button class="loc-tab-btn active" onclick="selectTab('all', this)">🌐 Todas <span class="tab-count" id="count_all">34</span></button>
+      <button class="loc-tab-btn" onclick="selectTab('home', this)">🏠 Portada Web <span class="tab-count" id="count_home">2</span></button>
+      <button class="loc-tab-btn" onclick="selectTab('windows', this)">🪟 Windows <span class="tab-count" id="count_windows">4</span></button>
+      <button class="loc-tab-btn" onclick="selectTab('office', this)">📄 Office <span class="tab-count" id="count_office">3</span></button>
+      <button class="loc-tab-btn" onclick="selectTab('google-one', this)">☁️ Google One & IA <span class="tab-count" id="count_google-one">3</span></button>
+      <button class="loc-tab-btn" onclick="selectTab('antivirus', this)">🛡️ Antivirus <span class="tab-count" id="count_antivirus">6</span></button>
+      <button class="loc-tab-btn" onclick="selectTab('creativos', this)">🎨 Diseño & Video <span class="tab-count" id="count_creativos">9</span></button>
+      <button class="loc-tab-btn" onclick="selectTab('apple-one', this)">🍎 Apple One <span class="tab-count" id="count_apple-one">3</span></button>
+      <button class="loc-tab-btn" onclick="selectTab('combos', this)">💼 Packs & Combos <span class="tab-count" id="count_combos">1</span></button>
+      <button class="loc-tab-btn" onclick="selectTab('global', this)">🌐 Globales / Pasarelas <span class="tab-count" id="count_global">3</span></button>
+    </div>
+  </div>
+
+  <!-- SEARCH BAR -->
+  <div class="search-filter-bar">
+    <input type="text" id="adFilterInput" placeholder="🔍 Buscar por título, ubicación o palabra clave (ej. portada, catalogo, yape, combos, windows, garantía)..." oninput="filterAds()">
+  </div>
+
+  <!-- ADS CARDS GRID -->
   <div id="adsFormContainer" class="ad-editor-grid">
     <!-- Formularios generados dinámicamente -->
   </div>
 </div>
 
 <script>
+// METADATOS DE UBICACIÓN PARA CADA ESPACIO PUBLICITARIO
+var SLOT_METADATA = {
+  // 🏠 Portada
+  "home_catalogo_ad": {
+    category: "home",
+    name: "Banner Catálogo Principal",
+    location: "🏠 Portada Web — Debajo de la Cuadrícula del Catálogo",
+    url: "/#catalogo"
+  },
+  "home_combos_ad": {
+    category: "home",
+    name: "Banner Packs y Combos",
+    location: "🏠 Portada Web — Debajo del Carrusel de Combos",
+    url: "/#combos"
+  },
+
+  // 🪟 Windows
+  "windows_ad": {
+    category: "windows",
+    name: "Windows — Banner Pantalla 1",
+    location: "🪟 Windows — Pantalla 1 (Detalle de Características)",
+    url: "/windows/"
+  },
+  "windows_confianza_ad": {
+    category: "windows",
+    name: "Windows — Garantía y Confianza",
+    location: "🪟 Windows — Pantalla 2 (¿Es seguro comprar?)",
+    url: "/windows/#s2"
+  },
+  "windows_yape_ad": {
+    category: "windows",
+    name: "Windows — Oferta Pasarela Yape",
+    location: "🪟 Windows — Pantalla 3 (Modal de Pago Yape)",
+    url: "/windows/#s3"
+  },
+  "windows_wu_ad": {
+    category: "windows",
+    name: "Windows — Envío Western Union",
+    location: "🪟 Windows — Pantalla 3 (Modal Western Union)",
+    url: "/windows/#s3"
+  },
+
+  // 📄 Office
+  "office_confianza_ad": {
+    category: "office",
+    name: "Office — Garantía y Confianza",
+    location: "📄 Office — Pantalla 2 (¿Es seguro comprar?)",
+    url: "/office/#s2"
+  },
+  "office_yape_ad": {
+    category: "office",
+    name: "Office — Oferta Pasarela Yape",
+    location: "📄 Office — Pantalla 3 (Modal de Pago Yape)",
+    url: "/office/#s3"
+  },
+  "office_wu_ad": {
+    category: "office",
+    name: "Office — Envío Western Union",
+    location: "📄 Office — Pantalla 3 (Modal Western Union)",
+    url: "/office/#s3"
+  },
+
+  // ☁️ Google One & IA
+  "google_one_confianza_ad": {
+    category: "google-one",
+    name: "Google One — Garantía y Confianza",
+    location: "☁️ Google One — Pantalla 2 (¿Es seguro comprar?)",
+    url: "/google-one/#s2"
+  },
+  "google_one_yape_ad": {
+    category: "google-one",
+    name: "Google One — Oferta Pasarela Yape",
+    location: "☁️ Google One — Pantalla 3 (Modal de Pago Yape)",
+    url: "/google-one/#s3"
+  },
+  "google_one_wu_ad": {
+    category: "google-one",
+    name: "Google One — Envío Western Union",
+    location: "☁️ Google One — Pantalla 3 (Modal Western Union)",
+    url: "/google-one/#s3"
+  },
+
+  // 🛡️ Antivirus
+  "eset_confianza_ad": {
+    category: "antivirus",
+    name: "ESET — Garantía y Confianza",
+    location: "🛡️ ESET NOD32 — Pantalla 2 (¿Es seguro comprar?)",
+    url: "/eset/#s2"
+  },
+  "eset_yape_ad": {
+    category: "antivirus",
+    name: "ESET — Oferta Pasarela Yape",
+    location: "🛡️ ESET NOD32 — Pantalla 3 (Modal de Pago Yape)",
+    url: "/eset/#s3"
+  },
+  "eset_wu_ad": {
+    category: "antivirus",
+    name: "ESET — Envío Western Union",
+    location: "🛡️ ESET NOD32 — Pantalla 3 (Modal Western Union)",
+    url: "/eset/#s3"
+  },
+  "kaspersky_confianza_ad": {
+    category: "antivirus",
+    name: "Kaspersky — Garantía y Confianza",
+    location: "🛡️ Kaspersky — Pantalla 2 (¿Es seguro comprar?)",
+    url: "/kaspersky/#s2"
+  },
+  "kaspersky_yape_ad": {
+    category: "antivirus",
+    name: "Kaspersky — Oferta Pasarela Yape",
+    location: "🛡️ Kaspersky — Pantalla 3 (Modal de Pago Yape)",
+    url: "/kaspersky/#s3"
+  },
+  "kaspersky_wu_ad": {
+    category: "antivirus",
+    name: "Kaspersky — Envío Western Union",
+    location: "🛡️ Kaspersky — Pantalla 3 (Modal Western Union)",
+    url: "/kaspersky/#s3"
+  },
+
+  // 🎨 Diseño & Video
+  "canva_confianza_ad": {
+    category: "creativos",
+    name: "Canva Pro — Garantía y Confianza",
+    location: "🎨 Canva Pro — Pantalla 2 (¿Es seguro comprar?)",
+    url: "/canva/#s2"
+  },
+  "canva_yape_ad": {
+    category: "creativos",
+    name: "Canva Pro — Oferta Pasarela Yape",
+    location: "🎨 Canva Pro — Pantalla 3 (Modal de Pago Yape)",
+    url: "/canva/#s3"
+  },
+  "canva_wu_ad": {
+    category: "creativos",
+    name: "Canva Pro — Envío Western Union",
+    location: "🎨 Canva Pro — Pantalla 3 (Modal Western Union)",
+    url: "/canva/#s3"
+  },
+  "capcut_confianza_ad": {
+    category: "creativos",
+    name: "CapCut Pro — Garantía y Confianza",
+    location: "🎬 CapCut Pro — Pantalla 2 (¿Es seguro comprar?)",
+    url: "/capcut/#s2"
+  },
+  "capcut_yape_ad": {
+    category: "creativos",
+    name: "CapCut Pro — Oferta Pasarela Yape",
+    location: "🎬 CapCut Pro — Pantalla 3 (Modal de Pago Yape)",
+    url: "/capcut/#s3"
+  },
+  "capcut_wu_ad": {
+    category: "creativos",
+    name: "CapCut Pro — Envío Western Union",
+    location: "🎬 CapCut Pro — Pantalla 3 (Modal Western Union)",
+    url: "/capcut/#s3"
+  },
+  "chatgpt_confianza_ad": {
+    category: "creativos",
+    name: "ChatGPT Plus — Garantía y Confianza",
+    location: "🤖 ChatGPT Plus — Pantalla 2 (¿Es seguro comprar?)",
+    url: "/chatgpt/#s2"
+  },
+  "chatgpt_yape_ad": {
+    category: "creativos",
+    name: "ChatGPT Plus — Oferta Pasarela Yape",
+    location: "🤖 ChatGPT Plus — Pantalla 3 (Modal de Pago Yape)",
+    url: "/chatgpt/#s3"
+  },
+  "chatgpt_wu_ad": {
+    category: "creativos",
+    name: "ChatGPT Plus — Envío Western Union",
+    location: "🤖 ChatGPT Plus — Pantalla 3 (Modal Western Union)",
+    url: "/chatgpt/#s3"
+  },
+
+  // 🍎 Apple One
+  "apple_one_confianza_ad": {
+    category: "apple-one",
+    name: "Apple One — Garantía y Confianza",
+    location: "🍎 Apple One — Pantalla 2 (¿Es seguro comprar?)",
+    url: "/apple-one/#s2"
+  },
+  "apple_one_yape_ad": {
+    category: "apple-one",
+    name: "Apple One — Oferta Pasarela Yape",
+    location: "🍎 Apple One — Pantalla 3 (Modal de Pago Yape)",
+    url: "/apple-one/#s3"
+  },
+  "apple_one_wu_ad": {
+    category: "apple-one",
+    name: "Apple One — Envío Western Union",
+    location: "🍎 Apple One — Pantalla 3 (Modal Western Union)",
+    url: "/apple-one/#s3"
+  },
+
+  // 💼 Combos
+  "combos_footer_ad": {
+    category: "combos",
+    name: "Packs & Combos — Pie de Catálogo",
+    location: "💼 Packs & Combos — Pie del Catálogo Completo",
+    url: "/combos/"
+  },
+
+  // 🌐 Pasarelas Globales (Fallback)
+  "global_confianza_ad": {
+    category: "global",
+    name: "Plantilla Global — Garantía JNxKeys",
+    location: "🌐 Fallback Global — Pantalla 2 en todas las categorías",
+    url: "/#catalogo"
+  },
+  "global_yape_ad": {
+    category: "global",
+    name: "Plantilla Global — Oferta Yape",
+    location: "🌐 Fallback Global — Modal Yape en todas las categorías",
+    url: "/#combos"
+  },
+  "global_wu_ad": {
+    category: "global",
+    name: "Plantilla Global — Envío Western Union",
+    location: "🌐 Fallback Global — Modal Western Union en todas las categorías",
+    url: "/#catalogo"
+  }
+};
+
 var currentAds = {};
+var activeCategory = 'all';
+var isServerOnline = false;
+
+function checkServerStatus() {
+  var badge = document.getElementById('serverStatusBadge');
+  fetch('/api/save-ads', {
+    method: 'OPTIONS'
+  })
+  .then(function(res) {
+    if (res.ok || res.status === 200 || res.status === 204) {
+      isServerOnline = true;
+      badge.textContent = '🟢 Servidor Conectado (127.0.0.1:8000)';
+      badge.className = 'status-pill online';
+    } else {
+      throw new Error('No API');
+    }
+  })
+  .catch(function() {
+    isServerOnline = false;
+    badge.textContent = '🟡 Modo LocalStorage';
+    badge.className = 'status-pill local';
+  });
+}
 
 function initAdmin() {
-  var stored = localStorage.getItem('jnxkeys_custom_ads');
-  if (stored) {
-    try {
-      currentAds = JSON.parse(stored);
-      renderForms();
-      return;
-    } catch(e){}
-  }
-  fetch('/assets/data/ads.json')
+  checkServerStatus();
+
+  // Intentamos cargar de ads.json fresco
+  fetch('/assets/data/ads.json?t=' + Date.now())
     .then(function(r) { return r.json(); })
     .then(function(data) {
       currentAds = data;
+      // Si hay algo guardado en localStorage que sea más reciente
+      var stored = localStorage.getItem('jnxkeys_custom_ads');
+      if (stored) {
+        try {
+          var local = JSON.parse(stored);
+          // Mezclamos respetando claves nuevas
+          Object.keys(local).forEach(function(k) {
+            currentAds[k] = local[k];
+          });
+        } catch(e){}
+      }
+      updateCounts();
       renderForms();
     })
     .catch(function(err) {
       console.error('Error cargando ads.json:', err);
+      var stored = localStorage.getItem('jnxkeys_custom_ads');
+      if (stored) {
+        try {
+          currentAds = JSON.parse(stored);
+          updateCounts();
+          renderForms();
+        } catch(e){}
+      }
     });
+}
+
+function updateCounts() {
+  var counts = { all: 0, home: 0, windows: 0, office: 0, 'google-one': 0, antivirus: 0, creativos: 0, 'apple-one': 0, combos: 0, global: 0 };
+  Object.keys(currentAds).forEach(function(key) {
+    counts.all++;
+    var meta = SLOT_METADATA[key];
+    if (meta && counts[meta.category] !== undefined) {
+      counts[meta.category]++;
+    }
+  });
+
+  Object.keys(counts).forEach(function(cat) {
+    var el = document.getElementById('count_' + cat);
+    if (el) el.textContent = counts[cat];
+  });
+}
+
+function selectTab(cat, btn) {
+  activeCategory = cat;
+  var buttons = document.querySelectorAll('.loc-tab-btn');
+  buttons.forEach(function(b) { b.classList.remove('active'); });
+  if (btn) btn.classList.add('active');
+  renderForms(document.getElementById('adFilterInput').value);
+}
+
+function filterAds() {
+  var text = document.getElementById('adFilterInput').value;
+  renderForms(text);
 }
 
 function renderForms(filterText) {
@@ -264,64 +782,104 @@ function renderForms(filterText) {
   container.innerHTML = '';
 
   var keys = Object.keys(currentAds);
-  if (filterText) {
+
+  // Filtrado por categoría de ubicación
+  if (activeCategory !== 'all') {
     keys = keys.filter(function(k) {
-      return k.toLowerCase().indexOf(filterText.toLowerCase()) !== -1;
+      var meta = SLOT_METADATA[k];
+      return meta && meta.category === activeCategory;
     });
   }
 
+  // Filtrado por texto
+  if (filterText) {
+    var query = filterText.toLowerCase();
+    keys = keys.filter(function(k) {
+      var ad = currentAds[k] || {};
+      var meta = SLOT_METADATA[k] || {};
+      var matchKey = k.toLowerCase().indexOf(query) !== -1;
+      var matchTitle = (ad.title || '').toLowerCase().indexOf(query) !== -1;
+      var matchLoc = (meta.location || '').toLowerCase().indexOf(query) !== -1;
+      var matchBadge = (ad.badge || '').toLowerCase().indexOf(query) !== -1;
+      var matchName = (meta.name || '').toLowerCase().indexOf(query) !== -1;
+      return matchKey || matchTitle || matchLoc || matchBadge || matchName;
+    });
+  }
+
+  document.getElementById('showingCountText').textContent = 'Mostrando ' + keys.length + ' de ' + Object.keys(currentAds).length + ' ubicaciones';
+
   if (!keys.length) {
-    container.innerHTML = '<p style="color:var(--admin-muted);grid-column:1/-1;text-align:center;padding:40px;">No se encontraron anuncios con ese criterio.</p>';
+    container.innerHTML = '<p style="color:var(--admin-muted);grid-column:1/-1;text-align:center;padding:50px 20px;font-size:15px;">🔍 No se encontraron ubicaciones publicitarias con los filtros seleccionados.</p>';
     return;
   }
 
   keys.forEach(function(key) {
     var ad = currentAds[key];
+    var meta = SLOT_METADATA[key] || {
+      name: key,
+      location: 'Ubicación dinámica: ' + key,
+      url: '/'
+    };
+
     var isVideo = ad.media_type === 'video' || (ad.media_url && ad.media_url.match(/\.(mp4|webm)$/i));
     var mediaHtml = isVideo
       ? '<video src="' + (ad.media_url || '') + '" autoplay loop muted playsinline></video>'
-      : '<img src="' + (ad.media_url || '/assets/img/combo_365_google_canva.jpg') + '" alt="Preview">';
+      : '<img src="' + (ad.media_url || '/assets/img/combo_365_google_canva.jpg') + '" alt="Preview" onerror="this.onerror=null;this.src=\'/assets/img/combo_365_google_canva.jpg\';">';
 
     var html = 
       '<div class="ad-card-editor" id="card_' + key + '">' +
         '<div class="ad-card-editor-head">' +
-          '<h3>📌 Slot: ' + key + '</h3>' +
+          '<div class="ad-loc-info">' +
+            '<div class="ad-loc-badge">' + meta.location + '</div>' +
+            '<div class="ad-loc-sub">' +
+              '<span>Slot ID: </span><span class="slot-key-code">' + key + '</span>' +
+            '</div>' +
+          '</div>' +
+          '<div>' +
+            '<a href="' + meta.url + '" target="_blank" class="btn-view-web" title="Ver esta ubicación en la web">' +
+              '👁️ Ver en la Web' +
+            '</a>' +
+          '</div>' +
         '</div>' +
         '<div class="ad-editor-content">' +
           '<div class="form-fields">' +
             '<div class="form-group">' +
-              '<label>Badge / Etiqueta</label>' +
+              '<label>Badge / Etiqueta Superior</label>' +
               '<input type="text" id="' + key + '_badge" value="' + (ad.badge || '') + '" oninput="updatePreview(\'' + key + '\')">' +
             '</div>' +
             '<div class="form-group">' +
-              '<label>Título de la oferta</label>' +
+              '<label>Título Principal de la Oferta</label>' +
               '<input type="text" id="' + key + '_title" value="' + (ad.title || '') + '" oninput="updatePreview(\'' + key + '\')">' +
             '</div>' +
             '<div class="form-group">' +
-              '<label>Descripción corta</label>' +
+              '<label>Descripción del Anuncio</label>' +
               '<textarea id="' + key + '_desc" oninput="updatePreview(\'' + key + '\')">' + (ad.desc || '') + '</textarea>' +
             '</div>' +
             '<div class="form-group">' +
-              '<label>URL de Imagen / GIF / Mini-video (.mp4)</label>' +
+              '<label>URL de Imagen o Video (.mp4 / .webm)</label>' +
               '<input type="text" id="' + key + '_media_url" value="' + (ad.media_url || '') + '" oninput="updatePreview(\'' + key + '\')">' +
+              '<div class="quick-images">' +
+                '<button type="button" class="btn-quick-img" onclick="setImg(\'' + key + '\', \'/assets/img/combo_365_google_canva.jpg\')">🖼️ Combo 365</button>' +
+                '<button type="button" class="btn-quick-img" onclick="setImg(\'' + key + '\', \'/assets/img/jnxkeys_brand_trust.jpg\')">🛡️ Garantía JNx</button>' +
+              '</div>' +
             '</div>' +
             '<div class="form-group">' +
               '<label>Texto del Botón CTA</label>' +
               '<input type="text" id="' + key + '_cta_text" value="' + (ad.cta_text || '') + '" oninput="updatePreview(\'' + key + '\')">' +
             '</div>' +
             '<div class="form-group">' +
-              '<label>Enlace de Destino / WhatsApp</label>' +
+              '<label>Enlace de Destino (WhatsApp o URL)</label>' +
               '<input type="text" id="' + key + '_link_url" value="' + (ad.link_url || '') + '">' +
             '</div>' +
           '</div>' +
           '<div class="preview-box-wrap">' +
-            '<div class="preview-box-label">Vista Previa en Vivo:</div>' +
+            '<div class="preview-box-label"><span>👁️ Vista Previa en Vivo:</span></div>' +
             '<div class="ad-slot-card" id="prev_' + key + '">' +
-              '<span class="ad-badge" id="prev_badge_' + key + '">' + (ad.badge || 'OFERTA') + '</span>' +
+              '<span class="ad-badge" id="prev_badge_' + key + '">' + (ad.badge || 'OFERTA DESTACADA') + '</span>' +
               '<div class="ad-media-wrap" id="prev_media_' + key + '">' + mediaHtml + '</div>' +
               '<h4 class="ad-title" id="prev_title_' + key + '">' + (ad.title || 'Título del anuncio') + '</h4>' +
               '<p class="ad-desc" id="prev_desc_' + key + '">' + (ad.desc || 'Descripción de la oferta especial') + '</p>' +
-              '<a class="ad-cta-btn" id="prev_cta_' + key + '" href="#">' + (ad.cta_text || 'Consultar') + '</a>' +
+              '<a class="ad-cta-btn" id="prev_cta_' + key + '" href="#">' + (ad.cta_text || 'Consultar por WhatsApp →') + '</a>' +
             '</div>' +
           '</div>' +
         '</div>' +
@@ -330,12 +888,20 @@ function renderForms(filterText) {
   });
 }
 
+function setImg(key, url) {
+  var input = document.getElementById(key + '_media_url');
+  if (input) {
+    input.value = url;
+    updatePreview(key);
+  }
+}
+
 function updatePreview(key) {
-  var badge = document.getElementById(key + '_badge').value;
-  var title = document.getElementById(key + '_title').value;
-  var desc = document.getElementById(key + '_desc').value;
-  var mediaUrl = document.getElementById(key + '_media_url').value;
-  var cta = document.getElementById(key + '_cta_text').value;
+  var badge = (document.getElementById(key + '_badge') || {}).value || '';
+  var title = (document.getElementById(key + '_title') || {}).value || '';
+  var desc = (document.getElementById(key + '_desc') || {}).value || '';
+  var mediaUrl = (document.getElementById(key + '_media_url') || {}).value || '';
+  var cta = (document.getElementById(key + '_cta_text') || {}).value || '';
 
   var pBadge = document.getElementById('prev_badge_' + key);
   var pTitle = document.getElementById('prev_title_' + key);
@@ -343,10 +909,10 @@ function updatePreview(key) {
   var pMedia = document.getElementById('prev_media_' + key);
   var pCta = document.getElementById('prev_cta_' + key);
 
-  if (pBadge) pBadge.textContent = badge;
+  if (pBadge) pBadge.textContent = badge || 'OFERTA DESTACADA';
   if (pTitle) pTitle.textContent = title;
   if (pDesc) pDesc.textContent = desc;
-  if (pCta) pCta.textContent = cta;
+  if (pCta) pCta.textContent = cta || 'Consultar →';
 
   if (pMedia && mediaUrl) {
     var isVideo = mediaUrl.match(/\.(mp4|webm)$/i);
@@ -356,12 +922,7 @@ function updatePreview(key) {
   }
 }
 
-function filterAds() {
-  var text = document.getElementById('adFilterInput').value;
-  renderForms(text);
-}
-
-function saveAds() {
+function collectDataFromDOM() {
   Object.keys(currentAds).forEach(function(key) {
     var b = document.getElementById(key + '_badge');
     var t = document.getElementById(key + '_title');
@@ -377,30 +938,78 @@ function saveAds() {
     if (c) currentAds[key].cta_text = c.value;
     if (l) currentAds[key].link_url = l.value;
   });
+}
 
-  localStorage.setItem('jnxkeys_custom_ads', JSON.stringify(currentAds));
+function showStatus(text, isError) {
   var msg = document.getElementById('statusBox');
-  msg.style.display = 'block';
-  setTimeout(function() { msg.style.display = 'none'; }, 3500);
+  var txt = document.getElementById('statusText');
+  txt.textContent = text;
+  if (isError) {
+    msg.style.background = 'rgba(239, 68, 68, 0.18)';
+    msg.style.borderColor = '#EF4444';
+    msg.style.color = '#FCA5A5';
+  } else {
+    msg.style.background = 'rgba(16, 185, 129, 0.18)';
+    msg.style.borderColor = '#10B981';
+    msg.style.color = '#34D399';
+  }
+  msg.style.display = 'flex';
+  setTimeout(function() { msg.style.display = 'none'; }, 5000);
+}
+
+function saveAds() {
+  collectDataFromDOM();
+  var btn = document.getElementById('btnSaveMain');
+  var oldText = btn.textContent;
+  btn.textContent = '⏳ Guardando...';
+  btn.disabled = true;
+
+  // Siempre guardamos en localStorage para persistencia en el navegador del admin
+  localStorage.setItem('jnxkeys_custom_ads', JSON.stringify(currentAds));
+
+  // Conexión con el servidor para persistencia directa en disco (ads.json)
+  fetch('/api/save-ads', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(currentAds)
+  })
+  .then(function(res) {
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    return res.json();
+  })
+  .then(function(data) {
+    btn.textContent = oldText;
+    btn.disabled = false;
+    isServerOnline = true;
+    var badge = document.getElementById('serverStatusBadge');
+    badge.textContent = '🟢 Servidor Conectado (127.0.0.1:8000)';
+    badge.className = 'status-pill online';
+    showStatus('💾 ¡Publicaciones guardadas exitosamente en assets/data/ads.json y actualizadas en toda la tienda web!');
+  })
+  .catch(function(err) {
+    btn.textContent = oldText;
+    btn.disabled = false;
+    console.warn('Fallo guardado servidor:', err);
+    showStatus('⚠️ Cambios guardados en este navegador (servidor local no detectado). Puedes usar "📥 Descargar ads.json" para actualizar el archivo físico.');
+  });
 }
 
 function resetDefaults() {
-  if (!confirm('¿Restaurar todos los anuncios a los valores predeterminados del servidor?')) return;
+  if (!confirm('¿Deseas restaurar todos los anuncios a los valores predeterminados del servidor?')) return;
   localStorage.removeItem('jnxkeys_custom_ads');
-  fetch('/assets/data/ads.json')
+  fetch('/assets/data/ads.json?t=' + Date.now())
     .then(function(r) { return r.json(); })
     .then(function(data) {
       currentAds = data;
       renderForms();
-      var msg = document.getElementById('statusBox');
-      msg.textContent = '🔄 Anuncios restaurados a sus valores originales.';
-      msg.style.display = 'block';
-      setTimeout(function() { msg.style.display = 'none'; }, 3500);
+      showStatus('🔄 Anuncios restaurados a sus valores originales del archivo ads.json.');
     });
 }
 
 function exportJson() {
-  saveAds();
+  collectDataFromDOM();
   var jsonStr = JSON.stringify(currentAds, null, 2);
   var blob = new Blob([jsonStr], { type: 'application/json' });
   var url = URL.createObjectURL(blob);

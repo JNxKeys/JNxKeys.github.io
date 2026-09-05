@@ -277,5 +277,32 @@
     "media_url": "/assets/img/jnxkeys_brand_trust.jpg",
     "cta_text": "Comprar Apple One por WU →",
     "link_url": "https://wa.me/51925244643?text=Deseo%20comprar%20Apple%20One%20por%20Western%20Union"
+  },
+  "home_catalogo_ad": {
+    "badge": "🔥 OFERTA EXCLUSIVA CATÁLOGO",
+    "title": "Equipa tu PC Completa con Descuento Especial",
+    "desc": "Combina tu sistema operativo con suites de oficina y antivirus original con entrega inmediata en 5 minutos.",
+    "media_type": "image",
+    "media_url": "/assets/img/combo_365_google_canva.jpg",
+    "cta_text": "Consultar Oferta Especial por WhatsApp →",
+    "link_url": "https://wa.me/51925244643?text=Hola,%20vi%20la%20oferta%20del%20catálogo%20y%20deseo%20más%20información"
+  },
+  "home_combos_ad": {
+    "badge": "💼 PACKS EMPRESARIALES & FAMILIARES",
+    "title": "¿Necesitas múltiples licencias para tu negocio?",
+    "desc": "Armamos cotizaciones a tu medida para 2, 5 o más equipos con descuentos por volumen y factura.",
+    "media_type": "image",
+    "media_url": "/assets/img/combo_365_google_canva.jpg",
+    "cta_text": "Pedir Cotización de Packs por WhatsApp →",
+    "link_url": "https://wa.me/51925244643?text=Hola,%20deseo%20cotizar%20un%20pack%20personalizado%20para%20varios%20equipos"
+  },
+  "windows_ad": {
+    "badge": "⚡ RECOMENDADO",
+    "title": "Actualiza a Windows 11 Pro Hoy Mismo",
+    "desc": "Seguridad BitLocker, Sandbox, Hyper-V y rendimiento optimizado para gaming y trabajo profesional.",
+    "media_type": "image",
+    "media_url": "/assets/img/combo_365_google_canva.jpg",
+    "cta_text": "Comprar Windows 11 Pro →",
+    "link_url": "https://wa.me/51925244643?text=Deseo%20comprar%20Windows%2011%20Pro"
   }
 }
