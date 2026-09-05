@@ -506,8 +506,10 @@
             .footer-grid { grid-template-columns: repeat(2, 1fr); gap: 32px; }
         }
 
-        @media (max-width: 860px) {
-            .nav-menu { gap: 10px; }
+        @media (max-width: 960px) {
+            .nav-wrap { padding: 10px 16px; }
+            .brand-badge { display: none; }
+            .nav-menu { gap: 12px; }
             .nav-menu a { font-size: 12.5px; }
             .wa-text-full { display: none; }
             .wa-text-short { display: inline; }
@@ -520,7 +522,7 @@
             .nav-wrap { padding: 8px 14px; border-radius: 18px; }
             .brand-name { font-size: 16px; }
             .brand-badge { display: none; }
-            .btn-wa-header { padding: 8px 14px; font-size: 12px; }
+            .btn-wa-header { padding: 7px 12px; font-size: 12px; }
             .nav-menu { display: none; }
             .wa-text-full { display: none; }
             .wa-text-short { display: inline; }
@@ -531,6 +533,16 @@
             .page-title { font-size: 26px; }
             .form-card { padding: 28px 20px; border-radius: 20px; }
             .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+            .wa-fab {
+                width: 50px;
+                height: 50px;
+                right: 16px;
+                bottom: 16px;
+            }
+            .wa-fab svg {
+                width: 28px;
+                height: 28px;
+            }
         }
     </style>
 </head>

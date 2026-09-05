@@ -427,10 +427,16 @@
         .cyber-status .pulse {
             width: 10px; height: 10px; border-radius: 50%; background: #34D399; animation: pulse 2s infinite;
         }
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.7); }
-            70% { box-shadow: 0 0 0 10px rgba(52, 211, 153, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0); }
+        .cyber-badge {
+            font-size: 10px;
+            font-weight: 700;
+            background: var(--gradient-primary);
+            color: #fff;
+            padding: 3px 10px;
+            border-radius: 100px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            white-space: nowrap;
         }
 
         .cyber-grid {
@@ -1122,8 +1128,10 @@
             .footer-grid { grid-template-columns: repeat(2, 1fr); gap: 32px; }
         }
 
-        @media (max-width: 860px) {
-            .nav-menu { gap: 10px; }
+        @media (max-width: 960px) {
+            .nav-wrap { padding: 10px 16px; }
+            .brand-badge { display: none; }
+            .nav-menu { gap: 12px; }
             .nav-menu a { font-size: 12.5px; }
             .wa-text-full { display: none; }
             .wa-text-short { display: inline; }
@@ -1136,19 +1144,94 @@
             .nav-wrap { padding: 8px 14px; border-radius: 18px; }
             .brand-name { font-size: 16px; }
             .brand-badge { display: none; }
-            .btn-wa-header { padding: 8px 14px; font-size: 12px; }
+            .btn-wa-header { padding: 7px 12px; font-size: 12px; }
             .nav-menu { display: none; }
             .wa-text-full { display: none; }
             .wa-text-short { display: inline; }
             .hero-wrapper {
-                padding: 26px 16px;
+                padding: 24px 14px;
                 border-radius: 20px;
                 margin-bottom: 24px;
             }
-            .hero-title { font-size: 26px; line-height: 1.18; }
-            .hero-subtitle { font-size: 13.5px; line-height: 1.5; margin-bottom: 20px; }
-            .hero-ctas { flex-direction: column; width: 100%; gap: 10px; }
-            .btn-primary, .btn-secondary { width: 100%; justify-content: center; padding: 12px 20px; font-size: 14px; text-align: center; }
+            .hero-tag {
+                font-size: 11px;
+                padding: 5px 12px;
+                margin-bottom: 14px;
+                white-space: normal;
+                text-align: center;
+            }
+            .hero-title {
+                font-size: clamp(21px, 5.8vw, 25px);
+                line-height: 1.22;
+                margin-bottom: 12px;
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+            }
+            .hero-subtitle {
+                font-size: 13.5px;
+                line-height: 1.55;
+                margin-bottom: 20px;
+                max-width: 100%;
+            }
+            .hero-ctas {
+                flex-direction: column;
+                width: 100%;
+                gap: 10px;
+            }
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                justify-content: center;
+                padding: 12px 18px;
+                font-size: 14px;
+                text-align: center;
+                box-sizing: border-box;
+            }
+            .cyber-card {
+                padding: 16px 12px;
+                border-radius: 18px;
+                width: 100%;
+                box-sizing: border-box;
+            }
+            .cyber-header {
+                margin-bottom: 12px;
+                padding-bottom: 10px;
+            }
+            .cyber-status {
+                font-size: 11.5px;
+                gap: 6px;
+            }
+            .cyber-badge {
+                font-size: 9.5px;
+                padding: 2px 8px;
+            }
+            .cyber-grid {
+                grid-template-columns: 1fr;
+                gap: 9px;
+            }
+            .cyber-item-link {
+                padding: 10px 12px;
+                border-radius: 12px;
+                gap: 10px;
+            }
+            .cyber-icon-official {
+                width: 38px;
+                height: 38px;
+                border-radius: 10px;
+            }
+            .cyber-icon-official svg {
+                width: 22px;
+                height: 22px;
+            }
+            .cyber-icon-official.dual svg {
+                width: 16px;
+                height: 16px;
+            }
+            .cyber-info-title {
+                font-size: 13.5px;
+            }
+            .cyber-info-sub {
+                font-size: 11px;
+            }
             .trust-grid { grid-template-columns: 1fr; }
             .catalog-header-wrap { flex-direction: column; align-items: flex-start; }
             .products-grid { grid-auto-columns: 88%; gap: 16px; }
@@ -1157,6 +1240,16 @@
             .review-card { flex: 0 0 88%; scroll-snap-align: center; scroll-snap-stop: always; padding: 22px 20px; }
             .metrics-bar { grid-template-columns: 1fr; gap: 20px; padding: 20px; }
             .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+            .wa-fab {
+                width: 50px;
+                height: 50px;
+                right: 16px;
+                bottom: 16px;
+            }
+            .wa-fab svg {
+                width: 28px;
+                height: 28px;
+            }
         }
     </style>
 </head>
@@ -1230,7 +1323,7 @@
                                 <span class="pulse"></span>
                                 Sistema de Activación Online
                             </div>
-                            <span class="brand-badge">Respuesta &lt; 5 min</span>
+                            <span class="cyber-badge">Respuesta &lt; 5 min</span>
                         </div>
 
                         <div class="cyber-grid">
