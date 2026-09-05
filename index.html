@@ -862,12 +862,12 @@
             background: linear-gradient(160deg, #FFFFFF 50%, #F0F7FF 100%);
             border: 1px solid rgba(203, 213, 225, 0.75);
             border-radius: 20px;
-            padding: 24px;
+            padding: 22px 24px;
             text-decoration: none;
             color: inherit;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: flex-start;
             transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04), 0 10px 25px -4px rgba(15, 23, 42, 0.07);
         }
@@ -876,15 +876,28 @@
             border-color: #2563EB;
             box-shadow: 0 16px 35px -8px rgba(37, 99, 235, 0.16);
         }
-        .combo-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+        .combo-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
         .combo-tag { font-size: 11px; font-weight: 800; background: rgba(37, 99, 235, 0.1); color: #2563EB; padding: 4px 10px; border-radius: 100px; text-transform: uppercase; border: 1px solid rgba(37, 99, 235, 0.2); }
         .combo-save { font-size: 11px; font-weight: 800; background: #EF4444; color: #fff; padding: 4px 10px; border-radius: 100px; }
+        .combo-title {
+            font-size: 18px;
+            font-weight: 800;
+            margin: 0 0 6px 0;
+            color: #0F172A;
+            line-height: 1.25;
+        }
+        .combo-includes {
+            font-size: 12.5px;
+            color: #475569;
+            margin: 0;
+            line-height: 1.4;
+        }
         .combo-middle {
             display: flex;
             align-items: center;
             justify-content: space-between;
             gap: 12px;
-            margin-bottom: 8px;
+            margin-bottom: 0;
         }
         .combo-middle-info {
             flex: 1;
@@ -962,7 +975,14 @@
             z-index: 2;
         }
 
-        .combo-price-row { display: flex; align-items: baseline; gap: 10px; }
+        .combo-price-row {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            margin-top: 16px;
+            padding-top: 14px;
+            border-top: 1px dashed rgba(203, 213, 225, 0.75);
+        }
         .combo-old-price { font-size: 14px; color: #94A3B8; text-decoration: line-through; }
         .combo-new-price { font-size: 24px; font-weight: 900; color: #D97706; }
 
@@ -978,7 +998,9 @@
             flex: 1 1 100%;
             width: 100%;
             height: 100%;
-            min-height: 100%;
+        }
+        .ad-slot-combo .ad-slot-card {
+            display: none !important;
         }
         .combo-card-featured {
             border: 1.5px solid #3B82F6 !important;
@@ -1006,6 +1028,7 @@
             justify-content: center;
             text-align: center;
             gap: 12px;
+            min-height: 190px;
             transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
             box-shadow: 0 4px 10px -2px rgba(15, 23, 42, 0.04);
         }
@@ -2374,6 +2397,6 @@
             }, { passive: true });
         })();
     </script>
-    <script src="/assets/js/ad-loader.js"></script>
+    <script src="/assets/js/ad-loader.js?v=2.2"></script>
 </body>
 </html>
