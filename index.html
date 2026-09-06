@@ -805,6 +805,36 @@
             box-shadow: 0 6px 18px rgba(37, 99, 235, 0.35);
         }
 
+        .card-share-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            flex-shrink: 0;
+            border-radius: 10px;
+            border: 1px solid rgba(226, 232, 240, 0.9);
+            background: #FFFFFF;
+            color: #64748B;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+        }
+        .card-share-btn:hover {
+            border-color: #2563EB;
+            color: #2563EB;
+            background: rgba(37, 99, 235, 0.08);
+            transform: scale(1.06);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
+        }
+        .card-share-btn:active {
+            transform: scale(0.92);
+        }
+        .card-share-btn svg {
+            width: 17px;
+            height: 17px;
+        }
+
         /* Combos Section & Carousel */
         .combos-section {
             background: linear-gradient(160deg, #FFFFFF 60%, #F0F7FF 100%);
@@ -1887,8 +1917,13 @@
                             <div class="product-price-label">Desde</div>
                             <div class="product-price-value">S/ 50</div>
                         </div>
-                        <div class="product-btn-icon">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 6l6 6-6 6"/></svg>
+                        <div style="display:flex; align-items:center; gap:8px;">
+                            <button class="card-share-btn" type="button" aria-label="Compartir producto" onclick="event.preventDefault(); event.stopPropagation(); shareProduct('Microsoft Office', 'S/ 50', 'office')">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg>
+                            </button>
+                            <div class="product-btn-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 6l6 6-6 6"/></svg>
+                            </div>
                         </div>
                     </div>
                 </a>
@@ -1910,8 +1945,13 @@
                             <div class="product-price-label">Desde</div>
                             <div class="product-price-value">S/ 60</div>
                         </div>
-                        <div class="product-btn-icon">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 6l6 6-6 6"/></svg>
+                        <div style="display:flex; align-items:center; gap:8px;">
+                            <button class="card-share-btn" type="button" aria-label="Compartir producto" onclick="event.preventDefault(); event.stopPropagation(); shareProduct('Kaspersky Antivirus', 'S/ 60', 'kaspersky')">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg>
+                            </button>
+                            <div class="product-btn-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 6l6 6-6 6"/></svg>
+                            </div>
                         </div>
                     </div>
                 </a>
@@ -1933,8 +1973,13 @@
                             <div class="product-price-label">Desde</div>
                             <div class="product-price-value">S/ 10</div>
                         </div>
-                        <div class="product-btn-icon">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 6l6 6-6 6"/></svg>
+                        <div style="display:flex; align-items:center; gap:8px;">
+                            <button class="card-share-btn" type="button" aria-label="Compartir producto" onclick="event.preventDefault(); event.stopPropagation(); shareProduct('Google One AI Plus', 'S/ 10', 'google-one')">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg>
+                            </button>
+                            <div class="product-btn-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 6l6 6-6 6"/></svg>
+                            </div>
                         </div>
                     </div>
                 </a>
@@ -1956,8 +2001,13 @@
                             <div class="product-price-label">Desde</div>
                             <div class="product-price-value">S/ 35</div>
                         </div>
-                        <div class="product-btn-icon">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 6l6 6-6 6"/></svg>
+                        <div style="display:flex; align-items:center; gap:8px;">
+                            <button class="card-share-btn" type="button" aria-label="Compartir producto" onclick="event.preventDefault(); event.stopPropagation(); shareProduct('Windows 10 / 11 Pro', 'S/ 35', 'windows')">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg>
+                            </button>
+                            <div class="product-btn-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 6l6 6-6 6"/></svg>
+                            </div>
                         </div>
                     </div>
                 </a>
@@ -1979,8 +2029,13 @@
                             <div class="product-price-label">Desde</div>
                             <div class="product-price-value">S/ 35</div>
                         </div>
-                        <div class="product-btn-icon">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 6l6 6-6 6"/></svg>
+                        <div style="display:flex; align-items:center; gap:8px;">
+                            <button class="card-share-btn" type="button" aria-label="Compartir producto" onclick="event.preventDefault(); event.stopPropagation(); shareProduct('Antivirus ESET Nod32', 'S/ 35', 'eset')">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg>
+                            </button>
+                            <div class="product-btn-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 6l6 6-6 6"/></svg>
+                            </div>
                         </div>
                     </div>
                 </a>
@@ -2002,8 +2057,13 @@
                             <div class="product-price-label">Mensual</div>
                             <div class="product-price-value">S/ 50</div>
                         </div>
-                        <div class="product-btn-icon">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 6l6 6-6 6"/></svg>
+                        <div style="display:flex; align-items:center; gap:8px;">
+                            <button class="card-share-btn" type="button" aria-label="Compartir producto" onclick="event.preventDefault(); event.stopPropagation(); shareProduct('ChatGPT Plus', 'S/ 50', 'chatgpt')">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg>
+                            </button>
+                            <div class="product-btn-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 6l6 6-6 6"/></svg>
+                            </div>
                         </div>
                     </div>
                 </a>
@@ -2025,8 +2085,13 @@
                             <div class="product-price-label">Anual</div>
                             <div class="product-price-value">S/ 15</div>
                         </div>
-                        <div class="product-btn-icon">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 6l6 6-6 6"/></svg>
+                        <div style="display:flex; align-items:center; gap:8px;">
+                            <button class="card-share-btn" type="button" aria-label="Compartir producto" onclick="event.preventDefault(); event.stopPropagation(); shareProduct('Canva Pro', 'S/ 15', 'canva')">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg>
+                            </button>
+                            <div class="product-btn-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 6l6 6-6 6"/></svg>
+                            </div>
                         </div>
                     </div>
                 </a>
@@ -2048,8 +2113,13 @@
                             <div class="product-price-label">Mensual</div>
                             <div class="product-price-value">S/ 25</div>
                         </div>
-                        <div class="product-btn-icon">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 6l6 6-6 6"/></svg>
+                        <div style="display:flex; align-items:center; gap:8px;">
+                            <button class="card-share-btn" type="button" aria-label="Compartir producto" onclick="event.preventDefault(); event.stopPropagation(); shareProduct('CapCut Pro', 'S/ 25', 'capcut')">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg>
+                            </button>
+                            <div class="product-btn-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 6l6 6-6 6"/></svg>
+                            </div>
                         </div>
                     </div>
                 </a>
@@ -2071,8 +2141,13 @@
                             <div class="product-price-label">Mensual</div>
                             <div class="product-price-value">S/ 20</div>
                         </div>
-                        <div class="product-btn-icon">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 6l6 6-6 6"/></svg>
+                        <div style="display:flex; align-items:center; gap:8px;">
+                            <button class="card-share-btn" type="button" aria-label="Compartir producto" onclick="event.preventDefault(); event.stopPropagation(); shareProduct('Apple One', 'S/ 20', 'apple-one')">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg>
+                            </button>
+                            <div class="product-btn-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 6l6 6-6 6"/></svg>
+                            </div>
                         </div>
                     </div>
                 </a>
@@ -2458,6 +2533,25 @@
                 setTimeout(startAutoPlay, 2500);
             }, { passive: true });
         })();
+
+        // Share Product function
+        function shareProduct(name, price, path) {
+            const url = `${location.origin}/${path}/`;
+            const text = `${name} desde ${price} en JNxKeys.\nLicencias originales con garantía.\n${url}\nhttps://www.facebook.com/JNxKeys/`;
+            if (typeof gtag === 'function') {
+                gtag('event', 'product_share', { product: name, item: name });
+            }
+            if (navigator.share) {
+                navigator.share({
+                    title: `${name} | JNxKeys`,
+                    text: text,
+                    url: url
+                }).catch(() => {});
+            } else {
+                window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`, '_blank');
+            }
+        }
+
     </script>
     <script src="/assets/js/ad-loader.js?v=2.2"></script>
 </body>
