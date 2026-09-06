@@ -980,7 +980,7 @@ function switchTikTokVideo(videoId, titleText, btn) {
         <div style="font-size: 13px; color: #64748B; line-height: 1.5; margin-bottom: 16px;">
           🔒 <strong>Licencias 100% Genuinas y Privadas</strong> en tu propia cuenta con activación paso a paso.
         </div>
-        <a href="https://wa.me/51925244643?text=Hola,%20deseo%20asesoría%20sobre%20las%20licencias%20de%20Google%20One" target="_blank" style="display: flex; align-items: center; justify-content: center; gap: 8px; background: #25D366; color: #FFFFFF; font-family: 'Outfit', sans-serif; font-size: 13.5px; font-weight: 800; padding: 12px 18px; border-radius: 100px; text-decoration: none; box-shadow: 0 4px 16px rgba(37, 211, 102, 0.35); transition: transform 0.18s ease;">
+        <a href="https://wa.me/51925244643?text=Hola,%20deseo%20asesoría%20sobre%20las%20licencias%20de%20Google%20One" target="_blank" onclick="gtag('event','whatsapp_click',{product:'Google One',location:'brand_trust_sidebar'})" style="display: flex; align-items: center; justify-content: center; gap: 8px; background: #25D366; color: #FFFFFF; font-family: 'Outfit', sans-serif; font-size: 13.5px; font-weight: 800; padding: 12px 18px; border-radius: 100px; text-decoration: none; box-shadow: 0 4px 16px rgba(37, 211, 102, 0.35); transition: transform 0.18s ease;">
           💬 Asesoría por WhatsApp ↗
         </a>
       </div>
@@ -1320,34 +1320,32 @@ planNext.addEventListener('click', ()=>{
   const idx = Math.min(planSlides.length - 1, currentPlanIndex() + 1);
   smoothScrollTo(planCarousel, planSlideOffset(planSlides[idx]), 550);
 });
+function shareProduct(name, price, id) {
+  const url = id ? `${location.origin}/google-one/#${id}` : `${location.origin}/google-one/`;
+  const text = `${name} a ${price} en JNxKeys.\nLicencias originales con garantía.\n${url}\nhttps://www.facebook.com/JNxKeys/`;
+  gtag('event', 'plan_share', { product: 'Google One', plan: name });
+  window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`, '_blank');
+}
+
 function selectedPlanOpt(slide){
   return slide.querySelector('.plan-opt.featured') || slide.querySelector('.plan-opt');
 }
-function updatePlanWaBtn(slide){
-  const selected = selectedPlanOpt(slide);
-  const planName = slide.querySelector('.plan-name').textContent.trim();
-  const duration = selected.querySelector('.plan-opt-label').textContent.trim();
-  const price = selected.querySelector('.plan-opt-price').textContent.trim();
-  const waBtn = slide.querySelector('.plan-wa-btn');
-  const text = `Deseo información del plan ${planName} ${duration} (${price}) de Google One`;
-  waBtn.href = `https://wa.me/51925244643?text=${encodeURIComponent(text)}`;
-}
+
 document.querySelectorAll('.plan-slide').forEach(slide => {
   const opts = slide.querySelectorAll('.plan-opt');
   opts.forEach(opt => {
     opt.addEventListener('click', () => {
       opts.forEach(o => o.classList.remove('featured'));
       opt.classList.add('featured');
-      updatePlanWaBtn(slide);
     });
   });
-  updatePlanWaBtn(slide);
 });
 
 document.querySelectorAll('.plan-share-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation();
     const slide = btn.closest('.plan-slide');
-    const name = slide.querySelector('.plan-name').textContent;
+    const name = slide.querySelector('.plan-name').textContent.trim();
     const selected = selectedPlanOpt(slide);
     const duration = selected.querySelector('.plan-opt-label').textContent.trim();
     const price = selected.querySelector('.plan-opt-price').textContent.trim();

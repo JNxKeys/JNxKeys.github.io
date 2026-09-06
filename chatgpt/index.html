@@ -818,6 +818,13 @@ function switchPaymentTab(type) {
   }
 }
 
+function shareProduct(name, price, id) {
+  const url = id ? `${location.origin}/chatgpt/#${id}` : `${location.origin}/chatgpt/`;
+  const text = `${name} a ${price} en JNxKeys.\nLicencias originales con garantía.\n${url}\nhttps://www.facebook.com/JNxKeys/`;
+  gtag('event', 'product_share', { product: 'ChatGPT Plus', item: name });
+  window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`, '_blank');
+}
+
 document.querySelectorAll('.card-share-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     const card = btn.closest('.prod-card');

@@ -265,8 +265,8 @@ h1.hero em { font-style: italic; color: var(--ms-blue); }
 }
 
 .card-type-row {
-  display: flex; align-items: center;
-  justify-content: space-between; gap: 10px; margin-bottom: 12px;
+  display: flex; align-items: center; flex-wrap: wrap;
+  justify-content: space-between; gap: 8px; margin-bottom: 12px;
 }
 
 .type-badge {
@@ -1426,8 +1426,16 @@ function switchPaymentTab(type) {
   }
 }
 
+function shareProduct(name, price, id) {
+  const url = id ? `${location.origin}/office/#${id}` : `${location.origin}/office/`;
+  const text = `${name} a ${price} en JNxKeys.\nLicencias originales con garantía.\n${url}\nhttps://www.facebook.com/JNxKeys/`;
+  gtag('event', 'product_share', { product: 'Office', item: name });
+  window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`, '_blank');
+}
+
 document.querySelectorAll('.card-share-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation();
     const card = btn.closest('.prod-card');
     const name = card.querySelector('.card-name').textContent.trim();
     const price = card.querySelector('.price-num').textContent.trim();

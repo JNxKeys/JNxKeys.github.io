@@ -1080,6 +1080,13 @@ function goScreen(id){
   gtag('event', 'screen_view_product', { product: 'Windows', screen: id });
 }
 
+function shareProduct(name, price, id) {
+  const url = id ? `${location.origin}/windows/#${id}` : `${location.origin}/windows/`;
+  const text = `${name} a ${price} en JNxKeys.\nLicencias originales con garantía.\n${url}\nhttps://www.facebook.com/JNxKeys/`;
+  gtag('event', 'product_share', { product: 'Windows', item: name });
+  window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`, '_blank');
+}
+
 document.querySelectorAll('.card-share-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     const card = btn.closest('.prod-card');
