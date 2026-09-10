@@ -10,6 +10,8 @@ window.JNX_PRODUCTS = {
   "chatgpt":    { active: true },
   "canva":      { active: true },
   "capcut":     { active: true },
+  "youtube":    { active: true },
+  "spotify":    { active: true },
   "eset":       { active: true },
   "kaspersky":  { active: true },
   "apple-one":  { active: false }
