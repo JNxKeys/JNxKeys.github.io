@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://jnxkeys.github.io/sitemap.xml
+Sitemap: https://jnxkeys.com/sitemap.xml
