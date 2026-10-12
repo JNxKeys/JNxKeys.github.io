@@ -24,14 +24,94 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "JNxKeys",
-      "url": "https://jnxkeys.com/",
-      "logo": "https://jnxkeys.com/assets/img/jnxkeys-logo.png",
-      "description": "Licencias digitales originales de Windows, ESET, Google One AI Plus, Kaspersky, Microsoft Office, Canva y ChatGPT Plus para clientes en Perú.",
-      "address": { "@type": "PostalAddress", "addressCountry": "PE" },
-      "areaServed": "PE",
-      "sameAs": ["https://www.facebook.com/JNxKeys/"]
+      "@graph": [
+        {
+          "@type": "Store",
+          "@id": "https://jnxkeys.com/#store",
+          "name": "JNxKeys",
+          "url": "https://jnxkeys.com/",
+          "logo": "https://jnxkeys.com/assets/img/jnxkeys-logo.png",
+          "image": "https://jnxkeys.com/assets/img/jnxkeys-logo.png",
+          "description": "Tienda de licencias digitales 100% originales en Perú: Windows 10/11 Pro, Microsoft Office, ESET, Kaspersky, Google One AI Plus y ChatGPT Plus con entrega inmediata vía WhatsApp y pago por Yape.",
+          "priceRange": "S/ 20 - S/ 150",
+          "paymentAccepted": "Yape, Plin, Transferencia BCP, BBVA, Tarjeta",
+          "currenciesAccepted": "PEN",
+          "areaServed": {
+            "@type": "Country",
+            "name": "Perú"
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "PE",
+            "addressLocality": "Lima"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "164",
+            "bestRating": "5",
+            "worstRating": "1"
+          },
+          "sameAs": [
+            "https://www.facebook.com/JNxKeys/",
+            "https://www.tiktok.com/@jnxkeys"
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://jnxkeys.com/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "¿Las licencias son 100% originales y legales?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sí. Todas nuestras licencias de Windows y Microsoft Office son claves oficiales (OEM y Retail) originales, legales y permanentes que se activan directamente en los servidores de Microsoft. Los antivirus (ESET, Kaspersky) y servicios de streaming/IA cuentan con suscripciones oficiales y garantía de activación total."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿En cuánto tiempo y por qué medio recibo mi licencia?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "La entrega es inmediata, habitualmente entre 5 a 15 minutos tras confirmar tu pago. Te enviamos la clave de producto original, el enlace de descarga oficial y una guía paso a paso directamente por WhatsApp o correo electrónico."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Qué métodos de pago aceptan en Perú?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Aceptamos pagos directos sin comisiones por Yape, Plin y transferencias bancarias nacionales (BCP, BBVA, Interbank). También aceptamos pagos con tarjeta de crédito/débito (*sujeto a disponibilidad y confirmación previa por WhatsApp). Para clientes internacionales disponemos de Western Union."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Qué sucede si tengo problemas durante la activación?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Cuentas con soporte técnico personalizado por WhatsApp los 7 días de la semana. Te guiamos paso a paso y, si lo prefieres, te asistimos de forma remota vía AnyDesk o TeamViewer para que tu software quede 100% activo y funcionando sin costo extra."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Puedo formatear o reinstalar mi sistema sin perder la licencia?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Depende del tipo de licencia seleccionada. Las licencias permanentes con vinculación a cuenta Microsoft o licencias Retail permiten reactivación tras formateos en el mismo equipo. Otras opciones OEM más económicas son de activación única por instalación. En cada producto de nuestra web especificamos si soporta formateo para que elijas la que mejor se adapte a tu necesidad."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Emiten comprobante o atienden pedidos para empresas?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sí. Emitimos una Constancia Digital de Compra y Garantía de Activación detallada con código de pedido y fecha para cada cliente. Si requieres cotización formal para tu oficina, empresa o negocio, contáctanos por WhatsApp y te preparamos una propuesta personalizada por volumen."
+              }
+            }
+          ]
+        }
+      ]
     }
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1443,6 +1523,78 @@
                 height: 28px;
             }
         }
+
+        /* FAQ SECTION */
+        .faq-section {
+            padding: 70px 0 50px;
+            max-width: 860px;
+            margin: 0 auto;
+        }
+        .faq-accordion-wrap {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        .faq-item {
+            background: #FFFFFF;
+            border: 1px solid var(--border-glass, #E2E8F0);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.25s ease;
+            box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
+        }
+        .faq-item:hover {
+            border-color: rgba(37, 99, 235, 0.4);
+            box-shadow: 0 6px 16px rgba(37, 99, 235, 0.06);
+        }
+        .faq-item[open] {
+            border-color: rgba(37, 99, 235, 0.5);
+            box-shadow: 0 8px 24px rgba(37, 99, 235, 0.08);
+        }
+        .faq-question {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 20px 24px;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-primary, #0F172A);
+            cursor: pointer;
+            user-select: none;
+        }
+        .faq-question::-webkit-details-marker {
+            display: none;
+        }
+        .faq-icon {
+            font-size: 20px;
+            font-weight: 600;
+            color: #2563EB;
+            transition: transform 0.25s ease;
+            line-height: 1;
+            flex-shrink: 0;
+        }
+        .faq-item[open] .faq-icon {
+            transform: rotate(45deg);
+        }
+        .faq-answer {
+            padding: 0 24px 20px;
+            font-size: 15px;
+            line-height: 1.65;
+            color: var(--text-secondary, #475569);
+            border-top: 1px solid rgba(226, 232, 240, 0.6);
+            margin-top: 4px;
+            padding-top: 16px;
+        }
+        .faq-answer p {
+            margin: 0;
+        }
+        @media (max-width: 768px) {
+            .faq-section { padding: 45px 0 25px; }
+            .faq-question { font-size: 15px; padding: 16px 18px; }
+            .faq-answer { font-size: 14px; padding: 0 18px 16px; padding-top: 12px; }
+        }
     </style>
 </head>
 <body>
@@ -1462,6 +1614,7 @@
                     <li><a href="/#catalogo">Catálogo</a></li>
                     <li><a href="/#combos">Packs & Combos</a></li>
                     <li><a href="/#testimonios">Opiniones</a></li>
+                    <li><a href="/#faq">Preguntas</a></li>
                     <li><a href="/contacto/">Contacto</a></li>
                 </ul>
                 <a href="https://wa.me/51925244643?text=Hola%20JNxKeys,%20quisiera%20información%20de%20sus%20licencias%20digitales" target="_blank" onclick="gtag('event','whatsapp_click',{product:'general',location:'header'})" class="btn-wa-header">
@@ -2079,29 +2232,6 @@
                     </div>
                 </a>
 
-                <!-- 9. Apple One (Col 5, Fila 1) -->
-                <a class="product-card" data-category="diseno streaming" data-product="apple-one" href="/apple-one/" onclick="gtag('event','product_click',{product:'Apple One'})">
-                    <div>
-                        <div class="product-card-top">
-                            <div class="product-chip-real">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="#000000"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.35c.67-.81 1.13-1.94 1-3.07-.97.04-2.16.65-2.85 1.46-.62.72-1.16 1.88-1.01 3 1.08.08 2.2-.58 2.86-1.39z"/></svg>
-                            </div>
-                            <span class="product-badge-instant">Inmediato</span>
-                        </div>
-                        <h3 class="product-title">Apple One</h3>
-                        <p class="product-desc">iCloud+, TV+, Music y Arcade agrupados en una sola suscripción.</p>
-                    </div>
-                    <div class="product-card-bottom">
-                        <div>
-                            <div class="product-price-label">Mensual</div>
-                            <div class="product-price-value">S/ 20</div>
-                        </div>
-                        <div class="product-btn-icon">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 6l6 6-6 6"/></svg>
-                        </div>
-                    </div>
-                </a>
-
                 <!-- 10. YouTube Premium -->
                 <a class="product-card" data-category="streaming" data-product="youtube" href="/youtube/" onclick="gtag('event','product_click',{product:'YouTube Premium'})">
                     <div>
@@ -2274,6 +2404,83 @@
 
             <!-- Carousel Dots -->
             <div class="reviews-dots" id="reviewsDots"></div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section" id="faq">
+            <div class="section-header" style="text-align: center; margin-bottom: 36px;">
+                <span class="section-tag">Dudas y Respuestas</span>
+                <h2 class="section-title">Preguntas Frecuentes</h2>
+                <p class="section-desc">Todo lo que necesitas saber antes de comprar tu licencia digital con total seguridad y garantía.</p>
+            </div>
+
+            <div class="faq-accordion-wrap">
+                <!-- FAQ Item 1 -->
+                <details class="faq-item" open>
+                    <summary class="faq-question">
+                        <span>¿Las licencias son 100% originales y legales?</span>
+                        <span class="faq-icon">+</span>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>Sí. Todas nuestras licencias de Windows y Microsoft Office son claves oficiales (OEM y Retail) originales, legales y permanentes que se activan directamente en los servidores de Microsoft. Los antivirus (ESET, Kaspersky) y servicios de streaming/IA cuentan con suscripciones oficiales y garantía de activación total.</p>
+                    </div>
+                </details>
+
+                <!-- FAQ Item 2 -->
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        <span>¿En cuánto tiempo y por qué medio recibo mi licencia?</span>
+                        <span class="faq-icon">+</span>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>La entrega es inmediata, habitualmente entre 5 a 15 minutos tras confirmar tu pago. Te enviamos la clave de producto original, el enlace de descarga oficial y una guía paso a paso directamente por WhatsApp o correo electrónico.</p>
+                    </div>
+                </details>
+
+                <!-- FAQ Item 3 -->
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        <span>¿Qué métodos de pago aceptan en Perú?</span>
+                        <span class="faq-icon">+</span>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>Aceptamos pagos directos sin comisiones por Yape, Plin y transferencias bancarias nacionales (BCP, BBVA, Interbank). También aceptamos pagos con tarjeta de crédito/débito (*sujeto a disponibilidad y confirmación previa por WhatsApp). Para clientes internacionales disponemos de Western Union.</p>
+                    </div>
+                </details>
+
+                <!-- FAQ Item 4 -->
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        <span>¿Qué sucede si tengo problemas durante la activación?</span>
+                        <span class="faq-icon">+</span>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>Cuentas con soporte técnico personalizado por WhatsApp los 7 días de la semana. Te guiamos paso a paso y, si lo prefieres, te asistimos de forma remota vía AnyDesk o TeamViewer para que tu software quede 100% activo y funcionando sin costo extra.</p>
+                    </div>
+                </details>
+
+                <!-- FAQ Item 5 -->
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        <span>¿Puedo formatear o reinstalar mi sistema sin perder la licencia?</span>
+                        <span class="faq-icon">+</span>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>Depende del tipo de licencia seleccionada. Las licencias permanentes con vinculación a cuenta Microsoft o licencias Retail permiten reactivación tras formateos en el mismo equipo. Otras opciones OEM más económicas son de activación única por instalación. En cada producto de nuestra web especificamos si soporta formateo para que elijas la que mejor se adapte a tu necesidad.</p>
+                    </div>
+                </details>
+
+                <!-- FAQ Item 6 -->
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        <span>¿Emiten comprobante o atienden pedidos para empresas?</span>
+                        <span class="faq-icon">+</span>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>Sí. Emitimos una Constancia Digital de Compra y Garantía de Activación detallada con código de pedido y fecha para cada cliente. Si requieres cotización formal para tu oficina, empresa o negocio, contáctanos por WhatsApp y te preparamos una propuesta personalizada por volumen.</p>
+                    </div>
+                </details>
+            </div>
         </section>
 
         <!-- Trust Metrics Bar -->
