@@ -833,9 +833,9 @@
             statusEl.style.background = '#EFF6FF';
             statusEl.style.color = '#1E40AF';
             statusEl.style.border = '1px solid #BFDBFE';
-            statusEl.innerText = 'Enviando tu solicitud a ventas@jnxkeys.com...';
+            statusEl.innerText = 'Enviando tu solicitud a contacto@jnxkeys.com...';
 
-            fetch('https://formsubmit.co/ajax/ventas@jnxkeys.com', {
+            fetch('https://formsubmit.co/ajax/contacto@jnxkeys.com', {
                 method: 'POST',
                 headers: { 
                     'Content-Type': 'application/json',
@@ -843,6 +843,7 @@
                 },
                 body: JSON.stringify({
                     _subject: `Nuevo Pedido Especial Web: ${name} (${type})`,
+                    _cc: 'ventas@jnxkeys.com,gerencia@jnxkeys.com',
                     Nombre_o_Empresa: name,
                     WhatsApp: wa,
                     Correo_Cliente: mail || 'No proporcionado',
@@ -857,7 +858,7 @@
                 statusEl.style.background = '#ECFDF5';
                 statusEl.style.color = '#065F46';
                 statusEl.style.border = '1px solid #A7F3D0';
-                statusEl.innerHTML = '✅ <strong>¡Mensaje enviado con éxito!</strong> Tu solicitud ha llegado directamente a nuestro correo oficial (ventas@jnxkeys.com). Te responderemos a la brevedad.';
+                statusEl.innerHTML = '✅ <strong>¡Mensaje enviado con éxito!</strong> Tu solicitud ha llegado a nuestro equipo (contacto@jnxkeys.com). Te responderemos a la brevedad.';
                 
                 // Limpiar campos
                 document.getElementById('clientName').value = '';
