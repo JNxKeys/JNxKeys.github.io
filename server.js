@@ -77,6 +77,8 @@ const server = http.createServer((req, res) => {
 
   if (ext === '.html' || ext === '.json') {
     res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+  } else {
+    res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
   }
 
   res.writeHead(200, { 'Content-Type': contentType });
