@@ -121,7 +121,7 @@
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600&display=optional" rel="stylesheet">
     <link rel="preload" as="image" href="/assets/img/hero_tech_bg.webp" type="image/webp" fetchpriority="high">
     <link rel="stylesheet" href="/assets/css/common.css">
 
@@ -314,11 +314,19 @@
         .hero-wrapper::before {
             content: '';
             position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.86) 0%, rgba(30, 41, 59, 0.80) 100%);
+            pointer-events: none;
+            z-index: 1;
+        }
+        .hero-cover-img {
+            position: absolute;
             top: -6%;
             left: -6%;
             width: 112%;
             height: 112%;
-            background: linear-gradient(135deg, rgba(15, 23, 42, 0.86) 0%, rgba(30, 41, 59, 0.80) 100%), url('/assets/img/hero_tech_bg.webp') center/cover no-repeat;
+            object-fit: cover;
+            object-position: center;
             pointer-events: none;
             z-index: 0;
             animation: heroCoverPan 22s ease-in-out infinite alternate;
@@ -372,17 +380,18 @@
 
         .hero-scanner {
             position: absolute;
-            top: 0; left: -100%;
+            top: 0; left: 0;
             width: 50%; height: 100%;
             background: linear-gradient(90deg, transparent 0%, rgba(56, 189, 248, 0.18) 50%, transparent 100%);
-            transform: skewX(-25deg);
+            transform: translateX(-150%) skewX(-25deg);
+            will-change: transform;
             animation: scannerSweep 7s ease-in-out infinite;
             pointer-events: none;
             z-index: 1;
         }
         @keyframes scannerSweep {
-            0% { left: -100%; }
-            50%, 100% { left: 180%; }
+            0% { transform: translateX(-150%) skewX(-25deg); }
+            50%, 100% { transform: translateX(250%) skewX(-25deg); }
         }
 
         .hero {
@@ -1643,6 +1652,7 @@
         
         <!-- HERO SECTION CON FOTO TECNOLÓGICA Y CYBER CARD CON ACCESOS DIRECTOS -->
         <div class="hero-wrapper">
+            <img src="/assets/img/hero_tech_bg.webp" alt="JNxKeys Tecnología" class="hero-cover-img" fetchpriority="high" width="1400" height="700">
             <div class="hero-glow-orb-1"></div>
             <div class="hero-glow-orb-2"></div>
             <div class="hero-scanner"></div>
