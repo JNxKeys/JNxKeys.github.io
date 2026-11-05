@@ -226,8 +226,7 @@
             background: linear-gradient(135deg, rgba(15, 23, 42, 0.90) 0%, rgba(30, 41, 59, 0.85) 100%), url('/assets/img/hero_tech_bg.webp') center/cover no-repeat;
             pointer-events: none;
             z-index: 0;
-            animation: heroCoverPan 25s ease-in-out infinite alternate;
-            will-change: transform;
+            /* animation removed for performance */
         }
         .nav-wrap > * {
             position: relative;
@@ -303,7 +302,7 @@
         /* HERO SECTION CON FOTO/TEXTURA TECNOLÓGICA CON COBERTURA 100% Y MOVIMIENTO DINÁMICO */
         .hero-wrapper {
             position: relative;
-            background-color: #0B1120;
+            background: linear-gradient(135deg, #0B1120 0%, #0F172A 50%, #1E293B 100%);
             border-radius: 32px;
             padding: 56px 40px;
             margin-bottom: 40px;
@@ -311,26 +310,18 @@
             border: 1px solid rgba(255, 255, 255, 0.18);
             overflow: hidden;
         }
-        .hero-wrapper::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(135deg, rgba(15, 23, 42, 0.86) 0%, rgba(30, 41, 59, 0.80) 100%);
-            pointer-events: none;
-            z-index: 1;
-        }
         .hero-cover-img {
             position: absolute;
-            top: -6%;
-            left: -6%;
-            width: 112%;
-            height: 112%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             object-fit: cover;
             object-position: center;
+            opacity: 0.28;
+            filter: contrast(1.15);
             pointer-events: none;
-            z-index: 0;
-            animation: heroCoverPan 22s ease-in-out infinite alternate;
-            will-change: transform;
+            z-index: 1;
         }
 
         @keyframes heroCoverPan {
@@ -430,6 +421,7 @@
             color: #FFFFFF;
         }
         .hero-title .gradient-text {
+            color: #38BDF8;
             background: var(--gradient-cyan);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -1613,6 +1605,220 @@
             .faq-question { font-size: 15px; padding: 16px 18px; }
             .faq-answer { font-size: 14px; padding: 0 18px 16px; padding-top: 12px; }
         }
+
+        /* B2B CORPORATE BANNER (COMPACTO) */
+        .b2b-corporate-section {
+            margin: 32px 0 38px;
+            position: relative;
+        }
+        .b2b-corporate-banner {
+            position: relative;
+            background: linear-gradient(135deg, #0A1128 0%, #101B3B 55%, #0F172A 100%);
+            border: 1px solid rgba(56, 189, 248, 0.32);
+            border-radius: 20px;
+            padding: 24px 32px;
+            box-shadow: 0 14px 28px -8px rgba(15, 23, 42, 0.35);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 28px;
+        }
+        .b2b-corporate-banner::before {
+            content: '';
+            position: absolute;
+            top: -60px;
+            right: 20%;
+            width: 220px;
+            height: 220px;
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.22) 0%, rgba(37, 99, 235, 0) 70%);
+            pointer-events: none;
+        }
+        .b2b-content {
+            position: relative;
+            z-index: 1;
+            max-width: 680px;
+        }
+        .b2b-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(245, 158, 11, 0.14);
+            border: 1px solid rgba(245, 158, 11, 0.45);
+            color: #FBBF24;
+            font-size: 10.5px;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 4px 10px;
+            border-radius: 100px;
+            margin-bottom: 8px;
+        }
+        .b2b-badge svg {
+            width: 13px;
+            height: 13px;
+            flex-shrink: 0;
+            fill: #FBBF24;
+        }
+        .b2b-title {
+            font-size: 21px;
+            font-weight: 900;
+            color: #FFFFFF;
+            line-height: 1.25;
+            margin-bottom: 6px;
+            letter-spacing: -0.01em;
+        }
+        .b2b-title span {
+            background: linear-gradient(135deg, #F59E0B 0%, #FBBF24 50%, #F97316 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .b2b-desc {
+            font-size: 13px;
+            color: #CBD5E1;
+            line-height: 1.45;
+            margin-bottom: 12px;
+        }
+        .b2b-pills-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+        .b2b-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #E2E8F0;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 4px 9px;
+            border-radius: 6px;
+        }
+        .b2b-action-col {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+        .b2b-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+            color: #FFFFFF;
+            font-size: 13.5px;
+            font-weight: 800;
+            padding: 11px 22px;
+            border-radius: 10px;
+            text-decoration: none;
+            box-shadow: 0 8px 18px -4px rgba(37, 99, 235, 0.5);
+            transition: all 0.2s ease;
+            white-space: nowrap;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        .b2b-cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px -4px rgba(37, 99, 235, 0.65);
+            background: linear-gradient(135deg, #1D4ED8 0%, #1E40AF 100%);
+            color: #FFFFFF;
+        }
+        .b2b-subnote {
+            font-size: 11px;
+            color: #94A3B8;
+            white-space: nowrap;
+        }
+        .b2b-brands-preview {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 3px;
+        }
+        .b2b-brand-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            padding: 3px 8px;
+            border-radius: 6px;
+            color: #E2E8F0;
+            font-size: 10px;
+            font-weight: 700;
+            transition: all 0.2s ease;
+        }
+        .b2b-brand-badge:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-1px);
+        }
+        .b2b-brand-badge svg {
+            width: 13px;
+            height: 13px;
+            flex-shrink: 0;
+        }
+        .b2b-consulting-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 4px;
+            padding: 6px 14px;
+            background: linear-gradient(135deg, rgba(79, 70, 229, 0.16) 0%, rgba(124, 58, 237, 0.22) 100%);
+            border: 1px solid rgba(139, 92, 246, 0.40);
+            border-radius: 100px;
+            color: #E0E7FF;
+            text-decoration: none;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.01em;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.18);
+        }
+        .b2b-consulting-link:hover {
+            background: linear-gradient(135deg, rgba(79, 70, 229, 0.28) 0%, rgba(124, 58, 237, 0.35) 100%);
+            border-color: rgba(167, 139, 250, 0.7);
+            color: #FFFFFF;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 16px rgba(124, 58, 237, 0.3);
+        }
+        .b2b-consulting-tag {
+            background: rgba(124, 58, 237, 0.45);
+            border: 1px solid rgba(167, 139, 250, 0.5);
+            padding: 1px 7px;
+            border-radius: 100px;
+            font-size: 9.5px;
+            font-weight: 800;
+            color: #EDE9FE;
+            letter-spacing: 0.03em;
+        }
+        @media (max-width: 900px) {
+            .b2b-corporate-banner {
+                flex-direction: column;
+                align-items: stretch;
+                padding: 22px 18px;
+                gap: 16px;
+            }
+            .b2b-action-col {
+                align-items: stretch;
+            }
+            .b2b-cta-btn {
+                justify-content: center;
+            }
+            .b2b-subnote {
+                text-align: center;
+            }
+            .b2b-brands-preview {
+                justify-content: center;
+            }
+            .b2b-consulting-link {
+                justify-content: center;
+                text-align: center;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1705,7 +1911,7 @@
                             <!-- 2. Google One Link -->
                             <a class="cyber-item-link" href="/google-one/" onclick="gtag('event','product_click',{product:'GoogleOne_Hero'})">
                                 <div class="cyber-icon-official">
-                                    <svg width="24" height="24" viewBox="0 0 24 24"><path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3h3.88c2.27-2.09 3.665-5.17 3.665-9.12z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.11-6.72-4.96H1.26v3.09C3.24 21.3 7.31 24 12 24z"/><path fill="#FBBC05" d="M5.28 14.29c-.25-.72-.38-1.49-.38-2.29s.13-1.57.38-2.29V6.62H1.26C.46 8.23 0 10.06 0 12s.46 3.77 1.26 5.38l4.02-3.09z"/><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.31 0 3.24 2.7 1.26 6.62l4.02 3.09c.95-2.85 3.6-4.96 6.72-4.96z"/></svg>
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#FFFFFF"/><g transform="translate(7.28, 2.50) scale(0.108) translate(-42.14, -7)"><path d="m129.53 144.99v18.46c0 10.8-8.73 19.56-19.5 19.56s-19.5-8.75-19.5-19.56v-48.33z" fill="#34A853"/><path d="m129.53 26.56v118.43l-39-29.87v-47.1l31.91-26.38c4.68-3.86 7.09-9.45 7.09-15.08z" fill="#4285F4"/><path d="m129.52 25.88c.01.22.01.44.01.67 0 5.63-2.41 11.22-7.09 15.08l-31.91 26.38v-41.45c0-6.4 3.07-12.1 7.84-15.67.34-.26.68-.5 1.05-.73.17-.11.33-.22.5-.32.31-.2.64-.38.94-.54l.86-.43.72-.3c.47-.18.96-.32 1.46-.42.27-.05.53-.1.81-.13.48-.06.97-.09 1.47-.09 5.3 0 10.27 2.15 13.9 5.63l.36.35 1.09 1.13c4.76 5.25 7.69 12.18 7.9 19.82z" fill="#EA4335"/><path d="m129.52 25.88c-.21-7.64-3.14-14.57-7.9-19.82l-1.09-1.13-.36-.35c-3.63-3.48-8.6-5.63-13.9-5.63-.5 0-.99.03-1.47.09-.28.03-.54.08-.81.13-.5.1-1 .24-1.46.42l-.72.3-.86.43c-.3.16-.63.34-.94.54-.17.1-.33.21-.5.32-.37.23-.71.47-1.05.73-4.77 3.57-7.84 9.27-7.84 15.67v1.89h.01v39.56l39-32.08c4.68-3.86 7.09-9.45 7.09-15.08 0-.23 0-.45-.01-.67z" fill="#FBBC05"/></g></svg>
                                 </div>
                                 <div>
                                     <div class="cyber-info-title">Google One</div>
@@ -1716,7 +1922,7 @@
                             <!-- 3. ESET Link -->
                             <a class="cyber-item-link" href="/eset/" onclick="gtag('event','product_click',{product:'ESET_Hero'})">
                                 <div class="cyber-icon-official">
-                                    <svg width="28" height="14" viewBox="0 0 182 71.9"><path fill="#0094A1" d="M25.1 3.7c-9 0-16.7 4.7-20.8 11.3C0.8 21.2 0 31.2 0 37.8c0 6.6 0.8 16.7 4.3 22.8 4 6.6 11.7 11.3 20.8 11.3h131.8c9 0 16.7-4.7 20.8-11.3 3.5-6.1 4.3-16.2 4.3-22.8 0-6.6-0.8-16.7-4.3-22.8-4-6.6-11.7-11.3-20.8-11.3H25.1z"/><path fill="#FFFFFF" d="M112.8 34.1h11.1v-0.3c0-5.1-2-5.4-5.7-5.4-3.5 0-4.3 1.4-4.4 5.7M34.9 28.6c3.6 0 5.6 0.4 5.6 5.3v0.2H29.6c0.1-4.2 1.7-5.5 5.3-5.5M46 38.6c-0.1 8.9-5.1 11.8-11.3 11.8-7.3 0-11.1-4.2-11.1-12.7 0-7.7 3.5-13.6 11.4-13.6 7.7 0 11.2 5.5 11 14.5zm19.3-5.1c0-3.3-2.1-4.5-5.9-4.5-3.3 0-5.3 1.1-5.3 3.7 0 5.5 13.9 3.1 13.9 11.6 0 4.1-3.6 6.1-8.5 6.1-5.8 0-8.9-2.5-8.9-7.2h5.5c0 3.3 2.1 4.3 5.3 4.3 3 0 4.8-1.2 4.8-3.4 0-5.6-13.9-3.2-13.9-11.8 0-4 3.7-5.9 8.6-5.9 5.5 0 8.4 2.5 8.4 7.1h-4zm58.6 5.1c-0.1 8.9-5.1 11.8-11.3 11.8-7.3 0-11.1-4.2-11.1-12.7 0-7.7 3.5-13.6 11.4-13.6 7.7 0 11.2 5.5 11 14.5zm33.4 6c-2.3 0.8-4.8 1.1-7.2 1.1-5.9 0-7.6-2.5-7.6-8.7V29h-4.3v-4.4h4.3v-6.9h5.5v6.9h8.2V29h-8.2v12.7c0 3.3 0.6 4.3 3.5 4.3 1.8 0 3.8-0.5 5.8-1.4v5.0z"/></svg>
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="5" fill="#00A3A6"/><g transform="translate(1.5, 7.8) scale(0.115)"><path fill="#FFFFFF" d="M112.8 34.1h11.1v-0.3c0-5.1-2-5.4-5.7-5.4-3.5 0-4.3 1.4-4.4 5.7M34.9 28.6c3.6 0 5.6 0.4 5.6 5.3v0.2H29.6c0.1-4.2 1.7-5.5 5.3-5.5M46 38.6c-0.1 8.9-5.1 11.8-11.3 11.8-7.3 0-11.1-4.2-11.1-12.7 0-7.7 3.5-13.6 11.4-13.6 7.7 0 11.2 5.5 11 14.5zm19.3-5.1c0-3.3-2.1-4.5-5.9-4.5-3.3 0-5.3 1.1-5.3 3.7 0 5.5 13.9 3.1 13.9 11.6 0 4.1-3.6 6.1-8.5 6.1-5.8 0-8.9-2.5-8.9-7.2h5.5c0 3.3 2.1 4.3 5.3 4.3 3 0 4.8-1.2 4.8-3.4 0-5.6-13.9-3.2-13.9-11.8 0-4 3.7-5.9 8.6-5.9 5.5 0 8.4 2.5 8.4 7.1h-4zm58.6 5.1c-0.1 8.9-5.1 11.8-11.3 11.8-7.3 0-11.1-4.2-11.1-12.7 0-7.7 3.5-13.6 11.4-13.6 7.7 0 11.2 5.5 11 14.5zm33.4 6c-2.3 0.8-4.8 1.1-7.2 1.1-5.9 0-7.6-2.5-7.6-8.7V29h-4.3v-4.4h4.3v-6.9h5.5v6.9h8.2V29h-8.2v12.7c0 3.3 0.6 4.3 3.5 4.3 1.8 0 3.8-0.5 5.8-1.4v5.0z"/></g></svg>
                                 </div>
                                 <div>
                                     <div class="cyber-info-title">ESET Antivirus</div>
@@ -1767,7 +1973,7 @@
                     </div>
                     <div class="brand-badge-item">
                         <div class="brand-svg-box">
-                            <svg width="24" height="12" viewBox="0 0 182 71.9"><path fill="#0094A1" d="M25.1 3.7c-9 0-16.7 4.7-20.8 11.3C0.8 21.2 0 31.2 0 37.8c0 6.6 0.8 16.7 4.3 22.8 4 6.6 11.7 11.3 20.8 11.3h131.8c9 0 16.7-4.7 20.8-11.3 3.5-6.1 4.3-16.2 4.3-22.8 0-6.6-0.8-16.7-4.3-22.8-4-6.6-11.7-11.3-20.8-11.3H25.1z"/><path fill="#FFFFFF" d="M112.8 34.1h11.1v-0.3c0-5.1-2-5.4-5.7-5.4-3.5 0-4.3 1.4-4.4 5.7M34.9 28.6c3.6 0 5.6 0.4 5.6 5.3v0.2H29.6c0.1-4.2 1.7-5.5 5.3-5.5M46 38.6c-0.1 8.9-5.1 11.8-11.3 11.8-7.3 0-11.1-4.2-11.1-12.7 0-7.7 3.5-13.6 11.4-13.6 7.7 0 11.2 5.5 11 14.5zm19.3-5.1c0-3.3-2.1-4.5-5.9-4.5-3.3 0-5.3 1.1-5.3 3.7 0 5.5 13.9 3.1 13.9 11.6 0 4.1-3.6 6.1-8.5 6.1-5.8 0-8.9-2.5-8.9-7.2h5.5c0 3.3 2.1 4.3 5.3 4.3 3 0 4.8-1.2 4.8-3.4 0-5.6-13.9-3.2-13.9-11.8 0-4 3.7-5.9 8.6-5.9 5.5 0 8.4 2.5 8.4 7.1h-4zm58.6 5.1c-0.1 8.9-5.1 11.8-11.3 11.8-7.3 0-11.1-4.2-11.1-12.7 0-7.7 3.5-13.6 11.4-13.6 7.7 0 11.2 5.5 11 14.5zm33.4 6c-2.3 0.8-4.8 1.1-7.2 1.1-5.9 0-7.6-2.5-7.6-8.7V29h-4.3v-4.4h4.3v-6.9h5.5v6.9h8.2V29h-8.2v12.7c0 3.3 0.6 4.3 3.5 4.3 1.8 0 3.8-0.5 5.8-1.4v5.0z"/></svg>
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="5" fill="#00A3A6"/><g transform="translate(1.5, 7.8) scale(0.115)"><path fill="#FFFFFF" d="M112.8 34.1h11.1v-0.3c0-5.1-2-5.4-5.7-5.4-3.5 0-4.3 1.4-4.4 5.7M34.9 28.6c3.6 0 5.6 0.4 5.6 5.3v0.2H29.6c0.1-4.2 1.7-5.5 5.3-5.5M46 38.6c-0.1 8.9-5.1 11.8-11.3 11.8-7.3 0-11.1-4.2-11.1-12.7 0-7.7 3.5-13.6 11.4-13.6 7.7 0 11.2 5.5 11 14.5zm19.3-5.1c0-3.3-2.1-4.5-5.9-4.5-3.3 0-5.3 1.1-5.3 3.7 0 5.5 13.9 3.1 13.9 11.6 0 4.1-3.6 6.1-8.5 6.1-5.8 0-8.9-2.5-8.9-7.2h5.5c0 3.3 2.1 4.3 5.3 4.3 3 0 4.8-1.2 4.8-3.4 0-5.6-13.9-3.2-13.9-11.8 0-4 3.7-5.9 8.6-5.9 5.5 0 8.4 2.5 8.4 7.1h-4zm58.6 5.1c-0.1 8.9-5.1 11.8-11.3 11.8-7.3 0-11.1-4.2-11.1-12.7 0-7.7 3.5-13.6 11.4-13.6 7.7 0 11.2 5.5 11 14.5zm33.4 6c-2.3 0.8-4.8 1.1-7.2 1.1-5.9 0-7.6-2.5-7.6-8.7V29h-4.3v-4.4h4.3v-6.9h5.5v6.9h8.2V29h-8.2v12.7c0 3.3 0.6 4.3 3.5 4.3 1.8 0 3.8-0.5 5.8-1.4v5.0z"/></g></svg>
                         </div>
                         ESET
                     </div>
@@ -1829,7 +2035,7 @@
                     </div>
                     <div class="brand-badge-item">
                         <div class="brand-svg-box">
-                            <svg width="24" height="12" viewBox="0 0 182 71.9"><path fill="#0094A1" d="M25.1 3.7c-9 0-16.7 4.7-20.8 11.3C0.8 21.2 0 31.2 0 37.8c0 6.6 0.8 16.7 4.3 22.8 4 6.6 11.7 11.3 20.8 11.3h131.8c9 0 16.7-4.7 20.8-11.3 3.5-6.1 4.3-16.2 4.3-22.8 0-6.6-0.8-16.7-4.3-22.8-4-6.6-11.7-11.3-20.8-11.3H25.1z"/><path fill="#FFFFFF" d="M112.8 34.1h11.1v-0.3c0-5.1-2-5.4-5.7-5.4-3.5 0-4.3 1.4-4.4 5.7M34.9 28.6c3.6 0 5.6 0.4 5.6 5.3v0.2H29.6c0.1-4.2 1.7-5.5 5.3-5.5M46 38.6c-0.1 8.9-5.1 11.8-11.3 11.8-7.3 0-11.1-4.2-11.1-12.7 0-7.7 3.5-13.6 11.4-13.6 7.7 0 11.2 5.5 11 14.5zm19.3-5.1c0-3.3-2.1-4.5-5.9-4.5-3.3 0-5.3 1.1-5.3 3.7 0 5.5 13.9 3.1 13.9 11.6 0 4.1-3.6 6.1-8.5 6.1-5.8 0-8.9-2.5-8.9-7.2h5.5c0 3.3 2.1 4.3 5.3 4.3 3 0 4.8-1.2 4.8-3.4 0-5.6-13.9-3.2-13.9-11.8 0-4 3.7-5.9 8.6-5.9 5.5 0 8.4 2.5 8.4 7.1h-4zm58.6 5.1c-0.1 8.9-5.1 11.8-11.3 11.8-7.3 0-11.1-4.2-11.1-12.7 0-7.7 3.5-13.6 11.4-13.6 7.7 0 11.2 5.5 11 14.5zm33.4 6c-2.3 0.8-4.8 1.1-7.2 1.1-5.9 0-7.6-2.5-7.6-8.7V29h-4.3v-4.4h4.3v-6.9h5.5v6.9h8.2V29h-8.2v12.7c0 3.3 0.6 4.3 3.5 4.3 1.8 0 3.8-0.5 5.8-1.4v5.0z"/></svg>
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="5" fill="#00A3A6"/><g transform="translate(1.5, 7.8) scale(0.115)"><path fill="#FFFFFF" d="M112.8 34.1h11.1v-0.3c0-5.1-2-5.4-5.7-5.4-3.5 0-4.3 1.4-4.4 5.7M34.9 28.6c3.6 0 5.6 0.4 5.6 5.3v0.2H29.6c0.1-4.2 1.7-5.5 5.3-5.5M46 38.6c-0.1 8.9-5.1 11.8-11.3 11.8-7.3 0-11.1-4.2-11.1-12.7 0-7.7 3.5-13.6 11.4-13.6 7.7 0 11.2 5.5 11 14.5zm19.3-5.1c0-3.3-2.1-4.5-5.9-4.5-3.3 0-5.3 1.1-5.3 3.7 0 5.5 13.9 3.1 13.9 11.6 0 4.1-3.6 6.1-8.5 6.1-5.8 0-8.9-2.5-8.9-7.2h5.5c0 3.3 2.1 4.3 5.3 4.3 3 0 4.8-1.2 4.8-3.4 0-5.6-13.9-3.2-13.9-11.8 0-4 3.7-5.9 8.6-5.9 5.5 0 8.4 2.5 8.4 7.1h-4zm58.6 5.1c-0.1 8.9-5.1 11.8-11.3 11.8-7.3 0-11.1-4.2-11.1-12.7 0-7.7 3.5-13.6 11.4-13.6 7.7 0 11.2 5.5 11 14.5zm33.4 6c-2.3 0.8-4.8 1.1-7.2 1.1-5.9 0-7.6-2.5-7.6-8.7V29h-4.3v-4.4h4.3v-6.9h5.5v6.9h8.2V29h-8.2v12.7c0 3.3 0.6 4.3 3.5 4.3 1.8 0 3.8-0.5 5.8-1.4v5.0z"/></g></svg>
                         </div>
                         ESET
                     </div>
@@ -2010,7 +2216,7 @@
                                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M14.5 2L3 6.25V17.75L14.5 22L21 19.5V4.5L14.5 2Z" fill="#EA3E23"/><path fill-rule="evenodd" clip-rule="evenodd" d="M14.5 2V22L21 19.5V4.5L14.5 2Z" fill="#F1511B"/><path fill-rule="evenodd" clip-rule="evenodd" d="M3 6.25L14.5 2V22L3 17.75V6.25Z" fill="#D83B01"/><circle cx="11" cy="12" r="3" stroke="white" stroke-width="1.8"/></svg>
                                     </div>
                                     <div class="combo-micro-icon micro-top-right" title="Google One AI">
-                                        <svg width="12" height="20" viewBox="0 0 87.39 176.01" fill="none"><g transform="translate(-42.14 -7)"><path d="m129.53 144.99v18.46c0 10.8-8.73 19.56-19.5 19.56s-19.5-8.75-19.5-19.56v-48.33z" fill="#34a853"/><path d="m129.53 26.56v118.43l-39-29.87v-47.1l31.91-26.38c4.68-3.86 7.09-9.45 7.09-15.08z" fill="#4285F4"/><path d="m129.52 25.88c.01.22.01.44.01.67 0 5.63-2.41 11.22-7.09 15.08l-31.91 26.38v-41.45c0-6.4 3.07-12.1 7.84-15.67.34-.26.68-.5 1.05-.73.17-.11.33-.22.5-.32.31-.2.64-.38.94-.54l.86-.43.72-.3c.47-.18.96-.32 1.46-.42.27-.05.53-.1.81-.13.48-.06.97-.09 1.47-.09 5.3 0 10.27 2.15 13.9 5.63l.36.35 1.09 1.13c4.76 5.25 7.69 12.18 7.9 19.82z" fill="#ea4335"/><path d="m129.52 25.88c-.21-7.64-3.14-14.57-7.9-19.82l-1.09-1.13-.36-.35c-3.63-3.48-8.6-5.63-13.9-5.63-.5 0-.99.03-1.47.09-.28.03-.54.08-.81.13-.5.1-1 .24-1.46.42l-.72.3-.86.43c-.3.16-.63.34-.94.54-.17.1-.33.21-.5.32-.37.23-.71.47-1.05.73-4.77 3.57-7.84 9.27-7.84 15.67v1.89h.01v39.56l39-32.08c4.68-3.86 7.09-9.45 7.09-15.08 0-.23 0-.45-.01-.67z" fill="#fbbc05"/></g></svg>
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#FFFFFF"/><g transform="translate(7.28, 2.50) scale(0.108) translate(-42.14, -7)"><path d="m129.53 144.99v18.46c0 10.8-8.73 19.56-19.5 19.56s-19.5-8.75-19.5-19.56v-48.33z" fill="#34A853"/><path d="m129.53 26.56v118.43l-39-29.87v-47.1l31.91-26.38c4.68-3.86 7.09-9.45 7.09-15.08z" fill="#4285F4"/><path d="m129.52 25.88c.01.22.01.44.01.67 0 5.63-2.41 11.22-7.09 15.08l-31.91 26.38v-41.45c0-6.4 3.07-12.1 7.84-15.67.34-.26.68-.5 1.05-.73.17-.11.33-.22.5-.32.31-.2.64-.38.94-.54l.86-.43.72-.3c.47-.18.96-.32 1.46-.42.27-.05.53-.1.81-.13.48-.06.97-.09 1.47-.09 5.3 0 10.27 2.15 13.9 5.63l.36.35 1.09 1.13c4.76 5.25 7.69 12.18 7.9 19.82z" fill="#EA4335"/><path d="m129.52 25.88c-.21-7.64-3.14-14.57-7.9-19.82l-1.09-1.13-.36-.35c-3.63-3.48-8.6-5.63-13.9-5.63-.5 0-.99.03-1.47.09-.28.03-.54.08-.81.13-.5.1-1 .24-1.46.42l-.72.3-.86.43c-.3.16-.63.34-.94.54-.17.1-.33.21-.5.32-.37.23-.71.47-1.05.73-4.77 3.57-7.84 9.27-7.84 15.67v1.89h.01v39.56l39-32.08c4.68-3.86 7.09-9.45 7.09-15.08 0-.23 0-.45-.01-.67z" fill="#FBBC05"/></g></svg>
                                     </div>
                                     <div class="combo-micro-icon micro-bottom" title="Kaspersky">
                                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="6" fill="#006D55"/><path d="M6 5.5h3.2v5.6L14.8 5.5h3.8L12.5 12l6.4 6.5h-3.9L9.2 12.8v5.7H6V5.5z" fill="#FFFFFF"/></svg>
@@ -2037,6 +2243,63 @@
                         <p style="font-size: 12px; color: #94A3B8; margin-top: 2px;">7 combinaciones más</p>
                     </div>
                 </a>
+            </div>
+        </section>
+
+        <!-- BANNER CORPORATIVO B2B (COMPACTO) -->
+        <section class="b2b-corporate-section" id="empresas-banner">
+            <div class="b2b-corporate-banner">
+                <div class="b2b-content">
+                    <div class="b2b-badge">
+                        <svg viewBox="0 0 24 24"><path d="M4 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16h4v2H2v-2h2zm2 0h8V5H6v16zm10 0h2V11h-2v10zM8 7h4v2H8V7zm0 4h4v2H8v-2zm0 4h4v2H8v-2zm10-2h-1v-2h1v2zm0 4h-1v-2h1v2z"/></svg>
+                        SOLUCIONES B2B · EMPRESAS MYPE Y CORPORATIVAS
+                    </div>
+                    <h2 class="b2b-title">
+                        Licencias y suscripciones empresariales <span>para tu negocio</span>
+                    </h2>
+                    <p class="b2b-desc">
+                        Equipa tus oficinas con Windows Pro, cuentas Google Workspace con tu dominio, Suite Microsoft 365 Empresa y ciberseguridad por volumen. Facturación con RUC y atención prioritaria.
+                    </p>
+                    <div class="b2b-pills-row">
+                        <span class="b2b-pill">🧾 Factura con RUC</span>
+                        <span class="b2b-pill">📦 Garantia total</span>
+                        <span class="b2b-pill">⚡ Gestion Inmediata</span>
+                        <span class="b2b-pill">🧑‍💻 Soporte Prioritario</span>
+                    </div>
+                </div>
+
+                <div class="b2b-action-col">
+                    <a href="javascript:void(0)" class="b2b-cta-btn" onclick="return false;" title="Soluciones Empresariales (Próximamente)">
+                        Ver Soluciones Empresariales ↗
+                    </a>
+                    <span class="b2b-subnote">Atención y proformas para Gerencia y TI</span>
+                    <div class="b2b-brands-preview">
+                        <div class="b2b-brand-badge" title="Adobe Creative Cloud & Acrobat">
+                            <svg viewBox="0 0 24 24"><path fill="#FA0F00" d="M14.5 3H22v18L14.5 3zm-5 0H2v18L9.5 3zM12 9.5l3.5 8.5H12.8l-1.3-3.2H8.7L12 9.5z"/></svg>
+                            <span>Adobe</span>
+                        </div>
+                        <div class="b2b-brand-badge" title="Google Workspace Corporativo">
+                            <svg viewBox="0 0 24 24"><path fill="#4285F4" d="M22 6.5l-6-4.5-4 3 4 3 6-1.5z"/><path fill="#34A853" d="M2 6.5l6-4.5 4 3-4 3-6-1.5z"/><path fill="#EA4335" d="M2 17.5l6 4.5 4-3-4-3-6 1.5z"/><path fill="#FBBC05" d="M22 17.5l-6 4.5-4-3 4-3 6 1.5z"/></svg>
+                            <span>Workspace</span>
+                        </div>
+                        <div class="b2b-brand-badge" title="Microsoft 365 Empresa">
+                            <svg viewBox="0 0 24 24"><path fill="#F25022" d="M1 1h10v10H1z"/><path fill="#7FBA00" d="M13 1h10v10H13z"/><path fill="#00A4EF" d="M1 13h10v10H1z"/><path fill="#FFB900" d="M13 13h10v10H13z"/></svg>
+                            <span>M365</span>
+                        </div>
+                        <div class="b2b-brand-badge" title="Autodesk Enterprise">
+                            <svg viewBox="0 0 24 24"><path fill="#0696D7" d="M2.5 19.5L12 3l9.5 16.5H16.2L12 9.2l-4.2 10.3H2.5z"/></svg>
+                            <span>Autodesk</span>
+                        </div>
+                        <div class="b2b-brand-badge" title="ESET Endpoint Security">
+                            <svg viewBox="0 0 24 24"><rect width="24" height="24" rx="5" fill="#00A3A6"/><g transform="translate(1.5, 7.8) scale(0.115)"><path fill="#FFFFFF" d="M112.8 34.1h11.1v-0.3c0-5.1-2-5.4-5.7-5.4-3.5 0-4.3 1.4-4.4 5.7M34.9 28.6c3.6 0 5.6 0.4 5.6 5.3v0.2H29.6c0.1-4.2 1.7-5.5 5.3-5.5M46 38.6c-0.1 8.9-5.1 11.8-11.3 11.8-7.3 0-11.1-4.2-11.1-12.7 0-7.7 3.5-13.6 11.4-13.6 7.7 0 11.2 5.5 11 14.5zm19.3-5.1c0-3.3-2.1-4.5-5.9-4.5-3.3 0-5.3 1.1-5.3 3.7 0 5.5 13.9 3.1 13.9 11.6 0 4.1-3.6 6.1-8.5 6.1-5.8 0-8.9-2.5-8.9-7.2h5.5c0 3.3 2.1 4.3 5.3 4.3 3 0 4.8-1.2 4.8-3.4 0-5.6-13.9-3.2-13.9-11.8 0-4 3.7-5.9 8.6-5.9 5.5 0 8.4 2.5 8.4 7.1h-4zm58.6 5.1c-0.1 8.9-5.1 11.8-11.3 11.8-7.3 0-11.1-4.2-11.1-12.7 0-7.7 3.5-13.6 11.4-13.6 7.7 0 11.2 5.5 11 14.5zm33.4 6c-2.3 0.8-4.8 1.1-7.2 1.1-5.9 0-7.6-2.5-7.6-8.7V29h-4.3v-4.4h4.3v-6.9h5.5v6.9h8.2V29h-8.2v12.7c0 3.3 0.6 4.3 3.5 4.3 1.8 0 3.8-0.5 5.8-1.4v5.0z"/></g></svg>
+                            <span>ESET</span>
+                        </div>
+                    </div>
+                    <a href="https://jnxconsulting.com" target="_blank" rel="noopener" class="b2b-consulting-link" onclick="gtag('event','consulting_click',{location:'b2b_banner'})" title="Desarrollo Web & Software a Medida por JNxConsulting">
+                        <span>🚀 Desarrollo Web & Software a Medida</span>
+                        <span class="b2b-consulting-tag">JNxConsulting ↗</span>
+                    </a>
+                </div>
             </div>
         </section>
 
@@ -2118,7 +2381,7 @@
                     <div>
                         <div class="product-card-top">
                             <div class="product-chip-real">
-                                <svg width="22" height="36" viewBox="0 0 87.39 176.01" fill="none"><g transform="translate(-42.14 -7)"><path d="m129.53 144.99v18.46c0 10.8-8.73 19.56-19.5 19.56s-19.5-8.75-19.5-19.56v-48.33z" fill="#34a853"/><path d="m129.53 26.56v118.43l-39-29.87v-47.1l31.91-26.38c4.68-3.86 7.09-9.45 7.09-15.08z" fill="#4285F4"/><path d="m129.52 25.88c.01.22.01.44.01.67 0 5.63-2.41 11.22-7.09 15.08l-31.91 26.38v-41.45c0-6.4 3.07-12.1 7.84-15.67.34-.26.68-.5 1.05-.73.17-.11.33-.22.5-.32.31-.2.64-.38.94-.54l.86-.43.72-.3c.47-.18.96-.32 1.46-.42.27-.05.53-.1.81-.13.48-.06.97-.09 1.47-.09 5.3 0 10.27 2.15 13.9 5.63l.36.35 1.09 1.13c4.76 5.25 7.69 12.18 7.9 19.82z" fill="#ea4335"/><path d="m129.52 25.88c-.21-7.64-3.14-14.57-7.9-19.82l-1.09-1.13-.36-.35c-3.63-3.48-8.6-5.63-13.9-5.63-.5 0-.99.03-1.47.09-.28.03-.54.08-.81.13-.5.1-1 .24-1.46.42l-.72.3-.86.43c-.3.16-.63.34-.94.54-.17.1-.33.21-.5.32-.37.23-.71.47-1.05.73-4.77 3.57-7.84 9.27-7.84 15.67v1.89h.01v39.56l39-32.08c4.68-3.86 7.09-9.45 7.09-15.08 0-.23 0-.45-.01-.67z" fill="#fbbc05"/></g></svg>
+                                <svg width="36" height="36" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.2"/><g transform="translate(7.28, 2.50) scale(0.108) translate(-42.14, -7)"><path d="m129.53 144.99v18.46c0 10.8-8.73 19.56-19.5 19.56s-19.5-8.75-19.5-19.56v-48.33z" fill="#34A853"/><path d="m129.53 26.56v118.43l-39-29.87v-47.1l31.91-26.38c4.68-3.86 7.09-9.45 7.09-15.08z" fill="#4285F4"/><path d="m129.52 25.88c.01.22.01.44.01.67 0 5.63-2.41 11.22-7.09 15.08l-31.91 26.38v-41.45c0-6.4 3.07-12.1 7.84-15.67.34-.26.68-.5 1.05-.73.17-.11.33-.22.5-.32.31-.2.64-.38.94-.54l.86-.43.72-.3c.47-.18.96-.32 1.46-.42.27-.05.53-.1.81-.13.48-.06.97-.09 1.47-.09 5.3 0 10.27 2.15 13.9 5.63l.36.35 1.09 1.13c4.76 5.25 7.69 12.18 7.9 19.82z" fill="#EA4335"/><path d="m129.52 25.88c-.21-7.64-3.14-14.57-7.9-19.82l-1.09-1.13-.36-.35c-3.63-3.48-8.6-5.63-13.9-5.63-.5 0-.99.03-1.47.09-.28.03-.54.08-.81.13-.5.1-1 .24-1.46.42l-.72.3-.86.43c-.3.16-.63.34-.94.54-.17.1-.33.21-.5.32-.37.23-.71.47-1.05.73-4.77 3.57-7.84 9.27-7.84 15.67v1.89h.01v39.56l39-32.08c4.68-3.86 7.09-9.45 7.09-15.08 0-.23 0-.45-.01-.67z" fill="#FBBC05"/></g></svg>
                             </div>
                             <span class="product-badge-instant">Inmediato</span>
                         </div>
@@ -2164,7 +2427,7 @@
                     <div>
                         <div class="product-card-top">
                             <div class="product-chip-real">
-                                <svg width="42" height="20" viewBox="0 0 182 71.9"><path fill="#0094A1" d="M25.1 3.7c-9 0-16.7 4.7-20.8 11.3C0.8 21.2 0 31.2 0 37.8c0 6.6 0.8 16.7 4.3 22.8 4 6.6 11.7 11.3 20.8 11.3h131.8c9 0 16.7-4.7 20.8-11.3 3.5-6.1 4.3-16.2 4.3-22.8 0-6.6-0.8-16.7-4.3-22.8-4-6.6-11.7-11.3-20.8-11.3H25.1z"/><path fill="#FFFFFF" d="M112.8 34.1h11.1v-0.3c0-5.1-2-5.4-5.7-5.4-3.5 0-4.3 1.4-4.4 5.7M34.9 28.6c3.6 0 5.6 0.4 5.6 5.3v0.2H29.6c0.1-4.2 1.7-5.5 5.3-5.5M46 38.6c-0.1 8.9-5.1 11.8-11.3 11.8-7.3 0-11.1-4.2-11.1-12.7 0-7.7 3.5-13.6 11.4-13.6 7.7 0 11.2 5.5 11 14.5zm19.3-5.1c0-3.3-2.1-4.5-5.9-4.5-3.3 0-5.3 1.1-5.3 3.7 0 5.5 13.9 3.1 13.9 11.6 0 4.1-3.6 6.1-8.5 6.1-5.8 0-8.9-2.5-8.9-7.2h5.5c0 3.3 2.1 4.3 5.3 4.3 3 0 4.8-1.2 4.8-3.4 0-5.6-13.9-3.2-13.9-11.8 0-4 3.7-5.9 8.6-5.9 5.5 0 8.4 2.5 8.4 7.1h-4zm58.6 5.1c-0.1 8.9-5.1 11.8-11.3 11.8-7.3 0-11.1-4.2-11.1-12.7 0-7.7 3.5-13.6 11.4-13.6 7.7 0 11.2 5.5 11 14.5zm33.4 6c-2.3 0.8-4.8 1.1-7.2 1.1-5.9 0-7.6-2.5-7.6-8.7V29h-4.3v-4.4h4.3v-6.9h5.5v6.9h8.2V29h-8.2v12.7c0 3.3 0.6 4.3 3.5 4.3 1.8 0 3.8-0.5 5.8-1.4v5.0z"/></svg>
+                                <svg width="34" height="34" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="5" fill="#00A3A6"/><g transform="translate(1.5, 7.8) scale(0.115)"><path fill="#FFFFFF" d="M112.8 34.1h11.1v-0.3c0-5.1-2-5.4-5.7-5.4-3.5 0-4.3 1.4-4.4 5.7M34.9 28.6c3.6 0 5.6 0.4 5.6 5.3v0.2H29.6c0.1-4.2 1.7-5.5 5.3-5.5M46 38.6c-0.1 8.9-5.1 11.8-11.3 11.8-7.3 0-11.1-4.2-11.1-12.7 0-7.7 3.5-13.6 11.4-13.6 7.7 0 11.2 5.5 11 14.5zm19.3-5.1c0-3.3-2.1-4.5-5.9-4.5-3.3 0-5.3 1.1-5.3 3.7 0 5.5 13.9 3.1 13.9 11.6 0 4.1-3.6 6.1-8.5 6.1-5.8 0-8.9-2.5-8.9-7.2h5.5c0 3.3 2.1 4.3 5.3 4.3 3 0 4.8-1.2 4.8-3.4 0-5.6-13.9-3.2-13.9-11.8 0-4 3.7-5.9 8.6-5.9 5.5 0 8.4 2.5 8.4 7.1h-4zm58.6 5.1c-0.1 8.9-5.1 11.8-11.3 11.8-7.3 0-11.1-4.2-11.1-12.7 0-7.7 3.5-13.6 11.4-13.6 7.7 0 11.2 5.5 11 14.5zm33.4 6c-2.3 0.8-4.8 1.1-7.2 1.1-5.9 0-7.6-2.5-7.6-8.7V29h-4.3v-4.4h4.3v-6.9h5.5v6.9h8.2V29h-8.2v12.7c0 3.3 0.6 4.3 3.5 4.3 1.8 0 3.8-0.5 5.8-1.4v5.0z"/></g></svg>
                             </div>
                             <span class="product-badge-instant">Inmediato</span>
                         </div>
@@ -2531,7 +2794,7 @@
                     <div class="footer-contact-info">
                         <div>📍 <span>Lima - Perú</span></div>
                         <div>📲 WhatsApp / Tel: <a href="https://wa.me/51925244643?text=Hola%20JNxKeys,%20quisiera%20información%20de%20sus%20licencias" target="_blank" rel="noopener" onclick="gtag('event','whatsapp_click',{product:'general',location:'footer_contact'})">925 244 643</a></div>
-                        <div>✉️ Correo: <a href="mailto:contacto@jnxkeys.com">contacto@jnxkeys.com</a></div>
+                        <div>✉️ Correo: <a href="mailto:ventas@jnxkeys.com">ventas@jnxkeys.com</a></div>
                         <div>🌐 Web: <a href="https://jnxkeys.com/">jnxkeys.com</a></div>
                     </div>
 

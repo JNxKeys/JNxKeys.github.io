@@ -35,7 +35,7 @@
   "offers": [
     {
       "@type": "Offer",
-      "name": "AI Plus 2TB mensual",
+      "name": "AI Plus 2TB primeros 3 meses promo",
       "price": "15",
       "priceCurrency": "PEN",
       "availability": "https://schema.org/InStock",
@@ -43,31 +43,7 @@
     },
     {
       "@type": "Offer",
-      "name": "AI Plus 2TB anual",
-      "price": "125",
-      "priceCurrency": "PEN",
-      "availability": "https://schema.org/InStock",
-      "url": "https://jnxkeys.com/google-one/"
-    },
-    {
-      "@type": "Offer",
-      "name": "AI Plus 200GB mensual",
-      "price": "10",
-      "priceCurrency": "PEN",
-      "availability": "https://schema.org/InStock",
-      "url": "https://jnxkeys.com/google-one/"
-    },
-    {
-      "@type": "Offer",
-      "name": "AI Plus 200GB semestral",
-      "price": "50",
-      "priceCurrency": "PEN",
-      "availability": "https://schema.org/InStock",
-      "url": "https://jnxkeys.com/google-one/"
-    },
-    {
-      "@type": "Offer",
-      "name": "AI Pro 5TB mensual",
+      "name": "AI Plus 2TB mensual regular",
       "price": "20",
       "priceCurrency": "PEN",
       "availability": "https://schema.org/InStock",
@@ -75,8 +51,24 @@
     },
     {
       "@type": "Offer",
-      "name": "AI Pro 5TB trimestral",
+      "name": "AI Plus 400 mensual",
+      "price": "10",
+      "priceCurrency": "PEN",
+      "availability": "https://schema.org/InStock",
+      "url": "https://jnxkeys.com/google-one/"
+    },
+    {
+      "@type": "Offer",
+      "name": "AI Plus 400 semestral",
       "price": "50",
+      "priceCurrency": "PEN",
+      "availability": "https://schema.org/InStock",
+      "url": "https://jnxkeys.com/google-one/"
+    },
+    {
+      "@type": "Offer",
+      "name": "AI Pro 5TB 18 meses liquidacion",
+      "price": "35",
       "priceCurrency": "PEN",
       "availability": "https://schema.org/InStock",
       "url": "https://jnxkeys.com/google-one/"
@@ -785,46 +777,47 @@ function switchTikTokVideo(videoId, titleText, btn) {
   <div class="grid-click-hint">💬 <span>Haz clic en cualquier plan para solicitar tu suscripción al instante por WhatsApp</span></div>
 
   <div class="plan-carousel" id="planCarousel">
-        <div class="plan-slide tier-basic" id="plan-ai-plus-200gb" onclick="window.open('https://wa.me/51925244643?text=Deseo%20información%20del%20plan%20AI%20Plus%20200GB%20de%20Google%20One', '_blank'); gtag('event','whatsapp_click',{product:'Google One',plan:'AI Plus 200GB',location:'plan_card'})">
+        <div class="plan-slide tier-basic" id="plan-ai-plus-400" onclick="window.open('https://wa.me/51925244643?text=Deseo%20informaci%C3%B3n%20del%20plan%20AI%20Plus%20400%20de%20Google%20One', '_blank'); gtag('event','whatsapp_click',{product:'Google One',plan:'AI Plus 400',location:'plan_card'})">
           <div class="plan-head-row">
             <div class="plan-title-group">
               <span class="plan-icon">☁️</span>
-              <span class="plan-name">AI Plus 200GB</span>
+              <span class="plan-name">AI PLUS 400</span>
             </div>
             <div style="display:flex; align-items:center; gap:8px;">
               <div class="plan-badge tier-basic">Más pedido</div>
             </div>
           </div>
           <div class="plan-icons">
-            <span class="p-ic" title="Gemini">✨</span>
-            <span class="p-ic" title="Drive">☁️</span>
+            <span class="p-ic" title="Gemini 3.6 Flash">✨</span>
+            <span class="p-ic" title="Gemini 3.5 Flash-Lite">⚡</span>
+            <span class="p-ic" title="Drive 80GB">☁️</span>
+            <span class="p-ic" title="Fotos">🖼️</span>
             <span class="p-ic" title="Gmail">✉️</span>
-            <span class="p-ic" title="Imágenes">🖼️</span>
             <span class="p-ic" title="Docs">📄</span>
           </div>
           <div class="plan-divider"></div>
-          <div class="plan-desc">Ideal para <strong>ofimática básica</strong>, estudiantes y uso diario de IA.</div>
+          <div class="plan-desc">Cupo individual con 80GB de espacio en la nube. Olvídate de los mensajes por falta de espacio, asegura tus fotos y copias de seguridad. Con Gemini IA integrado. Ideal para ofimática básica, tareas rápidas y redacción ágil. <strong>Garantía todos los meses</strong>.</div>
           <div class="plan-options" onclick="event.stopPropagation();">
             <button type="button" class="plan-opt featured">
               <div class="plan-opt-label">Mensual</div>
               <div class="plan-opt-price">S/10</div>
-              <div class="plan-opt-tag">por cupo</div>
+              <div class="plan-opt-tag">al mes</div>
             </button>
             <button type="button" class="plan-opt">
               <div class="plan-opt-label">Semestral</div>
               <div class="plan-opt-price">S/50</div>
-              <div class="plan-opt-tag">por cupo</div>
+              <div class="plan-opt-tag">6 meses</div>
             </button>
           </div>
           <div style="display:flex; justify-content:flex-end; align-items:center; gap:8px; margin-top:14px;">
-            <button class="plan-share-btn" type="button" aria-label="Compartir plan" onclick="event.stopPropagation(); shareProduct('Google One AI Plus 200GB', 'S/10', 'plan-ai-plus-200gb')"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg></button>
+            <button class="plan-share-btn" type="button" aria-label="Compartir plan" onclick="event.stopPropagation(); shareProduct('Google One AI Plus 400', 'S/10', 'plan-ai-plus-400')"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg></button>
             <div class="card-select-pill">
               Elegir plan ↗
             </div>
           </div>
         </div>
 
-        <div class="plan-slide tier-popular" id="plan-ai-plus-2tb" onclick="window.open('https://wa.me/51925244643?text=Deseo%20información%20del%20plan%20AI%20Plus%202TB%20de%20Google%20One', '_blank'); gtag('event','whatsapp_click',{product:'Google One',plan:'AI Plus 2TB',location:'plan_card'})">
+        <div class="plan-slide tier-popular" id="plan-ai-plus-2tb" onclick="window.open('https://wa.me/51925244643?text=Deseo%20informaci%C3%B3n%20del%20plan%20AI%20Plus%202TB%20de%20Google%20One%20(Promo%203%20meses%20a%20S/15)', '_blank'); gtag('event','whatsapp_click',{product:'Google One',plan:'AI Plus 2TB',location:'plan_card'})">
           <div class="plan-head-row">
             <div class="plan-title-group">
               <span class="plan-icon">👤</span>
@@ -835,27 +828,27 @@ function switchTikTokVideo(videoId, titleText, btn) {
             </div>
           </div>
           <div class="plan-icons">
-            <span class="p-ic" title="Gemini">✨</span>
-            <span class="p-ic" title="Drive">☁️</span>
-            <span class="p-ic" title="Meet">🎥</span>
-            <span class="p-ic" title="NotebookLM">📖</span>
-            <span class="p-ic" title="Gmail">✉️</span>
-            <span class="p-ic" title="Imágenes">🖼️</span>
-            <span class="p-ic" title="Docs">📄</span>
+            <span class="p-ic" title="Gemini 3 Pro">🧠</span>
+            <span class="p-ic" title="Gemini 3.5 Flash">✨</span>
+            <span class="p-ic" title="Gemini Advanced">🤖</span>
+            <span class="p-ic" title="Drive 400GB">☁️</span>
+            <span class="p-ic" title="Meet Premium 24h">🎥</span>
+            <span class="p-ic" title="Imágenes HD">🎨</span>
+            <span class="p-ic" title="Gmail & Docs">📄</span>
           </div>
           <div class="plan-divider"></div>
-          <div class="plan-desc"><strong>Almacenamiento masivo</strong> y reuniones premium sin interrupciones.</div>
+          <div class="plan-desc">Cupo individual con 400GB de espacio en la nube. Almacenamiento masivo y Meet Premium 24 hrs con grabación a Drive. Incluye Gemini Advanced para desarrollo agéntico y de imágenes en alta definición. <strong>Garantía todos los meses</strong>.</div>
           <div class="plan-options" onclick="event.stopPropagation();">
-            <button type="button" class="plan-opt">
-              <div class="plan-opt-label">Mensual</div>
-              <div class="plan-opt-old">S/25</div>
-              <div class="plan-opt-price">S/15</div>
-            </button>
             <button type="button" class="plan-opt featured">
-              <div class="plan-opt-label">Anual</div>
-              <div class="plan-opt-old">S/180</div>
-              <div class="plan-opt-price">S/125</div>
-              <div class="plan-opt-tag">+1 mes gratis</div>
+              <div class="plan-opt-label">Primeros 3 meses</div>
+              <div class="plan-opt-old">S/20</div>
+              <div class="plan-opt-price">S/15</div>
+              <div class="plan-opt-tag">al mes · luego S/20</div>
+            </button>
+            <button type="button" class="plan-opt">
+              <div class="plan-opt-label">Mensual regular</div>
+              <div class="plan-opt-price">S/20</div>
+              <div class="plan-opt-tag">al mes</div>
             </button>
           </div>
           <div style="display:flex; justify-content:flex-end; align-items:center; gap:8px; margin-top:14px;">
@@ -866,43 +859,36 @@ function switchTikTokVideo(videoId, titleText, btn) {
           </div>
         </div>
 
-        <div class="plan-slide tier-pro" id="plan-ai-pro-5tb" onclick="window.open('https://wa.me/51925244643?text=Deseo%20información%20del%20plan%20AI%20Pro%205TB%20de%20Google%20One', '_blank'); gtag('event','whatsapp_click',{product:'Google One',plan:'AI Pro 5TB',location:'plan_card'})">
+        <div class="plan-slide tier-pro" id="plan-ai-pro-5tb" onclick="window.open('https://wa.me/51925244643?text=Deseo%20informaci%C3%B3n%20del%20plan%20AI%20Pro%205TB%20de%20Google%20One%20(18%20Meses%20a%20S/35)', '_blank'); gtag('event','whatsapp_click',{product:'Google One',plan:'AI Pro 5TB',location:'plan_card'})">
           <div class="plan-head-row">
             <div class="plan-title-group">
               <span class="plan-icon">🚀</span>
               <span class="plan-name">AI Pro 5TB</span>
             </div>
             <div style="display:flex; align-items:center; gap:8px;">
-              <div class="plan-badge tier-pro">Pro 🔥</div>
+              <div class="plan-badge tier-pro">Liquidación 🔥</div>
             </div>
           </div>
           <div class="plan-icons">
-            <span class="p-ic" title="Gemini">✨</span>
-            <span class="p-ic" title="Herramientas de desarrollo">💻</span>
-            <span class="p-ic" title="Código">⌨️</span>
-            <span class="p-ic" title="Meet">🎥</span>
-            <span class="p-ic" title="NotebookLM">📖</span>
-            <span class="p-ic" title="Drive">☁️</span>
-            <span class="p-ic" title="Gmail">✉️</span>
-            <span class="p-ic" title="Docs">📄</span>
-            <span class="p-ic" title="Avanzado">⚙️</span>
+            <span class="p-ic" title="Gemini 4 Argon">⚡</span>
+            <span class="p-ic" title="Gemini 4 Pro">💻</span>
+            <span class="p-ic" title="Antigravity">⌨️</span>
+            <span class="p-ic" title="Google AI Studio">⚙️</span>
+            <span class="p-ic" title="Google Flow">🔄</span>
+            <span class="p-ic" title="Drive 1 TB">☁️</span>
+            <span class="p-ic" title="Herramientas Pro">🛠️</span>
           </div>
           <div class="plan-divider"></div>
-          <div class="plan-desc"><strong>Máximo poder IA</strong> para creadores, profesionales y programación.</div>
-          <div class="plan-options" onclick="event.stopPropagation();">
+          <div class="plan-desc">Cupo individual con 1 TB de espacio en la nube. Máximo poder IA (Gemini 4 Argon & Pro) para uso exclusivo de desarrolladores en Antigravity, Google AI Studio, Google Flow entre otras herramientas profesionales para tareas complejas. <strong>⚠️ Sin garantía</strong>.</div>
+          <div class="plan-options" style="grid-template-columns: 1fr; max-width: 180px; margin: 0 auto;" onclick="event.stopPropagation();">
             <button type="button" class="plan-opt featured">
-              <div class="plan-opt-label">Mensual</div>
-              <div class="plan-opt-price">S/20</div>
-              <div class="plan-opt-tag">por cupo</div>
-            </button>
-            <button type="button" class="plan-opt">
-              <div class="plan-opt-label">Trimestral</div>
-              <div class="plan-opt-price">S/50</div>
-              <div class="plan-opt-tag">por cupo</div>
+              <div class="plan-opt-label">18 Meses</div>
+              <div class="plan-opt-price">S/35</div>
+              <div class="plan-opt-tag">pago único</div>
             </button>
           </div>
           <div style="display:flex; justify-content:flex-end; align-items:center; gap:8px; margin-top:14px;">
-            <button class="plan-share-btn" type="button" aria-label="Compartir plan" onclick="event.stopPropagation(); shareProduct('Google One AI Pro 5TB', 'S/20', 'plan-ai-pro-5tb')"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg></button>
+            <button class="plan-share-btn" type="button" aria-label="Compartir plan" onclick="event.stopPropagation(); shareProduct('Google One AI Pro 5TB', 'S/35', 'plan-ai-pro-5tb')"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg></button>
             <div class="card-select-pill">
               Elegir plan ↗
             </div>
@@ -923,38 +909,49 @@ function switchTikTokVideo(videoId, titleText, btn) {
           <thead>
             <tr>
               <th>Característica</th>
-              <th>AI Plus<br>200GB</th>
-              <th>AI Plus<br>2TB</th>
-              <th>AI Pro<br>5TB</th>
+              <th>AI PLUS<br>400</th>
+              <th>AI Plus<br>2TB ⭐</th>
+              <th>AI Pro<br>5TB 🚀</th>
             </tr>
           </thead>
           <tbody>
             <tr class="cat-row"><td colspan="4">☁️ Almacenamiento</td></tr>
-            <tr><td>Espacio por cuenta</td><td>40 GB (cupo)</td><td class="compare-hi">2 TB (individual)</td><td class="compare-hi gold">1 TB (cupo)</td></tr>
+            <tr><td>Espacio en la nube</td><td>80 GB</td><td class="compare-hi">400 GB</td><td class="compare-hi gold">1 TB</td></tr>
             <tr><td>Sincroniza Gmail, Drive, Fotos</td><td class="compare-yes">✓</td><td class="compare-yes">✓</td><td class="compare-yes">✓</td></tr>
+            <tr><td>Privacidad en tu propia cuenta</td><td class="compare-yes">✓ 100% privada</td><td class="compare-yes">✓ 100% privada</td><td class="compare-yes">✓ 100% privada</td></tr>
 
             <tr class="cat-row"><td colspan="4">🤖 Inteligencia Artificial — Gemini</td></tr>
-            <tr><td>Modelo IA incluido</td><td>Gemini Advanced</td><td>Gemini Advanced</td><td class="compare-hi gold">Advanced Pro</td></tr>
-            <tr><td>Gemini Live (voz)</td><td>Voces estándar</td><td class="compare-hi">Modo conversacional</td><td class="compare-hi gold">Voces realistas + traducción</td></tr>
-            <tr><td>Deep Research</td><td>Incluido</td><td class="compare-hi">Avanzado</td><td class="compare-hi gold">Capacidad máxima</td></tr>
+            <tr>
+              <td>Modelos lingüísticos</td>
+              <td><strong>Gemini 3.6 Flash</strong><br><span style="font-size:11px; color:var(--muted);">+ Gemini 3.5 Flash-Lite</span></td>
+              <td class="compare-hi"><strong>Gemini 3 Pro</strong><br><span style="font-size:11px; color:var(--muted);">+ Gemini 3.5 Flash</span></td>
+              <td class="compare-hi gold"><strong>Gemini 4 Argon</strong><br><span style="font-size:11px; color:var(--muted);">+ Gemini 4 Pro</span></td>
+            </tr>
+            <tr><td>Nivel de razonamiento</td><td>Respuestas rápidas</td><td class="compare-hi">Razonamiento superior</td><td class="compare-hi gold">Frontera lógica extrema</td></tr>
+            <tr><td>Exclusividad modelos Pro</td><td class="compare-no">✗ Solo Flash</td><td class="compare-hi">Gemini 3 Pro</td><td class="compare-hi gold">⚡ Exclusivo Pro (Argon & Pro)</td></tr>
+            <tr><td>Gemini Live (voz)</td><td>Voces estándar</td><td class="compare-hi">Modo conversacional</td><td class="compare-hi gold">Voces avanzadas</td></tr>
+            <tr><td>Deep Research</td><td>Básico</td><td class="compare-hi">Avanzado</td><td class="compare-hi gold">Capacidad máxima</td></tr>
 
-            <tr class="cat-row"><td colspan="4">🎨 Creación con IA</td></tr>
-            <tr><td>Imágenes por día</td><td>50/día</td><td class="compare-hi">50/día</td><td class="compare-hi gold">100/día (4K)</td></tr>
-            <tr><td>Videos IA (Veo)</td><td>2 clips/día</td><td class="compare-hi">2 clips/día</td><td class="compare-hi gold">3 clips/día</td></tr>
-            <tr><td>Duración máx. por video</td><td>Hasta 5 seg</td><td class="compare-hi">Hasta 10 seg</td><td class="compare-hi gold">Hasta 60 seg</td></tr>
-            <tr><td>Música IA</td><td>Estándar</td><td class="compare-hi">Estándar</td><td class="compare-hi gold">Alta fidelidad</td></tr>
+            <tr class="cat-row"><td colspan="4">🎨 Multimedia y Creación con IA</td></tr>
+            <tr><td>Imágenes IA (Imagen 3)</td><td>Estándar</td><td class="compare-hi">Alta definición (HD)</td><td class="compare-hi gold">Máxima resolución 4K</td></tr>
+            <tr><td>Videos con IA (Google Veo)</td><td>Acceso básico</td><td class="compare-hi">Clips con IA</td><td class="compare-hi gold">Clips extendidos</td></tr>
+            <tr><td>NotebookLM (Audio Podcasts)</td><td>Estándar</td><td class="compare-hi">Audio Overviews</td><td class="compare-hi gold">Límites extendidos</td></tr>
 
-            <tr class="cat-row"><td colspan="4">⚡ Rendimiento y desarrollo</td></tr>
-            <tr><td>Créditos IA (Flow)</td><td>0</td><td class="compare-hi">300/mes</td><td class="compare-hi gold">1,000/mes</td></tr>
-            <tr><td>AI Studio / Project IDX</td><td class="compare-no">✗</td><td class="compare-no">✗</td><td class="compare-hi gold">Sí</td></tr>
-            <tr><td>Antigravity (código IA)</td><td class="compare-no">✗</td><td class="compare-hi">Básico</td><td class="compare-hi gold">Avanzado</td></tr>
-            <tr><td>Entornos Machine Learning</td><td class="compare-no">✗</td><td class="compare-no">✗</td><td class="compare-hi gold">Incluido</td></tr>
+            <tr class="cat-row"><td colspan="4">⚡ Desarrollo y Herramientas Pro</td></tr>
+            <tr><td>Antigravity (código IA / agéntico)</td><td class="compare-no">✗</td><td class="compare-hi">Básico</td><td class="compare-hi gold">Avanzado / Exclusivo</td></tr>
+            <tr><td>Google AI Studio / Google Flow</td><td class="compare-no">✗</td><td class="compare-no">✗</td><td class="compare-hi gold">Uso profesional</td></tr>
+            <tr><td>Ventana de contexto masiva</td><td>Estándar</td><td class="compare-hi">1M tokens</td><td class="compare-hi gold">2M tokens (Libros/Datos)</td></tr>
 
             <tr class="cat-row"><td colspan="4">📊 Workspace</td></tr>
-            <tr><td>Google Meet</td><td>Estándar</td><td class="compare-hi">24h + graba a Drive</td><td class="compare-hi gold">+ Notas con IA</td></tr>
-            <tr><td>Sheets con IA</td><td>Básico</td><td class="compare-hi">Autogenera tablas</td><td class="compare-hi gold">Control operativo avanzado</td></tr>
-            <tr><td>Gmail/Docs "Ayúdame a escribir"</td><td>Básico</td><td class="compare-hi">Redacción formal</td><td class="compare-hi gold">Resúmenes de hilos</td></tr>
-            <tr><td>NotebookLM</td><td>Estándar</td><td class="compare-hi">Avanzado</td><td class="compare-hi gold">Análisis de manuales</td></tr>
+            <tr>
+              <td>Google Meet</td>
+              <td>Estándar (límite 60 min)</td>
+              <td class="compare-hi gold">⭐ <strong>24h + Graba a Drive</strong><br><span style="font-size:11px; color:var(--g-green); font-weight:800;">(Exclusivo Plan 2TB)</span></td>
+              <td>Herramientas IA (sin 24h ni grabación)</td>
+            </tr>
+            <tr><td>Gmail/Docs "Ayúdame a escribir"</td><td>Básico</td><td class="compare-hi">Redacción formal</td><td class="compare-hi gold">Resúmenes avanzados</td></tr>
+            <tr><td>Google Fotos (Magic Editor)</td><td>Básico</td><td class="compare-hi">Guardados ilimitados</td><td class="compare-hi gold">Guardados ilimitados</td></tr>
+            <tr><td>Garantía JNxKeys</td><td class="compare-yes">🟢 Todos los meses</td><td class="compare-yes">🟢 Todos los meses</td><td class="compare-no">⚠️ Sin garantía (18 meses)</td></tr>
           </tbody>
         </table>
       </div>
@@ -1141,13 +1138,15 @@ function switchTikTokVideo(videoId, titleText, btn) {
               <hr class="dd">
               <div class="dr"><span class="dl">Titular</span><span class="dv">Cesar Fer*</span></div>
               <hr class="dd">
-              <div class="dr"><span class="dl">Monto mensual (2TB)</span><span class="dv">S/ 15</span></div>
+              <div class="dr"><span class="dl">AI Plus 400 (Mensual)</span><span class="dv">S/ 10</span></div>
               <hr class="dd">
-              <div class="dr"><span class="dl">Monto anual (2TB)</span><span class="dv">S/ 125</span></div>
+              <div class="dr"><span class="dl">AI Plus 400 (Semestral)</span><span class="dv">S/ 50</span></div>
               <hr class="dd">
-              <div class="dr"><span class="dl">AI Plus 200GB</span><span class="dv">S/ 10</span></div>
+              <div class="dr"><span class="dl">AI Plus 2TB (Promo 3 meses)</span><span class="dv">S/ 15 / mes</span></div>
               <hr class="dd">
-              <div class="dr"><span class="dl">AI Pro 5TB</span><span class="dv">S/ 20</span></div>
+              <div class="dr"><span class="dl">AI Plus 2TB (Mensual regular)</span><span class="dv">S/ 20 / mes</span></div>
+              <hr class="dd">
+              <div class="dr"><span class="dl">AI Pro 5TB (18 Meses)</span><span class="dv">S/ 35</span></div>
             </div>
           </div>
         </div>
