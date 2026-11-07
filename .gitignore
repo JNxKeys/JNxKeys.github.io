@@ -7,3 +7,6 @@ Thumbs.db
 backup_subpages/
 backups/
 node_modules/
+.env
+.env.local
+.env.*.local

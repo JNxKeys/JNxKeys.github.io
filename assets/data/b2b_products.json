@@ -1,0 +1,427 @@
+{
+  "updated_at": "2026-11-07T07:12:00Z",
+  "carousels": {
+    "antivirus": [
+      {
+        "id": "eset-protect-entry",
+        "name": "ESET PROTECT Entry Cloud",
+        "category": "antivirus",
+        "badge": "Consola Cloud",
+        "badge_class": "badge-sec",
+        "desc": "Defensa avanzada para computadoras y servidores con consola de administración web.",
+        "pay_type": "Suscripción Anual",
+        "duration": "1 Año Oficial",
+        "availability": "⚡ Activación < 15 min",
+        "detail_link": "https://jnxkeys.com/eset/",
+        "cost_usd": 10.50,
+        "cost_pen": 39.90,
+        "msrp_pen": 59.90,
+        "sale_price_pen": "59.90",
+        "price_label": "Anual por puesto",
+        "features": [
+          "Consola centralizada en la nube",
+          "Anti-Ransomware & Protección multicapa",
+          "Gestión remota de endpoints"
+        ],
+        "active": true
+      },
+      {
+        "id": "kaspersky-ksos",
+        "name": "Kaspersky Small Office (KSOS)",
+        "category": "antivirus",
+        "badge": "Pymes 5-25 PCs",
+        "badge_class": "badge-sec",
+        "desc": "Diseñado especialmente para empresas sin departamento de TI dedicado.",
+        "pay_type": "Suscripción Anual",
+        "duration": "1 Año Oficial",
+        "availability": "⚡ Entrega Inmediata",
+        "detail_link": "https://jnxkeys.com/kaspersky/",
+        "cost_usd": 15.00,
+        "cost_pen": 57.00,
+        "msrp_pen": 89.00,
+        "sale_price_pen": "85.00",
+        "price_label": "Packs 5, 10, 15, 20 PCs",
+        "features": [
+          "Protección para PCs y Servidor de Archivos",
+          "Banca protegida Safe Money",
+          "Cifrado de datos y backup automático"
+        ],
+        "active": true
+      },
+      {
+        "id": "eset-protect-advanced",
+        "name": "ESET PROTECT Advanced",
+        "category": "antivirus",
+        "badge": "Avanzado",
+        "badge_class": "badge-sec",
+        "desc": "Incluye defensa contra amenazas zero-day y cifrado completo de disco (Full Disk Encryption).",
+        "pay_type": "Suscripción Anual",
+        "duration": "1 Año Oficial",
+        "availability": "⚡ Aprovisionamiento Cloud",
+        "detail_link": "https://jnxkeys.com/eset/",
+        "cost_usd": 16.80,
+        "cost_pen": 63.80,
+        "msrp_pen": 99.00,
+        "sale_price_pen": "95.00",
+        "price_label": "Suscripción anual",
+        "features": [
+          "Sandboxing en la nube LiveGuard",
+          "Cifrado completo de discos remotos",
+          "Cumplimiento de auditorías TI"
+        ],
+        "active": true
+      },
+      {
+        "id": "kaspersky-endpoint-cloud",
+        "name": "Kaspersky Endpoint Cloud Pro",
+        "category": "antivirus",
+        "badge": "Empresarial",
+        "badge_class": "badge-sec",
+        "desc": "Control de dispositivos, bloqueo web y detección de vulnerabilidades por puesto.",
+        "pay_type": "Suscripción Anual",
+        "duration": "1 Año Oficial",
+        "availability": "⚡ Consola Web Inmediata",
+        "detail_link": "https://jnxkeys.com/kaspersky/",
+        "cost_usd": 18.50,
+        "cost_pen": 70.30,
+        "msrp_pen": 110.00,
+        "sale_price_pen": "105.00",
+        "price_label": "Licencia por volumen",
+        "features": [
+          "Gestión de parches de seguridad",
+          "Control web y de dispositivos USB",
+          "Detección de accesos no autorizados"
+        ],
+        "active": true
+      },
+      {
+        "id": "eset-internet-security-pymes",
+        "name": "ESET Internet Security (3-10 PCs)",
+        "category": "antivirus",
+        "badge": "Multi-PC",
+        "badge_class": "badge-perm",
+        "desc": "Solución rápida sin servidor para despachos, consultorios y pequeñas oficinas.",
+        "pay_type": "Licencia Anual",
+        "duration": "1 Año Oficial",
+        "availability": "⚡ Claves Alfanuméricas en 5 min",
+        "detail_link": "https://jnxkeys.com/eset/",
+        "cost_usd": 8.00,
+        "cost_pen": 30.40,
+        "msrp_pen": 48.00,
+        "sale_price_pen": "45.00",
+        "price_label": "Pack 3, 5 o 10 Licencias",
+        "features": [
+          "Instalación simple en cada equipo",
+          "Firewall personal y banca segura",
+          "Activación en minutos por WhatsApp"
+        ],
+        "active": true
+      }
+    ],
+    "ofimatica": [
+      {
+        "id": "m365-business-standard",
+        "name": "Microsoft 365 Business Standard",
+        "category": "ofimatica",
+        "badge": "Más Vendido",
+        "badge_class": "badge-cloud",
+        "desc": "Apps instalables de escritorio en 5 PCs/Macs + Correo corporativo 50GB + 1TB OneDrive.",
+        "pay_type": "Suscripción Recurrente",
+        "duration": "1 Año Oficial",
+        "availability": "⚡ Alta en Tenant Oficial",
+        "detail_link": "https://jnxkeys.com/office/",
+        "cost_usd": 11.20,
+        "cost_pen": 42.50,
+        "msrp_pen": 65.00,
+        "sale_price_pen": "65.00",
+        "price_label": "Mensual o Anual",
+        "features": [
+          "Word, Excel, PowerPoint, Outlook, Teams",
+          "Correo corporativo con tu dominio",
+          "1TB de almacenamiento en la nube"
+        ],
+        "active": true
+      },
+      {
+        "id": "m365-business-basic",
+        "name": "Microsoft 365 Business Basic",
+        "category": "ofimatica",
+        "badge": "Económico",
+        "badge_class": "badge-cloud",
+        "desc": "Ideal para personal operativo: correo profesional Exchange, Teams y versiones web/móvil.",
+        "pay_type": "Suscripción Recurrente",
+        "duration": "1 Año Oficial",
+        "availability": "⚡ Correo Activo en 15 min",
+        "detail_link": "https://jnxkeys.com/office/",
+        "cost_usd": 5.40,
+        "cost_pen": 20.50,
+        "msrp_pen": 32.00,
+        "sale_price_pen": "30.00",
+        "price_label": "Por usuario / mes",
+        "features": [
+          "Buzón de 50GB con filtro anti-spam",
+          "Reuniones en Teams hasta 300 personas",
+          "1TB OneDrive para archivos de trabajo"
+        ],
+        "active": true
+      },
+      {
+        "id": "office-2024-ltsc",
+        "name": "Office 2024 Home & Business",
+        "category": "ofimatica",
+        "badge": "Permanente",
+        "badge_class": "badge-perm",
+        "desc": "Licencia perpetua oficial para empresas. Un solo pago de por vida sin mensualidades.",
+        "pay_type": "Pago Único (Sin cuotas)",
+        "duration": "Permanente De Por Vida",
+        "availability": "⚡ Clave Digital + Vinculación",
+        "detail_link": "https://jnxkeys.com/office/",
+        "cost_usd": 78.00,
+        "cost_pen": 296.00,
+        "msrp_pen": 420.00,
+        "sale_price_pen": "390.00",
+        "price_label": "Pago Único de por vida",
+        "features": [
+          "Uso comercial autorizado por Microsoft",
+          "Compatible con Windows 11, 10 y macOS",
+          "Transferible y vinculable a cuenta oficial"
+        ],
+        "active": true
+      },
+      {
+        "id": "workspace-business-standard",
+        "name": "Google Workspace Business (2TB)",
+        "category": "ofimatica",
+        "badge": "Google Cloud",
+        "badge_class": "badge-cloud",
+        "desc": "Gmail corporativo @tuempresa.com con 2TB de almacenamiento en la nube por usuario.",
+        "pay_type": "Suscripción Anual",
+        "duration": "1 Año Oficial",
+        "availability": "⚡ Configuración DNS & Dominio",
+        "detail_link": "https://jnxkeys.com/google-one/",
+        "cost_usd": 10.80,
+        "cost_pen": 41.00,
+        "msrp_pen": 60.00,
+        "sale_price_pen": "58.00",
+        "price_label": "Suscripción anual",
+        "features": [
+          "Meet para 150 participantes con grabación",
+          "Carpetas compartidas de equipo",
+          "Consola de administración Google Admin"
+        ],
+        "active": true
+      },
+      {
+        "id": "office-2021-pro-plus",
+        "name": "Office 2021 Professional Plus",
+        "category": "ofimatica",
+        "badge": "De Por Vida",
+        "badge_class": "badge-perm",
+        "desc": "Suite completa: Word, Excel, PPT, Outlook, Access y Publisher en activación permanente.",
+        "pay_type": "Pago Único (Sin cuotas)",
+        "duration": "Permanente De Por Vida",
+        "availability": "⚡ Entrega Inmediata",
+        "detail_link": "https://jnxkeys.com/office/",
+        "cost_usd": 12.00,
+        "cost_pen": 45.60,
+        "msrp_pen": 80.00,
+        "sale_price_pen": "75.00",
+        "price_label": "Pago Único Permanente",
+        "features": [
+          "Activación digital perpetua por equipo",
+          "Sin cargos recurrentes ni renovaciones",
+          "Precios escalonados por volumen"
+        ],
+        "active": true
+      }
+    ],
+    "sistemas": [
+      {
+        "id": "win11-pro-volumen",
+        "name": "Windows 11 Pro (OEM / Retail)",
+        "category": "sistemas",
+        "badge": "SO Oficial",
+        "badge_class": "badge-perm",
+        "desc": "Legalización oficial de computadoras empresariales. Cifrado BitLocker y Azure Active Directory.",
+        "pay_type": "Pago Único Permanente",
+        "duration": "De Por Vida en el Equipo",
+        "availability": "⚡ Clave OEM/Retail Inmediata",
+        "detail_link": "https://jnxkeys.com/windows/",
+        "cost_usd": 11.50,
+        "cost_pen": 43.70,
+        "msrp_pen": 85.00,
+        "sale_price_pen": "79.00",
+        "price_label": "Licencia Permanente",
+        "features": [
+          "Unión a dominio empresarial / Azure AD",
+          "Cifrado BitLocker para proteger datos",
+          "Activación permanente y soporte de actualizaciones"
+        ],
+        "active": true
+      },
+      {
+        "id": "win10-pro-comercial",
+        "name": "Windows 10 Pro Comercial",
+        "category": "sistemas",
+        "badge": "Estable",
+        "badge_class": "badge-perm",
+        "desc": "Ideal para empresas con software heredado o estaciones de trabajo en producción estable.",
+        "pay_type": "Pago Único Permanente",
+        "duration": "De Por Vida en el Equipo",
+        "availability": "⚡ Clave Digital Inmediata",
+        "detail_link": "https://jnxkeys.com/windows/",
+        "cost_usd": 9.50,
+        "cost_pen": 36.10,
+        "msrp_pen": 70.00,
+        "sale_price_pen": "65.00",
+        "price_label": "Por puesto / volumen",
+        "features": [
+          "Escritorio remoto Remote Desktop",
+          "Compatible con todos los sistemas ERP contables",
+          "Licencia de activación perpetua"
+        ],
+        "active": true
+      },
+      {
+        "id": "win-server-standard",
+        "name": "Windows Server Standard (16 Cores)",
+        "category": "sistemas",
+        "badge": "Servidores",
+        "badge_class": "badge-perm",
+        "desc": "Licenciamiento para servidores de bases de datos, controladores de dominio y virtualización Hyper-V.",
+        "pay_type": "Pago Único Perpetuo",
+        "duration": "Perpetua por Núcleos",
+        "availability": "⚡ ISO Oficial + Clave COA/Retail",
+        "detail_link": "https://jnxkeys.com/contacto/",
+        "cost_usd": 120.00,
+        "cost_pen": 456.00,
+        "msrp_pen": 750.00,
+        "sale_price_pen": "690.00",
+        "price_label": "Base 16 Cores",
+        "features": [
+          "Incluye 2 máquinas virtuales Hyper-V",
+          "Active Directory, DNS, DHCP centralizado",
+          "Licencia perpetua por núcleos de servidor"
+        ],
+        "active": true
+      },
+      {
+        "id": "win-server-rds-cals",
+        "name": "Remote Desktop Services (RDS CALs)",
+        "category": "sistemas",
+        "badge": "Acceso Remoto",
+        "badge_class": "badge-cloud",
+        "desc": "Permite que tus empleados y contadores se conecten remotamente al servidor desde sus casas.",
+        "pay_type": "Licencia Perpetua",
+        "duration": "Perpetua por Usuario/Dispositivo",
+        "availability": "⚡ Aprovisionamiento en Servidor",
+        "detail_link": "https://jnxkeys.com/contacto/",
+        "cost_usd": 22.00,
+        "cost_pen": 83.60,
+        "msrp_pen": 140.00,
+        "sale_price_pen": "130.00",
+        "price_label": "Packs de Acceso",
+        "features": [
+          "CALs por Usuario o por Dispositivo",
+          "Acceso seguro a sistemas de ventas y facturación",
+          "Packs de 5, 10, 20 o 50 usuarios concurrentes"
+        ],
+        "active": true
+      }
+    ],
+    "especializado": [
+      {
+        "id": "adobe-cc-teams",
+        "name": "Adobe Creative Cloud Teams",
+        "category": "especializado",
+        "badge": "Adobe Oficial",
+        "badge_class": "badge-cloud",
+        "desc": "Más de 20 aplicaciones creativas: Photoshop, Illustrator, Premiere, After Effects y Acrobat Pro.",
+        "pay_type": "Suscripción Anual",
+        "duration": "1 Año Oficial",
+        "availability": "⚡ Asignación en Admin Console",
+        "detail_link": "https://jnxkeys.com/canva/",
+        "cost_usd": 68.00,
+        "cost_pen": 258.40,
+        "msrp_pen": 360.00,
+        "sale_price_pen": "340.00",
+        "price_label": "Suscripción anual con RUC",
+        "features": [
+          "Consola Admin Console para reasignar licencias",
+          "1TB de almacenamiento en la nube por usuario",
+          "Créditos generativos de IA Adobe Firefly"
+        ],
+        "active": true
+      },
+      {
+        "id": "autodesk-autocad-revit",
+        "name": "Autodesk AutoCAD & Revit",
+        "category": "especializado",
+        "badge": "Arquitectura/BIM",
+        "badge_class": "badge-cad",
+        "desc": "Software de diseño asistido por computadora y modelado de información de construcción (BIM).",
+        "pay_type": "Suscripción Anual",
+        "duration": "1 Año Oficial",
+        "availability": "⚡ Licencia Comercial en Autodesk ID",
+        "detail_link": "https://jnxkeys.com/contacto/",
+        "cost_usd": 190.00,
+        "cost_pen": 722.00,
+        "msrp_pen": 980.00,
+        "sale_price_pen": "920.00",
+        "price_label": "Suscripción Anual",
+        "features": [
+          "Licencia comercial oficial por suscripción",
+          "Para empresas de ingeniería, construcción y minería",
+          "Soporte directo y acceso a versiones anteriores"
+        ],
+        "active": true
+      },
+      {
+        "id": "workspace-gemini-enterprise",
+        "name": "Gemini IA para Google Workspace",
+        "category": "especializado",
+        "badge": "IA Empresarial",
+        "badge_class": "badge-cloud",
+        "desc": "Potencia tu empresa con IA de nivel empresarial integrada en Gmail, Docs, Sheets y Google Meet.",
+        "pay_type": "Add-on Suscripción",
+        "duration": "1 Año Oficial",
+        "availability": "⚡ Activación en Panel Google",
+        "detail_link": "https://jnxkeys.com/google-one/",
+        "cost_usd": 18.00,
+        "cost_pen": 68.40,
+        "msrp_pen": 105.00,
+        "sale_price_pen": "99.00",
+        "price_label": "Add-on por usuario",
+        "features": [
+          "Redacción inteligente de correos y propuestas",
+          "Resúmenes automáticos de reuniones en Meet",
+          "Privacidad total: tus datos no entrenan la IA"
+        ],
+        "active": true
+      },
+      {
+        "id": "canva-pro-equipos",
+        "name": "Canva Pro para Equipos",
+        "category": "especializado",
+        "badge": "Marketing",
+        "badge_class": "badge-perm",
+        "desc": "Diseño colaborativo para departamentos de ventas, recursos humanos y marketing.",
+        "pay_type": "Suscripción Anual",
+        "duration": "1 Año Oficial",
+        "availability": "⚡ Invitación por Correo Inmediata",
+        "detail_link": "https://jnxkeys.com/canva/",
+        "cost_usd": 9.00,
+        "cost_pen": 34.20,
+        "msrp_pen": 60.00,
+        "sale_price_pen": "55.00",
+        "price_label": "Acceso Corporativo",
+        "features": [
+          "Kits de marca con logos y paletas oficiales",
+          "Flujos de aprobación de diseños internos",
+          "100+ millones de fotos, videos y gráficos libres"
+        ],
+        "active": true
+      }
+    ]
+  }
+}

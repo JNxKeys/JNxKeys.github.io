@@ -2,9 +2,10 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 
-const PORT = 8000;
+const PORT = 8080;
 const BASE_DIR = __dirname;
 const ADS_FILE = path.join(BASE_DIR, 'assets', 'data', 'ads.json');
+const B2B_PRODUCTS_FILE = path.join(BASE_DIR, 'assets', 'data', 'b2b_products.json');
 
 const MIME_TYPES = {
   '.html': 'text/html; charset=utf-8',
@@ -57,12 +58,48 @@ const server = http.createServer((req, res) => {
     return;
   }
 
+  // API endpoint for reading B2B products
+  if (req.method === 'GET' && urlPath === '/api/b2b-products') {
+    if (fs.existsSync(B2B_PRODUCTS_FILE)) {
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      fs.createReadStream(B2B_PRODUCTS_FILE).pipe(res);
+    } else {
+      res.writeHead(404, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ error: 'Archivo b2b_products.json no encontrado' }));
+    }
+    return;
+  }
+
+  // API endpoint for saving curated B2B products
+  if (req.method === 'POST' && urlPath === '/api/save-b2b-products') {
+    let body = '';
+    req.on('data', chunk => { body += chunk; });
+    req.on('end', () => {
+      try {
+        const parsed = JSON.parse(body);
+        parsed.updated_at = new Date().toISOString();
+        fs.mkdirSync(path.dirname(B2B_PRODUCTS_FILE), { recursive: true });
+        fs.writeFileSync(B2B_PRODUCTS_FILE, JSON.stringify(parsed, null, 2), 'utf-8');
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ success: true, message: 'Catálogo B2B actualizado exitosamente' }));
+      } catch (err) {
+        res.writeHead(400, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ success: false, error: err.message }));
+      }
+    });
+    return;
+  }
+
   // Static files handling
   let relativePath = urlPath === '/' ? '/index.html' : urlPath;
   let filePath = path.join(BASE_DIR, relativePath);
 
   // If directory, check for index.html
   if (fs.existsSync(filePath) && fs.statSync(filePath).isDirectory()) {
+    filePath = path.join(filePath, 'index.html');
+  } else if (!fs.existsSync(filePath) && fs.existsSync(filePath + '.html')) {
+    filePath = filePath + '.html';
+  } else if (!fs.existsSync(filePath) && fs.existsSync(path.join(filePath, 'index.html'))) {
     filePath = path.join(filePath, 'index.html');
   }
 

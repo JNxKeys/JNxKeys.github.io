@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curador B2B & Rentabilidad Ingram Micro — JNxKeys Admin</title>
+  <link rel="icon" type="image/png" href="/assets/img/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --admin-bg: #0A0F1D;
+      --admin-surface: #111827;
+      --admin-card: #151F33;
+      --admin-card-hover: #1A2742;
+      --admin-border: rgba(255, 255, 255, 0.1);
+      --admin-border-focus: rgba(56, 189, 248, 0.5);
+      --admin-accent: #2563EB;
+      --admin-cyan: #38BDF8;
+      --admin-green: #10B981;
+      --admin-amber: #F59E0B;
+      --admin-text: #F8FAFC;
+      --admin-muted: #94A3B8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--admin-bg);
+      color: var(--admin-text);
+      min-height: 100vh;
+      padding: 24px 20px 80px;
+    }
+    .admin-container {
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+    
+    /* Header */
+    .admin-header {
+      background: var(--admin-surface);
+      border: 1px solid var(--admin-border);
+      border-radius: 20px;
+      padding: 24px 28px;
+      margin-bottom: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.4);
+    }
+    .admin-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .admin-title-wrap img {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      border: 1.5px solid rgba(255,255,255,0.2);
+    }
+    .admin-header h1 {
+      font-size: 22px;
+      font-weight: 800;
+      color: #FFFFFF;
+      letter-spacing: -0.01em;
+    }
+    .admin-header p {
+      font-size: 13px;
+      color: var(--admin-muted);
+      margin-top: 2px;
+    }
+    .admin-actions-bar {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .btn-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 10px 18px;
+      border-radius: 10px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: none;
+    }
+    .btn-secondary {
+      background: rgba(255,255,255,0.06);
+      color: #E2E8F0;
+      border: 1px solid var(--admin-border);
+    }
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.12);
+      color: #FFFFFF;
+    }
+    .btn-publish {
+      background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+      color: #FFFFFF;
+      box-shadow: 0 6px 18px rgba(16, 185, 129, 0.4);
+    }
+    .btn-publish:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(16, 185, 129, 0.55);
+    }
+
+    /* KPI STATS CARDS */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .stat-card {
+      background: var(--admin-surface);
+      border: 1px solid var(--admin-border);
+      border-radius: 16px;
+      padding: 18px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .stat-label {
+      font-size: 12px;
+      color: var(--admin-muted);
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+    .stat-value {
+      font-size: 24px;
+      font-weight: 900;
+      color: #FFFFFF;
+    }
+    .stat-subtext {
+      font-size: 11px;
+      color: var(--admin-green);
+      font-weight: 600;
+    }
+
+    /* FILTROS & CONTROLES */
+    .controls-panel {
+      background: var(--admin-surface);
+      border: 1px solid var(--admin-border);
+      border-radius: 16px;
+      padding: 18px 22px;
+      margin-bottom: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .filters-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .filter-btn {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--admin-border);
+      color: var(--admin-muted);
+      font-size: 12.5px;
+      font-weight: 700;
+      padding: 7px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .filter-btn.active, .filter-btn:hover {
+      background: var(--admin-accent);
+      color: #FFFFFF;
+      border-color: var(--admin-accent);
+    }
+    .search-box {
+      background: var(--admin-card);
+      border: 1px solid var(--admin-border);
+      color: #FFFFFF;
+      font-size: 13px;
+      padding: 8px 14px;
+      border-radius: 8px;
+      min-width: 260px;
+      outline: none;
+    }
+    .search-box:focus {
+      border-color: var(--admin-cyan);
+    }
+    .sort-select {
+      background: var(--admin-card);
+      border: 1px solid var(--admin-border);
+      color: #FFFFFF;
+      font-size: 12.5px;
+      font-weight: 600;
+      padding: 8px 12px;
+      border-radius: 8px;
+      outline: none;
+      cursor: pointer;
+    }
+
+    /* TABLA DE CURADURÍA & PRECIOS */
+    .curator-table-wrap {
+      background: var(--admin-surface);
+      border: 1px solid var(--admin-border);
+      border-radius: 18px;
+      overflow-x: auto;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      margin-bottom: 32px;
+    }
+    table.curator-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      min-width: 1200px;
+    }
+    .curator-table th {
+      background: rgba(255,255,255,0.03);
+      padding: 14px 16px;
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--admin-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-bottom: 1px solid var(--admin-border);
+      white-space: nowrap;
+    }
+    .curator-table td {
+      padding: 16px 16px;
+      font-size: 13px;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      vertical-align: top;
+    }
+    .curator-table tr:hover {
+      background: rgba(255,255,255,0.02);
+    }
+    
+    /* Celdas específicas */
+    .cell-product {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      max-width: 280px;
+    }
+    .product-title-text {
+      font-weight: 800;
+      color: #FFFFFF;
+      font-size: 14px;
+      line-height: 1.3;
+    }
+    .product-desc-text {
+      font-size: 11.5px;
+      color: var(--admin-muted);
+      line-height: 1.35;
+    }
+    .sku-badge {
+      font-size: 10px;
+      font-family: monospace;
+      color: #64748B;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 2px 6px;
+      border-radius: 4px;
+      display: inline-block;
+      width: fit-content;
+    }
+
+    /* Input Link Publicidad */
+    .link-box-wrap {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 4px;
+    }
+    .input-url-text {
+      background: #090E18;
+      border: 1px solid var(--admin-border);
+      color: #38BDF8;
+      font-size: 11px;
+      font-family: monospace;
+      padding: 5px 8px;
+      border-radius: 6px;
+      width: 100%;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .input-url-text:focus {
+      border-color: var(--admin-cyan);
+    }
+    .btn-link-preview {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 26px;
+      height: 26px;
+      border-radius: 6px;
+      background: rgba(56, 189, 248, 0.15);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      color: #38BDF8;
+      text-decoration: none;
+      font-size: 12px;
+      flex-shrink: 0;
+      transition: all 0.2s;
+    }
+    .btn-link-preview:hover {
+      background: rgba(56, 189, 248, 0.3);
+      transform: scale(1.08);
+    }
+
+    /* Celda combinada: Carrusel & Etiqueta */
+    .cell-combo-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      min-width: 180px;
+    }
+    .field-row {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .field-label {
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--admin-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .select-carousel {
+      background: #090E18;
+      border: 1px solid var(--admin-border);
+      color: #CBD5E1;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 6px 8px;
+      border-radius: 6px;
+      outline: none;
+      cursor: pointer;
+      width: 100%;
+    }
+    .input-curator-input {
+      background: #090E18;
+      border: 1px solid var(--admin-border);
+      color: #F8FAFC;
+      font-size: 11.5px;
+      font-weight: 600;
+      padding: 5px 8px;
+      border-radius: 6px;
+      width: 100%;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .input-curator-input:focus {
+      border-color: var(--admin-cyan);
+    }
+
+    /* Celda Visibilidad Comercial */
+    .cell-visibility {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      min-width: 190px;
+    }
+
+    /* Precios y Márgenes */
+    .price-tag-cost {
+      font-weight: 700;
+      color: #94A3B8;
+      display: block;
+    }
+    .price-tag-msrp {
+      font-weight: 600;
+      color: #64748B;
+      font-size: 11px;
+      display: block;
+      margin-top: 2px;
+    }
+    .margin-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: rgba(16, 185, 129, 0.16);
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      color: #10B981;
+      font-size: 12px;
+      font-weight: 800;
+      padding: 4px 8px;
+      border-radius: 6px;
+      white-space: nowrap;
+    }
+    .input-sale-price {
+      background: #090E18;
+      border: 1.5px solid var(--admin-border);
+      color: #FBBF24;
+      font-size: 14px;
+      font-weight: 800;
+      padding: 6px 10px;
+      border-radius: 8px;
+      width: 110px;
+      outline: none;
+      text-align: right;
+    }
+    .input-sale-price:focus {
+      border-color: var(--admin-cyan);
+      box-shadow: 0 0 8px rgba(56, 189, 248, 0.3);
+    }
+
+    /* Switch iOS Toggle */
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 44px;
+      height: 24px;
+    }
+    .switch input { opacity: 0; width: 0; height: 0; }
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(255,255,255,0.1);
+      transition: .3s;
+      border-radius: 24px;
+      border: 1px solid var(--admin-border);
+    }
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 16px;
+      width: 16px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      transition: .3s;
+      border-radius: 50%;
+    }
+    input:checked + .slider {
+      background-color: var(--admin-green);
+      border-color: var(--admin-green);
+    }
+    input:checked + .slider:before {
+      transform: translateX(20px);
+    }
+
+    /* Toast Notification */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #10B981;
+      color: #FFFFFF;
+      font-size: 13.5px;
+      font-weight: 800;
+      padding: 12px 24px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transform: translateY(120px);
+      opacity: 0;
+      transition: all 0.3s ease;
+      z-index: 1000;
+    }
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    @media (max-width: 900px) {
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+      .admin-header { flex-direction: column; align-items: stretch; }
+      .admin-actions-bar { justify-content: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="admin-container">
+    
+    <!-- HEADER -->
+    <header class="admin-header">
+      <div class="admin-title-wrap">
+        <img src="/assets/img/favicon.png" alt="Logo JNxKeys">
+        <div>
+          <h1>Curador B2B & Margen Mayorista Ingram Micro</h1>
+          <p>Ajusta carruseles, etiquetas, links publicitarios, condiciones comerciales y precios de venta.</p>
+        </div>
+      </div>
+      <div class="admin-actions-bar">
+        <a href="/admin/" class="btn-action btn-secondary">← Panel de Anuncios</a>
+        <a href="/empresas/" target="_blank" class="btn-action btn-secondary">👁️ Ver Tienda B2B ↗</a>
+        <button class="btn-action btn-publish" onclick="saveAndPublish()">💾 Guardar y Publicar en Tienda</button>
+      </div>
+    </header>
+
+    <!-- STATS KPIS -->
+    <section class="stats-grid">
+      <div class="stat-card">
+        <span class="stat-label">Productos Activos</span>
+        <span class="stat-value" id="kpi-total-active">18</span>
+        <span class="stat-subtext">Publicados en carruseles</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Margen Promedio</span>
+        <span class="stat-value" id="kpi-avg-margin">58.4%</span>
+        <span class="stat-subtext">Rentabilidad comercial estimada</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Conexión Ingram API</span>
+        <span class="stat-value" style="color: #38BDF8; font-size: 19px;">✓ OAuth2 Activo</span>
+        <span class="stat-subtext">Cuenta: 430032 (Perú)</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Última Sincronización</span>
+        <span class="stat-value" id="kpi-last-sync" style="font-size: 17px;">En vivo</span>
+        <span class="stat-subtext">Almacenamiento: b2b_products.json</span>
+      </div>
+    </section>
+
+    <!-- CONTROLES & FILTROS -->
+    <section class="controls-panel">
+      <div class="filters-group">
+        <button class="filter-btn active" onclick="filterTable('all', this)">Todos</button>
+        <button class="filter-btn" onclick="filterTable('antivirus', this)">1. Antivirus</button>
+        <button class="filter-btn" onclick="filterTable('ofimatica', this)">2. Ofimática Cloud</button>
+        <button class="filter-btn" onclick="filterTable('sistemas', this)">3. Sistemas & Server</button>
+        <button class="filter-btn" onclick="filterTable('especializado', this)">4. Diseño & IA</button>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <input type="text" class="search-box" id="search-input" placeholder="Buscar por nombre, SKU o tag..." oninput="handleSearch()">
+        <select class="sort-select" id="sort-select" onchange="handleSort()">
+          <option value="margin-desc">Ordenar: Mayor Margen (%)</option>
+          <option value="profit-desc">Ordenar: Mayor Ganancia (S/)</option>
+          <option value="cost-asc">Ordenar: Menor Costo Mayorista</option>
+          <option value="name-asc">Ordenar: Nombre A-Z</option>
+        </select>
+      </div>
+    </section>
+
+    <!-- TABLA DE CURADURÍA -->
+    <div class="curator-table-wrap">
+      <table class="curator-table" id="curator-table">
+        <thead>
+          <tr>
+            <th style="width: 70px;">Publicar</th>
+            <th style="width: 280px;">Producto & Link Publicidad</th>
+            <th style="width: 190px;">Carrusel & Etiqueta</th>
+            <th style="width: 210px;">Condiciones & Visibilidad</th>
+            <th style="width: 120px;">Costo Mayorista</th>
+            <th style="width: 130px;">Margen Neto</th>
+            <th style="width: 120px;">Precio Venta (S/)</th>
+          </tr>
+        </thead>
+        <tbody id="table-body">
+          <!-- Filas generadas dinámicamente -->
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast">
+    <span>✓</span>
+    <span id="toast-msg">Catálogo B2B actualizado con éxito.</span>
+  </div>
+
+  <script>
+    let b2bData = null;
+    let currentCategory = 'all';
+
+    // Cargar datos del endpoint
+    async function loadB2BProducts() {
+      try {
+        const res = await fetch('/api/b2b-products');
+        b2bData = await res.json();
+        renderTable();
+        updateKPIs();
+      } catch (err) {
+        console.error('Error al cargar datos B2B:', err);
+      }
+    }
+
+    // Aplanar productos para la tabla
+    function getAllProducts() {
+      if (!b2bData || !b2bData.carousels) return [];
+      const list = [];
+      for (const [catKey, items] of Object.entries(b2bData.carousels)) {
+        items.forEach((p, idx) => {
+          list.push({ ...p, originalCategory: catKey, originalIndex: idx });
+        });
+      }
+      return list;
+    }
+
+    function renderTable() {
+      const tbody = document.getElementById('table-body');
+      tbody.innerHTML = '';
+      
+      let products = getAllProducts();
+
+      // Filtro por categoría
+      if (currentCategory !== 'all') {
+        products = products.filter(p => p.category === currentCategory);
+      }
+
+      // Filtro de búsqueda
+      const query = document.getElementById('search-input').value.toLowerCase().trim();
+      if (query) {
+        products = products.filter(p => 
+          p.name.toLowerCase().includes(query) || 
+          (p.desc && p.desc.toLowerCase().includes(query)) ||
+          p.id.toLowerCase().includes(query) ||
+          (p.badge && p.badge.toLowerCase().includes(query)) ||
+          (p.pay_type && p.pay_type.toLowerCase().includes(query)) ||
+          (p.duration && p.duration.toLowerCase().includes(query))
+        );
+      }
+
+      // Ordenamiento
+      const sortVal = document.getElementById('sort-select').value;
+      products.sort((a, b) => {
+        const costA = a.cost_pen || 0;
+        const saleA = parseFloat(a.sale_price_pen) || 0;
+        const marginA = saleA - costA;
+        const marginPctA = costA > 0 ? (marginA / costA) * 100 : 0;
+
+        const costB = b.cost_pen || 0;
+        const saleB = parseFloat(b.sale_price_pen) || 0;
+        const marginB = saleB - costB;
+        const marginPctB = costB > 0 ? (marginB / costB) * 100 : 0;
+
+        if (sortVal === 'margin-desc') return marginPctB - marginPctA;
+        if (sortVal === 'profit-desc') return marginB - marginA;
+        if (sortVal === 'cost-asc') return costA - costB;
+        if (sortVal === 'name-asc') return a.name.localeCompare(b.name);
+        return 0;
+      });
+
+      products.forEach(p => {
+        const cost = p.cost_pen || 0;
+        const salePrice = parseFloat(p.sale_price_pen) || 0;
+        const profit = salePrice - cost;
+        const marginPct = cost > 0 ? ((profit / cost) * 100).toFixed(0) : 0;
+        const detailLink = p.detail_link || '#';
+
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <!-- 1. PUBLICAR ON/OFF -->
+          <td>
+            <label class="switch">
+              <input type="checkbox" ${p.active ? 'checked' : ''} onchange="toggleProductActive('${p.id}', this.checked)">
+              <span class="slider"></span>
+            </label>
+            <span class="sku-badge">${p.id}</span>
+          </td>
+
+          <!-- 2. PRODUCTO & LINK DE PUBLICIDAD -->
+          <td>
+            <div class="cell-product">
+              <span class="product-title-text">${p.name}</span>
+              <span class="product-desc-text">${p.desc || ''}</span>
+              <div class="field-row" style="margin-top: 4px;">
+                <span class="field-label">🔗 Link Publicidad / Ficha Técnica:</span>
+                <div class="link-box-wrap">
+                  <input type="url" class="input-url-text" id="link-input-${p.id}" value="${p.detail_link || ''}" placeholder="https://jnxkeys.com/..." oninput="updateLinkField('${p.id}', this.value)">
+                  <a href="${detailLink}" target="_blank" class="btn-link-preview" id="link-preview-${p.id}" title="Probar link oficial de publicidad">↗</a>
+                </div>
+              </div>
+            </div>
+          </td>
+
+          <!-- 3. CARRUSEL & ETIQUETA (JUNTOS) -->
+          <td>
+            <div class="cell-combo-group">
+              <div class="field-row">
+                <span class="field-label">Carrusel Asignado:</span>
+                <select class="select-carousel" onchange="changeProductCategory('${p.id}', this.value)">
+                  <option value="antivirus" ${p.category === 'antivirus' ? 'selected' : ''}>1. Antivirus</option>
+                  <option value="ofimatica" ${p.category === 'ofimatica' ? 'selected' : ''}>2. Ofimática Cloud</option>
+                  <option value="sistemas" ${p.category === 'sistemas' ? 'selected' : ''}>3. Sistemas & Server</option>
+                  <option value="especializado" ${p.category === 'especializado' ? 'selected' : ''}>4. Diseño & IA</option>
+                </select>
+              </div>
+              <div class="field-row">
+                <span class="field-label">Etiqueta / Badge:</span>
+                <input type="text" class="input-curator-input" value="${p.badge || ''}" placeholder="Ej: Más Vendido, Cloud" oninput="updateProductField('${p.id}', 'badge', this.value)">
+              </div>
+            </div>
+          </td>
+
+          <!-- 4. CONDICIONES & VISIBILIDAD -->
+          <td>
+            <div class="cell-visibility">
+              <div class="field-row">
+                <span class="field-label">⏱️ Tiempo Licencia:</span>
+                <input type="text" class="input-curator-input" value="${p.duration || ''}" placeholder="Ej: 1 Año Oficial, Permanente" oninput="updateProductField('${p.id}', 'duration', this.value)">
+              </div>
+              <div class="field-row">
+                <span class="field-label">💳 Tipo de Paga:</span>
+                <input type="text" class="input-curator-input" value="${p.pay_type || ''}" placeholder="Ej: Suscripción Anual, Pago Único" oninput="updateProductField('${p.id}', 'pay_type', this.value)">
+              </div>
+              <div class="field-row">
+                <span class="field-label">⚡ Disponibilidad / Entrega:</span>
+                <input type="text" class="input-curator-input" value="${p.availability || ''}" placeholder="Ej: Activación < 15 min" oninput="updateProductField('${p.id}', 'availability', this.value)">
+              </div>
+            </div>
+          </td>
+
+          <!-- 5. COSTO & MSRP -->
+          <td>
+            <span class="price-tag-cost">S/ ${cost.toFixed(2)}</span>
+            <span class="price-tag-msrp">MSRP: S/ ${(p.msrp_pen || 0).toFixed(2)}</span>
+          </td>
+
+          <!-- 6. MARGEN NETO -->
+          <td>
+            <span class="margin-pill" id="margin-tag-${p.id}">
+              +S/ ${profit.toFixed(2)} (${marginPct}%)
+            </span>
+          </td>
+
+          <!-- 7. PRECIO VENTA -->
+          <td>
+            <input type="number" step="0.5" class="input-sale-price" value="${salePrice.toFixed(2)}" oninput="updatePrice('${p.id}', this.value, ${cost})">
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    // Actualizar precio de venta y recálculo en vivo
+    function updatePrice(productId, newPrice, cost) {
+      const val = parseFloat(newPrice) || 0;
+      const profit = val - cost;
+      const marginPct = cost > 0 ? ((profit / cost) * 100).toFixed(0) : 0;
+
+      const tag = document.getElementById(`margin-tag-${productId}`);
+      if (tag) {
+        tag.textContent = `+S/ ${profit.toFixed(2)} (${marginPct}%)`;
+      }
+
+      // Actualizar en el modelo
+      for (const cat of Object.values(b2bData.carousels)) {
+        const item = cat.find(p => p.id === productId);
+        if (item) {
+          item.sale_price_pen = val.toFixed(2);
+          break;
+        }
+      }
+      updateKPIs();
+    }
+
+    // Actualizar link de publicidad y refrescar botón de previsualización
+    function updateLinkField(productId, newLink) {
+      updateProductField(productId, 'detail_link', newLink);
+      const previewBtn = document.getElementById(`link-preview-${productId}`);
+      if (previewBtn) {
+        previewBtn.href = newLink || '#';
+      }
+    }
+
+    // Actualizar campo genérico (badge, duration, pay_type, availability, etc.)
+    function updateProductField(productId, field, value) {
+      for (const cat of Object.values(b2bData.carousels)) {
+        const item = cat.find(p => p.id === productId);
+        if (item) {
+          item[field] = value;
+          break;
+        }
+      }
+    }
+
+    // Alternar estado activo
+    function toggleProductActive(productId, activeState) {
+      for (const cat of Object.values(b2bData.carousels)) {
+        const item = cat.find(p => p.id === productId);
+        if (item) {
+          item.active = activeState;
+          break;
+        }
+      }
+      updateKPIs();
+    }
+
+    // Cambiar categoría / carrusel asignado
+    function changeProductCategory(productId, newCat) {
+      let foundItem = null;
+      for (const [catKey, items] of Object.entries(b2bData.carousels)) {
+        const idx = items.findIndex(p => p.id === productId);
+        if (idx !== -1) {
+          foundItem = items.splice(idx, 1)[0];
+          break;
+        }
+      }
+      if (foundItem) {
+        foundItem.category = newCat;
+        if (!b2bData.carousels[newCat]) b2bData.carousels[newCat] = [];
+        b2bData.carousels[newCat].push(foundItem);
+      }
+      renderTable();
+    }
+
+    function filterTable(cat, btn) {
+      currentCategory = cat;
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderTable();
+    }
+
+    function handleSearch() { renderTable(); }
+    function handleSort() { renderTable(); }
+
+    function updateKPIs() {
+      const all = getAllProducts();
+      const activeCount = all.filter(p => p.active).length;
+      document.getElementById('kpi-total-active').textContent = activeCount;
+
+      let totalCost = 0;
+      let totalProfit = 0;
+      all.filter(p => p.active).forEach(p => {
+        const c = p.cost_pen || 0;
+        const s = parseFloat(p.sale_price_pen) || 0;
+        totalCost += c;
+        totalProfit += (s - c);
+      });
+
+      const avgMargin = totalCost > 0 ? ((totalProfit / totalCost) * 100).toFixed(1) : '0';
+      document.getElementById('kpi-avg-margin').textContent = avgMargin + '%';
+    }
+
+    async function saveAndPublish() {
+      try {
+        const res = await fetch('/api/save-b2b-products', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(b2bData)
+        });
+        const result = await res.json();
+        if (result.success) {
+          showToast('✓ ¡Catálogo guardado! Los 4 carruseles de /empresas/ han sido actualizados.');
+        } else {
+          showToast('✗ Error al guardar: ' + result.error);
+        }
+      } catch (err) {
+        showToast('✗ Error de conexión con el servidor.');
+      }
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      document.getElementById('toast-msg').textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => { toast.classList.remove('show'); }, 3500);
+    }
+
+    loadB2BProducts();
+  </script>
+
+</body>
+</html>
