@@ -1,0 +1,1986 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>División Empresas B2B — Software Corporativo con Factura | JNxKeys Perú</title>
+    <link rel="canonical" href="https://jnxkeys.com/empresas/">
+    <link rel="icon" type="image/png" href="/assets/img/favicon.png">
+    <meta name="description" content="Portafolio corporativo mayorista para empresas en Perú: Antivirus Endpoint, Microsoft 365, Google Workspace, Windows Server y licencias permanentes con Factura con RUC.">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="JNxKeys B2B">
+    <meta property="og:locale" content="es_PE">
+    <meta property="og:title" content="División Empresas B2B — Software Corporativo con Factura | JNxKeys">
+    <meta property="og:description" content="Licenciamiento por volumen, antivirus administrados y suites de ofimática para empresas peruanas con Factura RUC y pagos Visa/Izipay.">
+    <meta property="og:image" content="https://jnxkeys.com/assets/img/og-banner.jpg">
+    <meta property="og:url" content="https://jnxkeys.com/empresas/">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/common.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XTFDKH1ESP"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XTFDKH1ESP');
+    </script>
+
+    <style>
+        :root {
+            --bg-base: #0B1120;
+            --bg-surface: #0F172A;
+            --bg-card: #131E36;
+            --bg-card-hover: #18284B;
+            --border-glass: rgba(56, 189, 248, 0.22);
+            --border-subtle: rgba(255, 255, 255, 0.1);
+            
+            --text-primary: #FFFFFF;
+            --text-secondary: #CBD5E1;
+            --text-muted: #94A3B8;
+            
+            --accent-blue: #2563EB;
+            --accent-cyan: #38BDF8;
+            --accent-gold: #F59E0B;
+            --accent-green: #10B981;
+
+            --gradient-primary: linear-gradient(135deg, #2563EB 0%, #0284C7 100%);
+            --gradient-cyan: linear-gradient(135deg, #38BDF8 0%, #2563EB 100%);
+            --gradient-gold: linear-gradient(135deg, #F59E0B 0%, #FBBF24 50%, #F97316 100%);
+            --gradient-card: linear-gradient(160deg, #131E36 0%, #0D1527 100%);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-base);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1260px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Nav Bar */
+        header.nav-bar {
+            position: relative;
+            padding-top: 16px;
+            z-index: 50;
+            margin-bottom: 28px;
+        }
+        .nav-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #0F172A;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 100px;
+            padding: 10px 24px;
+            box-shadow: 0 15px 35px -10px rgba(15, 23, 42, 0.5);
+        }
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: #FFFFFF;
+        }
+        .brand-logo img {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            border: 1.5px solid rgba(255, 255, 255, 0.2);
+        }
+        .brand-name {
+            font-size: 20px;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            color: #FFFFFF;
+        }
+        .brand-badge {
+            font-size: 10px;
+            font-weight: 700;
+            background: var(--gradient-gold);
+            color: #000;
+            padding: 2px 8px;
+            border-radius: 100px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            list-style: none;
+        }
+        .nav-menu a {
+            color: #CBD5E1;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+        .nav-menu a:hover, .nav-menu a.active { color: var(--accent-cyan); }
+        .btn-wa-header {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(37, 211, 102, 0.16);
+            border: 1.5px solid #25D366;
+            color: #FFFFFF;
+            font-size: 13.5px;
+            font-weight: 700;
+            padding: 8px 18px;
+            border-radius: 100px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .btn-wa-header:hover {
+            transform: translateY(-2px);
+            background: rgba(37, 211, 102, 0.3);
+            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45);
+        }
+
+        /* HERO B2B */
+        .b2b-hero {
+            position: relative;
+            background: linear-gradient(135deg, #0A1128 0%, #101B3B 55%, #0F172A 100%);
+            border: 1px solid rgba(56, 189, 248, 0.28);
+            border-radius: 28px;
+            padding: 52px 48px;
+            margin-bottom: 36px;
+            overflow: hidden;
+            box-shadow: 0 24px 60px -15px rgba(10, 17, 40, 0.65);
+        }
+        .b2b-hero::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -80px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.28) 0%, rgba(37, 99, 235, 0) 70%);
+            pointer-events: none;
+        }
+        .b2b-hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(245, 158, 11, 0.14);
+            border: 1px solid rgba(245, 158, 11, 0.45);
+            color: #FBBF24;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 6px 14px;
+            border-radius: 100px;
+            margin-bottom: 16px;
+        }
+        .b2b-hero-title {
+            font-size: 36px;
+            font-weight: 900;
+            color: #FFFFFF;
+            line-height: 1.2;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+            max-width: 900px;
+        }
+        .b2b-hero-title span {
+            background: var(--gradient-gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .b2b-hero-desc {
+            font-size: 15.5px;
+            color: var(--text-secondary);
+            max-width: 780px;
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+        .b2b-hero-actions {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .btn-primary-b2b {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+            color: #FFFFFF;
+            font-size: 15px;
+            font-weight: 800;
+            padding: 13px 26px;
+            border-radius: 12px;
+            text-decoration: none;
+            box-shadow: 0 10px 24px -6px rgba(37, 99, 235, 0.6);
+            transition: all 0.2s ease;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+        .btn-primary-b2b:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 28px -4px rgba(37, 99, 235, 0.75);
+            background: linear-gradient(135deg, #1D4ED8 0%, #1E40AF 100%);
+        }
+        .btn-secondary-b2b {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.06);
+            color: #E2E8F0;
+            font-size: 14.5px;
+            font-weight: 700;
+            padding: 13px 22px;
+            border-radius: 12px;
+            text-decoration: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: all 0.2s ease;
+        }
+        .btn-secondary-b2b:hover {
+            background: rgba(255, 255, 255, 0.12);
+            color: #FFFFFF;
+            transform: translateY(-2px);
+        }
+
+        /* BARRA DE MÉTODOS DE PAGO Y FACTURACIÓN */
+        .payments-trust-bar {
+            background: rgba(15, 23, 42, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 16px 24px;
+            margin-top: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .payments-trust-title {
+            font-size: 12.5px;
+            font-weight: 800;
+            color: #E2E8F0;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .payments-badges-list {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .pay-badge {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: #FFFFFF;
+            font-size: 11.5px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .pay-badge-ruc {
+            background: rgba(245, 158, 11, 0.15);
+            border-color: rgba(245, 158, 11, 0.4);
+            color: #FBBF24;
+        }
+
+        /* INTRANET VIP BANNER (20% DE STATUS / CREDIBILIDAD) */
+        .vip-intranet-banner {
+            position: relative;
+            background: linear-gradient(135deg, #090F1E 0%, #151F38 60%, #0E162B 100%);
+            border: 1.5px solid rgba(139, 92, 246, 0.45);
+            border-radius: 20px;
+            padding: 24px 32px;
+            margin-bottom: 48px;
+            box-shadow: 0 16px 36px -10px rgba(124, 58, 237, 0.25);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 28px;
+            overflow: hidden;
+        }
+        .vip-intranet-banner::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: 25%;
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.22) 0%, rgba(139, 92, 246, 0) 70%);
+            pointer-events: none;
+        }
+        .vip-content {
+            position: relative;
+            z-index: 1;
+            max-width: 760px;
+        }
+        .vip-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(139, 92, 246, 0.18);
+            border: 1px solid rgba(167, 139, 250, 0.5);
+            color: #DDD6FE;
+            font-size: 10.5px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            padding: 4px 10px;
+            border-radius: 100px;
+            margin-bottom: 8px;
+        }
+        .vip-title {
+            font-size: 20px;
+            font-weight: 800;
+            color: #FFFFFF;
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .vip-title .pulse-dot {
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: #10B981;
+            box-shadow: 0 0 10px #10B981;
+        }
+        .vip-desc {
+            font-size: 13px;
+            color: #CBD5E1;
+            line-height: 1.45;
+            margin-bottom: 4px;
+        }
+        .vip-note {
+            font-size: 11px;
+            color: #94A3B8;
+        }
+        .vip-action {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 6px;
+            flex-shrink: 0;
+        }
+        .btn-vip-login {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #7C3AED 0%, #6D28D9 100%);
+            color: #FFFFFF;
+            font-size: 13.5px;
+            font-weight: 800;
+            padding: 11px 22px;
+            border-radius: 10px;
+            text-decoration: none;
+            box-shadow: 0 8px 20px -4px rgba(124, 58, 237, 0.5);
+            transition: all 0.2s ease;
+            white-space: nowrap;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .btn-vip-login:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 26px -4px rgba(124, 58, 237, 0.7);
+            background: linear-gradient(135deg, #6D28D9 0%, #5B21B6 100%);
+        }
+        .vip-subtext {
+            font-size: 10px;
+            color: #A78BFA;
+            font-weight: 600;
+        }
+
+        /* ESTRUCTURA DE 4 CARRUSELES TEMÁTICOS */
+        .carousel-module {
+            margin-bottom: 48px;
+        }
+        .carousel-top-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 18px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .carousel-title-group {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .carousel-icon-box {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+        .carousel-title {
+            font-size: 21px;
+            font-weight: 900;
+            color: #FFFFFF;
+            letter-spacing: -0.01em;
+        }
+        .carousel-subtitle {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+        .carousel-controls {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .car-btn {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            color: #FFFFFF;
+            font-size: 18px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            user-select: none;
+        }
+        .car-btn:hover {
+            background: rgba(56, 189, 248, 0.2);
+            border-color: rgba(56, 189, 248, 0.5);
+            color: var(--accent-cyan);
+            transform: scale(1.05);
+        }
+
+        /* TRACK DESPLAZABLE DEL CARRUSEL */
+        .carousel-track {
+            display: flex;
+            gap: 18px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding: 6px 2px 16px;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(56, 189, 248, 0.3) rgba(255, 255, 255, 0.03);
+        }
+        .carousel-track::-webkit-scrollbar {
+            height: 6px;
+        }
+        .carousel-track::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 100px;
+        }
+        .carousel-track::-webkit-scrollbar-thumb {
+            background: rgba(56, 189, 248, 0.3);
+            border-radius: 100px;
+        }
+
+        /* TARJETA DE PRODUCTO CORPORATIVO DENTRO DEL CARRUSEL */
+        .card-corporate {
+            flex: 0 0 310px;
+            background: var(--gradient-card);
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            border-radius: 18px;
+            padding: 22px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.25s ease;
+            position: relative;
+            box-shadow: 0 10px 25px -8px rgba(0, 0, 0, 0.5);
+        }
+        .card-corporate:hover {
+            transform: translateY(-4px);
+            border-color: rgba(56, 189, 248, 0.45);
+            box-shadow: 0 16px 36px -10px rgba(37, 99, 235, 0.3);
+        }
+        .card-top {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 14px;
+        }
+        .card-logo-wrap {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .card-badge {
+            font-size: 10px;
+            font-weight: 800;
+            text-transform: uppercase;
+            padding: 3px 8px;
+            border-radius: 6px;
+            letter-spacing: 0.04em;
+        }
+        .badge-cloud { background: rgba(37, 99, 235, 0.2); color: #60A5FA; border: 1px solid rgba(96, 165, 250, 0.3); }
+        .badge-perm { background: rgba(245, 158, 11, 0.2); color: #FBBF24; border: 1px solid rgba(245, 158, 11, 0.3); }
+        .badge-sec { background: rgba(16, 185, 129, 0.2); color: #34D399; border: 1px solid rgba(52, 211, 153, 0.3); }
+        .badge-cad { background: rgba(6, 150, 215, 0.2); color: #38BDF8; border: 1px solid rgba(6, 150, 215, 0.4); }
+
+        .card-title {
+            font-size: 16px;
+            font-weight: 800;
+            color: #FFFFFF;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+        .card-desc {
+            font-size: 12.5px;
+            color: #94A3B8;
+            line-height: 1.45;
+            margin-bottom: 14px;
+        }
+        .card-features-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-bottom: 18px;
+            padding-bottom: 14px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+        .card-feature-item {
+            font-size: 11.5px;
+            color: #CBD5E1;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .card-feature-item::before {
+            content: '✓';
+            color: var(--accent-cyan);
+            font-weight: 800;
+        }
+        /* Meta Pills de Visibilidad */
+        .card-meta-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 12px;
+        }
+        .meta-pill {
+            font-size: 10.5px;
+            font-weight: 700;
+            padding: 3px 7px;
+            border-radius: 6px;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            white-space: nowrap;
+        }
+        .meta-duration {
+            background: rgba(56, 189, 248, 0.12);
+            color: #38BDF8;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+        }
+        .meta-pay {
+            background: rgba(245, 158, 11, 0.12);
+            color: #FBBF24;
+            border: 1px solid rgba(245, 158, 11, 0.3);
+        }
+        .meta-avail {
+            background: rgba(16, 185, 129, 0.12);
+            color: #34D399;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+
+        .card-pricing-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 12px;
+        }
+        .card-price-type {
+            font-size: 11px;
+            color: #94A3B8;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+        .card-price-factura {
+            font-size: 12px;
+            color: #FBBF24;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        /* Acciones: Ficha Oficial + Cotizar */
+        .card-actions-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-top: 6px;
+        }
+        .btn-card-detail {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            color: #CBD5E1;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 9px 8px;
+            border-radius: 9px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            text-align: center;
+            white-space: nowrap;
+        }
+        .btn-card-detail:hover {
+            background: rgba(56, 189, 248, 0.15);
+            border-color: rgba(56, 189, 248, 0.45);
+            color: #38BDF8;
+        }
+        .btn-card-quote {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+            color: #FFFFFF;
+            font-size: 12px;
+            font-weight: 800;
+            padding: 9px 8px;
+            border-radius: 9px;
+            text-decoration: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+            text-align: center;
+            white-space: nowrap;
+        }
+        .btn-card-quote:hover {
+            background: linear-gradient(135deg, #1D4ED8 0%, #1E40AF 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 18px rgba(37, 99, 235, 0.5);
+        }
+
+        /* PROCESO B2B */
+        .process-section {
+            background: linear-gradient(135deg, #0F172A 0%, #151F36 100%);
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            border-radius: 24px;
+            padding: 40px 32px;
+            margin-bottom: 48px;
+        }
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: 28px;
+        }
+        .process-step {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 14px;
+            padding: 20px 18px;
+        }
+        .process-num {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+        .process-step-title {
+            font-size: 14.5px;
+            font-weight: 800;
+            color: #FFFFFF;
+            margin-bottom: 4px;
+        }
+        .process-step-desc {
+            font-size: 12px;
+            color: #94A3B8;
+            line-height: 1.45;
+        }
+
+        /* FOOTER */
+        footer.main-footer {
+            background: #090F1E;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 48px 0 24px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 32px;
+            margin-bottom: 36px;
+        }
+        .footer-brand h3 {
+            font-size: 22px;
+            font-weight: 900;
+            color: #FFFFFF;
+            margin-bottom: 12px;
+        }
+        .footer-brand p {
+            font-size: 13px;
+            color: #94A3B8;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+        .footer-contact-info div {
+            font-size: 12.5px;
+            color: #CBD5E1;
+            margin-bottom: 6px;
+        }
+        .footer-contact-info a {
+            color: var(--accent-cyan);
+            text-decoration: none;
+        }
+        .footer-col h4 {
+            font-size: 14px;
+            font-weight: 800;
+            color: #FFFFFF;
+            margin-bottom: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+        .footer-col ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .footer-col ul a {
+            color: #94A3B8;
+            text-decoration: none;
+            font-size: 13px;
+            transition: color 0.2s;
+        }
+        .footer-col ul a:hover {
+            color: #FFFFFF;
+        }
+        .footer-bottom {
+            text-align: center;
+            font-size: 12px;
+            color: #64748B;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        /* FAB */
+        .wa-fab {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 58px;
+            height: 58px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+            z-index: 100;
+            transition: transform 0.2s ease;
+        }
+        .wa-fab:hover {
+            transform: scale(1.08);
+        }
+        .wa-fab svg {
+            width: 32px;
+            height: 32px;
+            fill: #FFFFFF;
+        }
+
+        @media (max-width: 960px) {
+            .card-corporate { flex: 0 0 280px; }
+            .vip-intranet-banner {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 22px;
+                gap: 16px;
+            }
+            .vip-action {
+                align-items: flex-start;
+                width: 100%;
+            }
+            .btn-vip-login {
+                width: 100%;
+                justify-content: center;
+            }
+            .process-grid { grid-template-columns: 1fr 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .b2b-hero { padding: 32px 20px; }
+            .b2b-hero-title { font-size: 26px; }
+            .nav-menu { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="nav-bar">
+        <div class="container">
+            <div class="nav-wrap">
+                <a href="/" class="brand-logo">
+                    <img src="/assets/img/favicon.png" alt="Logo JNxKeys" width="38" height="38">
+                    <span class="brand-name">JNxKeys</span>
+                    <span class="brand-badge">División B2B</span>
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="/">Inicio</a></li>
+                    <li><a href="/nosotros/">Nosotros</a></li>
+                    <li><a href="/empresas/" class="active">Empresas B2B</a></li>
+                    <li><a href="/#catalogo">Catálogo Retail</a></li>
+                    <li><a href="/#combos">Packs</a></li>
+                    <li><a href="/contacto/">Contacto</a></li>
+                </ul>
+                <a href="https://wa.me/51925244643?text=Hola%20JNxKeys,%20soy%20de%20una%20empresa%20y%20deseo%20cotizar%20licencias%20con%20Factura/RUC" target="_blank" onclick="gtag('event','whatsapp_click',{product:'b2b_header',location:'empresas_page'})" class="btn-wa-header">
+                    <svg width="20" height="20" viewBox="0 0 32 32">
+                        <circle cx="16" cy="16" r="16" fill="#25D366"/>
+                        <path fill="#fff" d="M23.47 8.52A10.9 10.9 0 0 0 16.02 5c-6.01 0-10.9 4.89-10.9 10.9 0 1.92.5 3.8 1.46 5.46L5 27l5.8-1.52a10.9 10.9 0 0 0 5.22 1.33h.005c6.01 0 10.9-4.89 10.9-10.9a10.84 10.84 0 0 0-3.45-7.79zm-7.45 16.77h-.004a9.06 9.06 0 0 1-4.61-1.26l-.33-.196-3.44.9.92-3.35-.215-.345a9.05 9.05 0 0 1-1.39-4.83c0-5.01 4.08-9.09 9.1-9.09a9.04 9.04 0 0 1 6.43 2.67 9.03 9.03 0 0 1 2.66 6.43c0 5.01-4.08 9.09-9.1 9.09zm4.99-6.81c-.27-.14-1.61-.79-1.86-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.16-1.34-.8-.71-1.34-1.6-1.5-1.87-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.48-.84-2.02-.22-.53-.44-.46-.61-.47l-.52-.01c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.29 0 1.35.98 2.66 1.12 2.84.14.18 1.93 2.95 4.68 4.14.65.28 1.16.45 1.56.58.66.21 1.25.18 1.72.11.53-.08 1.61-.66 1.83-1.29.23-.63.23-1.17.16-1.29-.07-.11-.25-.18-.52-.32z"/>
+                    </svg>
+                    <span>Cotizar B2B por WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <!-- HERO SECTION B2B -->
+        <section class="b2b-hero">
+            <div class="b2b-hero-badge">
+                💼 DIVISIÓN CORPORATIVA & LICENCIAMIENTO POR VOLUMEN
+            </div>
+            <h1 class="b2b-hero-title">
+                Software oficial para empresas con <span>Factura con RUC</span> y pagos en línea.
+            </h1>
+            <p class="b2b-hero-desc">
+                Soluciones integrales de Ciberseguridad Endpoint, Microsoft 365, Google Workspace, Windows Server y licencias permanentes para MYPEs y corporativos en Perú. Provisión formal para Gerencia y TI.
+            </p>
+            <div class="b2b-hero-actions">
+                <a href="https://wa.me/51925244643?text=Hola%20JNxKeys,%20solicito%20una%20cotizaci%C3%B3n%20formal%20para%20mi%20empresa" target="_blank" class="btn-primary-b2b" onclick="gtag('event','b2b_quote_hero',{location:'empresas_hero'})">
+                    <span>Cotizar Inmediatamente</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <a href="#carrusel-antivirus" class="btn-secondary-b2b">
+                    Explorar los 4 Módulos ↓
+                </a>
+            </div>
+
+            <!-- BARRA DE CONFIANZA EN PAGOS Y FACTURACIÓN -->
+            <div class="payments-trust-bar">
+                <div class="payments-trust-title">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+                    <span>Pasarela Segura & Facturación:</span>
+                </div>
+                <div class="payments-badges-list">
+                    <span class="pay-badge pay-badge-ruc">🧾 Factura con RUC (10 y 20)</span>
+                    <span class="pay-badge">💳 Visa / Mastercard</span>
+                    <span class="pay-badge">⚡ Izipay / Pagos Online</span>
+                    <span class="pay-badge">🏦 BCP Empresarial / Interbank</span>
+                    <span class="pay-badge">🔒 100% Deductible para SUNAT</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- BANNER VIP: INTRANET & PORTAL DE CLIENTES CORPORATIVOS (EL 20% DE STATUS / CREDIBILIDAD) -->
+        <section class="vip-intranet-banner" id="intranet-vip">
+            <div class="vip-content">
+                <div class="vip-badge">
+                    🔒 SISTEMA EXCLUSIVO CLIENTES B2B
+                </div>
+                <h2 class="vip-title">
+                    <span class="pulse-dot"></span>
+                    Portal de Suscripciones & Intranet JNxKeys
+                </h2>
+                <p class="vip-desc">
+                    Plataforma centralizada de autogestión para empresas y socios con cuentas corporativas activas. Supervisa asignación de licencias cloud, miembros del equipo y calendario de renovaciones con respaldo mayorista oficial.
+                </p>
+                <p class="vip-note">
+                    * El acceso está restringido a clientes con credenciales asignadas tras su primera orden corporativa.
+                </p>
+            </div>
+            <div class="vip-action">
+                <a href="https://jnxkeys.pe.xvantage.com" target="_blank" rel="noopener noreferrer" class="btn-vip-login" onclick="gtag('event','intranet_portal_click',{location:'empresas_vip_banner'})" title="Acceso al Portal de Clientes Corporativos">
+                    <span>Acceder a la Intranet ↗</span>
+                </a>
+                <span class="vip-subtext">Ingreso con Usuario y Contraseña</span>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- CARRUSEL 1: CIBERSEGURIDAD & ANTIVIRUS B2B -->
+        <!-- ========================================== -->
+        <section class="carousel-module" id="carrusel-antivirus">
+            <div class="carousel-top-bar">
+                <div class="carousel-title-group">
+                    <div class="carousel-icon-box" style="border-color: rgba(16, 185, 129, 0.4); background: rgba(16, 185, 129, 0.12);">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <div>
+                        <h2 class="carousel-title">1. Ciberseguridad & Antivirus Corporativo</h2>
+                        <p class="carousel-subtitle">Protección multicapa para estaciones de trabajo, servidores y redes empresariales</p>
+                    </div>
+                </div>
+                <div class="carousel-controls">
+                    <button class="car-btn" onclick="scrollCarousel('track-antivirus', -330)" aria-label="Anterior">‹</button>
+                    <button class="car-btn" onclick="scrollCarousel('track-antivirus', 330)" aria-label="Siguiente">›</button>
+                </div>
+            </div>
+
+            <div class="carousel-track" id="track-antivirus">
+
+                <!-- eset-protect-entry -->
+                <div class="card-corporate">
+                    <div>
+                        <div class="card-top">
+                            <div class="card-logo-wrap">
+                                <svg width="24" height="24" viewBox="0 0 24 24"><rect width="24" height="24" rx="5" fill="#00A3A6"/><path d="M6 12l4 4 8-8" stroke="#FFFFFF" stroke-width="2.5" fill="none"/></svg>
+                            </div>
+                            <span class="card-badge badge-sec">Consola Cloud</span>
+                        </div>
+                        <h3 class="card-title">ESET PROTECT Entry Cloud</h3>
+                        
+                        <!-- BADGES DE VISIBILIDAD COMERCIAL -->
+                        <div class="card-meta-bar">
+                            <span class="meta-pill meta-duration" title="Tiempo de Licencia">⏱️ 1 Año Oficial</span>
+                            <span class="meta-pill meta-pay" title="Tipo de Pago">💳 Suscripción Anual</span>
+                            <span class="meta-pill meta-avail" title="Disponibilidad">⚡ Activación < 15 min</span>
+                        </div>
+
+                        <p class="card-desc">Defensa avanzada para computadoras y servidores con consola de administración web.</p>
+                        <ul class="card-features-list">
+                            <li class="card-feature-item">Consola centralizada en la nube</li>
+                            <li class="card-feature-item">Anti-Ransomware & Protección multicapa</li>
+                            <li class="card-feature-item">Gestión remota de endpoints</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="card-pricing-row">
+                            <span class="card-price-type">Anual por puesto</span>
+                            <span class="card-price-factura">S/ 59.90 <span style="font-size: 10px; color: #94A3B8;">+ Factura</span></span>
+                        </div>
+                        <div class="card-actions-group">
+                            <a href="https://jnxkeys.com/eset/" target="_blank" rel="noopener noreferrer" class="btn-card-detail" title="Ver ficha técnica oficial y especificaciones">
+                                📄 Ficha Oficial ↗
+                            </a>
+                            <a href="https://wa.me/51925244643?text=Hola%20JNxKeys%2C%20deseo%20cotizar%20ESET%20PROTECT%20Entry%20Cloud%20al%20precio%20de%20S%2F59.90%20con%20Factura%2FRUC%20para%20mi%20empresa" target="_blank" class="btn-card-quote" title="Cotizar por WhatsApp con Factura RUC">
+                                Cotizar 💬
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- kaspersky-ksos -->
+                <div class="card-corporate">
+                    <div>
+                        <div class="card-top">
+                            <div class="card-logo-wrap">
+                                <svg width="24" height="24" viewBox="0 0 24 24"><rect width="24" height="24" rx="5" fill="#006D55"/><path d="M6 5.5h3.2v5.6L14.8 5.5h3.8L12.5 12l6.4 6.5h-3.9L9.2 12.8v5.7H6V5.5z" fill="#FFFFFF"/></svg>
+                            </div>
+                            <span class="card-badge badge-sec">Pymes 5-25 PCs</span>
+                        </div>
+                        <h3 class="card-title">Kaspersky Small Office (KSOS)</h3>
+                        
+                        <!-- BADGES DE VISIBILIDAD COMERCIAL -->
+                        <div class="card-meta-bar">
+                            <span class="meta-pill meta-duration" title="Tiempo de Licencia">⏱️ 1 Año Oficial</span>
+                            <span class="meta-pill meta-pay" title="Tipo de Pago">💳 Suscripción Anual</span>
+                            <span class="meta-pill meta-avail" title="Disponibilidad">⚡ Entrega Inmediata</span>
+                        </div>
+
+                        <p class="card-desc">Diseñado especialmente para empresas sin departamento de TI dedicado.</p>
+                        <ul class="card-features-list">
+                            <li class="card-feature-item">Protección para PCs y Servidor de Archivos</li>
+                            <li class="card-feature-item">Banca protegida Safe Money</li>
+                            <li class="card-feature-item">Cifrado de datos y backup automático</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="card-pricing-row">
+                            <span class="card-price-type">Packs 5, 10, 15, 20 PCs</span>
+                            <span class="card-price-factura">S/ 85.00 <span style="font-size: 10px; color: #94A3B8;">+ Factura</span></span>
+                        </div>
+                        <div class="card-actions-group">
+                            <a href="https://jnxkeys.com/kaspersky/" target="_blank" rel="noopener noreferrer" class="btn-card-detail" title="Ver ficha técnica oficial y especificaciones">
+                                📄 Ficha Oficial ↗
+                            </a>
+                            <a href="https://wa.me/51925244643?text=Hola%20JNxKeys%2C%20deseo%20cotizar%20Kaspersky%20Small%20Office%20(KSOS)%20al%20precio%20de%20S%2F85.00%20con%20Factura%2FRUC%20para%20mi%20empresa" target="_blank" class="btn-card-quote" title="Cotizar por WhatsApp con Factura RUC">
+                                Cotizar 💬
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- eset-protect-advanced -->
+                <div class="card-corporate">
+                    <div>
+                        <div class="card-top">
+                            <div class="card-logo-wrap">
+                                <svg width="24" height="24" viewBox="0 0 24 24"><rect width="24" height="24" rx="5" fill="#00A3A6"/><path d="M6 12l4 4 8-8" stroke="#FFFFFF" stroke-width="2.5" fill="none"/></svg>
+                            </div>
+                            <span class="card-badge badge-sec">Avanzado</span>
+                        </div>
+                        <h3 class="card-title">ESET PROTECT Advanced</h3>
+                        
+                        <!-- BADGES DE VISIBILIDAD COMERCIAL -->
+                        <div class="card-meta-bar">
+                            <span class="meta-pill meta-duration" title="Tiempo de Licencia">⏱️ 1 Año Oficial</span>
+                            <span class="meta-pill meta-pay" title="Tipo de Pago">💳 Suscripción Anual</span>
+                            <span class="meta-pill meta-avail" title="Disponibilidad">⚡ Aprovisionamiento Cloud</span>
+                        </div>
+
+                        <p class="card-desc">Incluye defensa contra amenazas zero-day y cifrado completo de disco (Full Disk Encryption).</p>
+                        <ul class="card-features-list">
+                            <li class="card-feature-item">Sandboxing en la nube LiveGuard</li>
+                            <li class="card-feature-item">Cifrado completo de discos remotos</li>
+                            <li class="card-feature-item">Cumplimiento de auditorías TI</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="card-pricing-row">
+                            <span class="card-price-type">Suscripción anual</span>
+                            <span class="card-price-factura">S/ 95.00 <span style="font-size: 10px; color: #94A3B8;">+ Factura</span></span>
+                        </div>
+                        <div class="card-actions-group">
+                            <a href="https://jnxkeys.com/eset/" target="_blank" rel="noopener noreferrer" class="btn-card-detail" title="Ver ficha técnica oficial y especificaciones">
+                                📄 Ficha Oficial ↗
+                            </a>
+                            <a href="https://wa.me/51925244643?text=Hola%20JNxKeys%2C%20deseo%20cotizar%20ESET%20PROTECT%20Advanced%20al%20precio%20de%20S%2F95.00%20con%20Factura%2FRUC%20para%20mi%20empresa" target="_blank" class="btn-card-quote" title="Cotizar por WhatsApp con Factura RUC">
+                                Cotizar 💬
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- kaspersky-endpoint-cloud -->
+                <div class="card-corporate">
+                    <div>
+                        <div class="card-top">
+                            <div class="card-logo-wrap">
+                                <svg width="24" height="24" viewBox="0 0 24 24"><rect width="24" height="24" rx="5" fill="#006D55"/><path d="M6 5.5h3.2v5.6L14.8 5.5h3.8L12.5 12l6.4 6.5h-3.9L9.2 12.8v5.7H6V5.5z" fill="#FFFFFF"/></svg>
+                            </div>
+                            <span class="card-badge badge-sec">Empresarial</span>
+                        </div>
+                        <h3 class="card-title">Kaspersky Endpoint Cloud Pro</h3>
+                        
+                        <!-- BADGES DE VISIBILIDAD COMERCIAL -->
+                        <div class="card-meta-bar">
+                            <span class="meta-pill meta-duration" title="Tiempo de Licencia">⏱️ 1 Año Oficial</span>
+                            <span class="meta-pill meta-pay" title="Tipo de Pago">💳 Suscripción Anual</span>
+                            <span class="meta-pill meta-avail" title="Disponibilidad">⚡ Consola Web Inmediata</span>
+                        </div>
+
+                        <p class="card-desc">Control de dispositivos, bloqueo web y detección de vulnerabilidades por puesto.</p>
+                        <ul class="card-features-list">
+                            <li class="card-feature-item">Gestión de parches de seguridad</li>
+                            <li class="card-feature-item">Control web y de dispositivos USB</li>
+                            <li class="card-feature-item">Detección de accesos no autorizados</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="card-pricing-row">
+                            <span class="card-price-type">Licencia por volumen</span>
+                            <span class="card-price-factura">S/ 105.00 <span style="font-size: 10px; color: #94A3B8;">+ Factura</span></span>
+                        </div>
+                        <div class="card-actions-group">
+                            <a href="https://jnxkeys.com/kaspersky/" target="_blank" rel="noopener noreferrer" class="btn-card-detail" title="Ver ficha técnica oficial y especificaciones">
+                                📄 Ficha Oficial ↗
+                            </a>
+                            <a href="https://wa.me/51925244643?text=Hola%20JNxKeys%2C%20deseo%20cotizar%20Kaspersky%20Endpoint%20Cloud%20Pro%20al%20precio%20de%20S%2F105.00%20con%20Factura%2FRUC%20para%20mi%20empresa" target="_blank" class="btn-card-quote" title="Cotizar por WhatsApp con Factura RUC">
+                                Cotizar 💬
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- eset-internet-security-pymes -->
+                <div class="card-corporate">
+                    <div>
+                        <div class="card-top">
+                            <div class="card-logo-wrap">
+                                <svg width="24" height="24" viewBox="0 0 24 24"><rect width="24" height="24" rx="5" fill="#00A3A6"/><path d="M6 12l4 4 8-8" stroke="#FFFFFF" stroke-width="2.5" fill="none"/></svg>
+                            </div>
+                            <span class="card-badge badge-perm">Multi-PC</span>
+                        </div>
+                        <h3 class="card-title">ESET Internet Security (3-10 PCs)</h3>
+                        
+                        <!-- BADGES DE VISIBILIDAD COMERCIAL -->
+                        <div class="card-meta-bar">
+                            <span class="meta-pill meta-duration" title="Tiempo de Licencia">⏱️ 1 Año Oficial</span>
+                            <span class="meta-pill meta-pay" title="Tipo de Pago">💳 Licencia Anual</span>
+                            <span class="meta-pill meta-avail" title="Disponibilidad">⚡ Claves Alfanuméricas en 5 min</span>
+                        </div>
+
+                        <p class="card-desc">Solución rápida sin servidor para despachos, consultorios y pequeñas oficinas.</p>
+                        <ul class="card-features-list">
+                            <li class="card-feature-item">Instalación simple en cada equipo</li>
+                            <li class="card-feature-item">Firewall personal y banca segura</li>
+                            <li class="card-feature-item">Activación en minutos por WhatsApp</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="card-pricing-row">
+                            <span class="card-price-type">Pack 3, 5 o 10 Licencias</span>
+                            <span class="card-price-factura">S/ 45.00 <span style="font-size: 10px; color: #94A3B8;">+ Factura</span></span>
+                        </div>
+                        <div class="card-actions-group">
+                            <a href="https://jnxkeys.com/eset/" target="_blank" rel="noopener noreferrer" class="btn-card-detail" title="Ver ficha técnica oficial y especificaciones">
+                                📄 Ficha Oficial ↗
+                            </a>
+                            <a href="https://wa.me/51925244643?text=Hola%20JNxKeys%2C%20deseo%20cotizar%20ESET%20Internet%20Security%20(3-10%20PCs)%20al%20precio%20de%20S%2F45.00%20con%20Factura%2FRUC%20para%20mi%20empresa" target="_blank" class="btn-card-quote" title="Cotizar por WhatsApp con Factura RUC">
+                                Cotizar 💬
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- CARRUSEL 2: OFIMÁTICA & SUITES CLOUD B2B -->
+        <!-- ========================================== -->
+        <section class="carousel-module" id="carrusel-ofimatica">
+            <div class="carousel-top-bar">
+                <div class="carousel-title-group">
+                    <div class="carousel-icon-box" style="border-color: rgba(37, 99, 235, 0.4); background: rgba(37, 99, 235, 0.15);">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#38BDF8" stroke-width="2"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    </div>
+                    <div>
+                        <h2 class="carousel-title">2. Ofimática & Suites Cloud Empresariales</h2>
+                        <p class="carousel-subtitle">Microsoft 365, Google Workspace con tu dominio y suites perpetuas LTSC</p>
+                    </div>
+                </div>
+                <div class="carousel-controls">
+                    <button class="car-btn" onclick="scrollCarousel('track-ofimatica', -330)" aria-label="Anterior">‹</button>
+                    <button class="car-btn" onclick="scrollCarousel('track-ofimatica', 330)" aria-label="Siguiente">›</button>
+                </div>
+            </div>
+
+            <div class="carousel-track" id="track-ofimatica">
+
+                <!-- m365-business-standard -->
+                <div class="card-corporate">
+                    <div>
+                        <div class="card-top">
+                            <div class="card-logo-wrap">
+                                <svg width="24" height="24" viewBox="0 0 24 24"><rect width="24" height="24" rx="5" fill="#0078D4"/><path d="M6 6h5.5v5.5H6zM12.5 6H18v5.5h-5.5zM6 12.5h5.5V18H6zM12.5 12.5H18V18h-5.5z" fill="#FFFFFF"/></svg>
+                            </div>
+                            <span class="card-badge badge-cloud">Más Vendido</span>
+                        </div>
+                        <h3 class="card-title">Microsoft 365 Business Standard</h3>
+                        
+                        <!-- BADGES DE VISIBILIDAD COMERCIAL -->
+                        <div class="card-meta-bar">
+                            <span class="meta-pill meta-duration" title="Tiempo de Licencia">⏱️ 1 Año Oficial</span>
+                            <span class="meta-pill meta-pay" title="Tipo de Pago">💳 Suscripción Recurrente</span>
+                            <span class="meta-pill meta-avail" title="Disponibilidad">⚡ Alta en Tenant Oficial</span>
+                        </div>
+
+                        <p class="card-desc">Apps instalables de escritorio en 5 PCs/Macs + Correo corporativo 50GB + 1TB OneDrive.</p>
+                        <ul class="card-features-list">
+                            <li class="card-feature-item">Word, Excel, PowerPoint, Outlook, Teams</li>
+                            <li class="card-feature-item">Correo corporativo con tu dominio</li>
+                            <li class="card-feature-item">1TB de almacenamiento en la nube</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="card-pricing-row">
+                            <span class="card-price-type">Mensual o Anual</span>
+                            <span class="card-price-factura">S/ 65.00 <span style="font-size: 10px; color: #94A3B8;">+ Factura</span></span>
+                        </div>
+                        <div class="card-actions-group">
+                            <a href="https://jnxkeys.com/office/" target="_blank" rel="noopener noreferrer" class="btn-card-detail" title="Ver ficha técnica oficial y especificaciones">
+                                📄 Ficha Oficial ↗
+                            </a>
+                            <a href="https://wa.me/51925244643?text=Hola%20JNxKeys%2C%20deseo%20cotizar%20Microsoft%20365%20Business%20Standard%20al%20precio%20de%20S%2F65.00%20con%20Factura%2FRUC%20para%20mi%20empresa" target="_blank" class="btn-card-quote" title="Cotizar por WhatsApp con Factura RUC">
+                                Cotizar 💬
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- m365-business-basic -->
+                <div class="card-corporate">
+                    <div>
+                        <div class="card-top">
+                            <div class="card-logo-wrap">
+                                <svg width="24" height="24" viewBox="0 0 24 24"><rect width="24" height="24" rx="5" fill="#0078D4"/><path d="M6 6h5.5v5.5H6zM12.5 6H18v5.5h-5.5zM6 12.5h5.5V18H6zM12.5 12.5H18V18h-5.5z" fill="#FFFFFF"/></svg>
+                            </div>
+                            <span class="card-badge badge-cloud">Económico</span>
+                        </div>
+                        <h3 class="card-title">Microsoft 365 Business Basic</h3>
+                        
+                        <!-- BADGES DE VISIBILIDAD COMERCIAL -->
+                        <div class="card-meta-bar">
+                            <span class="meta-pill meta-duration" title="Tiempo de Licencia">⏱️ 1 Año Oficial</span>
+                            <span class="meta-pill meta-pay" title="Tipo de Pago">💳 Suscripción Recurrente</span>
+                            <span class="meta-pill meta-avail" title="Disponibilidad">⚡ Correo Activo en 15 min</span>
+                        </div>
+
+                        <p class="card-desc">Ideal para personal operativo: correo profesional Exchange, Teams y versiones web/móvil.</p>
+                        <ul class="card-features-list">
+                            <li class="card-feature-item">Buzón de 50GB con filtro anti-spam</li>
+                            <li class="card-feature-item">Reuniones en Teams hasta 300 personas</li>
+                            <li class="card-feature-item">1TB OneDrive para archivos de trabajo</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="card-pricing-row">
+                            <span class="card-price-type">Por usuario / mes</span>
+                            <span class="card-price-factura">S/ 30.00 <span style="font-size: 10px; color: #94A3B8;">+ Factura</span></span>
+                        </div>
+                        <div class="card-actions-group">
+                            <a href="https://jnxkeys.com/office/" target="_blank" rel="noopener noreferrer" class="btn-card-detail" title="Ver ficha técnica oficial y especificaciones">
+                                📄 Ficha Oficial ↗
+                            </a>
+                            <a href="https://wa.me/51925244643?text=Hola%20JNxKeys%2C%20deseo%20cotizar%20Microsoft%20365%20Business%20Basic%20al%20precio%20de%20S%2F30.00%20con%20Factura%2FRUC%20para%20mi%20empresa" target="_blank" class="btn-card-quote" title="Cotizar por WhatsApp con Factura RUC">
+                                Cotizar 💬
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- office-2024-ltsc -->
+                <div class="card-corporate">
+                    <div>
+                        <div class="card-top">
+                            <div class="card-logo-wrap">
+                                <svg width="24" height="24" viewBox="0 0 24 24"><rect width="24" height="24" rx="5" fill="#0078D4"/><path d="M6 6h5.5v5.5H6zM12.5 6H18v5.5h-5.5zM6 12.5h5.5V18H6zM12.5 12.5H18V18h-5.5z" fill="#FFFFFF"/></svg>
+                            </div>
+                            <span class="card-badge badge-perm">Permanente</span>
+                        </div>
+                        <h3 class="card-title">Office 2024 Home & Business</h3>
+                        
+                        <!-- BADGES DE VISIBILIDAD COMERCIAL -->
+                        <div class="card-meta-bar">
+                            <span class="meta-pill meta-duration" title="Tiempo de Licencia">⏱️ Permanente De Por Vida</span>
+                            <span class="meta-pill meta-pay" title="Tipo de Pago">💳 Pago Único (Sin cuotas)</span>
+                            <span class="meta-pill meta-avail" title="Disponibilidad">⚡ Clave Digital + Vinculación</span>
+                        </div>
+
+                        <p class="card-desc">Licencia perpetua oficial para empresas. Un solo pago de por vida sin mensualidades.</p>
+                        <ul class="card-features-list">
+                            <li class="card-feature-item">Uso comercial autorizado por Microsoft</li>
+                            <li class="card-feature-item">Compatible con Windows 11, 10 y macOS</li>
+                            <li class="card-feature-item">Transferible y vinculable a cuenta oficial</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="card-pricing-row">
+                            <span class="card-price-type">Pago Único de por vida</span>
+                            <span class="card-price-factura">S/ 390.00 <span style="font-size: 10px; color: #94A3B8;">+ Factura</span></span>
+                        </div>
+                        <div class="card-actions-group">
+                            <a href="https://jnxkeys.com/office/" target="_blank" rel="noopener noreferrer" class="btn-card-detail" title="Ver ficha técnica oficial y especificaciones">
+                                📄 Ficha Oficial ↗
+                            </a>
+                            <a href="https://wa.me/51925244643?text=Hola%20JNxKeys%2C%20deseo%20cotizar%20Office%202024%20Home%20%26%20Business%20al%20precio%20de%20S%2F390.00%20con%20Factura%2FRUC%20para%20mi%20empresa" target="_blank" class="btn-card-quote" title="Cotizar por WhatsApp con Factura RUC">
+                                Cotizar 💬
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- workspace-business-standard -->
+                <div class="card-corporate">
+                    <div>
+                        <div class="card-top">
+                            <div class="card-logo-wrap">
+                                <svg width="24" height="24" viewBox="0 0 24 24"><rect width="24" height="24" rx="5" fill="#1A73E8"/><path d="M12 6a6 6 0 106 6h-6V6z" fill="#FFFFFF"/></svg>
+                            </div>
+                            <span class="card-badge badge-cloud">Google Cloud</span>
+                        </div>
+                        <h3 class="card-title">Google Workspace Business (2TB)</h3>
+                        
+                        <!-- BADGES DE VISIBILIDAD COMERCIAL -->
+                        <div class="card-meta-bar">
+                            <span class="meta-pill meta-duration" title="Tiempo de Licencia">⏱️ 1 Año Oficial</span>
+                            <span class="meta-pill meta-pay" title="Tipo de Pago">💳 Suscripción Anual</span>
+                            <span class="meta-pill meta-avail" title="Disponibilidad">⚡ Configuración DNS & Dominio</span>
+                        </div>
+
+                        <p class="card-desc">Gmail corporativo @tuempresa.com con 2TB de almacenamiento en la nube por usuario.</p>
+                        <ul class="card-features-list">
+                            <li class="card-feature-item">Meet para 150 participantes con grabación</li>
+                            <li class="card-feature-item">Carpetas compartidas de equipo</li>
+                            <li class="card-feature-item">Consola de administración Google Admin</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="card-pricing-row">
+                            <span class="card-price-type">Suscripción anual</span>
+                            <span class="card-price-factura">S/ 58.00 <span style="font-size: 10px; color: #94A3B8;">+ Factura</span></span>
+                        </div>
+                        <div class="card-actions-group">
+                            <a href="https://jnxkeys.com/google-one/" target="_blank" rel="noopener noreferrer" class="btn-card-detail" title="Ver ficha técnica oficial y especificaciones">
+                                📄 Ficha Oficial ↗
+                            </a>
+                            <a href="https://wa.me/51925244643?text=Hola%20JNxKeys%2C%20deseo%20cotizar%20Google%20Workspace%20Business%20(2TB)%20al%20precio%20de%20S%2F58.00%20con%20Factura%2FRUC%20para%20mi%20empresa" target="_blank" class="btn-card-quote" title="Cotizar por WhatsApp con Factura RUC">
+                                Cotizar 💬
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- office-2021-pro-plus -->
+                <div class="card-corporate">
+                    <div>
+                        <div class="card-top">
+                            <div class="card-logo-wrap">
+                                <svg width="24" height="24" viewBox="0 0 24 24"><rect width="24" height="24" rx="5" fill="#0078D4"/><path d="M6 6h5.5v5.5H6zM12.5 6H18v5.5h-5.5zM6 12.5h5.5V18H6zM12.5 12.5H18V18h-5.5z" fill="#FFFFFF"/></svg>
+                            </div>
+                            <span class="card-badge badge-perm">De Por Vida</span>
+                        </div>
+                        <h3 class="card-title">Office 2021 Professional Plus</h3>
+                        
+                        <!-- BADGES DE VISIBILIDAD COMERCIAL -->
+                        <div class="card-meta-bar">
+                            <span class="meta-pill meta-duration" title="Tiempo de Licencia">⏱️ Permanente De Por Vida</span>
+                            <span class="meta-pill meta-pay" title="Tipo de Pago">💳 Pago Único (Sin cuotas)</span>
+                            <span class="meta-pill meta-avail" title="Disponibilidad">⚡ Entrega Inmediata</span>
+                        </div>
+
+                        <p class="card-desc">Suite completa: Word, Excel, PPT, Outlook, Access y Publisher en activación permanente.</p>
+                        <ul class="card-features-list">
+                            <li class="card-feature-item">Activación digital perpetua por equipo</li>
+                            <li class="card-feature-item">Sin cargos recurrentes ni renovaciones</li>
+                            <li class="card-feature-item">Precios escalonados por volumen</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="card-pricing-row">
+                            <span class="card-price-type">Pago Único Permanente</span>
+                            <span class="card-price-factura">S/ 75.00 <span style="font-size: 10px; color: #94A3B8;">+ Factura</span></span>
+                        </div>
+                        <div class="card-actions-group">
+                            <a href="https://jnxkeys.com/office/" target="_blank" rel="noopener noreferrer" class="btn-card-detail" title="Ver ficha técnica oficial y especificaciones">
+                                📄 Ficha Oficial ↗
+                            </a>
+                            <a href="https://wa.me/51925244643?text=Hola%20JNxKeys%2C%20deseo%20cotizar%20Office%202021%20Professional%20Plus%20al%20precio%20de%20S%2F75.00%20con%20Factura%2FRUC%20para%20mi%20empresa" target="_blank" class="btn-card-quote" title="Cotizar por WhatsApp con Factura RUC">
+                                Cotizar 💬
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================== -->
+        <!-- CARRUSEL 3: SISTEMAS OPERATIVOS & SERVIDORES  -->
+        <!-- ============================================== -->
+        <section class="carousel-module" id="carrusel-sistemas">
+            <div class="carousel-top-bar">
+                <div class="carousel-title-group">
+                    <div class="carousel-icon-box" style="border-color: rgba(56, 189, 248, 0.4); background: rgba(56, 189, 248, 0.12);">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#38BDF8" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    </div>
+                    <div>
+                        <h2 class="carousel-title">3. Sistemas Operativos & Servidores</h2>
+                        <p class="carousel-subtitle">Windows 11 Pro para flotas de PCs, Windows Server 2022/2025 y CALs de acceso</p>
+                    </div>
+                </div>
+                <div class="carousel-controls">
+                    <button class="car-btn" onclick="scrollCarousel('track-sistemas', -330)" aria-label="Anterior">‹</button>
+                    <button class="car-btn" onclick="scrollCarousel('track-sistemas', 330)" aria-label="Siguiente">›</button>
+                </div>
+            </div>
+
+            <div class="carousel-track" id="track-sistemas">
+
+                <!-- win11-pro-volumen -->
+                <div class="card-corporate">
+                    <div>
+                        <div class="card-top">
+                            <div class="card-logo-wrap">
+                                <svg width="24" height="24" viewBox="0 0 24 24"><rect width="24" height="24" rx="5" fill="#0078D4"/><path d="M6 6h5.5v5.5H6zM12.5 6H18v5.5h-5.5zM6 12.5h5.5V18H6zM12.5 12.5H18V18h-5.5z" fill="#FFFFFF"/></svg>
+                            </div>
+                            <span class="card-badge badge-perm">SO Oficial</span>
+                        </div>
+                        <h3 class="card-title">Windows 11 Pro (OEM / Retail)</h3>
+                        
+                        <!-- BADGES DE VISIBILIDAD COMERCIAL -->
+                        <div class="card-meta-bar">
+                            <span class="meta-pill meta-duration" title="Tiempo de Licencia">⏱️ De Por Vida en el Equipo</span>
+                            <span class="meta-pill meta-pay" title="Tipo de Pago">💳 Pago Único Permanente</span>
+                            <span class="meta-pill meta-avail" title="Disponibilidad">⚡ Clave OEM/Retail Inmediata</span>
+                        </div>
+
+                        <p class="card-desc">Legalización oficial de computadoras empresariales. Cifrado BitLocker y Azure Active Directory.</p>
+                        <ul class="card-features-list">
+                            <li class="card-feature-item">Unión a dominio empresarial / Azure AD</li>
+                            <li class="card-feature-item">Cifrado BitLocker para proteger datos</li>
+                            <li class="card-feature-item">Activación permanente y soporte de actualizaciones</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="card-pricing-row">
+                            <span class="card-price-type">Licencia Permanente</span>
+                            <span class="card-price-factura">S/ 79.00 <span style="font-size: 10px; color: #94A3B8;">+ Factura</span></span>
+                        </div>
+                        <div class="card-actions-group">
+                            <a href="https://jnxkeys.com/windows/" target="_blank" rel="noopener noreferrer" class="btn-card-detail" title="Ver ficha técnica oficial y especificaciones">
+                                📄 Ficha Oficial ↗
+                            </a>
+                            <a href="https://wa.me/51925244643?text=Hola%20JNxKeys%2C%20deseo%20cotizar%20Windows%2011%20Pro%20(OEM%20%2F%20Retail)%20al%20precio%20de%20S%2F79.00%20con%20Factura%2FRUC%20para%20mi%20empresa" target="_blank" class="btn-card-quote" title="Cotizar por WhatsApp con Factura RUC">
+                                Cotizar 💬
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- win10-pro-comercial -->
+                <div class="card-corporate">
+                    <div>
+                        <div class="card-top">
+                            <div class="card-logo-wrap">
+                                <svg width="24" height="24" viewBox="0 0 24 24"><rect width="24" height="24" rx="5" fill="#0078D4"/><path d="M6 6h5.5v5.5H6zM12.5 6H18v5.5h-5.5zM6 12.5h5.5V18H6zM12.5 12.5H18V18h-5.5z" fill="#FFFFFF"/></svg>
+                            </div>
+                            <span class="card-badge badge-perm">Estable</span>
+                        </div>
+                        <h3 class="card-title">Windows 10 Pro Comercial</h3>
+                        
+                        <!-- BADGES DE VISIBILIDAD COMERCIAL -->
+                        <div class="card-meta-bar">
+                            <span class="meta-pill meta-duration" title="Tiempo de Licencia">⏱️ De Por Vida en el Equipo</span>
+                            <span class="meta-pill meta-pay" title="Tipo de Pago">💳 Pago Único Permanente</span>
+                            <span class="meta-pill meta-avail" title="Disponibilidad">⚡ Clave Digital Inmediata</span>
+                        </div>
+
+                        <p class="card-desc">Ideal para empresas con software heredado o estaciones de trabajo en producción estable.</p>
+                        <ul class="card-features-list">
+                            <li class="card-feature-item">Escritorio remoto Remote Desktop</li>
+                            <li class="card-feature-item">Compatible con todos los sistemas ERP contables</li>
+                            <li class="card-feature-item">Licencia de activación perpetua</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="card-pricing-row">
+                            <span class="card-price-type">Por puesto / volumen</span>
+                            <span class="card-price-factura">S/ 65.00 <span style="font-size: 10px; color: #94A3B8;">+ Factura</span></span>
+                        </div>
+                        <div class="card-actions-group">
+                            <a href="https://jnxkeys.com/windows/" target="_blank" rel="noopener noreferrer" class="btn-card-detail" title="Ver ficha técnica oficial y especificaciones">
+                                📄 Ficha Oficial ↗
+                            </a>
+                            <a href="https://wa.me/51925244643?text=Hola%20JNxKeys%2C%20deseo%20cotizar%20Windows%2010%20Pro%20Comercial%20al%20precio%20de%20S%2F65.00%20con%20Factura%2FRUC%20para%20mi%20empresa" target="_blank" class="btn-card-quote" title="Cotizar por WhatsApp con Factura RUC">
+                                Cotizar 💬
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- win-server-standard -->
+                <div class="card-corporate">
+                    <div>
+                        <div class="card-top">
+                            <div class="card-logo-wrap">
+                                <svg width="24" height="24" viewBox="0 0 24 24"><rect width="24" height="24" rx="5" fill="#0078D4"/><path d="M6 6h5.5v5.5H6zM12.5 6H18v5.5h-5.5zM6 12.5h5.5V18H6zM12.5 12.5H18V18h-5.5z" fill="#FFFFFF"/></svg>
+                            </div>
+                            <span class="card-badge badge-perm">Servidores</span>
+                        </div>
+                        <h3 class="card-title">Windows Server Standard (16 Cores)</h3>
+                        
+                        <!-- BADGES DE VISIBILIDAD COMERCIAL -->
+                        <div class="card-meta-bar">
+                            <span class="meta-pill meta-duration" title="Tiempo de Licencia">⏱️ Perpetua por Núcleos</span>
+                            <span class="meta-pill meta-pay" title="Tipo de Pago">💳 Pago Único Perpetuo</span>
+                            <span class="meta-pill meta-avail" title="Disponibilidad">⚡ ISO Oficial + Clave COA/Retail</span>
+                        </div>
+
+                        <p class="card-desc">Licenciamiento para servidores de bases de datos, controladores de dominio y virtualización Hyper-V.</p>
+                        <ul class="card-features-list">
+                            <li class="card-feature-item">Incluye 2 máquinas virtuales Hyper-V</li>
+                            <li class="card-feature-item">Active Directory, DNS, DHCP centralizado</li>
+                            <li class="card-feature-item">Licencia perpetua por núcleos de servidor</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="card-pricing-row">
+                            <span class="card-price-type">Base 16 Cores</span>
+                            <span class="card-price-factura">S/ 690.00 <span style="font-size: 10px; color: #94A3B8;">+ Factura</span></span>
+                        </div>
+                        <div class="card-actions-group">
+                            <a href="https://jnxkeys.com/contacto/" target="_blank" rel="noopener noreferrer" class="btn-card-detail" title="Ver ficha técnica oficial y especificaciones">
+                                📄 Ficha Oficial ↗
+                            </a>
+                            <a href="https://wa.me/51925244643?text=Hola%20JNxKeys%2C%20deseo%20cotizar%20Windows%20Server%20Standard%20(16%20Cores)%20al%20precio%20de%20S%2F690.00%20con%20Factura%2FRUC%20para%20mi%20empresa" target="_blank" class="btn-card-quote" title="Cotizar por WhatsApp con Factura RUC">
+                                Cotizar 💬
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- win-server-rds-cals -->
+                <div class="card-corporate">
+                    <div>
+                        <div class="card-top">
+                            <div class="card-logo-wrap">
+                                <svg width="24" height="24" viewBox="0 0 24 24"><rect width="24" height="24" rx="5" fill="#0078D4"/><path d="M6 6h5.5v5.5H6zM12.5 6H18v5.5h-5.5zM6 12.5h5.5V18H6zM12.5 12.5H18V18h-5.5z" fill="#FFFFFF"/></svg>
+                            </div>
+                            <span class="card-badge badge-cloud">Acceso Remoto</span>
+                        </div>
+                        <h3 class="card-title">Remote Desktop Services (RDS CALs)</h3>
+                        
+                        <!-- BADGES DE VISIBILIDAD COMERCIAL -->
+                        <div class="card-meta-bar">
+                            <span class="meta-pill meta-duration" title="Tiempo de Licencia">⏱️ Perpetua por Usuario/Dispositivo</span>
+                            <span class="meta-pill meta-pay" title="Tipo de Pago">💳 Licencia Perpetua</span>
+                            <span class="meta-pill meta-avail" title="Disponibilidad">⚡ Aprovisionamiento en Servidor</span>
+                        </div>
+
+                        <p class="card-desc">Permite que tus empleados y contadores se conecten remotamente al servidor desde sus casas.</p>
+                        <ul class="card-features-list">
+                            <li class="card-feature-item">CALs por Usuario o por Dispositivo</li>
+                            <li class="card-feature-item">Acceso seguro a sistemas de ventas y facturación</li>
+                            <li class="card-feature-item">Packs de 5, 10, 20 o 50 usuarios concurrentes</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="card-pricing-row">
+                            <span class="card-price-type">Packs de Acceso</span>
+                            <span class="card-price-factura">S/ 130.00 <span style="font-size: 10px; color: #94A3B8;">+ Factura</span></span>
+                        </div>
+                        <div class="card-actions-group">
+                            <a href="https://jnxkeys.com/contacto/" target="_blank" rel="noopener noreferrer" class="btn-card-detail" title="Ver ficha técnica oficial y especificaciones">
+                                📄 Ficha Oficial ↗
+                            </a>
+                            <a href="https://wa.me/51925244643?text=Hola%20JNxKeys%2C%20deseo%20cotizar%20Remote%20Desktop%20Services%20(RDS%20CALs)%20al%20precio%20de%20S%2F130.00%20con%20Factura%2FRUC%20para%20mi%20empresa" target="_blank" class="btn-card-quote" title="Cotizar por WhatsApp con Factura RUC">
+                                Cotizar 💬
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================== -->
+        <!-- CARRUSEL 4: DISEÑO, IA & SOFTWARE ESPECIALIZADO-->
+        <!-- ============================================== -->
+        <section class="carousel-module" id="carrusel-especializado">
+            <div class="carousel-top-bar">
+                <div class="carousel-title-group">
+                    <div class="carousel-icon-box" style="border-color: rgba(245, 158, 11, 0.4); background: rgba(245, 158, 11, 0.12);">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                    </div>
+                    <div>
+                        <h2 class="carousel-title">4. Diseño, IA & Software de Especialidad</h2>
+                        <p class="carousel-subtitle">Herramientas creativas, ingeniería y productividad con IA para equipos de alto rendimiento</p>
+                    </div>
+                </div>
+                <div class="carousel-controls">
+                    <button class="car-btn" onclick="scrollCarousel('track-especializado', -330)" aria-label="Anterior">‹</button>
+                    <button class="car-btn" onclick="scrollCarousel('track-especializado', 330)" aria-label="Siguiente">›</button>
+                </div>
+            </div>
+
+            <div class="carousel-track" id="track-especializado">
+
+                <!-- adobe-cc-teams -->
+                <div class="card-corporate">
+                    <div>
+                        <div class="card-top">
+                            <div class="card-logo-wrap">
+                                <svg width="24" height="24" viewBox="0 0 24 24"><rect width="24" height="24" rx="5" fill="#FF0000"/><path d="M7 6h3.2L12 11.2 13.8 6H17l-3.6 12h-2.8L7 6z" fill="#FFFFFF"/></svg>
+                            </div>
+                            <span class="card-badge badge-cloud">Adobe Oficial</span>
+                        </div>
+                        <h3 class="card-title">Adobe Creative Cloud Teams</h3>
+                        
+                        <!-- BADGES DE VISIBILIDAD COMERCIAL -->
+                        <div class="card-meta-bar">
+                            <span class="meta-pill meta-duration" title="Tiempo de Licencia">⏱️ 1 Año Oficial</span>
+                            <span class="meta-pill meta-pay" title="Tipo de Pago">💳 Suscripción Anual</span>
+                            <span class="meta-pill meta-avail" title="Disponibilidad">⚡ Asignación en Admin Console</span>
+                        </div>
+
+                        <p class="card-desc">Más de 20 aplicaciones creativas: Photoshop, Illustrator, Premiere, After Effects y Acrobat Pro.</p>
+                        <ul class="card-features-list">
+                            <li class="card-feature-item">Consola Admin Console para reasignar licencias</li>
+                            <li class="card-feature-item">1TB de almacenamiento en la nube por usuario</li>
+                            <li class="card-feature-item">Créditos generativos de IA Adobe Firefly</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="card-pricing-row">
+                            <span class="card-price-type">Suscripción anual con RUC</span>
+                            <span class="card-price-factura">S/ 340.00 <span style="font-size: 10px; color: #94A3B8;">+ Factura</span></span>
+                        </div>
+                        <div class="card-actions-group">
+                            <a href="https://jnxkeys.com/canva/" target="_blank" rel="noopener noreferrer" class="btn-card-detail" title="Ver ficha técnica oficial y especificaciones">
+                                📄 Ficha Oficial ↗
+                            </a>
+                            <a href="https://wa.me/51925244643?text=Hola%20JNxKeys%2C%20deseo%20cotizar%20Adobe%20Creative%20Cloud%20Teams%20al%20precio%20de%20S%2F340.00%20con%20Factura%2FRUC%20para%20mi%20empresa" target="_blank" class="btn-card-quote" title="Cotizar por WhatsApp con Factura RUC">
+                                Cotizar 💬
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- autodesk-autocad-revit -->
+                <div class="card-corporate">
+                    <div>
+                        <div class="card-top">
+                            <div class="card-logo-wrap">
+                                <svg width="24" height="24" viewBox="0 0 24 24"><rect width="24" height="24" rx="5" fill="#0696D7"/><path d="M7 18L12 6l5 12h-3l-2-5.5-2 5.5H7z" fill="#FFFFFF"/></svg>
+                            </div>
+                            <span class="card-badge badge-cad">Arquitectura/BIM</span>
+                        </div>
+                        <h3 class="card-title">Autodesk AutoCAD & Revit</h3>
+                        
+                        <!-- BADGES DE VISIBILIDAD COMERCIAL -->
+                        <div class="card-meta-bar">
+                            <span class="meta-pill meta-duration" title="Tiempo de Licencia">⏱️ 1 Año Oficial</span>
+                            <span class="meta-pill meta-pay" title="Tipo de Pago">💳 Suscripción Anual</span>
+                            <span class="meta-pill meta-avail" title="Disponibilidad">⚡ Licencia Comercial en Autodesk ID</span>
+                        </div>
+
+                        <p class="card-desc">Software de diseño asistido por computadora y modelado de información de construcción (BIM).</p>
+                        <ul class="card-features-list">
+                            <li class="card-feature-item">Licencia comercial oficial por suscripción</li>
+                            <li class="card-feature-item">Para empresas de ingeniería, construcción y minería</li>
+                            <li class="card-feature-item">Soporte directo y acceso a versiones anteriores</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="card-pricing-row">
+                            <span class="card-price-type">Suscripción Anual</span>
+                            <span class="card-price-factura">S/ 920.00 <span style="font-size: 10px; color: #94A3B8;">+ Factura</span></span>
+                        </div>
+                        <div class="card-actions-group">
+                            <a href="https://jnxkeys.com/contacto/" target="_blank" rel="noopener noreferrer" class="btn-card-detail" title="Ver ficha técnica oficial y especificaciones">
+                                📄 Ficha Oficial ↗
+                            </a>
+                            <a href="https://wa.me/51925244643?text=Hola%20JNxKeys%2C%20deseo%20cotizar%20Autodesk%20AutoCAD%20%26%20Revit%20al%20precio%20de%20S%2F920.00%20con%20Factura%2FRUC%20para%20mi%20empresa" target="_blank" class="btn-card-quote" title="Cotizar por WhatsApp con Factura RUC">
+                                Cotizar 💬
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- workspace-gemini-enterprise -->
+                <div class="card-corporate">
+                    <div>
+                        <div class="card-top">
+                            <div class="card-logo-wrap">
+                                <svg width="24" height="24" viewBox="0 0 24 24"><rect width="24" height="24" rx="5" fill="#1A73E8"/><path d="M12 6a6 6 0 106 6h-6V6z" fill="#FFFFFF"/></svg>
+                            </div>
+                            <span class="card-badge badge-cloud">IA Empresarial</span>
+                        </div>
+                        <h3 class="card-title">Gemini IA para Google Workspace</h3>
+                        
+                        <!-- BADGES DE VISIBILIDAD COMERCIAL -->
+                        <div class="card-meta-bar">
+                            <span class="meta-pill meta-duration" title="Tiempo de Licencia">⏱️ 1 Año Oficial</span>
+                            <span class="meta-pill meta-pay" title="Tipo de Pago">💳 Add-on Suscripción</span>
+                            <span class="meta-pill meta-avail" title="Disponibilidad">⚡ Activación en Panel Google</span>
+                        </div>
+
+                        <p class="card-desc">Potencia tu empresa con IA de nivel empresarial integrada en Gmail, Docs, Sheets y Google Meet.</p>
+                        <ul class="card-features-list">
+                            <li class="card-feature-item">Redacción inteligente de correos y propuestas</li>
+                            <li class="card-feature-item">Resúmenes automáticos de reuniones en Meet</li>
+                            <li class="card-feature-item">Privacidad total: tus datos no entrenan la IA</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="card-pricing-row">
+                            <span class="card-price-type">Add-on por usuario</span>
+                            <span class="card-price-factura">S/ 99.00 <span style="font-size: 10px; color: #94A3B8;">+ Factura</span></span>
+                        </div>
+                        <div class="card-actions-group">
+                            <a href="https://jnxkeys.com/google-one/" target="_blank" rel="noopener noreferrer" class="btn-card-detail" title="Ver ficha técnica oficial y especificaciones">
+                                📄 Ficha Oficial ↗
+                            </a>
+                            <a href="https://wa.me/51925244643?text=Hola%20JNxKeys%2C%20deseo%20cotizar%20Gemini%20IA%20para%20Google%20Workspace%20al%20precio%20de%20S%2F99.00%20con%20Factura%2FRUC%20para%20mi%20empresa" target="_blank" class="btn-card-quote" title="Cotizar por WhatsApp con Factura RUC">
+                                Cotizar 💬
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- canva-pro-equipos -->
+                <div class="card-corporate">
+                    <div>
+                        <div class="card-top">
+                            <div class="card-logo-wrap">
+                                <svg width="24" height="24" viewBox="0 0 24 24"><rect width="24" height="24" rx="5" fill="#00C4CC"/><circle cx="12" cy="12" r="5" fill="#FFFFFF"/></svg>
+                            </div>
+                            <span class="card-badge badge-perm">Marketing</span>
+                        </div>
+                        <h3 class="card-title">Canva Pro para Equipos</h3>
+                        
+                        <!-- BADGES DE VISIBILIDAD COMERCIAL -->
+                        <div class="card-meta-bar">
+                            <span class="meta-pill meta-duration" title="Tiempo de Licencia">⏱️ 1 Año Oficial</span>
+                            <span class="meta-pill meta-pay" title="Tipo de Pago">💳 Suscripción Anual</span>
+                            <span class="meta-pill meta-avail" title="Disponibilidad">⚡ Invitación por Correo Inmediata</span>
+                        </div>
+
+                        <p class="card-desc">Diseño colaborativo para departamentos de ventas, recursos humanos y marketing.</p>
+                        <ul class="card-features-list">
+                            <li class="card-feature-item">Kits de marca con logos y paletas oficiales</li>
+                            <li class="card-feature-item">Flujos de aprobación de diseños internos</li>
+                            <li class="card-feature-item">100+ millones de fotos, videos y gráficos libres</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="card-pricing-row">
+                            <span class="card-price-type">Acceso Corporativo</span>
+                            <span class="card-price-factura">S/ 55.00 <span style="font-size: 10px; color: #94A3B8;">+ Factura</span></span>
+                        </div>
+                        <div class="card-actions-group">
+                            <a href="https://jnxkeys.com/canva/" target="_blank" rel="noopener noreferrer" class="btn-card-detail" title="Ver ficha técnica oficial y especificaciones">
+                                📄 Ficha Oficial ↗
+                            </a>
+                            <a href="https://wa.me/51925244643?text=Hola%20JNxKeys%2C%20deseo%20cotizar%20Canva%20Pro%20para%20Equipos%20al%20precio%20de%20S%2F55.00%20con%20Factura%2FRUC%20para%20mi%20empresa" target="_blank" class="btn-card-quote" title="Cotizar por WhatsApp con Factura RUC">
+                                Cotizar 💬
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROCESO DE COMPRA & FACTURACIÓN RUC -->
+        <section class="process-section">
+            <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+                <span class="card-badge badge-cloud" style="display: inline-block; margin-bottom: 8px;">Transparente y Rápido</span>
+                <h2 style="font-size: 24px; font-weight: 800; color: #FFFFFF; margin-bottom: 6px;">Proceso de Compra & Facturación Formal</h2>
+                <p style="font-size: 13.5px; color: #94A3B8;">Atención ágil para tesorería, compras y departamentos de TI.</p>
+            </div>
+
+            <div class="process-grid">
+                <div class="process-step">
+                    <div class="process-num">1</div>
+                    <h3 class="process-step-title">1. Solicitud de Cotización</h3>
+                    <p class="process-step-desc">Elige el producto y la cantidad de puestos. Te respondemos al instante vía WhatsApp o correo formal.</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-num">2</div>
+                    <h3 class="process-step-title">2. Proforma con Precios</h3>
+                    <p class="process-step-desc">Enviamos la proforma en PDF con desglose en Soles o Dólares, vigencia y especificaciones.</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-num">3</div>
+                    <h3 class="process-step-title">3. Pago Seguro & Factura</h3>
+                    <p class="process-step-desc">Paga por Transferencia BCP / Interbank, o con tarjeta Visa/Mastercard vía Izipay. Emitimos Factura RUC de inmediato.</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-num">4</div>
+                    <h3 class="process-step-title">4. Despacho & Soporte</h3>
+                    <p class="process-step-desc">Aprovisionamiento en tu consola oficial o entrega de claves con soporte técnico de activación garantizado.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>JNxKeys · División Empresas</h3>
+                    <p>Distribución de licencias digitales oficiales y soluciones en la nube para empresas en todo el Perú. Respaldo de distribuidores autorizados con entrega inmediata y facturación formal.</p>
+                    <div class="footer-contact-info">
+                        <div>📍 <span>Lima - Perú</span></div>
+                        <div>📲 WhatsApp Corporativo: <a href="https://wa.me/51925244643" target="_blank">925 244 643</a></div>
+                        <div>✉️ Correo de Ventas: <a href="mailto:ventas@jnxkeys.com">ventas@jnxkeys.com</a></div>
+                        <div>🌐 Web Oficial: <a href="https://jnxkeys.com/">jnxkeys.com</a></div>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Catálogo B2B</h4>
+                    <ul>
+                        <li><a href="#carrusel-antivirus">Antivirus Endpoint</a></li>
+                        <li><a href="#carrusel-ofimatica">Microsoft 365</a></li>
+                        <li><a href="#carrusel-sistemas">Windows Server & Pro</a></li>
+                        <li><a href="#carrusel-especializado">Adobe & Autodesk</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Empresa</h4>
+                    <ul>
+                        <li><a href="/nosotros/">Nosotros</a></li>
+                        <li><a href="/contacto/">Contáctanos</a></li>
+                        <li><a href="/combos/">Packs Especiales</a></li>
+                        <li><a href="https://jnxkeys.pe.xvantage.com" target="_blank" rel="noopener noreferrer">Intranet Clientes VIP ↗</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Medios de Pago</h4>
+                    <ul>
+                        <li><a href="javascript:void(0)">Factura Electrónica RUC</a></li>
+                        <li><a href="javascript:void(0)">Visa / Mastercard (Izipay)</a></li>
+                        <li><a href="javascript:void(0)">Transferencia BCP Empresa</a></li>
+                        <li><a href="javascript:void(0)">Yape / Plin Comercial</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 JNxKeys. Todos los derechos reservados. Licencias digitales legítimas para empresas en Perú. Creado por JNxConsulting.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Action Button -->
+    <a class="wa-fab" href="https://wa.me/51925244643?text=Hola%20JNxKeys,%20deseo%20una%20cotizaci%C3%B3n%20empresarial%20con%20Factura" target="_blank" onclick="gtag('event','whatsapp_click',{product:'b2b_floating',location:'empresas_page'})" aria-label="Cotizar por WhatsApp">
+        <svg viewBox="0 0 32 32"><path d="M23.47 8.52A10.9 10.9 0 0 0 16.02 5c-6.01 0-10.9 4.89-10.9 10.9 0 1.92.5 3.8 1.46 5.46L5 27l5.8-1.52a10.9 10.9 0 0 0 5.22 1.33h.005c6.01 0 10.9-4.89 10.9-10.9a10.84 10.84 0 0 0-3.45-7.79zm-7.45 16.77h-.004a9.06 9.06 0 0 1-4.61-1.26l-.33-.196-3.44.9.92-3.35-.215-.345a9.05 9.05 0 0 1-1.39-4.83c0-5.01 4.08-9.09 9.1-9.09a9.04 9.04 0 0 1 6.43 2.67 9.03 9.03 0 0 1 2.66 6.43c0 5.01-4.08 9.09-9.1 9.09zm4.99-6.81c-.27-.14-1.61-.79-1.86-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.16-1.34-.8-.71-1.34-1.6-1.5-1.87-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.48-.84-2.02-.22-.53-.44-.46-.61-.47l-.52-.01c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.29 0 1.35.98 2.66 1.12 2.84.14.18 1.93 2.95 4.68 4.14.65.28 1.16.45 1.56.58.66.21 1.25.18 1.72.11.53-.08 1.61-.66 1.83-1.29.23-.63.23-1.17.16-1.29-.07-.11-.25-.18-.52-.32z"/></svg>
+    </a>
+
+    <!-- Carrusel Navigation Script -->
+    <script>
+        function scrollCarousel(trackId, offset) {
+            const track = document.getElementById(trackId);
+            if (track) {
+                track.scrollBy({ left: offset, behavior: 'smooth' });
+            }
+        }
+
+        // Helper para obtener el icono SVG correspondiente según la categoría/producto
+        function getProductIconSvg(cat, name) {
+            const lower = name.toLowerCase();
+            if (lower.includes('eset')) {
+                return '<svg width="24" height="24" viewBox="0 0 24 24"><rect width="24" height="24" rx="5" fill="#00A3A6"/><path d="M6 12l4 4 8-8" stroke="#FFFFFF" stroke-width="2.5" fill="none"/></svg>';
+            }
+            if (lower.includes('kaspersky')) {
+                return '<svg width="24" height="24" viewBox="0 0 24 24"><rect width="24" height="24" rx="5" fill="#006D55"/><path d="M6 5.5h3.2v5.6L14.8 5.5h3.8L12.5 12l6.4 6.5h-3.9L9.2 12.8v5.7H6V5.5z" fill="#FFFFFF"/></svg>';
+            }
+            if (lower.includes('microsoft') || lower.includes('office') || lower.includes('windows') || lower.includes('win1') || lower.includes('server') || lower.includes('rds')) {
+                return '<svg width="24" height="24" viewBox="0 0 24 24"><rect width="24" height="24" rx="5" fill="#0078D4"/><path d="M6 6h5.5v5.5H6zM12.5 6H18v5.5h-5.5zM6 12.5h5.5V18H6zM12.5 12.5H18V18h-5.5z" fill="#FFFFFF"/></svg>';
+            }
+            if (lower.includes('workspace') || lower.includes('gemini') || lower.includes('google')) {
+                return '<svg width="24" height="24" viewBox="0 0 24 24"><rect width="24" height="24" rx="5" fill="#1A73E8"/><path d="M12 6a6 6 0 106 6h-6V6z" fill="#FFFFFF"/></svg>';
+            }
+            if (lower.includes('adobe')) {
+                return '<svg width="24" height="24" viewBox="0 0 24 24"><rect width="24" height="24" rx="5" fill="#FF0000"/><path d="M7 6h3.2L12 11.2 13.8 6H17l-3.6 12h-2.8L7 6z" fill="#FFFFFF"/></svg>';
+            }
+            if (lower.includes('autodesk') || lower.includes('autocad') || lower.includes('revit')) {
+                return '<svg width="24" height="24" viewBox="0 0 24 24"><rect width="24" height="24" rx="5" fill="#0696D7"/><path d="M7 18L12 6l5 12h-3l-2-5.5-2 5.5H7z" fill="#FFFFFF"/></svg>';
+            }
+            if (lower.includes('canva')) {
+                return '<svg width="24" height="24" viewBox="0 0 24 24"><rect width="24" height="24" rx="5" fill="#00C4CC"/><circle cx="12" cy="12" r="5" fill="#FFFFFF"/></svg>';
+            }
+            return '<svg width="24" height="24" viewBox="0 0 24 24"><rect width="24" height="24" rx="5" fill="#2563EB"/><path d="M6 12l4 4 8-8" stroke="#FFFFFF" stroke-width="2" fill="none"/></svg>';
+        }
+
+        // Sincronización en vivo con el Curador B2B
+        async function syncLiveB2BData() {
+            try {
+                const res = await fetch('/api/b2b-products');
+                if (!res.ok) return;
+                const data = await res.json();
+                if (!data || !data.carousels) return;
+
+                const categoryTrackMap = {
+                    'antivirus': 'track-antivirus',
+                    'ofimatica': 'track-ofimatica',
+                    'sistemas': 'track-sistemas',
+                    'especializado': 'track-especializado'
+                };
+
+                for (const [cat, trackId] of Object.entries(categoryTrackMap)) {
+                    const track = document.getElementById(trackId);
+                    if (!track) continue;
+                    const items = data.carousels[cat] || [];
+                    const activeItems = items.filter(p => p.active !== false);
+
+                    if (activeItems.length > 0) {
+                        track.innerHTML = activeItems.map(p => {
+                            const iconSvg = getProductIconSvg(cat, p.name);
+                            const badgeCls = p.badge_class || (cat === 'antivirus' ? 'badge-sec' : (cat === 'ofimatica' ? 'badge-cloud' : (cat === 'sistemas' ? 'badge-perm' : 'badge-cad')));
+                            const durationBadge = p.duration ? `<span class="meta-pill meta-duration" title="Tiempo de Licencia">⏱️ ${p.duration}</span>` : '';
+                            const payBadge = p.pay_type ? `<span class="meta-pill meta-pay" title="Tipo de Pago">💳 ${p.pay_type}</span>` : '';
+                            const availText = p.availability ? (p.availability.startsWith('⚡') ? p.availability : '⚡ ' + p.availability) : '';
+                            const availBadge = availText ? `<span class="meta-pill meta-avail" title="Disponibilidad">${availText}</span>` : '';
+                            const detailUrl = p.detail_link || '/contacto/';
+                            const waText = `Hola JNxKeys, deseo cotizar ${p.name} al precio de S/${p.sale_price_pen} con Factura/RUC para mi empresa`;
+                            const waUrl = `https://wa.me/51925244643?text=${encodeURIComponent(waText)}`;
+                            const featuresHtml = (p.features || []).map(f => `<li class="card-feature-item">${f}</li>`).join('');
+
+                            return `
+                            <div class="card-corporate">
+                                <div>
+                                    <div class="card-top">
+                                        <div class="card-logo-wrap">${iconSvg}</div>
+                                        <span class="card-badge ${badgeCls}">${p.badge || 'Corporativo'}</span>
+                                    </div>
+                                    <h3 class="card-title">${p.name}</h3>
+                                    
+                                    <!-- BADGES DE VISIBILIDAD COMERCIAL -->
+                                    <div class="card-meta-bar">
+                                        ${durationBadge}
+                                        ${payBadge}
+                                        ${availBadge}
+                                    </div>
+
+                                    <p class="card-desc">${p.desc || ''}</p>
+                                    <ul class="card-features-list">
+                                        ${featuresHtml}
+                                    </ul>
+                                </div>
+                                <div>
+                                    <div class="card-pricing-row">
+                                        <span class="card-price-type">${p.price_label || 'Precio Especial'}</span>
+                                        <span class="card-price-factura">S/ ${parseFloat(p.sale_price_pen).toFixed(2)} <span style="font-size: 10px; color: #94A3B8;">+ Factura</span></span>
+                                    </div>
+                                    <div class="card-actions-group">
+                                        <a href="${detailUrl}" target="_blank" rel="noopener noreferrer" class="btn-card-detail" title="Ver ficha técnica oficial y especificaciones">
+                                            📄 Ficha Oficial ↗
+                                        </a>
+                                        <a href="${waUrl}" target="_blank" class="btn-card-quote" title="Cotizar por WhatsApp con Factura RUC">
+                                            Cotizar 💬
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            `;
+                        }).join('');
+                    }
+                }
+            } catch(e) {
+                console.log('Error sincronizando catálogo B2B:', e);
+            }
+        }
+        syncLiveB2BData();
+    </script>
+
+</body>
+</html>
