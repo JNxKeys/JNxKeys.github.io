@@ -167,3 +167,17 @@ Las siguientes etapas estratégicas están priorizadas para la consolidación co
 ### Fase 3: Despliegue en Servidor de Producción
 - [ ] Configurar el servicio Node.js en hosting de producción (o contenedor VPS/Render/Railway) para que el Curador B2B mantenga persistencia online fuera del entorno local.
 - [ ] Configurar respaldos automáticos de `b2b_products.json` y `ads.json` sincronizados con el repositorio GitHub.
+
+---
+
+## 8. Matriz de Seguridad Blindada (Security Gates Obligatorios)
+
+La seguridad y confidencialidad en JNxKeys se gobiernan por los siguientes principios explícitos:
+
+1. **Aislamiento en Localhost (127.0.0.1):** El Command Center corre localmente en la laptop de César; cero puertos de gestión expuestos a internet.
+2. **Cifrado Local y Bloqueo en Git:** Credenciales de Ingram Micro (Token Bearer, API Secrets, Customer ID) residen en `.env` local, estrictamente ignoradas por `.gitignore`.
+3. **Data Sanitization Gate:** Antes de exportar cualquier dato hacia `jnxkeys.com`, un filtro algorítmico obligatorio purga costos de compra de Ingram, márgenes en soles y SKUs internos. La web pública solo recibe nombres comerciales, precios de venta aprobados, especificaciones y enlaces oficiales.
+4. **Mandato de Solo Lectura (Read-Only Mandate):** La app solo ejecuta consultas de catálogo, stock y cotizaciones (PnA). Queda prohibida la ejecución automática de órdenes de compra sin autorización manual explícita de César.
+5. **Throttling y Control de Peticiones:** Máximo 5 consultas por minuto y almacenamiento en caché local de 6 a 12 horas para evitar sobrecargas y bloqueos en las APIs de Ingram Micro.
+6. **Cumplimiento PCI-DSS:** Las pasarelas de pago (Izipay / Niubiz) procesan las transacciones tokenizadas; ningún dato sensible de tarjeta bancaria pasa por los servidores de JNxKeys.
+7. **Verificación de RUC ante SUNAT:** Validación algorítmica de RUC 10 y 20 antes de emitir proformas o facturas electrónicas.
