@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-07T07:12:00Z",
+  "updated_at": "2026-11-11T08:54:32.110Z",
   "carousels": {
     "antivirus": [
       {
@@ -13,9 +13,6 @@
         "duration": "1 Año Oficial",
         "availability": "⚡ Activación < 15 min",
         "detail_link": "https://jnxkeys.com/eset/",
-        "cost_usd": 10.50,
-        "cost_pen": 39.90,
-        "msrp_pen": 59.90,
         "sale_price_pen": "59.90",
         "price_label": "Anual por puesto",
         "features": [
@@ -36,9 +33,6 @@
         "duration": "1 Año Oficial",
         "availability": "⚡ Entrega Inmediata",
         "detail_link": "https://jnxkeys.com/kaspersky/",
-        "cost_usd": 15.00,
-        "cost_pen": 57.00,
-        "msrp_pen": 89.00,
         "sale_price_pen": "85.00",
         "price_label": "Packs 5, 10, 15, 20 PCs",
         "features": [
@@ -59,9 +53,6 @@
         "duration": "1 Año Oficial",
         "availability": "⚡ Aprovisionamiento Cloud",
         "detail_link": "https://jnxkeys.com/eset/",
-        "cost_usd": 16.80,
-        "cost_pen": 63.80,
-        "msrp_pen": 99.00,
         "sale_price_pen": "95.00",
         "price_label": "Suscripción anual",
         "features": [
@@ -82,9 +73,6 @@
         "duration": "1 Año Oficial",
         "availability": "⚡ Consola Web Inmediata",
         "detail_link": "https://jnxkeys.com/kaspersky/",
-        "cost_usd": 18.50,
-        "cost_pen": 70.30,
-        "msrp_pen": 110.00,
         "sale_price_pen": "105.00",
         "price_label": "Licencia por volumen",
         "features": [
@@ -105,9 +93,6 @@
         "duration": "1 Año Oficial",
         "availability": "⚡ Claves Alfanuméricas en 5 min",
         "detail_link": "https://jnxkeys.com/eset/",
-        "cost_usd": 8.00,
-        "cost_pen": 30.40,
-        "msrp_pen": 48.00,
         "sale_price_pen": "45.00",
         "price_label": "Pack 3, 5 o 10 Licencias",
         "features": [
@@ -130,9 +115,6 @@
         "duration": "1 Año Oficial",
         "availability": "⚡ Alta en Tenant Oficial",
         "detail_link": "https://jnxkeys.com/office/",
-        "cost_usd": 11.20,
-        "cost_pen": 42.50,
-        "msrp_pen": 65.00,
         "sale_price_pen": "65.00",
         "price_label": "Mensual o Anual",
         "features": [
@@ -153,9 +135,6 @@
         "duration": "1 Año Oficial",
         "availability": "⚡ Correo Activo en 15 min",
         "detail_link": "https://jnxkeys.com/office/",
-        "cost_usd": 5.40,
-        "cost_pen": 20.50,
-        "msrp_pen": 32.00,
         "sale_price_pen": "30.00",
         "price_label": "Por usuario / mes",
         "features": [
@@ -176,9 +155,6 @@
         "duration": "Permanente De Por Vida",
         "availability": "⚡ Clave Digital + Vinculación",
         "detail_link": "https://jnxkeys.com/office/",
-        "cost_usd": 78.00,
-        "cost_pen": 296.00,
-        "msrp_pen": 420.00,
         "sale_price_pen": "390.00",
         "price_label": "Pago Único de por vida",
         "features": [
@@ -199,9 +175,6 @@
         "duration": "1 Año Oficial",
         "availability": "⚡ Configuración DNS & Dominio",
         "detail_link": "https://jnxkeys.com/google-one/",
-        "cost_usd": 10.80,
-        "cost_pen": 41.00,
-        "msrp_pen": 60.00,
         "sale_price_pen": "58.00",
         "price_label": "Suscripción anual",
         "features": [
@@ -222,9 +195,6 @@
         "duration": "Permanente De Por Vida",
         "availability": "⚡ Entrega Inmediata",
         "detail_link": "https://jnxkeys.com/office/",
-        "cost_usd": 12.00,
-        "cost_pen": 45.60,
-        "msrp_pen": 80.00,
         "sale_price_pen": "75.00",
         "price_label": "Pago Único Permanente",
         "features": [
@@ -247,9 +217,6 @@
         "duration": "De Por Vida en el Equipo",
         "availability": "⚡ Clave OEM/Retail Inmediata",
         "detail_link": "https://jnxkeys.com/windows/",
-        "cost_usd": 11.50,
-        "cost_pen": 43.70,
-        "msrp_pen": 85.00,
         "sale_price_pen": "79.00",
         "price_label": "Licencia Permanente",
         "features": [
@@ -270,9 +237,6 @@
         "duration": "De Por Vida en el Equipo",
         "availability": "⚡ Clave Digital Inmediata",
         "detail_link": "https://jnxkeys.com/windows/",
-        "cost_usd": 9.50,
-        "cost_pen": 36.10,
-        "msrp_pen": 70.00,
         "sale_price_pen": "65.00",
         "price_label": "Por puesto / volumen",
         "features": [
@@ -293,9 +257,6 @@
         "duration": "Perpetua por Núcleos",
         "availability": "⚡ ISO Oficial + Clave COA/Retail",
         "detail_link": "https://jnxkeys.com/contacto/",
-        "cost_usd": 120.00,
-        "cost_pen": 456.00,
-        "msrp_pen": 750.00,
         "sale_price_pen": "690.00",
         "price_label": "Base 16 Cores",
         "features": [
@@ -316,9 +277,6 @@
         "duration": "Perpetua por Usuario/Dispositivo",
         "availability": "⚡ Aprovisionamiento en Servidor",
         "detail_link": "https://jnxkeys.com/contacto/",
-        "cost_usd": 22.00,
-        "cost_pen": 83.60,
-        "msrp_pen": 140.00,
         "sale_price_pen": "130.00",
         "price_label": "Packs de Acceso",
         "features": [
@@ -341,9 +299,6 @@
         "duration": "1 Año Oficial",
         "availability": "⚡ Asignación en Admin Console",
         "detail_link": "https://jnxkeys.com/canva/",
-        "cost_usd": 68.00,
-        "cost_pen": 258.40,
-        "msrp_pen": 360.00,
         "sale_price_pen": "340.00",
         "price_label": "Suscripción anual con RUC",
         "features": [
@@ -364,9 +319,6 @@
         "duration": "1 Año Oficial",
         "availability": "⚡ Licencia Comercial en Autodesk ID",
         "detail_link": "https://jnxkeys.com/contacto/",
-        "cost_usd": 190.00,
-        "cost_pen": 722.00,
-        "msrp_pen": 980.00,
         "sale_price_pen": "920.00",
         "price_label": "Suscripción Anual",
         "features": [
@@ -387,9 +339,6 @@
         "duration": "1 Año Oficial",
         "availability": "⚡ Activación en Panel Google",
         "detail_link": "https://jnxkeys.com/google-one/",
-        "cost_usd": 18.00,
-        "cost_pen": 68.40,
-        "msrp_pen": 105.00,
         "sale_price_pen": "99.00",
         "price_label": "Add-on por usuario",
         "features": [
@@ -410,9 +359,6 @@
         "duration": "1 Año Oficial",
         "availability": "⚡ Invitación por Correo Inmediata",
         "detail_link": "https://jnxkeys.com/canva/",
-        "cost_usd": 9.00,
-        "cost_pen": 34.20,
-        "msrp_pen": 60.00,
         "sale_price_pen": "55.00",
         "price_label": "Acceso Corporativo",
         "features": [

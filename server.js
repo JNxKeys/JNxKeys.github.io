@@ -70,23 +70,13 @@ const server = http.createServer((req, res) => {
     return;
   }
 
-  // API endpoint for saving curated B2B products
+  // API endpoint for saving curated B2B products (BLOQUEADO POR DATA SANITIZATION GATE)
   if (req.method === 'POST' && urlPath === '/api/save-b2b-products') {
-    let body = '';
-    req.on('data', chunk => { body += chunk; });
-    req.on('end', () => {
-      try {
-        const parsed = JSON.parse(body);
-        parsed.updated_at = new Date().toISOString();
-        fs.mkdirSync(path.dirname(B2B_PRODUCTS_FILE), { recursive: true });
-        fs.writeFileSync(B2B_PRODUCTS_FILE, JSON.stringify(parsed, null, 2), 'utf-8');
-        res.writeHead(200, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify({ success: true, message: 'Catálogo B2B actualizado exitosamente' }));
-      } catch (err) {
-        res.writeHead(400, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify({ success: false, error: err.message }));
-      }
-    });
+    res.writeHead(403, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({
+      success: false,
+      error: 'Ruta deshabilitada por el Data Sanitization Gate. Las publicaciones a la web deben realizarse exclusivamente desde JNxKeys Command Center para evitar la fuga de costos mayoristas.'
+    }));
     return;
   }
 

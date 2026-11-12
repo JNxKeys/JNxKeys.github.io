@@ -10,3 +10,8 @@ node_modules/
 .env
 .env.local
 .env.*.local
+tools/command-center/.env
+tools/command-center/data/mcp_connection.json
+tools/command-center/data/*.enc
+tools/command-center/data/backups/
+tools/command-center/data/master_inventory.json
