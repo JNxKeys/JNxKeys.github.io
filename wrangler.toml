@@ -1,21 +1,25 @@
 name = "jnxkeys-analytics-bot"
 main = "worker/jnxkeys-analytics-bot.js"
 compatibility_date = "2024-11-01"
+account_id = "1f2f426c7bd82e8bbcf1ffe8e319d1d5"
+workers_dev = true
+
+# Ruta para capturar telemetría sin problemas de CORS
+routes = [
+  { pattern = "jnxkeys.com/api/*", zone_name = "jnxkeys.com" }
+]
 
 # Base de datos Serverless en Cloudflare KV (Métricas, Leads y Caja)
 [[kv_namespaces]]
 binding = "JNX_METRICS"
-id = "PEGAR_AQUI_ID_DEL_KV_NAMESPACE"
+id = "2e6e5a6029384c69b1e320ffac32d420"
 
 # Variables de entorno públicas
 [vars]
-TELEGRAM_CHAT_ID = "PEGAR_TU_ID_NUMERICO_TELEGRAM"
-CF_ZONE_ID = "PEGAR_TU_ZONE_ID_DE_CLOUDFLARE"
+TELEGRAM_CHAT_ID = "8616800327"
+CF_ZONE_ID = "0713b73888bdbd3cbf99f8cd518d6e22"
 
-# Disparadores programados automáticos (Hora Perú UTC-5)
-[triggers]
-crons = [
-  "0 13 * * 1",   # Lunes 8:00 AM Perú (Reporte Semanal)
-  "0 11 1 * *",   # Día 1 6:00 AM Perú (Reporte Mensual Ejecutivo con Gemini)
-  "30 4 * * *"    # Diario 11:30 PM Perú (Cierre de Caja Diario)
-]
+# Nota: Para activar crons automáticos sin exceder el límite gratuito de Cloudflare (5 crons por cuenta),
+# se pueden consultar bajo demanda vía Telegram (/resumen, /horarios, /top, /semana, /mes).
+# [triggers]
+# crons = ["30 4 * * *"]
