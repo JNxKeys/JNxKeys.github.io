@@ -378,7 +378,7 @@
             width: 100%;
             border-radius: 32px;
             overflow: hidden;
-            background: #0B1120;
+            background: linear-gradient(135deg, #0B1120 0%, #0F172A 50%, #1E293B 100%);
             border: 1px solid rgba(255, 255, 255, 0.18);
             box-shadow: 0 25px 60px -15px rgba(15, 23, 42, 0.55);
         }
@@ -388,6 +388,8 @@
             width: 100%;
             transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
             will-change: transform;
+            position: relative;
+            z-index: 2;
         }
 
         .hero-carousel-slide {
@@ -399,58 +401,17 @@
             user-select: none;
         }
 
-        /* SLIDE CON BANNER GRÁFICO (SLIDES 1 & 2) */
+        /* SLIDE CON BANNER GRÁFICO (SLIDES 1 & 2) - FONDO UNIFICADO TRANSPARENTE */
         .hero-slide-banner {
             position: relative;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(135deg, #090D16 0%, #0F172A 50%, #172033 100%);
+            background: transparent;
             overflow: hidden;
-            min-height: 460px;
-        }
-
-        .hero-slide-backdrop {
-            position: absolute;
-            inset: -20px;
-            background-size: cover;
-            background-position: center;
-            filter: blur(50px) brightness(0.42);
-            opacity: 0.55;
-            pointer-events: none;
-            transform: scale(1.12);
-            z-index: 1;
-        }
-
-        .hero-slide-ambient-glow {
-            position: absolute;
-            width: 360px;
-            height: 360px;
-            border-radius: 50%;
-            filter: blur(80px);
-            pointer-events: none;
-            z-index: 1;
-        }
-        .hero-slide-ambient-glow.glow-blue {
-            top: -60px;
-            right: 5%;
-            background: radial-gradient(circle, rgba(56, 189, 248, 0.35) 0%, transparent 70%);
-        }
-        .hero-slide-ambient-glow.glow-red {
-            bottom: -60px;
-            left: 5%;
-            background: radial-gradient(circle, rgba(239, 68, 68, 0.3) 0%, transparent 70%);
-        }
-        .hero-slide-ambient-glow.glow-green {
-            top: -60px;
-            right: 5%;
-            background: radial-gradient(circle, rgba(34, 197, 94, 0.35) 0%, transparent 70%);
-        }
-        .hero-slide-ambient-glow.glow-cyan {
-            bottom: -60px;
-            left: 5%;
-            background: radial-gradient(circle, rgba(6, 182, 212, 0.3) 0%, transparent 70%);
+            min-height: 480px;
+            z-index: 2;
         }
 
         .hero-banner-link {
@@ -568,16 +529,17 @@
             box-shadow: 0 6px 20px rgba(16, 185, 129, 0.5);
         }
 
-        /* SLIDE 3: HERO TECNOLÓGICO ORIGINAL (WRAPPER AJUSTADO PARA SLIDER) */
+        /* SLIDE 3: HERO TECNOLÓGICO ORIGINAL - FONDO UNIFICADO TRANSPARENTE */
         .hero-slide-tech {
             position: relative;
-            background: linear-gradient(135deg, #0B1120 0%, #0F172A 50%, #1E293B 100%);
+            background: transparent;
             padding: 56px 40px;
             box-sizing: border-box;
-            min-height: 460px;
+            min-height: 480px;
             display: flex;
             align-items: center;
             overflow: hidden;
+            z-index: 2;
         }
 
         /* CONTROLES DE NAVEGACIÓN (FLECHAS) */
@@ -2291,18 +2253,20 @@
         <!-- HERO SECTION CON CARRUSEL MULTIPANTALLA (SLIDER PRINCIPAL MULTIPRODUCTO) -->
         <div class="hero-carousel-wrapper">
             <div class="hero-carousel" id="heroCarousel" role="region" aria-roledescription="carrusel" aria-label="Destacados y Ofertas Principales">
+                <!-- FONDO TECNOLÓGICO UNIFICADO (ORIGINAL DEL SLIDE 3) PARA TODOS LOS SLIDES -->
+                <img src="/assets/img/hero_tech_bg.webp" alt="JNxKeys Tecnología" class="hero-cover-img" fetchpriority="high" width="1400" height="700">
+                <div class="hero-glow-orb-1"></div>
+                <div class="hero-glow-orb-2"></div>
+                <div class="hero-scanner"></div>
+
                 <div class="hero-carousel-track" id="heroCarouselTrack">
 
                     <!-- SLIDE 1: GOOGLE FOTOS & ALMACENAMIENTO (FLAGSHIP) -->
                     <div class="hero-carousel-slide" data-slide-index="0" data-slide-name="GoogleFotos_Storage">
                         <div class="hero-slide-banner">
-                            <div class="hero-slide-backdrop" style="background-image: url('/assets/img/hero/banner-google-fotos-espacio.png');"></div>
-                            <div class="hero-slide-ambient-glow glow-blue"></div>
-                            <div class="hero-slide-ambient-glow glow-red"></div>
-
                             <a href="/google-one/" class="hero-banner-link" onclick="gtag('event','hero_slide_click',{slide:'GoogleFotos_Storage', destination:'/google-one/'})" aria-label="Ver Planes de Google One y Almacenamiento">
                                 <div class="hero-banner-frame">
-                                    <img src="/assets/img/hero/banner-google-fotos-espacio.png" alt="Google Fotos: Que tus fotos no se pierdan por falta de espacio. Soluciones Google desde S/ 10 con soporte local JNxKeys" class="hero-banner-img" fetchpriority="high" width="1080" height="465">
+                                    <img src="/assets/img/hero/banner-google-fotos-espacio.png?v=2" alt="Google Fotos: Que tus fotos no se pierdan por falta de espacio. Soluciones Google desde S/ 10 con soporte local JNxKeys" class="hero-banner-img" fetchpriority="high" width="1080" height="465">
                                     
                                     <div class="hero-slide-cta-bar">
                                         <div class="hero-slide-cta-left">
@@ -2327,13 +2291,9 @@
                     <!-- SLIDE 2: GOOGLE MEET 24 HORAS PREMIUM -->
                     <div class="hero-carousel-slide" data-slide-index="1" data-slide-name="GoogleMeet_24h">
                         <div class="hero-slide-banner">
-                            <div class="hero-slide-backdrop" style="background-image: url('/assets/img/hero/banner-google-meet-24h.png');"></div>
-                            <div class="hero-slide-ambient-glow glow-green"></div>
-                            <div class="hero-slide-ambient-glow glow-cyan"></div>
-
                             <a href="/google-one/#planes" class="hero-banner-link" onclick="gtag('event','hero_slide_click',{slide:'GoogleMeet_24h', destination:'/google-one/#planes'})" aria-label="Ver Planes de Google Meet 24 Horas">
                                 <div class="hero-banner-frame">
-                                    <img src="/assets/img/hero/banner-google-meet-24h.png" alt="Google Meet Premium 24 Horas de transmisión sin interrupciones desde S/ 20" class="hero-banner-img" loading="lazy" width="1080" height="465">
+                                    <img src="/assets/img/hero/banner-google-meet-24h.png?v=2" alt="Google Meet Premium 24 Horas de transmisión sin interrupciones desde S/ 20" class="hero-banner-img" loading="lazy" width="1080" height="465">
                                     
                                     <div class="hero-slide-cta-bar">
                                         <div class="hero-slide-cta-left">
@@ -2358,10 +2318,6 @@
                     <!-- SLIDE 3: SOFTWARE & LICENCIAS OFICIALES (HERO TECNOLÓGICO ORIGINAL) -->
                     <div class="hero-carousel-slide" data-slide-index="2" data-slide-name="Software_Licencias_Hero">
                         <div class="hero-slide-tech">
-                            <img src="/assets/img/hero_tech_bg.webp" alt="JNxKeys Tecnología" class="hero-cover-img" loading="lazy" width="1400" height="700">
-                            <div class="hero-glow-orb-1"></div>
-                            <div class="hero-glow-orb-2"></div>
-                            <div class="hero-scanner"></div>
                             <section class="hero">
                                 <div class="hero-content">
                                     <div class="hero-tag">
