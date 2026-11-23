@@ -303,9 +303,42 @@ Para adquirirlo:
 
 ---
 
-## 🎁 Categoría 4: Packs & Combos en Oferta
+## 🎨 Categoría 4: Diseño & Edición
 
-### 10. Mega Pack Oferta: Microsoft 365 + Google AI 2TB + Canva Pro GRATIS
+### 10. Canva Pro (Mensual)
+* **Palabras clave:**  
+  `Canva, Canva Pro, Cuenta Canva, Plantillas Canva, Magic Studio`
+* **Coincidencia:** `Contiene`
+* **Mensaje de respuesta:**
+```text
+¡Hola! 👋 Sí, tenemos cupos disponibles para activar Canva Pro hoy mismo en tu propia cuenta.
+
+Detalles de Canva Pro:
+✨ Incluye Magic Studio con Inteligencia Artificial.
+🪄 Quitar fondo de imágenes en 1 clic.
+🖼️ Millones de plantillas, fuentes, fotos y elementos gráficos premium ilimitados.
+🔑 Activación directa en tu cuenta personal de Canva; no te pedimos contraseña.
+🛡️ Garantía activa durante todo tu mes de suscripción con soporte JNxKeys.
+
+💳 Precio: S/ 10 (suscripción por 1 mes)
+📲 Pago exclusivo por Yape:
+• Número: 925 244 643
+• Titular: Cesar Fernandez
+
+Para activarlo:
+1. Realiza el Yape de S/ 10.
+2. Envíanos por aquí la captura de tu pago.
+3. Escríbenos el correo de tu cuenta de Canva para enviarte la invitación oficial.
+
+💡 Si deseas verificar nuestra reputación y garantía, escribe:
+• *GARANTIA*
+```
+
+---
+
+## 🎁 Categoría 5: Packs & Combos en Oferta
+
+### 11. Mega Pack Oferta: Microsoft 365 + Google AI 2TB + Canva Pro GRATIS
 * **Palabras clave:**  
   `Pack, Combo, Mega Pack, Pack Microsoft, Combo Office Canva, Pack Oferta`
 * **Coincidencia:** `Contiene`
@@ -336,7 +369,7 @@ Para activarlo:
 
 ## ⭐ Comando Global de Respaldo
 
-### 11. Garantía y Reputación Google
+### 12. Garantía y Reputación Google
 * **Palabras clave:**  
   `GARANTIA, Garantía, Respaldo, Es seguro, Confianza`
 * **Coincidencia:** `Contiene`
