@@ -213,56 +213,183 @@ h1.hero em{font-style:italic;color:var(--g-blue);}
 
 /* PLAN CAROUSEL */
 .plan-eyebrow{font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;}
-.plan-carousel{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x proximity;margin:0 -18px 10px;padding:0 18px 4px;scrollbar-width:none;}
+.plan-carousel{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x proximity;margin:0 -18px 10px;padding:0 18px 6px;scrollbar-width:none;}
 .plan-carousel::-webkit-scrollbar{display:none;}
-.plan-slide{scroll-snap-align:start;flex:0 0 82%;background:var(--white);border:2px solid var(--border);border-radius:18px;padding:20px;}
-.plan-slide.tier-basic{border-color:var(--g-blue);}
-.plan-slide.tier-popular{border-color:var(--g-green);}
-.plan-slide.tier-pro{border-color:var(--g-orange);}
-.plan-head-row{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:12px;}
-.plan-title-group{display:flex;align-items:center;gap:9px;}
-.plan-badge{display:inline-flex;align-items:center;gap:4px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:#fff;border-radius:6px;padding:4px 10px;white-space:nowrap;flex-shrink:0;margin-top:2px;}
-.plan-badge.tier-basic{background:var(--g-blue);}
-.plan-badge.tier-popular{background:var(--g-green);}
-.plan-badge.tier-pro{background:var(--g-orange);}
-.plan-icon{font-size:28px;flex-shrink:0;}
-.plan-name{font-family:'Outfit',sans-serif;font-weight:800;font-size:20px;letter-spacing:-.01em;color:var(--dark);line-height:1.15;}
-.plan-icons{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:14px;}
-.plan-icons .p-ic{width:28px;height:28px;border-radius:8px;background:var(--bg);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;}
-.tier-basic .plan-icons .p-ic{background:var(--g-light);border-color:#c0d9f8;}
-.tier-popular .plan-icons .p-ic{background:#e8f5ea;border-color:#b8e0c2;}
-.tier-pro .plan-icons .p-ic{background:#fdece0;border-color:#f5c9a3;}
-.plan-divider{height:1px;background:var(--border);margin-bottom:14px;}
-.plan-desc{font-size:14px;color:var(--muted);line-height:1.5;margin-bottom:16px;}
-.plan-desc strong{color:var(--dark);font-weight:800;}
-.plan-options{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
-.plan-opt{border:1.5px solid var(--border);border-radius:12px;padding:10px 12px;text-align:center;background:none;font-family:inherit;cursor:pointer;transition:border-color .15s ease, background .15s ease, transform .1s ease;width:100%;}
-.plan-opt:hover{border-color:var(--g-blue);}
-.plan-opt:active{transform:scale(.97);}
-.plan-opt.featured{border-color:var(--g-blue);background:var(--g-light);}
-.tier-basic .plan-opt:hover{border-color:var(--g-blue);}
-.tier-basic .plan-opt.featured{border-color:var(--g-blue);background:var(--g-light);}
-.tier-popular .plan-opt:hover{border-color:var(--g-green);}
-.tier-popular .plan-opt.featured{border-color:var(--g-green);background:#e8f5ea;}
-.tier-pro .plan-opt:hover{border-color:var(--g-orange);}
-.tier-pro .plan-opt.featured{border-color:var(--g-orange);background:#fdece0;}
-.plan-opt-label{font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px;}
-.plan-opt-old{font-size:11px;color:#98a2b3;text-decoration:line-through;}
-.plan-opt-price{font-family:'DM Serif Display',serif;font-size:22px;color:var(--dark);line-height:1.1;}
-.plan-opt-tag{font-size:9.5px;color:var(--g-blue);font-weight:700;margin-top:2px;}
-.tier-popular .plan-opt-tag{color:var(--g-green);}
-.tier-pro .plan-opt-tag{color:var(--g-orange);}
+.plan-slide{
+  scroll-snap-align:start;
+  flex:0 0 84%;
+  background: linear-gradient(168deg, #0B1120 0%, #0F172A 50%, #111D33 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  padding: 22px 20px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 14px 34px -10px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+}
+.plan-slide::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--beam-color, #38BDF8);
+  opacity: 0.85;
+}
+.plan-slide.tier-basic{ --beam-color: #38BDF8; border-color: rgba(56, 189, 248, 0.25); }
+.plan-slide.tier-popular{ 
+  --beam-color: linear-gradient(90deg, #10B981, #34D399, #F59E0B); 
+  border-color: rgba(16, 185, 129, 0.35); 
+  background: linear-gradient(168deg, #0B1522 0%, #0C1E2A 50%, #0F232D 100%);
+  box-shadow: 0 16px 38px -8px rgba(16, 185, 129, 0.15), inset 0 1px 0 rgba(52, 211, 153, 0.2);
+}
+.plan-slide.tier-pro{ --beam-color: #F59E0B; border-color: rgba(245, 158, 11, 0.25); }
+.plan-slide:hover{ transform: translateY(-4px); border-color: rgba(255, 255, 255, 0.25); box-shadow: 0 20px 42px -6px rgba(0, 0, 0, 0.6); }
+.plan-slide.tier-popular:hover{ border-color: rgba(16, 185, 129, 0.6); box-shadow: 0 20px 45px -6px rgba(16, 185, 129, 0.25); }
 
-.grid-click-hint{display:flex;align-items:center;gap:8px;background:rgba(26,115,232,.08);border:1px solid rgba(26,115,232,.2);color:#1A73E8;font-size:13px;font-weight:700;padding:10px 18px;border-radius:12px;margin-bottom:20px;}
-.plan-actions{display:flex;align-items:center;gap:8px;margin-top:14px;}
-.plan-share-btn{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;flex-shrink:0;border-radius:8px;border:1px solid var(--border);background:var(--white);color:var(--muted);cursor:pointer;transition:all .15s ease;}
-.plan-share-btn:hover{border-color:var(--g-blue);color:var(--g-blue);background:rgba(26,115,232,.08);}
-.plan-share-btn:active{transform:scale(.92);}
-.plan-share-btn svg{width:15px;height:15px;}
-.card-select-pill{display:inline-flex;align-items:center;gap:6px;background:var(--bg);color:var(--dark);font-weight:800;font-size:12.5px;padding:7px 14px;border-radius:100px;border:1px solid var(--border);transition:all .2s ease;}
-.plan-slide:hover .card-select-pill{background:var(--g-blue);color:#FFFFFF;border-color:var(--g-blue);transform:scale(1.04);}
-.plan-slide{cursor:pointer;transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease;}
-.plan-slide:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(26,115,232,.18);border-color:var(--g-blue);}
+.plan-head-row{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:8px;}
+.plan-title-group{display:flex;align-items:center;gap:10px;}
+.plan-icon{font-size:26px;flex-shrink:0;}
+.plan-name{font-family:'Outfit',sans-serif;font-weight:800;font-size:20px;letter-spacing:-.01em;color:#FFFFFF;line-height:1.15;}
+.plan-badge{display:inline-flex;align-items:center;gap:4px;font-size:9.5px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:#fff;border-radius:6px;padding:3px 8px;white-space:nowrap;margin-top:4px;}
+.plan-badge.tier-basic{background:rgba(56, 189, 248, 0.2);color:#38BDF8;border:1px solid rgba(56, 189, 248, 0.4);}
+.plan-badge.tier-popular{background:rgba(16, 185, 129, 0.25);color:#34D399;border:1px solid rgba(16, 185, 129, 0.5);}
+.plan-badge.tier-pro{background:rgba(245, 158, 11, 0.2);color:#FBBF24;border:1px solid rgba(245, 158, 11, 0.4);}
+
+/* ANCLAJE DE PRECIOS DIGITAL */
+.card-anchor-badge {
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 9px;
+  padding: 4px 8px;
+  text-align: right;
+  flex-shrink: 0;
+  backdrop-filter: blur(8px);
+}
+.anchor-label {
+  font-size: 8.5px;
+  font-weight: 700;
+  color: #94A3B8;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  display: block;
+  margin-bottom: 2px;
+}
+.anchor-prices {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+}
+.anchor-strike {
+  font-size: 11.5px;
+  color: #F87171;
+  text-decoration: line-through;
+  font-weight: 700;
+}
+.anchor-discount {
+  font-size: 10px;
+  font-weight: 900;
+  background: rgba(56, 189, 248, 0.18);
+  color: #38BDF8;
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+.anchor-discount.green {
+  background: rgba(16, 185, 129, 0.2);
+  color: #34D399;
+  border-color: rgba(16, 185, 129, 0.4);
+}
+.anchor-discount.amber {
+  background: rgba(245, 158, 11, 0.2);
+  color: #FBBF24;
+  border-color: rgba(245, 158, 11, 0.4);
+}
+
+/* TELEMETRIA HUD */
+.plan-hud-slot {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(15, 23, 42, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 5px 10px;
+  margin: 6px 0 12px;
+  font-size: 11.5px;
+  color: #CBD5E1;
+}
+.hud-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.hud-dot.blue { background: #38BDF8; box-shadow: 0 0 8px #38BDF8; }
+.hud-dot.green { background: #10B981; box-shadow: 0 0 8px #10B981; }
+.hud-dot.amber { background: #F59E0B; box-shadow: 0 0 8px #F59E0B; }
+
+.plan-icons{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;}
+.plan-icons .p-ic{width:28px;height:28px;border-radius:8px;background:rgba(15, 23, 42, 0.7);border:1px solid rgba(255, 255, 255, 0.12);display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;color:#E2E8F0;}
+.plan-divider{height:1px;background:rgba(255, 255, 255, 0.08);margin-bottom:12px;}
+.plan-desc{font-size:13.5px;color:#94A3B8;line-height:1.5;margin-bottom:16px;}
+.plan-desc strong{color:#FFFFFF;font-weight:700;}
+
+.plan-options{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.plan-opt{
+  border:1.5px solid rgba(255, 255, 255, 0.12);
+  border-radius:12px;
+  padding:9px 10px;
+  text-align:center;
+  background:rgba(15, 23, 42, 0.6);
+  font-family:inherit;
+  cursor:pointer;
+  transition:all .15s ease;
+  width:100%;
+}
+.plan-opt:hover{border-color:#38BDF8;background:rgba(56, 189, 248, 0.08);}
+.plan-opt:active{transform:scale(.97);}
+.plan-opt.featured{border-color:#38BDF8;background:rgba(56, 189, 248, 0.12);}
+.tier-popular .plan-opt:hover{border-color:#10B981;background:rgba(16, 185, 129, 0.08);}
+.tier-popular .plan-opt.featured{border-color:#10B981;background:rgba(16, 185, 129, 0.14);}
+.tier-pro .plan-opt:hover{border-color:#F59E0B;background:rgba(245, 158, 11, 0.08);}
+.tier-pro .plan-opt.featured{border-color:#F59E0B;background:rgba(245, 158, 11, 0.14);}
+
+.plan-opt-label{font-size:9.5px;font-weight:700;color:#94A3B8;text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px;}
+.plan-opt-old{font-size:11px;color:#F87171;text-decoration:line-through;}
+.plan-opt-price{font-family:'Outfit',sans-serif;font-weight:900;font-size:22px;color:#FFFFFF;line-height:1.1;}
+.plan-opt-tag{font-size:9.5px;color:#38BDF8;font-weight:700;margin-top:2px;}
+.tier-popular .plan-opt-tag{color:#34D399;}
+.tier-pro .plan-opt-tag{color:#FBBF24;}
+
+.card-select-pill{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  background:linear-gradient(135deg, #2563EB, #1D4ED8);
+  color:#FFFFFF;
+  font-weight:800;
+  font-size:12.5px;
+  padding:8px 16px;
+  border-radius:100px;
+  border:none;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+  transition:all .2s ease;
+}
+.plan-slide:hover .card-select-pill{transform:scale(1.04);box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5);}
+.tier-popular .card-select-pill{
+  background:linear-gradient(135deg, #059669, #10B981);
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.35);
+}
+.tier-popular:hover .card-select-pill{box-shadow: 0 6px 20px rgba(16, 185, 129, 0.55);}
+.tier-pro .card-select-pill{
+  background:linear-gradient(135deg, #D97706, #F59E0B);
+  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.35);
+}
+.tier-pro:hover .card-select-pill{box-shadow: 0 6px 20px rgba(245, 158, 11, 0.55);}
+.plan-share-btn{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;flex-shrink:0;border-radius:8px;border:1px solid rgba(255, 255, 255, 0.15);background:rgba(15, 23, 42, 0.8);color:#94A3B8;cursor:pointer;transition:all .15s ease;}
+.plan-share-btn:hover{border-color:#38BDF8;color:#38BDF8;background:rgba(56, 189, 248, 0.15);}
 
 .plan-dots{display:flex;justify-content:center;gap:5px;}
 .plan-nav-row{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:24px;}
@@ -781,15 +908,27 @@ function switchTikTokVideo(videoId, titleText, btn) {
   <div class="grid-click-hint">💬 <span>Haz clic en cualquier plan para solicitar tu suscripción al instante por WhatsApp</span></div>
 
   <div class="plan-carousel" id="planCarousel">
+        <!-- CARD 1: AI PLUS 400 -->
         <div class="plan-slide tier-basic" id="plan-ai-plus-400" onclick="window.open('https://wa.me/51925244643?text=Deseo%20informaci%C3%B3n%20del%20plan%20AI%20Plus%20400%20de%20Google%20One', '_blank'); gtag('event','whatsapp_click',{product:'Google One',plan:'AI Plus 400',location:'plan_card'})">
           <div class="plan-head-row">
             <div class="plan-title-group">
               <span class="plan-icon">☁️</span>
-              <span class="plan-name">AI PLUS 400</span>
+              <div>
+                <div class="plan-name">AI PLUS 400</div>
+                <div class="plan-badge tier-basic">Más pedido</div>
+              </div>
             </div>
-            <div style="display:flex; align-items:center; gap:8px;">
-              <div class="plan-badge tier-basic">Más pedido</div>
+            <div class="card-anchor-badge">
+              <span class="anchor-label">Oficial Google</span>
+              <div class="anchor-prices">
+                <span class="anchor-strike">S/ 20.00</span>
+                <span class="anchor-discount">-50%</span>
+              </div>
             </div>
+          </div>
+          <div class="plan-hud-slot">
+            <span class="hud-dot blue"></span>
+            <span><strong>80 GB Asignados</strong> · Tu cuenta personal de Gmail</span>
           </div>
           <div class="plan-icons">
             <span class="p-ic" title="Gemini 3.6 Flash">✨</span>
@@ -800,7 +939,7 @@ function switchTikTokVideo(videoId, titleText, btn) {
             <span class="p-ic" title="Docs">📄</span>
           </div>
           <div class="plan-divider"></div>
-          <div class="plan-desc">Cupo individual con 80GB de espacio en la nube. Olvídate de los mensajes por falta de espacio, asegura tus fotos y copias de seguridad. Con Gemini IA integrado. Ideal para ofimática básica, tareas rápidas y redacción ágil. <strong>Garantía todos los meses</strong>.</div>
+          <div class="plan-desc">Cupo individual con 80GB de espacio en la nube. Olvídate de los mensajes por falta de espacio, asegura tus fotos y copias de seguridad. Con Gemini IA integrado. <strong>Garantía todos los meses</strong>.</div>
           <div class="plan-options" onclick="event.stopPropagation();">
             <button type="button" class="plan-opt featured">
               <div class="plan-opt-label">Mensual</div>
@@ -810,7 +949,7 @@ function switchTikTokVideo(videoId, titleText, btn) {
             <button type="button" class="plan-opt">
               <div class="plan-opt-label">Semestral</div>
               <div class="plan-opt-price">S/50</div>
-              <div class="plan-opt-tag">6 meses</div>
+              <div class="plan-opt-tag">6 meses (Ahorras S/10)</div>
             </button>
           </div>
           <div style="display:flex; justify-content:flex-end; align-items:center; gap:8px; margin-top:14px;">
@@ -821,15 +960,27 @@ function switchTikTokVideo(videoId, titleText, btn) {
           </div>
         </div>
 
+        <!-- CARD 2: AI PLUS 2TB -->
         <div class="plan-slide tier-popular" id="plan-ai-plus-2tb" onclick="window.open('https://wa.me/51925244643?text=Deseo%20informaci%C3%B3n%20del%20plan%20AI%20Plus%202TB%20de%20Google%20One%20(Promo%203%20meses%20a%20S/15)', '_blank'); gtag('event','whatsapp_click',{product:'Google One',plan:'AI Plus 2TB',location:'plan_card'})">
           <div class="plan-head-row">
             <div class="plan-title-group">
               <span class="plan-icon">👤</span>
-              <span class="plan-name">AI Plus 2TB</span>
+              <div>
+                <div class="plan-name">AI Plus 2TB</div>
+                <div class="plan-badge tier-popular">Recomendado ⭐</div>
+              </div>
             </div>
-            <div style="display:flex; align-items:center; gap:8px;">
-              <div class="plan-badge tier-popular">Recomendado ⭐</div>
+            <div class="card-anchor-badge">
+              <span class="anchor-label">Oficial Google</span>
+              <div class="anchor-prices">
+                <span class="anchor-strike">S/ 71.90</span>
+                <span class="anchor-discount green">-79%</span>
+              </div>
             </div>
+          </div>
+          <div class="plan-hud-slot">
+            <span class="hud-dot green"></span>
+            <span><strong>400 GB Asignados</strong> · Meet 24h Grabación · Gemini Adv</span>
           </div>
           <div class="plan-icons">
             <span class="p-ic" title="Gemini 3 Pro">🧠</span>
@@ -841,7 +992,7 @@ function switchTikTokVideo(videoId, titleText, btn) {
             <span class="p-ic" title="Gmail & Docs">📄</span>
           </div>
           <div class="plan-divider"></div>
-          <div class="plan-desc">Cupo individual con 400GB de espacio en la nube. Almacenamiento masivo y Meet Premium 24 hrs con grabación a Drive. Incluye Gemini Advanced para desarrollo agéntico y de imágenes en alta definición. <strong>Garantía todos los meses</strong>.</div>
+          <div class="plan-desc">Cupo individual con 400GB de espacio en la nube. Meet Premium 24 hrs con grabación a Drive. Incluye Gemini Advanced para desarrollo agéntico e imágenes en HD. <strong>Garantía todos los meses</strong>.</div>
           <div class="plan-options" onclick="event.stopPropagation();">
             <button type="button" class="plan-opt featured">
               <div class="plan-opt-label">Primeros 3 meses</div>
@@ -863,15 +1014,27 @@ function switchTikTokVideo(videoId, titleText, btn) {
           </div>
         </div>
 
+        <!-- CARD 3: AI PRO 5TB -->
         <div class="plan-slide tier-pro" id="plan-ai-pro-5tb" onclick="window.open('https://wa.me/51925244643?text=Deseo%20informaci%C3%B3n%20del%20plan%20AI%20Pro%205TB%20de%20Google%20One%20(18%20Meses%20a%20S/35)', '_blank'); gtag('event','whatsapp_click',{product:'Google One',plan:'AI Pro 5TB',location:'plan_card'})">
           <div class="plan-head-row">
             <div class="plan-title-group">
               <span class="plan-icon">🚀</span>
-              <span class="plan-name">AI Pro 5TB</span>
+              <div>
+                <div class="plan-name">AI Pro 5TB</div>
+                <div class="plan-badge tier-pro">Edición Developer</div>
+              </div>
             </div>
-            <div style="display:flex; align-items:center; gap:8px;">
-              <div class="plan-badge tier-pro">Liquidación 🔥</div>
+            <div class="card-anchor-badge">
+              <span class="anchor-label">Oficial Google</span>
+              <div class="anchor-prices">
+                <span class="anchor-strike">S/ 175.00</span>
+                <span class="anchor-discount amber">-80%</span>
+              </div>
             </div>
+          </div>
+          <div class="plan-hud-slot">
+            <span class="hud-dot amber"></span>
+            <span><strong>1 TB Espacio Dev</strong> · Gemini Argon/Pro · Sin Garantía</span>
           </div>
           <div class="plan-icons">
             <span class="p-ic" title="Gemini 4 Argon">⚡</span>
@@ -883,7 +1046,7 @@ function switchTikTokVideo(videoId, titleText, btn) {
             <span class="p-ic" title="Herramientas Pro">🛠️</span>
           </div>
           <div class="plan-divider"></div>
-          <div class="plan-desc">Cupo individual con 1 TB de espacio en la nube. Máximo poder IA (Gemini 4 Argon & Pro) para uso exclusivo de desarrolladores en Antigravity, Google AI Studio, Google Flow entre otras herramientas profesionales para tareas complejas. <strong>⚠️ Sin garantía</strong>.</div>
+          <div class="plan-desc">Cupo individual con 1 TB de espacio en la nube. Máximo poder IA (Gemini 4 Argon & Pro) para uso de desarrolladores en Antigravity, Google AI Studio y Flow. <strong>⚠️ Proveedor externo sin garantía</strong>.</div>
           <div class="plan-options" style="grid-template-columns: 1fr; max-width: 180px; margin: 0 auto;" onclick="event.stopPropagation();">
             <button type="button" class="plan-opt featured">
               <div class="plan-opt-label">18 Meses</div>
