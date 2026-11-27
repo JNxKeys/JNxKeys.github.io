@@ -56,7 +56,41 @@
     sendTelemetry(VIEW_ENDPOINT, viewData);
   }
 
-  // 2. Interceptor Global de Intenciones de Compra (WhatsApp)
+  // 2. Salto Directo a App WhatsApp en Móviles (evita pantalla web intermedia)
+  var isMobileUA = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+  var lastLeadTs = 0;
+
+  function openWhatsAppDirect(waUrl) {
+    try {
+      var m = waUrl.match(/wa\.me\/(\d+)(?:\?text=([^#]+))?/i);
+      if (m && m[1]) {
+        var phone = m[1];
+        var textParam = m[2] ? '&text=' + m[2] : '';
+        var deepLink = 'whatsapp://send?phone=' + phone + textParam;
+        window.location.href = deepLink;
+        setTimeout(function() {
+          if (!document.hidden) {
+            window.location.href = waUrl;
+          }
+        }, 1200);
+        return;
+      }
+    } catch (err) {}
+    window.location.href = waUrl;
+  }
+
+  if (isMobileUA && typeof window.open === 'function') {
+    var origWindowOpen = window.open;
+    window.open = function(url, target, features) {
+      if (typeof url === 'string' && url.indexOf('wa.me/') !== -1) {
+        openWhatsAppDirect(url);
+        return null;
+      }
+      return origWindowOpen.apply(window, arguments);
+    };
+  }
+
+  // 3. Interceptor Global de Intenciones de Compra (WhatsApp)
   function setupWhatsAppInterceptor() {
     document.addEventListener('click', function(e) {
       // Buscar si el elemento clicado o alguno de sus padres apunta a WhatsApp o es una tarjeta
@@ -76,6 +110,17 @@
                              (waLink && waLink.classList.contains('wa-fab'));
 
       if (!isWhatsAppAction) return;
+
+      // En móviles: si es enlace directo <a> a wa.me, abrir app directo sin web intermedia
+      if (isMobileUA && waLink && href && href.indexOf('wa.me/') !== -1) {
+        e.preventDefault();
+        openWhatsAppDirect(href);
+      }
+
+      // Anti-rebote de 3 segundos para evitar alertas repetidas por doble toque
+      var now = Date.now();
+      if (now - lastLeadTs < 3000) return;
+      lastLeadTs = now;
 
       // Extraer nombre del producto
       var productName = 'Consulta General';
