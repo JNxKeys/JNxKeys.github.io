@@ -343,67 +343,67 @@ h1.hero em{font-style:italic;color:var(--g-blue);}
 
 /* PLAN CAROUSEL */
 .plan-eyebrow{font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;}
-.plan-carousel{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x proximity;margin:0 -18px 10px;padding:0 18px 6px;scrollbar-width:none;}
+.plan-carousel{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x proximity;margin:0 -18px 14px;padding:14px 18px 10px;scrollbar-width:none;align-items:stretch;}
 .plan-carousel::-webkit-scrollbar{display:none;}
 .plan-slide{
   scroll-snap-align:start;
-  flex:0 0 84%;
-  background: linear-gradient(168deg, #0B1120 0%, #0F172A 50%, #111D33 100%);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 20px;
+  flex:0 0 85%;
+  background: #FFFFFF;
+  border: 1.5px solid #E2E8F0;
+  border-radius: 22px;
   padding: 22px 20px;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 14px 34px -10px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 28px -8px rgba(15, 23, 42, 0.08);
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
 }
-.plan-slide::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 3px;
-  background: var(--beam-color, #38BDF8);
-  opacity: 0.85;
+.plan-slide.tier-popular{
+  border: 2.5px solid #F59E0B;
+  box-shadow: 0 20px 44px -10px rgba(245, 158, 11, 0.25);
+  padding-top: 0;
 }
-.plan-slide.tier-basic{ --beam-color: #38BDF8; border-color: rgba(56, 189, 248, 0.25); }
-.plan-slide.tier-popular{ 
-  --beam-color: linear-gradient(90deg, #10B981, #34D399, #F59E0B); 
-  border-color: rgba(16, 185, 129, 0.35); 
-  background: linear-gradient(168deg, #0B1522 0%, #0C1E2A 50%, #0F232D 100%);
-  box-shadow: 0 16px 38px -8px rgba(16, 185, 129, 0.15), inset 0 1px 0 rgba(52, 211, 153, 0.2);
+.plan-popular-ribbon{
+  background: linear-gradient(90deg, #F59E0B, #FBBF24);
+  color: #0F172A;
+  font-family: 'Outfit', sans-serif;
+  font-size: 11px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  text-align: center;
+  padding: 8px 12px;
+  margin: 0 -20px 18px;
 }
-.plan-slide.tier-pro{ --beam-color: #F59E0B; border-color: rgba(245, 158, 11, 0.25); }
-.plan-slide:hover{ transform: translateY(-4px); border-color: rgba(255, 255, 255, 0.25); box-shadow: 0 20px 42px -6px rgba(0, 0, 0, 0.6); }
-.plan-slide.tier-popular:hover{ border-color: rgba(16, 185, 129, 0.6); box-shadow: 0 20px 45px -6px rgba(16, 185, 129, 0.25); }
+.plan-slide:hover{ transform: translateY(-4px); border-color: #94A3B8; box-shadow: 0 18px 38px -8px rgba(15, 23, 42, 0.14); }
+.plan-slide.tier-popular:hover{ border-color: #D97706; box-shadow: 0 24px 48px -8px rgba(245, 158, 11, 0.35); }
 
-.plan-head-row{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:8px;}
+.plan-head-row{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:12px;}
 .plan-title-group{display:flex;align-items:center;gap:10px;}
-.plan-icon{font-size:26px;flex-shrink:0;}
-.plan-name{font-family:'Outfit',sans-serif;font-weight:800;font-size:20px;letter-spacing:-.01em;color:#FFFFFF;line-height:1.15;}
-.plan-badge{display:inline-flex;align-items:center;gap:4px;font-size:9.5px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:#fff;border-radius:6px;padding:3px 8px;white-space:nowrap;margin-top:4px;}
-.plan-badge.tier-basic{background:rgba(56, 189, 248, 0.2);color:#38BDF8;border:1px solid rgba(56, 189, 248, 0.4);}
-.plan-badge.tier-popular{background:rgba(16, 185, 129, 0.25);color:#34D399;border:1px solid rgba(16, 185, 129, 0.5);}
-.plan-badge.tier-pro{background:rgba(245, 158, 11, 0.2);color:#FBBF24;border:1px solid rgba(245, 158, 11, 0.4);}
+.plan-icon{font-size:24px;flex-shrink:0;}
+.plan-name{font-family:'Outfit',sans-serif;font-weight:900;font-size:20px;letter-spacing:-.02em;color:#0F172A;line-height:1.15;}
+.plan-sub-tagline{font-size:12px;color:#64748B;font-weight:500;margin-top:2px;}
 
 /* ANCLAJE DE PRECIOS DIGITAL */
 .card-anchor-badge {
-  background: rgba(15, 23, 42, 0.85);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
   border-radius: 9px;
   padding: 4px 8px;
   text-align: right;
   flex-shrink: 0;
-  backdrop-filter: blur(8px);
 }
 .anchor-label {
   font-size: 8.5px;
   font-weight: 700;
-  color: #94A3B8;
+  color: #64748B;
   text-transform: uppercase;
-  letter-spacing: .06em;
+  letter-spacing: .05em;
   display: block;
-  margin-bottom: 2px;
+  margin-bottom: 1px;
 }
 .anchor-prices {
   display: flex;
@@ -412,114 +412,154 @@ h1.hero em{font-style:italic;color:var(--g-blue);}
   gap: 4px;
 }
 .anchor-strike {
-  font-size: 11.5px;
-  color: #F87171;
+  font-size: 11px;
+  color: #EF4444;
   text-decoration: line-through;
   font-weight: 700;
 }
 .anchor-discount {
   font-size: 10px;
   font-weight: 900;
-  background: rgba(56, 189, 248, 0.18);
-  color: #38BDF8;
-  border: 1px solid rgba(56, 189, 248, 0.35);
+  background: #EFF6FF;
+  color: #1D4ED8;
+  border: 1px solid #BFDBFE;
   padding: 1px 5px;
   border-radius: 4px;
 }
 .anchor-discount.green {
-  background: rgba(16, 185, 129, 0.2);
-  color: #34D399;
-  border-color: rgba(16, 185, 129, 0.4);
+  background: #ECFDF5;
+  color: #047857;
+  border-color: #A7F3D0;
 }
 .anchor-discount.amber {
-  background: rgba(245, 158, 11, 0.2);
-  color: #FBBF24;
-  border-color: rgba(245, 158, 11, 0.4);
+  background: #FFFBEB;
+  color: #B45309;
+  border-color: #FDE68A;
 }
 
-/* TELEMETRIA HUD */
-.plan-hud-slot {
+/* PRECIO PROTAGONISTA ESTILO SAAS */
+.plan-price-hero {
+  margin: 4px 0 14px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #F1F5F9;
+}
+.plan-price-old-row {
   display: flex;
   align-items: center;
-  gap: 7px;
-  background: rgba(15, 23, 42, 0.55);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  gap: 8px;
+  margin-bottom: 2px;
+}
+.plan-opt-old { font-size: 13px; color: #EF4444; text-decoration: line-through; font-weight: 700; }
+.plan-save-pill {
+  font-size: 10.5px;
+  font-weight: 800;
+  background: #FEF3C7;
+  color: #92400E;
+  padding: 2px 8px;
+  border-radius: 100px;
+}
+.plan-price-main-row {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+}
+.plan-opt-price {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 900;
+  font-size: 36px;
+  color: #0F172A;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+.plan-price-period {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #64748B;
+}
+.plan-alt-option {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #475569;
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
   border-radius: 8px;
-  padding: 5px 10px;
-  margin: 6px 0 12px;
-  font-size: 11.5px;
-  color: #CBD5E1;
+  padding: 6px 10px;
+  display: inline-block;
 }
-.hud-dot {
-  width: 7px;
-  height: 7px;
+.plan-alt-option strong { color: #0F172A; }
+.plan-alt-option s { color: #94A3B8; margin-right: 4px; }
+
+/* CHECKLIST LIMPIA ESTILO REFERENCIA */
+.plan-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.plan-checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 13px;
+  line-height: 1.4;
+  color: #334155;
+  font-weight: 500;
+}
+.plan-checklist li .chk {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
+  background: #EFF6FF;
+  color: #2563EB;
+  font-size: 11px;
+  font-weight: 900;
   flex-shrink: 0;
+  margin-top: 1px;
 }
-.hud-dot.blue { background: #38BDF8; box-shadow: 0 0 8px #38BDF8; }
-.hud-dot.green { background: #10B981; box-shadow: 0 0 8px #10B981; }
-.hud-dot.amber { background: #F59E0B; box-shadow: 0 0 8px #F59E0B; }
+.tier-popular .plan-checklist li .chk {
+  background: #ECFDF5;
+  color: #059669;
+}
+.tier-pro .plan-checklist li .chk {
+  background: #FFFBEB;
+  color: #D97706;
+}
 
-.plan-icons{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;}
-.plan-icons .p-ic{width:28px;height:28px;border-radius:8px;background:rgba(15, 23, 42, 0.7);border:1px solid rgba(255, 255, 255, 0.12);display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;color:#E2E8F0;}
-.plan-divider{height:1px;background:rgba(255, 255, 255, 0.08);margin-bottom:12px;}
-.plan-desc{font-size:13.5px;color:#94A3B8;line-height:1.5;margin-bottom:16px;}
-.plan-desc strong{color:#FFFFFF;font-weight:700;}
-
-.plan-options{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
-.plan-opt{
-  border:1.5px solid rgba(255, 255, 255, 0.12);
-  border-radius:12px;
-  padding:9px 10px;
-  text-align:center;
-  background:rgba(15, 23, 42, 0.6);
-  font-family:inherit;
-  cursor:pointer;
-  transition:all .15s ease;
-  width:100%;
+.plan-cta-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
 }
-.plan-opt:hover{border-color:#38BDF8;background:rgba(56, 189, 248, 0.08);}
-.plan-opt:active{transform:scale(.97);}
-.plan-opt.featured{border-color:#38BDF8;background:rgba(56, 189, 248, 0.12);}
-.tier-popular .plan-opt:hover{border-color:#10B981;background:rgba(16, 185, 129, 0.08);}
-.tier-popular .plan-opt.featured{border-color:#10B981;background:rgba(16, 185, 129, 0.14);}
-.tier-pro .plan-opt:hover{border-color:#F59E0B;background:rgba(245, 158, 11, 0.08);}
-.tier-pro .plan-opt.featured{border-color:#F59E0B;background:rgba(245, 158, 11, 0.14);}
-
-.plan-opt-label{font-size:9.5px;font-weight:700;color:#94A3B8;text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px;}
-.plan-opt-old{font-size:11px;color:#F87171;text-decoration:line-through;}
-.plan-opt-price{font-family:'Outfit',sans-serif;font-weight:900;font-size:22px;color:#FFFFFF;line-height:1.1;}
-.plan-opt-tag{font-size:9.5px;color:#38BDF8;font-weight:700;margin-top:2px;}
-.tier-popular .plan-opt-tag{color:#34D399;}
-.tier-pro .plan-opt-tag{color:#FBBF24;}
-
-.card-select-pill{
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-  background:linear-gradient(135deg, #2563EB, #1D4ED8);
-  color:#FFFFFF;
-  font-weight:800;
-  font-size:12.5px;
-  padding:8px 16px;
-  border-radius:100px;
-  border:none;
-  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
-  transition:all .2s ease;
+.card-select-pill {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: #0F172A;
+  color: #FFFFFF;
+  font-weight: 800;
+  font-size: 13.5px;
+  padding: 12px 18px;
+  border-radius: 100px;
+  border: none;
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.18);
+  transition: all .2s ease;
 }
-.plan-slide:hover .card-select-pill{transform:scale(1.04);box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5);}
-.tier-popular .card-select-pill{
-  background:linear-gradient(135deg, #059669, #10B981);
-  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.35);
+.plan-slide:hover .card-select-pill { background: #1E293B; transform: translateY(-1px); }
+.tier-popular .card-select-pill {
+  background: #0F172A;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.25);
 }
-.tier-popular:hover .card-select-pill{box-shadow: 0 6px 20px rgba(16, 185, 129, 0.55);}
-.tier-pro .card-select-pill{
-  background:linear-gradient(135deg, #D97706, #F59E0B);
-  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.35);
-}
-.tier-pro:hover .card-select-pill{box-shadow: 0 6px 20px rgba(245, 158, 11, 0.55);}
-.plan-share-btn{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;flex-shrink:0;border-radius:8px;border:1px solid rgba(255, 255, 255, 0.15);background:rgba(15, 23, 42, 0.8);color:#94A3B8;cursor:pointer;transition:all .15s ease;}
-.plan-share-btn:hover{border-color:#38BDF8;color:#38BDF8;background:rgba(56, 189, 248, 0.15);}
+.tier-popular:hover .card-select-pill { background: #000000; }
+.plan-share-btn{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;flex-shrink:0;border-radius:50%;border:1px solid #E2E8F0;background:#F8FAFC;color:#64748B;cursor:pointer;transition:all .15s ease;}
+.plan-share-btn:hover{border-color:#2563EB;color:#2563EB;background:#EFF6FF;}
 
 .plan-dots{display:flex;justify-content:center;gap:5px;}
 .plan-nav-row{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:24px;}
@@ -823,23 +863,30 @@ html, body { overflow-x: hidden; width: 100%; margin: 0; padding: 0; }
     grid-template-columns: repeat(3, 1fr) !important;
     gap: 24px !important;
     overflow-x: visible !important;
-    margin: 0 0 36px !important;
+    margin: 12px 0 36px !important;
     padding: 0 !important;
+    align-items: center !important;
   }
   .plan-slide {
     flex: 1 1 auto !important;
     width: 100% !important;
-    padding: 24px !important;
+    padding: 26px 24px !important;
     display: flex !important;
     flex-direction: column !important;
     justify-content: space-between !important;
-    height: 100% !important;
   }
-  .plan-name { font-size: 18px !important; font-weight: 800 !important; }
-  .plan-desc { font-size: 13px !important; line-height: 1.45 !important; }
-  .plan-opt-price { font-size: 20px !important; }
-  .plan-opt-label { font-size: 10.5px !important; }
-  .plan-wa-btn { font-size: 13px !important; padding: 10px 14px !important; }
+  .plan-slide.tier-popular {
+    padding-top: 0 !important;
+    transform: translateY(-10px);
+  }
+  .plan-slide.tier-popular:hover {
+    transform: translateY(-14px);
+  }
+  .plan-popular-ribbon {
+    margin: 0 -24px 20px !important;
+  }
+  .plan-name { font-size: 20px !important; font-weight: 900 !important; }
+  .plan-opt-price { font-size: 38px !important; }
   .plan-nav-row { display: none !important; }
   .compare-label { font-size: 18px !important; margin-top: 0 !important; margin-bottom: 4px !important; }
   .compare-table { font-size: 13px !important; }
@@ -1226,159 +1273,144 @@ function switchTikTokVideo(videoId, titleText, btn, numLabel) {
   <div class="plan-carousel" id="planCarousel">
         <!-- CARD 1: AI PLUS 400 -->
         <div class="plan-slide tier-basic" id="plan-ai-plus-400" onclick="window.open('https://wa.me/51925244643?text=Deseo%20informaci%C3%B3n%20del%20plan%20AI%20Plus%20400%20de%20Google%20One', '_blank'); gtag('event','whatsapp_click',{product:'Google One',plan:'AI Plus 400',location:'plan_card'})">
-          <div class="plan-head-row">
-            <div class="plan-title-group">
-              <span class="plan-icon">☁️</span>
-              <div>
-                <div class="plan-name">AI PLUS 400</div>
-                <div class="plan-badge tier-basic">Más pedido</div>
+          <div>
+            <div class="plan-head-row">
+              <div class="plan-title-group">
+                <span class="plan-icon">☁️</span>
+                <div>
+                  <div class="plan-name">AI PLUS 400</div>
+                  <div class="plan-sub-tagline">Espacio personal + IA rápida</div>
+                </div>
+              </div>
+              <div class="card-anchor-badge">
+                <span class="anchor-label">Oficial Google</span>
+                <div class="anchor-prices">
+                  <span class="anchor-strike">S/ 18.80</span>
+                  <span class="anchor-discount">-47%</span>
+                </div>
               </div>
             </div>
-            <div class="card-anchor-badge">
-              <span class="anchor-label">Oficial Google</span>
-              <div class="anchor-prices">
-                <span class="anchor-strike">S/ 18.80</span>
-                <span class="anchor-discount">-47%</span>
+
+            <div class="plan-price-hero">
+              <div class="plan-price-old-row">
+                <span class="plan-opt-old">S/ 18.80</span>
+              </div>
+              <div class="plan-price-main-row">
+                <span class="plan-opt-price">S/10</span>
+                <span class="plan-price-period">/ mes</span>
+              </div>
+              <div class="plan-alt-option">
+                Semestral: <s>S/112.80</s> <strong>S/50</strong> (6 meses)
               </div>
             </div>
+
+            <ul class="plan-checklist">
+              <li><span class="chk">✓</span><span><strong>80 GB privados</strong> en tu propia cuenta Gmail</span></li>
+              <li><span class="chk">✓</span><span><strong>Gemini 3.8 Flash</strong> + Flash-Lite integrado</span></li>
+              <li><span class="chk">✓</span><span>Sincroniza Drive, Gmail y Google Fotos</span></li>
+              <li><span class="chk">✓</span><span><strong>Garantía todos los meses</strong></span></li>
+            </ul>
           </div>
-          <div class="plan-hud-slot">
-            <span class="hud-dot blue"></span>
-            <span><strong>80 GB Asignados</strong> · Tu cuenta personal de Gmail</span>
-          </div>
-          <div class="plan-icons">
-            <span class="p-ic" title="Gemini 3.6 Flash">✨</span>
-            <span class="p-ic" title="Gemini 3.5 Flash-Lite">⚡</span>
-            <span class="p-ic" title="Drive 80GB">☁️</span>
-            <span class="p-ic" title="Fotos">🖼️</span>
-            <span class="p-ic" title="Gmail">✉️</span>
-            <span class="p-ic" title="Docs">📄</span>
-          </div>
-          <div class="plan-divider"></div>
-          <div class="plan-desc">Cupo individual con 80GB de espacio en la nube. Olvídate de los mensajes por falta de espacio, asegura tus fotos y copias de seguridad. Con Gemini IA integrado. <strong>Garantía todos los meses</strong>.</div>
-          <div class="plan-options" onclick="event.stopPropagation();">
-            <button type="button" class="plan-opt featured">
-              <div class="plan-opt-label">Mensual</div>
-              <div class="plan-opt-old">S/18.80</div>
-              <div class="plan-opt-price">S/10</div>
-              <div class="plan-opt-tag">al mes</div>
-            </button>
-            <button type="button" class="plan-opt">
-              <div class="plan-opt-label">Semestral</div>
-              <div class="plan-opt-old">S/112.80</div>
-              <div class="plan-opt-price">S/50</div>
-              <div class="plan-opt-tag">6 meses (Ahorras S/62.80)</div>
-            </button>
-          </div>
-          <div style="display:flex; justify-content:flex-end; align-items:center; gap:8px; margin-top:14px;">
-            <button class="plan-share-btn" type="button" aria-label="Compartir plan" onclick="event.stopPropagation(); shareProduct('Google One AI Plus 400', 'S/10', 'plan-ai-plus-400')"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg></button>
-            <div class="card-select-pill">
-              Elegir plan ↗
-            </div>
+
+          <div class="plan-cta-row">
+            <button class="plan-share-btn" type="button" aria-label="Compartir plan" onclick="event.stopPropagation(); shareProduct('Google One AI Plus 400', 'S/10', 'plan-ai-plus-400')"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg></button>
+            <div class="card-select-pill">Elegir plan ↗</div>
           </div>
         </div>
 
-        <!-- CARD 2: AI PLUS 2TB -->
+        <!-- CARD 2: AI PLUS 2TB (PROTAGONISTA CENTRAL) -->
         <div class="plan-slide tier-popular" id="plan-ai-plus-2tb" onclick="window.open('https://wa.me/51925244643?text=Hola,%20me%20interesa%20el%20plan%20Google%20One%20de%202TB', '_blank'); gtag('event','whatsapp_click',{product:'Google One',plan:'AI Plus 2TB',location:'plan_card'})">
-          <div class="plan-head-row">
-            <div class="plan-title-group">
-              <span class="plan-icon">👤</span>
-              <div>
-                <div class="plan-name">AI Plus 2TB</div>
-                <div class="plan-badge tier-popular">Recomendado ⭐</div>
+          <div>
+            <div class="plan-popular-ribbon">⭐ Recomendado · Oferta Limitada 2026 🔥</div>
+            <div class="plan-head-row">
+              <div class="plan-title-group">
+                <span class="plan-icon">👤</span>
+                <div>
+                  <div class="plan-name">AI Plus 2TB</div>
+                  <div class="plan-sub-tagline">Docentes, creadores y profesionales</div>
+                </div>
+              </div>
+              <div class="card-anchor-badge">
+                <span class="anchor-label">Oficial Google</span>
+                <div class="anchor-prices">
+                  <span class="anchor-strike">S/ 38.00</span>
+                  <span class="anchor-discount green">-60%</span>
+                </div>
               </div>
             </div>
-            <div class="card-anchor-badge">
-              <span class="anchor-label">Oficial Google</span>
-              <div class="anchor-prices">
-                <span class="anchor-strike">S/ 38.00</span>
-                <span class="anchor-discount green">-60%</span>
+
+            <div class="plan-price-hero">
+              <div class="plan-price-old-row">
+                <span class="plan-opt-old">S/ 114.00</span>
+                <span class="plan-save-pill">¡Ahorras S/ 69!</span>
+              </div>
+              <div class="plan-price-main-row">
+                <span class="plan-opt-price">S/45</span>
+                <span class="plan-price-period">/ 3 meses (pago único)</span>
+              </div>
+              <div class="plan-alt-option">
+                Mensual regular: <s>S/38.00</s> <strong>S/20 /mes</strong>
               </div>
             </div>
+
+            <ul class="plan-checklist">
+              <li><span class="chk">✓</span><span><strong>400 GB privados</strong> en tu cuenta personal</span></li>
+              <li><span class="chk">✓</span><span><strong>Meet Premium 24h</strong> + grabación a Drive</span></li>
+              <li><span class="chk">✓</span><span><strong>Gemini 4 Hydrogen</strong> + Imágenes HD</span></li>
+              <li><span class="chk">✓</span><span><strong>Garantía todos los meses</strong></span></li>
+            </ul>
           </div>
-          <div class="plan-hud-slot">
-            <span class="hud-dot green"></span>
-            <span><strong>400 GB Asignados</strong> · Meet 24h Grabación · Gemini Adv</span>
-          </div>
-          <div class="plan-icons">
-            <span class="p-ic" title="Gemini 3 Pro">🧠</span>
-            <span class="p-ic" title="Gemini 3.5 Flash">✨</span>
-            <span class="p-ic" title="Gemini Advanced">🤖</span>
-            <span class="p-ic" title="Drive 400GB">☁️</span>
-            <span class="p-ic" title="Meet Premium 24h">🎥</span>
-            <span class="p-ic" title="Imágenes HD">🎨</span>
-            <span class="p-ic" title="Gmail & Docs">📄</span>
-          </div>
-          <div class="plan-divider"></div>
-          <div class="plan-desc">Cupo individual con 400GB de espacio en la nube. Meet Premium 24 hrs con grabación a Drive. Incluye Gemini Advanced para desarrollo agéntico e imágenes en HD. <strong>Garantía todos los meses</strong>.</div>
-          <div class="plan-options" onclick="event.stopPropagation();">
-            <button type="button" class="plan-opt featured">
-              <div class="plan-opt-label">Oferta Limitada 2026 🔥</div>
-              <div class="plan-opt-old">S/114</div>
-              <div class="plan-opt-price">S/45</div>
-              <div class="plan-opt-tag">3 meses completos · Pago único</div>
-            </button>
-            <button type="button" class="plan-opt">
-              <div class="plan-opt-label">Mensual regular</div>
-              <div class="plan-opt-old">S/38.00</div>
-              <div class="plan-opt-price">S/20</div>
-              <div class="plan-opt-tag">al mes</div>
-            </button>
-          </div>
-          <div style="display:flex; justify-content:flex-end; align-items:center; gap:8px; margin-top:14px;">
-            <button class="plan-share-btn" type="button" aria-label="Compartir plan" onclick="event.stopPropagation(); shareProduct('Google One AI Plus 2TB', 'S/45 (3 meses)', 'plan-ai-plus-2tb')"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg></button>
-            <div class="card-select-pill">
-              Elegir plan ↗
-            </div>
+
+          <div class="plan-cta-row">
+            <button class="plan-share-btn" type="button" aria-label="Compartir plan" onclick="event.stopPropagation(); shareProduct('Google One AI Plus 2TB', 'S/45 (3 meses)', 'plan-ai-plus-2tb')"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg></button>
+            <div class="card-select-pill">Elegir Oferta ↗</div>
           </div>
         </div>
 
         <!-- CARD 3: AI PRO 5TB -->
         <div class="plan-slide tier-pro" id="plan-ai-pro-5tb" onclick="window.open('https://wa.me/51925244643?text=Hola,%20me%20interesa%20el%20plan%20Google%20One%20AI%20Pro%205TB', '_blank'); gtag('event','whatsapp_click',{product:'Google One',plan:'AI Pro 5TB',location:'plan_card'})">
-          <div class="plan-head-row">
-            <div class="plan-title-group">
-              <span class="plan-icon">🚀</span>
-              <div>
-                <div class="plan-name">AI Pro 5TB</div>
-                <div class="plan-badge tier-pro">Edición Developer</div>
+          <div>
+            <div class="plan-head-row">
+              <div class="plan-title-group">
+                <span class="plan-icon">🚀</span>
+                <div>
+                  <div class="plan-name">AI Pro 5TB</div>
+                  <div class="plan-sub-tagline">Edición Developer · Máximo poder</div>
+                </div>
+              </div>
+              <div class="card-anchor-badge">
+                <span class="anchor-label">Oficial Google</span>
+                <div class="anchor-prices">
+                  <span class="anchor-strike">S/ 73.99</span>
+                  <span class="anchor-discount amber">-59%</span>
+                </div>
               </div>
             </div>
-            <div class="card-anchor-badge">
-              <span class="anchor-label">Oficial Google</span>
-              <div class="anchor-prices">
-                <span class="anchor-strike">S/ 73.99</span>
-                <span class="anchor-discount amber">-59%</span>
+
+            <div class="plan-price-hero">
+              <div class="plan-price-old-row">
+                <span class="plan-opt-old">S/ 73.99</span>
+              </div>
+              <div class="plan-price-main-row">
+                <span class="plan-opt-price">S/30</span>
+                <span class="plan-price-period">/ mes</span>
+              </div>
+              <div class="plan-alt-option">
+                Suscripción mensual flexible
               </div>
             </div>
+
+            <ul class="plan-checklist">
+              <li><span class="chk">✓</span><span><strong>1 TB privado</strong> en tu nube personal</span></li>
+              <li><span class="chk">✓</span><span><strong>Gemini 4 Neon &amp; Hydrogen</strong></span></li>
+              <li><span class="chk">✓</span><span>Antigravity, Google AI Studio y Flow</span></li>
+              <li><span class="chk">✓</span><span><strong>Garantía todos los meses</strong></span></li>
+            </ul>
           </div>
-          <div class="plan-hud-slot">
-            <span class="hud-dot amber"></span>
-            <span><strong>1 TB Espacio Dev</strong> · Gemini Neon/Hydrogen · Garantía Mensual</span>
-          </div>
-          <div class="plan-icons">
-            <span class="p-ic" title="Gemini 4 Neon">⚡</span>
-            <span class="p-ic" title="Gemini 4 Hydrogen">💻</span>
-            <span class="p-ic" title="Antigravity">⌨️</span>
-            <span class="p-ic" title="Google AI Studio">⚙️</span>
-            <span class="p-ic" title="Google Flow">🔄</span>
-            <span class="p-ic" title="Drive 1 TB">☁️</span>
-            <span class="p-ic" title="Herramientas Pro">🛠️</span>
-          </div>
-          <div class="plan-divider"></div>
-          <div class="plan-desc">Cupo individual con 1 TB de espacio en la nube. Máximo poder IA (Gemini 4 Neon & Hydrogen) para uso de desarrolladores en Antigravity, Google AI Studio y Flow. <strong>Garantía todos los meses</strong>.</div>
-          <div class="plan-options" style="grid-template-columns: 1fr; max-width: 180px; margin: 0 auto;" onclick="event.stopPropagation();">
-            <button type="button" class="plan-opt featured">
-              <div class="plan-opt-label">Mensual</div>
-              <div class="plan-opt-old">S/73.99</div>
-              <div class="plan-opt-price">S/30</div>
-              <div class="plan-opt-tag">al mes</div>
-            </button>
-          </div>
-          <div style="display:flex; justify-content:flex-end; align-items:center; gap:8px; margin-top:14px;">
-            <button class="plan-share-btn" type="button" aria-label="Compartir plan" onclick="event.stopPropagation(); shareProduct('Google One AI Pro 5TB', 'S/30', 'plan-ai-pro-5tb')"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg></button>
-            <div class="card-select-pill">
-              Elegir plan ↗
-            </div>
+
+          <div class="plan-cta-row">
+            <button class="plan-share-btn" type="button" aria-label="Compartir plan" onclick="event.stopPropagation(); shareProduct('Google One AI Pro 5TB', 'S/30', 'plan-ai-pro-5tb')"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg></button>
+            <div class="card-select-pill">Elegir plan ↗</div>
           </div>
         </div>
       </div>
