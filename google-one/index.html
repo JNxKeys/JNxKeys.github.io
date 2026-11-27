@@ -143,8 +143,8 @@
     },
     {
       "@type": "Offer",
-      "name": "AI Pro 5TB 18 meses liquidacion",
-      "price": "35",
+      "name": "AI Pro 5TB mensual",
+      "price": "30",
       "priceCurrency": "PEN",
       "availability": "https://schema.org/InStock",
       "url": "https://jnxkeys.com/google-one/",
@@ -532,9 +532,12 @@ h1.hero em{font-style:italic;color:var(--g-blue);}
 .plan-dots span{width:6px;height:6px;border-radius:50%;background:var(--border);}
 .plan-dots span.on{background:var(--g-blue);width:18px;border-radius:3px;}
 
-.compare-wrap{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:14px;border:1px solid var(--border);background:var(--white);box-shadow:0 4px 14px rgba(15,23,42,.05);}
+.grid-click-hint{margin-bottom:16px !important;}
+.compare-hint{margin-bottom:14px !important;}
+.compare-wrap{width:100%;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;border-radius:14px;border:1px solid var(--border);background:var(--white);box-shadow:0 4px 14px rgba(15,23,42,.05);}
 .compare-table{width:100%;min-width:580px;border-collapse:collapse;}
 .compare-table thead th{padding:8px 10px;font-family:'Outfit',sans-serif;font-weight:800;font-size:13.5px;text-align:center;line-height:1.2;background:var(--white);border-bottom:3px solid var(--border);}
+.compare-table thead th:not(:first-child),.compare-table tbody tr:not(.cat-row) td:not(:first-child){scroll-snap-align:end;}
 .compare-table thead th:first-child{text-align:left;padding-left:14px;font-family:'Outfit',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);position:sticky;left:0;z-index:3;background:var(--white);box-shadow:2px 0 6px rgba(15,23,42,.04);}
 .compare-table thead th:nth-child(2){color:#1a56db;background:var(--g-light);border-bottom-color:var(--g-blue);}
 .compare-table thead th:nth-child(3){color:#0d8a43;background:#e6f4ea;border-bottom-color:var(--g-green);}
@@ -1320,7 +1323,7 @@ function switchTikTokVideo(videoId, titleText, btn) {
         </div>
 
         <!-- CARD 3: AI PRO 5TB -->
-        <div class="plan-slide tier-pro" id="plan-ai-pro-5tb" onclick="window.open('https://wa.me/51925244643?text=Deseo%20informaci%C3%B3n%20del%20plan%20AI%20Pro%205TB%20de%20Google%20One%20(18%20Meses%20a%20S/35)', '_blank'); gtag('event','whatsapp_click',{product:'Google One',plan:'AI Pro 5TB',location:'plan_card'})">
+        <div class="plan-slide tier-pro" id="plan-ai-pro-5tb" onclick="window.open('https://wa.me/51925244643?text=Hola,%20me%20interesa%20el%20plan%20Google%20One%20AI%20Pro%205TB', '_blank'); gtag('event','whatsapp_click',{product:'Google One',plan:'AI Pro 5TB',location:'plan_card'})">
           <div class="plan-head-row">
             <div class="plan-title-group">
               <span class="plan-icon">🚀</span>
@@ -1333,17 +1336,17 @@ function switchTikTokVideo(videoId, titleText, btn) {
               <span class="anchor-label">Oficial Google</span>
               <div class="anchor-prices">
                 <span class="anchor-strike">S/ 73.99</span>
-                <span class="anchor-discount amber">-52%</span>
+                <span class="anchor-discount amber">-59%</span>
               </div>
             </div>
           </div>
           <div class="plan-hud-slot">
             <span class="hud-dot amber"></span>
-            <span><strong>1 TB Espacio Dev</strong> · Gemini Argon/Pro · Sin Garantía</span>
+            <span><strong>1 TB Espacio Dev</strong> · Gemini Neon/Hydrogen · Garantía Mensual</span>
           </div>
           <div class="plan-icons">
-            <span class="p-ic" title="Gemini 4 Argon">⚡</span>
-            <span class="p-ic" title="Gemini 4 Pro">💻</span>
+            <span class="p-ic" title="Gemini 4 Neon">⚡</span>
+            <span class="p-ic" title="Gemini 4 Hydrogen">💻</span>
             <span class="p-ic" title="Antigravity">⌨️</span>
             <span class="p-ic" title="Google AI Studio">⚙️</span>
             <span class="p-ic" title="Google Flow">🔄</span>
@@ -1351,16 +1354,17 @@ function switchTikTokVideo(videoId, titleText, btn) {
             <span class="p-ic" title="Herramientas Pro">🛠️</span>
           </div>
           <div class="plan-divider"></div>
-          <div class="plan-desc">Cupo individual con 1 TB de espacio en la nube. Máximo poder IA (Gemini 4 Argon & Pro) para uso de desarrolladores en Antigravity, Google AI Studio y Flow. <strong>⚠️ Proveedor externo sin garantía</strong>.</div>
+          <div class="plan-desc">Cupo individual con 1 TB de espacio en la nube. Máximo poder IA (Gemini 4 Neon & Hydrogen) para uso de desarrolladores en Antigravity, Google AI Studio y Flow. <strong>Garantía todos los meses</strong>.</div>
           <div class="plan-options" style="grid-template-columns: 1fr; max-width: 180px; margin: 0 auto;" onclick="event.stopPropagation();">
             <button type="button" class="plan-opt featured">
-              <div class="plan-opt-label">18 Meses</div>
-              <div class="plan-opt-price">S/35</div>
-              <div class="plan-opt-tag">pago único</div>
+              <div class="plan-opt-label">Mensual</div>
+              <div class="plan-opt-old">S/74</div>
+              <div class="plan-opt-price">S/30</div>
+              <div class="plan-opt-tag">al mes</div>
             </button>
           </div>
           <div style="display:flex; justify-content:flex-end; align-items:center; gap:8px; margin-top:14px;">
-            <button class="plan-share-btn" type="button" aria-label="Compartir plan" onclick="event.stopPropagation(); shareProduct('Google One AI Pro 5TB', 'S/35', 'plan-ai-pro-5tb')"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg></button>
+            <button class="plan-share-btn" type="button" aria-label="Compartir plan" onclick="event.stopPropagation(); shareProduct('Google One AI Pro 5TB', 'S/30', 'plan-ai-pro-5tb')"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg></button>
             <div class="card-select-pill">
               Elegir plan ↗
             </div>
@@ -1395,18 +1399,18 @@ function switchTikTokVideo(videoId, titleText, btn) {
             <tr class="cat-row"><td colspan="4">🤖 Inteligencia Artificial — Gemini</td></tr>
             <tr>
               <td>Modelos lingüísticos</td>
-              <td><strong>Gemini 3.6 Flash</strong><br><span style="font-size:11px; color:var(--muted);">+ Gemini 3.5 Flash-Lite</span></td>
-              <td class="compare-hi"><strong>Gemini 3 Pro</strong><br><span style="font-size:11px; color:var(--muted);">+ Gemini 3.5 Flash</span></td>
-              <td class="compare-hi gold"><strong>Gemini 4 Argon</strong><br><span style="font-size:11px; color:var(--muted);">+ Gemini 4 Pro</span></td>
+              <td><strong>Gemini 3.8 Flash</strong><br><span style="font-size:11px; color:var(--muted);">+ Flash-Lite</span></td>
+              <td class="compare-hi"><strong>Gemini 4 Hydrogen</strong><br><span style="font-size:11px; color:var(--muted);">+ Gemini 3.8 Flash</span></td>
+              <td class="compare-hi gold"><strong>Gemini 4 Neon</strong><br><span style="font-size:11px; color:var(--muted);">+ Gemini 4 Hydrogen</span></td>
             </tr>
             <tr><td>Nivel de razonamiento</td><td>Respuestas rápidas</td><td class="compare-hi">Razonamiento superior</td><td class="compare-hi gold">Frontera lógica extrema</td></tr>
-            <tr><td>Exclusividad modelos Pro</td><td class="compare-no">✗ Solo Flash</td><td class="compare-hi">Gemini 3 Pro</td><td class="compare-hi gold">⚡ Exclusivo Pro (Argon & Pro)</td></tr>
+            <tr><td>Exclusividad modelos Pro</td><td class="compare-no">✗ Solo Flash</td><td class="compare-hi">Gemini 4 Hydrogen</td><td class="compare-hi gold">⚡ Exclusivo Pro (Neon & Hydrogen)</td></tr>
             <tr><td>Gemini Live (voz)</td><td>Voces estándar</td><td class="compare-hi">Modo conversacional</td><td class="compare-hi gold">Voces avanzadas</td></tr>
             <tr><td>Deep Research</td><td>Básico</td><td class="compare-hi">Avanzado</td><td class="compare-hi gold">Capacidad máxima</td></tr>
 
             <tr class="cat-row"><td colspan="4">🎨 Multimedia y Creación con IA</td></tr>
-            <tr><td>Imágenes IA (Imagen 3)</td><td>Estándar</td><td class="compare-hi">Alta definición (HD)</td><td class="compare-hi gold">Máxima resolución 4K</td></tr>
-            <tr><td>Videos con IA (Google Veo)</td><td>Acceso básico</td><td class="compare-hi">Clips con IA</td><td class="compare-hi gold">Clips extendidos</td></tr>
+            <tr><td>Imágenes IA (Imagen 4)</td><td>Estándar</td><td class="compare-hi">Alta definición (HD)</td><td class="compare-hi gold">Máxima resolución 4K</td></tr>
+            <tr><td>Videos con IA (Google Veo 3)</td><td>Acceso básico</td><td class="compare-hi">Clips con IA</td><td class="compare-hi gold">Clips extendidos</td></tr>
             <tr><td>NotebookLM (Audio Podcasts)</td><td>Estándar</td><td class="compare-hi">Audio Overviews</td><td class="compare-hi gold">Límites extendidos</td></tr>
 
             <tr class="cat-row"><td colspan="4">⚡ Desarrollo y Herramientas Pro</td></tr>
@@ -1423,7 +1427,7 @@ function switchTikTokVideo(videoId, titleText, btn) {
             </tr>
             <tr><td>Gmail/Docs "Ayúdame a escribir"</td><td>Básico</td><td class="compare-hi">Redacción formal</td><td class="compare-hi gold">Resúmenes avanzados</td></tr>
             <tr><td>Google Fotos (Magic Editor)</td><td>Básico</td><td class="compare-hi">Guardados ilimitados</td><td class="compare-hi gold">Guardados ilimitados</td></tr>
-            <tr><td>Garantía JNxKeys</td><td class="compare-yes">🟢 Todos los meses</td><td class="compare-yes">🟢 Todos los meses</td><td class="compare-no">⚠️ Sin garantía (18 meses)</td></tr>
+            <tr><td>Garantía JNxKeys</td><td class="compare-yes">🟢 Todos los meses</td><td class="compare-yes">🟢 Todos los meses</td><td class="compare-yes">🟢 Todos los meses</td></tr>
           </tbody>
         </table>
       </div>
@@ -1618,7 +1622,7 @@ function switchTikTokVideo(videoId, titleText, btn) {
               <hr class="dd">
               <div class="dr"><span class="dl">AI Plus 2TB (Mensual regular)</span><span class="dv">S/ 20 / mes</span></div>
               <hr class="dd">
-              <div class="dr"><span class="dl">AI Pro 5TB (18 Meses)</span><span class="dv">S/ 35</span></div>
+              <div class="dr"><span class="dl">AI Pro 5TB (Mensual)</span><span class="dv">S/ 30 / mes</span></div>
             </div>
           </div>
         </div>
