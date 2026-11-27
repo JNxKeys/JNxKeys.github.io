@@ -914,6 +914,10 @@ html, body { overflow-x: hidden; width: 100%; margin: 0; padding: 0; }
     padding: 0 !important;
     align-items: center !important;
   }
+  .plan-carousel.offer-two-cols {
+    grid-template-columns: repeat(2, minmax(0, 400px)) !important;
+    justify-content: center !important;
+  }
   .plan-slide {
     flex: 1 1 auto !important;
     width: 100% !important;
@@ -1485,6 +1489,12 @@ function switchTikTokVideo(videoId, titleText, btn, numLabel) {
         document.getElementById('price2tb').textContent = isOffer ? 'S/45' : 'S/20';
         document.getElementById('period2tb').textContent = isOffer ? '/ 3 meses (pago único)' : '/ mes';
         document.getElementById('cta2tb').textContent = isOffer ? 'Elegir Oferta ↗' : 'Elegir plan ↗';
+
+        // Card 3: AI Pro 5TB (ocultar en modo Ofertas)
+        var card5tb = document.getElementById('plan-ai-pro-5tb');
+        var carousel = document.getElementById('planCarousel');
+        if (card5tb) card5tb.style.display = isOffer ? 'none' : '';
+        if (carousel) carousel.classList.toggle('offer-two-cols', isOffer);
       }
       </script>
       <div class="plan-nav-row">
