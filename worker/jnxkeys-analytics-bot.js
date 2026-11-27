@@ -58,6 +58,21 @@ export default {
         }), { headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
       }
 
+      // 5. Endpoint de Auditoría Analítica Directa
+      if (url.pathname === '/api/analytics-summary') {
+        const countrySplit = await fetchCloudflareCountrySplit(env, 14);
+        const peruPages = await fetchCloudflarePeruPages(env, 14);
+        const dailyPeru = await fetchCloudflarePeruDaily(env, 14);
+        return new Response(JSON.stringify({
+          status: 'ok',
+          timestamp: new Date().toISOString(),
+          period_days: 14,
+          countrySplit,
+          peruPages,
+          dailyPeru
+        }), { headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
+      }
+
       return new Response('JNxKeys Telemetry & Market Intelligence Worker Active', {
         headers: { 'Content-Type': 'text/plain' },
       });
@@ -90,7 +105,11 @@ export default {
 ========================================================================= */
 async function handleTrackLead(data, request, env) {
   const time = getLimaDateTime();
-  const leadId = `INT-${Math.floor(1000 + Math.random() * 9000)}`;
+  const counterKey = 'counter:leads';
+  const currentCount = parseInt((await env.JNX_METRICS.get(counterKey)) || '0', 10) || 0;
+  const nextCount = currentCount + 1;
+  await env.JNX_METRICS.put(counterKey, String(nextCount));
+  const leadId = `INT-${String(nextCount).padStart(4, '0')}`;
 
   const clientIp = request.headers.get('cf-connecting-ip') || 'Desconocida';
   const country = request.headers.get('cf-ipcountry') || 'PE';
