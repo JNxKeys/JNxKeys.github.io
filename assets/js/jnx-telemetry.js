@@ -62,7 +62,7 @@
       // Buscar si el elemento clicado o alguno de sus padres apunta a WhatsApp o es una tarjeta
       var target = e.target;
       var waLink = target.closest('a[href*="wa.me"], a[href*="api.whatsapp.com"]');
-      var prodCard = target.closest('.prod-card, .combo-card, .cyber-card, .b2b-card, .product-tab');
+      var prodCard = target.closest('.prod-card, .combo-card, .cyber-card, .b2b-card, .product-tab, .plan-slide');
 
       // Si no es un enlace de WhatsApp directo ni una tarjeta con WhatsApp, continuar
       if (!waLink && !prodCard) return;
@@ -99,13 +99,13 @@
 
       // Intento 2: Nombre de la tarjeta en el DOM
       if (prodCard) {
-        var nameEl = prodCard.querySelector('.card-name, .prod-title, .combo-title, h3, h2');
+        var nameEl = prodCard.querySelector('.card-name, .prod-title, .combo-title, .plan-name, h3, h2');
         if (nameEl && (!productName || productName === 'Consulta General')) {
           productName = nameEl.textContent.trim();
         }
 
         // Extraer precio
-        var priceEl = prodCard.querySelector('.price-big, .prod-price, .combo-price, .price');
+        var priceEl = prodCard.querySelector('.price-big, .prod-price, .combo-price, .plan-opt-price, .price');
         if (priceEl) {
           var priceMatch = priceEl.textContent.match(/S\/\.?\s*(\d+(?:\.\d{2})?)/i);
           if (priceMatch) {
