@@ -941,101 +941,101 @@ html, body { overflow-x: hidden; width: 100%; margin: 0; padding: 0; }
       }
     }
 
-    /* BANNER DE SEGURIDAD Y CONFIANZA GOOGLE ONE */
-    .trust-security-banner {
+    /* MINI-BANNER CARRUSEL DE SEGURIDAD SUPERIOR */
+    .trust-ticker-wrap {
       background: #ffffff;
       border: 1.5px solid #d2e3fc;
-      border-left: 5px solid #4285f4;
-      border-radius: 16px;
-      padding: 18px 20px;
-      margin: 20px 0 24px;
-      box-shadow: 0 4px 20px -4px rgba(66, 133, 244, 0.12);
-      color: #1e293b;
+      border-left: 4px solid #4285f4;
+      border-radius: 14px;
+      padding: 10px 0 12px;
+      margin: 0 0 16px;
+      box-shadow: 0 4px 16px -4px rgba(66, 133, 244, 0.14);
+      overflow: hidden;
     }
-    .tsb-head {
+    .trust-ticker-head {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      flex-wrap: wrap;
       gap: 8px;
-      margin-bottom: 12px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid #e2e8f0;
-    }
-    .tsb-title {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-family: 'Outfit', sans-serif;
-      font-weight: 800;
-      font-size: 15px;
-      color: #0f172a;
-    }
-    .tsb-title span.badge-sec {
-      background: #eef3ff;
-      color: #1d4ed8;
-      font-size: 11px;
-      font-weight: 700;
-      padding: 3px 8px;
-      border-radius: 6px;
-      border: 1px solid #bfdbfe;
-    }
-    .tsb-metrics {
-      display: flex;
+      padding: 0 14px 8px;
+      border-bottom: 1px solid #eef2ff;
+      margin-bottom: 10px;
       flex-wrap: wrap;
-      gap: 12px;
-      font-size: 12.5px;
-      font-weight: 600;
-      color: #334155;
-      margin-bottom: 14px;
-      background: #f8fafc;
-      padding: 10px 14px;
-      border-radius: 10px;
-      border: 1px solid #e2e8f0;
     }
-    .tsb-metric-item {
-      display: flex;
+    .trust-ticker-eyebrow {
+      display: inline-flex;
       align-items: center;
       gap: 6px;
-    }
-    .tsb-method-title {
-      font-size: 12px;
-      font-weight: 800;
+      font-family: 'Outfit', sans-serif;
+      font-size: 11px;
+      font-weight: 900;
       text-transform: uppercase;
-      letter-spacing: .05em;
-      color: #0284c7;
-      margin-bottom: 8px;
+      letter-spacing: 0.06em;
+      color: #1d4ed8;
+    }
+    .trust-ticker-eyebrow .pulse-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #16a34a;
+      box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.2);
+      flex-shrink: 0;
+    }
+    .trust-ticker-sub {
+      font-size: 11px;
+      font-weight: 700;
+      color: #475569;
+    }
+    .trust-marquee {
+      position: relative;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    .trust-marquee::-webkit-scrollbar {
+      display: none;
+    }
+    .trust-marquee-track {
+      display: flex;
+      gap: 10px;
+      width: max-content;
+      padding: 0 14px;
+      animation: trustScroll 28s linear infinite;
+    }
+    .trust-marquee:hover .trust-marquee-track,
+    .trust-marquee:active .trust-marquee-track {
+      animation-play-state: paused;
+    }
+    @keyframes trustScroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .trust-chip-card {
       display: flex;
       align-items: center;
-      gap: 5px;
+      gap: 9px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 8px 13px;
+      min-width: 245px;
+      max-width: 295px;
+      flex-shrink: 0;
     }
-    .tsb-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 10px;
+    .trust-chip-icon {
+      font-size: 18px;
+      flex-shrink: 0;
     }
-    @media (min-width: 640px) {
-      .tsb-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-    .tsb-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 8px;
-      font-size: 12.5px;
-      line-height: 1.45;
+    .trust-chip-text {
+      font-size: 11.8px;
+      line-height: 1.35;
       color: #334155;
     }
-    .tsb-item strong {
+    .trust-chip-text strong {
+      display: block;
+      font-size: 12px;
       color: #0f172a;
-    }
-    .tsb-check {
-      color: #16a34a;
-      font-weight: 800;
-      font-size: 14px;
-      flex-shrink: 0;
-      margin-top: 1px;
+      margin-bottom: 1px;
     }
 </style>
 </head>
@@ -1076,6 +1076,80 @@ function switchTikTokVideo(videoId, titleText, btn) {
     <span>Pedir por WhatsApp</span>
   </a>
 </header>
+
+<!-- MINI-BANNER CARRUSEL DE SEGURIDAD SUPERIOR -->
+<div class="trust-ticker-wrap" aria-label="Garantía y seguridad JNxKeys">
+  <div class="trust-ticker-head">
+    <div class="trust-ticker-eyebrow">
+      <span class="pulse-dot"></span>
+      <span>🛡️ COMPRA 100% SEGURA · NO PEDIMOS CONTRASEÑAS</span>
+    </div>
+    <div class="trust-ticker-sub">Empresa formal · +2 años</div>
+  </div>
+  <div class="trust-marquee">
+    <div class="trust-marquee-track">
+      <!-- Bloque 1 -->
+      <div class="trust-chip-card">
+        <span class="trust-chip-icon">🔒</span>
+        <div class="trust-chip-text">
+          <strong>Cero contraseñas</strong>
+          Solo tu correo Gmail · Invitación 100% original Google
+        </div>
+      </div>
+      <div class="trust-chip-card">
+        <span class="trust-chip-icon">✅</span>
+        <div class="trust-chip-text">
+          <strong>Garantía asegurada</strong>
+          Suscripción pagada, garantía asegurada mes a mes
+        </div>
+      </div>
+      <div class="trust-chip-card">
+        <span class="trust-chip-icon">🤝</span>
+        <div class="trust-chip-text">
+          <strong>+50 usuarios activos</strong>
+          Buscamos ser tus socios en tecnología · Trato directo
+        </div>
+      </div>
+      <div class="trust-chip-card">
+        <span class="trust-chip-icon">🔐</span>
+        <div class="trust-chip-text">
+          <strong>Data 100% privada</strong>
+          Tu espacio en la nube e IA son seguros y privados
+        </div>
+      </div>
+      <!-- Bloque 2 (duplicado para carrusel continuo sin saltos) -->
+      <div class="trust-chip-card" aria-hidden="true">
+        <span class="trust-chip-icon">🔒</span>
+        <div class="trust-chip-text">
+          <strong>Cero contraseñas</strong>
+          Solo tu correo Gmail · Invitación 100% original Google
+        </div>
+      </div>
+      <div class="trust-chip-card" aria-hidden="true">
+        <span class="trust-chip-icon">✅</span>
+        <div class="trust-chip-text">
+          <strong>Garantía asegurada</strong>
+          Suscripción pagada, garantía asegurada mes a mes
+        </div>
+      </div>
+      <div class="trust-chip-card" aria-hidden="true">
+        <span class="trust-chip-icon">🤝</span>
+        <div class="trust-chip-text">
+          <strong>+50 usuarios activos</strong>
+          Buscamos ser tus socios en tecnología · Trato directo
+        </div>
+      </div>
+      <div class="trust-chip-card" aria-hidden="true">
+        <span class="trust-chip-icon">🔐</span>
+        <div class="trust-chip-text">
+          <strong>Data 100% privada</strong>
+          Tu espacio en la nube e IA son seguros y privados
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="topnav">
     <button class="back-btn" onclick="window.location.href='/index.html'">← Inicio </button>
     <div class="step-pill">1 de 3</div>
@@ -1127,58 +1201,6 @@ function switchTikTokVideo(videoId, titleText, btn) {
         <a class="tiktok-channel-link" href="https://www.tiktok.com/@jnx.keys" target="_blank">
           Ver canal @jnx.keys en TikTok ↗
         </a>
-      </div>
-    </div>
-  </div>
-
-  <!-- BANNER DE SEGURIDAD Y CONFIANZA GOOGLE ONE -->
-  <div class="trust-security-banner">
-    <div class="tsb-head">
-      <div class="tsb-title">
-        <span>🛡️</span>
-        <span>Compra con Seguridad · JNxKeys Perú</span>
-        <span class="badge-sec">Garantía 100%</span>
-      </div>
-      <div style="font-size:12px; color:#64748b; font-weight:600;">
-        Empresa formal · Trato directo
-      </div>
-    </div>
-
-    <div class="tsb-metrics">
-      <div class="tsb-metric-item">
-        <span>🏢</span> <strong>+2 años</strong> brindando el servicio
-      </div>
-      <div class="tsb-metric-item">
-        <span>👥</span> <strong>+50 usuarios activos</strong> con suscripción a Google
-      </div>
-      <div class="tsb-metric-item">
-        <span>🔒</span> <strong>Suscripción pagada, garantía garantizada</strong>
-      </div>
-      <div class="tsb-metric-item">
-        <span>🤝</span> <strong>Socios a largo plazo</strong> (no desaparecemos a los meses)
-      </div>
-    </div>
-
-    <div class="tsb-method-title">
-      <span>⚡</span> Nuestro método de activación transparente:
-    </div>
-
-    <div class="tsb-grid">
-      <div class="tsb-item">
-        <span class="tsb-check">✓</span>
-        <div><strong>NO pedimos contraseñas:</strong> Jamás te solicitaremos tu clave. Lo único que pedimos es tu correo Gmail para enviarte la invitación.</div>
-      </div>
-      <div class="tsb-item">
-        <span class="tsb-check">✓</span>
-        <div><strong>Invitación 100% original Google:</strong> Te enviamos una invitación oficial emitida por Google. Serás parte de un grupo familiar donde te asignamos la parte correspondiente a tus beneficios.</div>
-      </div>
-      <div class="tsb-item">
-        <span class="tsb-check">✓</span>
-        <div><strong>Data 100% privada:</strong> Tu data es 100% privada y no es compartida. Nadie tiene acceso a tus fotos, archivos o correos personales.</div>
-      </div>
-      <div class="tsb-item">
-        <span class="tsb-check">✓</span>
-        <div><strong>Espacio y beneficios asegurados:</strong> Tu espacio en la nube asignado (los 400 GB asignados solamente por una cuenta) y las funciones avanzadas de IA son 100% seguras y privadas para tu cuenta.</div>
       </div>
     </div>
   </div>
@@ -1281,6 +1303,7 @@ function switchTikTokVideo(videoId, titleText, btn) {
             </button>
             <button type="button" class="plan-opt">
               <div class="plan-opt-label">Mensual regular</div>
+              <div class="plan-opt-old">S/38</div>
               <div class="plan-opt-price">S/20</div>
               <div class="plan-opt-tag">al mes</div>
             </button>
