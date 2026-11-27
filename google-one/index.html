@@ -989,8 +989,11 @@ html, body { overflow-x: hidden; width: 100%; margin: 0; padding: 0; }
     .trust-marquee {
       position: relative;
       overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
       scrollbar-width: none;
       -ms-overflow-style: none;
+      padding: 0 14px;
     }
     .trust-marquee::-webkit-scrollbar {
       display: none;
@@ -998,29 +1001,37 @@ html, body { overflow-x: hidden; width: 100%; margin: 0; padding: 0; }
     .trust-marquee-track {
       display: flex;
       gap: 10px;
-      width: max-content;
-      padding: 0 14px;
-      animation: trustScroll 28s linear infinite;
-    }
-    .trust-marquee:hover .trust-marquee-track,
-    .trust-marquee:active .trust-marquee-track {
-      animation-play-state: paused;
-    }
-    @keyframes trustScroll {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
     }
     .trust-chip-card {
+      scroll-snap-align: start;
       display: flex;
       align-items: center;
       gap: 9px;
       background: #f8fafc;
       border: 1px solid #e2e8f0;
       border-radius: 10px;
-      padding: 8px 13px;
-      min-width: 245px;
-      max-width: 295px;
-      flex-shrink: 0;
+      padding: 9px 13px;
+      flex: 0 0 82%;
+      min-width: 240px;
+    }
+    @media (min-width: 640px) {
+      .trust-chip-card {
+        flex: 0 0 46%;
+      }
+    }
+    @media (min-width: 1024px) {
+      .trust-marquee {
+        overflow-x: visible;
+      }
+      .trust-marquee-track {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+      }
+      .trust-chip-card {
+        flex: unset;
+        min-width: 0;
+      }
     }
     .trust-chip-icon {
       font-size: 18px;
@@ -1086,69 +1097,58 @@ function switchTikTokVideo(videoId, titleText, btn) {
     </div>
     <div class="trust-ticker-sub">Empresa formal · +2 años</div>
   </div>
-  <div class="trust-marquee">
+  <div class="trust-marquee" id="trustMarquee">
     <div class="trust-marquee-track">
-      <!-- Bloque 1 -->
       <div class="trust-chip-card">
-        <span class="trust-chip-icon">🔒</span>
+        <span class="trust-chip-icon">🚫</span>
         <div class="trust-chip-text">
-          <strong>Cero contraseñas</strong>
-          Solo tu correo Gmail · Invitación 100% original Google
+          <strong>NO pedimos contraseñas</strong>
+          Jamás te pediremos tu clave · Solo tu correo Gmail
         </div>
       </div>
       <div class="trust-chip-card">
-        <span class="trust-chip-icon">✅</span>
+        <span class="trust-chip-icon">🏢</span>
         <div class="trust-chip-text">
-          <strong>Garantía asegurada</strong>
+          <strong>+2 años · No desaparecemos</strong>
+          Empresa formal · Buscamos ser tus socios en tecnología
+        </div>
+      </div>
+      <div class="trust-chip-card">
+        <span class="trust-chip-icon">👥</span>
+        <div class="trust-chip-text">
+          <strong>+50 usuarios activos</strong>
           Suscripción pagada, garantía asegurada mes a mes
         </div>
       </div>
       <div class="trust-chip-card">
-        <span class="trust-chip-icon">🤝</span>
+        <span class="trust-chip-icon">📩</span>
         <div class="trust-chip-text">
-          <strong>+50 usuarios activos</strong>
-          Buscamos ser tus socios en tecnología · Trato directo
-        </div>
-      </div>
-      <div class="trust-chip-card">
-        <span class="trust-chip-icon">🔐</span>
-        <div class="trust-chip-text">
-          <strong>Data 100% privada</strong>
-          Tu espacio en la nube e IA son seguros y privados
-        </div>
-      </div>
-      <!-- Bloque 2 (duplicado para carrusel continuo sin saltos) -->
-      <div class="trust-chip-card" aria-hidden="true">
-        <span class="trust-chip-icon">🔒</span>
-        <div class="trust-chip-text">
-          <strong>Cero contraseñas</strong>
-          Solo tu correo Gmail · Invitación 100% original Google
-        </div>
-      </div>
-      <div class="trust-chip-card" aria-hidden="true">
-        <span class="trust-chip-icon">✅</span>
-        <div class="trust-chip-text">
-          <strong>Garantía asegurada</strong>
-          Suscripción pagada, garantía asegurada mes a mes
-        </div>
-      </div>
-      <div class="trust-chip-card" aria-hidden="true">
-        <span class="trust-chip-icon">🤝</span>
-        <div class="trust-chip-text">
-          <strong>+50 usuarios activos</strong>
-          Buscamos ser tus socios en tecnología · Trato directo
-        </div>
-      </div>
-      <div class="trust-chip-card" aria-hidden="true">
-        <span class="trust-chip-icon">🔐</span>
-        <div class="trust-chip-text">
-          <strong>Data 100% privada</strong>
-          Tu espacio en la nube e IA son seguros y privados
+          <strong>Invitación 100% original Google</strong>
+          Enlace directo oficial a un grupo familiar autorizado
         </div>
       </div>
     </div>
   </div>
 </div>
+<script>
+(function(){
+  var el = document.getElementById('trustMarquee');
+  if (!el) return;
+  var paused = false;
+  el.addEventListener('touchstart', function(){ paused = true; }, {passive: true});
+  el.addEventListener('mouseenter', function(){ paused = true; });
+  el.addEventListener('mouseleave', function(){ paused = false; });
+  setInterval(function(){
+    if (paused || el.scrollWidth <= el.clientWidth + 4) return;
+    var step = el.querySelector('.trust-chip-card').offsetWidth + 10;
+    if (el.scrollLeft + el.clientWidth >= el.scrollWidth - 8) {
+      el.scrollTo({ left: 0, behavior: 'smooth' });
+    } else {
+      el.scrollBy({ left: step, behavior: 'smooth' });
+    }
+  }, 3500);
+})();
+</script>
 
 <div class="topnav">
     <button class="back-btn" onclick="window.location.href='/index.html'">← Inicio </button>
