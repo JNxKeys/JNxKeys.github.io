@@ -561,6 +561,53 @@ h1.hero em{font-style:italic;color:var(--g-blue);}
 .plan-share-btn{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;flex-shrink:0;border-radius:50%;border:1px solid #E2E8F0;background:#F8FAFC;color:#64748B;cursor:pointer;transition:all .15s ease;}
 .plan-share-btn:hover{border-color:#2563EB;color:#2563EB;background:#EFF6FF;}
 
+/* SWITCH MENSUAL NORMAL VS OFERTAS */
+.pricing-switch-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  margin: 4px 0 18px;
+}
+.pricing-switch {
+  display: inline-flex;
+  align-items: center;
+  background: #E2E8F0;
+  padding: 4px;
+  border-radius: 100px;
+  gap: 4px;
+  box-shadow: inset 0 1px 3px rgba(15, 23, 42, 0.08);
+}
+.pricing-switch-btn {
+  border: none;
+  background: transparent;
+  color: #475569;
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 8px 18px;
+  border-radius: 100px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+.pricing-switch-btn.active {
+  background: #FFFFFF;
+  color: #0F172A;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.12);
+}
+.pricing-switch-btn.offer-tab.active {
+  background: linear-gradient(135deg, #F59E0B, #EA580C);
+  color: #FFFFFF;
+}
+.pricing-switch-hint {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #059669;
+}
+
 .plan-dots{display:flex;justify-content:center;gap:5px;}
 .plan-nav-row{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:24px;}
 .plan-nav-btn{width:38px;height:38px;border-radius:50%;border:none;background:var(--white);color:var(--g-blue);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:19px;line-height:1;flex-shrink:0;padding:0;box-shadow:0 3px 10px rgba(13,15,26,.15);transition:transform .15s ease, background .15s ease, color .15s ease;}
@@ -1270,6 +1317,14 @@ function switchTikTokVideo(videoId, titleText, btn, numLabel) {
   <p class="plan-eyebrow">Elige tu plan</p>
   <div class="grid-click-hint">💬 <span>Haz clic en cualquier plan para solicitar tu suscripción al instante por WhatsApp</span></div>
 
+  <div class="pricing-switch-wrap">
+    <div class="pricing-switch" role="tablist" aria-label="Modo de precios">
+      <button type="button" class="pricing-switch-btn active" id="swNormal" onclick="setPricingMode('normal')">Mensual Normal</button>
+      <button type="button" class="pricing-switch-btn offer-tab" id="swOffer" onclick="setPricingMode('offer')">Ofertas 🔥</button>
+    </div>
+    <div class="pricing-switch-hint" id="swHint">Precios mensuales · Cambia a «Ofertas 🔥» para ahorrar hasta S/ 69</div>
+  </div>
+
   <div class="plan-carousel" id="planCarousel">
         <!-- CARD 1: AI PLUS 400 -->
         <div class="plan-slide tier-basic" id="plan-ai-plus-400" onclick="window.open('https://wa.me/51925244643?text=Deseo%20informaci%C3%B3n%20del%20plan%20AI%20Plus%20400%20de%20Google%20One', '_blank'); gtag('event','whatsapp_click',{product:'Google One',plan:'AI Plus 400',location:'plan_card'})">
@@ -1291,16 +1346,14 @@ function switchTikTokVideo(videoId, titleText, btn, numLabel) {
               </div>
             </div>
 
-            <div class="plan-price-hero">
+            <div class="plan-price-hero" id="priceBox400">
               <div class="plan-price-old-row">
-                <span class="plan-opt-old">S/ 18.80</span>
+                <span class="plan-opt-old" id="old400">S/ 18.80</span>
+                <span class="plan-save-pill" id="save400" style="display:none;">¡Ahorras S/ 62.80!</span>
               </div>
               <div class="plan-price-main-row">
-                <span class="plan-opt-price">S/10</span>
-                <span class="plan-price-period">/ mes</span>
-              </div>
-              <div class="plan-alt-option">
-                Semestral: <s>S/112.80</s> <strong>S/50</strong> (6 meses)
+                <span class="plan-opt-price" id="price400">S/10</span>
+                <span class="plan-price-period" id="period400">/ mes</span>
               </div>
             </div>
 
@@ -1321,7 +1374,7 @@ function switchTikTokVideo(videoId, titleText, btn, numLabel) {
         <!-- CARD 2: AI PLUS 2TB (PROTAGONISTA CENTRAL) -->
         <div class="plan-slide tier-popular" id="plan-ai-plus-2tb" onclick="window.open('https://wa.me/51925244643?text=Hola,%20me%20interesa%20el%20plan%20Google%20One%20de%202TB', '_blank'); gtag('event','whatsapp_click',{product:'Google One',plan:'AI Plus 2TB',location:'plan_card'})">
           <div>
-            <div class="plan-popular-ribbon">⭐ Recomendado · Oferta Limitada 2026 🔥</div>
+            <div class="plan-popular-ribbon" id="ribbon2tb">⭐ Recomendado · Más Popular</div>
             <div class="plan-head-row">
               <div class="plan-title-group">
                 <span class="plan-icon">👤</span>
@@ -1334,22 +1387,19 @@ function switchTikTokVideo(videoId, titleText, btn, numLabel) {
                 <span class="anchor-label">Oficial Google</span>
                 <div class="anchor-prices">
                   <span class="anchor-strike">S/ 38.00</span>
-                  <span class="anchor-discount green">-60%</span>
+                  <span class="anchor-discount green">-47%</span>
                 </div>
               </div>
             </div>
 
-            <div class="plan-price-hero">
+            <div class="plan-price-hero" id="priceBox2tb">
               <div class="plan-price-old-row">
-                <span class="plan-opt-old">S/ 114.00</span>
-                <span class="plan-save-pill">¡Ahorras S/ 69!</span>
+                <span class="plan-opt-old" id="old2tb">S/ 38.00</span>
+                <span class="plan-save-pill" id="save2tb" style="display:none;">¡Ahorras S/ 69!</span>
               </div>
               <div class="plan-price-main-row">
-                <span class="plan-opt-price">S/45</span>
-                <span class="plan-price-period">/ 3 meses (pago único)</span>
-              </div>
-              <div class="plan-alt-option">
-                Mensual regular: <s>S/38.00</s> <strong>S/20 /mes</strong>
+                <span class="plan-opt-price" id="price2tb">S/20</span>
+                <span class="plan-price-period" id="period2tb">/ mes</span>
               </div>
             </div>
 
@@ -1362,8 +1412,8 @@ function switchTikTokVideo(videoId, titleText, btn, numLabel) {
           </div>
 
           <div class="plan-cta-row">
-            <button class="plan-share-btn" type="button" aria-label="Compartir plan" onclick="event.stopPropagation(); shareProduct('Google One AI Plus 2TB', 'S/45 (3 meses)', 'plan-ai-plus-2tb')"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg></button>
-            <div class="card-select-pill">Elegir Oferta ↗</div>
+            <button class="plan-share-btn" type="button" aria-label="Compartir plan" onclick="event.stopPropagation(); shareProduct('Google One AI Plus 2TB', 'S/20', 'plan-ai-plus-2tb')"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg></button>
+            <div class="card-select-pill" id="cta2tb">Elegir plan ↗</div>
           </div>
         </div>
 
@@ -1387,16 +1437,13 @@ function switchTikTokVideo(videoId, titleText, btn, numLabel) {
               </div>
             </div>
 
-            <div class="plan-price-hero">
+            <div class="plan-price-hero" id="priceBox5tb">
               <div class="plan-price-old-row">
                 <span class="plan-opt-old">S/ 73.99</span>
               </div>
               <div class="plan-price-main-row">
                 <span class="plan-opt-price">S/30</span>
                 <span class="plan-price-period">/ mes</span>
-              </div>
-              <div class="plan-alt-option">
-                Suscripción mensual flexible
               </div>
             </div>
 
@@ -1414,6 +1461,32 @@ function switchTikTokVideo(videoId, titleText, btn, numLabel) {
           </div>
         </div>
       </div>
+      <script>
+      function setPricingMode(mode) {
+        var isOffer = (mode === 'offer');
+        document.getElementById('swNormal').classList.toggle('active', !isOffer);
+        document.getElementById('swOffer').classList.toggle('active', isOffer);
+        document.getElementById('swHint').textContent = isOffer
+          ? '🔥 Ofertas activas · Pago único por el período promocional'
+          : 'Precios mensuales · Cambia a «Ofertas 🔥» para ahorrar hasta S/ 69';
+
+        // Card 1: AI Plus 400
+        document.getElementById('old400').textContent = isOffer ? 'S/ 112.80' : 'S/ 18.80';
+        document.getElementById('save400').style.display = isOffer ? 'inline-block' : 'none';
+        document.getElementById('price400').textContent = isOffer ? 'S/50' : 'S/10';
+        document.getElementById('period400').textContent = isOffer ? '/ 6 meses (pago único)' : '/ mes';
+
+        // Card 2: AI Plus 2TB
+        document.getElementById('ribbon2tb').textContent = isOffer
+          ? '⭐ Oferta Limitada 2026 🔥'
+          : '⭐ Recomendado · Más Popular';
+        document.getElementById('old2tb').textContent = isOffer ? 'S/ 114.00' : 'S/ 38.00';
+        document.getElementById('save2tb').style.display = isOffer ? 'inline-block' : 'none';
+        document.getElementById('price2tb').textContent = isOffer ? 'S/45' : 'S/20';
+        document.getElementById('period2tb').textContent = isOffer ? '/ 3 meses (pago único)' : '/ mes';
+        document.getElementById('cta2tb').textContent = isOffer ? 'Elegir Oferta ↗' : 'Elegir plan ↗';
+      }
+      </script>
       <div class="plan-nav-row">
         <button class="plan-nav-btn" id="planPrev" aria-label="Anterior">‹</button>
         <div class="plan-dots" id="planDots"><span class="on"></span><span></span><span></span></div>
